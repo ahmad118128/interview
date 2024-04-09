@@ -1,12 +1,20 @@
+'use client';
 import { TextField } from '@/components/atoms/TextField';
-import { useForm } from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
 
 export default function Home() {
-  const { control } = useForm();
+  const { control } = useForm<FieldValues>();
   return (
     <>
       <p>main page</p>
-      <TextField name="aaa" control={control} />
+      <form>
+        <TextField
+          name="firstName"
+          type="text"
+          validateType="fa"
+          control={control}
+        />
+      </form>
     </>
   );
 }

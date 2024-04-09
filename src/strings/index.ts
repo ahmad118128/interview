@@ -699,8 +699,8 @@ export const discountCodeString = {
   minimumAmount: 'این مقدار باید بزرگتر یا مساوی یک باشد.',
   maximumAmount: 'حداکثر تا ۵۰ میلیون میتوانید وارد کنید.',
   maxAllowedUse: 'حداکثر تعداد کل ظرفیت ۱۰۰۰ می‌باشد.',
-  maxFunction: (value) => `این مقدار باید کمتر از ${value} باشد.`,
-  minFunction: (value) => `این مقدار باید بزرگتر از ${value} باشد.`,
+  maxFunction: (value: any) => `این مقدار باید کمتر از ${value} باشد.`,
+  minFunction: (value: any) => `این مقدار باید بزرگتر از ${value} باشد.`,
 };
 
 // FINANCE TRANSACTION

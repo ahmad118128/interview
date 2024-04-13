@@ -119,7 +119,7 @@ export const TextField = (props: BaseInputProps) => {
           {!element ? (
             <StyledTextFieldRtl
               id={id}
-              variant="standard"
+              variant="filled"
               typeInput={type}
               className={className}
               ltrLabel={ltrLabel}

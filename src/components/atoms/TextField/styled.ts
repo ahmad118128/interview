@@ -6,33 +6,69 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(
     ' & input': {
       direction: (typeInput === 'password' || typeInput === 'money') && 'ltr',
       fontSize: '14px !important',
-      marginRight: '8px',
-      marginLeft: '8px',
+      // marginRight: '8px',
+      // marginLeft: '8px',
       color: theme.palette.grey[600],
     },
-    '.MuiInputLabel-shrink': {
-      padding: 'none !important',
+
+    '&:hover:not(.Mui-focused) > label': {
+      color: '#7EBC59',
     },
 
-    '.MuiInputBase-root': {
-      fontStyle: 'normal',
-      fontWeight: 400,
-      fontSize: '0.875rem !important',
-      lineHeight: ' 1.313rem !important',
-      gap: '0.5rem !important',
-    },
-    '.MuiInputLabel-root': {
+    '& .MuiInputLabel-filled': {
       direction: ltrLabel ? 'ltr' : 'rtl',
-      right: ltrLabel ? 'inherit' : '0.5rem',
+      right: ltrLabel ? 'inherit' : '1rem',
       left: ltrLabel ? '0.5rem' : 'inherit',
       fontFamily: !ltrLabel && 'iran-sans',
       fontWeight: '400 !important',
       fontSize: '0.875rem !important',
       transformOrigin: ltrLabel ? 'top left' : 'top right',
+      color: 'black',
+      '&.Mui-focused': {
+        color: '#7EBC59',
+      },
     },
-    '& .MuiInputBase-input': {
-      paddingBottom: '0.25rem !important',
-      paddingTop: '0.5rem !important',
+    
+    '& .MuiFilledInput-root': {
+      color: '#000',
+      fontFamily: 'Iran-yekan',
+      fontSize: '14px',
+      fontWeight: 'regular',
+      backgroundColor: '#f4f4f4',
+      borderTopLeftRadius: '7px',
+      borderTopRightRadius: '7px',
+      '&:after': {
+        borderColor: '#7EBC59',
+      },
+      ':hover:not(.Mui-focused):not(.Mui-disabled)': {
+        '&:before': {
+          borderColor: '#7EBC59',
+        },
+      },
+      ':disable &:after': {
+        border: 'none',
+      },
+
+      // '.MuiInputBase-root': {
+      //   fontStyle: 'normal',
+      //   fontWeight: 400,
+      //   fontSize: '0.875rem !important',
+      //   lineHeight: ' 1.313rem !important',
+      //   gap: '0.5rem !important',
+      // },
+      // '.MuiInputLabel-root': {
+      //   direction: ltrLabel ? 'ltr' : 'rtl',
+      //   right: ltrLabel ? 'inherit' : '1rem',
+      //   left: ltrLabel ? '0.5rem' : 'inherit',
+      //   fontFamily: !ltrLabel && 'iran-sans',
+      //   fontWeight: '400 !important',
+      //   fontSize: '0.875rem !important',
+      //   transformOrigin: ltrLabel ? 'top left' : 'top right',
+      // },
+      // '& .MuiInputBase-input': {
+      //   paddingBottom: '1rem !important',
+      //   paddingTop: '1rem !important',
+      // },
     },
   })
 );

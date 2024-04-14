@@ -10,11 +10,20 @@ export default function Home() {
       <form>
         <TextField
           name="firstName"
-          type="money"
-          validateType="money"
+          type="text"
+          validateType="en"
           control={control}
-          className='text-red'
-          label='اسم'
+          className="text-red"
+          label="اسم"
+          disabled
+        />
+        <TextField
+          name="firstName"
+          type="password"
+          validateType="en"
+          control={control}
+          className="text-red"
+          label="رمز"
         />
       </form>
     </>

@@ -1,5 +1,5 @@
 export const palette = {
-  main: {
+  custom: {
     main: '#383838',
     second: {
       light: '#7EBC59',

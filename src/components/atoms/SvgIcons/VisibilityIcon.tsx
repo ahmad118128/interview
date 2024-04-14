@@ -5,7 +5,7 @@ const SvgWrapper = styled('div')`
   transition: 0.3s;
   &:hover {
     * {
-      fill: black;
+      fill: green;
     }
   }
 `;

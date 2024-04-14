@@ -44,9 +44,9 @@ declare module '@mui/material/styles' {
     A400: string;
     A700: string;
   }
-  //   interface PaletteOptions {
-  //     custom?: PaletteOptions['primary'];
-  //   }
+  interface PaletteOptions {
+    custom?: PaletteOptions['primary'];
+  }
   interface TypeText {
     white: string;
     light1: string;

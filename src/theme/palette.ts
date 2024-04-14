@@ -1,10 +1,8 @@
 export const palette = {
   custom: {
     main: '#383838',
-    second: {
-      light: '#7EBC59',
-      dark: '#5B913B',
-    },
+    light: '#7EBC59',
+    dark: '#5B913B',
   },
   primary: {
     white: '#FFFFFF',

@@ -13,7 +13,6 @@ export default function Home() {
           type="text"
           validateType="en"
           control={control}
-          className="text-red"
           label="اسم"
           disabled
         />
@@ -22,7 +21,6 @@ export default function Home() {
           type="password"
           validateType="en"
           control={control}
-          className="text-red"
           label="رمز"
         />
       </form>

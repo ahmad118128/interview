@@ -4,7 +4,7 @@ import { StyledTextFieldRtlType } from './type';
 export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(
   ({ ltrLabel, typeInput, theme }) => ({
     ' & input': {
-      direction: (typeInput === 'password' || typeInput === 'money') && 'ltr',
+      direction: (typeInput === 'password' || typeInput === 'money') && 'rtl',
       fontSize: '14px !important',
       // marginRight: '8px',
       // marginLeft: '8px',
@@ -28,7 +28,7 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(
         color: '#7EBC59',
       },
     },
-    
+
     '& .MuiFilledInput-root': {
       color: '#000',
       fontFamily: 'Iran-yekan',
@@ -44,31 +44,21 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(
         '&:before': {
           borderColor: '#7EBC59',
         },
+        '& >svg': {
+          color: 'red',
+        },
       },
       ':disable &:after': {
         border: 'none',
       },
 
-      // '.MuiInputBase-root': {
-      //   fontStyle: 'normal',
-      //   fontWeight: 400,
-      //   fontSize: '0.875rem !important',
-      //   lineHeight: ' 1.313rem !important',
-      //   gap: '0.5rem !important',
-      // },
-      // '.MuiInputLabel-root': {
-      //   direction: ltrLabel ? 'ltr' : 'rtl',
-      //   right: ltrLabel ? 'inherit' : '1rem',
-      //   left: ltrLabel ? '0.5rem' : 'inherit',
-      //   fontFamily: !ltrLabel && 'iran-sans',
-      //   fontWeight: '400 !important',
-      //   fontSize: '0.875rem !important',
-      //   transformOrigin: ltrLabel ? 'top left' : 'top right',
-      // },
-      // '& .MuiInputBase-input': {
-      //   paddingBottom: '1rem !important',
-      //   paddingTop: '1rem !important',
-      // },
+      '.MuiInputBase-root': {
+        fontStyle: 'normal',
+        fontWeight: 400,
+        fontSize: '0.875rem !important',
+        lineHeight: ' 1.313rem !important',
+        gap: '0.5rem !important',
+      },
     },
   })
 );

@@ -140,14 +140,14 @@ export const TextField = (props: BaseInputProps) => {
               InputProps={{
                 dir: !ltrValue ? 'auto' : ltrValue,
                 ...inputProps,
+                // endAdornment:
+                //   validateType === 'money'
+                //     ? handleAdornment(
+                //         <StyledToman>{generalStr.toman}</StyledToman>,
+                //         'end'
+                //       )
+                //     : endAdornment && handleAdornment(endAdornment, 'end'),
                 endAdornment:
-                  validateType === 'money'
-                    ? handleAdornment(
-                        <StyledToman>{generalStr.toman}</StyledToman>,
-                        'end'
-                      )
-                    : endAdornment && handleAdornment(endAdornment, 'end'),
-                startAdornment:
                   type === 'password' && value
                     ? handlePasswordAdornment(statusPssIcon, setStatusPassIcon)
                     : startAdornment &&

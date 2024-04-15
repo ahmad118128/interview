@@ -20,5 +20,13 @@ const VisuallyHiddenInput = styled('input')({
 
 export default function InputFileUpload() {
   const { control } = useForm<FieldValues>();
-  return <TextField name="" type="file" control={control} label="آپلود فایل" />;
+  return (
+    <TextField
+      name="file"
+      type="file"
+      control={control}
+      label="آپلود فایل"
+      className="hidden"
+    />
+  );
 }

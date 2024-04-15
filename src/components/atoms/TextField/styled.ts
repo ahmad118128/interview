@@ -31,7 +31,7 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
       transformOrigin: ltrLabel ? 'top left' : 'top right',
       color: 'black',
       '&.Mui-focused': {
-        color: '#7EBC59',
+        color: theme.palette.primary.light,
       },
     },
 
@@ -44,15 +44,15 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
       borderTopLeftRadius: '7px',
       borderTopRightRadius: '7px',
       '&:after': {
-        borderColor: '#7EBC59',
+        borderColor: theme.palette.primary.light,
       },
       ':hover:not(.Mui-focused):not(.Mui-disabled)': {
         '&:before': {
-          borderColor: '#7EBC59',
+          borderColor: theme.palette.primary.light,
         },
 
         '& .iconWrapper > svg': {
-          fill: '#7EBC59',
+          fill: theme.palette.primary.light,
         },
       },
       ':disable &:after': {

@@ -125,12 +125,12 @@ export const TextField = (props: BaseInputProps) => {
               ltrLabel={ltrLabel}
               label={rules?.required ? `${label} *` : label}
               error={error?.message ? true : false}
-              type={type
-                // type === 'password'
-                //   ? statusPssIcon
-                //     ? 'password'
-                //     : 'text'
-                //   : type
+              type={
+                type === 'password'
+                  ? statusPssIcon
+                    ? 'password'
+                    : 'text'
+                  : type
               }
               onChange={(
                 e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

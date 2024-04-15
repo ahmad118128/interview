@@ -1,18 +1,24 @@
 import { Box, styled, TextField, Typography } from '@mui/material';
 import { StyledTextFieldRtlType } from './type';
 
-export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(
-  ({ ltrLabel, typeInput, theme }) => ({
+export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
+  ltrLabel,
+  typeInput,
+  theme,
+}) => {
+  console.log({ theme });
+
+  return {
     ' & input': {
       direction: (typeInput === 'password' || typeInput === 'money') && 'rtl',
       fontSize: '14px !important',
       // marginRight: '8px',
       // marginLeft: '8px',
-      color: theme.palette.grey[600],
+      // color: theme.palette.grey[600],
     },
 
     '&:hover:not(.Mui-focused)>label': {
-      color: '#7EBC59',
+      color: theme.palette.primary.light,
     },
 
     '& .MuiInputLabel-filled': {
@@ -61,8 +67,8 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(
         gap: '0.5rem !important',
       },
     },
-  })
-);
+  };
+});
 export const StyledToman = styled(Box)`
   font-size: 14px !important;
   font-weight: 400;

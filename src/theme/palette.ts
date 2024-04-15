@@ -1,29 +1,25 @@
 export const palette = {
-  custom: {
+  primary: {
     main: '#383838',
     light: '#7EBC59',
     dark: '#5B913B',
   },
-  primary: {
-    white: '#FFFFFF',
-    black: '#000000',
-    grey: {
-      25: '#FAFAFA',
-      50: '#F5F5F5',
-      100: '#EDEDEF',
-      200: '#AAAAAA',
-    },
-    warning: {
-      main: '#ED6C02',
-    },
-    info: {
-      main: '#0288D1',
-    },
-    error: {
-      main: '#D01739',
-    },
-    success: {
-      main: '#40A945',
-    },
+  grey: {
+    50: '#FAFAFA',
+    100: '#F5F5F5',
+    200: '#EDEDEF',
+    300: '#AAAAAA',
+  },
+  success: {
+    main: '#40A945',
+  },
+  warning: {
+    main: '#ED6C02',
+  },
+  info: {
+    main: '#0288D1',
+  },
+  error: {
+    main: '#D01739',
   },
 };

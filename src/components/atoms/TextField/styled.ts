@@ -69,11 +69,7 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
     },
   };
 });
-export const StyledToman = styled(Box)`
-  font-size: 14px !important;
-  font-weight: 400;
-  color: ${({ theme }) => theme.palette.grey[500]};
-`;
+
 export const StyledErrorMessage = styled(Typography)`
   min-height: 20px; // prevent reformatting when get error
   color: ${({ theme }) => theme.palette.error.main};

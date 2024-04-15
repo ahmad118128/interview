@@ -11,7 +11,7 @@ import { InputAdornment } from '@mui/material';
 
 import { Controller } from 'react-hook-form';
 import { BaseInputProps, ValidateType } from './type';
-import { StyledErrorMessage, StyledTextFieldRtl, StyledToman } from './styled';
+import { StyledErrorMessage, StyledTextFieldRtl } from './styled';
 import VisibilityIcon from '../SvgIcons/VisibilityIcon';
 import VisibilityOffIcon from '../SvgIcons/VisibilityOffIcon';
 import regexPattern from '@/helper/regexPattern';

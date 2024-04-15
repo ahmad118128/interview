@@ -1,7 +1,10 @@
+'use clinet';
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import { TextField } from '../TextField';
+import { FieldValues, useForm } from 'react-hook-form';
 
 const VisuallyHiddenInput = styled('input')({
   clip: 'rect(0 0 0 0)',
@@ -16,16 +19,6 @@ const VisuallyHiddenInput = styled('input')({
 });
 
 export default function InputFileUpload() {
-  return (
-    <Button
-      component="label"
-      role={undefined}
-      variant="contained"
-      tabIndex={-1}
-      startIcon={<CloudUploadIcon />}
-    >
-      Upload file
-      <VisuallyHiddenInput type="file" />
-    </Button>
-  );
+  const { control } = useForm<FieldValues>();
+  return <TextField name="" type="file" control={control} label="آپلود فایل" />;
 }

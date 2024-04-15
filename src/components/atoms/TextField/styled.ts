@@ -11,7 +11,7 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(
       color: theme.palette.grey[600],
     },
 
-    '&:hover:not(.Mui-focused) > label': {
+    '&:hover:not(.Mui-focused)>label': {
       color: '#7EBC59',
     },
 
@@ -44,8 +44,9 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(
         '&:before': {
           borderColor: '#7EBC59',
         },
-        '& >svg': {
-          color: 'red',
+
+        '& .iconWrapper > svg': {
+          fill: '#7EBC59',
         },
       },
       ':disable &:after': {

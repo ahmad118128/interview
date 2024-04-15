@@ -14,7 +14,6 @@ export default function Home() {
           validateType="en"
           control={control}
           label="اسم"
-          disabled
         />
         <TextField
           name="firstName"

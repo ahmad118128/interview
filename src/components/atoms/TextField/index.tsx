@@ -143,7 +143,10 @@ export const TextField = (props: BaseInputProps) => {
                 ...inputProps,
                 endAdornment:
                   type === 'file'
-                    ? handleAdornment(<UploadFileIcon styles={{width:'20px'}}/>, 'end')
+                    ? handleAdornment(
+                        <UploadFileIcon styles={{ width: '20px' }} />,
+                        'end'
+                      )
                     : (endAdornment && handleAdornment(endAdornment, 'end')) ||
                         (type === 'password' && value)
                       ? handlePasswordAdornment(

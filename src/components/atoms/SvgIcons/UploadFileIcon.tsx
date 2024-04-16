@@ -2,12 +2,12 @@ import { SvgType } from '@/app/types';
 import { styled } from '@mui/material/styles';
 
 const SvgWrapper = styled('div')`
-  transition: 0.3s;
-  &:hover {
-    * {
-      fill: green;
-    }
-  }
+  // transition: 0.3s;
+  // &:hover {
+  //   * {
+  //     fill: green;
+  //   }
+  // }
 `;
 const UploadFileIcon = ({ width, height, color, ...styles }: SvgType) => {
   return (

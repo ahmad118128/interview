@@ -15,6 +15,7 @@ export default function InputFileUpload() {
       control={control}
       label="آپلود فایل"
       className="customFileInput"
+      
     />
   );
 }

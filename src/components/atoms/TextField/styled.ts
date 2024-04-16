@@ -17,7 +17,7 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
       // color: theme.palette.grey[600],
     },
 
-    '&:hover:not(.Mui-focused)>label': {
+    '&:hover>label': {
       color: theme.palette.primary.light,
     },
 
@@ -47,18 +47,14 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
         borderColor: theme.palette.primary.light,
       },
 
-      ':hover': {
-        '& .iconUpload > svg': {
-          fill: theme.palette.primary.light,
-        },
-      },
-
-      ':hover:not(.Mui-focused):not(.Mui-disabled)': {
+      ':hover:not(.Mui-disabled)': {
         '&:before': {
           borderColor: theme.palette.primary.light,
         },
-
         '& .iconWrapperVisibility > svg': {
+          fill: theme.palette.primary.light,
+        },
+        '& .iconUpload > svg': {
           fill: theme.palette.primary.light,
         },
       },
@@ -79,12 +75,9 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
       '& ::file-selector-button': {
         display: 'none',
       },
-      '& .customFileInput': {
-        display: 'none',
+      '& input[type=file]': {
+        color: 'rgba(0, 0, 0, 0)',
       },
-      // '& input[type=file]': {
-      //   opacity: 0,
-      // },
     },
   };
 });

@@ -12,7 +12,7 @@ const SvgWrapper = styled('div')`
 
 const VisibilityOffIcon = ({ width, height, color, ...styles }: SvgType) => {
   return (
-    <SvgWrapper className="iconWrapper">
+    <SvgWrapper className="iconWrapperVisibility">
       <svg
         {...styles}
         xmlns="http://www.w3.org/2000/svg"

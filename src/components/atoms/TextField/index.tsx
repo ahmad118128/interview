@@ -17,6 +17,7 @@ import VisibilityOffIcon from '../SvgIcons/VisibilityOffIcon';
 import regexPattern from '@/helper/regexPattern';
 import { generalStr } from '@/strings';
 import { convertToCardNumber, convertToPrice } from './utils';
+import UploadFileIcon from '../SvgIcons/UploadFileIcon';
 
 const allValidateType = {
   en: regexPattern.englishLetter,
@@ -140,18 +141,17 @@ export const TextField = (props: BaseInputProps) => {
               InputProps={{
                 dir: !ltrValue ? 'auto' : ltrValue,
                 ...inputProps,
-                // endAdornment:
-                //   validateType === 'money'
-                //     ? handleAdornment(
-                //         <StyledToman>{generalStr.toman}</StyledToman>,
-                //         'end'
-                //       )
-                //     : endAdornment && handleAdornment(endAdornment, 'end'),
                 endAdornment:
-                  type === 'password' && value
-                    ? handlePasswordAdornment(statusPssIcon, setStatusPassIcon)
-                    : startAdornment &&
-                      handleAdornment(startAdornment, 'start'),
+                  type === 'file'
+                    ? handleAdornment(<UploadFileIcon styles={{width:'20px'}}/>, 'end')
+                    : (endAdornment && handleAdornment(endAdornment, 'end')) ||
+                        (type === 'password' && value)
+                      ? handlePasswordAdornment(
+                          statusPssIcon,
+                          setStatusPassIcon
+                        )
+                      : startAdornment &&
+                        handleAdornment(startAdornment, 'start'),
               }}
               {...rest}
             />

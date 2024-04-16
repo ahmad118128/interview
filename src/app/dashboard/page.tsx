@@ -3,7 +3,7 @@ import { TextField } from '@/components/atoms/TextField';
 import InputFileUpload from '@/components/atoms/UploadInput';
 import { FieldValues, useForm } from 'react-hook-form';
 
-export default function Home() {
+export default function Dashboard() {
   const { control } = useForm<FieldValues>();
   return (
     <>
@@ -22,7 +22,6 @@ export default function Home() {
           validateType="en"
           control={control}
           label="رمز"
-          disabled
         />
         <InputFileUpload />
       </form>

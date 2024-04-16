@@ -12,9 +12,8 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
     ' & input': {
       direction: (typeInput === 'password' || typeInput === 'money') && 'rtl',
       fontSize: '14px !important',
-      // marginRight: '8px',
-      // marginLeft: '8px',
-      // color: theme.palette.grey[600],
+      fontFamily: 'iran-yekan',
+      fontStyle: 'normal',
     },
 
     '&:hover>label': {
@@ -35,7 +34,7 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
       },
     },
 
-    '& .MuiFilledInput-root': {
+    '& .MuiInputBase-root': {
       color: '#000',
       fontFamily: 'Iran-yekan',
       fontSize: '14px',
@@ -60,14 +59,6 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
       },
       ':disable &:after': {
         border: 'none',
-      },
-
-      '.MuiInputBase-root': {
-        fontStyle: 'normal',
-        fontWeight: 400,
-        fontSize: '0.875rem !important',
-        lineHeight: ' 1.313rem !important',
-        gap: '0.5rem !important',
       },
       '& ::-webkit-file-upload-button': {
         display: 'none',

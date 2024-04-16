@@ -1,7 +1,13 @@
 'use client';
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { typography } from './typography';
-
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    input: true;
+    body3: true;
+    smallButton: true;
+  }
+}
 // Create a theme instance.
 const costumeTheme = createTheme({
   palette: {

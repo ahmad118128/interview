@@ -7,7 +7,7 @@ export const typography = {
   },
   h6: {
     fontSize: '1.125rem', // 18px
-    fontWeight: 1.25,
+    fontWeight: 500,
     lineHeight: 1.25,
   },
   body1: {

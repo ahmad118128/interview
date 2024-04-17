@@ -28,7 +28,7 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
       fontWeight: '400 !important',
       fontSize: '0.875rem !important',
       transformOrigin: ltrLabel ? 'top left' : 'top right',
-      color: 'black',
+      color: theme.palette.primary.main,
       '&.Mui-focused': {
         color: theme.palette.primary.light,
       },
@@ -39,6 +39,7 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
       fontFamily: 'Iran-yekan',
       fontSize: '14px',
       fontWeight: 'regular',
+      width: '8.75rem',
       backgroundColor: '#f4f4f4',
       borderTopLeftRadius: '7px',
       borderTopRightRadius: '7px',

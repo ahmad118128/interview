@@ -58,7 +58,7 @@ const handlePasswordAdornment = (
       onClick={() => setState(!state)}
       position="start"
       className="pointer"
-      sx={{ mr: '8px' }}
+      sx={{ ml: '8px' }}
     >
       {state ? <VisibilityIcon /> : <VisibilityOffIcon />}
     </InputAdornment>

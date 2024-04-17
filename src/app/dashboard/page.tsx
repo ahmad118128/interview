@@ -13,7 +13,7 @@ export default function Dashboard() {
         <TextField
           name="firstName"
           type="text"
-          validateType="en"
+          validateType="fa"
           control={control}
           label="اسم"
         />

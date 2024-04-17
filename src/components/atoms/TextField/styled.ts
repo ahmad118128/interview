@@ -10,7 +10,7 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
 
   return {
     ' & input': {
-      direction: (typeInput === 'password' || typeInput === 'money') && 'rtl',
+      direction: (typeInput === 'password' || typeInput === 'file') && 'rtl',
       fontSize: '14px !important',
       fontFamily: 'iran-yekan',
       fontStyle: 'normal',

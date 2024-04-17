@@ -139,22 +139,18 @@ export const TextField = (props: BaseInputProps) => {
               value={handleValidateValue(value, validateType)}
               inputProps={inputBaseProps}
               InputProps={{
-                dir: !ltrValue ? 'auto' : ltrValue,
+                // dir: !ltrValue ? 'auto' : ltrValue,
                 ...inputProps,
                 endAdornment:
-                  type === 'file'
-                    ? handleAdornment(
-                        <UploadFileIcon styles={{ width: '20px' }} />,
-                        'end'
-                      )
-                    : (endAdornment && handleAdornment(endAdornment, 'end')) ||
-                        (type === 'password' && value)
+                  type === 'password'
+                    ? value
                       ? handlePasswordAdornment(
                           statusPssIcon,
                           setStatusPassIcon
                         )
-                      : startAdornment &&
-                        handleAdornment(startAdornment, 'start'),
+                      : endAdornment && handleAdornment(endAdornment, 'end')
+                    : type === 'file' &&
+                      handleAdornment(<UploadFileIcon />, 'end'),
               }}
               {...rest}
             />

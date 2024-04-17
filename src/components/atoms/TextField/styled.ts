@@ -24,7 +24,7 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
       direction: ltrLabel ? 'ltr' : 'rtl',
       right: ltrLabel ? 'inherit' : '1rem',
       left: ltrLabel ? '0.5rem' : 'inherit',
-      fontFamily: !ltrLabel && 'iran-sans',
+      fontFamily: !ltrLabel && 'iran-yekan',
       fontWeight: '400 !important',
       fontSize: '0.875rem !important',
       transformOrigin: ltrLabel ? 'top left' : 'top right',

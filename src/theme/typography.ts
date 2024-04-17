@@ -1,12 +1,12 @@
 export const typography = {
-  fontFamily: 'iran-yekan',
+  fontFamily: ['iran-yekan'].join(','),
   h5: {
     fontSize: '1.5rem', // 24px
     fontWeight: 700,
     lineHeight: 1.5,
   },
   h6: {
-    fontSize: '1.125rem', // 18px
+    fontSize: '1.125rem !important', // 18px
     fontWeight: 500,
     lineHeight: 1.25,
   },

@@ -1,4 +1,5 @@
 'use client';
+import SelectVariants from '@/components/atoms/DropDownInput';
 // import DropDownInput from '@/components/atoms/DropDownInput';
 import { TextField } from '@/components/atoms/TextField';
 import InputFileUpload from '@/components/atoms/UploadInput';
@@ -25,6 +26,7 @@ export default function Dashboard() {
           label="رمز"
         />
         <InputFileUpload />
+        <SelectVariants />
       </form>
     </>
   );

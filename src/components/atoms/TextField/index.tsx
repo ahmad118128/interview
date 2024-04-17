@@ -119,6 +119,9 @@ export const TextField = (props: BaseInputProps) => {
         <>
           {!element ? (
             <StyledTextFieldRtl
+              style={{
+                fontSize: type === 'file' && value ? '16px' : '0px',
+              }}
               id={id}
               variant="filled"
               typeInput={type}

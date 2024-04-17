@@ -5,6 +5,7 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
   ltrLabel,
   typeInput,
   theme,
+  value,
 }) => {
   console.log({ theme });
 
@@ -35,12 +36,11 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
     },
 
     '& .MuiInputBase-root': {
-      color: '#000',
       fontFamily: 'Iran-yekan',
       fontSize: '14px',
       fontWeight: 'regular',
       width: '8.75rem',
-      backgroundColor: '#f4f4f4',
+      height: '48px',
       borderTopLeftRadius: '7px',
       borderTopRightRadius: '7px',
       '&:after': {
@@ -68,7 +68,7 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
         display: 'none',
       },
       '& input[type=file]': {
-        color: 'rgba(0, 0, 0, 0)',
+        fontSize: value ? '14px !important' : '0px !important',
       },
     },
   };

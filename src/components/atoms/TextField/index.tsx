@@ -58,7 +58,7 @@ const handlePasswordAdornment = (
       onClick={() => setState(!state)}
       position="start"
       className="pointer"
-      sx={{ mr: '8px' }}
+      sx={{ ml: '8px' }}
     >
       {state ? <VisibilityIcon /> : <VisibilityOffIcon />}
     </InputAdornment>
@@ -119,6 +119,9 @@ export const TextField = (props: BaseInputProps) => {
         <>
           {!element ? (
             <StyledTextFieldRtl
+              style={{
+                fontSize: type === 'file' && value ? '16px' : '0px',
+              }}
               id={id}
               variant="filled"
               typeInput={type}

@@ -26,7 +26,7 @@ export const StyledTextFieldRtl = styled(BaseInput)<StyledTextFieldRtlType>(({
       direction: ltrLabel ? 'ltr' : 'rtl',
       right: ltrLabel ? 'inherit' : '1rem',
       left: ltrLabel ? '0.5rem' : 'inherit',
-      fontFamily: !ltrLabel && 'iran-yekan',
+      fontFamily: 'iran-yekan',
       fontWeight: '400 !important',
       fontSize: '0.875rem !important',
       transformOrigin: ltrLabel ? 'top left' : 'top right',
@@ -42,6 +42,7 @@ export const StyledTextFieldRtl = styled(BaseInput)<StyledTextFieldRtlType>(({
       fontWeight: 'regular',
       width: '8.75rem',
       height: '48px',
+      backgroundColor: theme.palette.grey[100],
       borderTopLeftRadius: '7px',
       borderTopRightRadius: '7px',
       '&:after': {
@@ -49,6 +50,7 @@ export const StyledTextFieldRtl = styled(BaseInput)<StyledTextFieldRtlType>(({
       },
 
       ':hover:not(.Mui-disabled)': {
+        backgroundColor: theme.palette.grey[100],
         '&:before': {
           borderColor: theme.palette.primary.light,
         },
@@ -81,4 +83,6 @@ export const StyledErrorMessage = styled(Typography)`
   margin-top: 0.5rem;
   margin-right: 0.5rem;
   text-align: right;
+  font-size: 0.75rem;
+  fontfamily: 'iran-yekan';
 `;

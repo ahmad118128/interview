@@ -8,34 +8,51 @@ import { BaseInput } from '../baseComponents/atoms/baseInput';
 import { CustomInput } from '@/components/atoms/customInput';
 
 export default function Dashboard() {
-  const { control } = useForm<FieldValues>();
+  const { control, setError, handleSubmit } = useForm<FieldValues>({
+    mode: 'onChange',
+  });
+  const submitHandler = (formData: FieldValues) => console.log(formData);
   return (
     <>
-      <p>main page</p>
-      <form>
-        <TextField
-          name="firstName"
+      <p>test components page</p>
+      <form
+        onSubmit={handleSubmit(submitHandler)}
+        style={{
+          padding: '10px 5px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          width: 'auto',
+        }}
+      >
+        <CustomInput
+          name="custom1"
+          control={control}
+          label="لیبل"
           type="text"
-          validateType="fa"
-          control={control}
-          label="اسم"
         />
-        <TextField
-          name="firstName"
-          type="password"
-          validateType="en"
+        <CustomInput
+          name="custom2"
           control={control}
-          label="رمز"
+          label="لیبل"
+          type="text"
         />
-        <InputFileUpload />
-        <SelectVariants />
-        <BaseInput control={control} name="test" />
         <CustomInput
           name="custom"
           control={control}
-          label="رمز۲"
-          type="file"
-          size="small"
+          label="لیبل"
+          type="text"
+          disabled
+        />
+        <CustomInput
+          name="custom3"
+          control={control}
+          label="لیبل"
+          type="text"
+          setError={setError}
+          validateType="num"
+          inputBaseProps={{
+            maxLength: 10,
+          }}
         />
       </form>
     </>

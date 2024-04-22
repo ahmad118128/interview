@@ -15,6 +15,7 @@ import regexPattern from '@/helper/regexPattern';
 import VisibilityIcon from '@/components/atoms/SvgIcons/VisibilityIcon';
 import VisibilityOffIcon from '@/components/atoms/SvgIcons/VisibilityOffIcon';
 import UploadFileIcon from '@/components/atoms/SvgIcons/UploadFileIcon';
+import { StyledErrorMessage } from '@/components/atoms/customInput/styled';
 
 const allValidateType = {
   en: regexPattern.englishLetter,
@@ -117,44 +118,56 @@ export const BaseInput = (props: BaseInputProps) => {
       render={({ field: { onChange, value }, fieldState: { error } }) => (
         <>
           {!element ? (
-            <TextField
+            <div
               style={{
-                fontSize: type === 'file' && value ? '16px' : '0px',
+                display: 'flex',
+                width: '8.75rem',
+                flexDirection: 'column',
+                height: '68px',
               }}
-              id={id}
-              size={size}
-              variant={variant ? variant : 'outlined'}
-              className={className}
-              label={rules?.required ? `${label} *` : label}
-              error={error?.message ? true : false}
-              type={
-                type === 'password'
-                  ? statusPssIcon
-                    ? 'password'
-                    : 'text'
-                  : type
-              }
-              onChange={(
-                e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-              ) => onChangeHandler(e, onChange)}
-              value={handleValidateValue(value, validateType)}
-              inputProps={inputBaseProps}
-              InputProps={{
-                // dir: !ltrValue ? 'auto' : ltrValue,
-                ...inputProps,
-                endAdornment:
+            >
+              <TextField
+                style={{
+                  fontSize: type === 'file' && value ? '16px' : '0px',
+                }}
+                id={id}
+                size={size}
+                variant={variant ? variant : 'outlined'}
+                className={className}
+                label={rules?.required ? `${label} *` : label}
+                error={error?.message ? true : false}
+                type={
                   type === 'password'
-                    ? value
-                      ? handlePasswordAdornment(
-                          statusPssIcon,
-                          setStatusPassIcon
-                        )
-                      : endAdornment && handleAdornment(endAdornment, 'end')
-                    : type === 'file' &&
-                      handleAdornment(<UploadFileIcon />, 'end'),
-              }}
-              {...rest}
-            />
+                    ? statusPssIcon
+                      ? 'password'
+                      : 'text'
+                    : type
+                }
+                onChange={(
+                  e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+                ) => onChangeHandler(e, onChange)}
+                value={handleValidateValue(value, validateType)}
+                inputProps={inputBaseProps}
+                InputProps={{
+                  // dir: !ltrValue ? 'auto' : ltrValue,
+                  ...inputProps,
+                  endAdornment:
+                    type === 'password'
+                      ? value
+                        ? handlePasswordAdornment(
+                            statusPssIcon,
+                            setStatusPassIcon
+                          )
+                        : endAdornment && handleAdornment(endAdornment, 'end')
+                      : type === 'file' &&
+                        handleAdornment(<UploadFileIcon />, 'end'),
+                }}
+                {...rest}
+              />
+              <StyledErrorMessage variant="caption">
+                {error?.message}
+              </StyledErrorMessage>
+            </div>
           ) : (
             cloneElement(element, {
               ...rest,
@@ -176,7 +189,6 @@ export const BaseInput = (props: BaseInputProps) => {
               },
             })
           )}
-          <Typography variant="caption">{error?.message}</Typography>
         </>
       )}
     />

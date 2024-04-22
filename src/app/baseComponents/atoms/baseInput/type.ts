@@ -15,6 +15,7 @@ export type StyledTextFieldRtlType = {
   ltrValue?: boolean;
   ltrLabel?: boolean;
   typeInput?: HTMLInputTypeAttribute;
+  value?: any;
 };
 export type ValidateType =
   | 'en'
@@ -40,6 +41,7 @@ export interface BaseInputProps extends UseControllerProps {
   variant?: TextFieldVariants;
   id?: string;
   className?: string;
+  size?: 'medium' | 'small';
   setError?: UseFormSetError<FieldValues>;
   changeMiddleWare?: (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

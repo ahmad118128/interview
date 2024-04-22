@@ -83,6 +83,7 @@ export const BaseInput = (props: BaseInputProps) => {
     inputProps,
     inputBaseProps,
     changeMiddleWare,
+    size,
     ...rest
   } = props;
   const [statusPssIcon, setStatusPassIcon] = useState(true);
@@ -121,6 +122,7 @@ export const BaseInput = (props: BaseInputProps) => {
                 fontSize: type === 'file' && value ? '16px' : '0px',
               }}
               id={id}
+              size={size}
               variant={variant ? variant : 'outlined'}
               className={className}
               label={rules?.required ? `${label} *` : label}

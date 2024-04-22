@@ -4,6 +4,7 @@ import SelectVariants from '@/components/atoms/DropDownInput';
 import { TextField } from '@/components/atoms/TextField';
 import InputFileUpload from '@/components/atoms/UploadInput';
 import { FieldValues, useForm } from 'react-hook-form';
+import { BaseInput } from '../baseComponents/atoms/baseInput';
 
 export default function Dashboard() {
   const { control } = useForm<FieldValues>();
@@ -27,6 +28,7 @@ export default function Dashboard() {
         />
         <InputFileUpload />
         <SelectVariants />
+        <BaseInput control={control} name="test" />
       </form>
     </>
   );

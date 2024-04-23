@@ -104,14 +104,6 @@ export const BaseInput = (props: BaseInputProps) => {
       defaultValue={defaultValue}
       render={({ field: { onChange, value }, fieldState: { error } }) => (
         <>
-          {/* <div
-            style={{
-              display: 'flex',
-              width: '8.75rem',
-              flexDirection: 'column',
-              height: '68px',
-            }}
-          > */}
           <Grid container>
             <Grid item xs={12}>
               <TextField

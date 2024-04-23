@@ -1,6 +1,7 @@
 'use client';
 import { FieldValues, useForm } from 'react-hook-form';
 import { CustomInput } from '@/components/atoms/customInput';
+import { Button } from '@/components/atoms/customButton';
 
 export default function Dashboard() {
   const { control, setError, handleSubmit } = useForm<FieldValues>({
@@ -50,6 +51,9 @@ export default function Dashboard() {
           }}
         />
       </form>
+      <Button size="large" title="test" variant="outlined">
+        test
+      </Button>
     </>
   );
 }

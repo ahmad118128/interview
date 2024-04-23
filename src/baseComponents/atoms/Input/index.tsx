@@ -14,13 +14,13 @@ import { BaseInputProps, ValidateType } from './type';
 // import { StyledErrorMessage, StyledTextFieldRtl } from './styled';
 import regexPattern from '@/helper/regexPattern';
 import { generalStr } from '@/strings';
-import {
-  convertToCardNumber,
-  convertToPrice,
-} from '@/components/atoms/TextField/utils';
 import VisibilityIcon from '@/components/atoms/SvgIcons/VisibilityIcon';
 import VisibilityOffIcon from '@/components/atoms/SvgIcons/VisibilityOffIcon';
 import UploadFileIcon from '@/components/atoms/SvgIcons/UploadFileIcon';
+import {
+  convertToCardNumber,
+  convertToPrice,
+} from '@/components/atoms/customInput/utils';
 
 const allValidateType = {
   en: regexPattern.englishLetter,

@@ -4,5 +4,5 @@ import { FieldValues, useForm } from 'react-hook-form';
 
 export default function Test() {
   const { control } = useForm<FieldValues>();
-  return <BaseInput name={'test'} control={control} variant='filled'/>;
+  return <BaseInput name={'test'} control={control} variant="filled" />;
 }

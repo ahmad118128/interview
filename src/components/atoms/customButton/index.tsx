@@ -1,7 +1,7 @@
-import CircularProgress from '@mui/material/CircularProgress';
 import { ButtonProps } from './type';
 import { StyledButton } from './styled';
 import { generalStr } from '@/strings';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 export const Button = ({
   loadingText,
@@ -11,34 +11,15 @@ export const Button = ({
 }: ButtonProps) => {
   if (loadingText) {
     return (
-      <StyledButton
-        {...restProps}
-        disabled
-        startIcon={
-          <CircularProgress
-            size="1.5rem"
-            sx={{
-              color: (theme) => theme.palette.grey[300],
-              ml: '1rem',
-            }}
-          />
-        }
-      >
+      <StyledButton {...restProps} startIcon={<MoreHorizIcon />}>
         {generalStr.processing}
       </StyledButton>
     );
   }
 
   return (
-    <StyledButton {...restProps} disabled={loading || disabled}>
-      {loading ? (
-        <CircularProgress
-          size="1.5rem"
-          sx={{ color: (theme) => theme.palette.grey[300] }}
-        />
-      ) : (
-        restProps.children
-      )}
+    <StyledButton {...restProps} disabled={disabled}>
+      {loading ? <MoreHorizIcon /> : restProps.children}
     </StyledButton>
   );
 };

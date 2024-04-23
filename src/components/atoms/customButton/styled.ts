@@ -52,6 +52,17 @@ export const StyledButton = styled(MUIButton)<ButtonProps>(({ theme }) => ({
       color: theme.palette.primary.dark,
     },
   },
+  // style of loginButton
+  '&.loginButton': {
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.common.white,
+    border: '0px',
+    '&:hover': {
+      backgroundColor: theme.palette.primary.light,
+      color: theme.palette.common.white,
+      border: '0px',
+    },
+  },
 
   /* Common disabled styles */
   '&.Mui-disabled': {

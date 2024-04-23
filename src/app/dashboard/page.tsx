@@ -53,7 +53,15 @@ export default function Dashboard() {
           }}
         />
       </form>
-      <Button size="large" title="test" variant="outlined">
+      <Button
+        size="large"
+        title="test"
+        variant="outlined"
+        className="loginButton"
+      >
+        test
+      </Button>
+      <Button size="large" title="test" variant="contained" loadingText>
         test
       </Button>
     </>

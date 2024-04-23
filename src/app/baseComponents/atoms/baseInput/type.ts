@@ -15,7 +15,7 @@ export type StyledTextFieldRtlType = {
   ltrValue?: boolean;
   ltrLabel?: boolean;
   typeInput?: HTMLInputTypeAttribute;
-  value?: any;
+  value?: unknown;
 };
 export type ValidateType =
   | 'en'

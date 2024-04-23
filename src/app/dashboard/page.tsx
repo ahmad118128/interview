@@ -1,6 +1,7 @@
 'use client';
 import { FieldValues, useForm } from 'react-hook-form';
 import { CustomInput } from '@/components/atoms/customInput';
+import UploadFileIcon from '@/components/atoms/SvgIcons/UploadFileIcon';
 
 export default function Dashboard() {
   const { control, setError, handleSubmit } = useForm<FieldValues>({
@@ -23,7 +24,8 @@ export default function Dashboard() {
           name="custom1"
           control={control}
           label="لیبل"
-          type="text"
+          // type="password"
+          endAdornment={<UploadFileIcon />}
         />
         <CustomInput
           name="custom2"

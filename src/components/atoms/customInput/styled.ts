@@ -34,6 +34,9 @@ export const StyledTextFieldRtl = styled(BaseInput)<StyledTextFieldRtlType>(({
       '&.Mui-focused': {
         color: theme.palette.primary.light,
       },
+      '&.Mui-disabled': {
+        color: theme.palette.grey[300],
+      },
     },
 
     '& .MuiInputBase-root': {

@@ -1,6 +1,7 @@
 'use client';
 import { FieldValues, useForm } from 'react-hook-form';
 import { CustomInput } from '@/components/atoms/customInput';
+import { Button } from '@/components/atoms/customButton';
 import UploadFileIcon from '@/components/atoms/SvgIcons/UploadFileIcon';
 
 export default function Dashboard() {
@@ -52,6 +53,9 @@ export default function Dashboard() {
           }}
         />
       </form>
+      <Button size="large" title="test" variant="outlined">
+        test
+      </Button>
     </>
   );
 }

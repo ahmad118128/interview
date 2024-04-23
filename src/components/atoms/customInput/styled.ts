@@ -14,7 +14,7 @@ export const StyledTextFieldRtl = styled(BaseInput)<StyledTextFieldRtlType>(({
     ' & input': {
       direction: (typeInput === 'password' || typeInput === 'file') && 'rtl',
       fontSize: '14px !important',
-      fontFamily: 'iran-yekan',
+      fontFamily: theme.typography.fontFamily,
       fontStyle: 'normal',
     },
 
@@ -26,7 +26,7 @@ export const StyledTextFieldRtl = styled(BaseInput)<StyledTextFieldRtlType>(({
       direction: ltrLabel ? 'ltr' : 'rtl',
       right: ltrLabel ? 'inherit' : '1rem',
       left: ltrLabel ? '0.5rem' : 'inherit',
-      fontFamily: 'iran-yekan',
+      fontFamily: theme.typography.fontFamily,
       fontWeight: '400 !important',
       fontSize: '0.875rem !important',
       transformOrigin: ltrLabel ? 'top left' : 'top right',
@@ -37,7 +37,7 @@ export const StyledTextFieldRtl = styled(BaseInput)<StyledTextFieldRtlType>(({
     },
 
     '& .MuiInputBase-root': {
-      fontFamily: 'Iran-yekan',
+      fontFamily: theme.typography.fontFamily,
       fontSize: '14px',
       fontWeight: 'regular',
       width: '8.75rem',

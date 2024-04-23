@@ -6,7 +6,7 @@ import {
   SetStateAction,
   ChangeEvent,
 } from 'react';
-import { InputAdornment, TextField } from '@mui/material';
+import { Grid, InputAdornment, TextField } from '@mui/material';
 import { Controller } from 'react-hook-form';
 import { BaseInputProps } from './type';
 import regexPattern from '@/helper/regexPattern';
@@ -104,54 +104,59 @@ export const BaseInput = (props: BaseInputProps) => {
       defaultValue={defaultValue}
       render={({ field: { onChange, value }, fieldState: { error } }) => (
         <>
-          <div
+          {/* <div
             style={{
               display: 'flex',
               width: '8.75rem',
               flexDirection: 'column',
               height: '68px',
             }}
-          >
-            <TextField
-              style={{
-                fontSize: type === 'file' && value ? '16px' : '0px',
-              }}
-              id={id}
-              size={size}
-              variant={variant ? variant : 'outlined'}
-              className={className}
-              label={rules?.required ? `${label} *` : label}
-              error={error?.message ? true : false}
-              type={
-                type === 'password'
-                  ? statusPssIcon
-                    ? 'password'
-                    : 'text'
-                  : type
-              }
-              onChange={(
-                e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-              ) => onChangeHandler(e, onChange)}
-              value={handleValidateValue(value)}
-              inputProps={inputBaseProps}
-              InputProps={{
-                ...inputProps,
-                endAdornment:
-                  (type === 'password' &&
-                    value &&
-                    handlePasswordAdornment(
-                      statusPssIcon,
-                      setStatusPassIcon
-                    )) ||
-                  (type === 'file' && handleAdornment(<UploadFileIcon />)) ||
-                  (endAdornment && handleAdornment(endAdornment)),
-              }}
-              {...rest}
-            />
-            <StyledErrorMessage variant="caption">
-              {error?.message}
-            </StyledErrorMessage>
-          </div>
+          > */}
+          <Grid container>
+            <Grid item xs={12}>
+              <TextField
+                style={{
+                  fontSize: type === 'file' && value ? '16px' : '0px',
+                }}
+                id={id}
+                size={size}
+                variant={variant ? variant : 'outlined'}
+                className={className}
+                label={rules?.required ? `${label} *` : label}
+                error={error?.message ? true : false}
+                type={
+                  type === 'password'
+                    ? statusPssIcon
+                      ? 'password'
+                      : 'text'
+                    : type
+                }
+                onChange={(
+                  e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+                ) => onChangeHandler(e, onChange)}
+                value={handleValidateValue(value)}
+                inputProps={inputBaseProps}
+                InputProps={{
+                  ...inputProps,
+                  endAdornment:
+                    (type === 'password' &&
+                      value &&
+                      handlePasswordAdornment(
+                        statusPssIcon,
+                        setStatusPassIcon
+                      )) ||
+                    (type === 'file' && handleAdornment(<UploadFileIcon />)) ||
+                    (endAdornment && handleAdornment(endAdornment)),
+                }}
+                {...rest}
+              />
+            </Grid>
+            <Grid>
+              <StyledErrorMessage variant="caption">
+                {error?.message}
+              </StyledErrorMessage>
+            </Grid>
+          </Grid>
         </>
       )}
     />

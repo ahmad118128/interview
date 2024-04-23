@@ -20,7 +20,7 @@ export default function Dashboard() {
           width: 'auto',
         }}
       >
-        <CustomInput
+        {/* <CustomInput
           name="custom1"
           control={control}
           label="لیبل"
@@ -39,7 +39,7 @@ export default function Dashboard() {
           label="لیبل"
           type="text"
           disabled
-        />
+        /> */}
         <CustomInput
           name="custom3"
           control={control}

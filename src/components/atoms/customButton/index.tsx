@@ -2,7 +2,7 @@ import { ButtonProps } from './type';
 import { StyledButton } from './styled';
 import { generalStr } from '@/strings';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-
+import { Icon } from '@iconify/react';
 export const Button = ({
   loadingText,
   loading,
@@ -11,7 +11,15 @@ export const Button = ({
 }: ButtonProps) => {
   if (loadingText) {
     return (
-      <StyledButton {...restProps} startIcon={<MoreHorizIcon />}>
+      <StyledButton
+        {...restProps}
+        startIcon={
+          <Icon
+            icon="svg-spinners:3-dots-scale-middle"
+            style={{ fontSize: '24px' }}
+          />
+        }
+      >
         {generalStr.processing}
       </StyledButton>
     );
@@ -19,7 +27,14 @@ export const Button = ({
 
   return (
     <StyledButton {...restProps} disabled={disabled}>
-      {loading ? <MoreHorizIcon /> : restProps.children}
+      {loading ? (
+        <Icon
+          icon="svg-spinners:3-dots-scale-middle"
+          style={{ fontSize: '24px' }}
+        />
+      ) : (
+        restProps.children
+      )}
     </StyledButton>
   );
 };

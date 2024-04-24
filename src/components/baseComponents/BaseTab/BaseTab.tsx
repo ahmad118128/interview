@@ -1,29 +1,9 @@
 'use client';
 import { useState, SyntheticEvent } from 'react';
 import { Tab, Tabs } from '@mui/material';
-import { Box } from '@mui/system';
 
-import { TabDataItemType, TabPanelProps, TabProps } from './type';
-
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && children && (
-        <Box width={1} height={1}>
-          {children}
-        </Box>
-      )}
-    </div>
-  );
-}
+import { TabDataItemType, TabProps } from './type';
+import TabPanel from './TabPanel';
 
 export const BaseTab = (props: TabProps) => {
   const { data, activeid, type, sx, tabBtnSx, className } = props;

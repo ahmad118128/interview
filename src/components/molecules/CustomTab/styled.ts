@@ -40,22 +40,20 @@ export const CustomTab = styled(BaseTab)`
   &.buttonTab {
     margin-bottom: 2.563rem;
     display: flex;
-    justify-content: cent er;
     align-items: center;
     .MuiTab-root {
       min-height: 0;
       min-width: 0;
-      padding: 10px 12px !important;
+      padding: 0.625rem 0.75rem;
       font-style: normal;
-      font-weight: ${({ theme }) =>
-        theme.typography.button.fontWeight} !important;
-      font-size: ${({ theme }) => theme.typography.button.fontSize} !important;
+      font-weight: ${({ theme }) => theme.typography.button.fontWeight};
+      font-size: ${({ theme }) => theme.typography.button.fontSize};
       border-radius: 0.375rem;
       border: 0.063rem solid ${({ theme }) => theme.palette.grey[300]};
       transition: all ease-in 0.2s;
       &[aria-selected='false'] {
         color: ${({ theme }) => theme.palette.primary.main};
-        background: ${({ theme }) => theme.palette.grey[50]};
+        background-color: ${({ theme }) => theme.palette.grey[50]};
       }
       &:hover {
         color: ${({ theme }) => theme.palette.primary.dark};
@@ -69,7 +67,7 @@ export const CustomTab = styled(BaseTab)`
     }
     .Mui-disabled {
       color: ${({ theme }) => theme.palette.grey[300]} !important;
-      background-color: ${({ theme }) => theme.palette.grey[200]};
+      background-color: ${({ theme }) => theme.palette.grey[200]} !important;
       border-color: ${({ theme }) => theme.palette.grey[300]} !important;
     }
     .MuiTabs-flexContainer {

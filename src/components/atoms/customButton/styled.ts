@@ -1,9 +1,4 @@
-import {
-  Button as MUIButton,
-  ButtonProps,
-  styled,
-  IconButton,
-} from '@mui/material';
+import { Button as MUIButton, ButtonProps, styled } from '@mui/material';
 
 export const StyledButton = styled(MUIButton)<ButtonProps>(({ theme }) => ({
   /* Default styles */
@@ -38,12 +33,6 @@ export const StyledButton = styled(MUIButton)<ButtonProps>(({ theme }) => ({
       border: `2px solid ${theme.palette.primary.light}`,
       color: theme.palette.primary.light,
     },
-
-    '&.Mui-disabled': {
-      border: `1px solid ${theme.palette.grey[300]}`,
-      backgroundColor: 'transparent',
-      color: theme.palette.grey[300],
-    },
   },
 
   '&.MuiButton-textPrimary': {
@@ -57,6 +46,8 @@ export const StyledButton = styled(MUIButton)<ButtonProps>(({ theme }) => ({
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.common.white,
     border: '0px',
+    width: '18.75rem',
+    height: '2.5rem',
     '&:hover': {
       backgroundColor: theme.palette.primary.light,
       color: theme.palette.common.white,
@@ -68,8 +59,9 @@ export const StyledButton = styled(MUIButton)<ButtonProps>(({ theme }) => ({
   '&.Mui-disabled': {
     backgroundColor: theme.palette.grey[200],
     color: theme.palette.grey[300],
+    border: 'none',
   },
-
+  //different size styles //
   '&.MuiButton-sizeSmall': {
     padding: '0.25rem 1rem',
     fontSize: '0.875rem',
@@ -86,62 +78,5 @@ export const StyledButton = styled(MUIButton)<ButtonProps>(({ theme }) => ({
     padding: '0.75rem 2rem',
     fontSize: '1rem',
     fontWeight: '400',
-  },
-
-  '& .MuiButton-startIcon > svg': {
-    marginLeft: '0.75rem',
-    marginRight: '0',
-    width: '1.5rem',
-    height: '1.5rem',
-  },
-
-  '& .MuiButton-endIcon > svg': {
-    marginRight: '0.75rem',
-    marginLeft: '0',
-    width: '1.5rem',
-    height: '1.5rem',
-  },
-}));
-
-export const StyledIconButton = styled(IconButton)(({ theme }) => ({
-  borderRadius: '12px',
-
-  '& > svg': {
-    fill: theme.palette.grey[300],
-  },
-
-  '&.Mui-disabled': {
-    '& > svg': {
-      fill: theme.palette.grey[600],
-      opacity: 0.5,
-    },
-  },
-
-  '&:hover': {
-    backgroundColor: theme.palette.primary.main,
-    '& > svg': {
-      fill: theme.palette.secondary.dark,
-    },
-  },
-
-  '&.active': {
-    color: theme.palette.secondary.main,
-    backgroundColor: theme.palette.primary.dark,
-    border: `1px solid ${theme.palette.secondary.main}`,
-    '& > svg': {
-      fill: theme.palette.secondary.main,
-    },
-  },
-
-  '&.MuiIconButton-sizeLarge': {
-    padding: '0.75rem',
-  },
-
-  '&.MuiIconButton-sizeMedium': {
-    padding: '0.5rem',
-  },
-
-  '&.MuiIconButton-sizeSmall': {
-    padding: '0.25rem',
   },
 }));

@@ -24,7 +24,6 @@ export default function Dashboard() {
           name="custom1"
           control={control}
           label="لیبل"
-          // type="password"
           endAdornment={<UploadFileIcon />}
         />
         <CustomInput

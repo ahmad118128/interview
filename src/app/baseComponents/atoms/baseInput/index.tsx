@@ -26,10 +26,6 @@ const allValidateType = {
   enCharacters: regexPattern.onlyEnglishNdOtherCharacters,
 };
 
-const handleValidateValue = (field: string) => {
-  return field;
-};
-
 const handleAdornment = (icon: ReactElement) => {
   return <InputAdornment position="end">{icon}</InputAdornment>;
 };
@@ -115,7 +111,7 @@ export const BaseInput = (props: BaseInputProps) => {
                 variant={variant ? variant : 'outlined'}
                 className={className}
                 label={rules?.required ? `${label} *` : label}
-                error={error?.message ? true : false}
+                error={!!error?.message}
                 type={
                   type === 'password'
                     ? statusPssIcon
@@ -126,7 +122,7 @@ export const BaseInput = (props: BaseInputProps) => {
                 onChange={(
                   e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
                 ) => onChangeHandler(e, onChange)}
-                value={handleValidateValue(value)}
+                value={value}
                 inputProps={inputBaseProps}
                 InputProps={{
                   ...inputProps,

@@ -60,7 +60,7 @@ export default function Home() {
             ),
             tabPanel: <div>test1</div>,
           },
-          { id: 1, label: 'تست2', tabPanel: <div>test2</div> },
+          { id: 1, label: 'تست2', tabPanel: <div>test2</div>, disabled: true },
           { id: 2, label: 'تست3', tabPanel: <div>test3</div> },
           { id: 3, label: 'تست4', tabPanel: <div>test4</div> },
         ]}

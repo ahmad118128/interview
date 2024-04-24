@@ -32,6 +32,8 @@ export const StyledButton = styled(MUIButton)<ButtonProps>(({ theme }) => ({
     '&:hover, &:focus': {
       border: `2px solid ${theme.palette.primary.light}`,
       color: theme.palette.primary.light,
+      boxShadow: 'none',
+      scale: 'none',
     },
   },
 
@@ -56,7 +58,7 @@ export const StyledButton = styled(MUIButton)<ButtonProps>(({ theme }) => ({
   },
 
   /* Common disabled styles */
-  '&.Mui-disabled': {
+  '&.Mui-disabled:not(:has(svg))': {
     backgroundColor: theme.palette.grey[200],
     color: theme.palette.grey[300],
     border: 'none',

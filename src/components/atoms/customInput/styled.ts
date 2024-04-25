@@ -87,5 +87,5 @@ export const StyledErrorMessage = styled(Typography)`
   margin-right: 0.5rem;
   text-align: right;
   font-size: 0.5rem;
-  fontfamily: 'iran-yekan';
+  fontfamily: 'iranYekan';
 `;

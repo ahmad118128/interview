@@ -1,26 +1,19 @@
 'use client';
 import {
-  cloneElement,
   useState,
   ReactElement,
   Dispatch,
   SetStateAction,
   ChangeEvent,
 } from 'react';
-import { InputAdornment, TextField, Typography } from '@mui/material';
-
+import { Grid, InputAdornment, TextField } from '@mui/material';
 import { Controller } from 'react-hook-form';
 import { BaseInputProps, ValidateType } from './type';
-// import { StyledErrorMessage, StyledTextFieldRtl } from './styled';
 import regexPattern from '@/helper/regexPattern';
-import { generalStr } from '@/strings';
 import VisibilityIcon from '@/components/atoms/SvgIcons/VisibilityIcon';
 import VisibilityOffIcon from '@/components/atoms/SvgIcons/VisibilityOffIcon';
 import UploadFileIcon from '@/components/atoms/SvgIcons/UploadFileIcon';
-import {
-  convertToCardNumber,
-  convertToPrice,
-} from '@/components/atoms/customInput/utils';
+import { StyledErrorMessage } from '@/components/atoms/customInput/styled';
 
 const allValidateType = {
   en: regexPattern.englishLetter,
@@ -33,19 +26,8 @@ const allValidateType = {
   enCharacters: regexPattern.onlyEnglishNdOtherCharacters,
 };
 
-const handleValidateValue = (field: string, validateType?: ValidateType) => {
-  if (validateType === 'cardNumber') {
-    return convertToCardNumber(field || '');
-  }
-  if (validateType === 'money') {
-    return convertToPrice(field);
-  }
-  return field;
-};
-
-const handleAdornment = (icon: ReactElement, position: 'start' | 'end') => {
-  // const margin = position === 'start' ? { ml: '8px' } : { mr: '8px' };
-  return <InputAdornment position={position}>{icon}</InputAdornment>;
+const handleAdornment = (icon: ReactElement) => {
+  return <InputAdornment position="end">{icon}</InputAdornment>;
 };
 
 const handlePasswordAdornment = (
@@ -57,7 +39,6 @@ const handlePasswordAdornment = (
       onClick={() => setState(!state)}
       position="start"
       className="pointer"
-      // sx={{ ml: '8px' }}
     >
       {state ? <VisibilityIcon /> : <VisibilityOffIcon />}
     </InputAdornment>
@@ -117,68 +98,49 @@ export const BaseInput = (props: BaseInputProps) => {
       defaultValue={defaultValue}
       render={({ field: { onChange, value }, fieldState: { error } }) => (
         <>
-          {!element ? (
-            <TextField
-              style={{
-                fontSize: type === 'file' && value ? '16px' : '0px',
-              }}
-              id={id}
-              variant={variant ? variant : 'outlined'}
-              // typeInput={type}
-              className={className}
-              // ltrLabel={ltrLabel}
-              label={rules?.required ? `${label} *` : label}
-              error={error?.message ? true : false}
-              type={
-                type === 'password'
-                  ? statusPssIcon
-                    ? 'password'
-                    : 'text'
-                  : type
-              }
-              onChange={(
-                e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-              ) => onChangeHandler(e, onChange)}
-              value={handleValidateValue(value, validateType)}
-              inputProps={inputBaseProps}
-              InputProps={{
-                // dir: !ltrValue ? 'auto' : ltrValue,
-                ...inputProps,
-                endAdornment:
+          <Grid container>
+            <Grid item xs={6}>
+              <TextField
+                id={id}
+                variant={variant ? variant : 'outlined'}
+                className={className}
+                label={rules?.required ? `${label} *` : label}
+                error={!!error?.message}
+                type={
                   type === 'password'
-                    ? value
-                      ? handlePasswordAdornment(
-                          statusPssIcon,
-                          setStatusPassIcon
-                        )
-                      : endAdornment && handleAdornment(endAdornment, 'end')
-                    : type === 'file' &&
-                      handleAdornment(<UploadFileIcon />, 'end'),
-              }}
-              {...rest}
-            />
-          ) : (
-            cloneElement(element, {
-              ...rest,
-              label,
-              error: error?.message ? true : false,
-              value,
-              type:
-                type === 'password'
-                  ? statusPssIcon
-                    ? 'password'
-                    : 'text'
-                  : type,
-              InputProps: {
-                endAdornment:
-                  type === 'password' && value
-                    ? handlePasswordAdornment(statusPssIcon, setStatusPassIcon)
-                    : endAdornment && endAdornment,
-                startAdornment: startAdornment && startAdornment,
-              },
-            })
-          )}
-          <Typography variant="caption">{error?.message}</Typography>
+                    ? statusPssIcon
+                      ? 'password'
+                      : 'text'
+                    : type
+                }
+                onChange={(
+                  e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+                ) => onChangeHandler(e, onChange)}
+                value={value}
+                inputProps={inputBaseProps}
+                InputProps={{
+                  ...inputProps,
+                  endAdornment:
+                    (type === 'password' &&
+                      value &&
+                      handlePasswordAdornment(
+                        statusPssIcon,
+                        setStatusPassIcon
+                      )) ||
+                    (type === 'file' && handleAdornment(<UploadFileIcon />)) ||
+                    (endAdornment && handleAdornment(endAdornment)),
+                }}
+                {...rest}
+              />
+            </Grid>
+            <Grid item xs={6}>
+              {error?.message && (
+                <StyledErrorMessage variant="caption">
+                  {error?.message}
+                </StyledErrorMessage>
+              )}
+            </Grid>
+          </Grid>
         </>
       )}
     />

@@ -13,7 +13,7 @@ export const StyledTextFieldRtl = styled(BaseInput)<StyledTextFieldRtlType>(({
   return {
     ' & input': {
       direction: (typeInput === 'password' || typeInput === 'file') && 'rtl',
-      fontSize: '14px !important',
+      fontSize: theme.typography.body1.fontSize,
       fontFamily: theme.typography.fontFamily,
       fontStyle: 'normal',
     },
@@ -41,13 +41,13 @@ export const StyledTextFieldRtl = styled(BaseInput)<StyledTextFieldRtlType>(({
 
     '& .MuiInputBase-root': {
       fontFamily: theme.typography.fontFamily,
-      fontSize: '14px',
+      fontSize: theme.typography.body1.fontSize,
       fontWeight: 'regular',
       width: '8.75rem',
-      height: '48px',
+      height: '3rem',
       backgroundColor: theme.palette.grey[100],
-      borderTopLeftRadius: '7px',
-      borderTopRightRadius: '7px',
+      borderTopLeftRadius: '0.438rem',
+      borderTopRightRadius: '0.438rem',
       '&:after': {
         borderColor: theme.palette.primary.light,
       },
@@ -74,7 +74,9 @@ export const StyledTextFieldRtl = styled(BaseInput)<StyledTextFieldRtlType>(({
         display: 'none',
       },
       '& input[type=file]': {
-        fontSize: value ? '14px !important' : '0px !important',
+        fontSize: value
+          ? `${theme.typography.body1.fontSize} !important`
+          : '0px !important',
       },
     },
   };
@@ -87,5 +89,5 @@ export const StyledErrorMessage = styled(Typography)`
   margin-right: 0.5rem;
   text-align: right;
   font-size: 0.5rem;
-  fontfamily: 'iran-yekan';
+  fontfamily: 'iranYekan';
 `;

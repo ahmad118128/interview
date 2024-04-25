@@ -74,9 +74,7 @@ export const StyledTextFieldRtl = styled(BaseInput)<StyledTextFieldRtlType>(({
         display: 'none',
       },
       '& input[type=file]': {
-        fontSize: value
-          ? `${theme.typography.body1.fontSize} !important`
-          : '0px !important',
+        fontSize: value ? '14px !important' : '0px !important',
       },
     },
   };
@@ -89,5 +87,5 @@ export const StyledErrorMessage = styled(Typography)`
   margin-right: 0.5rem;
   text-align: right;
   font-size: 0.5rem;
-  fontfamily: 'iranYekan';
+  fontfamily: 'iran-yekan';
 `;

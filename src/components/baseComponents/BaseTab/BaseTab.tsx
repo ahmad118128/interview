@@ -1,9 +1,10 @@
 'use client';
 import { useState, SyntheticEvent } from 'react';
-import { Tab, Tabs } from '@mui/material';
+import { Box, Tab, Tabs } from '@mui/material';
 
 import { TabDataItemType, TabProps } from './type';
 import TabPanel from './TabPanel';
+import { Icon } from '@iconify/react/dist/iconify.js';
 
 export const BaseTab = (props: TabProps) => {
   const { data, activeid, type, sx, tabBtnSx, className } = props;
@@ -27,7 +28,16 @@ export const BaseTab = (props: TabProps) => {
           return (
             <Tab
               key={item.id}
-              label={item.label}
+              label={
+                item.icon ? (
+                  <Box>
+                    <Icon icon={item.icon} />
+                    {item.label}
+                  </Box>
+                ) : (
+                  item.label
+                )
+              }
               disabled={item.disabled}
               disableRipple={item.disableTabRipple}
               {...props}

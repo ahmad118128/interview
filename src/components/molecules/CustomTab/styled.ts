@@ -77,4 +77,13 @@ export const CustomTab = styled(BaseTab)`
       display: none;
     }
   }
+  &.normalTab,
+  &.buttonTab {
+    .MuiBox-root {
+      display: flex;
+      gap: 0.438rem;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 `;

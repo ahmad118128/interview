@@ -19,6 +19,7 @@ export type TabPanelProps = {
 export type TabDataItemType = {
   id: number;
   label: ReactNode;
+  icon?: string;
   disableTabRipple?: boolean;
   tabPanel?: ReactNode;
   disabled?: boolean;

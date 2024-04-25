@@ -2,7 +2,6 @@
 
 import { CustomTab } from '@/components/molecules/CustomTab/styled';
 import { Typography } from '@mui/material';
-import { Icon } from '@iconify/react';
 
 export default function Home() {
   return (
@@ -20,23 +19,17 @@ export default function Home() {
         data={[
           {
             id: 0,
-            label: (
-              <div
-                style={{
-                  display: 'flex',
-                  gap: '7px',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <Icon icon="ion:filter" />
-                تست1
-              </div>
-            ),
+            label: <div>تست1</div>,
+            icon: 'gravity-ui:magnifier',
             tabPanel: <div>test1</div>,
           },
           { id: 1, label: 'تست2', tabPanel: <div>test2</div>, disabled: true },
-          { id: 2, label: 'تست3', tabPanel: <div>test3</div> },
+          {
+            id: 2,
+            label: 'تست3',
+            tabPanel: <div>test3</div>,
+            icon: 'ion:filter',
+          },
           { id: 3, label: 'تست4', tabPanel: <div>test4</div> },
         ]}
       />
@@ -45,19 +38,8 @@ export default function Home() {
         data={[
           {
             id: 0,
-            label: (
-              <div
-                style={{
-                  display: 'flex',
-                  gap: '7px',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <Icon icon="ion:filter" />
-                تست1
-              </div>
-            ),
+            label: <div>تست1</div>,
+            icon: 'ion:filter',
             tabPanel: <div>test1</div>,
           },
           { id: 1, label: 'تست2', tabPanel: <div>test2</div>, disabled: true },

@@ -1,6 +1,6 @@
 'use client';
 import { FieldValues, useForm } from 'react-hook-form';
-import { CustomInput } from '@/components/atoms/customInput';
+import { CustomInput } from '@/components/atoms/controlledCustomInput';
 import UploadFileIcon from '@/components/atoms/SvgIcons/UploadFileIcon';
 
 export default function Dashboard() {
@@ -20,12 +20,7 @@ export default function Dashboard() {
           width: 'auto',
         }}
       >
-        <CustomInput
-          name="custom1"
-          control={control}
-          label="لیبل"
-          endAdornment={<UploadFileIcon />}
-        />
+        <CustomInput name="custom1" control={control} label="لیبل" />
         <CustomInput
           name="custom2"
           control={control}
@@ -46,9 +41,6 @@ export default function Dashboard() {
           type="text"
           setError={setError}
           validateType="num"
-          inputBaseProps={{
-            maxLength: 10,
-          }}
         />
       </form>
     </>

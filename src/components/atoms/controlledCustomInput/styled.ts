@@ -4,7 +4,7 @@ import {
   StyledTextFieldRtlType,
 } from '@/app/baseComponents/atoms/baseInput';
 
-export const StyledTextFieldRtl = styled(BaseInput)<StyledTextFieldRtlType>(({
+export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
   ltrLabel,
   typeInput,
   theme,

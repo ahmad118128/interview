@@ -1,15 +1,6 @@
-import {
-  InputProps,
-  InputBaseComponentProps,
-  TextFieldVariants,
-} from '@mui/material';
+import { TextFieldProps } from '@mui/material/TextField';
 import { HTMLInputTypeAttribute, ReactElement, ChangeEvent } from 'react';
-import {
-  FieldValues,
-  UseControllerProps,
-  UseFormSetError,
-  ValidationValueMessage,
-} from 'react-hook-form';
+import { FieldValues, UseFormSetError } from 'react-hook-form';
 
 export type StyledTextFieldRtlType = {
   ltrValue?: boolean;
@@ -25,25 +16,7 @@ export type ValidateType =
   | 'cardNumber'
   | 'fa_spc'
   | 'enCharacters';
-export interface BaseInputProps extends UseControllerProps {
-  element?: ReactElement;
-  type?: HTMLInputTypeAttribute;
-  endAdornment?: ReactElement;
-  startAdornment?: ReactElement;
-  ltrValue?: 'ltr' | 'rtl';
-  ltrLabel?: boolean;
-  label?: string;
+export type BaseInputProps = TextFieldProps & {
   validateType?: ValidateType;
-  inputBaseProps?: InputBaseComponentProps;
-  inputProps?: InputProps;
-  disabled?: boolean;
-  fullWidth?: boolean;
-  variant?: TextFieldVariants;
-  id?: string;
-  className?: string;
-  size?: 'medium' | 'small';
   setError?: UseFormSetError<FieldValues>;
-  changeMiddleWare?: (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => ChangeEvent<HTMLInputElement | HTMLTextAreaElement>;
-}
+};

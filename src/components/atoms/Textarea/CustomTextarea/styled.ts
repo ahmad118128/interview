@@ -1,6 +1,6 @@
 import { styled } from '@mui/material';
 import { TextareaFormControlProps } from './type';
-import { BasedTextarea } from '@/components/BasedComponents/atom/BasedTextarea';
+import { BasedTextarea } from '../BasedTextarea';
 
 export const StyledTextArea = styled(BasedTextarea)<TextareaFormControlProps>`
   ${({ theme, ltr, disabled, readOnly }) => {

@@ -1,7 +1,13 @@
+'use client';
+
 import { CustomFabButton } from '@/components/atoms/FabButton/CustomFabButton/CustomFabButton';
 import { Typography } from '@mui/material';
 
 export default function Home() {
+
+  function handleClick () {
+    console.log('e')
+  }
   return (
     <>
       <Typography variant="h5">h5</Typography>
@@ -16,13 +22,17 @@ export default function Home() {
       <div
         style={{
           display: 'flex',
+          flexDirection : 'column',
           alignItems: 'center',
           justifyContent: 'center',
+          gap: '2rem'
         }}
       >
-        <CustomFabButton  size="large" icon  >
-          {/* <Typography>hi button</Typography> */}
-        </CustomFabButton>
+        <CustomFabButton  size="large" icon onClick={handleClick}   />
+        <CustomFabButton  size="medium" icon onClick={handleClick}   />
+        <CustomFabButton  size="small" icon onClick={handleClick}   />
+        <CustomFabButton  disabled icon onClick={handleClick}   />
+        
       </div>
     </>
   );

@@ -1,9 +1,10 @@
-import { Fab } from '@mui/material';
+import { Fab, FabProps } from '@mui/material';
+import { IBasedFabButton } from './type';
 
-export const BasedFabButton = (props: any) => {
-  const { disabled, variant, size, children,  } = props;
+export const BasedFabButton = (props: IBasedFabButton) => {
+  const { disabled, variant, size, children,  className, onClick  } = props;
   return (
-    <Fab disabled={disabled} variant={variant} size={size} {...props}>
+    <Fab disabled={disabled} variant={variant} size={size}  className={className} onClick={onClick}>
       {children}
     </Fab>
   );

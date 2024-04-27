@@ -3,17 +3,15 @@ import { IStyledCheckbox } from '../CustomCheckbox/type';
 
 export const StyledCheckbox = styled(Checkbox)<IStyledCheckbox>`
   .MuiSvgIcon-root {
-    // normal
     fill: ${({ theme, error, disabled }) =>
       disabled
         ? theme.palette.grey[200]
         : error
-          ? 'red'
+          ? theme.palette.error.main
           : theme.palette.primary.main};
   }
 
   &.Mui-checked {
-    // checked
     .MuiSvgIcon-root {
       fill: ${({ theme, disabled }) =>
         disabled
@@ -23,11 +21,10 @@ export const StyledCheckbox = styled(Checkbox)<IStyledCheckbox>`
   }
 
   :hover {
-    // hover
     background-color: transparent !important;
     .MuiSvgIcon-root {
       fill: ${({ theme, error }) =>
-        error ? 'red' : theme.palette.primary.light};
+        error ? theme.palette.error.main : theme.palette.primary.light};
     }
   }
 `;

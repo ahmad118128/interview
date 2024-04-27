@@ -3,7 +3,6 @@ import { IStyledCheckbox } from './type';
 
 export const StyledCheckbox = styled(Checkbox)<IStyledCheckbox>`
   .MuiSvgIcon-root {
-    // normal
     fill: ${({ theme, error, disabled }) =>
       disabled
         ? theme.palette.grey[200]
@@ -13,7 +12,6 @@ export const StyledCheckbox = styled(Checkbox)<IStyledCheckbox>`
   }
 
   &.Mui-checked {
-    // checked
     .MuiSvgIcon-root {
       fill: ${({ theme, disabled }) =>
         disabled
@@ -23,7 +21,6 @@ export const StyledCheckbox = styled(Checkbox)<IStyledCheckbox>`
   }
 
   :hover {
-    // hover
     background-color: transparent !important;
     .MuiSvgIcon-root {
       fill: ${({ theme, error }) =>

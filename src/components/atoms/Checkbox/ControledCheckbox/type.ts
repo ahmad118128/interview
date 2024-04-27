@@ -1,4 +1,5 @@
-import { Control } from 'react-hook-form';
+import { ChangeEvent } from 'react';
+import { Control, FieldValues } from 'react-hook-form';
 
 export interface IStyledCheckbox {
   error?: boolean;
@@ -10,6 +11,6 @@ export interface IControledCheckboxProps {
   disabled?: boolean;
   checked?: boolean;
   error?: boolean;
-  control: Control<any>;
-  onChange?: (event?: any) => void;
+  control: Control<FieldValues>;
+  onChange?: (event?: ChangeEvent<HTMLInputElement>) => void;
 }

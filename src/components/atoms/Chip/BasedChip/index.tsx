@@ -1,12 +1,10 @@
-/* eslint-disable react/jsx-no-useless-fragment */
 import { MouseEvent } from 'react';
 import { Chip, ChipPropsSizeOverrides } from '@mui/material';
-import { Icon } from '@iconify/react';
 
 import { IBasedChip } from './type';
 
 export const BasedChip = (props: IBasedChip) => {
-  const { label, typeChip, disabled, deleteIcon, icon, onDelete, className } =
+  const { label, typeChip, disabled, deleteIcon, icon, onDelete, className,...rest } =
     props;
 
   const handleClick = (e: MouseEvent<HTMLDivElement>) => e.stopPropagation();
@@ -16,7 +14,6 @@ export const BasedChip = (props: IBasedChip) => {
     onDelete && onDelete();
   };
 
-  // const deleteIcon = <Icon icon="basil:cross-outline" />;
 
   return (
     <Chip
@@ -27,6 +24,7 @@ export const BasedChip = (props: IBasedChip) => {
       onClick={handleClick}
       onDelete={handleDelete}
       icon={icon}
+      {...rest}
     />
   );
 };

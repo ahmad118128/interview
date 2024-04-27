@@ -1,4 +1,4 @@
-import { CustomFabButton } from '@/components/atoms/FabButton/FabButton/CustomFabButton';
+import { CustomFabButton } from '@/components/atoms/FabButton/CustomFabButton/CustomFabButton';
 import { Typography } from '@mui/material';
 
 export default function Home() {
@@ -20,7 +20,9 @@ export default function Home() {
           justifyContent: 'center',
         }}
       >
-        <CustomFabButton size="medium">asdasdasdasdasdad</CustomFabButton>
+        <CustomFabButton  size="large" icon  >
+          {/* <Typography>hi button</Typography> */}
+        </CustomFabButton>
       </div>
     </>
   );

@@ -1,9 +1,9 @@
 import { Fab } from '@mui/material';
 
 export const BasedFabButton = (props: any) => {
-  const { disabled, variant, size, children } = props;
+  const { disabled, variant, size, children,  } = props;
   return (
-    <Fab disabled={disabled} variant={variant} size={size}>
+    <Fab disabled={disabled} variant={variant} size={size} {...props}>
       {children}
     </Fab>
   );

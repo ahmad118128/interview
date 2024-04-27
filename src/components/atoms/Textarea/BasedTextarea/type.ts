@@ -10,9 +10,7 @@ export interface TextAreaProps
   placeholder: string;
   label?: string;
   readOnly?: boolean;
-  disabled?: boolean;
   error?: boolean;
-  ali?: string;
 }
 
 export interface IStyledBox {

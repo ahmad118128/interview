@@ -15,7 +15,6 @@ export const CustomTextArea = (props: TextAreaProps) => {
     placeholder,
     defaultValue,
     name = '',
-    ...rest
   } = props;
 
   return (
@@ -29,7 +28,6 @@ export const CustomTextArea = (props: TextAreaProps) => {
       placeholder={placeholder}
       defaultValue={defaultValue}
       name={name}
-      {...rest}
     />
   );
 };

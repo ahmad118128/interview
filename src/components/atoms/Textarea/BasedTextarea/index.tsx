@@ -6,15 +6,12 @@ import { StyledBox } from './styled';
 
 export const BasedTextarea = (props: TextAreaProps) => {
   const {
-    control,
     ltr,
-    disabled,
-    readOnly,
     rules,
     label,
     placeholder,
     defaultValue,
-    error,
+    control,
     name = '',
     className,
     ...rest
@@ -26,7 +23,6 @@ export const BasedTextarea = (props: TextAreaProps) => {
       rules={rules}
       control={control}
       render={({ field, fieldState: { error } }) => {
-        console.log(error);
 
         return (
           <StyledBox className={className} error={!!error}>
@@ -36,9 +32,7 @@ export const BasedTextarea = (props: TextAreaProps) => {
             <Box display="flex">
               <TextareaAutosize
                 {...field}
-                minRows={3}
-                disabled={disabled}
-                readOnly={readOnly}
+                minRows={1}
                 placeholder={placeholder}
                 dir="auto"
                 {...rest}

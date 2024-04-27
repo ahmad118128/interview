@@ -1,3 +1,5 @@
+'use client';
+
 import { styled } from '@mui/material';
 import { TextareaFormControlProps } from './type';
 import { BasedTextarea } from '../BasedTextarea';
@@ -49,10 +51,7 @@ export const StyledTextArea = styled(BasedTextarea)<TextareaFormControlProps>`
         }
       }
 
-      // & textarea:hover {
-      //   border: ${!readOnly && `0.0625rem solid ${hoverColor}`} ;
-      // }
-
+     
       &:disabled,
       textarea:hover:disabled {
         border: 0.0625rem solid ${disableColor} !important;

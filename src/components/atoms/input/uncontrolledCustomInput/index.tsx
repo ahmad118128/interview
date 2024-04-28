@@ -1,5 +1,5 @@
-import { BaseInputProps } from '@/app/baseComponents/atoms/baseInput';
 import { StyledTextField } from '../controlledCustomInput/styled';
+import { BaseInputProps } from '@/components/baseComponents/baseInput';
 
 export function UnControlledCustomInput(props: BaseInputProps) {
   const {

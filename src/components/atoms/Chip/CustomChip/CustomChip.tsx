@@ -23,4 +23,3 @@ export const CustomChip = (props: ICustomChip) => {
 
 
 
-{/* <Icon icon="iwwa:delete" width="12" height="12" /> */}

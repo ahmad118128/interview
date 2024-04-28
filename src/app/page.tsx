@@ -2,6 +2,7 @@
 
 import { Typography } from '@mui/material';
 import { CustomFabButton } from '@/components/atoms/FabButton/CustomFabButton/CustomFabButton';
+import { EFabMode } from '@/components/atoms/FabButton/BasedComponent/type';
 
 export default function Home() {
   function handleClick() {
@@ -27,10 +28,18 @@ export default function Home() {
           gap: '2rem',
         }}
       >
-        <CustomFabButton size="large" icon onClick={handleClick} />
-        <CustomFabButton size="medium" icon onClick={handleClick} />
-        <CustomFabButton size="small" icon onClick={handleClick} />
-        <CustomFabButton disabled icon onClick={handleClick} />
+        <CustomFabButton
+          size="large"
+          icon
+          onClick={handleClick}
+          type={EFabMode.SPEED_DIAL}
+        />
+        <CustomFabButton
+          size="large"
+          icon
+          onClick={handleClick}
+          type={EFabMode.FAB}
+        />
       </div>
     </>
   );

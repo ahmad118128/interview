@@ -1,6 +1,7 @@
 'use client';
 import CustomSearchBar from '@/components/atoms/CustomSearchBar';
 import { Box, Typography } from '@mui/material';
+import { CustomTooltip } from '@/components/atoms/CustomTooltip';
 
 export default function Home() {
   return (
@@ -19,6 +20,9 @@ export default function Home() {
           placeholder="جست و جو کنید"
         />
       </Box>
+      <CustomTooltip arrow title="title" placement="bottom-end" open>
+        <div>BaseTooltip</div>
+      </CustomTooltip>
     </>
   );
 }

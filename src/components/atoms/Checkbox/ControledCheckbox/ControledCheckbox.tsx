@@ -11,6 +11,7 @@ export const ControledCheckbox = (props: IControledCheckboxProps) => {
       control={control}
       render={({ field }) => (
         <StyledCheckbox
+        {...field}
           disabled={disabled}
           checked={checked}
           error={error}

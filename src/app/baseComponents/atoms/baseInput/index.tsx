@@ -37,10 +37,10 @@ export const BaseInput = (props: BaseInputProps) => {
 
   return (
     <TextField
+      {...rest}
       onChange={(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
         onChangeHandler(e, props.onChange)
       }
-      {...rest}
     />
   );
 };

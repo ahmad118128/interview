@@ -1,19 +1,19 @@
 @font-face {
   font-family: 'iranYekan';
   font-weight: bold;
-  src: url('/fonts/IranYekanWebBold.woff2') format('woff');
+  src: url('/fonts/IRANYekanWebBold.woff2') format('woff');
 }
 
 @font-face {
   font-family: 'iranYekan';
   font-weight: normal;
-  src: url('/fonts/IranYekanWebRegular.woff2') format('woff');
+  src: url('/fonts/IRANYekanWebRegular.woff2') format('woff');
 }
 
 @font-face {
   font-family: 'iranYekan';
-  font-weight: light;
-  src: url('/fonts/IranYekanWebLight.woff2') format('woff');
+  font-weight: lighter;
+  src: url('/fonts/IRANYekanWebLight.woff2') format('woff');
 }
 ::-webkit-scrollbar {
   width: 0.375rem;

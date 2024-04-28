@@ -1,7 +1,8 @@
 'use client';
-
+import CustomSearchBar from '@/components/atoms/CustomSearchBar';
+import { Box, Typography } from '@mui/material';
+import { CustomTooltip } from '@/components/atoms/CustomTooltip';
 import { CustomTab } from '@/components/molecules/CustomTab/styled';
-import { Typography } from '@mui/material';
 
 export default function Home() {
   return (
@@ -47,6 +48,15 @@ export default function Home() {
           { id: 3, label: 'تست4', tabPanel: <div>test4</div> },
         ]}
       />
+      <Box>
+        <CustomSearchBar
+          searchHandler={(e) => console.log(e)}
+          placeholder="جست و جو کنید"
+        />
+      </Box>
+      <CustomTooltip arrow title="title" placement="bottom-end" open>
+        <div>BaseTooltip</div>
+      </CustomTooltip>
     </>
   );
 }

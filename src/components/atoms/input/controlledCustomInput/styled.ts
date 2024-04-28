@@ -42,7 +42,7 @@ export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
     '& .MuiInputBase-root': {
       fontFamily: theme.typography.fontFamily,
       fontSize: theme.typography.body1.fontSize,
-      fontWeight: 'regular',
+      fontWeight: 'normal',
       width: '8.75rem',
       height: '3rem',
       backgroundColor: theme.palette.grey[100],

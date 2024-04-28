@@ -1,3 +1,4 @@
+import { CustomCheckbox } from '@/components/atoms/Checkbox';
 import { Typography } from '@mui/material';
 
 export default function Home() {
@@ -11,6 +12,20 @@ export default function Home() {
       <Typography variant="subtitle1">subtitle1</Typography>
       <Typography variant="subtitle2">subtitle2</Typography>
       <Typography variant="button">button</Typography>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '15px',
+        }}
+      >
+        <CustomCheckbox disabled checked />
+        <CustomCheckbox error />
+        <CustomCheckbox checked />
+        <CustomCheckbox />
+      </div>
+
     </>
   );
 }

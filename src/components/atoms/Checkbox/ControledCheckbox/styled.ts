@@ -1,3 +1,4 @@
+'use client';
 import { Checkbox, styled } from '@mui/material';
 import { IStyledCheckbox } from './type';
 

@@ -36,7 +36,7 @@ export const StyledTextArea = styled(BasedTextarea)<TextareaFormControlProps>`
         }
 
         &:focus::-webkit-input-placeholder {
-          color: #000;
+          // color: #000;
         }
 
         &::-webkit-scrollbar-thumb {
@@ -48,6 +48,7 @@ export const StyledTextArea = styled(BasedTextarea)<TextareaFormControlProps>`
           border: 0.0625rem solid ${hoverColor} ;
           color: ${!readOnly && '#000 !important'};
           outline-style: none;
+          font-weight : 400;
         }
       }
 

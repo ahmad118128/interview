@@ -16,6 +16,10 @@ const costumeTheme = createTheme({
       light: '#7EBC59',
       dark: '#5B913B',
     },
+    common: {
+      white: '#FFFFFF',
+      black: '#000000',
+    },
     grey: {
       50: '#FAFAFA',
       100: '#F5F5F5',

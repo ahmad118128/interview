@@ -4,15 +4,13 @@ import { styled } from '@mui/material';
 import { BasedFabButton } from '../BasedComponent';
 
 export const StyledFab = styled(BasedFabButton)`
-display: flex;
-gap: 1rem;
-width: 56px;
-height: 56px;
+padding: 13px;
+box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
  
  
   &.MuiFab-root {
     background-color : ${({ disabled, theme }) =>
-    theme.palette.primary.light};
+    disabled ? theme.palette.grey[300] : theme.palette.primary.light};
   }
 
   &.MuiFab-root svg {

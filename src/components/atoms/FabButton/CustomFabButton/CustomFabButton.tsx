@@ -1,15 +1,17 @@
 "use client"
 import { StyledFab } from './styled';
 import { Icon } from '@iconify/react';
+import { ICustomFab } from './type';
 
 
-export const CustomFabButton = (props: any) => {
+export const CustomFabButton = (props: ICustomFab) => {
+  const {onClick,size,variant,disabled,className,icon} = props
 
-  const addIcon = props.icon? <Icon icon="fluent:add-24-filled"  style={{color: 'white'}} /> : <></>
+  const addIcon = icon? <Icon icon="fluent:add-24-filled"  style={{color: 'white'}} /> : <></>
 
   return (
-    <StyledFab  size={props.size} variant={props.variant} disabled = {props.disabled} {...props} >
-      {props.children}{addIcon}
+    <StyledFab onClick={onClick}  size={size} variant={variant} disabled = {disabled}  className={className!} >
+      {addIcon}
     </StyledFab>
   );
 };

@@ -1,18 +1,20 @@
 import { Box, styled, TextField, Typography } from '@mui/material';
-import { StyledTextFieldRtlType } from './type';
+import {
+  BaseInput,
+  StyledTextFieldRtlType,
+} from '@/app/baseComponents/atoms/baseInput';
 
-export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
+export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
   ltrLabel,
   typeInput,
   theme,
+  value,
 }) => {
-  console.log({ theme });
-
   return {
     ' & input': {
       direction: (typeInput === 'password' || typeInput === 'file') && 'rtl',
-      fontSize: '14px !important',
-      fontFamily: 'iran-yekan',
+      fontSize: theme.typography.body1.fontSize,
+      fontFamily: theme.typography.fontFamily,
       fontStyle: 'normal',
     },
 
@@ -24,29 +26,34 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
       direction: ltrLabel ? 'ltr' : 'rtl',
       right: ltrLabel ? 'inherit' : '1rem',
       left: ltrLabel ? '0.5rem' : 'inherit',
-      fontFamily: !ltrLabel && 'iran-yekan',
+      fontFamily: theme.typography.fontFamily,
       fontWeight: '400 !important',
       fontSize: '0.875rem !important',
       transformOrigin: ltrLabel ? 'top left' : 'top right',
-      color: 'black',
+      color: theme.palette.primary.main,
       '&.Mui-focused': {
         color: theme.palette.primary.light,
+      },
+      '&.Mui-disabled': {
+        color: theme.palette.grey[300],
       },
     },
 
     '& .MuiInputBase-root': {
-      color: '#000',
-      fontFamily: 'Iran-yekan',
-      fontSize: '14px',
-      fontWeight: 'regular',
-      backgroundColor: '#f4f4f4',
-      borderTopLeftRadius: '7px',
-      borderTopRightRadius: '7px',
+      fontFamily: theme.typography.fontFamily,
+      fontSize: theme.typography.body1.fontSize,
+      fontWeight: 'normal',
+      width: '8.75rem',
+      height: '3rem',
+      backgroundColor: theme.palette.grey[100],
+      borderTopLeftRadius: '0.438rem',
+      borderTopRightRadius: '0.438rem',
       '&:after': {
         borderColor: theme.palette.primary.light,
       },
 
       ':hover:not(.Mui-disabled)': {
+        backgroundColor: theme.palette.grey[100],
         '&:before': {
           borderColor: theme.palette.primary.light,
         },
@@ -67,7 +74,7 @@ export const StyledTextFieldRtl = styled(TextField)<StyledTextFieldRtlType>(({
         display: 'none',
       },
       '& input[type=file]': {
-        color: 'rgba(0, 0, 0, 0)',
+        fontSize: value ? '14px !important' : '0px !important',
       },
     },
   };
@@ -79,4 +86,6 @@ export const StyledErrorMessage = styled(Typography)`
   margin-top: 0.5rem;
   margin-right: 0.5rem;
   text-align: right;
+  font-size: 0.5rem;
+  fontfamily: 'iranYekan';
 `;

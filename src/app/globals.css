@@ -1,17 +1,31 @@
 @font-face {
-  font-family: 'iranSans';
+  font-family: 'iranYekan';
   font-weight: bold;
-  src: url('/fonts/IRANSansX-Bold.woff2') format('woff');
+  src: url('/fonts/IRANYekanWebBold.woff2') format('woff');
 }
 
 @font-face {
-  font-family: 'iranSans';
+  font-family: 'iranYekan';
   font-weight: normal;
-  src: url('/fonts/IRANSansX-Regular.woff2') format('woff');
+  src: url('/fonts/IRANYekanWebRegular.woff2') format('woff');
 }
 
 @font-face {
-  font-family: 'iranSans';
+  font-family: 'iranYekan';
   font-weight: lighter;
-  src: url('/fonts/IRANSansXFaNum-Light.woff2') format('woff');
+  src: url('/fonts/IRANYekanWebLight.woff2') format('woff');
+}
+::-webkit-scrollbar {
+  width: 0.375rem;
+  height: 0.375rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #7ebc59;
+  background-clip: padding-box;
+  border-radius: 0.25rem;
 }

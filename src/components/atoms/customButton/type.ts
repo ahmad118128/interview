@@ -15,7 +15,3 @@ export type ButtonProps = (
     }
 ) &
   MUIButtonProps;
-export interface IconButtonProps extends Omit<MUIIconButtonProps, 'children'> {
-  title?: string;
-  iconName: keyof typeof MUIcon;
-}

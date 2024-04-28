@@ -1,30 +1,50 @@
 'use client';
-// import DropDownInput from '@/components/atoms/DropDownInput';
-import { TextField } from '@/components/atoms/TextField';
-import InputFileUpload from '@/components/atoms/UploadInput';
 import { FieldValues, useForm } from 'react-hook-form';
+import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
+import { UnControlledCustomInput } from '@/components/atoms/input/uncontrolledCustomInput';
 
 export default function Dashboard() {
-  const { control } = useForm<FieldValues>();
+  const { control, setError, handleSubmit } = useForm<FieldValues>({
+    mode: 'onChange',
+  });
+  const submitHandler = (formData: FieldValues) => console.log(formData);
   return (
     <>
-      <p>main page</p>
-      <form>
-        <TextField
-          name="firstName"
+      <p>test components page</p>
+      <form
+        onSubmit={handleSubmit(submitHandler)}
+        style={{
+          padding: '10px 5px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          width: 'auto',
+        }}
+      >
+        <CustomInput name="custom1" control={control} label="لیبل" />
+        <CustomInput
+          name="custom2"
+          control={control}
+          label="لیبل"
           type="text"
-          validateType="en"
-          control={control}
-          label="اسم"
         />
-        <TextField
-          name="firstName"
-          type="password"
-          validateType="en"
+        <CustomInput
+          name="custom"
           control={control}
-          label="رمز"
+          label="لیبل"
+          type="text"
+          disabled
         />
-        <InputFileUpload />
+        <CustomInput
+          name="custom3"
+          control={control}
+          label="لیبل"
+          type="text"
+          setError={setError}
+          validateType="num"
+        />
+        <UnControlledCustomInput
+          onChange={(data: any) => console.log(data.target.value)}
+        />
       </form>
     </>
   );

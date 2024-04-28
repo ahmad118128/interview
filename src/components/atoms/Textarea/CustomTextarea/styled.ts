@@ -11,6 +11,7 @@ export const StyledTextArea = styled(BasedTextarea)<TextareaFormControlProps>`
     const hoverColor = theme.palette.primary.light;
     const activeColor = theme.palette.grey[100];
     const placeholderColor = theme.palette.grey[300];
+    const normalColor = theme.palette.common.black
 
     return `
       & textarea {
@@ -19,8 +20,8 @@ export const StyledTextArea = styled(BasedTextarea)<TextareaFormControlProps>`
         border-radius: 0.375rem;
         background: ${activeColor};
         pointer-events: ${readOnly ? 'none' : 'auto'};
-        border: ${`0.0625rem ${!readOnly ? 'solid' : 'dashed'} ${disabled ? disableColor : '#000'}`};
-        color: #000 !important;
+        border: ${`0.0625rem ${!readOnly ? 'solid' : 'dashed'} ${disabled ? disableColor : normalColor}`};
+        color: ${normalColor} !important;
         direction: ${ltr ? 'ltr' : 'rtl'};
         padding: 0.625rem;
 
@@ -35,9 +36,7 @@ export const StyledTextArea = styled(BasedTextarea)<TextareaFormControlProps>`
           color: ${placeholderColor};
         }
 
-        &:focus::-webkit-input-placeholder {
-          // color: #000;
-        }
+       
 
         &::-webkit-scrollbar-thumb {
           background: ${theme.palette.grey[400]} !important;
@@ -46,7 +45,7 @@ export const StyledTextArea = styled(BasedTextarea)<TextareaFormControlProps>`
         
         &:focus {
           border: 0.0625rem solid ${hoverColor} ;
-          color: ${!readOnly && '#000 !important'};
+          color: ${!readOnly && normalColor}!important;
           outline-style: none;
           font-weight : 400;
         }

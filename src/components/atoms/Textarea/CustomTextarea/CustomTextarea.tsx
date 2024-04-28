@@ -1,6 +1,4 @@
-import { InputLabel, Box } from '@mui/material';
-import { Controller } from 'react-hook-form';
-import TextareaAutosize from '@mui/material/TextareaAutosize';
+
 import { StyledTextArea } from './styled';
 import { TextAreaProps } from './type';
 

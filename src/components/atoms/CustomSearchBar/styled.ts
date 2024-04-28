@@ -10,7 +10,7 @@ export const StyledSearchBar = styled(BaseSearchBar)`
     font-size: ${({ theme }) => theme.typography.body1.fontSize};
     font-weight: ${({ theme }) => theme.typography.body1.fontWeight};
     line-height: ${({ theme }) => theme.typography.body1.lineHeight};
-    color: ${({ theme }) => theme.palette.grey[300]};
+    color: ${({ theme }) => theme.palette.primary.main};
     input:-webkit-autofill {
       -webkit-box-shadow: 0 0 0 30px ${({ theme }) => theme.palette.grey[50]}
         inset;
@@ -30,11 +30,16 @@ export const StyledSearchBar = styled(BaseSearchBar)`
       border: 0.0625rem solid ${({ theme }) => theme.palette.grey[300]};
       border-radius: 0.375rem;
     }
+
     :hover .MuiOutlinedInput-notchedOutline {
       border-color: ${({ theme }) => theme.palette.primary.main};
     }
     :hover svg {
       color: ${({ theme }) => theme.palette.primary.main};
+    }
+
+    & ::placeholder {
+      color: ${({ theme }) => theme.palette.grey[300]} !important;
     }
   }
   & .Mui-focused {

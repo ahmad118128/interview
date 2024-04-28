@@ -24,6 +24,14 @@ export default function Home() {
           {/* <Typography>hi button</Typography> */}
         </CustomFabButton>
       </div>
+      <Typography variant="h1">تست</Typography>
+      <Typography variant="h2">تست</Typography>
+      <Typography variant="h3">تست</Typography>
+      <Typography variant="h4">تست</Typography>
+      <Typography variant="body1">تست</Typography>
+      <Typography variant="body2">تست</Typography>
+      <Typography variant="caption">تست</Typography>
+      <Typography variant="button">تست</Typography>
     </>
   );
 }

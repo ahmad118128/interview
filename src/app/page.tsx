@@ -1,5 +1,5 @@
 'use client';
-import CustomSearchBar from '@/components/atoms/SearchBar/CustomSearchBar';
+import CustomSearchBar from '@/components/atoms/CustomSearchBar';
 import { Box, Typography } from '@mui/material';
 
 export default function Home() {
@@ -13,6 +13,12 @@ export default function Home() {
       <Typography variant="body2">تست</Typography>
       <Typography variant="caption">تست</Typography>
       <Typography variant="button">تست</Typography>
+      <Box>
+        <CustomSearchBar
+          onClick={() => console.log('first')}
+          placeholder="جست و جو کنید"
+        />
+      </Box>
     </>
   );
 }

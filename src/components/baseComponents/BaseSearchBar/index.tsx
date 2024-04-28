@@ -9,7 +9,7 @@ export const BaseSearchBar = (props: searchbarProps) => {
     id,
     name,
     placeholder,
-    onChange,
+    onClick,
     defaultValue,
     spinner,
     showSpinner,
@@ -19,13 +19,8 @@ export const BaseSearchBar = (props: searchbarProps) => {
   const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setvalue(value);
-    onChange(value);
   };
 
-  const onChangeIReset = () => {
-    setvalue('');
-    onChange('');
-  };
   const [value, setvalue] = useState(defaultValue ?? '');
   return (
     <TextField
@@ -36,21 +31,18 @@ export const BaseSearchBar = (props: searchbarProps) => {
       value={value}
       className={className}
       InputProps={{
-        endAdornment:
-          value === '' ? (
-            <Icon icon="tabler:search" width="24" height="24" />
-          ) : (
-            <>
-              {showSpinner ? (
-                spinner
-              ) : (
-                <IconButton onClick={onChangeIReset}>
-                  {showSpinner ? <></> : <></>}
-                  <Icon icon="humbleicons:times" width="24" height="24" />
-                </IconButton>
-              )}
-            </>
-          ),
+        endAdornment: (
+          <>
+            {showSpinner ? (
+              spinner
+            ) : (
+              <IconButton onClick={onClick}>
+                {showSpinner ? <></> : <></>}
+                <Icon icon="tabler:search" width="24" height="24" />
+              </IconButton>
+            )}
+          </>
+        ),
       }}
     />
   );

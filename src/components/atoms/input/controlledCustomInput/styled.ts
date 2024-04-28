@@ -2,7 +2,7 @@ import { Box, styled, TextField, Typography } from '@mui/material';
 import {
   BaseInput,
   StyledTextFieldRtlType,
-} from '@/app/baseComponents/atoms/baseInput';
+} from '@/components/baseComponents/baseInput';
 
 export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
   ltrLabel,
@@ -87,5 +87,5 @@ export const StyledErrorMessage = styled(Typography)`
   margin-right: 0.5rem;
   text-align: right;
   font-size: 0.5rem;
-  fontfamily: 'iranYekan';
+  font-family: 'iranYekan';
 `;

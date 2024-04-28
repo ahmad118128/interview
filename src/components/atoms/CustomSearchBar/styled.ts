@@ -1,9 +1,9 @@
 import { styled } from '@mui/material';
-import { BaseSearchBar } from '../BaseSearchBar';
+import { BaseSearchBar } from '../../baseComponents/BaseSearchBar';
 
 export const StyledSearchBar = styled(BaseSearchBar)`
   & .MuiInputBase-root {
-    height: 2.5rem;
+    height: 3rem;
     width: 35rem;
     padding: 0.75rem 0.5rem;
     background-color: ${({ theme }) => theme.palette.grey[50]};

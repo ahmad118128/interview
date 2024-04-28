@@ -1,6 +1,5 @@
 'use client';
 import { Grid } from '@mui/material';
-import { BaseInput } from '../baseComponents/atoms/baseInput';
 import { CustomButton } from '@/components/atoms/customButton';
 
 export default function Test() {

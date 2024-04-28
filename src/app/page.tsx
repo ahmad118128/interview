@@ -1,3 +1,4 @@
+import { CustomTooltip } from '@/components/atoms/CustomTooltip';
 import { Typography } from '@mui/material';
 
 export default function Home() {
@@ -11,6 +12,9 @@ export default function Home() {
       <Typography variant="body2">تست</Typography>
       <Typography variant="caption">تست</Typography>
       <Typography variant="button">تست</Typography>
+      <CustomTooltip arrow title="title" placement="bottom-end" open>
+        <div>BaseTooltip</div>
+      </CustomTooltip>
     </>
   );
 }

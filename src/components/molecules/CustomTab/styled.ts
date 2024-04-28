@@ -13,7 +13,7 @@ export const CustomTab = styled(BaseTab)`
       line-height: ${({ theme }) => theme.typography.subtitle1.lineHeight};
       transition: color ease-in 0.2s;
       &[aria-selected='false'] {
-        color: #000;
+        color: ${({ theme }) => theme.palette.common.black};
       }
       &:hover {
         color: ${({ theme }) => theme.palette.primary.dark};

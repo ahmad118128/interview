@@ -27,7 +27,7 @@ export const StyledSearchBar = styled(BaseSearchBar)`
     }
     .MuiOutlinedInput-notchedOutline {
       transition: border-color 0.2s ease-in-out;
-      border: 0.0625rem solid ${({ theme }) => theme.palette.grey[100]};
+      border: 0.0625rem solid ${({ theme }) => theme.palette.grey[300]};
       border-radius: 0.375rem;
     }
     :hover .MuiOutlinedInput-notchedOutline {

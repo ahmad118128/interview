@@ -37,16 +37,12 @@ export const BaseSearchBar = (props: searchbarProps) => {
       value={value}
       className={className}
       InputProps={{
-        endAdornment: (
-          <>
-            {showSpinner ? (
-              spinner
-            ) : (
-              <IconButton onClick={() => searchHandler(value)}>
-                <Icon icon="tabler:search" width="24" height="24" />
-              </IconButton>
-            )}
-          </>
+        endAdornment: showSpinner ? (
+          spinner
+        ) : (
+          <IconButton onClick={() => searchHandler(value)}>
+            <Icon icon="tabler:search" width="24" height="24" />
+          </IconButton>
         ),
       }}
     />

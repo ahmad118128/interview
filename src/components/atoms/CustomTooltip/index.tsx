@@ -8,7 +8,7 @@ export const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
 ))`
   & .${tooltipClasses.tooltip} {
     background-color: ${theme.palette.primary.main};
-    color: '#fff';
+    color: ${theme.palette.common.white};
     font-size: ${theme.typography.body2.fontSize};
     font-weight: ${theme.typography.body2.fontWeight};
     line-height: ${theme.typography.body2.lineHeight};

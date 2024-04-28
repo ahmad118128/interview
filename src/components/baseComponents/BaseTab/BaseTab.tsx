@@ -40,7 +40,6 @@ export const BaseTab = (props: TabProps) => {
               }
               disabled={item.disabled}
               disableRipple={item.disableTabRipple}
-              {...props}
               sx={tabBtnSx}
             />
           );

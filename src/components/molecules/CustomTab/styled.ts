@@ -5,7 +5,7 @@ import { BaseTab } from '../../baseComponents/BaseTab';
 
 export const CustomTab = styled(BaseTab)`
   &.normalTab {
-    margin-bottom: 2.563rem;
+    margin-bottom: 2rem;
     .MuiTab-root {
       font-style: normal;
       font-weight: ${({ theme }) => theme.typography.subtitle1.fontWeight};
@@ -38,7 +38,7 @@ export const CustomTab = styled(BaseTab)`
     }
   }
   &.buttonTab {
-    margin-bottom: 2.563rem;
+    margin-bottom: 2rem;
     display: flex;
     align-items: center;
     .MuiTab-root {

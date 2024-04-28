@@ -28,12 +28,13 @@ export const StyledButton = styled(MUIButton)<ButtonProps>(({ theme }) => ({
     border: `1px solid ${theme.palette.primary.light}`,
     color: theme.palette.primary.light,
     backgroundColor: theme.palette.grey[50],
+    transition: `transform 0.3 ease`,
 
     '&:hover, &:focus': {
-      border: `2px solid ${theme.palette.primary.light}`,
+      outline: `1px solid ${theme.palette.primary.light}`,
       color: theme.palette.primary.light,
       boxShadow: 'none',
-      scale: 'none',
+      transform: `scale(1.1)`,
     },
   },
 

@@ -2,7 +2,7 @@ import { ButtonProps } from './type';
 import { StyledButton } from './styled';
 import { generalStr } from '@/strings';
 import { Icon } from '@iconify/react';
-export const Button = ({
+export const CustomButton = ({
   loadingText,
   loading,
   disabled,
@@ -25,7 +25,11 @@ export const Button = ({
   }
 
   return (
-    <StyledButton {...restProps} disabled={loading || disabled}>
+    <StyledButton
+      {...restProps}
+      disabled={loading || disabled}
+      disableElevation
+    >
       {loading ? (
         <Icon
           icon="svg-spinners:3-dots-scale-middle"

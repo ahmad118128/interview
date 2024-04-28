@@ -1,7 +1,7 @@
 import { BaseInputProps } from '@/app/baseComponents/atoms/baseInput';
 import { StyledTextField } from '../controlledCustomInput/styled';
 
-export function UnControllesCustomInput(props: BaseInputProps) {
+export function UnControlledCustomInput(props: BaseInputProps) {
   const {
     name,
     label,

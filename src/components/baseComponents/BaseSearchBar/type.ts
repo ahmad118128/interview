@@ -1,10 +1,10 @@
-import { MouseEventHandler, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 export interface searchbarProps {
   id?: string;
   name?: string;
   placeholder?: string;
-  onClick: MouseEventHandler<HTMLButtonElement> | undefined;
+  searchHandler: (e: string) => void;
   defaultValue?: string;
   spinner?: ReactNode;
   showSpinner?: boolean;

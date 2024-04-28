@@ -15,7 +15,7 @@ export default function Home() {
       <Typography variant="button">تست</Typography>
       <Box>
         <CustomSearchBar
-          onClick={() => console.log('first')}
+          searchHandler={(e) => console.log(e)}
           placeholder="جست و جو کنید"
         />
       </Box>

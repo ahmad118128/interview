@@ -11,6 +11,14 @@ export const StyledSearchBar = styled(BaseSearchBar)`
     font-weight: ${({ theme }) => theme.typography.body1.fontWeight};
     line-height: ${({ theme }) => theme.typography.body1.lineHeight};
     color: ${({ theme }) => theme.palette.grey[300]};
+    input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px ${({ theme }) => theme.palette.grey[50]}
+        inset;
+    }
+    input:-webkit-autofill:focus {
+      -webkit-box-shadow: 0 0 0 30px ${({ theme }) => theme.palette.grey[100]}
+        inset;
+    }
     svg {
       transition: color 0.2s ease-in-out;
     }
@@ -19,7 +27,7 @@ export const StyledSearchBar = styled(BaseSearchBar)`
     }
     .MuiOutlinedInput-notchedOutline {
       transition: border-color 0.2s ease-in-out;
-      border: 0.0625rem solid ${({ theme }) => theme.palette.grey[300]};
+      border: 0.0625rem solid ${({ theme }) => theme.palette.grey[100]};
       border-radius: 0.375rem;
     }
     :hover .MuiOutlinedInput-notchedOutline {

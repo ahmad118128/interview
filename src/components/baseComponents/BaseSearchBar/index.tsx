@@ -1,5 +1,5 @@
 'use client';
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, KeyboardEvent } from 'react';
 import { Icon } from '@iconify/react';
 import { IconButton, TextField } from '@mui/material';
 import { searchbarProps } from './type';
@@ -9,7 +9,7 @@ export const BaseSearchBar = (props: searchbarProps) => {
     id,
     name,
     placeholder,
-    onClick,
+    searchHandler,
     defaultValue,
     spinner,
     showSpinner,
@@ -17,8 +17,13 @@ export const BaseSearchBar = (props: searchbarProps) => {
   } = props;
 
   const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setvalue(value);
+    setvalue(e.target.value);
+  };
+
+  const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      searchHandler(value);
+    }
   };
 
   const [value, setvalue] = useState(defaultValue ?? '');
@@ -28,6 +33,7 @@ export const BaseSearchBar = (props: searchbarProps) => {
       id={id}
       placeholder={placeholder}
       onChange={onChangeInput}
+      onKeyDown={handleKeyPress}
       value={value}
       className={className}
       InputProps={{
@@ -36,8 +42,7 @@ export const BaseSearchBar = (props: searchbarProps) => {
             {showSpinner ? (
               spinner
             ) : (
-              <IconButton onClick={onClick}>
-                {showSpinner ? <></> : <></>}
+              <IconButton onClick={() => searchHandler(value)}>
                 <Icon icon="tabler:search" width="24" height="24" />
               </IconButton>
             )}

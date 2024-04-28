@@ -1,7 +1,7 @@
 'use client';
 import { FieldValues, useForm } from 'react-hook-form';
-import { CustomInput } from '@/components/atoms/controlledCustomInput';
-import UploadFileIcon from '@/components/atoms/SvgIcons/UploadFileIcon';
+import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
+import { UnControllesCustomInput } from '@/components/atoms/input/uncontrolledCustomInput';
 
 export default function Dashboard() {
   const { control, setError, handleSubmit } = useForm<FieldValues>({
@@ -41,6 +41,9 @@ export default function Dashboard() {
           type="text"
           setError={setError}
           validateType="num"
+        />
+        <UnControllesCustomInput
+          onChange={(data) => console.log(data.target.value)}
         />
       </form>
     </>

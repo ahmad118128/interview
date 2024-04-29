@@ -1,5 +1,4 @@
 'use client';
-
 import { styled } from '@mui/material';
 import { BaseTab } from '../../baseComponents/BaseTab';
 

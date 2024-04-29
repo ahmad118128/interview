@@ -4,7 +4,7 @@ import { SxProps } from '@mui/material';
 export type TabProps = {
   data: TabDataItemType[];
   type: 'normalTab' | 'buttonTab';
-  activeid?: number;
+  activeId?: number;
   sx?: SxProps;
   tabBtnSx?: SxProps;
   className?: string;
@@ -23,9 +23,4 @@ export type TabDataItemType = {
   disableTabRipple?: boolean;
   tabPanel?: ReactNode;
   disabled?: boolean;
-};
-
-export type TabPanelItemType = {
-  id: number;
-  component?: ReactNode;
 };

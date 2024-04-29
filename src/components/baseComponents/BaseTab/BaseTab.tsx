@@ -1,14 +1,14 @@
 'use client';
 import { useState, SyntheticEvent } from 'react';
 import { Box, Tab, Tabs } from '@mui/material';
+import { Icon } from '@iconify/react';
 
 import { TabDataItemType, TabProps } from './type';
-import TabPanel from './TabPanel';
-import { Icon } from '@iconify/react/dist/iconify.js';
+import { TabPanel } from './TabPanel';
 
 export const BaseTab = (props: TabProps) => {
-  const { data, activeid, type, sx, tabBtnSx, className } = props;
-  const [value, setValue] = useState(activeid || 0);
+  const { data, activeId, type, sx, tabBtnSx, className } = props;
+  const [value, setValue] = useState(activeId || 0);
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue);

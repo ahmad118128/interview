@@ -1,14 +1,12 @@
 import { ReactNode } from 'react';
-import { SxProps } from '@mui/material';
+import { SxProps, TabsProps } from '@mui/material';
 
-export type TabProps = {
+export interface TabProps extends TabsProps {
   data: TabDataItemType[];
   type: 'normalTab' | 'buttonTab';
   activeId?: number;
-  sx?: SxProps;
   tabBtnSx?: SxProps;
-  className?: string;
-};
+}
 
 export type TabPanelProps = {
   children?: ReactNode;

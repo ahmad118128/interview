@@ -1,5 +1,11 @@
 import { TextareaAutosizeProps } from '@mui/material';
-import { Control, FieldValues, InputValidationRules, RegisterOptions, UseControllerProps } from 'react-hook-form';
+import {
+  Control,
+  FieldValues,
+  InputValidationRules,
+  RegisterOptions,
+  UseControllerProps,
+} from 'react-hook-form';
 
 export interface TextareaFormControlProps {
   disabled?: boolean;
@@ -8,8 +14,7 @@ export interface TextareaFormControlProps {
   error?: boolean;
 }
 
-export interface TextAreaProps
-     {
+export interface TextAreaProps {
   name: string;
   defaultValue?: string;
   ltr?: boolean;
@@ -17,10 +22,11 @@ export interface TextAreaProps
   label?: string;
   readOnly?: boolean;
   disabled?: boolean;
+  minRows?: number;
   error?: boolean;
-  control: Control<FieldValues>
+  control: Control<FieldValues>;
   rules?: Pick<
-  RegisterOptions,
-  "maxLength" | "minLength" | "validate" | "required"
->
+    RegisterOptions,
+    'maxLength' | 'minLength' | 'validate' | 'required'
+  >;
 }

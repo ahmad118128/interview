@@ -2,7 +2,7 @@
 
 import { styled } from '@mui/material';
 import { TextareaFormControlProps } from './type';
-import { BasedTextarea } from '../BasedTextarea';
+import { BasedTextarea } from '../../baseComponents/BasedTextarea';
 
 export const StyledTextArea = styled(BasedTextarea)<TextareaFormControlProps>`
   ${({ theme, ltr, disabled, readOnly }) => {
@@ -11,7 +11,7 @@ export const StyledTextArea = styled(BasedTextarea)<TextareaFormControlProps>`
     const hoverColor = theme.palette.primary.light;
     const activeColor = theme.palette.grey[100];
     const placeholderColor = theme.palette.grey[300];
-    const normalColor = theme.palette.common.black
+    const normalColor = theme.palette.common.black;
 
     return `
       & textarea {

@@ -1,4 +1,3 @@
-
 import { StyledTextArea } from './styled';
 import { TextAreaProps } from './type';
 
@@ -11,6 +10,7 @@ export const CustomTextArea = (props: TextAreaProps) => {
     rules,
     label,
     placeholder,
+    minRows,
     defaultValue,
     name = '',
   } = props;
@@ -21,6 +21,7 @@ export const CustomTextArea = (props: TextAreaProps) => {
       ltr={ltr}
       disabled={disabled}
       readOnly={readOnly}
+      minRows={minRows}
       rules={rules}
       label={label}
       placeholder={placeholder}

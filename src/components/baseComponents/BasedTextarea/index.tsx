@@ -14,6 +14,7 @@ export const BasedTextarea = (props: TextAreaProps) => {
     control,
     name = '',
     className,
+    minRows,
     ...rest
   } = props;
 
@@ -23,7 +24,6 @@ export const BasedTextarea = (props: TextAreaProps) => {
       rules={rules}
       control={control}
       render={({ field, fieldState: { error } }) => {
-
         return (
           <StyledBox className={className} error={!!error}>
             <InputLabel>
@@ -32,7 +32,7 @@ export const BasedTextarea = (props: TextAreaProps) => {
             <Box display="flex">
               <TextareaAutosize
                 {...field}
-                minRows={1}
+                minRows={minRows}
                 placeholder={placeholder}
                 dir="auto"
                 {...rest}

@@ -12,7 +12,7 @@ export interface IBasedFabButton extends FabOwnProps {
 export interface IAction {
   icon: ReactNode;
   name: string;
-  onClick: (event?: MouseEvent<HTMLButtonElement>) => void;
+  onClick: (event?: MouseEvent) => void;
 }
 
 export enum EFabMode {

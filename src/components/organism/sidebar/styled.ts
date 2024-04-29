@@ -60,7 +60,7 @@ export const StyledContainerIconTile = styled(Box)<StyledContainerIconTileType>`
   align-items: center;
   transition: all 0.5s;
   gap: 0.5rem;
-  // width: 100%;
+  width: 50%;
   border-radius: 0.375rem;
   padding: 1rem;
   cursor: pointer;

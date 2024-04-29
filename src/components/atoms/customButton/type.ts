@@ -1,8 +1,4 @@
-import {
-  ButtonProps as MUIButtonProps,
-  IconButtonProps as MUIIconButtonProps,
-} from '@mui/material';
-import * as MUIcon from '@mui/icons-material';
+import { ButtonProps as MUIButtonProps } from '@mui/material';
 
 export type ButtonProps = (
   | {
@@ -15,7 +11,3 @@ export type ButtonProps = (
     }
 ) &
   MUIButtonProps;
-export interface IconButtonProps extends Omit<MUIIconButtonProps, 'children'> {
-  title?: string;
-  iconName: keyof typeof MUIcon;
-}

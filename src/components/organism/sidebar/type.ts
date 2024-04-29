@@ -1,7 +1,7 @@
-import { CSSProperties, ReactElement } from 'react';
+import { CSSProperties } from 'react';
 export type IconTitleProps = {
   title: string;
-  icon: ReactElement;
+  icon: string;
   onClick?: () => void;
   open: boolean;
   className?: string;

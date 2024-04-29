@@ -14,7 +14,7 @@ export const BasedTextarea = (props: TextAreaProps) => {
     control,
     name = '',
     className,
-    minRows,
+
     ...rest
   } = props;
 
@@ -32,7 +32,6 @@ export const BasedTextarea = (props: TextAreaProps) => {
             <Box display="flex">
               <TextareaAutosize
                 {...field}
-                minRows={minRows}
                 placeholder={placeholder}
                 dir="auto"
                 {...rest}

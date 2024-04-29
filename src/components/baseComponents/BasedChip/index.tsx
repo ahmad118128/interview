@@ -1,11 +1,19 @@
 import { MouseEvent } from 'react';
-import { Chip, ChipPropsSizeOverrides } from '@mui/material';
+import { Chip } from '@mui/material';
 
 import { IBasedChip } from './type';
 
 export const BasedChip = (props: IBasedChip) => {
-  const { label, typeChip, disabled, deleteIcon, icon, onDelete, className,...rest } =
-    props;
+  const {
+    label,
+    typeChip,
+    disabled,
+    deleteIcon,
+    icon,
+    onDelete,
+    className,
+    ...rest
+  } = props;
 
   const handleClick = (e: MouseEvent<HTMLDivElement>) => e.stopPropagation();
 
@@ -13,7 +21,6 @@ export const BasedChip = (props: IBasedChip) => {
     e.stopPropagation();
     onDelete && onDelete();
   };
-
 
   return (
     <Chip

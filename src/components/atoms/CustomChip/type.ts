@@ -9,5 +9,5 @@ export type StyledChipType = {
 export interface ICustomChip extends ChipProps {
   typeChip: string;
   ltr?: boolean;
-  chipSize: string;
+  chipSize: 'small' | 'medium' | 'normal';
 }

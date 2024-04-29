@@ -2,6 +2,7 @@
 import { FieldValues, useForm } from 'react-hook-form';
 import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
 import { UnControlledCustomInput } from '@/components/atoms/input/uncontrolledCustomInput';
+import { IconTitle } from '@/components/organism/sidebar/iconTitle';
 
 export default function Dashboard() {
   const { control, setError, handleSubmit } = useForm<FieldValues>({
@@ -46,6 +47,7 @@ export default function Dashboard() {
           onChange={(data: any) => console.log(data.target.value)}
         />
       </form>
+      {/* <IconTitle title={'test'} icon={undefined} open={false} /> */}
     </>
   );
 }

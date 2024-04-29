@@ -14,7 +14,6 @@ export const BasedTextarea = (props: TextAreaProps) => {
     control,
     name = '',
     className,
-
     ...rest
   } = props;
 

@@ -26,7 +26,7 @@ export const CustomFabButton = (props: ICustomFab) => {
     {
       icon: (
         <Icon
-          icon="mdi:user"
+          icon="mdi:users"
           width="40px"
           height="40px"
           style={{ color: 'white' }}

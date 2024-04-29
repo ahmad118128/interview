@@ -4,6 +4,7 @@ import {
   StyledContainerAppBar,
   StyledContainerLayout,
   StyledContainerSideBar,
+  StyledMainLayout,
   StyledSideBar,
 } from './styled';
 
@@ -14,8 +15,10 @@ export default function AdminLayout(props: PropsWithChildren) {
     <>
       <StyledContainerLayout>
         <StyledContainerSideBar />
-        <StyledContainerAppBar />
-        <StyledChildLayout>{children}</StyledChildLayout>
+        <StyledMainLayout>
+          <StyledContainerAppBar />
+          <StyledChildLayout>{children}</StyledChildLayout>
+        </StyledMainLayout>
       </StyledContainerLayout>
     </>
   );

@@ -8,25 +8,34 @@ export const StyledSideBar = styled(Box)`
   transition: all 0.5s;
 `;
 export const StyledChildLayout = styled('main')`
+  margin-top: 64px;
+  overflow: auto;
+  padding: 20px;
+  flex: 1;
+`;
+export const StyledMainLayout = styled(Box)`
   width: 100%;
-  overflow: hidden;
+  flex: 1;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 `;
 export const StyledContainerLayout = styled(Box)`
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh);
   height: auto;
-  width:calc(100vw - 3.75rem)
   position: relative;
-  top: 64px;
   display: flex;
   flex-wrap: no-wrap;
   inset: 0;
   overflow: hidden;
   max-height: calc(100vh-64px);
   position: relative;
+  width: 100%;
 `;
 export const StyledContainerAppBar = styled(Box)`
   position: fixed;
-  width: calc(100%);
+  width: 100%;
   box-shadow:
     0px 2px 4px rgba(0, 0, 0, 0.2),
     0px 4px 5px rgba(0, 0, 0, 0.14),
@@ -46,7 +55,5 @@ export const StyledContainerSideBar = styled(Box)`
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0.75rem;
-  position: fixed;
-  z-index: 100;
+  position: sticky;
 `;

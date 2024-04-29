@@ -12,6 +12,7 @@ export default function Home() {
       <Typography variant="body2">تست</Typography>
       <Typography variant="caption">تست</Typography>
       <Typography variant="button">تست</Typography>
+      <CustomCheckbox />
     </>
   );
 }

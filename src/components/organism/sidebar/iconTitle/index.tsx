@@ -16,6 +16,7 @@ export const IconTitle = (props: IconTitleProps) => {
         className={className}
         open={open}
         onClick={onClick}
+        sx={{ justifyContent: open ? 'flex-start' : 'center' }}
       >
         <StyledContainerIcon>
           <Icon icon={icon} fontSize={24} className="iconSideBar" />

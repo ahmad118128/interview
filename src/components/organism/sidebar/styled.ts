@@ -1,11 +1,7 @@
-import { Box, Divider } from '@mui/material';
+import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
-
 import { StyledContainerIconTileType } from './type';
-import theme from '../../../theme/index';
 export const StyledContainerIcon = styled(Box)`
-  // width: 24px;
-  // height: 24px;
   display: flex;
   justify-content: center;
   align-items: center;

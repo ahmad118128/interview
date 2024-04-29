@@ -1,49 +1,42 @@
 'use client';
-import { Grid } from '@mui/material';
-import { CustomButton } from '@/components/atoms/customButton';
+import { Box, Grid } from '@mui/material';
+import { useState } from 'react';
+import { IconTitle } from '@/components/organism/sidebar/iconTitle';
 
 export default function Test() {
+  const [active, setActive] = useState('');
+  function handleChange() {
+    setActive('active');
+  }
   return (
-    <Grid container sx={{ padding: '1rem' }} rowSpacing={5}>
-      <Grid item xs={4}>
-        <CustomButton variant="contained" size="large">
-          لیبل
-        </CustomButton>
+    <Grid
+      container
+      sx={{ padding: '1rem', justifyContent: 'space-between' }}
+      rowSpacing={5}
+      gap={2}
+    >
+      <Grid item xs={0.5}>
+        <IconTitle
+          title={'دشبورد'}
+          icon="material-symbols:home-outline-rounded"
+          open={false}
+        />
+      </Grid>
+      <Grid item xs={0.5}>
+        <IconTitle
+          title={'بانک اطلاعاتی'}
+          icon="material-symbols:database"
+          open={false}
+        />
       </Grid>
       <Grid item xs={4}>
-        <CustomButton variant="contained" loading>
-          لیبل
-        </CustomButton>
-      </Grid>
-      <Grid item xs={4}>
-        <CustomButton variant="contained" size="large" disabled>
-          لیبل
-        </CustomButton>
-      </Grid>
-      <Grid item xs={4}>
-        <CustomButton variant="outlined" size="large">
-          لیبل
-        </CustomButton>
-      </Grid>
-      <Grid item xs={4}>
-        <CustomButton variant="outlined" loading>
-          لیبل
-        </CustomButton>
-      </Grid>
-      <Grid item xs={4}>
-        <CustomButton variant="outlined" size="large" disabled>
-          لیبل
-        </CustomButton>
-      </Grid>
-      <Grid item xs={4}>
-        <CustomButton title="test" className="loginButton">
-          لیبل
-        </CustomButton>
-      </Grid>
-      <Grid item xs={4}>
-        <CustomButton title="test" className="loginButton" loading>
-          لیبل
-        </CustomButton>
+        <IconTitle
+          title={'دشبورد'}
+          icon="material-symbols:home-outline-rounded"
+          open={true}
+          className={active}
+          onClick={handleChange}
+        />
       </Grid>
     </Grid>
   );

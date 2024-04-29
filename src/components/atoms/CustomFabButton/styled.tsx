@@ -27,7 +27,8 @@ export const StyledFab = styled(BasedFabButton)`
   }
 
   &.MuiSpeedDialAction-fab {
-    background-color: transparent !important;
+    background-color: ${({ theme }) => theme.palette.common.black} !important;
+    padding: 3px;
     svg {
       width: 100% !important;
       height: 100% !important;

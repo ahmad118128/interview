@@ -4,7 +4,7 @@ export interface ICustomFab {
   onClick?: (event?: MouseEvent<HTMLButtonElement>) => void;
   className?: string;
   icon?: ReactNode;
-  type: EFabMode;
+  fabType: EFabMode;
   size?: 'small' | 'medium' | 'large';
   variant?: 'circular' | 'extended';
   disabled?: boolean;

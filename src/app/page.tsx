@@ -1,8 +1,8 @@
 'use client';
 
 import { Typography } from '@mui/material';
-import { CustomFabButton } from '@/components/atoms/CustomFabButton/CustomFabButton';
 import { EFabMode } from '@/components/baseComponents/BasedFabButton/type';
+import { CustomFabButton } from '@/components/atoms/CustomFabButton';
 
 export default function Home() {
   function handleClick() {
@@ -32,13 +32,13 @@ export default function Home() {
           size="large"
           icon
           onClick={handleClick}
-          type={EFabMode.SPEED_DIAL}
+          fabType={EFabMode.SPEED_DIAL}
         />
         <CustomFabButton
           size="large"
           icon
           onClick={handleClick}
-          type={EFabMode.FAB}
+          fabType={EFabMode.FAB}
         />
       </div>
     </>

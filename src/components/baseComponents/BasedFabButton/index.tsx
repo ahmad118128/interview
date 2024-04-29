@@ -9,12 +9,12 @@ export const BasedFabButton = (props: IBasedFabButton) => {
     children,
     className,
     onClick,
-    type,
+    fabType,
     actions,
   } = props;
   return (
     <>
-      {type === EFabMode.FAB && (
+      {fabType === EFabMode.FAB && (
         <Fab
           disabled={disabled}
           variant={variant}
@@ -25,7 +25,7 @@ export const BasedFabButton = (props: IBasedFabButton) => {
           {children}
         </Fab>
       )}
-      {type === EFabMode.SPEED_DIAL && (
+      {fabType === EFabMode.SPEED_DIAL && (
         <SpeedDial
           ariaLabel="SpeedDial basic example"
           sx={{ position: 'absolute', bottom: 16, right: 16 }}

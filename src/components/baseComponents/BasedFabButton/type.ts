@@ -1,11 +1,9 @@
 import { ReactNode } from 'react';
 import { MouseEvent } from 'react';
-import { FabOwnProps } from '@mui/material';
+import { FabOwnProps, FabProps } from '@mui/material';
 
-export interface IBasedFabButton extends FabOwnProps {
-  onClick?: (event?: MouseEvent<HTMLButtonElement>) => void;
-  className: string;
-  type: EFabMode;
+export interface IBasedFabButton extends FabProps {
+  fabType: EFabMode;
   actions: IAction[];
 }
 

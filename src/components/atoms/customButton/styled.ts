@@ -1,7 +1,6 @@
 import { Button as MUIButton, ButtonProps, styled } from '@mui/material';
 
 export const StyledButton = styled(MUIButton)<ButtonProps>(({ theme }) => ({
-  /* Default styles */
   backgroundColor: theme.palette.primary.light,
   color: theme.palette.grey[50],
   borderRadius: '6px',
@@ -13,7 +12,6 @@ export const StyledButton = styled(MUIButton)<ButtonProps>(({ theme }) => ({
   '&:hover, &:focus': {
     backgroundColor: theme.palette.secondary.dark,
   },
-  /* Variant styles */
   '&.MuiButton-containedPrimary': {
     backgroundColor: theme.palette.primary.light,
     color: theme.palette.grey[50],
@@ -43,7 +41,6 @@ export const StyledButton = styled(MUIButton)<ButtonProps>(({ theme }) => ({
       color: theme.palette.primary.dark,
     },
   },
-  // style of loginButton
   '&.loginButton': {
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.common.white,
@@ -57,13 +54,11 @@ export const StyledButton = styled(MUIButton)<ButtonProps>(({ theme }) => ({
     },
   },
 
-  /* Common disabled styles */
   '&.Mui-disabled:not(:has(svg))': {
     backgroundColor: theme.palette.grey[200],
     color: theme.palette.grey[300],
     border: 'none',
   },
-  //different size styles //
   '&.MuiButton-sizeSmall': {
     padding: '0.25rem 1rem',
     fontSize: '0.875rem',

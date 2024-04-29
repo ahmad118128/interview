@@ -2,9 +2,9 @@ import { Box, styled, TextField, Typography } from '@mui/material';
 import {
   BaseInput,
   StyledTextFieldRtlType,
-} from '@/app/baseComponents/atoms/baseInput';
+} from '@/components/baseComponents/baseInput';
 
-export const StyledTextFieldRtl = styled(BaseInput)<StyledTextFieldRtlType>(({
+export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
   ltrLabel,
   typeInput,
   theme,
@@ -13,7 +13,7 @@ export const StyledTextFieldRtl = styled(BaseInput)<StyledTextFieldRtlType>(({
   return {
     ' & input': {
       direction: (typeInput === 'password' || typeInput === 'file') && 'rtl',
-      fontSize: '14px !important',
+      fontSize: theme.typography.body1.fontSize,
       fontFamily: theme.typography.fontFamily,
       fontStyle: 'normal',
     },
@@ -41,13 +41,13 @@ export const StyledTextFieldRtl = styled(BaseInput)<StyledTextFieldRtlType>(({
 
     '& .MuiInputBase-root': {
       fontFamily: theme.typography.fontFamily,
-      fontSize: '14px',
-      fontWeight: 'regular',
+      fontSize: theme.typography.body1.fontSize,
+      fontWeight: 'normal',
       width: '8.75rem',
-      height: '48px',
+      height: '3rem',
       backgroundColor: theme.palette.grey[100],
-      borderTopLeftRadius: '7px',
-      borderTopRightRadius: '7px',
+      borderTopLeftRadius: '0.438rem',
+      borderTopRightRadius: '0.438rem',
       '&:after': {
         borderColor: theme.palette.primary.light,
       },
@@ -87,5 +87,5 @@ export const StyledErrorMessage = styled(Typography)`
   margin-right: 0.5rem;
   text-align: right;
   font-size: 0.5rem;
-  fontfamily: 'iran-yekan';
+  font-family: 'iranYekan';
 `;

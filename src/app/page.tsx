@@ -1,8 +1,8 @@
 'use client';
 
 import { Typography } from '@mui/material';
-import { CustomFabButton } from '@/components/atoms/FabButton/CustomFabButton/CustomFabButton';
-import { EFabMode } from '@/components/atoms/FabButton/BasedComponent/type';
+import { CustomFabButton } from '@/components/atoms/CustomFabButton/CustomFabButton';
+import { EFabMode } from '@/components/baseComponents/BasedFabButton/type';
 
 export default function Home() {
   function handleClick() {

@@ -1,15 +1,10 @@
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { StyledContainerIconTileType } from './type';
-export const StyledContainerIcon = styled(Box)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .iconSideBar {
-    color: ${({ theme }) => theme.palette.grey[300]};
-  }
-`;
-export const StyledContainerIconTile = styled(Box)<StyledContainerIconTileType>`
+import { StyledContainerIconTitleType } from './type';
+
+export const StyledContainerIconTile = styled(
+  Box
+)<StyledContainerIconTitleType>`
   display: flex;
   align-items: center;
   transition: all 0.5s;
@@ -18,6 +13,11 @@ export const StyledContainerIconTile = styled(Box)<StyledContainerIconTileType>`
   border-radius: 0.375rem;
   padding: 1rem;
   cursor: pointer;
+
+  .iconSideBar {
+    color: ${({ theme }) => theme.palette.grey[300]};
+  }
+
   &:hover {
     background-color: ${({ theme }) => theme.palette.grey[100]};
     .iconSideBar,
@@ -25,6 +25,7 @@ export const StyledContainerIconTile = styled(Box)<StyledContainerIconTileType>`
       color: ${({ theme }) => theme.palette.primary.light};
     }
   }
+
   &.active {
     background-color: ${({ theme }) => theme.palette.grey[100]};
     border: 1px solid ${({ theme }) => theme.palette.primary.light};
@@ -33,23 +34,27 @@ export const StyledContainerIconTile = styled(Box)<StyledContainerIconTileType>`
     .titleSideBar {
       color: ${({ theme }) => theme.palette.primary.light};
     }
+
     h3 {
       color: ${({ theme }) => theme.palette.primary.light};
     }
+
     * {
       fill: ${({ theme }) => theme.palette.primary.light};
     }
   }
+
   .closeIcon {
     transition: all 0.5s;
-    transform: ${({ open }) => (!open ? ' rotate( 180deg )' : 'none')};
+    transform: ${({ label }) => (!label ? ' rotate( 180deg )' : 'none')};
   }
+
   h3 {
     color: ${({ theme }) => theme.palette.grey[300]};
-    max-width: ${({ open }) => (!open ? '0' : '100%')};
-    max-height: ${({ open }) => (!open ? '0' : '1.25rem')};
+    max-width: ${({ label }) => (!label ? '0' : '100%')};
+    max-height: ${({ label }) => (!label ? '0' : '1.25rem')};
     transition: all 0.3s ease-in-out;
-    transition-delay: ${({ open }) => (!open ? '0' : '0.1s')};
+    transition-delay: ${({ label }) => (!label ? '0' : '0.1s')};
     overflow: hidden;
     font-family: ${({ theme }) => theme.typography.fontFamily};
   }

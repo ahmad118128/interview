@@ -1,32 +1,31 @@
 import { Typography } from '@mui/material';
 import { IconTitleProps } from '../type';
-import { StyledContainerIcon, StyledContainerIconTile } from '../styled';
+import { StyledContainerIconTile } from '../styled';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { CustomTooltip } from '@/components/atoms/CustomTooltip';
+
 export const IconTitle = (props: IconTitleProps) => {
-  const { title, icon, onClick, open, className } = props;
+  const { title, icon, onClick, label, className } = props;
+
   return (
     <CustomTooltip
-      title={!open && title}
+      title={!label && title}
       placement="bottom"
       arrow
       className="sideBarItemTooltip"
     >
       <StyledContainerIconTile
         className={className}
-        open={open}
+        label={label}
         onClick={onClick}
-        sx={{ justifyContent: open ? 'flex-start' : 'center' }}
+        sx={{ justifyContent: label ? 'flex-start' : 'center' }}
       >
-        <StyledContainerIcon>
-          <Icon icon={icon} fontSize={24} className="iconSideBar" />
-        </StyledContainerIcon>
-        {open && title ? (
+        <Icon icon={icon} fontSize={24} className="iconSideBar" />
+
+        {label && title && (
           <Typography variant="h3" className="titleSideBar">
             {title}
           </Typography>
-        ) : (
-          ''
         )}
       </StyledContainerIconTile>
     </CustomTooltip>

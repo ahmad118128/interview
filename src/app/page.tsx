@@ -1,5 +1,5 @@
 'use client';
-import { CustomChip } from '@/components/atoms/CustomChip/CustomChip';
+import { CustomChip } from '@/components/atoms/CustomChip';
 import { Typography } from '@mui/material';
 
 export default function Home() {

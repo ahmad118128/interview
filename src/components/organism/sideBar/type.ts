@@ -1,19 +1,23 @@
 import { CSSProperties } from 'react';
+
 export type IconTitleProps = {
-  title: string;
+  title?: string;
   icon: string;
   onClick?: () => void;
-  open: boolean;
+  label: boolean;
   className?: string;
 };
-export type StyledContainerIconTileType = {
+
+export type StyledContainerIconTitleType = {
   active?: boolean;
-  open?: boolean;
+  label?: boolean;
 };
+
 export type StyledContainerSideBarType = {
   open: boolean;
   customStyles?: CSSProperties;
 };
+
 export type SideBarProps = {
   openSideBar: boolean;
   closeSideBar: () => void;

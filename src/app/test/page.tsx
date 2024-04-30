@@ -1,10 +1,11 @@
 'use client';
 import { Box, Grid } from '@mui/material';
 import { useState } from 'react';
-import { IconTitle } from '@/components/organism/sidebar/iconTitle';
+import { IconTitle } from '@/components/organism/sideBar/iconTitle';
 
 export default function Test() {
   const [active, setActive] = useState('');
+
   function handleChange() {
     setActive('active');
   }
@@ -17,23 +18,25 @@ export default function Test() {
     >
       <Grid item xs={0.5}>
         <IconTitle
-          title={'دشبورد'}
+          title="دشبورد"
           icon="material-symbols:home-rounded"
-          open={false}
+          label={false}
         />
       </Grid>
+
       <Grid item xs={0.5}>
         <IconTitle
-          title={'بانک اطلاعاتی'}
+          title="بانک اطلاعاتی"
           icon="material-symbols:database"
-          open={false}
+          label={false}
         />
       </Grid>
+
       <Grid item xs={4}>
         <IconTitle
-          title={'دشبورد'}
+          title="دشبورد"
           icon="material-symbols:home-rounded"
-          open={true}
+          label={true}
           className={active}
           onClick={handleChange}
         />

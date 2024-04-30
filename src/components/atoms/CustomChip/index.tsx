@@ -5,14 +5,10 @@ import { ICustomChip } from './type';
 export const CustomChip = (props: ICustomChip) => {
   const { typeChip, chipSize, label, disabled, ltr, variant, onDelete } = props;
 
-  const chipDeleteIcon = (
-    <Icon icon="line-md:remove" width="12px" height="12px" />
-  );
-
   return (
     <StyledChip
       typeChip={typeChip}
-      deleteIcon={chipDeleteIcon}
+      deleteIcon={<Icon icon="line-md:remove" width="12px" height="12px" />}
       className={`${typeChip} ${chipSize}`}
       label={label}
       ltr={ltr}

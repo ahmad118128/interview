@@ -4,7 +4,7 @@ export type IconTitleProps = {
   title?: string;
   icon: string;
   onClick?: () => void;
-  label: boolean;
+  open: boolean;
   className?: string;
 };
 

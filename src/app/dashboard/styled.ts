@@ -4,7 +4,7 @@ import { styled } from '@mui/material/styles';
 
 export const StyledSideBar = styled(Box)`
   width: 3.75rem;
-  height: 100%;
+  height: 100vh;
   transition: all 0.5s;
 `;
 export const StyledChildLayout = styled('main')`
@@ -22,16 +22,16 @@ export const StyledMainLayout = styled(Box)`
   height: 100vh;
 `;
 export const StyledContainerLayout = styled(Box)`
-  min-height: calc(100vh);
+  box-sizing: border-box;
+  min-height: 100vh;
   height: auto;
   position: relative;
   display: flex;
   flex-wrap: no-wrap;
   inset: 0;
   overflow: hidden;
-  max-height: calc(100vh-64px);
-  position: relative;
-  width: 100%;
+  max-height: 100vh
+  width: 100vw;
 `;
 export const StyledContainerAppBar = styled(Box)`
   position: fixed;
@@ -52,8 +52,9 @@ export const StyledContainerSideBar = styled(Box)`
     #0b0038 0%,
     #1e1449 100%
   );
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: sticky;
+  right: 0;
 `;

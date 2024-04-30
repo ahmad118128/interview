@@ -15,6 +15,11 @@
   font-weight: lighter;
   src: url('/fonts/IRANYekanWebLight.woff2') format('woff');
 }
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 ::-webkit-scrollbar {
   width: 0.375rem;
   height: 0.375rem;

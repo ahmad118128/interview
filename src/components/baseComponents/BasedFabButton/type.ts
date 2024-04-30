@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { MouseEventHandler, ReactNode } from 'react';
 import { MouseEvent } from 'react';
 import { FabOwnProps, FabProps } from '@mui/material';
 
@@ -10,7 +10,7 @@ export interface IBasedFabButton extends FabProps {
 export interface IAction {
   icon: ReactNode;
   name: string;
-  onClick: (event?: MouseEvent) => void;
+  onClick: (event: MouseEvent<HTMLDivElement>) => void;
 }
 
 export enum EFabMode {

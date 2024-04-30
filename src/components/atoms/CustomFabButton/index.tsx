@@ -7,10 +7,6 @@ export const CustomFabButton = (props: ICustomFab) => {
   const { onClick, size, variant, disabled, className, fabType, action } =
     props;
 
-  function handleClick() {
-    console.log('you clicked');
-  }
-
   return (
     <StyledFab
       onClick={onClick}

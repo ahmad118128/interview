@@ -1,4 +1,4 @@
-import { MouseEvent, ReactNode } from 'react';
+import { MouseEvent, MouseEventHandler, ReactNode } from 'react';
 
 export interface ICustomFab {
   onClick?: (event?: MouseEvent<HTMLButtonElement>) => void;
@@ -18,5 +18,5 @@ export enum EFabMode {
 export interface IAction {
   icon: ReactNode;
   name: string;
-  onClick: (event: MouseEvent<HTMLButtonElement>) => void;
+  onClick: (event: MouseEvent<HTMLDivElement>) => void;
 }

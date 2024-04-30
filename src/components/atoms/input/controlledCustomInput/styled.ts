@@ -1,3 +1,4 @@
+'use client';
 import { Box, styled, TextField, Typography } from '@mui/material';
 import {
   BaseInput,

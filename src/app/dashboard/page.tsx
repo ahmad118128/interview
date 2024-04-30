@@ -2,6 +2,7 @@
 import { FieldValues, useForm } from 'react-hook-form';
 import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
 import { UnControlledCustomInput } from '@/components/atoms/input/uncontrolledCustomInput';
+import { Box } from '@mui/material';
 
 export default function Dashboard() {
   const { control, setError, handleSubmit } = useForm<FieldValues>({
@@ -46,6 +47,9 @@ export default function Dashboard() {
           onChange={(data: any) => console.log(data.target.value)}
         />
       </form>
+      <Box
+        sx={{ width: '700px', height: '800px', backgroundColor: 'grey' }}
+      ></Box>
     </>
   );
 }

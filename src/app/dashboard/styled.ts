@@ -8,9 +8,9 @@ export const StyledSideBar = styled(Box)`
   transition: all 0.5s;
 `;
 export const StyledChildLayout = styled('main')`
-  margin-top: 64px;
+  margin-top: 4rem;
   overflow: auto;
-  padding: 20px;
+  padding: 2.5rem;
   flex: 1;
 `;
 export const StyledMainLayout = styled(Box)`

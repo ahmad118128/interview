@@ -18,7 +18,7 @@ export default function Test() {
       <Grid item xs={0.5}>
         <IconTitle
           title={'دشبورد'}
-          icon="material-symbols:home-outline-rounded"
+          icon="material-symbols:home-rounded"
           open={false}
         />
       </Grid>
@@ -32,7 +32,7 @@ export default function Test() {
       <Grid item xs={4}>
         <IconTitle
           title={'دشبورد'}
-          icon="material-symbols:home-outline-rounded"
+          icon="material-symbols:home-rounded"
           open={true}
           className={active}
           onClick={handleChange}

@@ -8,6 +8,7 @@ export interface ICustomFab {
   size?: 'small' | 'medium' | 'large';
   variant?: 'circular' | 'extended';
   disabled?: boolean;
+  action?: IAction[];
 }
 
 export enum EFabMode {
@@ -17,5 +18,5 @@ export enum EFabMode {
 export interface IAction {
   icon: ReactNode;
   name: string;
-  onClick: (event?: MouseEvent<HTMLButtonElement>) => void;
+  onClick: (event: MouseEvent<HTMLButtonElement>) => void;
 }

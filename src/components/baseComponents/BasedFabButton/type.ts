@@ -4,7 +4,7 @@ import { FabOwnProps, FabProps } from '@mui/material';
 
 export interface IBasedFabButton extends FabProps {
   fabType: EFabMode;
-  actions: IAction[];
+  actions?: IAction[];
 }
 
 export interface IAction {

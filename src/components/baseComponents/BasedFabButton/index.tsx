@@ -32,15 +32,16 @@ export const BasedFabButton = (props: IBasedFabButton) => {
           icon={<SpeedDialIcon />}
           className={className}
         >
-          {actions.map((action) => (
-            <SpeedDialAction
-              key={action.name}
-              icon={action.icon}
-              tooltipTitle={action.name}
-              onClick={action.onClick}
-              className={className}
-            />
-          ))}
+          {actions &&
+            actions.map((action) => (
+              <SpeedDialAction
+                key={action.name}
+                icon={action.icon}
+                tooltipTitle={action.name}
+                onClick={action.onClick}
+                className={className}
+              />
+            ))}
         </SpeedDial>
       )}
     </>

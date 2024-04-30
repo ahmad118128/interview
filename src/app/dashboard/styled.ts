@@ -1,7 +1,7 @@
 'use client';
-import { Box, styled } from '@mui/material';
+import { styled } from '@mui/material';
 
-export const ContainerBox = styled(Box)`
+export const ContainerBox = styled('main')`
   position: relative;
   top: 4rem;
 `;

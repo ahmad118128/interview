@@ -1,4 +1,4 @@
-import { Box, IconButton, styled } from '@mui/material';
+import { IconButton, styled } from '@mui/material';
 
 export const HeaderBox = styled('header')`
   display: flex;

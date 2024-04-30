@@ -28,7 +28,7 @@ export const BasedFabButton = (props: IBasedFabButton) => {
       {fabType === EFabMode.SPEED_DIAL && (
         <SpeedDial
           ariaLabel="SpeedDial basic example"
-          sx={{ position: 'absolute', bottom: 16, right: 16 }}
+          // sx={{ position: 'absolute', bottom: 16, right: 16 }}
           icon={<SpeedDialIcon />}
           className={className}
         >

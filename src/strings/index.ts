@@ -431,6 +431,8 @@ export const registrationStr = {
   actPhoneNumber: 'فعالسازی شماره موبایل',
   onlySevenCharacter: 'تعداد کاراکتر 7 عدد می‌باشد.',
   captchaRequierd: 'کد امنیتی اشتباه می‌باشد.',
+  notifications: 'اعلان‌ها',
+  panelGuide: 'راهنمای کار با پنل',
 };
 
 export const messageStr = {

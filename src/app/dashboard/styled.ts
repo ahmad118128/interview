@@ -3,24 +3,29 @@ import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 export const StyledSideBar = styled(Box)`
-  width: 3.75rem;
+  width: 5rem;
   height: 100vh;
   transition: all 0.5s;
 `;
+
 export const StyledChildLayout = styled('main')`
   margin-top: 4rem;
-  overflow: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
   padding: 2.5rem;
+  flex-wrap: wrap;
   flex: 1;
 `;
+
 export const StyledMainLayout = styled(Box)`
-  width: 100%;
+  width: 100vw;
   flex: 1;
   padding-left: 0;
   display: flex;
   flex-direction: column;
   height: 100vh;
 `;
+
 export const StyledContainerLayout = styled(Box)`
   box-sizing: border-box;
   min-height: 100vh;
@@ -33,6 +38,7 @@ export const StyledContainerLayout = styled(Box)`
   max-height: 100vh
   width: 100vw;
 `;
+
 export const StyledContainerAppBar = styled(Box)`
   position: fixed;
   width: 100%;
@@ -43,6 +49,7 @@ export const StyledContainerAppBar = styled(Box)`
   background-color: white;
   height: 4rem;
 `;
+
 export const StyledContainerSideBar = styled(Box)`
   height: 100vh;
   width: 3.75rem;

@@ -1,11 +1,12 @@
-import Header from '@/components/molecules/header';
+import HeaderDashboard from '@/components/molecules/HeaderDashboard';
 import React, { ReactNode } from 'react';
+import { ContainerBox } from './styled';
 
 export default function DashboardHeader({ children }: { children: ReactNode }) {
   return (
-    <div>
-      <Header />
-      <div style={{ position: 'relative', top: 64 }}>{children}</div>
-    </div>
+    <>
+      <HeaderDashboard />
+      <ContainerBox>{children}</ContainerBox>
+    </>
   );
 }

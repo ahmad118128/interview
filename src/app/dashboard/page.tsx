@@ -85,6 +85,7 @@ export default function Dashboard() {
           display: 'flex',
           justifyContent: 'space-between',
           width: 'auto',
+          flexWrap: 'wrap',
         }}
       >
         <CustomInput name="custom1" control={control} label="لیبل" />

@@ -2,11 +2,18 @@
 import { FieldValues, useForm } from 'react-hook-form';
 import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
 import { UnControlledCustomInput } from '@/components/atoms/input/uncontrolledCustomInput';
+import { Icon } from '@iconify/react/dist/iconify.js';
+import { InputAdornment } from '@mui/material';
+import { useState } from 'react';
 
 export default function Dashboard() {
+  const [shrinked, setShrinked] = useState(false);
+  const [currentValue, setCurrentValue] = useState('');
+
   const { control, setError, handleSubmit } = useForm<FieldValues>({
     mode: 'onChange',
   });
+
   const submitHandler = (formData: FieldValues) => console.log(formData);
   return (
     <>
@@ -20,7 +27,27 @@ export default function Dashboard() {
           width: 'auto',
         }}
       >
-        <CustomInput name="custom1" control={control} label="لیبل" />
+        <CustomInput
+          name="custom1"
+          control={control}
+          label="لیبل"
+          fullWidth
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="end" sx={{ margin: '10px' }}>
+                <Icon icon="mdi:user" />
+              </InputAdornment>
+            ),
+          }}
+          InputLabelProps={{
+            shrink: shrinked,
+            style: { marginRight: 20 },
+          }}
+          value={currentValue}
+          onFocus={() => setShrinked(true)}
+          onChange={() => setShrinked(true)}
+          onBlur={(e) => setShrinked(!!e.target.value)}
+        />
         <CustomInput
           name="custom2"
           control={control}

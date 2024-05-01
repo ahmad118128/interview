@@ -16,6 +16,11 @@ export function CustomInput<TField extends FieldValues>(
     inputProps,
     disabled,
     validateType,
+    fullWidth,
+    InputProps,
+    InputLabelProps,
+    onFocus,
+    onBlur,
   } = props;
   return (
     <Controller
@@ -37,6 +42,11 @@ export function CustomInput<TField extends FieldValues>(
               onChange={onChange}
               validateType={validateType}
               error={!!error?.message}
+              fullWidth={fullWidth}
+              InputProps={InputProps}
+              InputLabelProps={InputLabelProps}
+              onFocus={onFocus}
+              onBlur={onBlur}
             />
           </Grid>
           <Grid item xs={12}>

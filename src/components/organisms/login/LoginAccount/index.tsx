@@ -19,11 +19,16 @@ export const LoginAccount = (props: any) => {
   return (
     <form onSubmit={handleSubmitt}>
       <StyledContainerInput>
-        <Box sx={{ width: '300px !important' }}>
-          <CustomInput control={control} name="input" type="text" />
+        <Box sx={{ width: '100% !important' }}>
+          <CustomInput fullWidth control={control} name="input" type="text" />
         </Box>
         <Box>
-          <CustomInput control={control} name="input" type="password" />
+          <CustomInput
+            fullWidth
+            control={control}
+            name="input"
+            type="password"
+          />
         </Box>
         <Box
           sx={{
@@ -36,7 +41,7 @@ export const LoginAccount = (props: any) => {
           <CheckBox name="input" />
           <p>Remember me !</p>
         </Box>
-        <CustomButton>Submit</CustomButton>
+        <CustomButton className="loginButton">Submit</CustomButton>
       </StyledContainerInput>
     </form>
   );

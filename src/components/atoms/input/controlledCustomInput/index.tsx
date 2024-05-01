@@ -18,10 +18,11 @@ export function CustomInput<TField extends FieldValues>(
     validateType,
     fullWidth,
     InputProps,
-    InputLabelProps,
     onFocus,
     onBlur,
+    defaultValue,
   } = props;
+
   return (
     <Controller
       control={control}
@@ -44,7 +45,10 @@ export function CustomInput<TField extends FieldValues>(
               error={!!error?.message}
               fullWidth={fullWidth}
               InputProps={InputProps}
-              InputLabelProps={InputLabelProps}
+              InputLabelProps={{
+                shrink: !!value || !!defaultValue,
+                style: { marginRight: 20 },
+              }}
               onFocus={onFocus}
               onBlur={onBlur}
             />

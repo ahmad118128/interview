@@ -34,19 +34,11 @@ export default function Dashboard() {
           fullWidth
           InputProps={{
             startAdornment: (
-              <InputAdornment position="end" sx={{ margin: '10px' }}>
+              <InputAdornment position="start" sx={{ margin: '10px' }}>
                 <Icon icon="mdi:user" />
               </InputAdornment>
             ),
           }}
-          InputLabelProps={{
-            shrink: shrinked,
-            style: { marginRight: 20 },
-          }}
-          value={currentValue}
-          onFocus={() => setShrinked(true)}
-          onChange={() => setShrinked(true)}
-          onBlur={(e) => setShrinked(!!e.target.value)}
         />
         <CustomInput
           name="custom2"

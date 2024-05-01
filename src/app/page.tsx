@@ -1,10 +1,43 @@
 'use client';
 import CustomSearchBar from '@/components/atoms/CustomSearchBar';
 import { Box, Typography } from '@mui/material';
-import { CustomTooltip } from '@/components/atoms/CustomTooltip';
 import { CustomTab } from '@/components/molecules/CustomTab/styled';
+import { EFabMode } from '@/components/baseComponents/BasedFabButton/type';
+import { CustomFabButton } from '@/components/atoms/CustomFabButton';
+import { Icon } from '@iconify/react';
 
 export default function Home() {
+  function handleClick() {
+    console.log('e');
+  }
+
+  const SDActions = [
+    {
+      icon: (
+        <Icon
+          icon="mdi:user"
+          width="40px"
+          height="40px"
+          style={{ color: 'white' }}
+        />
+      ),
+      name: 'icon-1',
+      onClick: handleClick,
+    },
+    {
+      icon: (
+        <Icon
+          icon="mdi:users"
+          width="40px"
+          height="40px"
+          style={{ color: 'white' }}
+        />
+      ),
+      name: 'icon-2',
+      onClick: handleClick,
+    },
+  ];
+
   return (
     <>
       <Typography variant="h1">تست</Typography>
@@ -54,9 +87,30 @@ export default function Home() {
           placeholder="جست و جو کنید"
         />
       </Box>
-      <CustomTooltip arrow title="title" placement="bottom-end" open>
-        <div>BaseTooltip</div>
-      </CustomTooltip>
+
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '2rem',
+        }}
+      >
+        <CustomFabButton
+          size="large"
+          icon
+          onClick={handleClick}
+          fabType={EFabMode.SPEED_DIAL}
+          action={SDActions}
+        />
+        <CustomFabButton
+          size="large"
+          icon
+          onClick={handleClick}
+          fabType={EFabMode.FAB}
+        />
+      </div>
     </>
   );
 }

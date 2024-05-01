@@ -1,6 +1,6 @@
 import { IconButton, styled } from '@mui/material';
 
-export const MobileButton = styled(IconButton)`
+export const HeaderIconButton = styled(IconButton)`
   padding: 0.25rem;
   color: ${({ theme }) => theme.palette.primary.main};
   background-color: ${({ theme }) => theme.palette.grey[50]};

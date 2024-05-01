@@ -4,6 +4,7 @@ import { Typography } from '@mui/material';
 import { ActionBar, UsernameBox } from './styled';
 import HeaderButton from '../HeaderButton';
 import { DesktopActions } from './constants';
+import { registrationStr } from '@/strings';
 
 export default function HeaderDashboardDesktop() {
   return (
@@ -12,7 +13,6 @@ export default function HeaderDashboardDesktop() {
         {DesktopActions.map((item) => (
           <HeaderButton
             key={item.id}
-            mode="desktop"
             tooltipTitle={item.tooltipTitle}
             clickHandler={item.clickHandler}
           >
@@ -23,10 +23,9 @@ export default function HeaderDashboardDesktop() {
 
       <UsernameBox>
         <Icon width={24} icon={'lets-icons:user-fill'} />
-        <Typography variant="body1">نام کاربری</Typography>
+        <Typography variant="body1">{registrationStr.username}</Typography>
 
         <HeaderButton
-          mode="desktop"
           tooltipTitle="خروج"
           clickHandler={() => console.log('exit')}
         >

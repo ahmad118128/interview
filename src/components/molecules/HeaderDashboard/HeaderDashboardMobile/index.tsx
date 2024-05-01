@@ -7,16 +7,17 @@ import { MenuBox, ProfileViewer } from './styled';
 import { ActionButton } from '../styled';
 import HeaderButton from '../HeaderButton';
 import { MobileActions } from './constants';
+import { registrationStr } from '@/strings';
 
 export default function HeaderDashboardMobile() {
-  const [showMenu, setShowMenu] = useState<null | HTMLElement>(null);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleClose = () => {
-    setShowMenu(null);
+    setAnchorEl(null);
   };
 
   const showMenuHandler = (event: MouseEvent<HTMLButtonElement>) => {
-    setShowMenu(event.currentTarget);
+    setAnchorEl(event.currentTarget);
   };
 
   return (
@@ -35,25 +36,24 @@ export default function HeaderDashboardMobile() {
       <ActionButton disableRipple onClick={showMenuHandler}>
         <Icon icon={'lets-icons:user-fill'} />
         <Icon
-          icon={showMenu ? 'iconamoon:arrow-up-2' : 'iconamoon:arrow-down-2'}
+          icon={anchorEl ? 'iconamoon:arrow-up-2' : 'iconamoon:arrow-down-2'}
         />
       </ActionButton>
 
       <ProfileViewer
-        anchorEl={showMenu}
-        open={!!showMenu}
+        anchorEl={anchorEl}
+        open={!!anchorEl}
         onClose={handleClose}
         anchorOrigin={{
           vertical: 'bottom',
           horizontal: 'left',
         }}
       >
-        <Typography variant="body1">نام کاربری</Typography>
+        <Typography variant="body1">{registrationStr.username}</Typography>
         <MenuBox>
           {MobileActions.map((item) => (
             <HeaderButton
               key={item.id}
-              mode="mobile"
               tooltipTitle={item.tooltipTitle}
               clickHandler={item.clickHandler}
             >

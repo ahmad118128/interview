@@ -3,7 +3,7 @@ import { Box, styled } from '@mui/material';
 
 export const StyledContainerPage = styled(Box)`
   background-image: url('assets/icons/loginBackground/login-background.svg');
-  height: 98vh;
+  height: 97vh;
   /* width: 100%; */
   background-size: cover;
   background-position: cover;
@@ -29,18 +29,12 @@ export const StyledContainerBox = styled(Box)`
   justify-content: center;
   background-color: white;
   padding: 40px;
-  width: 380px;
-  height: 444px;
   /* margin-top: 32px; */
-  border: solid 1px ${({ theme }) => theme.palette.grey[50]};
+  border: 1px solid ${({ theme }) => theme.palette.grey[50]};
   background: ${({ theme }) => theme.palette.common.white};
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  @media (max-width: 600px) {
-    width: 20rem;
-    padding: 2rem 1.25rem;
-  }
-  img {
-    /* align-self: start; */
+  @media (max-width: 430px) {
+    padding: 40px 24px;
   }
 `;

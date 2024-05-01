@@ -1,5 +1,6 @@
+'use client';
 import { CustomCheckbox } from '@/components/atoms/Checkbox';
-import { Icon } from '@iconify/react/dist/iconify.js';
+import { Icon } from '@iconify/react';
 import { Typography } from '@mui/material';
 
 export default function Home() {

@@ -5,7 +5,6 @@ import {
   StyledContainerLayout,
   StyledContainerSideBar,
   StyledMainLayout,
-  StyledSideBar,
 } from './styled';
 
 export default function AdminLayout(props: PropsWithChildren) {
@@ -22,12 +21,4 @@ export default function AdminLayout(props: PropsWithChildren) {
       </StyledContainerLayout>
     </>
   );
-}
-{
-  /* <StyledContainerLayout>
-  <StyledSideBar></StyledSideBar>
-  <StyledChildLayout open={showSidebar}>
-    <DashboardContainer type={type}>{children}</DashboardContainer>
-  </StyledChildLayout>
-</StyledContainerLayout> */
 }

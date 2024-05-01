@@ -12,7 +12,7 @@ export default function Dashboard() {
         display: 'flex',
         justifyContent: 'center',
         gap: '20px',
-        flexWrap: 'wrap',
+        flexWrap: 'nowrap',
       }}
     >
       <p>test components page</p>

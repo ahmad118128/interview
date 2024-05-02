@@ -1,39 +1,14 @@
 'use client';
-import { CustomCheckbox } from '@/components/atoms/Checkbox';
-import { Icon } from '@iconify/react';
+
+import { CustomTextArea } from '@/components/atoms/CustomTextarea/CustomTextarea';
 import { Typography } from '@mui/material';
+import { kMaxLength } from 'buffer';
+import { useForm } from 'react-hook-form';
 
 export default function Home() {
-  function handleClick() {
-    console.log('e');
-  }
-
-  const SDActions = [
-    {
-      icon: (
-        <Icon
-          icon="mdi:user"
-          width="40px"
-          height="40px"
-          style={{ color: 'white' }}
-        />
-      ),
-      name: 'icon-1',
-      onClick: handleClick,
-    },
-    {
-      icon: (
-        <Icon
-          icon="mdi:users"
-          width="40px"
-          height="40px"
-          style={{ color: 'white' }}
-        />
-      ),
-      name: 'icon-2',
-      onClick: handleClick,
-    },
-  ];
+  const { control } = useForm({
+    mode: 'onChange',
+  });
 
   return (
     <>
@@ -45,7 +20,20 @@ export default function Home() {
       <Typography variant="body2">تست</Typography>
       <Typography variant="caption">تست</Typography>
       <Typography variant="button">تست</Typography>
-      <CustomCheckbox />
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <CustomTextArea
+          name="ss"
+          placeholder="ssss"
+          control={control}
+          label="label"
+        />
+      </div>
     </>
   );
 }

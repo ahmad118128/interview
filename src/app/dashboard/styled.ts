@@ -8,7 +8,7 @@ export const StyledChildLayout = styled('main')`
   margin-top: 4rem;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 2.5rem;
+  padding: 2rem 2.5rem;
   flex-wrap: wrap;
   height: 100vh;
   flex: 1;

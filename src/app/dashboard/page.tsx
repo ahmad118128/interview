@@ -1,8 +1,7 @@
-'use client';
 export default function Dashboard() {
   return (
     <>
-      <p>test components page</p>
+      <h1>تست</h1>
     </>
   );
 }

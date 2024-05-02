@@ -1,14 +1,31 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
-import {
-  ThemeProvider as MuiThemeProvider,
-  ThemeProvider,
-} from '@mui/material/styles';
+import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 import theme from '@/theme';
 
-const inter = Inter({ subsets: ['latin'] });
+const myFont = localFont({
+  display: 'swap',
+  src: [
+    {
+      path: '../../public/fonts/IRANYekanWebRegular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/IRANYekanWebLight.woff2',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/IRANYekanWebBold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-iran-yekan',
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -21,8 +38,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fa-IR" dir="rtl">
-      <body className={inter.className}>
+    <html lang="fa-IR" dir="rtl" className={myFont.variable}>
+      <body>
         <AppRouterCacheProvider>
           <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
         </AppRouterCacheProvider>

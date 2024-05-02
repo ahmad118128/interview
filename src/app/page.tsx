@@ -1,9 +1,7 @@
 'use client';
-
-import { Typography } from '@mui/material';
-import { EFabMode } from '@/components/baseComponents/BasedFabButton/type';
-import { CustomFabButton } from '@/components/atoms/CustomFabButton';
+import { CustomCheckbox } from '@/components/atoms/Checkbox';
 import { Icon } from '@iconify/react';
+import { Typography } from '@mui/material';
 
 export default function Home() {
   function handleClick() {
@@ -47,30 +45,7 @@ export default function Home() {
       <Typography variant="body2">تست</Typography>
       <Typography variant="caption">تست</Typography>
       <Typography variant="button">تست</Typography>
-
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '2rem',
-        }}
-      >
-        <CustomFabButton
-          size="large"
-          icon
-          onClick={handleClick}
-          fabType={EFabMode.SPEED_DIAL}
-          action={SDActions}
-        />
-        <CustomFabButton
-          size="large"
-          icon
-          onClick={handleClick}
-          fabType={EFabMode.FAB}
-        />
-      </div>
+      <CustomCheckbox />
     </>
   );
 }

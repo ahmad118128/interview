@@ -40,7 +40,7 @@ export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
       },
     },
 
-    '& .MuiInputBase-root , .MuiOutlinedInput-root': {
+    '& .MuiInputBase-root': {
       fontFamily: theme.typography.fontFamily,
       fontSize: theme.typography.body1.fontSize,
       fontWeight: 'normal',
@@ -56,24 +56,29 @@ export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
         '&:before': {
           borderColor: theme.palette.primary.light,
         },
-        // '& .iconWrapperVisibility > svg': {
-        //   fill: theme.palette.primary.light,
-        // },
-        // '& .iconUpload > svg': {
-        //   fill: theme.palette.primary.light,
-        // },
       },
-      ':disable &:after': {
-        border: 'none',
+      '& .MuiOutlinedInput-notchedOutline': {
+        borderColor: theme.palette.grey[300],
+        borderWidth: '1px',
       },
-      '& ::-webkit-file-upload-button': {
-        display: 'none',
-      },
-      '& ::file-selector-button': {
-        display: 'none',
-      },
-      '& input[type=file]': {
-        fontSize: value ? '14px !important' : '0px !important',
+      '&.Mui-focused': {
+        '& .MuiOutlinedInput-notchedOutline': {
+          borderColor: theme.palette.primary.light,
+          borderWidth: '1px',
+        },
+
+        ':disable &:after': {
+          border: 'none',
+        },
+        '& ::-webkit-file-upload-button': {
+          display: 'none',
+        },
+        '& ::file-selector-button': {
+          display: 'none',
+        },
+        '& input[type=file]': {
+          fontSize: value ? '14px !important' : '0px !important',
+        },
       },
     },
   };

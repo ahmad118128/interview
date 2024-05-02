@@ -10,6 +10,7 @@ export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
   typeInput,
   theme,
   value,
+  InputProps,
 }) => {
   return {
     ' & input': {
@@ -25,7 +26,7 @@ export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
 
     '& .MuiInputLabel-filled': {
       direction: ltrLabel ? 'ltr' : 'rtl',
-      right: ltrLabel ? 'inherit' : '1rem',
+      right: InputProps ? '2rem' : '1rem',
       left: ltrLabel ? '0.5rem' : 'inherit',
       fontFamily: theme.typography.fontFamily,
       fontWeight: '400 !important',
@@ -44,8 +45,6 @@ export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
       fontFamily: theme.typography.fontFamily,
       fontSize: theme.typography.body1.fontSize,
       fontWeight: 'normal',
-      width: '8.75rem',
-      height: '3rem',
       backgroundColor: theme.palette.grey[100],
       borderTopLeftRadius: '0.438rem',
       borderTopRightRadius: '0.438rem',
@@ -58,24 +57,29 @@ export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
         '&:before': {
           borderColor: theme.palette.primary.light,
         },
-        '& .iconWrapperVisibility > svg': {
-          fill: theme.palette.primary.light,
+      },
+      '& .MuiOutlinedInput-notchedOutline': {
+        borderColor: theme.palette.grey[300],
+        borderWidth: '1px',
+      },
+      '&.Mui-focused': {
+        '& .MuiOutlinedInput-notchedOutline': {
+          borderColor: theme.palette.primary.light,
+          borderWidth: '1px',
         },
-        '& .iconUpload > svg': {
-          fill: theme.palette.primary.light,
+
+        ':disable &:after': {
+          border: 'none',
         },
-      },
-      ':disable &:after': {
-        border: 'none',
-      },
-      '& ::-webkit-file-upload-button': {
-        display: 'none',
-      },
-      '& ::file-selector-button': {
-        display: 'none',
-      },
-      '& input[type=file]': {
-        fontSize: value ? '14px !important' : '0px !important',
+        '& ::-webkit-file-upload-button': {
+          display: 'none',
+        },
+        '& ::file-selector-button': {
+          display: 'none',
+        },
+        '& input[type=file]': {
+          fontSize: value ? '14px !important' : '0px !important',
+        },
       },
     },
   };

@@ -1,40 +1,39 @@
 'use client';
+import { CSSProperties } from 'react';
 import { Box, styled } from '@mui/material';
+
+const flexStyle: Pick<
+  CSSProperties,
+  'display' | 'flexDirection' | 'justifyContent' | 'alignItems'
+> = {
+  display: 'flex',
+  alignItems: 'center',
+  flexDirection: 'column',
+  justifyContent: 'center',
+};
 
 export const StyledContainerPage = styled(Box)`
   background-image: url('assets/icons/loginBackground/login-background.svg');
-  height: 97vh;
-  /* width: 100%; */
+  height: 100vh;
   background-size: cover;
   background-position: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
+  ${flexStyle}
 `;
 
 export const StyledIconAiBox = styled(Box)`
-  /* height: 93vh; */
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  ${flexStyle};
 `;
 
 export const StyledContainerBox = styled(Box)`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
   background-color: white;
-  padding: 40px;
-  /* margin-top: 32px; */
-  border: 1px solid ${({ theme }) => theme.palette.grey[50]};
+  padding: 2.5rem;
+  border: 0.0625rem solid ${({ theme }) => theme.palette.grey[50]};
   background: ${({ theme }) => theme.palette.common.white};
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
+  box-shadow: 0.25rem 0.25rem 0.625rem rgba(0, 0, 0, 0.2);
+  border-radius: 1.25rem;
   @media (max-width: 430px) {
-    padding: 40px 24px;
+    padding: 2.5rem 1.5rem;
   }
+  ${flexStyle}
 `;

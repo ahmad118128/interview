@@ -1,25 +1,22 @@
 'use client';
-import { Box, Typography } from '@mui/material';
-import { StyledContainerInput } from './styled';
-import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
 import { useForm } from 'react-hook-form';
-import { CheckBox } from '@mui/icons-material';
+import { Box, Typography } from '@mui/material';
+
+import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
 import { CustomButton } from '@/components/atoms/customButton';
 import { ControledCheckbox } from '@/components/atoms/Checkbox';
 
-export const LoginAccount = (props: any) => {
-  const {
-    control,
-    handleSubmit,
-    setError,
-    formState: { errors },
-  } = useForm({
+import { StyledContainerInput } from './styled';
+import { registrationStr } from '@/strings';
+
+export const LoginAccount = () => {
+  const { control } = useForm({
     mode: 'onChange',
   });
-  function handleSubmitt() {}
+
   return (
-    <Box sx={{ marginTop: '40px' }}>
-      <form onSubmit={handleSubmitt}>
+    <Box sx={{ marginTop: '2.5rem' }}>
+      <form onSubmit={() => {}}>
         <StyledContainerInput>
           <Box>
             <CustomInput
@@ -45,10 +42,14 @@ export const LoginAccount = (props: any) => {
             }}
           >
             <ControledCheckbox name="checkbox" control={control} />
-            <Typography variant="body1">مرا به خاطر بسپار</Typography>
+            <Typography variant="body1">
+              {registrationStr.remmeberMe}
+            </Typography>
           </Box>
         </StyledContainerInput>
-        <CustomButton className="loginButton">Submit</CustomButton>
+        <CustomButton className="loginButton">
+          {registrationStr.login}
+        </CustomButton>
       </form>
     </Box>
   );

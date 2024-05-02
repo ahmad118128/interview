@@ -1,13 +1,14 @@
 'use client';
 import { useForm } from 'react-hook-form';
-import { Box, Typography } from '@mui/material';
+import { Box, InputAdornment, Typography } from '@mui/material';
 
 import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
-import { CustomButton } from '@/components/atoms/customButton';
 import { ControledCheckbox } from '@/components/atoms/Checkbox';
 
 import { StyledContainerInput } from './styled';
 import { registrationStr } from '@/strings';
+import { CustomButton } from '@/components/atoms/CustomButton';
+import { Icon } from '@iconify/react/dist/iconify.js';
 
 export const LoginAccount = () => {
   const { control } = useForm({
@@ -25,6 +26,14 @@ export const LoginAccount = () => {
               control={control}
               name="input"
               type="text"
+              placeholder={registrationStr.username}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start" sx={{ margin: '0.625rem' }}>
+                    <Icon icon="mdi:user" fontSize={24} />
+                  </InputAdornment>
+                ),
+              }}
             />
           </Box>
           <Box>
@@ -32,7 +41,16 @@ export const LoginAccount = () => {
               fullWidth
               control={control}
               name="input"
+              variant="outlined"
               type="password"
+              placeholder={registrationStr.roobinPassword}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start" sx={{ margin: '0.625rem' }}>
+                    <Icon icon="jam:key-f" fontSize={24} />
+                  </InputAdornment>
+                ),
+              }}
             />
           </Box>
           <Box

@@ -1,7 +1,4 @@
-import {
-  StyledContainerPage,
-  StyledIconAiBox,
-} from '@/components/organisms/login/styled';
+import { StyledContainerPage } from '@/components/organisms/login/styled';
 import { Login } from '@/components/pages/login';
 
 const LoginPage = () => {

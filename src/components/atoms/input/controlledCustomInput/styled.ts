@@ -40,7 +40,7 @@ export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
       },
     },
 
-    '& .MuiInputBase-root': {
+    '& .MuiInputBase-root , .MuiOutlinedInput-root': {
       fontFamily: theme.typography.fontFamily,
       fontSize: theme.typography.body1.fontSize,
       fontWeight: 'normal',

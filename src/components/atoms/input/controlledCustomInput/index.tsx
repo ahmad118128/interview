@@ -21,6 +21,9 @@ export function CustomInput<TField extends FieldValues>(
     onFocus,
     onBlur,
     defaultValue,
+    variant,
+    hiddenLabel,
+    placeholder,
   } = props;
 
   return (
@@ -33,7 +36,7 @@ export function CustomInput<TField extends FieldValues>(
           <Grid item xs={12}>
             <StyledTextField
               name={name}
-              variant="filled"
+              variant={variant ? variant : 'filled'}
               label={label}
               type={type}
               setError={setError}
@@ -51,6 +54,8 @@ export function CustomInput<TField extends FieldValues>(
               }}
               onFocus={onFocus}
               onBlur={onBlur}
+              hiddenLabel={!!hiddenLabel}
+              placeholder={placeholder}
             />
           </Grid>
           <Grid item xs={12}>

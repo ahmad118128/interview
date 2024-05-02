@@ -30,8 +30,10 @@ export default function Dashboard() {
         <CustomInput
           name="custom1"
           control={control}
-          label="لیبل"
           fullWidth
+          hiddenLabel
+          variant="outlined"
+          placeholder="نام کاربری"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start" sx={{ margin: '10px' }}>

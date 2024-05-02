@@ -16,7 +16,16 @@ export function CustomInput<TField extends FieldValues>(
     inputProps,
     disabled,
     validateType,
+    fullWidth,
+    InputProps,
+    onFocus,
+    onBlur,
+    InputLabelProps,
+    variant,
+    hiddenLabel,
+    placeholder,
   } = props;
+
   return (
     <Controller
       control={control}
@@ -27,7 +36,7 @@ export function CustomInput<TField extends FieldValues>(
           <Grid item xs={12}>
             <StyledTextField
               name={name}
-              variant="filled"
+              variant={variant ? variant : 'filled'}
               label={label}
               type={type}
               setError={setError}
@@ -37,6 +46,13 @@ export function CustomInput<TField extends FieldValues>(
               onChange={onChange}
               validateType={validateType}
               error={!!error?.message}
+              fullWidth={fullWidth}
+              InputProps={InputProps}
+              InputLabelProps={InputLabelProps}
+              onFocus={onFocus}
+              onBlur={onBlur}
+              hiddenLabel={!!hiddenLabel}
+              placeholder={placeholder}
             />
           </Grid>
           <Grid item xs={12}>

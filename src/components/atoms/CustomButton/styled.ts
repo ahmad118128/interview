@@ -9,9 +9,6 @@ export const StyledButton = styled(MUIButton)<ButtonProps>(({ theme }) => ({
   fontWeight: theme.typography.button.fontWeight,
   boxShadow: 'none',
 
-  '&:hover, &:focus': {
-    backgroundColor: theme.palette.secondary.dark,
-  },
   '&.MuiButton-containedPrimary': {
     backgroundColor: theme.palette.primary.light,
     color: theme.palette.grey[50],

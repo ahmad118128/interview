@@ -3,8 +3,6 @@ import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 export const StyledChildLayout = styled('main')`
-  background: yellow;
-  border: 5px solid;
   margin-top: 4rem;
   overflow-y: auto;
   overflow-x: hidden;
@@ -27,14 +25,12 @@ export const StyledMainLayout = styled(Box)`
 export const StyledContainerLayout = styled(Box)`
   display: flex;
   width: 100%;
-  background: red;
   box-sizing: border-box;
 `;
 
 export const StyledContainerAppBar = styled(Box)`
   position: fixed;
   width: 100%;
-  background: blue;
   height: 4rem;
 `;
 
@@ -42,5 +38,4 @@ export const StyledContainerSideBar = styled(Box)`
   height: 100%;
   width: 5rem;
   position: fixed;
-  background: green;
 `;

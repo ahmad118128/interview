@@ -7,9 +7,7 @@ import {
   StyledMainLayout,
 } from './styled';
 
-export default function AdminLayout(props: PropsWithChildren) {
-  const { children } = props;
-
+export default function AdminLayout({ children }: PropsWithChildren) {
   return (
     <>
       <StyledContainerLayout>

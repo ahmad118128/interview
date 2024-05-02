@@ -32,6 +32,8 @@ export default function Dashboard() {
           control={control}
           fullWidth
           hiddenLabel
+          setError={setError}
+          validateType="num"
           variant="outlined"
           placeholder="نام کاربری"
           InputProps={{

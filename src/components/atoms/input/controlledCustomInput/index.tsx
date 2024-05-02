@@ -20,7 +20,7 @@ export function CustomInput<TField extends FieldValues>(
     InputProps,
     onFocus,
     onBlur,
-    defaultValue,
+    InputLabelProps,
     variant,
     hiddenLabel,
     placeholder,
@@ -48,10 +48,7 @@ export function CustomInput<TField extends FieldValues>(
               error={!!error?.message}
               fullWidth={fullWidth}
               InputProps={InputProps}
-              InputLabelProps={{
-                shrink: !!value || !!defaultValue,
-                style: { marginRight: 20 },
-              }}
+              InputLabelProps={InputLabelProps}
               onFocus={onFocus}
               onBlur={onBlur}
               hiddenLabel={!!hiddenLabel}

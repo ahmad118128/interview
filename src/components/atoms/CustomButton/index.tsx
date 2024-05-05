@@ -1,7 +1,7 @@
-import { ButtonProps } from './type';
-import { StyledButton } from './styled';
 import { generalStr } from '@/strings';
 import { Icon } from '@iconify/react';
+import { ButtonProps } from './type';
+import { StyledButton } from './styled';
 export const CustomButton = ({
   loadingText,
   loading,

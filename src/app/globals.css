@@ -1,3 +1,9 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 @font-face {
   font-family: 'iranYekan';
   font-weight: bold;
@@ -15,6 +21,16 @@
   font-weight: lighter;
   src: url('/fonts/IRANYekanWebLight.woff2') format('woff');
 }
+html {
+  font-family: var(--font-iran-yekan);
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 ::-webkit-scrollbar {
   width: 0.375rem;
   height: 0.375rem;

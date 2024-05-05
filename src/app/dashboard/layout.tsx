@@ -1,12 +1,22 @@
-import HeaderDashboard from '@/components/molecules/HeaderDashboard';
-import React, { ReactNode } from 'react';
-import { ContainerBox } from './styled';
+import { PropsWithChildren } from 'react';
+import {
+  StyledChildLayout,
+  StyledContainerAppBar,
+  StyledContainerLayout,
+  StyledContainerSideBar,
+  StyledMainLayout,
+} from './styled';
 
-export default function DashboardHeader({ children }: { children: ReactNode }) {
+export default function AdminLayout({ children }: PropsWithChildren) {
   return (
     <>
-      <HeaderDashboard />
-      <ContainerBox>{children}</ContainerBox>
+      <StyledContainerLayout>
+        <StyledContainerSideBar />
+        <StyledMainLayout>
+          <StyledContainerAppBar />
+          <StyledChildLayout>{children}</StyledChildLayout>
+        </StyledMainLayout>
+      </StyledContainerLayout>
     </>
   );
 }

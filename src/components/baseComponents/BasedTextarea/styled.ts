@@ -21,10 +21,13 @@ export const StyledBox = styled(Box)<IStyledBox>`
     }
     &:hover {
       border: 0.0625rem solid
-        ${({ theme, error }) =>
-          error
-            ? theme.palette.error.main
-            : theme.palette.primary.light}!important;
+      ${({ theme, error }) =>
+        error
+          ? theme.palette.error.main
+          : theme.palette.primary.light}!important;
+
     }
   }
+
+ 
 `;

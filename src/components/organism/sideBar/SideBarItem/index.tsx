@@ -1,33 +1,49 @@
-import { Typography } from '@mui/material';
+import React, { useContext } from 'react';
+import {
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Typography,
+} from '@mui/material';
 import { IconTitleProps } from '../type';
-import { StyledContainerIconTile } from '../styled';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { CustomTooltip } from '@/components/atoms/CustomTooltip';
+import { StyledListItemButton } from '../styled';
+import { openDashboard } from '@/context/dashboardContext/dashboardContext';
+import { TSidebarContext } from '@/context/dashboardContext/type';
 
-export const SideBarItem = (props: IconTitleProps) => {
-  const { title, icon, onClick, open, className } = props;
+const SideBarItem = (props: IconTitleProps) => {
+  const { title, icon, onClick, open, className, selected } = props;
+
+  const { isOpen, setIsOpen } = useContext(openDashboard) as TSidebarContext;
 
   return (
     <CustomTooltip
-      title={!open && title}
+      title={!isOpen && title}
       placement="bottom"
       arrow
       className="sideBarItemTooltip"
     >
-      <StyledContainerIconTile
-        className={className}
-        label={open}
+      <StyledListItemButton
         onClick={onClick}
-        sx={{ justifyContent: open ? 'flex-start' : 'center' }}
+        className={`${className} ${isOpen ? 'active' : ''}`}
+        sx={{
+          justifyContent: isOpen ? 'flex-start' : 'center',
+          gap: isOpen ? '0.5rem' : '0',
+        }}
+        // selected={selected}
       >
-        <Icon icon={icon} fontSize={24} className="iconSideBar" />
-
-        {open && title && (
-          <Typography variant="h3" className="titleSideBar">
-            {title}
-          </Typography>
+        <ListItemIcon sx={{ justifyContent: 'center' }}>
+          <Icon icon={icon} fontSize={24} className="iconSideBar" />
+        </ListItemIcon>
+        {open && (
+          <ListItemText
+            primary={<Typography variant="h3">{title}</Typography>}
+          />
         )}
-      </StyledContainerIconTile>
+      </StyledListItemButton>
     </CustomTooltip>
   );
 };
+
+export default SideBarItem;

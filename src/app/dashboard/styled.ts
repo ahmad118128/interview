@@ -2,6 +2,7 @@
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { StyledSideBarType } from './type';
+import theme from '@/theme';
 
 export const StyledChildLayout = styled('main')`
   margin-top: 4rem;
@@ -37,6 +38,9 @@ export const StyledContainerAppBar = styled(Box)`
 
 export const StyledContainerSideBar = styled(Box)<StyledSideBarType>`
   height: 100%;
-  width: ${({ isOpen }) => (isOpen ? '12rem' : '5rem')};
+  width: ${({ isOpen }) => (isOpen ? '11rem' : '3.5rem')};
   position: fixed;
+  background: ${({ theme }) => theme.palette.grey[50]};
+  padding: 0.75rem;
+  border-left: 2px solid ${({ theme }) => theme.palette.grey[200]};
 `;

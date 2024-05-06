@@ -1,6 +1,7 @@
 'use client';
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { StyledSideBarType } from './type';
 
 export const StyledChildLayout = styled('main')`
   margin-top: 4rem;
@@ -12,13 +13,13 @@ export const StyledChildLayout = styled('main')`
   flex: 1;
 `;
 
-export const StyledMainLayout = styled(Box)`
+export const StyledMainLayout = styled(Box)<StyledSideBarType>`
   width: 100vw;
   padding-left: 0;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  margin-right: 5rem;
+  margin-right: ${({ isOpen }) => (isOpen ? '12rem' : '5rem')};
   overflow-y: hidden;
 `;
 
@@ -34,8 +35,8 @@ export const StyledContainerAppBar = styled(Box)`
   height: 4rem;
 `;
 
-export const StyledContainerSideBar = styled(Box)`
+export const StyledContainerSideBar = styled(Box)<StyledSideBarType>`
   height: 100%;
-  width: 5rem;
+  width: ${({ isOpen }) => (isOpen ? '12rem' : '5rem')};
   position: fixed;
 `;

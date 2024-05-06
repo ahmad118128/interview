@@ -1,22 +1,24 @@
+'use client';
 import { PropsWithChildren } from 'react';
 import {
   StyledChildLayout,
   StyledContainerAppBar,
   StyledContainerLayout,
-  StyledContainerSideBar,
   StyledMainLayout,
 } from './styled';
+import DashboardContextProvider from '@/context/dashboardContext/dashboardContext';
+import SideBar from '@/components/organism/sideBar';
+import MainLayout from '@/components/pages/dashboard/mainLayout';
 
 export default function AdminLayout({ children }: PropsWithChildren) {
   return (
     <>
-      <StyledContainerLayout>
-        <StyledContainerSideBar />
-        <StyledMainLayout>
-          <StyledContainerAppBar />
-          <StyledChildLayout>{children}</StyledChildLayout>
-        </StyledMainLayout>
-      </StyledContainerLayout>
+      <DashboardContextProvider>
+        <StyledContainerLayout>
+          <SideBar />
+          <MainLayout>{children}</MainLayout>
+        </StyledContainerLayout>
+      </DashboardContextProvider>
     </>
   );
 }

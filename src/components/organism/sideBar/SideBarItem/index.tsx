@@ -26,12 +26,12 @@ const SideBarItem = (props: IconTitleProps) => {
     >
       <StyledListItemButton
         onClick={onClick}
-        className={`${className} ${isOpen ? 'active' : ''}`}
+        className={className}
         sx={{
           justifyContent: isOpen ? 'flex-start' : 'center',
           gap: isOpen ? '0.5rem' : '0',
         }}
-        // selected={selected}
+        selected={selected}
       >
         <ListItemIcon sx={{ justifyContent: 'center' }}>
           <Icon icon={icon} fontSize={24} className="iconSideBar" />

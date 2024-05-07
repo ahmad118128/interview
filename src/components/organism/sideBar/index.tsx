@@ -22,14 +22,34 @@ export default function SideBar() {
     {
       title: 'دشبورد',
       icon: 'material-symbols:home-rounded',
-      isOpen: isOpen,
-      // onClick: handleListItemClick,
     },
     {
       title: 'بانک اطلاعاتی',
       icon: 'material-symbols:database',
-      isOpen: isOpen,
-      // onClick: handleListItemClick,
+    },
+    {
+      title: 'لیست نظارتی',
+      icon: 'material-symbols:patient-list-rounded',
+    },
+    {
+      title: 'شناسایی تصویر',
+      icon: 'mdi:user-search',
+    },
+    {
+      title: 'گزارشات',
+      icon: 'solar:clipboard-list-bold',
+    },
+    {
+      title: 'آنالیز تردد',
+      icon: 'mdi:report-box',
+    },
+    {
+      title: 'کاربران',
+      icon: 'mdi:users-group',
+    },
+    {
+      title: 'تنظیمات',
+      icon: 'ant-design:setting-filled',
     },
   ];
   function handleClick() {
@@ -44,15 +64,16 @@ export default function SideBar() {
           width: '100%',
         }}
       >
-        <List component="nav" aria-label="main mailbox folders">
+        <List component="nav">
           {sidebarList.map((item, index) => {
             return (
               <>
                 <SideBarItem
+                  className={selectedIndex === index ? 'selected' : ''}
                   key={index}
                   title={item.title}
                   icon={item.icon}
-                  open={item.isOpen}
+                  open={isOpen}
                   selected={selectedIndex === index}
                   onClick={() => handleListItemClick(index)}
                 />

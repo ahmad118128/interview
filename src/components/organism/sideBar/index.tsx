@@ -54,6 +54,7 @@ export default function SideBar() {
       icon: 'ant-design:setting-filled',
     },
   ];
+
   function handleClick() {
     return setIsOpen(!isOpen);
   }
@@ -84,6 +85,7 @@ export default function SideBar() {
             width="56"
             height="56"
           />
+
           <List component="nav">
             {sidebarList.map((item, index) => {
               return (
@@ -102,6 +104,7 @@ export default function SideBar() {
             })}
           </List>
         </Box>
+
         <Box
           sx={{
             width: '100%',
@@ -109,7 +112,7 @@ export default function SideBar() {
             flexDirection: 'column',
             alignItems: 'center',
             gap: '0.25rem',
-            marginBottom: isOpen ? '1rem' : '1rem',
+            marginBottom: isOpen ? '2rem' : '1.5rem',
             backgroundColor: theme.palette.common.white,
           }}
         >
@@ -120,6 +123,7 @@ export default function SideBar() {
               backgroundColor: theme.palette.grey[300],
             }}
           />
+
           <Typography
             variant="caption"
             sx={{
@@ -130,6 +134,7 @@ export default function SideBar() {
           >
             سیستم نظارت تصویری
           </Typography>
+
           <Typography
             variant="caption"
             sx={{
@@ -141,21 +146,34 @@ export default function SideBar() {
             نسخه 1.0
           </Typography>
 
-          <CustomButton
-            size="small"
-            variant="outlined"
+          <Box
             onClick={() => setIsOpen(!isOpen)}
+            sx={{
+              backgroundColor: theme.palette.grey[50],
+              height: '32px',
+              width: '32px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: '0.375rem',
+            }}
           >
             {isOpen ? (
               <Icon
                 icon="material-symbols:open-in-new-down-rounded"
-                width="2rem"
-                height="2rem"
+                width="1.5rem"
+                height="1.5rem"
+                color={theme.palette.primary.light}
               />
             ) : (
-              <Icon icon="ic:round-open-in-new" width="2rem" height="2rem" />
+              <Icon
+                icon="ic:round-open-in-new"
+                width="1.5rem"
+                height="1.5rem"
+                color={theme.palette.primary.light}
+              />
             )}
-          </CustomButton>
+          </Box>
         </Box>
       </Box>
     </StyledContainerSideBar>

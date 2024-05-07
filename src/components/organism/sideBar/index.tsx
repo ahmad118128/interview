@@ -9,7 +9,6 @@ import SideBarItem from './SideBarItem';
 import Image from 'next/image';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import theme from '@/theme';
-import { CustomButton } from '@/components/atoms/CustomButton';
 
 export default function SideBar() {
   const { isOpen, setIsOpen } = useContext(openDashboard) as TSidebarContext;
@@ -17,7 +16,7 @@ export default function SideBar() {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const handleListItemClick = (index: number) => {
-    setSelectedIndex(index); // Update the selected index
+    setSelectedIndex(index);
   };
 
   const sidebarList = [

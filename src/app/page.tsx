@@ -1,7 +1,8 @@
 'use client';
 
+import { CustomAutocomplete } from '@/components/atoms/Autocomplete';
 import { CustomTextArea } from '@/components/atoms/CustomTextarea/CustomTextarea';
-import { Typography } from '@mui/material';
+import { TextField, Typography } from '@mui/material';
 import { kMaxLength } from 'buffer';
 import { useForm } from 'react-hook-form';
 
@@ -9,6 +10,13 @@ export default function Home() {
   const { control } = useForm({
     mode: 'onChange',
   });
+
+  const test = [
+    { label: 'The Shawshank Redemption', year: 1994 },
+    { label: 'The Godfather', year: 1972 },
+    { label: 'The Godfather: Part II', year: 1974 },
+    { label: 'The Dark Knight', year: 2008 },
+  ];
 
   return (
     <>
@@ -32,6 +40,49 @@ export default function Home() {
           placeholder="ssss"
           control={control}
           label="label"
+        />
+      </div>
+      <div
+        style={{
+          marginTop: '20px',
+          marginInline: '300px',
+        }}
+      >
+        <CustomAutocomplete
+          options={[
+            'test1',
+            'test2',
+            'test3',
+            'test4',
+            'test5',
+            'test6',
+            'test7',
+            'test8',
+          ]}
+          multiple
+          label="تست"
+          dir="rtl"
+        />
+      </div>
+      <div
+        style={{
+          marginTop: '20px',
+          marginInline: '300px',
+        }}
+      >
+        <CustomAutocomplete
+          options={[
+            'test1',
+            'test2',
+            'test3',
+            'test4',
+            'test5',
+            'test6',
+            'test7',
+            'test8',
+          ]}
+          label="تست"
+          dir="rtl"
         />
       </div>
     </>

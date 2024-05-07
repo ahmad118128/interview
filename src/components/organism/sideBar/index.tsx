@@ -9,14 +9,25 @@ import SideBarItem from './SideBarItem';
 import Image from 'next/image';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import theme from '@/theme';
+import { usePathname, useRouter } from 'next/navigation';
+import Link from 'next/link';
+type Props = {
+  index: number;
+  url: string;
+};
 
 export default function SideBar() {
   const { isOpen, setIsOpen } = useContext(openDashboard) as TSidebarContext;
 
   const [selectedIndex, setSelectedIndex] = useState(0);
 
+  const router = useRouter();
+
+  const pathname = usePathname();
   const handleListItemClick = (index: number) => {
     setSelectedIndex(index);
+    // const newPath = `/${pathname}/${url}`;
+    // window.history.replaceState(null, '', newPath);
   };
 
   const sidebarList = [
@@ -27,30 +38,37 @@ export default function SideBar() {
     {
       title: 'بانک اطلاعاتی',
       icon: 'material-symbols:database',
+      url: 'dataBank',
     },
     {
       title: 'لیست نظارتی',
       icon: 'material-symbols:patient-list-rounded',
+      url: 'supervisitoryList',
     },
     {
       title: 'شناسایی تصویر',
       icon: 'mdi:user-search',
+      url: 'imageRecognition',
     },
     {
       title: 'گزارشات',
       icon: 'solar:clipboard-list-bold',
+      url: 'report',
     },
     {
       title: 'آنالیز تردد',
       icon: 'mdi:report-box',
+      url: 'trafficAnalysis',
     },
     {
       title: 'کاربران',
       icon: 'mdi:users-group',
+      url: 'userManagment',
     },
     {
       title: 'تنظیمات',
       icon: 'ant-design:setting-filled',
+      url: 'setting',
     },
   ];
 
@@ -89,15 +107,19 @@ export default function SideBar() {
             {sidebarList.map((item, index) => {
               return (
                 <>
-                  <SideBarItem
-                    className={selectedIndex === index ? 'selected' : ''}
+                  <Link
                     key={index}
-                    title={item.title}
-                    icon={item.icon}
-                    open={isOpen}
-                    selected={selectedIndex === index}
-                    onClick={() => handleListItemClick(index)}
-                  />
+                    href={item.url ? `/dashboard/${item.url}` : '/dashboard'}
+                  >
+                    <SideBarItem
+                      className={selectedIndex === index ? 'selected' : ''}
+                      title={item.title}
+                      icon={item.icon}
+                      open={isOpen}
+                      selected={selectedIndex === index}
+                      onClick={() => handleListItemClick(index)}
+                    />
+                  </Link>
                 </>
               );
             })}

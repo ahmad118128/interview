@@ -30,6 +30,7 @@ const SideBarItem = (props: IconTitleProps) => {
         sx={{
           justifyContent: isOpen ? 'flex-start' : 'center',
           gap: isOpen ? '0.5rem' : '0',
+          marginBottom: '0.5rem',
         }}
         selected={selected}
       >

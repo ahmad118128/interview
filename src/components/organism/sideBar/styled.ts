@@ -9,7 +9,7 @@ export const StyledListItemButton = styled(ListItemButton)(({ theme }) => ({
   cursor: 'pointer',
 
   '&:hover': {
-    backgroundColor: theme.palette.grey[100],
+    backgroundColor: theme.palette.common.white,
     '.MuiListItemIcon-root , .MuiListItemText-root ': {
       color: theme.palette.primary.light,
     },

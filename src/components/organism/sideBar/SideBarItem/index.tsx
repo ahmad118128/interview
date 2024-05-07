@@ -15,7 +15,7 @@ import { TSidebarContext } from '@/context/dashboardContext/type';
 const SideBarItem = (props: IconTitleProps) => {
   const { title, icon, onClick, open, className, selected } = props;
 
-  const { isOpen, setIsOpen } = useContext(openDashboard) as TSidebarContext;
+  const { isOpen } = useContext(openDashboard);
 
   return (
     <CustomTooltip

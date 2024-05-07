@@ -2,7 +2,6 @@
 
 import { CustomTextArea } from '@/components/atoms/CustomTextarea/CustomTextarea';
 import { Typography } from '@mui/material';
-import { kMaxLength } from 'buffer';
 import { useForm } from 'react-hook-form';
 
 export default function Home() {

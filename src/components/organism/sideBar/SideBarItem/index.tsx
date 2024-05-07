@@ -1,16 +1,10 @@
 import React, { useContext } from 'react';
-import {
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  Typography,
-} from '@mui/material';
+import { ListItemIcon, ListItemText, Typography } from '@mui/material';
 import { IconTitleProps } from '../type';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { CustomTooltip } from '@/components/atoms/CustomTooltip';
 import { StyledListItemButton } from '../styled';
 import { openDashboard } from '@/context/dashboardContext/dashboardContext';
-import { TSidebarContext } from '@/context/dashboardContext/type';
 
 const SideBarItem = (props: IconTitleProps) => {
   const { title, icon, onClick, open, className, selected } = props;

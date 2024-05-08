@@ -32,7 +32,6 @@ export default function Home() {
             control={control}
             rules={{ required: true }}
             name={'data'}
-            changeHandler={() => console.log('123')}
           />
           <input type="submit" />
         </form>

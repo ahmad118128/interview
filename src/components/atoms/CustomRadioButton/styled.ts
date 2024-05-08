@@ -1,10 +1,9 @@
 'use client';
 import { styled } from '@mui/material/styles';
 import { BaseRadioButton } from '@/components/baseComponents/BaseRadioButton';
-import { RadioProps } from '@mui/material';
+import { IStyledRadio } from './type';
 
-export const StyledRadioButton = styled(BaseRadioButton)<any>`
-  /* background-color: red; */
+export const StyledRadioButton = styled(BaseRadioButton)<IStyledRadio>`
   & .MuiRadio-root {
     color: ${({ theme, error }) =>
       error ? 'red' : theme.palette.grey[300]} !important;

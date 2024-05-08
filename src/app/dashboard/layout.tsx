@@ -1,11 +1,11 @@
 import { PropsWithChildren } from 'react';
 import {
   StyledChildLayout,
-  StyledContainerAppBar,
   StyledContainerLayout,
   StyledContainerSideBar,
   StyledMainLayout,
 } from './styled';
+import HeaderDashboard from '@/components/molecules/HeaderDashboard';
 
 export default function AdminLayout({ children }: PropsWithChildren) {
   return (
@@ -13,7 +13,7 @@ export default function AdminLayout({ children }: PropsWithChildren) {
       <StyledContainerLayout>
         <StyledContainerSideBar />
         <StyledMainLayout>
-          <StyledContainerAppBar />
+          <HeaderDashboard />
           <StyledChildLayout>{children}</StyledChildLayout>
         </StyledMainLayout>
       </StyledContainerLayout>

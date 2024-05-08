@@ -1,96 +1,35 @@
-import { Chip, Paper, Autocomplete, TextField, styled } from '@mui/material';
-import { SecondaryCustomInputTypes } from './type';
-import theme from '@/theme';
-import { CustomChip } from '../CustomChip';
-
-// import { SecondaryCustomInput } from "styled";
-
-// export const Listbox = styled("li")(({ theme }) => ({
-//   display: "flex !important",
-//   justifyContent: "space-between !important",
-//   alignItems: "center !important",
-//   padding: "6px !important",
-//   marginBlock: "4px !important",
-//   backgroundColor: "transparent !important",
-//   borderRadius: "8px",
-//   fontWeight: "400",
-
-//   "&:hover span": {
-//     color: theme.palette.secondary.main,
-//   },
-
-//   '&[aria-selected="true"]': {
-//     backgroundColor: `${theme.palette.primary.dark} !important`,
-//     "& svg": {
-//       color: theme.palette.secondary.main,
-//     },
-//   },
-
-//   "& svg": {
-//     color: "transparent", // Transparent by default
-//   },
-//   [`&.${autocompleteClasses.focused}`]: {
-//     "& svg": {
-//       color: "transparent",
-//     },
-//   },
-//   "& span": {
-//     color: theme.palette.common.white,
-//     fontSize: theme.typography.fontSize,
-//   },
-
-//   "&:hover": {
-//     backgroundColor: `${theme.palette.primary.dark} !important`,
-//   },
-// }));
-
-export const Listbox = styled('li')`
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  padding: 6px !important;
-  margin-block: 4px !important;
-  background-color: transparent !important;
-  border-radius: 8px !important;
-  font-size: 14px;
-  font-weight: 400 !important;
-  color: #383838;
-  svg {
-    display: none;
-  }
-  &[aria-selected='true'] {
-    svg {
-      display: block;
-    }
-  }
-`;
+import { Paper, TextField, styled } from '@mui/material';
+import { AutocompleteTextFieldTypes } from './type';
 
 export const AutocompleteTextField = styled(
   TextField
-)<SecondaryCustomInputTypes>`
+)<AutocompleteTextFieldTypes>`
   & > div {
     padding: 0 !important;
   }
 
   & .MuiChip-root {
-    margin-top: 10px;
-    margin-right: 4px;
+    margin-top: 0.625rem;
+    margin-right: 0.25rem;
   }
 
   & .MuiFilledInput-root {
-    color: #000;
-    border-radius: 6px 6px 0px 0px;
-    background-color: #f5f5f5;
-    min-height: 48px;
-    padding-block: 8px !important;
+    color: ${({ theme }) => theme.palette.common.black};
+    border-radius: 0.375rem 0.375rem 0 0;
+    background-color: ${({ theme }) => theme.palette.grey[100]};
+    min-height: 3rem;
+    padding-block: 0.5rem !important;
     align-items: flex-end;
+
     ::before {
-      border-color: #383838;
+      border-color: ${({ theme }) => theme.palette.primary.main};
     }
+
     .MuiInputBase-input {
       padding-inline: 0.5rem;
       box-sizing: border-box;
     }
+
     & .MuiAutocomplete-endAdornment {
       left: ${({ dir }) => (dir == 'rtl' ? '0' : 'auto')};
       right: ${({ dir }) => (dir == 'ltr' ? '0' : 'auto')};
@@ -103,76 +42,97 @@ export const AutocompleteTextField = styled(
 
   & .MuiFormHelperText-root {
     text-align: ${({ dir }) => (dir == 'rtl' ? 'right' : 'left')};
-    margin-inline: 4px;
+    margin-inline: 0.25rem;
   }
 
   &:hover {
-    color: #7ebc59;
     & .MuiAutocomplete-endAdornment svg {
-      color: #7ebc59;
+      color: ${({ theme }) => theme.palette.primary.light};
     }
+
     .MuiFilledInput-root {
-      background-color: #f5f5f5 !important;
+      background-color: ${({ theme }) => theme.palette.grey[100]} !important;
       ::before {
-        border-color: #7ebc59 !important;
+        border-color: ${({ theme }) => theme.palette.primary.light} !important;
       }
     }
+
     label {
-      color: #7ebc59;
+      color: ${({ theme }) => theme.palette.primary.light};
     }
   }
 
   & .Mui-focused {
     ::after {
-      border-color: #7ebc59 !important;
+      border-color: ${({ theme }) => theme.palette.primary.light} !important;
     }
     svg {
-      color: #7ebc59 !important;
+      color: ${({ theme }) => theme.palette.primary.light} !important;
     }
   }
 
   & label {
-    color: #383838;
+    color: ${({ theme }) => theme.palette.primary.main};
     transform: translate(
-        ${({ labelDirection }) => (labelDirection === 'ltr' ? '8px' : '-8px')},
-        14px
+        ${({ labelDirection }) =>
+          labelDirection === 'ltr' ? '0.5rem' : '-0.5rem'},
+        0.875rem
       )
       scale(1);
     right: ${({ labelDirection }) => (labelDirection === 'ltr' ? 'auto' : '0')};
     left: ${({ labelDirection }) => (labelDirection === 'ltr' ? '0' : 'auto')};
-    font-size: ${theme.typography.body1.fontSize}px !important;
-    font-weight: 400 !important;
+    font-size: ${({ theme }) => theme.typography.body1.fontSize};
+    font-weight: ${({ theme }) => theme.typography.body1.fontWeight};
   }
 
   & label.MuiInputLabel-shrink {
     transform: translate(
-        ${({ direction }) => (direction === 'ltr' ? '8px' : '-8px')},
-        2px
+        ${({ direction }) => (direction === 'ltr' ? '0.5rem' : '-0.5rem')},
+        0.125rem
       )
       scale(1);
-    font-size: 12px !important;
+    font-size: ${({ theme }) => theme.typography.body2.fontSize};
   }
 
   & label.Mui-focused {
     transform: translate(
-        ${({ direction }) => (direction === 'ltr' ? '8px' : '-8px')},
-        2px
+        ${({ direction }) => (direction === 'ltr' ? '0.5rem' : '-0.5rem')},
+        0.125rem
       )
       scale(1);
-    font-size: 12px !important;
-    color: #7ebc59 !important;
+    font-size: ${({ theme }) => theme.typography.body2.fontSize};
+    color: ${({ theme }) => theme.palette.primary.light} !important;
   }
 `;
 
-export const CustomPaper = styled(Paper)(({ theme }) => ({
-  backgroundColor: `#fff !important`,
-  border: '1px solid #EDEDEF',
-  padding: '4px',
-  borderRadius: '0px 0px 6px 6px',
+export const CustomPaper = styled(Paper)`
+  background-color: ${({ theme }) => theme.palette.common.white} !important;
+  border: 0.0625rem solid ${({ theme }) => theme.palette.grey[200]};
+  padding: 0.25rem;
+  border-radius: 0 0 0.375rem 0.375rem;
 
-  '& .MuiAutocomplete-noOptions': {
-    color: theme.palette.common.white,
-    fontSize: '0.875rem',
-    fontWeight: '400',
-  },
-}));
+  & .MuiAutocomplete-noOptions {
+    color: ${({ theme }) => theme.palette.primary.main};
+    font-size: ${({ theme }) => theme.typography.body1.fontSize};
+    font-weight: ${({ theme }) => theme.typography.body1.fontWeight};
+    padding-right: 0;
+  }
+`;
+
+export const Listbox = styled('li')`
+  justify-content: space-between !important;
+  padding: 0.375rem !important;
+  margin-block: 0.25rem;
+  background-color: transparent !important;
+  font-size: ${({ theme }) => theme.typography.body1.fontSize};
+  font-weight: ${({ theme }) => theme.typography.body1.fontWeight};
+  color: ${({ theme }) => theme.palette.primary.main};
+  svg {
+    display: none;
+  }
+  &[aria-selected='true'] {
+    svg {
+      display: block;
+    }
+  }
+`;

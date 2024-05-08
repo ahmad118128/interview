@@ -108,11 +108,11 @@ export const AutocompleteTextField = styled(
 
   &:hover {
     color: #7ebc59;
-    background-color: transparent !important;
     & .MuiAutocomplete-endAdornment svg {
       color: #7ebc59;
     }
     .MuiFilledInput-root {
+      background-color: #f5f5f5 !important;
       ::before {
         border-color: #7ebc59 !important;
       }

@@ -51,19 +51,7 @@ export type ExtendedAutocompleteProps<
   >;
 };
 
-export type SecondaryCustomInputTypes = {
-  width?: string;
-  margin?: string;
-  padding?: string;
-  borderBottom?: string;
-  marginTop?: string;
-  labelColor?: string;
-  autofillBackgroundColor?: string;
-  focusedBorderBottom?: string;
+export type AutocompleteTextFieldTypes = {
   direction?: 'rtl' | 'ltr';
   labelDirection?: 'rtl' | 'ltr';
-  placeholderFontSize?: string;
-  placeholderFontWeight?: string;
-  focusedLabelColor?: string;
-  inputColor?: string;
 };

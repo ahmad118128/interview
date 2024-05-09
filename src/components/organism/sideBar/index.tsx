@@ -1,33 +1,29 @@
 'use client';
 import { StyledContainerSideBar } from '@/app/dashboard/styled';
-import { openDashboard } from '@/context/dashboardContext/dashboardContext';
-import { TSidebarContext } from '@/context/dashboardContext/type';
-import { Box, Divider, Typography } from '@mui/material';
+import { openDashboard } from '@/context/dashboardContext';
 import { useContext, useState } from 'react';
 import List from '@mui/material/List';
 import SideBarItem from './SideBarItem';
 import Image from 'next/image';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import theme from '@/theme';
-import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
-type Props = {
-  index: number;
-  url: string;
-};
+import {
+  StyledDivider,
+  StyledFooterOpen,
+  StyledFooterSideBar,
+  StyledNavWrapper,
+  StyledTypography,
+  StyledsideBarWrapper,
+} from './styled';
 
 export default function SideBar() {
-  const { isOpen, setIsOpen } = useContext(openDashboard) as TSidebarContext;
+  const { isOpen, setIsOpen } = useContext(openDashboard);
 
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const router = useRouter();
-
-  const pathname = usePathname();
   const handleListItemClick = (index: number) => {
     setSelectedIndex(index);
-    // const newPath = `/${pathname}/${url}`;
-    // window.history.replaceState(null, '', newPath);
   };
 
   const sidebarList = [
@@ -72,30 +68,10 @@ export default function SideBar() {
     },
   ];
 
-  function handleClick() {
-    return setIsOpen(!isOpen);
-  }
-
   return (
     <StyledContainerSideBar isOpen={isOpen}>
-      <Box
-        sx={{
-          height: '100%',
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}
-      >
-        <Box
-          sx={{
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
+      <StyledsideBarWrapper>
+        <StyledNavWrapper>
           <Image
             src="/assets/icons/roobinLogo/dashboardLogo.svg"
             alt=""
@@ -103,7 +79,7 @@ export default function SideBar() {
             height="56"
           />
 
-          <List component="nav">
+          <List component="nav" sx={{ paddingY: '2rem' }}>
             {sidebarList.map((item, index) => {
               return (
                 <>
@@ -124,61 +100,18 @@ export default function SideBar() {
               );
             })}
           </List>
-        </Box>
+        </StyledNavWrapper>
 
-        <Box
-          sx={{
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '0.25rem',
-            marginBottom: isOpen ? '2rem' : '1.5rem',
-            backgroundColor: theme.palette.common.white,
-          }}
-        >
-          <Divider
-            sx={{
-              width: '100%',
-              height: '1px',
-              backgroundColor: theme.palette.grey[300],
-            }}
-          />
+        <StyledFooterSideBar isOpen={isOpen}>
+          <StyledDivider />
 
-          <Typography
-            variant="caption"
-            sx={{
-              textAlign: 'center',
-              lineHeight: 1.5,
-              color: theme.palette.grey[300],
-            }}
-          >
+          <StyledTypography variant="caption">
             سیستم نظارت تصویری
-          </Typography>
+          </StyledTypography>
 
-          <Typography
-            variant="caption"
-            sx={{
-              textAlign: 'center',
-              lineHeight: 1.5,
-              color: theme.palette.grey[300],
-            }}
-          >
-            نسخه 1.0
-          </Typography>
+          <StyledTypography variant="caption">نسخه 1.0</StyledTypography>
 
-          <Box
-            onClick={() => setIsOpen(!isOpen)}
-            sx={{
-              backgroundColor: theme.palette.grey[50],
-              height: '32px',
-              width: '32px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              borderRadius: '0.375rem',
-            }}
-          >
+          <StyledFooterOpen onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? (
               <Icon
                 icon="material-symbols:open-in-new-down-rounded"
@@ -194,9 +127,9 @@ export default function SideBar() {
                 color={theme.palette.primary.light}
               />
             )}
-          </Box>
-        </Box>
-      </Box>
+          </StyledFooterOpen>
+        </StyledFooterSideBar>
+      </StyledsideBarWrapper>
     </StyledContainerSideBar>
   );
 }

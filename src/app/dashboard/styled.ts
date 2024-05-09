@@ -20,7 +20,7 @@ export const StyledMainLayout = styled(Box)<StyledSideBarType>`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  margin-right: ${({ isOpen }) => (isOpen ? '12rem' : '5rem')};
+  margin-right: ${({ isOpen }) => (isOpen ? '12.6rem' : '5.1rem')};
   overflow-y: hidden;
 `;
 

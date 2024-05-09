@@ -35,8 +35,18 @@ export const StyledListItemButton = styled(ListItemButton)<StyledSideBarType>(
     gap: isOpen ? '0.5rem' : '0',
     marginBottom: '0.45rem',
     padding: '1rem',
+    '&.MuiButtonBase-root': {
+      color: 'transparent !important',
+    },
 
     '&:hover': {
+      backgroundColor: theme.palette.grey[100],
+      '.MuiListItemIcon-root , .MuiListItemText-root ': {
+        color: theme.palette.primary.light,
+      },
+    },
+
+    '&:active': {
       backgroundColor: theme.palette.grey[100],
       '.MuiListItemIcon-root , .MuiListItemText-root ': {
         color: theme.palette.primary.light,

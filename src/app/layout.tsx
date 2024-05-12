@@ -4,6 +4,7 @@ import './globals.css';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 import theme from '@/theme';
+import { ReactQueryProvider } from '@/providers';
 
 const myFont = localFont({
   display: 'swap',
@@ -40,9 +41,11 @@ export default function RootLayout({
   return (
     <html lang="fa-IR" dir="rtl" className={myFont.variable}>
       <body>
-        <AppRouterCacheProvider>
-          <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
-        </AppRouterCacheProvider>
+        <ReactQueryProvider>
+          <AppRouterCacheProvider>
+            <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
+          </AppRouterCacheProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );

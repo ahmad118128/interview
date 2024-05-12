@@ -1,7 +1,7 @@
 'use client';
 import { CustomButton } from '@/components/atoms/CustomButton';
 import { IPost } from '@/services/api/posts/type';
-import { useCreatePost } from '@/services/api/posts/usePostsMutation';
+import { useAddPosts } from '@/services/api/posts/useAddPost';
 import { useNotificationsStore } from '@/stores/notifications';
 import { Box } from '@mui/material';
 import { useRouter } from 'next/navigation';
@@ -16,18 +16,18 @@ export default function TestSubmitPage() {
     (state) => state.showNotification
   );
 
-  const createPost = useCreatePost({
-    onSuccess: () => {
-      router.push('./test-api');
-      showNotification({
-        message: 'اطلاعات با موفقیت ثبت شد',
-        type: 'success',
-      });
-    },
-  });
+  const addPost = useAddPosts();
 
   const onSubmit = (data: IPost) => {
-    createPost.submit(data);
+    addPost.post(data, {
+      onSuccess: () => {
+        router.push('./test-api');
+        showNotification({
+          message: 'اطلاعات با موفقیت ثبت شد',
+          type: 'success',
+        });
+      },
+    });
   };
 
   return (
@@ -55,7 +55,7 @@ export default function TestSubmitPage() {
 
       <CustomButton
         type="submit"
-        loading={createPost.isPending}
+        loading={addPost.isPending}
         sx={{ marginTop: '0.5rem' }}
       >
         Submit

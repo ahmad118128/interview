@@ -1,2 +1,2 @@
-export * from './usePostsQuery';
-export * from './usePostsMutation';
+export * from './useGetPosts';
+export * from './useAddPost';

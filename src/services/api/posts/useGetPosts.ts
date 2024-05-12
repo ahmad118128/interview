@@ -7,7 +7,7 @@ const getPosts = (): Promise<IPosts[]> => {
   return getData(url);
 };
 
-export const usePosts = () => {
+export const useGetPosts = () => {
   const { data, isLoading } = useQuery({
     queryKey: ['posts'],
     queryFn: () => getPosts(),

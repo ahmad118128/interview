@@ -1,11 +1,11 @@
 'use client';
 
-import { usePosts } from '@/services/api/posts';
+import { useGetPosts } from '@/services/api/posts';
 import { Box, Typography } from '@mui/material';
 import React, { Fragment } from 'react';
 
 export default function DetailsPage() {
-  const { data: posts, isLoading } = usePosts();
+  const { data: posts, isLoading } = useGetPosts();
 
   if (isLoading) return <Typography variant="h1">Loading....</Typography>;
 

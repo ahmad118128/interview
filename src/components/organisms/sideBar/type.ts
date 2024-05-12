@@ -6,6 +6,7 @@ export type IconTitleProps = {
   onClick?: () => void;
   open: boolean;
   className?: string;
+  selected: boolean;
 };
 
 export type StyledContainerIconTitleType = {

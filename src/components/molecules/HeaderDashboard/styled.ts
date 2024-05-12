@@ -10,7 +10,6 @@ export const HeaderBox = styled('header')`
   color: ${({ theme }) => theme.palette.primary.main};
   border-bottom: 0.0625rem solid ${({ theme }) => theme.palette.grey[200]};
   box-sizing: border-box;
-  position: fixed;
   top: 0;
   right: 0;
   width: 100%;

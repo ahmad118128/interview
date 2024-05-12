@@ -1,6 +1,7 @@
-import { getData } from '@/services/core/http-service';
-import { IPosts } from './type';
 import { useQuery } from '@tanstack/react-query';
+import { getData } from '@/services/core/http-service';
+
+import { IPosts } from './type';
 
 const getPosts = (): Promise<IPosts[]> => {
   const url = `/posts/`;

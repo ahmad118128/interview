@@ -10,7 +10,7 @@
     "check-lint": "eslint --config .eslintrc.json --ext ts --ext tsx --ext js src",
     "format": "prettier --config .prettierrc --write src",
     "start": "next start",
-    "lint": "eslint --config .eslintrc.json --ext ts --ext tsx --ext js src",
+    "lint": "eslint --config .eslintrc.json --ext ts --ext tsx sre--ext js src",
     "prepare": "husky install",
     "test-all": "yarn check-format && yarn check-types && yarn lint && yarn build"
   },
@@ -21,10 +21,14 @@
     "@mui/icons-material": "^5.15.15",
     "@mui/material": "^5.15.15",
     "@mui/material-nextjs": "^5.15.11",
+    "@tanstack/react-query": "^5.35.1",
+    "@tanstack/react-query-devtools": "^5.35.1",
+    "axios": "^1.6.8",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-hook-form": "^7.51.2"
+    "react-hook-form": "^7.51.2",
+    "zustand": "^4.5.2"
   },
   "devDependencies": {
     "@iconify/react": "^4.1.1",

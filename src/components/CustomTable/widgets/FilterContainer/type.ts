@@ -14,13 +14,12 @@ type MultiModeFilter =
     };
 
 export type HeaderFilterTableProps = MultiModeFilter & {
-  chips: FiltersChips<any>;
   activeMode?: ActiveMode;
-  refreshLoading: boolean;
+  // refreshLoading: boolean;
   onHandleIconClick: OnHandleIconClick;
   children: ReactNode;
   collapse: boolean;
-  handleFiltersChips: (filterKey: any) => void;
+  // handleFiltersChips: (filterKey: any) => void;
 };
 
 export enum EFilterTableNameIcon {

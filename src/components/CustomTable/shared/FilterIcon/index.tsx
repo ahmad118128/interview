@@ -8,7 +8,7 @@ import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 import { EFilterTableNameIcon } from '../../widgets/FilterContainer/type';
 
 export const FilterIcon = (props: Props) => {
-  const { onHandleIconClick, chips, handleFiltersChips } = props;
+  const { onHandleIconClick, active } = props;
   return (
     <Box
       display="flex"
@@ -16,23 +16,12 @@ export const FilterIcon = (props: Props) => {
       alignItems="center"
       gap={2}
     >
-      {chips
-        .filter((chip) => chip.value !== '')
-        .map((chip, key) => (
-          <StyledChip
-            key={key}
-            label={`${chip.label} : ${chip.value}`}
-            onDelete={() => handleFiltersChips(chip.key)}
-            color="primary"
-            deleteIcon={<Icon icon="typcn:delete-outline" />}
-          />
-        ))}
-
       <Tooltip title={tablePhrases.filtering} placement="bottom" arrow>
         <IconButton
           onClick={() => onHandleIconClick(EFilterTableNameIcon.FILTER)}
           key={tablePhrases.filtering}
-          iconName={'iconoir:filter'}
+          iconName={'material-symbols:filter-list'}
+          className={active ? 'active' : ''}
         />
       </Tooltip>
     </Box>

@@ -1,9 +1,11 @@
 'use client';
-import { Box, styled, TextField, Typography } from '@mui/material';
+import { Box, MenuItem, styled, TextField, Typography } from '@mui/material';
 import {
   BaseInput,
   StyledTextFieldRtlType,
 } from '@/components/baseComponents/baseInput';
+import theme from '@/theme';
+import { SecondaryCustomInputTypes } from './type';
 
 export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
   ltrLabel,
@@ -93,4 +95,146 @@ export const StyledErrorMessage = styled(Typography)`
   text-align: right;
   font-size: 0.5rem;
   font-family: 'iranYekan';
+`;
+
+export const StyledItem = styled(MenuItem)<any>`
+  font-size: ${theme.typography.body2.fontSize}px;
+  font-family: inherit;
+  & hover {
+    background: red;
+  }
+`;
+
+export const SecondaryCustomInput = styled(
+  TextField
+)<SecondaryCustomInputTypes>`
+  width: ${({ width }) => (width ? width : '100%')};
+  margin: ${({ margin }) => margin && margin};
+  margin-top: ${({ marginTop }) => marginTop && marginTop};
+  direction: ${({ direction }) => direction && direction};
+  & fieldset {
+    border: none !important;
+    border-bottom: ${({ borderBottom }) =>
+      borderBottom
+        ? borderBottom
+        : `1px solid ${theme.palette.grey['300']}`} !important;
+    border-radius: 0;
+  }
+
+  & .MuiButtonBase-root {
+    right: ${({ direction }) => (direction === 'ltr' ? '3px' : 'auto')};
+    left: ${({ direction }) => (direction === 'ltr' ? 'auto' : '0')};
+  }
+
+  & input {
+    line-height: 1.6rem;
+    padding: ${({ padding }) => (padding ? padding : '10px 5px')} !important;
+    font-size: ${theme.typography.body1.fontSize}px;
+    color: ${({ inputColor }) => inputColor ?? theme.palette.common.white};
+    height: auto;
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 1000px
+        ${({ autofillBackgroundColor }) =>
+          autofillBackgroundColor
+            ? autofillBackgroundColor
+            : theme.palette.primary.dark}
+        inset !important;
+      -webkit-text-fill-color: ${theme.palette.common.white};
+      border-radius: 0;
+    }
+    &[type='number']::-webkit-outer-spin-button,
+    &[type='number']::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    &[type='number'] {
+      -moz-appearance: textfield;
+    }
+    &[type='search']::-webkit-search-decoration,
+    &[type='search']::-webkit-search-cancel-button,
+    &[type='search']::-webkit-search-results-button,
+    &[type='search']::-webkit-search-results-decoration {
+      -webkit-appearance: none;
+    }
+
+    & ::placeholder {
+      font-size: ${({ placeholderFontSize }) =>
+        placeholderFontSize || 'inherit'};
+      font-weight: ${({ placeholderFontWeight }) =>
+        placeholderFontWeight || 'inherit'};
+    }
+  }
+
+  & label {
+    color: ${({ labelColor }) =>
+      labelColor ? labelColor : theme.palette.grey['300']};
+    transform: translate(
+        ${({ labelDirection }) => (labelDirection === 'ltr' ? '5px' : '-5px')},
+        15px
+      )
+      scale(1);
+    right: ${({ labelDirection }) => (labelDirection === 'ltr' ? 'auto' : '0')};
+    left: ${({ labelDirection }) => (labelDirection === 'ltr' ? '0' : 'auto')};
+    font-size: ${theme.typography.body1.fontSize}px !important;
+    font-weight: 400 !important;
+  }
+
+  & label.MuiInputLabel-shrink {
+    transform: translate(
+        ${({ direction }) => (direction === 'ltr' ? '5px' : '-5px')},
+        -10px
+      )
+      scale(1);
+    font-size: 12px !important;
+  }
+
+  & label.Mui-focused {
+    transform: translate(
+        ${({ direction }) => (direction === 'ltr' ? '5px' : '-5px')},
+        -10px
+      )
+      scale(1);
+    font-size: 12px !important;
+    color: ${({ focusedLabelColor }) =>
+      focusedLabelColor ?? theme.palette.secondary.main};
+  }
+
+  & .Mui-focused {
+    & fieldset {
+      border-bottom: ${({ focusedBorderBottom }) =>
+        focusedBorderBottom
+          ? focusedBorderBottom
+          : `1px solid ${theme.palette.secondary.main}`} !important;
+    }
+  }
+  & .Mui-disabled {
+    color: ${theme.palette.grey['300']} !important;
+    & label {
+      color: ${theme.palette.grey['300']} !important;
+    }
+    & input {
+      -webkit-text-fill-color: ${theme.palette.grey['300']} !important;
+    }
+    & fieldset {
+      border-bottom: 1px solid ${theme.palette.grey['300']} !important;
+    }
+  }
+
+  &.custom-select {
+    & .MuiSelect-select {
+      line-height: 1.6rem;
+      padding: ${({ padding }) => (padding ? padding : '10px 5px')} !important;
+      font-size: ${theme.typography.body1.fontSize}px;
+      color: ${({ inputColor }) => inputColor ?? theme.palette.common.white};
+    }
+
+    & svg {
+      top: calc(50% - 0.25em);
+      right: ${({ direction }) => (direction === 'ltr' ? '7px' : 'auto')};
+      left: ${({ direction }) => (direction === 'ltr' ? 'auto' : '7px')};
+    }
+  }
 `;

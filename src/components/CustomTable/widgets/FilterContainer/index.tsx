@@ -1,6 +1,5 @@
 import { Accordion, Box, Tooltip } from '@mui/material';
-import { FilterIcon, FullTextSearch } from '../../shared';
-import { CircularLoading } from '../../shared/Loading/circularLoading';
+import { FilterIcon } from '../../shared';
 import { leftIcons } from './constants';
 import {
   StyledAccordionDetails,
@@ -9,25 +8,19 @@ import {
   StyledIconsContainer,
 } from './styled';
 import {
-  EFilterTableNameIcon,
   IconFilterModeTable,
   HeaderFilterTableProps,
   HeaderMode,
   EFilterModeIcon,
 } from './type';
 import theme from '@/theme';
-import { tablePhrases } from '../../strings';
-import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 
 export const FilterContainer = (props: HeaderFilterTableProps) => {
   const {
     children,
-    chips,
     collapse,
     onHandleIconClick,
     activeMode = EFilterModeIcon.TABLE,
-    refreshLoading,
-    handleFiltersChips,
   } = props;
 
   if (props.hasModeHandler && !props.onHandleModeChange) {
@@ -72,22 +65,8 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
           <StyledIconsContainer gap="1rem">
             <FilterIcon
               onHandleIconClick={onHandleIconClick}
-              handleFiltersChips={handleFiltersChips}
-              chips={chips}
+              active={collapse}
             />
-            <FullTextSearch />
-            {refreshLoading ? (
-              <CircularLoading size={24} />
-            ) : (
-              <Tooltip title={tablePhrases.refresh} placement="bottom" arrow>
-                <IconButton
-                  iconName="ion:refresh-outline"
-                  onClick={() =>
-                    onHandleIconClick(EFilterTableNameIcon.REFRESH)
-                  }
-                />
-              </Tooltip>
-            )}
           </StyledIconsContainer>
         </Box>
       </StyledAccordionSummary>

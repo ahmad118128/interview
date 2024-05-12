@@ -19,7 +19,7 @@ export const IconButton = ({
           tooltip: {
             sx: {
               bgcolor: 'common.white',
-              color: 'common.black',
+              color: 'grey[300]',
               '& .MuiTooltip-arrow': {
                 color: 'common.black',
               },

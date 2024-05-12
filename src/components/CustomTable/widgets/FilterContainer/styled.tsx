@@ -57,7 +57,7 @@ export const StyledChip = styled(Chip)`
 `;
 
 export const StyledAccordionSummary = styled(AccordionSummary)`
-  background-color: ${({ theme }) => theme.palette.primary.dark} !important;
+  background-color: ${({ theme }) => theme.palette.grey[100]} !important;
   height: 3.75rem;
   padding: 0.5rem 1.5rem;
   margin-bottom: 0.5rem;

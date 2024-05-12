@@ -1,4 +1,8 @@
-import { ButtonProps as MUIButtonProps } from '@mui/material';
+import { IconifyIconProps } from '@iconify/react/dist/iconify.js';
+import {
+  ButtonProps as MUIButtonProps,
+  IconButtonProps as MUIIconButtonProps,
+} from '@mui/material';
 
 export type ButtonProps = (
   | {
@@ -11,3 +15,7 @@ export type ButtonProps = (
     }
 ) &
   MUIButtonProps;
+export interface IconButtonProps extends Omit<MUIIconButtonProps, 'children'> {
+  title?: string;
+  iconName: IconifyIconProps['icon'];
+}

@@ -10,7 +10,7 @@ import { AutocompleteTextField, CustomPaper, Listbox } from './styled';
 import { CustomChip } from '../CustomChip';
 // import { commonWords } from "strings";
 
-export const RHFAutocomplete = <
+export const CustomRHFAutocomplete = <
   OptionType,
   TField extends FieldValues,
   FreeSolo extends boolean | undefined = false,
@@ -85,6 +85,7 @@ export const RHFAutocomplete = <
               dir={dir}
               {...params}
               label={label}
+              variant="filled"
               error={!!error}
               helperText={error?.message}
             />

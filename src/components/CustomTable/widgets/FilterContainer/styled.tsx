@@ -58,7 +58,8 @@ export const StyledChip = styled(Chip)`
 
 export const StyledAccordionSummary = styled(AccordionSummary)`
   background-color: ${({ theme }) => theme.palette.grey[50]} !important;
-  padding: 0.5rem 1.5rem;
+  padding: 2rem 1.5rem;
+  margin: 0;
   display: flex;
   flex-direction: row;
   .MuiAccordionSummary-contentGutters {
@@ -75,7 +76,7 @@ export const StyledAccordionSummary = styled(AccordionSummary)`
 export const StyledAccordionDetails = styled(AccordionDetails)`
   background-color: ${({ theme }) => theme.palette.grey[50]} !important;
   margin-bottom: 0.25rem;
-  padding: 2rem;
+  padding: 0.2rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

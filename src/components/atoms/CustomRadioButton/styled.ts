@@ -6,7 +6,7 @@ import { IStyledRadio } from './type';
 export const StyledRadioButton = styled(BaseRadioButton)<IStyledRadio>`
   & .MuiRadio-root {
     color: ${({ theme, error }) =>
-      error ? 'red' : theme.palette.grey[300]} !important;
+      error ? theme.palette.error.main : theme.palette.grey[300]} !important;
   }
 
   & .MuiRadio-root:hover {

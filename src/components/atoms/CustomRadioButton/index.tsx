@@ -4,7 +4,7 @@ import { RadioGroup } from '@mui/material';
 import { ICustomRadio } from './type';
 
 export const CustomRadioButton = (props: ICustomRadio) => {
-  const { control, rules, label, name } = props;
+  const { control, rules, label, name, ...rest } = props;
 
   const radioItem = [
     { name: 'item1', id: 1 },
@@ -24,12 +24,12 @@ export const CustomRadioButton = (props: ICustomRadio) => {
             {radioItem.map((item) => {
               return (
                 <StyledRadioButton
+                  {...rest}
                   {...field}
                   value={item.name}
                   key={item.id}
                   name={item.name}
                   disabled={item.disabled}
-                  label={label}
                   error={error}
                   checked={item.checked}
                 />

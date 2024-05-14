@@ -37,7 +37,7 @@ export const FilterChild = () => {
     },
 
     {
-      typeInput: 'textField',
+      typeInput: 'datepicker',
       name: 'title3',
       value: '',
       label: 'Book Title',

@@ -1,6 +1,7 @@
 'use client';
 
 import { CustomTextArea } from '@/components/atoms/CustomTextarea/CustomTextarea';
+import { BarChart } from '@/components/organisms/BarChart';
 import { Typography } from '@mui/material';
 import { kMaxLength } from 'buffer';
 import { useForm } from 'react-hook-form';
@@ -34,6 +35,13 @@ export default function Home() {
           label="label"
         />
       </div>
+      <BarChart
+        labels={['January', 'February', 'March', 'April']}
+        data={[
+          { label: 'مرد', data: [120, 130, 140, 15] },
+          { label: 'زن', data: [30, 40, 50, 120] },
+        ]}
+      />
     </>
   );
 }

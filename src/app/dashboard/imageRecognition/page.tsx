@@ -16,6 +16,7 @@ export default function ImageRecognition() {
                 value="female"
                 control={<Radio />}
                 label="Female"
+                sx={{ marginRight: 0 }}
               />
             }
           />

@@ -8,7 +8,7 @@ import { AutocompleteTextField, CustomPaper, Listbox } from './styled';
 import { ExtendedAutocompleteProps } from './type';
 import { ReactNode } from 'react';
 import { CustomChip } from '../CustomChip';
-// import { commonWords } from "strings";
+import { generalStr } from '@/strings';
 
 export function CustomAutocomplete<
   OptionType,
@@ -28,7 +28,7 @@ export function CustomAutocomplete<
       dir={dir}
       options={options}
       onChange={onChange}
-      noOptionsText={'موردی یافت نشد.'}
+      noOptionsText={generalStr.notFound}
       renderInput={(params) => (
         <AutocompleteTextField
           dir={dir}

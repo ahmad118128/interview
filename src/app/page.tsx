@@ -1,6 +1,9 @@
 'use client';
 
-import { CustomAutocomplete } from '@/components/atoms/Autocomplete';
+import {
+  CustomAutocomplete,
+  CustomRHFAutocomplete,
+} from '@/components/atoms/Autocomplete';
 import { CustomTextArea } from '@/components/atoms/CustomTextarea/CustomTextarea';
 import { TextField, Typography } from '@mui/material';
 import { kMaxLength } from 'buffer';
@@ -70,17 +73,17 @@ export default function Home() {
           marginInline: '300px',
         }}
       >
-        <CustomAutocomplete
+        <CustomRHFAutocomplete
+          control={control}
+          name="test"
           options={[
-            'test1',
-            'test2',
-            'test3',
-            'test4',
-            'test5',
-            'test6',
-            'test7',
-            'test8',
+            { name: 'rtest1', family: '1' },
+            { name: 'rtest1', family: '2' },
           ]}
+          getOptionLabel={(option) => option.family}
+          getOptionValue={(option) => option.family}
+          // freeSolo
+          multiple
           label="تست"
           dir="rtl"
         />

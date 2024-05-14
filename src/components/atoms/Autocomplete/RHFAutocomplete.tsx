@@ -8,7 +8,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { RHFAutoCompleteProps } from './type';
 import { AutocompleteTextField, CustomPaper, Listbox } from './styled';
 import { CustomChip } from '../CustomChip';
-// import { commonWords } from "strings";
+import { generalStr } from '@/strings';
 
 export const CustomRHFAutocomplete = <
   OptionType,
@@ -46,7 +46,7 @@ export const CustomRHFAutocomplete = <
           multiple={multiple}
           freeSolo={freeSolo}
           options={options}
-          noOptionsText={'موردی یافت نشد.'}
+          noOptionsText={generalStr.notFound}
           getOptionLabel={getLabelFromOption}
           onChange={(_, newValue) => {
             if (freeSolo) {

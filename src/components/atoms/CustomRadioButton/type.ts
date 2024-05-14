@@ -1,10 +1,10 @@
-import { Control, FieldError } from 'react-hook-form';
+import { Control, FieldError, RegisterOptions } from 'react-hook-form';
 
 export interface ICustomRadio {
   name: string;
   label?: string;
   control: Control;
-  rules?: { required: boolean | string };
+  rules?: RegisterOptions;
   value?: string;
 }
 

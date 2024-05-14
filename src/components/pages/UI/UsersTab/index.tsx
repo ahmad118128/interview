@@ -7,7 +7,13 @@ import {
   useForm,
 } from 'react-hook-form';
 import { TableCell } from '@mui/material';
-import { chipsCreator, COLLAPSE_ID, headers, initFilter } from './constants';
+import {
+  chipsCreator,
+  COLLAPSE_ID,
+  headers,
+  initFilter,
+  mockData,
+} from './constants';
 import { FilterChild } from './FilterChild';
 import { IError, ISuccess, SnackBarType, type UsersFilterProps } from './types';
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
@@ -155,10 +161,10 @@ export const UsersTab = ({ radioButton }: any) => {
         </form>
       </FormProvider>
       <MobileCollapseTable
-        rows={tableData?.data?.results}
+        rows={mockData}
         headers={tableHeads}
         error={!tableData?.data?.results}
-        mobileIdFilter={[COLLAPSE_ID, 'username', 'actions']}
+        mobileIdFilter={[COLLAPSE_ID, 'description', 'matchCount']}
         pagination={pagination}
         handleSort={(id) => {
           setOrder(id);

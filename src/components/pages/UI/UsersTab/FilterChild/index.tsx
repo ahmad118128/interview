@@ -9,6 +9,7 @@ export const FilterChild = () => {
       name: 'title',
       value: '',
       label: 'Book Title',
+      fullWidth: true,
     },
 
     {
@@ -27,6 +28,7 @@ export const FilterChild = () => {
       name: 'title1',
       value: '',
       label: 'Book Title',
+      fullWidth: true,
     },
 
     {
@@ -34,6 +36,7 @@ export const FilterChild = () => {
       name: 'title2',
       value: '',
       label: 'Book Title',
+      fullWidth: true,
     },
 
     {
@@ -41,6 +44,7 @@ export const FilterChild = () => {
       name: 'title3',
       value: '',
       label: 'Book Title',
+      fullWidth: true,
     },
   ] as Input[];
 

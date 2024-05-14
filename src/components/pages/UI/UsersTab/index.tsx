@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import {
   FieldValues,
   FormProvider,
@@ -7,11 +7,6 @@ import {
   useForm,
 } from 'react-hook-form';
 import { TableCell } from '@mui/material';
-
-// import { UsersService } from 'services';
-// import { useAppDispatch } from 'store/hooks';
-// import { show } from 'store/slices/snackbarSlice';
-
 import { chipsCreator, COLLAPSE_ID, headers, initFilter } from './constants';
 import { FilterChild } from './FilterChild';
 import { IError, ISuccess, SnackBarType, type UsersFilterProps } from './types';
@@ -19,11 +14,11 @@ import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
 import { FilterContainer } from '@/components/CustomTable/widgets/FilterContainer';
 import { MobileCollapseTable } from '@/components/CustomTable/widgets/MobileCollapseTable';
-import { commonWords, registrationStr } from '@/strings';
+import { commonWords, generalStr, registrationStr } from '@/strings';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 import IconWithUrl from './IconWithUrl';
-
-// const usersService = new UsersService();
+import { CustomButton } from '@/components/atoms/CustomButton';
+import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
 
 const payloadSnackbar: SnackBarType = {
   display: true,
@@ -36,20 +31,20 @@ interface IModalState {
   id?: number;
 }
 
-export const UsersTab = () => {
-  // const dispatch = useAppDispatch();
-
+export const UsersTab = ({ radioButton }: any) => {
   const [tableData, setTableData] = useState<null | ISuccess | IError>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [filter, setFilter] = useState(initFilter);
   const [order, setOrder] = useState<string | unknown>('');
+
   const methods = useForm<FieldValues>({
     mode: 'onSubmit',
-    defaultValues: initFilter,
   });
+
   const [filtersChips, setFiltersChips] = useState<
     FiltersChips<UsersFilterProps>
   >([]);
+
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [collapse, setCollapse] = useState(false);
   const [modalData, setModalData] = useState<IModalState>({
@@ -61,32 +56,6 @@ export const UsersTab = () => {
     current: currentPage,
     setPage: (newPage: number) => setCurrentPage(newPage),
   };
-
-  // const serviceCall = async () => {
-  //   setIsLoading(true);
-  //   try {
-  //     const response = await usersService.getAll({
-  //       page: currentPage,
-  //       limit: 10,
-  //       order,
-  //       ...filter,
-  //     });
-
-  //     setTableData(response.data);
-  //   } catch (error: any) {
-  //     if (!error.data || (error.data && !/^[4][0][1|3]$/.test(error.status))) {
-  //       payloadSnackbar.message = error.data ? error.data.detail : error;
-  //       payloadSnackbar.status = 'danger';
-  //       // dispatch(show(payloadSnackbar));
-  //     }
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   serviceCall();
-  // }, [currentPage, filter, order]);
 
   const filterTransaction = (newFilter: UsersFilterProps) => {
     setCollapse(false);
@@ -154,14 +123,8 @@ export const UsersTab = () => {
     },
   ];
 
-  const submitHandler: SubmitHandler<FieldValues> = (data) => {
-    filterTransaction({
-      username: data?.username ?? '',
-      full_name: data?.full_name ?? '',
-      groups: data?.groups ?? '',
-      is_active: data?.is_active,
-      q: data?.q ?? '',
-    });
+  const submitHandler = (data: any) => {
+    console.log(data);
   };
 
   return (
@@ -171,8 +134,23 @@ export const UsersTab = () => {
           <FilterContainer
             collapse={collapse}
             onHandleIconClick={handleIconClick}
+            radioButton={radioButton}
+            fullWidthInput={
+              <CustomInput
+                control={methods.control}
+                name="InputFile"
+                fullWidth
+              />
+            }
           >
             <FilterChild />
+            <CustomButton
+              style={{ margin: '1rem 0 0.25rem 0' }}
+              variant="outlined"
+              type="submit"
+            >
+              {generalStr.applyFilter}
+            </CustomButton>
           </FilterContainer>
         </form>
       </FormProvider>

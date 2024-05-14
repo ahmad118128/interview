@@ -15,11 +15,11 @@ type MultiModeFilter =
 
 export type HeaderFilterTableProps = MultiModeFilter & {
   activeMode?: ActiveMode;
-  // refreshLoading: boolean;
   onHandleIconClick: OnHandleIconClick;
   children: ReactNode;
   collapse: boolean;
-  // handleFiltersChips: (filterKey: any) => void;
+  radioButton?: ReactNode;
+  fullWidthInput?: ReactNode;
 };
 
 export enum EFilterTableNameIcon {

@@ -1,10 +1,12 @@
 import React from 'react';
-import { useFormContext } from 'react-hook-form';
+import { useFormContext, Controller } from 'react-hook-form';
 import TextField from '@mui/material/TextField';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
+import { StyledInputContainer } from '@/components/pages/UI/UsersTab/FilterChild/styled';
+import CustomSelect from '@/components/atoms/input/CustomSelect';
 
 interface InputOption {
   value: string;
@@ -12,7 +14,7 @@ interface InputOption {
 }
 
 export interface Input {
-  type: 'textField' | 'select' | 'datepicker';
+  typeInput: 'textField' | 'select' | 'datepicker';
   options?: InputOption[];
   name: string;
   value: string | undefined;
@@ -29,31 +31,43 @@ const inputComponents: { [key: string]: React.ComponentType<any> } = {
 };
 
 const DynamicInputs = ({ inputs }: DynamicInputsProps) => {
-  const { register } = useFormContext(); // Get form context from react-hook-form
+  const { control } = useFormContext();
 
   return (
-    <div>
-      {inputs.map(({ type, options, name, value, ...props }, index) => {
-        const InputComponent = inputComponents[type] ?? TextField; // Default to TextField if type is not found
+    <>
+      {inputs?.map(({ typeInput, options, name, value, ...props }, index) => {
+        const InputComponent = inputComponents[typeInput] ?? TextField;
         return (
-          <InputComponent
-            key={index}
-            defaultValue={value} // Use defaultValue instead of value for controlled components
-            {...register(name)} // Register input with react-hook-form
-            name={name}
-            {...props}
-          >
-            {type === 'select' &&
-              options &&
-              options.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-          </InputComponent>
+          <StyledInputContainer item xs={12} md={4} lg={3} key={index}>
+            {typeInput === 'select' && (
+              <Controller
+                name={name}
+                control={control}
+                defaultValue={value}
+                render={({ field }) => (
+                  <CustomSelect {...field} {...props}>
+                    {options &&
+                      options.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                          {option.label}
+                        </MenuItem>
+                      ))}
+                  </CustomSelect>
+                )}
+              />
+            )}
+            {typeInput !== 'select' && (
+              <InputComponent
+                defaultValue={value}
+                name={name}
+                control={control}
+                {...props}
+              />
+            )}
+          </StyledInputContainer>
         );
       })}
-    </div>
+    </>
   );
 };
 

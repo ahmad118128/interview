@@ -58,22 +58,23 @@ export const StyledChip = styled(Chip)`
 
 export const StyledAccordionSummary = styled(AccordionSummary)`
   background-color: ${({ theme }) => theme.palette.grey[100]} !important;
-  height: 3.75rem;
   padding: 0.5rem 1.5rem;
   margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
   .MuiAccordionSummary-contentGutters {
     justify-content: flex-end !important;
     margin: 0;
   }
   &[aria-expanded='true'] {
-    height: 3.75rem;
+    // height: 3.75rem;
     padding: 0.5rem 1.5rem;
     margin-bottom: 0;
   }
 `;
 
 export const StyledAccordionDetails = styled(AccordionDetails)`
-  background-color: ${({ theme }) => theme.palette.primary.dark};
+  background-color: transparent;
   margin-top: 0.5rem;
   margin-bottom: 0.25rem;
   padding: 2rem;

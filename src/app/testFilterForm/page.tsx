@@ -13,13 +13,13 @@ const BookForm: React.FC = () => {
 
   const inputs = [
     {
-      type: 'textField',
+      typeInput: 'textField',
       name: 'title',
       value: '',
       label: 'Book Title',
     },
     {
-      type: 'select',
+      typeInput: 'select',
       name: 'genre',
       value: '',
       options: [

@@ -80,10 +80,10 @@ export default function DoughnutChart(props: DoughnutChartProps) {
         }}
       />
       <DetailsBox>
-        <Typography variant="h1">
+        <Typography variant="h1" fontWeight={900}>
           {data.reduce((total, num) => total + num)}
         </Typography>
-        <Typography variant="body1">{chartLabel}</Typography>
+        <Typography variant="h2">{chartLabel}</Typography>
       </DetailsBox>
       <CustomLegend labels={labels as string[]} />
     </DoughnutBox>

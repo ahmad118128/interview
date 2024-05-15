@@ -16,6 +16,7 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { LineChartProps } from './type';
+import theme from '@/theme';
 
 ChartJS.register(
   CategoryScale,
@@ -54,7 +55,7 @@ export default function LineChart(props: LineChartProps) {
         fill: true,
         tension: 0.4,
         pointRadius: 0,
-        borderColor: '#7EBC59 ',
+        borderColor: theme.palette.primary.light,
         backgroundColor: function (context: ScriptableContext<'bar'>) {
           const chart = context.chart;
           const { ctx, chartArea } = chart;

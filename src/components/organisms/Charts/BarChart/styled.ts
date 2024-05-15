@@ -2,10 +2,13 @@ import { Box, styled } from '@mui/material';
 
 export const BarBox = styled(Box)`
   display: flex;
-  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
   & > div {
     flex-direction: column;
     justify-content: center;
-    gap: 16px;
+    width: fit-content;
+    gap: 1rem;
   }
 `;

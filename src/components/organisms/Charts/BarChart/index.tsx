@@ -12,9 +12,9 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { BarChartProps } from './types';
-import { Box } from '@mui/material';
 import CustomLegend from '../CustomLegend';
 import { BarBox } from './styled';
+import theme from '@/theme';
 
 ChartJS.register(
   CategoryScale,
@@ -35,8 +35,14 @@ export const BarChart: FC<BarChartProps> = (props) => {
         ? [
             {
               ...data[0],
-              backgroundColor: ['#7EBC59', '#383838'],
-              borderColor: ['#383838', '#7EBC59'],
+              backgroundColor: [
+                theme.palette.primary.light,
+                theme.palette.primary.main,
+              ],
+              borderColor: [
+                theme.palette.primary.main,
+                theme.palette.primary.light,
+              ],
               borderWidth: 1,
               barThickness: 30,
             },
@@ -44,17 +50,19 @@ export const BarChart: FC<BarChartProps> = (props) => {
         : [
             {
               ...data[0],
-              backgroundColor: '#383838',
-              borderColor: '#7EBC59',
+              backgroundColor: theme.palette.primary.main,
+              borderColor: theme.palette.primary.light,
               borderWidth: 1,
-              barThickness: 20,
+              maxBarThickness: 10,
+              categoryPercentage: 0.3,
             },
             {
               ...data[1],
-              backgroundColor: '#7EBC59',
-              borderColor: '#383838',
+              backgroundColor: theme.palette.primary.light,
+              borderColor: theme.palette.primary.main,
               borderWidth: 1,
-              barThickness: 20,
+              maxBarThickness: 10,
+              categoryPercentage: 0.3,
             },
           ],
   };
@@ -84,7 +92,11 @@ export const BarChart: FC<BarChartProps> = (props) => {
 
   return (
     <BarBox>
-      <Bar data={barData} options={options} />
+      <Bar
+        data={barData}
+        options={options}
+        style={{ maxHeight: '14rem', maxWidth: '22rem' }}
+      />
       {legend && <CustomLegend labels={[data[0].label, data[1].label]} />}
     </BarBox>
   );

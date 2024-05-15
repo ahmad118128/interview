@@ -7,18 +7,18 @@ export const ContainerBox = styled(Box)`
   div {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem;
   }
   div span {
     display: block;
-    width: 64px;
-    height: 24px;
-    border-radius: 10px;
+    width: 4rem;
+    height: 1.5rem;
+    border-radius: 0.625rem;
   }
   div:nth-child(even) span {
-    background-color: #7ebc59;
+    background-color: ${({ theme }) => theme.palette.primary.light};
   }
   div:nth-child(odd) span {
-    background: #383838;
+    background: ${({ theme }) => theme.palette.primary.main};
   }
 `;

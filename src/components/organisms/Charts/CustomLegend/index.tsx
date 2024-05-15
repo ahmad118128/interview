@@ -2,7 +2,9 @@ import { Box, Typography } from '@mui/material';
 import React from 'react';
 import { ContainerBox } from './styled';
 
-export default function CustomLegend({ labels }: { labels: string[] }) {
+type CustomLegendProps = { labels: string[] };
+
+export default function CustomLegend({ labels }: CustomLegendProps) {
   return (
     <ContainerBox>
       {labels.map((label, index) => (

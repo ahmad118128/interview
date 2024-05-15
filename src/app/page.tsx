@@ -1,5 +1,9 @@
 'use client';
 
+import {
+  CustomAutocomplete,
+  CustomRHFAutocomplete,
+} from '@/components/atoms/Autocomplete';
 import { CustomTextArea } from '@/components/atoms/CustomTextarea/CustomTextarea';
 import { BarChart } from '@/components/organisms/Charts/BarChart';
 import DoughnutChart from '@/components/organisms/Charts/DoughnutChart';
@@ -12,6 +16,13 @@ export default function Home() {
   const { control } = useForm({
     mode: 'onChange',
   });
+
+  const test = [
+    { label: 'The Shawshank Redemption', year: 1994 },
+    { label: 'The Godfather', year: 1972 },
+    { label: 'The Godfather: Part II', year: 1974 },
+    { label: 'The Dark Knight', year: 2008 },
+  ];
 
   return (
     <>

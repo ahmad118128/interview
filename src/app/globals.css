@@ -45,3 +45,7 @@ body {
   background-clip: padding-box;
   border-radius: 0.25rem;
 }
+
+a {
+  text-decoration: none;
+}

@@ -2,6 +2,7 @@
 
 import { CustomTextArea } from '@/components/atoms/CustomTextarea/CustomTextarea';
 import { BarChart } from '@/components/organisms/BarChart';
+import DoughnutChart from '@/components/organisms/DoughnutChart';
 import { Typography } from '@mui/material';
 import { kMaxLength } from 'buffer';
 import { useForm } from 'react-hook-form';
@@ -42,6 +43,7 @@ export default function Home() {
           { label: 'زن', data: [30, 40, 50, 120] },
         ]}
       />
+      <DoughnutChart labels={['زن', 'مرد']} data={[120, 80]} />
     </>
   );
 }

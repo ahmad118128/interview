@@ -1,4 +1,4 @@
-export interface DoughnutChartProps {
+export interface LineChartProps {
   labels: unknown[];
   data: number[];
 }

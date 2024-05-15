@@ -118,12 +118,6 @@ export const UsersTab = ({ radioButton }: any) => {
             iconName="tabler:file-info"
             url={`/dashboard/users/details?id=${row?.id}`}
           />
-          <IconWithUrl
-            title={commonWords.edit}
-            iconName="tabler:edit"
-            url={`/dashboard/users/edit?id=${row?.id}`}
-          />
-          {/* <DeleteIcon id={row?.id} message={commonWords.deleteUser} /> */}
         </TableCell>
       ),
     },

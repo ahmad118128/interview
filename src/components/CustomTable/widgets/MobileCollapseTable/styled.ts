@@ -10,13 +10,13 @@ export const StyledTableWrapper = styled(Box)`
   thead {
     background-color: ${({ theme }) => theme.palette.primary.dark};
     th {
-      border-bottom: 0.25rem solid ${({ theme }) => theme.palette.primary.main};
+      border-bottom: 0.1rem solid ${({ theme }) => theme.palette.primary.main};
       color: ${({ theme }) => theme.palette.common.white} !important;
     }
   }
   tbody {
     tr {
-      background-color: ${({ theme }) => theme.palette.primary.dark};
+      background-color: ${({ theme }) => theme.palette.primary.light};
       height: 3rem !important;
     }
     td {

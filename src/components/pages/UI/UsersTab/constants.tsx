@@ -98,14 +98,4 @@ export const mockData = [
     description: 'tested',
     matchCount: 9,
   },
-  {
-    id: 6,
-    description: 'tested',
-    matchCount: 63,
-  },
-  {
-    id: 7,
-    description: 'tested',
-    matchCount: 4,
-  },
 ];

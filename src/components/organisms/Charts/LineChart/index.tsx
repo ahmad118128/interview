@@ -77,6 +77,9 @@ export default function LineChart(props: LineChartProps) {
       title: {
         display: false,
       },
+      tooltip: {
+        enabled: false,
+      },
     },
     scales: {
       x: {

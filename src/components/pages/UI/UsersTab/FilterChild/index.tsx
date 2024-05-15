@@ -1,6 +1,9 @@
 'use client';
 import { StyledContainer, StyledFilterChild } from './styled';
-import DynamicInputs, { Input } from '@/components/organisms/dynamicInputs';
+import DynamicInputs, {
+  Input,
+  InputOption,
+} from '@/components/organisms/DynamicInputs';
 
 export const FilterChild = () => {
   const inputs = [
@@ -21,6 +24,11 @@ export const FilterChild = () => {
         { value: 'non-fiction', label: 'Non-Fiction' },
         { value: 'mystery', label: 'Mystery' },
       ],
+      getOptionLabel: (option: InputOption) => option.value,
+      getOptionValue: (option: InputOption) => option.value,
+      // freeSolo
+      multiple: true,
+      label: 'تست',
     },
 
     {
@@ -46,7 +54,7 @@ export const FilterChild = () => {
       label: 'Book Title',
       fullWidth: true,
     },
-  ] as Input[];
+  ] as unknown as Input[];
 
   return (
     <StyledContainer>

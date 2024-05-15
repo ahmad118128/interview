@@ -1,8 +1,5 @@
 import { Box, Tooltip } from '@mui/material';
-import { Icon } from '@iconify/react';
-
 import { type Props } from './types';
-import { StyledChip } from '../../widgets/FilterContainer/styled';
 import { tablePhrases } from '../../strings';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 import { EFilterTableNameIcon } from '../../widgets/FilterContainer/type';

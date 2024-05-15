@@ -121,7 +121,7 @@ export const TimeDatePicker = (props: TProps) => {
 
   useEffect(() => {
     onChange(Number(values) + timer!);
-  }, [timer, values]);
+  }, [timer, values, onChange]);
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFnsJalali}>

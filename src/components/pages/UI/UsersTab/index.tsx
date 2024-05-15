@@ -125,6 +125,7 @@ export const UsersTab = ({ radioButton }: any) => {
 
   const submitHandler = (data: any) => {
     console.log(data);
+    setCollapse(true);
   };
 
   return (

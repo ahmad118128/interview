@@ -5,7 +5,10 @@ import {
   CustomRHFAutocomplete,
 } from '@/components/atoms/Autocomplete';
 import { CustomTextArea } from '@/components/atoms/CustomTextarea/CustomTextarea';
-import { TextField, Typography } from '@mui/material';
+import { BarChart } from '@/components/organisms/Charts/BarChart';
+import DoughnutChart from '@/components/organisms/Charts/DoughnutChart';
+import LineChart from '@/components/organisms/Charts/LineChart';
+import { Typography } from '@mui/material';
 import { kMaxLength } from 'buffer';
 import { useForm } from 'react-hook-form';
 
@@ -45,49 +48,27 @@ export default function Home() {
           label="label"
         />
       </div>
-      <div
-        style={{
-          marginTop: '20px',
-          marginInline: '300px',
-        }}
-      >
-        <CustomAutocomplete
-          options={[
-            'test1',
-            'test2',
-            'test3',
-            'test4',
-            'test5',
-            'test6',
-            'test7',
-            'test8',
-          ]}
-          multiple
-          label="تست"
-          dir="rtl"
-        />
-      </div>
-      <div
-        style={{
-          marginTop: '20px',
-          marginInline: '300px',
-        }}
-      >
-        <CustomRHFAutocomplete
-          control={control}
-          name="test"
-          options={[
-            { name: 'rtest1', family: '1' },
-            { name: 'rtest1', family: '2' },
-          ]}
-          getOptionLabel={(option) => option.family}
-          getOptionValue={(option) => option.family}
-          // freeSolo
-          multiple
-          label="تست"
-          dir="rtl"
-        />
-      </div>
+      <BarChart
+        labels={['January', 'February', 'March', 'April']}
+        data={[
+          { label: 'مرد', data: [120, 130, 140, 15] },
+          { label: 'زن', data: [30, 40, 50, 120] },
+        ]}
+        legend={true}
+      />
+      <BarChart
+        labels={['January', 'February', 'March', 'April']}
+        data={[{ label: 'مرد', data: [120, 130, 140, 15] }]}
+      />
+      <DoughnutChart
+        chartLabel="Clinet"
+        labels={['زن', 'مرد']}
+        data={[120, 80]}
+      />
+      <LineChart
+        labels={['January', 'February', 'March', 'April']}
+        data={[0, 120, 40, 90]}
+      />
     </>
   );
 }

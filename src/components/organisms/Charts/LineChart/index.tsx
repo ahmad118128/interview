@@ -96,5 +96,11 @@ export default function LineChart(props: LineChartProps) {
       },
     },
   };
-  return <Line options={options} data={chartData as ChartData<'line'>} />;
+  return (
+    <Line
+      options={options}
+      data={chartData as ChartData<'line'>}
+      style={{ maxHeight: '304px' }}
+    />
+  );
 }

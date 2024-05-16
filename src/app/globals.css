@@ -4,23 +4,6 @@ body {
   padding: 0;
 }
 
-@font-face {
-  font-family: 'iranYekan';
-  font-weight: bold;
-  src: url('/fonts/IRANYekanWebBold.woff2') format('woff');
-}
-
-@font-face {
-  font-family: 'iranYekan';
-  font-weight: normal;
-  src: url('/fonts/IRANYekanWebRegular.woff2') format('woff');
-}
-
-@font-face {
-  font-family: 'iranYekan';
-  font-weight: lighter;
-  src: url('/fonts/IRANYekanWebLight.woff2') format('woff');
-}
 html {
   font-family: var(--font-iran-yekan);
 }

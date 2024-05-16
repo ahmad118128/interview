@@ -1,4 +1,9 @@
-import { Button as MUIButton, ButtonProps, styled } from '@mui/material';
+import {
+  Button as MUIButton,
+  ButtonProps,
+  styled,
+  IconButton,
+} from '@mui/material';
 
 export const StyledButton = styled(MUIButton)<ButtonProps>(({ theme }) => ({
   backgroundColor: theme.palette.primary.light,
@@ -72,5 +77,52 @@ export const StyledButton = styled(MUIButton)<ButtonProps>(({ theme }) => ({
     padding: '0.75rem 2rem',
     fontSize: '1rem',
     fontWeight: '400',
+  },
+}));
+
+export const StyledIconButton = styled(IconButton)(({ theme }) => ({
+  borderRadius: '6px',
+
+  '& .iconify': {
+    color: theme.palette.primary.main,
+  },
+
+  '&.Mui-disabled': {
+    '& .iconify': {
+      color: theme.palette.grey[300],
+      opacity: 0.5,
+    },
+  },
+
+  '&:hover': {
+    backgroundColor: theme.palette.grey[100],
+    outline: `1px solid ${theme.palette.primary.light}`,
+    '& .iconify': {
+      color: theme.palette.primary.light,
+    },
+  },
+
+  '&:selected': {
+    backgroundColor: 'red',
+  },
+
+  '&.active': {
+    backgroundColor: theme.palette.grey[100],
+    outline: `1px solid ${theme.palette.primary.light}`,
+    '& .iconify': {
+      color: theme.palette.primary.light,
+    },
+  },
+
+  '&.MuiIconButton-sizeLarge': {
+    padding: '0.25rem',
+  },
+
+  '&.MuiIconButton-sizeMedium': {
+    padding: '0.25rem',
+  },
+
+  '&.MuiIconButton-sizeSmall': {
+    padding: '0.25rem',
   },
 }));

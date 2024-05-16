@@ -32,37 +32,27 @@ export function CustomInput<TField extends FieldValues>(
       name={name}
       rules={rules}
       render={({ field: { onChange, value }, fieldState: { error } }) => (
-        <Grid container>
-          <Grid item xs={12}>
-            <StyledTextField
-              name={name}
-              variant={variant ? variant : 'filled'}
-              label={label}
-              type={type}
-              setError={setError}
-              inputProps={inputProps}
-              disabled={disabled}
-              value={value}
-              onChange={onChange}
-              validateType={validateType}
-              error={!!error?.message}
-              fullWidth={fullWidth}
-              InputProps={InputProps}
-              InputLabelProps={InputLabelProps}
-              onFocus={onFocus}
-              onBlur={onBlur}
-              hiddenLabel={!!hiddenLabel}
-              placeholder={placeholder}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            {error?.message && (
-              <StyledErrorMessage variant="caption">
-                {error?.message}
-              </StyledErrorMessage>
-            )}
-          </Grid>
-        </Grid>
+        <StyledTextField
+          name={name}
+          variant={variant ? variant : 'filled'}
+          label={label}
+          type={type}
+          setError={setError}
+          inputProps={inputProps}
+          disabled={disabled}
+          value={value}
+          onChange={onChange}
+          validateType={validateType}
+          error={!!error?.message}
+          fullWidth={fullWidth}
+          InputProps={InputProps}
+          InputLabelProps={InputLabelProps}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          hiddenLabel={!!hiddenLabel}
+          placeholder={placeholder}
+          helperText={error?.message}
+        />
       )}
     />
   );

@@ -1,6 +1,13 @@
 'use client';
 
+import {
+  CustomAutocomplete,
+  CustomRHFAutocomplete,
+} from '@/components/atoms/Autocomplete';
 import { CustomTextArea } from '@/components/atoms/CustomTextarea/CustomTextarea';
+import { BarChart } from '@/components/organisms/Charts/BarChart';
+import DoughnutChart from '@/components/organisms/Charts/DoughnutChart';
+import LineChart from '@/components/organisms/Charts/LineChart';
 import { Typography } from '@mui/material';
 import { kMaxLength } from 'buffer';
 import { useForm } from 'react-hook-form';
@@ -9,6 +16,13 @@ export default function Home() {
   const { control } = useForm({
     mode: 'onChange',
   });
+
+  const test = [
+    { label: 'The Shawshank Redemption', year: 1994 },
+    { label: 'The Godfather', year: 1972 },
+    { label: 'The Godfather: Part II', year: 1974 },
+    { label: 'The Dark Knight', year: 2008 },
+  ];
 
   return (
     <>
@@ -34,6 +48,27 @@ export default function Home() {
           label="label"
         />
       </div>
+      <BarChart
+        labels={['January', 'February', 'March', 'April']}
+        data={[
+          { label: 'مرد', data: [120, 130, 140, 15] },
+          { label: 'زن', data: [30, 40, 50, 120] },
+        ]}
+        legend={true}
+      />
+      <BarChart
+        labels={['January', 'February', 'March', 'April']}
+        data={[{ label: 'مرد', data: [120, 130, 140, 15] }]}
+      />
+      <DoughnutChart
+        chartLabel="Clinet"
+        labels={['زن', 'مرد']}
+        data={[120, 80]}
+      />
+      <LineChart
+        labels={['January', 'February', 'March', 'April']}
+        data={[0, 120, 40, 90]}
+      />
     </>
   );
 }

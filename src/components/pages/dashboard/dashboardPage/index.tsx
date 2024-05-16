@@ -7,6 +7,7 @@ import LineChart from '@/components/organisms/Charts/LineChart';
 import { cardData } from './constant';
 import { StyledChartBox, StyledTitleBox } from './styles';
 import { BarChart } from '@/components/organisms/Charts/BarChart';
+import { generalStr } from '@/strings';
 
 export default function DashboardPage() {
   return (
@@ -18,7 +19,7 @@ export default function DashboardPage() {
       ))}
       <Grid item md={6}>
         <StyledChartBox>
-          <StyledTitleBox>تعداد افراد عبوری</StyledTitleBox>
+          <StyledTitleBox>{generalStr.numberPersons}</StyledTitleBox>
           <LineChart
             labels={['January', 'February', 'March', 'April']}
             data={[0, 120, 40, 90]}
@@ -27,7 +28,7 @@ export default function DashboardPage() {
       </Grid>
       <Grid item md={3}>
         <StyledChartBox>
-          <StyledTitleBox>وضعیت کلاینت‌ها</StyledTitleBox>
+          <StyledTitleBox>{generalStr.clientState}</StyledTitleBox>
           <DoughnutChart
             chartLabel="Clinet"
             labels={['نامشخص', 'شناسایی شده']}
@@ -37,7 +38,7 @@ export default function DashboardPage() {
       </Grid>
       <Grid item md={3}>
         <StyledChartBox>
-          <StyledTitleBox>جنسیت افراد ثبت نامی</StyledTitleBox>
+          <StyledTitleBox>{generalStr.gender}</StyledTitleBox>
           <DoughnutChart
             chartLabel="Data"
             labels={['زن', 'مرد']}
@@ -47,7 +48,7 @@ export default function DashboardPage() {
       </Grid>
       <Grid item md={6}>
         <StyledChartBox>
-          <StyledTitleBox>بازه‌ی سنی افراد عبوری</StyledTitleBox>
+          <StyledTitleBox>{generalStr.ageRange}</StyledTitleBox>
           <BarChart
             labels={['January', 'February', 'March', 'April']}
             data={[
@@ -60,7 +61,7 @@ export default function DashboardPage() {
       </Grid>
       <Grid item md={6}>
         <StyledChartBox>
-          <StyledTitleBox>وضعیت لیست‌های نظارتی</StyledTitleBox>
+          <StyledTitleBox>{generalStr.stateList}</StyledTitleBox>
           <BarChart
             labels={['January', 'February', 'March', 'April']}
             data={[{ label: 'مرد', data: [120, 130, 140, 15] }]}

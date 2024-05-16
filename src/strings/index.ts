@@ -337,6 +337,11 @@ export const generalStr = {
   MaxChargeMustBeOneMillion:
     'مقدار شارژ اولیه باید کوچکتر یا مساوی با 100,000,000 تومان باشد.',
   startDateLowerThanEndDate: 'تاریخ شروع نمی تواند از تاریخ پایان بزرگتر باشد.',
+  numberPersons: 'تعداد افراد عبوری',
+  clientState: 'وضعیت کلاینت‌ها',
+  gender: 'جنسیت افراد ثبت نامی',
+  ageRange: 'بازه‌ی سنی افراد عبوری',
+  stateList: 'وضعیت لیست‌های نظارتی',
 };
 
 export const registrationStr = {

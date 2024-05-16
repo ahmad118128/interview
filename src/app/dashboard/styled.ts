@@ -2,10 +2,8 @@
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { StyledSideBarType } from './type';
-import theme from '@/theme';
 
 export const StyledChildLayout = styled('main')`
-  margin-top: 4rem;
   overflow-y: auto;
   overflow-x: hidden;
   padding: 2rem 2.5rem;

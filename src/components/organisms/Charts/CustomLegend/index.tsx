@@ -10,7 +10,7 @@ export default function CustomLegend({ labels }: CustomLegendProps) {
       {labels.map((label, index) => (
         <Box key={index}>
           <span></span>
-          <Typography>{label}</Typography>
+          <Typography variant="body2">{label}</Typography>
         </Box>
       ))}
     </ContainerBox>

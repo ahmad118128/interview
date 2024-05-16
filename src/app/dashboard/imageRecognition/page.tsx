@@ -1,5 +1,8 @@
 'use client';
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
   Box,
   FormControl,
   FormControlLabel,
@@ -16,6 +19,7 @@ import { CustomButton } from '@/components/atoms/CustomButton';
 import { FilterContainer } from '@/components/CustomTable/widgets';
 import { FilterChild } from '@/components/pages/UI/UsersTab/FilterChild';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
+import { FilterIcon } from '@/components/CustomTable/shared';
 
 export default function ImageRecognition() {
   const [selected, setSelected] = useState('female');
@@ -60,43 +64,68 @@ export default function ImageRecognition() {
             }}
             sx={{ width: '100%', paddingY: 0 }}
           >
-            <FilterContainer
-              collapse={collapse}
-              onHandleIconClick={handleIconClick}
+            <Accordion
+              expanded={collapse}
+              sx={{ display: 'flex', flexDirection: 'column' }}
             >
-              <FilterChild />
-            </FilterContainer>
-            <FormControlLabel
-              value="female"
-              control={<Radio />}
-              label="Female"
-              className="uploadIcon"
-              sx={{
-                marginRight: 0,
-                marginBottom: selected === 'female' ? '2rem' : 0,
-              }}
-            />
-
-            {selected === 'female' && (
-              <CustomInput
-                control={control}
-                name="InputFile"
-                fullWidth
-                sx={{ marginBottom: '2rem' }}
-                label="بارگذاری تصویر"
-                type="file"
-                InputProps={{
-                  endAdornment: (
-                    <Icon
-                      icon="material-symbols:upload-rounded"
-                      width="20"
-                      height="20"
+              <AccordionSummary>
+                <Box
+                  sx={{
+                    width: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '2rem',
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: '100%',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                    }}
+                  >
+                    <FormControlLabel
+                      value="female"
+                      control={<Radio />}
+                      label="Female"
                       className="uploadIcon"
+                      sx={{
+                        marginRight: 0,
+                        marginBottom: selected === 'female' ? '2rem' : 0,
+                      }}
                     />
-                  ),
-                }}
-              />
-            )}
+
+                    <FilterIcon
+                      onHandleIconClick={handleIconClick}
+                      active={collapse}
+                    />
+                  </Box>
+                  {selected === 'female' && (
+                    <CustomInput
+                      control={control}
+                      name="InputFile"
+                      fullWidth
+                      sx={{ marginBottom: '2rem' }}
+                      label="بارگذاری تصویر"
+                      type="file"
+                      InputProps={{
+                        endAdornment: (
+                          <Icon
+                            icon="material-symbols:upload-rounded"
+                            width="20"
+                            height="20"
+                            className="uploadIcon"
+                          />
+                        ),
+                      }}
+                    />
+                  )}
+                </Box>
+              </AccordionSummary>
+              <AccordionDetails>
+                <FilterChild />
+              </AccordionDetails>
+            </Accordion>
 
             <FormControlLabel
               value="male"

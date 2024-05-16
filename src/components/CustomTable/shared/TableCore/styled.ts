@@ -4,7 +4,7 @@ import { TableCell } from '@mui/material';
 export const StyledTableCell = styled(TableCell)`
   .MuiTableSortLabel-root,
   .MuiTableSortLabel-root:focus {
-    color: ${({ theme }) => theme.palette.common.white} !important;
+    color: ${({ theme }) => theme.palette.common.black} !important;
   }
   svg {
     opacity: 1;

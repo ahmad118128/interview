@@ -1,5 +1,5 @@
 'use client';
-import { ReactNode, useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
   FieldValues,
   FormProvider,
@@ -25,6 +25,8 @@ import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagi
 import IconWithUrl from './IconWithUrl';
 import { CustomButton } from '@/components/atoms/CustomButton';
 import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
+import { Icon } from '@iconify/react/dist/iconify.js';
+import theme from '@/theme';
 
 const payloadSnackbar: SnackBarType = {
   display: true,
@@ -102,28 +104,19 @@ export const UsersTab = ({ radioButton }: any) => {
       type: 'function',
       function: (row) => (
         <TableCell>
-          <IconWithUrl
-            iconName="tabler:lock-exclamation"
-            title={registrationStr.changePass}
-            onClick={() =>
-              setModalData({
-                ...modalData,
-                state: true,
-                id: row?.id,
-              })
-            }
+          <Icon
+            icon="ic:baseline-delete"
+            width="24"
+            height="24"
+            color={theme.palette.primary.main}
+            style={{ marginLeft: '0.2rem' }}
           />
-          <IconWithUrl
-            title={commonWords.details}
-            iconName="tabler:file-info"
-            url={`/dashboard/users/details?id=${row?.id}`}
+          <Icon
+            icon="ep:picture-filled"
+            width="24"
+            height="24"
+            color={theme.palette.primary.main}
           />
-          <IconWithUrl
-            title={commonWords.edit}
-            iconName="tabler:edit"
-            url={`/dashboard/users/edit?id=${row?.id}`}
-          />
-          {/* <DeleteIcon id={row?.id} message={commonWords.deleteUser} /> */}
         </TableCell>
       ),
     },

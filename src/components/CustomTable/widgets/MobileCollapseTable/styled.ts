@@ -6,25 +6,30 @@ export const StyledTableWrapper = styled(Box)`
   .MuiTable-root {
     border-collapse: collapse !important;
     border-spacing: 0;
+    margin-top: 1.2rem;
   }
   thead {
-    background-color: ${({ theme }) => theme.palette.primary.dark};
+    borderradius: 0.1rem !important;
+    background-color: ${({ theme }) => theme.palette.grey[50]};
     th {
-      border-bottom: 0.25rem solid ${({ theme }) => theme.palette.primary.main};
-      color: ${({ theme }) => theme.palette.common.white} !important;
+      color: ${({ theme }) => theme.palette.common.black} !important;
+      padding-bottom: 10px;
     }
   }
   tbody {
     tr {
-      background-color: ${({ theme }) => theme.palette.primary.dark};
+      background-color: ${({ theme }) => theme.palette.grey[50]};
       height: 3rem !important;
     }
     td {
-      border-bottom: 0.063rem solid ${({ theme }) => theme.palette.primary.main};
+      border-bottom: 1px solid ${({ theme }) => theme.palette.grey[300]};
       padding: 0;
       vertical-align: middle;
       text-align: center;
-      color: ${({ theme }) => theme.palette.common.white};
+      color: ${({ theme }) => theme.palette.common.black} !important;
+    }
+    th {
+      padding-top: 10px;
     }
     ${({ theme }) => theme.breakpoints.down('md')} {
       tr:nth-child(odd) {
@@ -82,7 +87,7 @@ export const StyledMobileList = styled(Box)`
 export const StyledMobileListCellLabel = styled(Box)`
   font-weight: 500;
   text-align: right;
-  color: ${({ theme }) => theme.palette.common.white};
+  color: ${({ theme }) => theme.palette.common.black};
 `;
 
 export const StyledMobileListCellValue = styled(Box)`

@@ -9,7 +9,6 @@ export default function MainLayout({ children }: PropsWithChildren) {
   return (
     <StyledMainLayout isOpen={isOpen}>
       <HeaderDashboard />
-
       <StyledChildLayout>{children}</StyledChildLayout>
     </StyledMainLayout>
   );

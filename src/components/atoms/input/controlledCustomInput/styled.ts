@@ -13,6 +13,8 @@ export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
   theme,
   value,
   InputProps,
+  placeholder,
+  label,
 }) => {
   return {
     ' & input': {
@@ -43,10 +45,25 @@ export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
       },
     },
 
+    ':disable &:after': {
+      border: 'none',
+    },
+    '& ::-webkit-file-upload-button': {
+      display: 'none',
+    },
+    '& ::file-selector-button': {
+      display: 'none',
+    },
+    '& input[type=file]': {
+      fontSize: value || !label ? '14px !important' : '0px !important',
+      color: value && theme.palette.grey[300],
+    },
+
     '& .MuiInputBase-root': {
       fontFamily: theme.typography.fontFamily,
       fontSize: theme.typography.body1.fontSize,
       fontWeight: 'normal',
+      minHeight: '3rem',
       backgroundColor: theme.palette.grey[100],
       borderTopLeftRadius: '0.438rem',
       borderTopRightRadius: '0.438rem',
@@ -59,6 +76,9 @@ export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
         '&:before': {
           borderColor: theme.palette.primary.light,
         },
+        '& .uploadIcon': {
+          color: theme.palette.primary.light,
+        },
       },
       '& .MuiOutlinedInput-notchedOutline': {
         borderColor: theme.palette.grey[300],
@@ -69,18 +89,8 @@ export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
           borderColor: theme.palette.primary.light,
           borderWidth: '1px',
         },
-
-        ':disable &:after': {
-          border: 'none',
-        },
-        '& ::-webkit-file-upload-button': {
-          display: 'none',
-        },
-        '& ::file-selector-button': {
-          display: 'none',
-        },
-        '& input[type=file]': {
-          fontSize: value ? '14px !important' : '0px !important',
+        '& .uploadIcon': {
+          color: theme.palette.primary.light,
         },
       },
     },

@@ -1,15 +1,10 @@
 import React from 'react';
 import { useFormContext, Controller } from 'react-hook-form';
 import TextField from '@mui/material/TextField';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
 import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
 import { StyledInputContainer } from '@/components/pages/UI/UsersTab/FilterChild/styled';
 import ControlledTimeDatePickerInput from '../TimeDatePicker/ControlledTimeDatePicker';
-import {
-  CustomAutocomplete,
-  CustomRHFAutocomplete,
-} from '@/components/atoms/Autocomplete';
+import { CustomRHFAutocomplete } from '@/components/atoms/Autocomplete';
 
 export interface InputOption {
   value: string;

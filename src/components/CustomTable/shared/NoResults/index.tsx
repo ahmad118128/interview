@@ -25,7 +25,7 @@ export const TableNoResults = (props: Props) => {
             marginY="3rem"
           >
             <Image
-              src="/images/error/noResult.svg"
+              src="/assets/images/dashboard/imageRecognition/noResult.svg"
               width={181}
               height={188}
               alt={title}

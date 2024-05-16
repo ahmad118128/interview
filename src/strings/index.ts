@@ -1,6 +1,7 @@
 /** ********** GENERAL ********** */
 
 export const generalStr = {
+  matchCount: 'تعداد تطبیق',
   creditFrom: 'مقدار اعتبار از',
   creditTo: 'مقدار اعتبار تا',
   expireTimeFrom: 'تاریخ انقضاء از',

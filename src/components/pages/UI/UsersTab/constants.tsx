@@ -3,7 +3,7 @@ import { UsersFilterProps } from './types';
 import { Status } from '@/components/CustomTable/shared/Status';
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { handleArray } from '@/components/CustomTable/utils';
-import { commonWords, usersStr } from '@/strings';
+import { commonWords, generalStr, usersStr } from '@/strings';
 
 export const COLLAPSE_ID = 'collapse';
 
@@ -13,43 +13,14 @@ export const headers: CellType[] = [
     label: '',
   },
   {
-    id: 'username',
-    label: commonWords.userName,
+    id: 'description',
+    label: generalStr.description,
+  },
+  {
+    id: 'matchCount',
+    label: generalStr.matchCount,
+    type: 'number',
     sortable: true,
-  },
-  {
-    id: 'name',
-    label: commonWords.fullName,
-    type: 'function',
-    function: (row) => (
-      <TableCell>
-        <Typography variant="body1">{`${row?.first_name} ${row?.last_name}`}</Typography>
-      </TableCell>
-    ),
-  },
-  {
-    id: 'groups',
-    label: usersStr.groups,
-    type: 'function',
-    function: (row) => (
-      <TableCell>
-        <Typography variant="body1">
-          {row?.groups && row?.groups.length ? handleArray(row?.groups) : '-'}
-        </Typography>
-      </TableCell>
-    ),
-  },
-  {
-    id: 'is_active',
-    label: commonWords.status,
-    type: 'function',
-    function: (row) => (
-      <TableCell>
-        <Typography variant="body1">
-          <Status state={row?.is_active} />
-        </Typography>
-      </TableCell>
-    ),
   },
 ];
 export const chipsCreator = (
@@ -96,3 +67,35 @@ export const initFilter: UsersFilterProps = {
   is_active: '',
   q: '',
 };
+
+export const mockData = [
+  {
+    id: 1,
+    description: 'tested',
+    matchCount: 3,
+  },
+
+  {
+    id: 2,
+    description: 'tested',
+    matchCount: 7,
+  },
+
+  {
+    id: 3,
+    description: 'notTested',
+    matchCount: 3,
+  },
+
+  {
+    id: 4,
+    description: 'tested',
+    matchCount: 38,
+  },
+
+  {
+    id: 5,
+    description: 'tested',
+    matchCount: 9,
+  },
+];

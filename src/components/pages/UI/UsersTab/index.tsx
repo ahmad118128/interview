@@ -1,5 +1,5 @@
 'use client';
-import { ReactNode, useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
   FieldValues,
   FormProvider,
@@ -7,7 +7,13 @@ import {
   useForm,
 } from 'react-hook-form';
 import { TableCell } from '@mui/material';
-import { chipsCreator, COLLAPSE_ID, headers, initFilter } from './constants';
+import {
+  chipsCreator,
+  COLLAPSE_ID,
+  headers,
+  initFilter,
+  mockData,
+} from './constants';
 import { FilterChild } from './FilterChild';
 import { IError, ISuccess, SnackBarType, type UsersFilterProps } from './types';
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
@@ -19,6 +25,8 @@ import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagi
 import IconWithUrl from './IconWithUrl';
 import { CustomButton } from '@/components/atoms/CustomButton';
 import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
+import { Icon } from '@iconify/react/dist/iconify.js';
+import theme from '@/theme';
 
 const payloadSnackbar: SnackBarType = {
   display: true,
@@ -96,28 +104,19 @@ export const UsersTab = ({ radioButton }: any) => {
       type: 'function',
       function: (row) => (
         <TableCell>
-          <IconWithUrl
-            iconName="tabler:lock-exclamation"
-            title={registrationStr.changePass}
-            onClick={() =>
-              setModalData({
-                ...modalData,
-                state: true,
-                id: row?.id,
-              })
-            }
+          <Icon
+            icon="ic:baseline-delete"
+            width="24"
+            height="24"
+            color={theme.palette.primary.main}
+            style={{ marginLeft: '0.2rem' }}
           />
-          <IconWithUrl
-            title={commonWords.details}
-            iconName="tabler:file-info"
-            url={`/dashboard/users/details?id=${row?.id}`}
+          <Icon
+            icon="ep:picture-filled"
+            width="24"
+            height="24"
+            color={theme.palette.primary.main}
           />
-          <IconWithUrl
-            title={commonWords.edit}
-            iconName="tabler:edit"
-            url={`/dashboard/users/edit?id=${row?.id}`}
-          />
-          {/* <DeleteIcon id={row?.id} message={commonWords.deleteUser} /> */}
         </TableCell>
       ),
     },
@@ -156,10 +155,10 @@ export const UsersTab = ({ radioButton }: any) => {
         </form>
       </FormProvider>
       <MobileCollapseTable
-        rows={tableData?.data?.results}
+        rows={mockData}
         headers={tableHeads}
         error={!tableData?.data?.results}
-        mobileIdFilter={[COLLAPSE_ID, 'username', 'actions']}
+        mobileIdFilter={[COLLAPSE_ID, 'description', 'matchCount']}
         pagination={pagination}
         handleSort={(id) => {
           setOrder(id);

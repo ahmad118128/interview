@@ -13,9 +13,13 @@ import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import theme from '@/theme';
 import { CustomButton } from '@/components/atoms/CustomButton';
+import { FilterContainer } from '@/components/CustomTable/widgets';
+import { FilterChild } from '@/components/pages/UI/UsersTab/FilterChild';
+import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
 
 export default function ImageRecognition() {
   const [selected, setSelected] = useState('female');
+  const [collapse, setCollapse] = useState(false);
 
   const {
     setValue,
@@ -25,6 +29,21 @@ export default function ImageRecognition() {
     formState: { errors },
   } = useForm();
   const onSubmit = (data: any) => console.log(data);
+
+  const handleIconClick = (name: EFilterTableNameIcon) => {
+    switch (name) {
+      case EFilterTableNameIcon.FILTER:
+        setCollapse((prev) => !prev);
+        break;
+
+      case EFilterTableNameIcon.REFRESH:
+        // serviceCall();
+        break;
+
+      default:
+        break;
+    }
+  };
 
   return (
     <StyledContainerImageRecognition>
@@ -41,6 +60,12 @@ export default function ImageRecognition() {
             }}
             sx={{ width: '100%', paddingY: 0 }}
           >
+            <FilterContainer
+              collapse={collapse}
+              onHandleIconClick={handleIconClick}
+            >
+              <FilterChild />
+            </FilterContainer>
             <FormControlLabel
               value="female"
               control={<Radio />}

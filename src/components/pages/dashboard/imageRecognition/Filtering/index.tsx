@@ -58,10 +58,6 @@ export default function Filtering({ radioButton, submiting }: Props) {
         <FilterContainer
           collapse={collapse}
           onHandleIconClick={handleIconClick}
-          radioButton={radioButton}
-          fullWidthInput={
-            <CustomInput control={methods.control} name="InputFile" fullWidth />
-          }
         >
           <FilterChild />
           {submiting ? (

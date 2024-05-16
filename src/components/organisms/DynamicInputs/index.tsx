@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFormContext, Controller } from 'react-hook-form';
+import { useFormContext, Controller, useForm } from 'react-hook-form';
 import TextField from '@mui/material/TextField';
 import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
 import { StyledInputContainer } from '@/components/pages/UI/UsersTab/FilterChild/styled';
@@ -30,7 +30,7 @@ const inputComponents: { [key: string]: React.ComponentType<any> } = {
 };
 
 const DynamicInputs = ({ inputs }: DynamicInputsProps) => {
-  const { control } = useFormContext();
+  const { control } = useForm();
 
   return (
     <>

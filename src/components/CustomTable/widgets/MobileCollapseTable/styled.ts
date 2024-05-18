@@ -9,14 +9,17 @@ export const StyledTableWrapper = styled(Box)`
     margin-top: 1.2rem;
   }
   thead {
-    borderradius: 0.1rem !important;
+    border-radius: 0.1rem;
     background-color: ${({ theme }) => theme.palette.grey[50]};
     th {
       color: ${({ theme }) => theme.palette.common.black} !important;
       padding-bottom: 10px;
     }
+    margin-bottom: 1rem; /* Add margin-bottom to thead */
   }
   tbody {
+    margin-top: 2rem;
+
     tr {
       background-color: ${({ theme }) => theme.palette.grey[50]};
       height: 3rem !important;
@@ -44,6 +47,12 @@ export const StyledTableWrapper = styled(Box)`
             ${({ theme }) => theme.palette.primary.main};
         }
       }
+    }
+    tbody:before {
+      content: '-';
+      display: block;
+      line-height: 1em;
+      color: transparent;
     }
   }
 `;

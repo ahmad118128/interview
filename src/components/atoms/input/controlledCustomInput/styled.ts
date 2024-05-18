@@ -80,6 +80,9 @@ export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
           color: theme.palette.primary.light,
         },
       },
+      '& .uploadIcon': {
+        marginLeft: '0.5rem',
+      },
       '& .MuiOutlinedInput-notchedOutline': {
         borderColor: theme.palette.grey[300],
         borderWidth: '1px',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFormContext, Controller, useForm } from 'react-hook-form';
+import { useFormContext, Controller } from 'react-hook-form';
 import TextField from '@mui/material/TextField';
 import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
 import { StyledInputContainer } from '@/components/pages/UI/UsersTab/FilterChild/styled';
@@ -30,7 +30,7 @@ const inputComponents: { [key: string]: React.ComponentType<any> } = {
 };
 
 const DynamicInputs = ({ inputs }: DynamicInputsProps) => {
-  const { control } = useForm();
+  const { control } = useFormContext(); // Use useFormContext to access control
 
   return (
     <>
@@ -46,10 +46,10 @@ const DynamicInputs = ({ inputs }: DynamicInputsProps) => {
                   name={name}
                   options={options ? options : []}
                   {...props}
-                ></CustomRHFAutocomplete>
+                />
               )}
               {typeInput === 'textField' && (
-                <InputComponent
+                <CustomInput
                   defaultValue={value}
                   name={name}
                   label={label}
@@ -59,7 +59,7 @@ const DynamicInputs = ({ inputs }: DynamicInputsProps) => {
               )}
               {typeInput === 'datepicker' && (
                 <ControlledTimeDatePickerInput
-                  name="test"
+                  name={name} // Ensure name is correct
                   control={control}
                   label={label ? label : ''}
                   value={0}

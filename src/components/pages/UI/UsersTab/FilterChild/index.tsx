@@ -1,20 +1,20 @@
 'use client';
 import { StyledContainer, StyledFilterChild } from './styled';
-import DynamicInputs, {
-  Input,
-  InputOption,
-} from '@/components/organisms/DynamicInputs';
+import DynamicInputs, { Input } from '@/components/organisms/DynamicInputs';
+import { useFormContext } from 'react-hook-form';
 
 export const FilterChild = () => {
+  const { control } = useFormContext(); // Use useFormContext to access form methods
+
   const inputs = [
     {
       typeInput: 'textField',
-      name: 'title',
+      name: 'title1',
       value: '',
-      label: 'Book Title',
+      label: 'Book Title1',
       fullWidth: true,
+      defaultValue: '',
     },
-
     {
       typeInput: 'select',
       name: 'genre',
@@ -24,37 +24,37 @@ export const FilterChild = () => {
         { value: 'non-fiction', label: 'Non-Fiction' },
         { value: 'mystery', label: 'Mystery' },
       ],
-      getOptionLabel: (option: InputOption) => option.value,
-      getOptionValue: (option: InputOption) => option.value,
-      // freeSolo
+      getOptionLabel: (option: { value: any }) => option.value,
+      getOptionValue: (option: { value: any }) => option.value,
       multiple: true,
       label: 'تست',
     },
-
     {
       typeInput: 'textField',
-      name: 'title1',
-      value: '',
-      label: 'Book Title',
-      fullWidth: true,
-    },
-
-    {
-      typeInput: 'textField',
+      type: 'number',
       name: 'title2',
       value: '',
-      label: 'Book Title',
+      label: 'Book Title2',
       fullWidth: true,
+      defaultValue: '',
+    },
+    {
+      typeInput: 'textField',
+      name: 'title3',
+      value: '',
+      label: 'Book Title3',
+      fullWidth: true,
+      defaultValue: '',
     },
 
     {
       typeInput: 'datepicker',
-      name: 'title3',
+      name: 'title4',
       value: '',
       label: 'Book Title',
-      fullWidth: true,
+      // fullWidth: true,
     },
-  ] as unknown as Input[];
+  ] as Input[];
 
   return (
     <StyledContainer>

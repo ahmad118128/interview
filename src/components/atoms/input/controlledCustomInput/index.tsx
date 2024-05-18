@@ -1,7 +1,6 @@
-import { StyledErrorMessage, StyledTextField } from './styled';
+import { StyledTextField } from './styled';
 import { Controller, FieldValues } from 'react-hook-form';
 import { TCustomInput } from './type';
-import { Grid } from '@mui/material';
 
 export function CustomInput<TField extends FieldValues>(
   props: TCustomInput<TField>
@@ -33,7 +32,6 @@ export function CustomInput<TField extends FieldValues>(
       rules={rules}
       render={({ field: { onChange, value }, fieldState: { error } }) => (
         <StyledTextField
-          name={name}
           variant={variant ? variant : 'filled'}
           label={label}
           type={type}

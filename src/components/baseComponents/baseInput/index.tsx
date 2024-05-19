@@ -4,7 +4,7 @@ import { TextField } from '@mui/material';
 import { BaseInputProps } from './type';
 import regexPattern from '@/helper/regexPattern';
 
-const allValidateType = {
+export const allValidateType = {
   en: regexPattern.englishLetter,
   fa: regexPattern.farsiLetter,
   num: regexPattern.numbers,
@@ -32,9 +32,13 @@ export const BaseInput = (props: BaseInputProps) => {
         message: allValidateType[validateType].message,
         type: 'manual',
       });
+      console.log(
+        !validateType ||
+          !e.target.value ||
+          e.target.value.match(allValidateType[validateType].value)
+      );
     }
   };
-
   return (
     <TextField
       {...rest}

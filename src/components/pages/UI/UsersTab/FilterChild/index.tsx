@@ -1,11 +1,12 @@
 'use client';
+import { useState } from 'react';
 import { StyledContainer, StyledFilterChild } from './styled';
 import DynamicInputs, { Input } from '@/components/organisms/DynamicInputs';
-import { useFormContext } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 export const FilterChild = () => {
-  const { control } = useFormContext(); // Use useFormContext to access form methods
-
+  const [error, setError] = useState();
+  const { control } = useForm();
   const inputs = [
     {
       typeInput: 'textField',
@@ -28,15 +29,21 @@ export const FilterChild = () => {
       getOptionValue: (option: { value: any }) => option.value,
       multiple: true,
       label: 'تست',
+      style: {
+        width: '100%',
+        height: '100%',
+      },
     },
     {
       typeInput: 'textField',
-      type: 'number',
       name: 'title2',
       value: '',
       label: 'Book Title2',
       fullWidth: true,
       defaultValue: '',
+      setError: setError,
+      validatType: 'num',
+      control: control,
     },
     {
       typeInput: 'textField',
@@ -58,7 +65,7 @@ export const FilterChild = () => {
 
   return (
     <StyledContainer>
-      <StyledFilterChild container spacing={{ xs: 0, md: 6 }}>
+      <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
         <DynamicInputs inputs={inputs} />
       </StyledFilterChild>
     </StyledContainer>

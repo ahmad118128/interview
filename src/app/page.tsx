@@ -5,15 +5,17 @@ import {
   CustomRHFAutocomplete,
 } from '@/components/atoms/Autocomplete';
 import { CustomTextArea } from '@/components/atoms/CustomTextarea/CustomTextarea';
+import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
 import { BarChart } from '@/components/organisms/Charts/BarChart';
 import DoughnutChart from '@/components/organisms/Charts/DoughnutChart';
 import LineChart from '@/components/organisms/Charts/LineChart';
 import { Typography } from '@mui/material';
 import { kMaxLength } from 'buffer';
-import { useForm } from 'react-hook-form';
+import { useState } from 'react';
+import { FieldValues, useForm } from 'react-hook-form';
 
 export default function Home() {
-  const { control } = useForm({
+  const { control } = useForm<FieldValues>({
     mode: 'onChange',
   });
 

@@ -53,6 +53,18 @@ export const StyledTableWrapper = styled(Box)`
       background-color: ${({ theme }) => theme.palette.grey[50]};
       height: 3rem !important;
     }
+    .MuiTableCell-root {
+      border-bottom: 1px solid ${({ theme }) => theme.palette.grey[200]};
+      border-top: 1px solid ${({ theme }) => theme.palette.grey[200]};
+    }
+
+    .MuiTableRow-root td:last-child {
+      border-left: 1px solid ${({ theme }) => theme.palette.grey[200]};
+    }
+
+    .MuiTableRow-root td:first-child {
+      border-right: 1px solid ${({ theme }) => theme.palette.grey[200]};
+    }
 
     td {
       padding: 0;

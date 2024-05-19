@@ -2,6 +2,7 @@
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { StyledSideBarType } from './type';
+import theme from '@/theme';
 
 export const StyledChildLayout = styled('main')`
   overflow-y: auto;
@@ -20,6 +21,7 @@ export const StyledMainLayout = styled(Box)<StyledSideBarType>`
   height: 100vh;
   margin-right: ${({ isOpen }) => (isOpen ? '12.6rem' : '5.1rem')};
   overflow-y: hidden;
+  background-color: ${({ theme }) => theme.palette.grey[100]};
 `;
 
 export const StyledContainerLayout = styled(Box)`

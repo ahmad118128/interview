@@ -343,6 +343,10 @@ export const generalStr = {
   gender: 'جنسیت افراد ثبت نامی',
   ageRange: 'بازه‌ی سنی افراد عبوری',
   stateList: 'وضعیت لیست‌های نظارتی',
+  registeredPeople: 'افراد ثبت نامی',
+  transientPeople: 'افراد عبوری',
+  waitinglists: 'تعداد لیست انتظار',
+  numberClients: 'تعداد کلاینت‌ها',
 };
 
 export const registrationStr = {

@@ -100,7 +100,7 @@ export default function LineChart(props: LineChartProps) {
     <Line
       options={options}
       data={chartData as ChartData<'line'>}
-      style={{ maxHeight: '304px' }}
+      style={{ maxHeight: '19rem' }}
     />
   );
 }

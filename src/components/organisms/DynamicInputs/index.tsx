@@ -30,7 +30,7 @@ const inputComponents: { [key: string]: React.ComponentType<any> } = {
 };
 
 const DynamicInputs = ({ inputs }: DynamicInputsProps) => {
-  const { control } = useFormContext(); // Use useFormContext to access control
+  const { control } = useFormContext();
 
   return (
     <>

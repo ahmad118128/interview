@@ -4,61 +4,78 @@ import { styled } from '@mui/material/styles';
 export const StyledTableWrapper = styled(Box)`
   width: 100%;
   .MuiTable-root {
-    border-collapse: collapse !important;
-    border-spacing: 0;
+    border-collapse: separate !important;
+    border-spacing: 0 0.25rem;
     margin-top: 1.2rem;
   }
-  thead {
-    border-radius: 0.1rem;
-    background-color: ${({ theme }) => theme.palette.grey[50]};
-    th {
-      color: ${({ theme }) => theme.palette.common.black} !important;
-      padding-bottom: 10px;
-    }
-    margin-bottom: 1rem; /* Add margin-bottom to thead */
-  }
-  tbody {
-    margin-top: 2rem;
 
-    tr {
+  .MuiTableCell-root {
+    border-bottom: none;
+    :hover span {
+      color: black !important;
+    }
+  }
+  .MuiButtonBase-root MuiTableSortLabel-root Mui-active {
+    color: red;
+  }
+
+  .MuiTableRow-root td:first-child,
+  .MuiTableRow-root th:first-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .MuiTableRow-root td:last-child,
+  .MuiTableRow-root th:last-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .MuiTableHead-root {
+    background-color: ${({ theme }) => theme.palette.grey[50]};
+
+    .MuiTableCell-root {
+      border-bottom: 1px solid ${({ theme }) => theme.palette.grey[300]};
+      border-top: 1px solid ${({ theme }) => theme.palette.grey[300]};
+    }
+
+    .MuiTableRow-root th:last-child {
+      border-left: 1px solid ${({ theme }) => theme.palette.grey[300]};
+    }
+
+    .MuiTableRow-root th:first-child {
+      border-right: 1px solid ${({ theme }) => theme.palette.grey[300]};
+    }
+  }
+
+  .MuiTableBody-root {
+    .MuiTableRow-root {
       background-color: ${({ theme }) => theme.palette.grey[50]};
       height: 3rem !important;
     }
+
     td {
-      border-bottom: 1px solid ${({ theme }) => theme.palette.grey[300]};
       padding: 0;
       vertical-align: middle;
       text-align: center;
       color: ${({ theme }) => theme.palette.common.black} !important;
     }
-    th {
-      padding-top: 10px;
-    }
+
     ${({ theme }) => theme.breakpoints.down('md')} {
       tr:nth-child(odd) {
         height: 3rem !important;
       }
+
       tr:nth-child(even) {
         height: auto !important;
       }
-      tr:last-child {
-        td {
-          border-bottom: 0.25rem solid
-            ${({ theme }) => theme.palette.primary.main};
-        }
-      }
-    }
-    tbody:before {
-      content: '-';
-      display: block;
-      line-height: 1em;
-      color: transparent;
     }
   }
 `;
 
 export const StyledIconCheckboxTableCell = styled(TableCell)`
   padding: 1rem 0;
+
   ${({ theme }) => theme.breakpoints.down('md')} {
     width: 5rem;
     text-align: right !important;

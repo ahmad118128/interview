@@ -111,7 +111,7 @@ export default function ImageRecognition() {
             width="24"
             height="24"
             color={theme.palette.primary.main}
-            style={{ marginLeft: '0.2rem' }}
+            style={{ marginLeft: '0.5rem' }}
           />
           <Icon
             icon="ep:picture-filled"

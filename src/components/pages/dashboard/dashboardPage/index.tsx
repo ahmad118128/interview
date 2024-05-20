@@ -1,12 +1,14 @@
 'use client';
 import React from 'react';
-import DashboardCard from '@/components/molecules/DashboardCard';
 import { Grid } from '@mui/material';
-import DoughnutChart from '@/components/organisms/Charts/DoughnutChart';
-import LineChart from '@/components/organisms/Charts/LineChart';
 import { cardData } from './constant';
-import { StyledChartBox, StyledTitleBox } from './styles';
+
+import DashboardCard from '@/components/molecules/DashboardCard';
+import DashboardChartCard from '@/components/organisms/DashboardChartCard';
 import { BarChart } from '@/components/organisms/Charts/BarChart';
+import LineChart from '@/components/organisms/Charts/LineChart';
+import DoughnutChart from '@/components/organisms/Charts/DoughnutChart';
+
 import { generalStr } from '@/strings';
 
 export default function DashboardPage() {
@@ -17,38 +19,42 @@ export default function DashboardPage() {
           <DashboardCard title={card.title} count={card.count} src={card.src} />
         </Grid>
       ))}
-      <Grid item md={6}>
-        <StyledChartBox>
-          <StyledTitleBox>{generalStr.numberPersons}</StyledTitleBox>
+      <Grid item xs={12} md={12} lg={6}>
+        <DashboardChartCard title={generalStr.numberPersons}>
           <LineChart
             labels={['January', 'February', 'March', 'April']}
             data={[0, 120, 40, 90]}
           />
-        </StyledChartBox>
+        </DashboardChartCard>
       </Grid>
-      <Grid item md={3}>
-        <StyledChartBox>
-          <StyledTitleBox>{generalStr.clientState}</StyledTitleBox>
+      <Grid item xs={12} md={6} lg={3}>
+        <DashboardChartCard title={generalStr.clientState}>
           <DoughnutChart
             chartLabel="Clinet"
             labels={['نامشخص', 'شناسایی شده']}
             data={[120, 80]}
           />
-        </StyledChartBox>
+        </DashboardChartCard>
       </Grid>
-      <Grid item md={3}>
-        <StyledChartBox>
-          <StyledTitleBox>{generalStr.gender}</StyledTitleBox>
+      <Grid item xs={12} md={6} lg={3}>
+        <DashboardChartCard title={generalStr.gender}>
           <DoughnutChart
             chartLabel="Data"
             labels={['زن', 'مرد']}
             data={[120, 80]}
           />
-        </StyledChartBox>
+        </DashboardChartCard>
       </Grid>
-      <Grid item md={6}>
-        <StyledChartBox>
-          <StyledTitleBox>{generalStr.ageRange}</StyledTitleBox>
+      <Grid item xs={12} md={6} lg={6}>
+        <DashboardChartCard title={generalStr.stateList}>
+          <BarChart
+            labels={['January', 'February', 'March', 'April']}
+            data={[{ label: 'مرد', data: [120, 130, 140, 15] }]}
+          />
+        </DashboardChartCard>
+      </Grid>
+      <Grid item xs={12} md={6} lg={6}>
+        <DashboardChartCard title={generalStr.ageRange}>
           <BarChart
             labels={['January', 'February', 'March', 'April']}
             data={[
@@ -57,16 +63,7 @@ export default function DashboardPage() {
             ]}
             legend={true}
           />
-        </StyledChartBox>
-      </Grid>
-      <Grid item md={6}>
-        <StyledChartBox>
-          <StyledTitleBox>{generalStr.stateList}</StyledTitleBox>
-          <BarChart
-            labels={['January', 'February', 'March', 'April']}
-            data={[{ label: 'مرد', data: [120, 130, 140, 15] }]}
-          />
-        </StyledChartBox>
+        </DashboardChartCard>
       </Grid>
     </Grid>
   );

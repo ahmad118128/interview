@@ -19,7 +19,9 @@ export const StyledMainLayout = styled(Box)<StyledSideBarType>`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  margin-right: ${({ isOpen }) => (isOpen ? '12.6rem' : '5.1rem')};
+  ${({ theme }) => theme.breakpoints.up('md')} {
+    margin-right: ${({ isOpen }) => (isOpen ? '12.6rem' : '5.1rem')};
+  }
   overflow-y: hidden;
   background-color: ${({ theme }) => theme.palette.grey[100]};
 `;

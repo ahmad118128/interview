@@ -12,6 +12,8 @@ export function UnControlledCustomInput(props: BaseInputProps) {
     onChange,
     validateType,
     error,
+    fullWidth,
+    InputProps,
   } = props;
   return (
     <StyledTextField
@@ -23,6 +25,8 @@ export function UnControlledCustomInput(props: BaseInputProps) {
       disabled={disabled}
       value={value}
       onChange={onChange}
+      fullWidth={fullWidth}
+      InputProps={InputProps}
       validateType={validateType}
       helperText={error?.message}
     />

@@ -2,11 +2,12 @@
 import { useState } from 'react';
 import { StyledContainer, StyledFilterChild } from './styled';
 import DynamicInputs, { Input } from '@/components/organisms/DynamicInputs';
-import { useForm } from 'react-hook-form';
+import { useForm, useFormContext } from 'react-hook-form';
+import { allValidateType } from '@/components/baseComponents/baseInput';
 
-export const FilterChild = () => {
+export const FilterChild = ({ control }: any) => {
   const [error, setError] = useState();
-  const { control } = useForm();
+
   const inputs = [
     {
       typeInput: 'textField',
@@ -15,6 +16,7 @@ export const FilterChild = () => {
       label: 'Book Title1',
       fullWidth: true,
       defaultValue: '',
+      control: control,
     },
     {
       typeInput: 'select',
@@ -33,17 +35,18 @@ export const FilterChild = () => {
         width: '100%',
         height: '100%',
       },
+      control: control,
     },
     {
       typeInput: 'textField',
-      name: 'title2',
-      value: '',
       label: 'Book Title2',
       fullWidth: true,
       defaultValue: '',
-      setError: setError,
-      validatType: 'num',
       control: control,
+      name: 'testing',
+      rules: {
+        pattern: allValidateType.num,
+      },
     },
     {
       typeInput: 'textField',
@@ -52,6 +55,7 @@ export const FilterChild = () => {
       label: 'Book Title3',
       fullWidth: true,
       defaultValue: '',
+      control: control,
     },
 
     {
@@ -59,13 +63,17 @@ export const FilterChild = () => {
       name: 'title4',
       value: '',
       label: 'Book Title',
-      // fullWidth: true,
+      control: control,
     },
-  ] as Input[];
+  ] as unknown as Input[];
 
   return (
     <StyledContainer>
-      <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
+      <StyledFilterChild
+        container
+        spacing={{ xs: 0, md: 8 }}
+        alignItems="flex-end"
+      >
         <DynamicInputs inputs={inputs} />
       </StyledFilterChild>
     </StyledContainer>

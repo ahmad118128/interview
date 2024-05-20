@@ -61,7 +61,16 @@ export default function ImageRecognition() {
   const [tableData, setTableData] = useState<null | ISuccess | IError>(null);
   const [order, setOrder] = useState<string | unknown>('');
 
-  const methods = useForm();
+  const methods = useForm({
+    defaultValues: {
+      InputFile: '',
+      title1: '',
+      title3: '',
+      title4: '',
+      testing: 1,
+      genre: [],
+    },
+  });
   const { reset, control, handleSubmit, watch } = methods;
   const onSubmit = (data: any) => console.log(data);
 
@@ -201,7 +210,7 @@ export default function ImageRecognition() {
                   </Box>
                 </AccordionSummary>
                 <AccordionDetails sx={{ marginTop: '2rem' }}>
-                  <FilterChild />
+                  <FilterChild control={control} />
                 </AccordionDetails>
               </CustomAccordion>
 
@@ -268,7 +277,7 @@ export default function ImageRecognition() {
                   </Box>
                 </AccordionSummary>
                 <AccordionDetails sx={{ marginTop: '2rem' }}>
-                  <FilterChild />
+                  <FilterChild control={control} />
                 </AccordionDetails>
               </CustomAccordion>
             </RadioGroup>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFormContext, Controller, useForm } from 'react-hook-form';
+import { useFormContext, Controller, useForm, Control } from 'react-hook-form';
 import TextField from '@mui/material/TextField';
 import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
 import { StyledInputContainer } from '@/components/pages/UI/UsersTab/FilterChild/styled';
@@ -17,6 +17,7 @@ export interface Input {
   name: string;
   value: string | undefined;
   label?: string | undefined;
+  control: any;
 }
 
 export interface DynamicInputsProps {
@@ -30,12 +31,13 @@ const inputComponents: { [key: string]: React.ComponentType<any> } = {
 };
 
 const DynamicInputs = ({ inputs }: DynamicInputsProps) => {
-  const { control } = useForm();
-
   return (
     <>
       {inputs?.map(
-        ({ typeInput, options, name, value, label, ...props }, index) => {
+        (
+          { typeInput, options, name, value, label, control, ...props },
+          index
+        ) => {
           const InputComponent = inputComponents[typeInput] ?? TextField;
           return (
             <StyledInputContainer item xs={12} md={4} lg={3} key={index}>

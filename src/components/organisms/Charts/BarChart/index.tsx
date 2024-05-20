@@ -95,7 +95,7 @@ export const BarChart: FC<BarChartProps> = (props) => {
       <Bar
         data={barData}
         options={options}
-        style={{ maxHeight: '14rem', maxWidth: '22rem', minHeight: '224px' }}
+        style={{ maxHeight: '14rem', maxWidth: '22rem', minHeight: '14rem' }}
       />
       {legend && <CustomLegend labels={[data[0].label, data[1].label]} />}
     </BarBox>

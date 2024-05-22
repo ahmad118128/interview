@@ -8,9 +8,11 @@ import { ActionButton } from '../styled';
 import HeaderButton from '../HeaderButton';
 import { MobileActions } from './constants';
 import { registrationStr } from '@/strings';
+import MyDrawer from '@/components/organisms/Drawer';
 
 export default function HeaderDashboardMobile() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [openDrawer, setOpenDrawer] = useState(false);
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -22,9 +24,10 @@ export default function HeaderDashboardMobile() {
 
   return (
     <>
-      <ActionButton disableRipple onClick={() => console.log('menu-burger')}>
+      <ActionButton disableRipple onClick={() => setOpenDrawer(true)}>
         <Icon icon={'iconamoon:menu-burger-horizontal-bold'} />
       </ActionButton>
+      <MyDrawer openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
 
       <Image
         alt="Header Logo"

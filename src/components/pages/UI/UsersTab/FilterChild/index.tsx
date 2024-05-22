@@ -69,11 +69,7 @@ export const FilterChild = ({ control }: any) => {
 
   return (
     <StyledContainer>
-      <StyledFilterChild
-        container
-        spacing={{ xs: 0, md: 8 }}
-        alignItems="flex-end"
-      >
+      <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
         <DynamicInputs inputs={inputs} />
       </StyledFilterChild>
     </StyledContainer>

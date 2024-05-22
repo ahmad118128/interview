@@ -58,6 +58,9 @@ export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
       fontSize: value || !label ? '14px !important' : '0px !important',
       color: value && theme.palette.grey[300],
     },
+    '.MuiFormHelperText-root': {
+      color: theme.palette.error.light,
+    },
 
     '& .MuiInputBase-root': {
       fontFamily: theme.typography.fontFamily,
@@ -80,6 +83,7 @@ export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
           color: theme.palette.primary.light,
         },
       },
+
       '& .uploadIcon': {
         marginLeft: '0.5rem',
       },

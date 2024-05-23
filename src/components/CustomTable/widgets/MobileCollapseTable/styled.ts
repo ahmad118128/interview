@@ -15,10 +15,6 @@ export const StyledTableWrapper = styled(Box)`
       color: black !important;
     }
   }
-  .MuiButtonBase-root MuiTableSortLabel-root Mui-active {
-    color: red;
-  }
-
   .MuiTableRow-root td:first-child,
   .MuiTableRow-root th:first-child {
     border-top-right-radius: 10px;
@@ -37,6 +33,10 @@ export const StyledTableWrapper = styled(Box)`
     .MuiTableCell-root {
       border-bottom: 1px solid ${({ theme }) => theme.palette.grey[300]};
       border-top: 1px solid ${({ theme }) => theme.palette.grey[300]};
+    }
+
+    .MuiTableCell-root span {
+      font-weight: ${({ theme }) => theme.typography.h3.fontWeight};
     }
 
     .MuiTableRow-root th:last-child {

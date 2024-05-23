@@ -1,11 +1,9 @@
 import React from 'react';
-import { useFormContext, Controller, useForm, Control } from 'react-hook-form';
-import TextField from '@mui/material/TextField';
-import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
-import { StyledInputContainer } from '@/components/pages/UI/UsersTab/FilterChild/styled';
+import { Field, Control, Path } from 'react-hook-form';
+import { StyledInputContainer } from '@/components/pages/dashboard/image-recognition/FilterChild/styled';
 import ControlledTimeDatePickerInput from '../TimeDatePicker/ControlledTimeDatePicker';
 import { CustomRHFAutocomplete } from '@/components/atoms/Autocomplete';
-
+import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 export interface InputOption {
   value: string;
   label: string;
@@ -14,10 +12,10 @@ export interface InputOption {
 export interface Input {
   typeInput: 'textField' | 'select' | 'datepicker';
   options?: InputOption[];
-  name: string;
+  name: Path<Field>;
   value: string | undefined;
   label?: string | undefined;
-  control: any;
+  control: Control;
 }
 
 export interface DynamicInputsProps {
@@ -30,7 +28,9 @@ const inputComponents: { [key: string]: React.ComponentType<any> } = {
   datepicker: ControlledTimeDatePickerInput,
 };
 
-const DynamicInputs = ({ inputs }: DynamicInputsProps) => {
+const DynamicInputs = <TField extends FieldValues>({
+  inputs,
+}: DynamicInputsProps) => {
   return (
     <>
       {inputs?.map(
@@ -38,7 +38,6 @@ const DynamicInputs = ({ inputs }: DynamicInputsProps) => {
           { typeInput, options, name, value, label, control, ...props },
           index
         ) => {
-          const InputComponent = inputComponents[typeInput] ?? TextField;
           return (
             <StyledInputContainer item xs={12} md={4} lg={3} key={index}>
               {typeInput === 'select' && (
@@ -61,7 +60,7 @@ const DynamicInputs = ({ inputs }: DynamicInputsProps) => {
               )}
               {typeInput === 'datepicker' && (
                 <ControlledTimeDatePickerInput
-                  name={name} // Ensure name is correct
+                  name={name}
                   control={control}
                   label={label ? label : ''}
                   value={0}

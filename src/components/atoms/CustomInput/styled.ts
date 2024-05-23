@@ -3,7 +3,7 @@ import { Box, MenuItem, styled, TextField, Typography } from '@mui/material';
 import {
   BaseInput,
   StyledTextFieldRtlType,
-} from '@/components/baseComponents/baseInput';
+} from '@/components/BaseComponents/baseInput';
 import theme from '@/theme';
 import { SecondaryCustomInputTypes } from './type';
 

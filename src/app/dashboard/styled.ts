@@ -7,7 +7,20 @@ import theme from '@/theme';
 export const StyledChildLayout = styled('main')`
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 2rem 2.5rem;
+  padding: 1.5rem 1rem;
+
+  ${({ theme }) => theme.breakpoints.up('sm')} {
+    padding: 1.5rem 1.5rem;
+  }
+
+  ${({ theme }) => theme.breakpoints.up('md')} {
+    padding: 1.5rem 2rem;
+  }
+
+  ${({ theme }) => theme.breakpoints.up('lg')} {
+    padding: 2rem 2.5rem;
+  }
+
   flex-wrap: wrap;
   height: 100vh;
   flex: 1;

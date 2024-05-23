@@ -1,6 +1,6 @@
-import { Box, styled } from '@mui/material';
+import { styled } from '@mui/material';
 
-export const StyledContainerImageRecognition = styled(Box)`
+export const StyledContainerImageRecognition = styled('form')`
   padding: 2rem 1.5rem;
   background: ${({ theme }) => theme.palette.grey[50]};
   border: 1px solid ${({ theme }) => theme.palette.grey[300]};

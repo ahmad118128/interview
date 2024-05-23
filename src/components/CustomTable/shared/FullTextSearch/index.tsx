@@ -1,9 +1,9 @@
 import { VFC } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { StyledSearchContainer } from './styled';
-import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { generalStr } from '@/strings';
+import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 
 interface IProps {
   disabled?: boolean;

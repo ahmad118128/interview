@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 import { StyledChipType } from './type';
-import { BasedChip } from '../../baseComponents/BasedChip';
+import { BasedChip } from '../../BaseComponents/BasedChip';
 
 export const StyledChip = styled(BasedChip)<StyledChipType>`
   &.baseChip {

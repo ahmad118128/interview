@@ -1,6 +1,6 @@
 import { Controller, FieldValues } from 'react-hook-form';
 import { TCustomInput } from './type';
-import { UnControlledCustomInput } from '../uncontrolledCustomInput';
+import { UnControlledCustomInput } from './CustomInput';
 
 export function CustomInput<TField extends FieldValues>(
   props: TCustomInput<TField>

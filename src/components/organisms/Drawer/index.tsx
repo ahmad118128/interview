@@ -9,7 +9,7 @@ export default function MyDrawer({
   setOpenDrawer,
 }: {
   openDrawer: boolean;
-  setOpenDrawer: Dispatch<boolean>;
+  setOpenDrawer: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   return (
     <StyledDrawer

@@ -1,24 +1,19 @@
 'use client';
+import { DrawerListType } from '@/app/types';
 import theme from '@/theme';
 import { Icon } from '@iconify/react/dist/iconify.js';
-import {
-  Box,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  Divider,
-  IconButton,
-} from '@mui/material';
+import { ListItem, ListItemButton, ListItemIcon } from '@mui/material';
 import Link from 'next/link';
-import { Dispatch } from 'react';
+import {
+  StyledBox,
+  StyledIconButton,
+  StyledLisItemText,
+  StyledList,
+  StyledListItemButton,
+  StyledListItemButtonSetting,
+} from './styled';
 
-export default function DrawerList({
-  setOpenDrawer,
-}: {
-  setOpenDrawer: Dispatch<boolean>;
-}) {
+export default function DrawerList({ setOpenDrawer }: DrawerListType) {
   const sidebarList = [
     {
       title: 'دشبورد',
@@ -64,39 +59,25 @@ export default function DrawerList({
 
   return (
     <>
-      <IconButton
-        onClick={() => setOpenDrawer(false)}
-        sx={{ alignSelf: 'flex-end', padding: 0 }}
-      >
+      <StyledIconButton onClick={() => setOpenDrawer(false)}>
         <Icon
           icon="iwwa:delete"
           width="24"
           height="24"
           style={{ color: theme.palette.common.white }}
         />
-      </IconButton>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          height: '100%',
-        }}
-      >
-        <List sx={{ padding: 0, marginTop: '1.5rem' }}>
+      </StyledIconButton>
+      <StyledBox>
+        <StyledList>
           {sidebarList.map((item, index) => (
             <Link
               key={index}
               href={item.url ? `/dashboard/${item.url}` : '/dashboard'}
+              style={{ textDecoration: 'none' }}
             >
               <ListItem disablePadding>
                 {index < sidebarList.length - 1 ? (
-                  <ListItemButton
-                    sx={{
-                      padding: '1rem 0.75rem',
-                      borderBottom: `0.1px solid ${theme.palette.primary.light}`,
-                    }}
-                  >
+                  <StyledListItemButton>
                     <ListItemIcon sx={{ width: '2rem' }}>
                       <Icon
                         width="24"
@@ -105,11 +86,8 @@ export default function DrawerList({
                         color={theme.palette.common.white}
                       />
                     </ListItemIcon>
-                    <ListItemText
-                      primary={item.title}
-                      sx={{ textAlign: 'right' }}
-                    />
-                  </ListItemButton>
+                    <StyledLisItemText primary={item.title} />
+                  </StyledListItemButton>
                 ) : (
                   <ListItemButton
                     sx={{
@@ -124,36 +102,29 @@ export default function DrawerList({
                         color={theme.palette.common.white}
                       />
                     </ListItemIcon>
-                    <ListItemText
-                      primary={item.title}
-                      sx={{ textAlign: 'right' }}
-                    />
+                    <StyledLisItemText primary={item.title} />
                   </ListItemButton>
                 )}
               </ListItem>
             </Link>
           ))}
-        </List>
-        <ListItem disablePadding>
-          <ListItemButton
-            sx={{
-              padding: '1rem 0.75rem',
-              justifySelf: 'flex-end',
-              justifyContent: 'end',
-            }}
-          >
-            <ListItemIcon sx={{ width: '2rem' }}>
-              <Icon
-                width="24"
-                height="24"
-                icon={setting.icon}
-                color={theme.palette.common.white}
-              />
-            </ListItemIcon>
-            <ListItemText primary={setting.title} sx={{ textAlign: 'right' }} />
-          </ListItemButton>
-        </ListItem>
-      </Box>
+        </StyledList>
+        <Link href="/dashboard/setting">
+          <ListItem disablePadding>
+            <StyledListItemButtonSetting>
+              <ListItemIcon sx={{ width: '2rem' }}>
+                <Icon
+                  width="24"
+                  height="24"
+                  icon={setting.icon}
+                  color={theme.palette.common.white}
+                />
+              </ListItemIcon>
+              <StyledLisItemText primary={setting.title} />
+            </StyledListItemButtonSetting>
+          </ListItem>
+        </Link>
+      </StyledBox>
     </>
   );
 }

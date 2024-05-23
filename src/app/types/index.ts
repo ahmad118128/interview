@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import { CSSProperties, Dispatch } from 'react';
 
 export type SvgType = {
   color?: string;
@@ -9,4 +9,8 @@ export type SvgType = {
   onClick?: () => void;
   cursor?: string;
   fill?: string;
+};
+
+export type DrawerListType = {
+  setOpenDrawer: React.Dispatch<React.SetStateAction<boolean>>;
 };

@@ -5,8 +5,4 @@ export const StyledContainerImageRecognition = styled(Box)`
   background: ${({ theme }) => theme.palette.grey[50]};
   border: 1px solid ${({ theme }) => theme.palette.grey[300]};
   border-radius: 0.625rem;
-  .muiaccordionsummary: {
-    background: blue;
-    marginy: 0;
-  }
 `;

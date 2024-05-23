@@ -25,14 +25,6 @@ export default function Filtering({ radioButton, submiting }: Props) {
 
   const [collapse, setCollapse] = useState(false);
 
-  // const filterTransaction = (newFilter: UsersFilterProps) => {
-  //   setCollapse(false);
-  //   setCurrentPage(1);
-  //   setFilter(newFilter);
-  //   const chips = chipsCreator(newFilter);
-  //   setFiltersChips(chips);
-  // };
-
   const handleIconClick = (name: EFilterTableNameIcon) => {
     switch (name) {
       case EFilterTableNameIcon.FILTER:
@@ -40,7 +32,6 @@ export default function Filtering({ radioButton, submiting }: Props) {
         break;
 
       case EFilterTableNameIcon.REFRESH:
-        // serviceCall();
         break;
 
       default:

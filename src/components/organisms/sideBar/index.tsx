@@ -34,17 +34,17 @@ export default function SideBar() {
     {
       title: 'بانک اطلاعاتی',
       icon: 'material-symbols:database',
-      url: 'dataBank',
+      url: 'data-bank',
     },
     {
       title: 'لیست نظارتی',
       icon: 'material-symbols:patient-list-rounded',
-      url: 'supervisitoryList',
+      url: 'supervisitory-list',
     },
     {
       title: 'شناسایی تصویر',
       icon: 'mdi:user-search',
-      url: 'imageRecognition',
+      url: 'image-recognition',
     },
     {
       title: 'گزارشات',
@@ -54,12 +54,12 @@ export default function SideBar() {
     {
       title: 'آنالیز تردد',
       icon: 'mdi:report-box',
-      url: 'trafficAnalysis',
+      url: 'traffic-analysis',
     },
     {
       title: 'کاربران',
       icon: 'mdi:users-group',
-      url: 'userManagment',
+      url: 'user-managment',
     },
     {
       title: 'تنظیمات',

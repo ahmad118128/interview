@@ -1,6 +1,8 @@
 import Drawer from '@mui/material/Drawer';
 import { Dispatch } from 'react';
 import DrawerList from './DrawerList';
+import { StyledDrawer } from './styled';
+import { Box } from '@mui/material';
 
 export default function MyDrawer({
   openDrawer,
@@ -10,12 +12,14 @@ export default function MyDrawer({
   setOpenDrawer: Dispatch<boolean>;
 }) {
   return (
-    <Drawer
+    <StyledDrawer
       anchor="right"
       open={openDrawer}
       onClose={() => setOpenDrawer(false)}
     >
-      <DrawerList />
-    </Drawer>
+      <Box className="ref">
+        <DrawerList setOpenDrawer={setOpenDrawer} />
+      </Box>
+    </StyledDrawer>
   );
 }

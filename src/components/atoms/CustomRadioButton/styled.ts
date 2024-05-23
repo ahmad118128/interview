@@ -1,6 +1,6 @@
 'use client';
 import { styled } from '@mui/material/styles';
-import { BaseRadioButton } from '@/components/baseComponents/BaseRadioButton';
+import { BaseRadioButton } from '@/components/BaseComponents/BaseRadioButton';
 import { IStyledRadio } from './type';
 
 export const StyledRadioButton = styled(BaseRadioButton)<IStyledRadio>`

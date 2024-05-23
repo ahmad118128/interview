@@ -20,7 +20,7 @@ export const StyledDrawer = styled(Drawer)`
     background: rgba(64, 54, 54, 0.4);
   }
 
-  .ref {
+  .DrawerListWrapper {
     display: flex;
     flex-direction: column;
     background: ${({ theme }) => theme.palette.primary.dark};

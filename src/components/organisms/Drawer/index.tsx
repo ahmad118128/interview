@@ -17,7 +17,7 @@ export default function MyDrawer({
       open={openDrawer}
       onClose={() => setOpenDrawer(false)}
     >
-      <Box className="ref">
+      <Box className="DrawerListWrapper">
         <DrawerList setOpenDrawer={setOpenDrawer} />
       </Box>
     </StyledDrawer>

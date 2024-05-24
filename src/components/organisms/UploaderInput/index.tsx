@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import Image from 'next/image';
 const DragAndDropUpload: React.FC = () => {
   const [images, setImages] = useState<File[]>([]);
 
@@ -37,10 +37,11 @@ const DragAndDropUpload: React.FC = () => {
 
       {images.map((image, index) => (
         <div key={index}>
-          <img
+          <Image
             src={URL.createObjectURL(image)}
             alt={`Preview ${image.name}`}
-            style={{ maxWidth: '50px', maxHeight: '50px' }}
+            width={50}
+            height={50}
           />
           <span>
             {image.name} - {image.size} bytes

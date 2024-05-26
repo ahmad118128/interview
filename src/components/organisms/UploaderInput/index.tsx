@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { StyledUploaderInput, StyleledUploaderWrapper } from './styled';
 const DragAndDropUpload: React.FC = () => {
   const [images, setImages] = useState<File[]>([]);
 
@@ -18,22 +19,20 @@ const DragAndDropUpload: React.FC = () => {
   };
 
   return (
-    <div
+    <StyleledUploaderWrapper
       onDragOver={(e) => e.preventDefault()}
       onDrop={handleDrop}
-      style={{ height: '200px', border: '1px dashed #ccc' }}
     >
-      <input
+      <StyledUploaderInput
         type="file"
         name="test"
         id=""
-        style={{ width: '100%', height: '100%' }}
         multiple
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
           const files = Array.from(e.target.files || []);
           setImages([...images, ...files]);
         }}
-      />
+      ></StyledUploaderInput>
 
       {images.map((image, index) => (
         <div key={index}>
@@ -49,7 +48,7 @@ const DragAndDropUpload: React.FC = () => {
           <button onClick={() => handleDeleteImage(index)}>Delete</button>
         </div>
       ))}
-    </div>
+    </StyleledUploaderWrapper>
   );
 };
 

@@ -58,6 +58,9 @@ export const StyledListItemButtonSetting = styled(ListItemButton)`
   padding: 1rem 0.75rem;
   justify-self: flex-end;
   justify-content: end;
+  & .MuiTouchRipple-root {
+    display: none;
+  }
 `;
 
 export const StyledLisItemText = styled(ListItemText)`

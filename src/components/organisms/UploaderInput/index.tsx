@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { StyledUploaderInput, StyleledUploaderWrapper } from './styled';
+import {
+  StyledCaption,
+  StyledTypographyBody1,
+  StyledUploadedDescription,
+  StyledUploadedImageBox,
+  StyledUploadedImageDescriptionBox,
+  StyledUploaderInput,
+  StyleledUploaderWrapper,
+} from './styled';
+import { Box, Button, Grid, Typography } from '@mui/material';
+import { Icon } from '@iconify/react/dist/iconify.js';
 const DragAndDropUpload: React.FC = () => {
   const [images, setImages] = useState<File[]>([]);
 
@@ -33,21 +43,55 @@ const DragAndDropUpload: React.FC = () => {
           setImages([...images, ...files]);
         }}
       ></StyledUploaderInput>
+      <StyledTypographyBody1 variant="body1">
+        فایل را بکشید و رها کنید یا کلیک کنید(آپلود تصاویر الزامی است)
+      </StyledTypographyBody1>
+      <StyledCaption variant="caption">
+        حداکثر حجم فایل (250 مگابایت)
+      </StyledCaption>
 
-      {images.map((image, index) => (
-        <div key={index}>
-          <Image
-            src={URL.createObjectURL(image)}
-            alt={`Preview ${image.name}`}
-            width={50}
-            height={50}
-          />
-          <span>
-            {image.name} - {image.size} bytes
-          </span>
-          <button onClick={() => handleDeleteImage(index)}>Delete</button>
-        </div>
-      ))}
+      <Grid
+        flexDirection="row-reverse"
+        container
+        spacing={8}
+        sx={{ width: '100%' }}
+      >
+        {images.map((image, index) => (
+          <Grid item key={index} xs={3}>
+            <StyledUploadedImageBox dir="ltr">
+              <Image
+                src={URL.createObjectURL(image)}
+                alt={`Preview ${image.name}`}
+                width={32}
+                height={32}
+              />
+              <StyledUploadedImageDescriptionBox>
+                <StyledUploadedDescription variant="caption">
+                  {image.name}
+                </StyledUploadedDescription>
+                <Box
+                  sx={{
+                    width: '100%',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'flex-end',
+                  }}
+                >
+                  <StyledUploadedDescription variant="caption">
+                    {image.size}KB-{image.lastModified}
+                  </StyledUploadedDescription>
+                  <Icon
+                    onClick={() => handleDeleteImage(index)}
+                    icon="streamline:delete-1"
+                    width="20"
+                    height="20"
+                  />
+                </Box>
+              </StyledUploadedImageDescriptionBox>
+            </StyledUploadedImageBox>
+          </Grid>
+        ))}
+      </Grid>
     </StyleledUploaderWrapper>
   );
 };

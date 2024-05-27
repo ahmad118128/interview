@@ -10,7 +10,8 @@ export const StyleledUploaderWrapper = styled(Box)`
   border-radius: 0.625rem;
   background-image: url('/assets/images/dashboard/upload.svg');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position-x: center;
+  background-size: 152px 100px;
   padding: 0.75rem 0;
   :hover {
     border: 1px dashed ${({ theme }) => theme.palette.primary.light};

@@ -1,4 +1,4 @@
-import { CSSProperties, Dispatch } from 'react';
+import { CSSProperties, Dispatch, SetStateAction } from 'react';
 
 export type SvgType = {
   color?: string;
@@ -12,5 +12,5 @@ export type SvgType = {
 };
 
 export type DrawerListType = {
-  setOpenDrawer: React.Dispatch<React.SetStateAction<boolean>>;
+  setOpenDrawer: Dispatch<SetStateAction<boolean>>;
 };

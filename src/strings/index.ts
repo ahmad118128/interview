@@ -1198,3 +1198,14 @@ export const deleteMessages = {
   deleteCameraGroup: 'آیا برای حذف این گروه بندی مطمئن هستید؟',
   deleteUserGroup: 'آیا برای حذف این گروه کاربری مطمئن هستید؟',
 };
+
+export const siderBarList = {
+  dashboard: 'دشبورد',
+  informationBank: 'بانک اطلاعاتی',
+  supervisitoryList: 'لیست نظارتی',
+  imageRecognition: 'شناسایی تصویر',
+  report: 'گزارشات',
+  trafficAnalysis: 'آنالیز تردد',
+  userManagement: 'کاربران',
+  setting: 'تنظیمات',
+};

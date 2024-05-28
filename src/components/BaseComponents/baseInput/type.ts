@@ -19,4 +19,5 @@ export type ValidateType =
 export type BaseInputProps = TextFieldProps & {
   validateType?: ValidateType;
   setError?: UseFormSetError<FieldValues>;
+  error?: any;
 };

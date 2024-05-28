@@ -1,4 +1,4 @@
-import { StyledTextField } from '../controlledCustomInput/styled';
+import { StyledTextField } from './styled';
 import { BaseInputProps } from '@/components/baseComponents/baseInput';
 
 export function UnControlledCustomInput(props: BaseInputProps) {
@@ -11,6 +11,9 @@ export function UnControlledCustomInput(props: BaseInputProps) {
     value,
     onChange,
     validateType,
+    error,
+    fullWidth,
+    InputProps,
   } = props;
   return (
     <StyledTextField
@@ -22,7 +25,10 @@ export function UnControlledCustomInput(props: BaseInputProps) {
       disabled={disabled}
       value={value}
       onChange={onChange}
+      fullWidth={fullWidth}
+      InputProps={InputProps}
       validateType={validateType}
+      helperText={error?.message}
     />
   );
 }

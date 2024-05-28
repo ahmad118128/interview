@@ -1,7 +1,10 @@
 'use client';
 
 import { CustomRadioButton } from '@/components/atoms/CustomRadioButton';
+import CustomModal from '@/components/organisms/Modal';
 import { message } from '@/strings';
+import { Button } from '@mui/material';
+import { SetStateAction, useState } from 'react';
 import { Form, useForm } from 'react-hook-form';
 
 type FormInputs = {
@@ -9,6 +12,9 @@ type FormInputs = {
 };
 
 export default function Home() {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+
   const { control, register, handleSubmit } = useForm();
 
   function submitHandler({ data }: any) {
@@ -36,6 +42,8 @@ export default function Home() {
           <input type="submit" />
         </form>
       </div>
+      <Button onClick={handleOpen}>Open modal</Button>
+      <CustomModal open={open} setOpen={setOpen} />
     </>
   );
 }

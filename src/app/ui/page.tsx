@@ -3,6 +3,7 @@
 import { CustomRadioButton } from '@/components/atoms/CustomRadioButton';
 import { message } from '@/strings';
 import { Form, useForm } from 'react-hook-form';
+import UploadImage from '../../components/organisms/UploaderInput';
 
 type FormInputs = {
   data: string;
@@ -36,6 +37,7 @@ export default function Home() {
           <input type="submit" />
         </form>
       </div>
+      <UploadImage />
     </>
   );
 }

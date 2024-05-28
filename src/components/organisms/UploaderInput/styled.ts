@@ -1,6 +1,5 @@
-import { StyledTextFieldRtlType } from '@/components/baseComponents/baseInput';
 import theme from '@/theme';
-import { Box, TextField, styled, Typography } from '@mui/material';
+import { Box, TextField, styled, Typography, Button } from '@mui/material';
 
 export const StyleledUploaderWrapper = styled(Box)`
   position: relative;
@@ -39,7 +38,10 @@ export const StyledTypographyBody1 = styled(Typography)`
 export const StyledCaption = styled(Typography)`
   color: ${({ theme }) => theme.palette.primary.main};
   position: absolute;
-  top: 140px;
+  top: 170px;
+  ${({ theme }) => theme.breakpoints.up('md')} {
+    top: 140px;
+  }
   left: 50%;
   transform: translateX(-50%);
 `;
@@ -57,4 +59,11 @@ export const StyledUploadedImageDescriptionBox = styled(Box)`
 export const StyledUploadedDescription = styled(Typography)`
 fomt-size:${({ theme }) => theme.typography.caption.fontSize}
 color:${({ theme }) => theme.palette.common.black}
+`;
+
+export const StyledDeleteButton = styled(Button)`
+  border: none;
+  :hover {
+    background: transparent;
+  }
 `;

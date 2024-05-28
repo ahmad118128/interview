@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import {
   StyledCaption,
+  StyledDeleteButton,
   StyledTypographyBody1,
   StyledUploadedDescription,
   StyledUploadedImageBox,
@@ -80,12 +81,14 @@ const DragAndDropUpload: React.FC = () => {
                   <StyledUploadedDescription variant="caption">
                     {image.size}KB-{image.lastModified}
                   </StyledUploadedDescription>
-                  <Icon
-                    onClick={() => handleDeleteImage(index)}
-                    icon="streamline:delete-1"
-                    width="20"
-                    height="20"
-                  />
+                  <StyledDeleteButton>
+                    <Icon
+                      onClick={() => handleDeleteImage(index)}
+                      icon="streamline:delete-1"
+                      width="16"
+                      height="16"
+                    />
+                  </StyledDeleteButton>
                 </Box>
               </StyledUploadedImageDescriptionBox>
             </StyledUploadedImageBox>

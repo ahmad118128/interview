@@ -1,16 +1,27 @@
 import * as React from 'react';
 import Modal from '@mui/material/Modal';
-import Typography from '@mui/material/Typography';
-import { Dispatch, SetStateAction } from 'react';
-import { StyledCustomModal } from './styles';
+import {
+  StyledActionButtonsBox,
+  StyledCustomModal,
+  StyledDeleteButton,
+  StyledDeleteButtonBox,
+  StyledErrorText,
+  StyledTitleText,
+} from './styled';
+import { CustomModalProps } from './type';
+import { Icon } from '@iconify/react/dist/iconify.js';
+import { CustomButton } from '@/components/atoms/CustomButton';
 
 export default function CustomModal({
   open,
   setOpen,
-}: {
-  open: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
-}) {
+  title,
+  errorTitle,
+  children,
+  buttons,
+  activeButtonHandler,
+  deleteButtonHandler,
+}: CustomModalProps) {
   const handleClose = () => setOpen(false);
 
   return (
@@ -22,12 +33,32 @@ export default function CustomModal({
       aria-describedby="keep-mounted-modal-description"
     >
       <StyledCustomModal>
-        <Typography id="keep-mounted-modal-title" variant="h6" component="h2">
-          Text in a modal
-        </Typography>
-        <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
-          Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-        </Typography>
+        <StyledDeleteButtonBox>
+          <StyledDeleteButton size="small" variant="text">
+            <Icon
+              onClick={handleClose}
+              icon="streamline:delete-1"
+              width="16"
+              height="16"
+            />
+          </StyledDeleteButton>
+        </StyledDeleteButtonBox>
+
+        {errorTitle && (
+          <StyledErrorText variant="body1">{errorTitle}</StyledErrorText>
+        )}
+        {title && <StyledTitleText variant="body1">{title}</StyledTitleText>}
+        {children}
+        {buttons && (
+          <StyledActionButtonsBox>
+            <CustomButton variant="contained" onClick={activeButtonHandler}>
+              تائید
+            </CustomButton>
+            <CustomButton variant="outlined" onClick={deleteButtonHandler}>
+              انصراف
+            </CustomButton>
+          </StyledActionButtonsBox>
+        )}
       </StyledCustomModal>
     </Modal>
   );

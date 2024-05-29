@@ -43,7 +43,12 @@ export default function Home() {
         </form>
       </div>
       <Button onClick={handleOpen}>Open modal</Button>
-      <CustomModal open={open} setOpen={setOpen} />
+      <CustomModal
+        open={open}
+        setOpen={setOpen}
+        title="لطفا وارد شوید"
+        buttons={true}
+      />
     </>
   );
 }

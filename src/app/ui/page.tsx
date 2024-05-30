@@ -8,6 +8,16 @@ import { CustomButton } from '@/components/atoms/CustomButton';
 export interface FormData {
   images: File[];
 }
+import { CustomRadioButton } from '@/components/atoms/CustomRadioButton';
+import CustomModal from '@/components/organisms/Modal';
+import { message } from '@/strings';
+import { Button } from '@mui/material';
+import { SetStateAction, useState } from 'react';
+
+
+type FormInputs = {
+  data: string;
+};
 
 export default function Home() {
   const methods = useForm<FormData>({
@@ -15,12 +25,17 @@ export default function Home() {
       images: [],
     },
   });
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+
+  const { control, register, handleSubmit } = useForm();
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
     console.log(data);
   };
 
   return (
+    <>
     <Box sx={{ padding: '1rem' }}>
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(onSubmit)}>
@@ -31,5 +46,13 @@ export default function Home() {
         </form>
       </FormProvider>
     </Box>
+      <Button onClick={handleOpen}>Open modal</Button>
+      <CustomModal
+        open={open}
+        setOpen={setOpen}
+        title="لطفا وارد شوید"
+        buttons={true}
+      />
+    </>
   );
 }

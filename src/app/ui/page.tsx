@@ -2,10 +2,11 @@
 
 import { CustomRadioButton } from '@/components/atoms/CustomRadioButton';
 import CustomModal from '@/components/organisms/Modal';
-import { message } from '@/strings';
 import { Button } from '@mui/material';
-import { SetStateAction, useState } from 'react';
-import { Form, useForm } from 'react-hook-form';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import Image from 'next/image';
+import ThumbnailPicModal from '@/components/organisms/Modal/thumbnailPicModal';
 
 type FormInputs = {
   data: string;
@@ -13,7 +14,10 @@ type FormInputs = {
 
 export default function Home() {
   const [open, setOpen] = useState(false);
+  const [openThumbnail, setOpenThumbnail] = useState(false);
+
   const handleOpen = () => setOpen(true);
+  const handleOpenThumbnail = () => setOpenThumbnail(true);
 
   const { control, register, handleSubmit } = useForm();
 
@@ -48,6 +52,13 @@ export default function Home() {
         setOpen={setOpen}
         title="لطفا وارد شوید"
         buttons={true}
+      />
+      <Button onClick={handleOpenThumbnail}>Open modal Thumbnail</Button>
+      <ThumbnailPicModal
+        src="/assets/images/dashboard/technology 1.svg"
+        open={openThumbnail}
+        setOpen={setOpenThumbnail}
+        title="تصویر آپلود شده"
       />
     </>
   );

@@ -11,6 +11,8 @@ import {
 import { CustomModalProps } from './type';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { CustomButton } from '@/components/atoms/CustomButton';
+import { generalStr, registrationStr } from '@/strings';
+import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 
 export default function CustomModal({
   open,
@@ -34,14 +36,11 @@ export default function CustomModal({
     >
       <StyledCustomModal>
         <StyledDeleteButtonBox>
-          <StyledDeleteButton size="small" variant="text">
-            <Icon
-              onClick={handleClose}
-              icon="streamline:delete-1"
-              width="16"
-              height="16"
-            />
-          </StyledDeleteButton>
+          <IconButton
+            iconName="streamline:delete-1"
+            size="small"
+            onClick={handleClose}
+          />
         </StyledDeleteButtonBox>
 
         {errorTitle && (
@@ -52,10 +51,10 @@ export default function CustomModal({
         {buttons && (
           <StyledActionButtonsBox>
             <CustomButton variant="contained" onClick={activeButtonHandler}>
-              تائید
+              {registrationStr.ok}
             </CustomButton>
             <CustomButton variant="outlined" onClick={deleteButtonHandler}>
-              انصراف
+              {generalStr.refuse}
             </CustomButton>
           </StyledActionButtonsBox>
         )}

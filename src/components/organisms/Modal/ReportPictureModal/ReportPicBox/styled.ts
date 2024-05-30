@@ -4,9 +4,10 @@ import Image from 'next/image';
 export const StyledWrapperModal = styled(Box)`
   display: flex;
   padding: 12px;
-  align-items: center;
+  align-items: stretch;
   gap: 20px;
   border-radius: 6px;
+  margin-top: '1.25rem';
   border: 1px solid ${({ theme }) => theme.palette.grey[300]};
   background: ${({ theme }) => theme.palette.grey[100]};
 `;

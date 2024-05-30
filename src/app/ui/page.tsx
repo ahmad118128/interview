@@ -4,15 +4,26 @@ import { FormProvider, useForm, SubmitHandler } from 'react-hook-form';
 import DragAndDropUpload from '@/components/organisms/UploaderInput';
 import { Box } from '@mui/material';
 import { CustomButton } from '@/components/atoms/CustomButton';
+import CustomModal from '@/components/organisms/Modal/CustomModal';
+import { ReportModal, message } from '@/strings';
+import { Button } from '@mui/material';
+import { useState } from 'react';
+import ReportPictureModal from '@/components/organisms/Modal/ReportPictureModal';
+
+const mockData = {
+  src: '/assets/images/dashboard/technology 1.svg',
+  name: 'test1',
+  sex: 'مرد با احتمال بالا',
+  age: 24,
+  date: '1373/09/04 09:19',
+  arrow: 'ورودی - خروجی',
+  birthCity: 'تهران',
+  agreementPercent: '35 - 55',
+};
 
 export interface FormData {
   images: File[];
 }
-import { CustomRadioButton } from '@/components/atoms/CustomRadioButton';
-import CustomModal from '@/components/organisms/Modal';
-import { message } from '@/strings';
-import { Button } from '@mui/material';
-import { SetStateAction, useState } from 'react';
 
 type FormInputs = {
   data: string;
@@ -25,7 +36,10 @@ export default function Home() {
     },
   });
   const [open, setOpen] = useState(false);
+  const [openPicModal, setOpenPicModal] = useState(false);
+
   const handleOpen = () => setOpen(true);
+  const handleOpenPicModal = () => setOpenPicModal(true);
 
   const { control, register, handleSubmit } = useForm();
 
@@ -51,6 +65,13 @@ export default function Home() {
         setOpen={setOpen}
         title="لطفا وارد شوید"
         buttons={true}
+      />
+      <Button onClick={handleOpenPicModal}>Open picModal</Button>
+      <ReportPictureModal
+        title={ReportModal.results}
+        data={mockData}
+        open={openPicModal}
+        setOpen={setOpenPicModal}
       />
     </>
   );

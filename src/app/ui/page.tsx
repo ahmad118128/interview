@@ -14,7 +14,6 @@ import { message } from '@/strings';
 import { Button } from '@mui/material';
 import { SetStateAction, useState } from 'react';
 
-
 type FormInputs = {
   data: string;
 };
@@ -36,16 +35,16 @@ export default function Home() {
 
   return (
     <>
-    <Box sx={{ padding: '1rem' }}>
-      <FormProvider {...methods}>
-        <form onSubmit={methods.handleSubmit(onSubmit)}>
-          <DragAndDropUpload name="images" control={methods.control} />
-          <CustomButton sx={{ marginTop: '1rem' }} type="submit">
-            Submit
-          </CustomButton>
-        </form>
-      </FormProvider>
-    </Box>
+      <Box sx={{ padding: '1rem' }}>
+        <FormProvider {...methods}>
+          <form onSubmit={methods.handleSubmit(onSubmit)}>
+            <DragAndDropUpload name="images" control={methods.control} />
+            <CustomButton sx={{ marginTop: '1rem' }} type="submit">
+              Submit
+            </CustomButton>
+          </form>
+        </FormProvider>
+      </Box>
       <Button onClick={handleOpen}>Open modal</Button>
       <CustomModal
         open={open}

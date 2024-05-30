@@ -123,6 +123,8 @@ export const StyledIconButton = styled(IconButton)(({ theme }) => ({
   },
 
   '&.MuiIconButton-sizeSmall': {
-    padding: '0.25rem',
+    padding: '0.125rem',
+    minWidth: '1.25rem',
+    minHeight: '1.25rem',
   },
 }));

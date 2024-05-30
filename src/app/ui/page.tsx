@@ -5,7 +5,7 @@ import DragAndDropUpload from '@/components/organisms/UploaderInput';
 import { Box } from '@mui/material';
 import { CustomButton } from '@/components/atoms/CustomButton';
 import CustomModal from '@/components/organisms/Modal/CustomModal';
-import { message } from '@/strings';
+import { ReportModal, message } from '@/strings';
 import { Button } from '@mui/material';
 import { useState } from 'react';
 import ReportPictureModal from '@/components/organisms/Modal/ReportPictureModal';
@@ -68,16 +68,10 @@ export default function Home() {
       />
       <Button onClick={handleOpenPicModal}>Open picModal</Button>
       <ReportPictureModal
+        title={ReportModal.results}
+        data={mockData}
         open={openPicModal}
         setOpen={setOpenPicModal}
-        name={mockData.name}
-        age={mockData.age}
-        agreementPercent={mockData.agreementPercent}
-        sex={'مرد با احتمال بالا'}
-        arrow={mockData.arrow}
-        birthCity={mockData.birthCity}
-        src={mockData.src}
-        date={mockData.date}
       />
     </>
   );

@@ -1218,4 +1218,5 @@ export const ReportModal = {
   age: 'سن',
   agreementPercent: 'درصد تطابق',
   date: 'زمان ثبت',
+  results: 'نتایج شناسایی',
 };

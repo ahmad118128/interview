@@ -1,41 +1,35 @@
 'use client';
 
-import { CustomRadioButton } from '@/components/atoms/CustomRadioButton';
-import { message } from '@/strings';
-import { Form, useForm } from 'react-hook-form';
+import { FormProvider, useForm, SubmitHandler } from 'react-hook-form';
+import DragAndDropUpload from '@/components/organisms/UploaderInput';
+import { Box } from '@mui/material';
+import { CustomButton } from '@/components/atoms/CustomButton';
 
-type FormInputs = {
-  data: string;
-};
+export interface FormData {
+  images: File[];
+}
 
 export default function Home() {
-  const { control, register, handleSubmit } = useForm();
+  const methods = useForm<FormData>({
+    defaultValues: {
+      images: [],
+    },
+  });
 
-  function submitHandler({ data }: any) {
+  const onSubmit: SubmitHandler<FormData> = (data) => {
     console.log(data);
-  }
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value);
   };
 
   return (
-    <>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <form onSubmit={handleSubmit(submitHandler)}>
-          <CustomRadioButton
-            control={control}
-            rules={{ required: true }}
-            name={'data'}
-          />
-          <input type="submit" />
+    <Box sx={{ padding: '1rem' }}>
+      <FormProvider {...methods}>
+        <form onSubmit={methods.handleSubmit(onSubmit)}>
+          <DragAndDropUpload name="images" control={methods.control} />
+          <CustomButton sx={{ marginTop: '1rem' }} type="submit">
+            Submit
+          </CustomButton>
         </form>
-      </div>
-    </>
+      </FormProvider>
+    </Box>
   );
 }

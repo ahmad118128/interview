@@ -1,4 +1,3 @@
-import { SetStateAction } from 'react';
 import CustomModal from '..';
 import Image from 'next/image';
 import { thumbnailModalProps } from './type';

@@ -6,18 +6,32 @@ import { Button } from '@mui/material';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Image from 'next/image';
-import ThumbnailPicModal from '@/components/organisms/Modal/thumbnailPicModal';
+import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
+import ReportPictureModal from '@/components/organisms/Modal/ReportPictureModal';
 
 type FormInputs = {
   data: string;
 };
 
+const mockData = {
+  src: '/assets/images/dashboard/technology 1.svg',
+  name: 'test1',
+  sex: 'مرد با احتمال بالا',
+  age: 24,
+  date: '1373/09/04 09:19',
+  arrow: 'ورودی - خروجی',
+  birthCity: 'تهران',
+  agreementPercent: '35 - 55',
+};
+
 export default function Home() {
   const [open, setOpen] = useState(false);
   const [openThumbnail, setOpenThumbnail] = useState(false);
+  const [openReportPic, setOpenReportPic] = useState(false);
 
   const handleOpen = () => setOpen(true);
   const handleOpenThumbnail = () => setOpenThumbnail(true);
+  const handleOpenReportPic = () => setOpenReportPic(true);
 
   const { control, register, handleSubmit } = useForm();
 
@@ -59,6 +73,18 @@ export default function Home() {
         open={openThumbnail}
         setOpen={setOpenThumbnail}
         title="تصویر آپلود شده"
+      />
+      <Button onClick={handleOpenReportPic}>Open modal reportPicture</Button>
+      <ReportPictureModal
+        open={openReportPic}
+        setOpen={setOpenReportPic}
+        name={mockData.name}
+        age={mockData.age}
+        src={mockData.src}
+        agreementPercent={mockData.agreementPercent}
+        birthCity={mockData.birthCity}
+        sex={'مرد با احتمال بالا'}
+        arrow={'ورودی - خروجی'}
       />
     </>
   );

@@ -1,6 +1,7 @@
 'use client';
 
 import { CustomRadioButton } from '@/components/atoms/CustomRadioButton';
+import SlidePicture from '@/components/molecules/Slider';
 import { message } from '@/strings';
 import { Form, useForm } from 'react-hook-form';
 
@@ -36,6 +37,7 @@ export default function Home() {
           <input type="submit" />
         </form>
       </div>
+      <SlidePicture />
     </>
   );
 }

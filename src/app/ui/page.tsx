@@ -4,7 +4,7 @@ import { FormProvider, useForm, SubmitHandler } from 'react-hook-form';
 import DragAndDropUpload from '@/components/organisms/UploaderInput';
 import { Box } from '@mui/material';
 import { CustomButton } from '@/components/atoms/CustomButton';
-import CustomModal from '@/components/organisms/Modal';
+import CustomModal from '@/components/organisms/Modal/CustomModal';
 import { message } from '@/strings';
 import { Button } from '@mui/material';
 import { useState } from 'react';
@@ -74,7 +74,7 @@ export default function Home() {
         age={mockData.age}
         agreementPercent={mockData.agreementPercent}
         sex={'مرد با احتمال بالا'}
-        arrow={'ورودی - خروجی'}
+        arrow={mockData.arrow}
         birthCity={mockData.birthCity}
         src={mockData.src}
         date={mockData.date}

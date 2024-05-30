@@ -1209,3 +1209,13 @@ export const siderBarList = {
   userManagement: 'کاربران',
   setting: 'تنظیمات',
 };
+
+export const ReportModal = {
+  name: 'نام گیت',
+  sex: 'جنسیت',
+  arow: 'جهت گیت',
+  bithCity: 'محل تولد',
+  age: 'سن',
+  agreementPercent: 'درصد تطابق',
+  date: 'زمان ثبت',
+};

@@ -4,7 +4,7 @@ export type reportPicModalProps = {
   sex: 'مرد با احتمال بالا';
   age: number;
   date?: string;
-  arrow: 'ورودی - خروجی';
+  arrow: string;
   birthCity: String;
   agreementPercent: string;
 };

@@ -1,4 +1,4 @@
-import CustomModal from '..';
+import CustomModal from '../CustomModal';
 import Image from 'next/image';
 import { thumbnailModalProps } from './type';
 

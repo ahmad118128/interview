@@ -1,7 +1,7 @@
-import CustomModal from '..';
 import Image from 'next/image';
 import { ReportPictureModalProps } from './type';
 import ReportPictureBox from './ReportPicBox';
+import CustomModal from '../CustomModal';
 
 export default function ReportPictureModal({
   src,

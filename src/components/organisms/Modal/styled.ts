@@ -44,5 +44,5 @@ export const StyledErrorText = styled(Typography)`
 export const StyledTitleText = styled(Typography)`
   text-align: center;
   margin: 1.5rem 0;
-  margin-top: 0.1875rem;
+  margin-top: 0.125rem;
 `;

@@ -1,6 +1,7 @@
 import { NumberSlideProps } from './type';
 import { NumSlide } from './styled';
 import { persian } from '@/components/molecules/Slider/model/model';
+import { generalStr } from '@/strings';
 
 const NumberSlide = ({ countSlide, imgArray }: NumberSlideProps) => {
   const convertEnNumberToPersianNumber = (enNumber: number) => {
@@ -14,9 +15,8 @@ const NumberSlide = ({ countSlide, imgArray }: NumberSlideProps) => {
 
   return (
     <>
-      <NumSlide>
-        {convertEnNumberToPersianNumber(countSlide + 1)} از{' '}
-        {convertEnNumberToPersianNumber(imgArray.length)}
+      <NumSlide variant="h2">
+        {`${convertEnNumberToPersianNumber(countSlide + 1)} ${generalStr.from} ${convertEnNumberToPersianNumber(imgArray.length)}`}
       </NumSlide>
     </>
   );

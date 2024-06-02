@@ -13,10 +13,9 @@ export default function SlidePicture() {
   const [countSlide, setCountSlide] = useState<number>(0);
   const [imgSelected, setImgSelected] = useState<number>(0);
 
-  const handleChangeSlide = (slide: any) => {
+  const handleChangeSlide = (slide: string) => {
     setCountSlide(Number(imgArray.indexOf(slide)));
     setImgSelected(Number(imgArray.indexOf(slide)));
-    console.log(typeof slide);
   };
 
   const handleNextSlide = () => {
@@ -37,8 +36,6 @@ export default function SlidePicture() {
     }
   };
 
-  console.log(`this is ${typeof imgArray[1]}`);
-
   return (
     <SliderContainer>
       <SlideShow>
@@ -49,8 +46,6 @@ export default function SlidePicture() {
             key={imgArray.indexOf(slide)}
             alt="slide"
             src={slide}
-            // width={394}
-            // height={394}
             fill
             objectFit="cover"
           />

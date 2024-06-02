@@ -1,6 +1,6 @@
 import { Box, styled } from '@mui/material';
 
-export const SliderContainer = styled('main')`
+export const SliderContainer = styled(Box)`
   width: min(100%, 394px);
   margin: 0 auto;
   overflow-x: hidden;
@@ -10,7 +10,7 @@ export const SlideShow = styled(Box)`
   width: 100%;
   height: 394px;
   position: relative;
-  border: 2px solid #ededef;
+  border: 2px solid ${({ theme }) => theme.palette.grey[200]};
   border-radius: 6px;
   box-sizing: border-box;
 
@@ -83,7 +83,7 @@ export const SlideShow = styled(Box)`
   }
 `;
 
-export const ImgBox = styled('div')`
+export const ImgBox = styled(Box)`
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -99,6 +99,6 @@ export const ImgBox = styled('div')`
   }
 
   & .current_selected {
-    outline: 2px solid #7ebc59;
+    outline: 2px solid ${({ theme }) => theme.palette.primary.light};
   }
 `;

@@ -42,14 +42,13 @@ export const SlideShow = styled(Box)`
     left: 0;
     top: 45%;
     transform: translateY(-50%);
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     outline: none;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     margin: 0;
-    padding: 4px;
     color: ${({ theme }) => theme.palette.common.black};
     transform: rotateY(180deg);
     background-color: ${({ theme }) => theme.palette.grey[50]};
@@ -59,14 +58,13 @@ export const SlideShow = styled(Box)`
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     outline: none;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin: 0;
-    padding: 4px;
     color: ${({ theme }) => theme.palette.common.black};
     background-color: ${({ theme }) => theme.palette.grey[50]};
   }
@@ -75,8 +73,11 @@ export const SlideShow = styled(Box)`
     position: absolute;
     top: 20px;
     left: 20px;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    outline: none;
     color: ${({ theme }) => theme.palette.common.black};
     cursor: pointer;
   }

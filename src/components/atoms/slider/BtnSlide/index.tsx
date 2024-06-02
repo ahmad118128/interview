@@ -1,9 +1,10 @@
+import { IconButton } from '../../CustomButton/IconButton';
 import { NextButtonProps } from './type';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 const BtnSlide = ({ handlePrevSlide, handleNextSlide }: NextButtonProps) => {
   return (
-    <ChevronRightIcon
+    <IconButton
+      iconName="ic:sharp-navigate-next"
       className={`${handleNextSlide ? 'next-icon' : handlePrevSlide ? 'prev-icon' : ''}`}
       onClick={handleNextSlide ? handleNextSlide : handlePrevSlide}
     />

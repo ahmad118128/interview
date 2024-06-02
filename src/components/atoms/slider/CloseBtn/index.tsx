@@ -1,7 +1,9 @@
-import CloseIcon from '@mui/icons-material/Close';
+import { IconButton } from '../../CustomButton/IconButton';
 
 const CloseBtnSlider = () => {
-  return <CloseIcon className="close-slide-button" />;
+  return (
+    <IconButton iconName="iconamoon:close" className="close-slide-button" />
+  );
 };
 
 export default CloseBtnSlider;

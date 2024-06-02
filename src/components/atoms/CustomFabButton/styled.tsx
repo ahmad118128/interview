@@ -1,7 +1,7 @@
 'use client';
 
+import { BasedFabButton } from '@/components/BaseComponents/BasedFabButton';
 import { styled } from '@mui/material';
-import { BasedFabButton } from '../../baseComponents/BasedFabButton';
 
 export const StyledFab = styled(BasedFabButton)`
   &.MuiFab-root {

@@ -7,7 +7,7 @@ import {
   IconFilterNameTable,
 } from './type';
 import theme from '@/theme';
-import { tablePhrases } from '../../strings';
+import { tablePhrases } from '@/components/CustomTable/strings';
 
 export const rightIcons: IconFilterNameTable[] = [
   {

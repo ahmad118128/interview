@@ -1,4 +1,3 @@
-import { VFC } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { StyledSearchContainer } from './styled';
 import { Icon } from '@iconify/react/dist/iconify.js';
@@ -9,7 +8,7 @@ interface IProps {
   disabled?: boolean;
 }
 
-export const FullTextSearch: VFC<IProps> = (props: IProps) => {
+export const FullTextSearch = (props: IProps) => {
   const { disabled } = props;
 
   const { control } = useFormContext();

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { StyledContainer, StyledFilterChild } from './styled';
 import DynamicInputs, { Input } from '@/components/organisms/DynamicInputs';
 import { useForm, useFormContext } from 'react-hook-form';
-import { allValidateType } from '@/components/BaseComponents/baseInput';
+import { allValidateType } from '@/components/BaseComponents/BaseInput';
 
 export const FilterChild = ({ control }: { control: Control<TField> }) => {
   const [error, setError] = useState();

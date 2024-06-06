@@ -1,4 +1,4 @@
-import { BaseInputProps } from '@/components/BaseComponents/BaseInput/type';
+import { BaseInputProps } from '@/components/BaseComponents/baseInput/type';
 import { StyledTextField } from './styled';
 
 export function UnControlledCustomInput(props: BaseInputProps) {

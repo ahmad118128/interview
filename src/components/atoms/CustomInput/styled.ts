@@ -3,8 +3,8 @@ import { Box, MenuItem, styled, TextField, Typography } from '@mui/material';
 
 import theme from '@/theme';
 import { SecondaryCustomInputTypes } from './type';
-import { StyledTextFieldRtlType } from '@/components/BaseComponents/BaseInput/type';
-import { BaseInput } from '@/components/BaseComponents/BaseInput';
+import { StyledTextFieldRtlType } from '@/components/BaseComponents/baseInput/type';
+import { BaseInput } from '@/components/BaseComponents/baseInput';
 
 export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
   ltrLabel,

@@ -1,7 +1,7 @@
 'use client';
 
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
-import { allValidateType } from '@/components/BaseComponents/BaseInput';
+import { allValidateType } from '@/components/BaseComponents/baseInput';
 import { FieldValues, useForm } from 'react-hook-form';
 
 export default function Home() {

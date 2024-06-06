@@ -1,4 +1,4 @@
-import { BaseInputProps } from '@/components/BaseComponents/BaseInput/type';
+import { BaseInputProps } from '@/components/BaseComponents/baseInput/type';
 import { Control, FieldValues, Path, RegisterOptions } from 'react-hook-form';
 
 export type TCustomInput<TField extends FieldValues> = BaseInputProps & {

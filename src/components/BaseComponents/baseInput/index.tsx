@@ -2,7 +2,7 @@
 import { ChangeEvent } from 'react';
 import { TextField } from '@mui/material';
 import regexPattern from '@/helper/regexPattern';
-import { BaseInputProps } from '@/components/BaseComponents/BaseInput/type';
+import { BaseInputProps } from '@/components/BaseComponents/baseInput/type';
 
 export const allValidateType = {
   en: regexPattern.englishLetter,

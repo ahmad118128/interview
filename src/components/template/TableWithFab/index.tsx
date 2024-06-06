@@ -16,7 +16,6 @@ import { useState } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { CustomButton } from '@/components/atoms/CustomButton';
-import { FilterChild } from '@/components/pages/dashboard/image-recognition/FilterChild';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
 import { FilterIcon } from '@/components/CustomTable/shared';
 import { MobileCollapseTable } from '@/components/CustomTable/widgets';
@@ -33,9 +32,8 @@ import {
   headers,
   mockData,
 } from '@/components/pages/dashboard/image-recognition/constants';
-import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
-import { StyledContainerImageRecognition } from './styled';
 import { CustomFabButton } from '@/components/atoms/CustomFabButton';
+import { EFabMode } from '@/components/atoms/CustomFabButton/type';
 
 export default function TableWithFab() {
   const [selected, setSelected] = useState('female');
@@ -133,7 +131,10 @@ export default function TableWithFab() {
           setOrder(id);
         }}
       />
-      <CustomFabButton onClick={() => console.log('fab')} fabType="fab" />
+      <CustomFabButton
+        onClick={() => console.log('fab')}
+        fabType={EFabMode.FAB}
+      />
     </Box>
   );
 }

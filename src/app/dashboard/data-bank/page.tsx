@@ -9,6 +9,7 @@ import { commonWords } from '@/strings';
 import theme from '@/theme';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { TableCell } from '@mui/material';
+
 export default function Databank() {
   const tableHeads: CellType[] = [
     ...headers,

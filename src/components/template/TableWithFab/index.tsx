@@ -34,6 +34,7 @@ import {
 } from '@/components/pages/dashboard/image-recognition/constants';
 import { CustomFabButton } from '@/components/atoms/CustomFabButton';
 import { EFabMode } from '@/components/atoms/CustomFabButton/type';
+import { useGetUsers } from '@/services/api/users';
 
 export default function TableWithFab() {
   const [selected, setSelected] = useState('female');
@@ -43,6 +44,8 @@ export default function TableWithFab() {
   const [tableData, setTableData] = useState<null | ISuccess | IError>(null);
   const [order, setOrder] = useState<string | unknown>('');
 
+  const { data: Users, isLoading } = useGetUsers();
+  console.log(Users);
   const methods = useForm({
     defaultValues: {
       InputFile: '',

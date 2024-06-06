@@ -2,9 +2,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-import { ImgBox, SlideShow, SliderContainer } from './styled';
+import { ImgBox, SlideButton, SlideShow, SliderContainer } from './styled';
 import { imgArray } from './model/model';
-import BtnSlide from '@/components/atoms/slider/BtnSlide';
 import CloseBtnSlider from '@/components/atoms/slider/CloseBtn';
 import NumberSlide from '@/components/atoms/slider/NumberSlide';
 import ImgButtonSlider from '@/components/atoms/slider/ImgButtonSlide';
@@ -39,19 +38,28 @@ export default function SlidePicture() {
   return (
     <SliderContainer>
       <SlideShow>
-        {imgArray.map((slide) => (
+        {imgArray.map((slide, index) => (
           <Image
             loading="lazy"
-            className={`show-img ${imgArray.indexOf(slide) === countSlide ? 'fade_slide' : ''}`}
-            key={imgArray.indexOf(slide)}
+            className={`show-img ${index === countSlide ? 'fade_slide' : ''}`}
+            key={index}
             alt="slide"
             src={slide}
             fill
             objectFit="cover"
           />
         ))}
-        <BtnSlide handlePrevSlide={handlePrevSlide} />
-        <BtnSlide handleNextSlide={handleNextSlide} />
+        <SlideButton
+          iconName="ic:sharp-navigate-next"
+          className="next-icon"
+          onClick={handleNextSlide}
+        />
+        <SlideButton
+          iconName="ic:sharp-navigate-next"
+          className="prev-icon"
+          onClick={handlePrevSlide}
+        />
+
         <CloseBtnSlider />
         <NumberSlide imgArray={imgArray} countSlide={countSlide} />
       </SlideShow>
@@ -60,9 +68,8 @@ export default function SlidePicture() {
           <ImgButtonSlider
             key={index}
             slide={slideBox}
-            countSlide={countSlide}
-            slideIndex={imgArray.indexOf(slideBox)}
             handleChangeSlide={handleChangeSlide}
+            compare={countSlide === index}
           />
         ))}
       </ImgBox>

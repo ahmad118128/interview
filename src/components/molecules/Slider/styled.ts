@@ -1,3 +1,4 @@
+import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 import { Box, styled } from '@mui/material';
 
 export const SliderContainer = styled(Box)`
@@ -37,38 +38,6 @@ export const SlideShow = styled(Box)`
     display: block;
   }
 
-  & .next-icon {
-    position: absolute;
-    left: 0;
-    top: 45%;
-    transform: translateY(-50%);
-    width: 28px;
-    height: 28px;
-    outline: none;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin: 0;
-    color: ${({ theme }) => theme.palette.common.black};
-    transform: rotateY(180deg);
-    background-color: ${({ theme }) => theme.palette.grey[50]};
-  }
-  & .prev-icon {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 28px;
-    height: 28px;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 0;
-    color: ${({ theme }) => theme.palette.common.black};
-    background-color: ${({ theme }) => theme.palette.grey[50]};
-  }
-
   & .close-slide-button {
     position: absolute;
     top: 20px;
@@ -100,5 +69,29 @@ export const ImgBox = styled(Box)`
 
   & .current_selected {
     outline: 2px solid ${({ theme }) => theme.palette.primary.light};
+  }
+`;
+
+export const SlideButton = styled(IconButton)`
+  position: absolute;
+  width: 1.75rem;
+  height: 1.75rem;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0;
+  color: ${({ theme }) => theme.palette.common.black};
+  background-color: ${({ theme }) => theme.palette.grey[50]};
+  transform: translateY(-50%);
+
+  &.next-icon {
+    left: 0;
+    top: 45%;
+    transform: rotateY(180deg);
+  }
+  &.prev-icon {
+    right: 0;
+    top: 50%;
   }
 `;

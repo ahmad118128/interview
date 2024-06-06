@@ -1,11 +1,10 @@
 'use client';
 import { Box, MenuItem, styled, TextField, Typography } from '@mui/material';
-import {
-  BaseInput,
-  StyledTextFieldRtlType,
-} from '@/components/BaseComponents/baseInput';
+
 import theme from '@/theme';
 import { SecondaryCustomInputTypes } from './type';
+import { BaseInput } from '@/components/BaseComponents/baseInput/index';
+import { StyledTextFieldRtlType } from '@/components/BaseComponents/baseInput/type';
 
 export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
   ltrLabel,

@@ -1,6 +1,6 @@
 'use client';
 import { styled } from '@mui/material';
-import { BaseTab } from '../../baseComponents/BaseTab';
+import { BaseTab } from '@/components/BaseComponents/BaseTab/BaseTab';
 
 export const CustomTab = styled(BaseTab)`
   &.normalTab {

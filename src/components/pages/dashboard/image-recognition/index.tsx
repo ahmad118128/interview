@@ -24,9 +24,9 @@ import { commonWords, generalStr, registrationStr } from '@/strings';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 import IconWithUrl from './IconWithUrl';
 import { CustomButton } from '@/components/atoms/CustomButton';
-import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import theme from '@/theme';
+import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 
 const payloadSnackbar: SnackBarType = {
   display: true,
@@ -143,7 +143,7 @@ export const UsersTab = ({ radioButton }: any) => {
               />
             }
           >
-            <FilterChild />
+            <FilterChild control={methods.control} />
             <CustomButton
               style={{ margin: '1rem 0 0.25rem 0' }}
               variant="outlined"

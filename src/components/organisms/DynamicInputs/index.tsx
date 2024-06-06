@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field, Control, Path } from 'react-hook-form';
+import { Field, Control, Path, FieldValues } from 'react-hook-form';
 import { StyledInputContainer } from '@/components/pages/dashboard/image-recognition/FilterChild/styled';
 import ControlledTimeDatePickerInput from '../TimeDatePicker/ControlledTimeDatePicker';
 import { CustomRHFAutocomplete } from '@/components/atoms/Autocomplete';

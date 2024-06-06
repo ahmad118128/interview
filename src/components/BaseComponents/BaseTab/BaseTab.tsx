@@ -3,8 +3,11 @@ import { useState, SyntheticEvent } from 'react';
 import { Box, Tab, Tabs } from '@mui/material';
 import { Icon } from '@iconify/react';
 
-import { TabDataItemType, TabProps } from './type';
-import { TabPanel } from './TabPanel';
+import { TabPanel } from '@/components/BaseComponents/BaseTab/TabPanel';
+import {
+  TabDataItemType,
+  TabProps,
+} from '@/components/BaseComponents/BaseTab/type';
 
 export const BaseTab = (props: TabProps) => {
   const { data, activeId, type, sx, tabBtnSx, className } = props;

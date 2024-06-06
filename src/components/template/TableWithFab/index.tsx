@@ -35,6 +35,7 @@ import {
 import { CustomFabButton } from '@/components/atoms/CustomFabButton';
 import { EFabMode } from '@/components/atoms/CustomFabButton/type';
 import { useGetUsers } from '@/services/api/users';
+import { useRouter, usePathname } from 'next/navigation';
 
 export default function TableWithFab() {
   const [selected, setSelected] = useState('female');
@@ -44,8 +45,11 @@ export default function TableWithFab() {
   const [tableData, setTableData] = useState<null | ISuccess | IError>(null);
   const [order, setOrder] = useState<string | unknown>('');
 
-  const { data: Users, isLoading } = useGetUsers();
-  console.log(Users);
+  const router = useRouter();
+  const currentPath = usePathname();
+  console.log(currentPath);
+  const newRoute = `${currentPath}/add`;
+
   const methods = useForm({
     defaultValues: {
       InputFile: '',
@@ -135,7 +139,7 @@ export default function TableWithFab() {
         }}
       />
       <CustomFabButton
-        onClick={() => console.log('fab')}
+        onClick={() => router.push(newRoute)}
         fabType={EFabMode.FAB}
       />
     </Box>

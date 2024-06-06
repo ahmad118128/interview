@@ -8,9 +8,9 @@ export const StyledFab = styled(BasedFabButton)`
     background-color: ${({ disabled, theme }) =>
       disabled ? theme.palette.grey[300] : theme.palette.primary.light};
     box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.2);
-    position: absolute;
-    left: 0;
-    bottom: 0.5rem;
+    position: fixed;
+    left: 3rem;
+    bottom: 2.5rem;
   }
 
   &.MuiFab-root svg {

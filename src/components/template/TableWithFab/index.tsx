@@ -1,23 +1,9 @@
 'use client';
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Box,
-  FormControl,
-  FormControlLabel,
-  InputAdornment,
-  Radio,
-  RadioGroup,
-  TableCell,
-} from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { Box, TableCell } from '@mui/material';
 import { useState } from 'react';
-import { useForm, FormProvider } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { Icon } from '@iconify/react/dist/iconify.js';
-import { CustomButton } from '@/components/atoms/CustomButton';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
-import { FilterIcon } from '@/components/CustomTable/shared';
 import { MobileCollapseTable } from '@/components/CustomTable/widgets';
 import { CellType } from '@/components/CustomTable/types';
 import { commonWords } from '@/strings';
@@ -34,7 +20,6 @@ import {
 } from '@/components/pages/dashboard/image-recognition/constants';
 import { CustomFabButton } from '@/components/atoms/CustomFabButton';
 import { EFabMode } from '@/components/atoms/CustomFabButton/type';
-import { useGetUsers } from '@/services/api/users';
 import { useRouter, usePathname } from 'next/navigation';
 
 export default function TableWithFab() {

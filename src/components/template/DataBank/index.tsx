@@ -1,21 +1,22 @@
 'use client';
 import { CellType } from '@/components/CustomTable/types';
 import { CustomTab } from '@/components/molecules/CustomTab/styled';
-import {
-  dataBankHeaderUser,
-  dataBankMockUsers,
-  mockData,
-} from '@/components/pages/dashboard/image-recognition/constants';
 import TableWithFab from '@/components/template/TableWithFab';
 import { DataBankRoute, commonWords } from '@/strings';
 import theme from '@/theme';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { TableCell, Typography } from '@mui/material';
-import { SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import { IModalState } from './type';
 import CustomModal from '@/components/organisms/Modal/CustomModal';
 import { usePathname, useRouter } from 'next/navigation';
 import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
+import {
+  dataBankHeaderUser,
+  dataBankHeadergroup,
+  dataBankMockUsers,
+  dataBankMockgrous,
+} from '@/components/pages/dashboard/data-bank/constants';
 
 export default function DatabankTemplate() {
   const [modalData, setModalData] = useState<IModalState>({
@@ -26,7 +27,7 @@ export default function DatabankTemplate() {
   const router = useRouter();
   const currentPath = usePathname();
 
-  const tableHeads: CellType[] = [
+  const tableHeadsUser: CellType[] = [
     ...dataBankHeaderUser,
     {
       id: 'actions',
@@ -71,20 +72,59 @@ export default function DatabankTemplate() {
     },
   ];
 
+  const tableHeadsgroup: CellType[] = [
+    ...dataBankHeadergroup,
+    {
+      id: 'actions',
+      label: commonWords.action,
+      type: 'function',
+      function: (row) => (
+        <TableCell>
+          <Icon
+            icon="fluent:document-edit-20-filled"
+            width="24"
+            height="24"
+            color={theme.palette.primary.main}
+            style={{ marginLeft: '0.5rem' }}
+            onClick={(e) => {
+              const editPath = `${currentPath}/edit/${row.id}`;
+              router.push(editPath);
+            }}
+          />
+          <Icon
+            icon="tabler:trash-filled"
+            width="24"
+            height="24"
+            color={theme.palette.primary.main}
+            onClick={(e) =>
+              setModalData({
+                ...modalData,
+                state: true,
+                id: row?.id,
+              })
+            }
+          />
+        </TableCell>
+      ),
+    },
+  ];
+
   const tabs = [
     {
       id: 0,
       label: <Typography>{DataBankRoute.usersList}</Typography>,
       disableTabRipple: false,
       tabPanel: (
-        <TableWithFab tableHeads={tableHeads} data={dataBankMockUsers} />
+        <TableWithFab tableHeads={tableHeadsUser} data={dataBankMockUsers} />
       ),
     },
     {
       id: 1,
       label: <Typography>{DataBankRoute.groupList}</Typography>,
       disableTabRipple: false,
-      tabPanel: <TableWithFab tableHeads={tableHeads} data={mockData} />,
+      tabPanel: (
+        <TableWithFab tableHeads={tableHeadsgroup} data={dataBankMockgrous} />
+      ),
     },
   ];
 

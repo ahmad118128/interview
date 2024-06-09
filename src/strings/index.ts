@@ -1230,4 +1230,6 @@ export const DataBankRoute = {
   group: 'گروه',
   nationality: 'ملیت',
   supervisortList: 'لیست نظارتی',
+  groupName: 'نام گروه',
+  description: 'توصیف',
 };

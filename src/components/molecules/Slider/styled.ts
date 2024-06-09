@@ -14,42 +14,19 @@ export const SlideShow = styled(Box)`
   border: 2px solid ${({ theme }) => theme.palette.grey[200]};
   border-radius: 6px;
   box-sizing: border-box;
+`;
 
-  & .show-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    animation-name: show;
-    animation-duration: 0.8s;
-    display: none;
-    border-radius: 6px;
-
-    @keyframes show {
-      from {
-        opacity: 0.6;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-  }
-
-  & .fade_slide {
-    display: block;
-  }
-
-  & .close-slide-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 30px;
-    height: 30px;
-    border: none;
-    background-color: transparent;
-    outline: none;
-    color: ${({ theme }) => theme.palette.common.black};
-    cursor: pointer;
-  }
+export const CloseBtn = styled(IconButton)`
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  color: ${({ theme }) => theme.palette.common.black};
+  cursor: pointer;
 `;
 
 export const ImgBox = styled(Box)`

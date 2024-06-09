@@ -2,11 +2,17 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-import { ImgBox, SlideButton, SlideShow, SliderContainer } from './styled';
+import {
+  CloseBtn,
+  ImgBox,
+  SlideButton,
+  SlideShow,
+  SliderContainer,
+} from './styled';
 import { imgArray } from './model/model';
-import CloseBtnSlider from '@/components/atoms/slider/CloseBtn';
 import NumberSlide from '@/components/atoms/slider/NumberSlide';
 import ImgButtonSlider from '@/components/atoms/slider/ImgButtonSlide';
+import ImgShow from '@/components/atoms/slider/ImgShow';
 
 export default function SlidePicture() {
   const [countSlide, setCountSlide] = useState<number>(0);
@@ -39,14 +45,11 @@ export default function SlidePicture() {
     <SliderContainer>
       <SlideShow>
         {imgArray.map((slide, index) => (
-          <Image
-            loading="lazy"
-            className={`show-img ${index === countSlide ? 'fade_slide' : ''}`}
+          <ImgShow
             key={index}
-            alt="slide"
-            src={slide}
-            fill
-            objectFit="cover"
+            slide={slide}
+            index={index}
+            countSlide={countSlide}
           />
         ))}
         <SlideButton
@@ -59,8 +62,7 @@ export default function SlidePicture() {
           className="prev-icon"
           onClick={handlePrevSlide}
         />
-
-        <CloseBtnSlider />
+        <CloseBtn iconName="iconamoon:close" />
         <NumberSlide imgArray={imgArray} countSlide={countSlide} />
       </SlideShow>
       <ImgBox>

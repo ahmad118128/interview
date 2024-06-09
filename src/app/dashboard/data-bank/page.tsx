@@ -22,14 +22,12 @@ export default function Databank() {
           <Icon
             icon="ic:baseline-delete"
             width="24"
-            height="24"
             color={theme.palette.primary.main}
             style={{ marginLeft: '0.5rem' }}
           />
           <Icon
             icon="ep:picture-filled"
             width="24"
-            height="24"
             color={theme.palette.primary.main}
           />
         </TableCell>

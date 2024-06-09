@@ -8,9 +8,11 @@ const getUsers = (): Promise<IUsers[]> => {
   return getData(url);
 };
 
+const usersSlug = 'users';
+
 export const useGetUsers = () => {
   const { data, isLoading } = useQuery({
-    queryKey: ['posts'],
+    queryKey: [usersSlug],
     queryFn: () => getUsers(),
   });
 

@@ -1232,4 +1232,6 @@ export const DataBankRoute = {
   supervisortList: 'لیست نظارتی',
   groupName: 'نام گروه',
   description: 'توصیف',
+  deleteModalRedText: 'این عمل برگشت ناپذیر است',
+  deleteModalBlackText: 'آیا برای حذف این گزینه مطمئن هستید ؟',
 };

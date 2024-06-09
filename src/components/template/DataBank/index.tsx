@@ -1,4 +1,5 @@
 'use client';
+
 import { CellType } from '@/components/CustomTable/types';
 import { CustomTab } from '@/components/molecules/CustomTab/styled';
 import TableWithFab from '@/components/template/TableWithFab';
@@ -131,17 +132,19 @@ export default function DatabankTemplate() {
   return (
     <>
       <CustomTab data={tabs} type={'normalTab'}></CustomTab>
+
       {modalData.state ? (
         <CustomModal
           id={modalData.id}
           open={modalData.state}
           activeButtonHandler={() => console.log(modalData.id)}
           buttons
-          errorTitle="این عمل برگشت ناپذیر است"
-          title="آیا برای حذف این گزینه مطمئن هستید ؟"
+          errorTitle={DataBankRoute.deleteModalRedText}
+          title={DataBankRoute.deleteModalBlackText}
           handleClose={() => setModalData({ state: false })}
         ></CustomModal>
       ) : null}
+
       {imgModal ? (
         <ThumbnailPicModal
           handleClose={() => setImgModal(false)}

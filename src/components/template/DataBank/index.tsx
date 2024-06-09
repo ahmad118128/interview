@@ -14,11 +14,17 @@ import { TableCell, Typography } from '@mui/material';
 import { SetStateAction, useState } from 'react';
 import { IModalState } from './type';
 import CustomModal from '@/components/organisms/Modal/CustomModal';
+import { usePathname, useRouter } from 'next/navigation';
+import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
 
 export default function DatabankTemplate() {
   const [modalData, setModalData] = useState<IModalState>({
     state: false,
   });
+  const [imgModal, setImgModal] = useState(false);
+
+  const router = useRouter();
+  const currentPath = usePathname();
 
   const tableHeads: CellType[] = [
     ...dataBankHeaderUser,
@@ -34,6 +40,7 @@ export default function DatabankTemplate() {
             height="24"
             color={theme.palette.primary.main}
             style={{ marginLeft: '0.5rem' }}
+            onClick={() => setImgModal(true)}
           />
           <Icon
             icon="fluent:document-edit-20-filled"
@@ -41,7 +48,10 @@ export default function DatabankTemplate() {
             height="24"
             color={theme.palette.primary.main}
             style={{ marginLeft: '0.5rem' }}
-            onClick={(e) => console.log(row.id)}
+            onClick={(e) => {
+              const editPath = `${currentPath}/edit/${row.id}`;
+              router.push(editPath);
+            }}
           />
           <Icon
             icon="tabler:trash-filled"
@@ -91,6 +101,14 @@ export default function DatabankTemplate() {
           title="آیا برای حذف این گزینه مطمئن هستید ؟"
           handleClose={() => setModalData({ state: false })}
         ></CustomModal>
+      ) : null}
+      {imgModal ? (
+        <ThumbnailPicModal
+          handleClose={() => setImgModal(false)}
+          open={imgModal}
+          setOpen={setImgModal}
+          src={'/assets/images/dashboard/technology 1.svg'}
+        />
       ) : null}
     </>
   );

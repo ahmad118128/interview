@@ -1220,3 +1220,8 @@ export const ReportModal = {
   date: 'زمان ثبت',
   results: 'نتایج شناسایی',
 };
+
+export const DataBankRoute = {
+  usersList: 'لیست افراد',
+  groupList: 'لیست گروه',
+};

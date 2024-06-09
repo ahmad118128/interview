@@ -2,7 +2,7 @@
 import { useState, ChangeEvent, KeyboardEvent } from 'react';
 import { Icon } from '@iconify/react';
 import { IconButton, TextField } from '@mui/material';
-import { searchbarProps } from './type';
+import { searchbarProps } from '@/components/BaseComponents/BaseSearchBar/type';
 
 export const BaseSearchBar = (props: searchbarProps) => {
   const {

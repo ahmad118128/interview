@@ -2,7 +2,7 @@
 
 import { styled } from '@mui/material';
 import { TextareaFormControlProps } from './type';
-import { BasedTextarea } from '../../baseComponents/BasedTextarea';
+import { BasedTextarea } from '../../BaseComponents/BasedTextarea';
 
 export const StyledTextArea = styled(BasedTextarea)<TextareaFormControlProps>`
   ${({ theme, ltr, disabled, readOnly }) => {

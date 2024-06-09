@@ -1,4 +1,4 @@
-import { searchbarProps } from '../../baseComponents/BaseSearchBar/type';
+import { searchbarProps } from '../../BaseComponents/BaseSearchBar/type';
 import { StyledSearchBar } from './styled';
 
 export default function CustomSearchBar(

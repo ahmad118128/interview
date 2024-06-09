@@ -86,3 +86,7 @@ export const StyledIconsContainer = styled(Box)`
   justify-content: flex-end;
   align-items: center;
 `;
+
+export const StyledForm = styled('form')`
+  width: 100%;
+`;

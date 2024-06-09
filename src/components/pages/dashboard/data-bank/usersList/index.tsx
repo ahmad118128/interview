@@ -14,6 +14,7 @@ import TableWithFab from '@/components/template/TableWithFab';
 import { FilterContainer } from './FilterContainer';
 import { UsersFilterProps } from '../../image-recognition/types';
 import { initFilter } from '../../image-recognition/constants';
+import FilterForm from './FilterForm';
 
 export default function UsersList() {
   const [collapse, setCollapse] = useState(false);
@@ -117,14 +118,7 @@ export default function UsersList() {
             handleFiltersChips={handleFiltersChips}
             refreshLoading={isLoading}
           >
-            {/* <FilterChild /> */}
-            <CustomButton
-              style={{ margin: '1rem 0 0.25rem 0' }}
-              variant="outlined"
-              type="submit"
-            >
-              {generalStr.applyFilter}
-            </CustomButton>
+            <FilterForm />
           </FilterContainer>
         </form>
       </FormProvider>

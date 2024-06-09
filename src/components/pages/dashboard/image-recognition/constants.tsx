@@ -3,7 +3,7 @@ import { UsersFilterProps } from './types';
 import { Status } from '@/components/CustomTable/shared/Status';
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { handleArray } from '@/components/CustomTable/utils';
-import { commonWords, generalStr, usersStr } from '@/strings';
+import { DataBankRoute, commonWords, generalStr, usersStr } from '@/strings';
 
 export const COLLAPSE_ID = 'collapse';
 
@@ -23,6 +23,7 @@ export const headers: CellType[] = [
     sortable: true,
   },
 ];
+
 export const chipsCreator = (
   newFilter: UsersFilterProps
 ): FiltersChips<UsersFilterProps> => {
@@ -117,5 +118,110 @@ export const mockData = [
     id: 9,
     description: 'tested',
     matchCount: 9,
+  },
+];
+
+export const dataBankMockUsers = [
+  {
+    id: 1,
+    name: 'نام و نام‌خانوادگی',
+    nationalId: '0025698741',
+    phoneNumber: '09125631214',
+    group: 'گروه یک',
+    nationality: 'ایرانی',
+    supervisortList: 'لیست نظارتی',
+  },
+  {
+    id: 2,
+    name: 'نام و نام‌خانوادگی',
+    nationalId: '0025698741',
+    phoneNumber: '09125631214',
+    group: 'گروه یک',
+    nationality: 'ایرانی',
+    supervisortList: 'لیست نظارتی',
+  },
+  {
+    id: 3,
+    name: 'نام و نام‌خانوادگی',
+    nationalId: '0025698741',
+    phoneNumber: '09125631214',
+    group: 'گروه یک',
+    nationality: 'ایرانی',
+    supervisortList: 'لیست نظارتی',
+  },
+  {
+    id: 4,
+    name: 'نام و نام‌خانوادگی',
+    nationalId: '0025698741',
+    phoneNumber: '09125631214',
+    group: 'گروه یک',
+    nationality: 'ایرانی',
+    supervisortList: 'لیست نظارتی',
+  },
+  {
+    id: 5,
+    name: 'نام و نام‌خانوادگی',
+    nationalId: '0025698741',
+    phoneNumber: '09125631214',
+    group: 'گروه یک',
+    nationality: 'ایرانی',
+    supervisortList: 'لیست نظارتی',
+  },
+  {
+    id: 6,
+    name: 'نام و نام‌خانوادگی',
+    nationalId: '0025698741',
+    phoneNumber: '09125631214',
+    group: 'گروه یک',
+    nationality: 'ایرانی',
+    supervisortList: 'لیست نظارتی',
+  },
+  {
+    id: 7,
+    name: 'نام و نام‌خانوادگی',
+    nationalId: '0025698741',
+    phoneNumber: '09125631214',
+    group: 'گروه یک',
+    nationality: 'ایرانی',
+    supervisortList: 'لیست نظارتی',
+  },
+];
+
+export const dataBankHeaderUser: CellType[] = [
+  {
+    id: COLLAPSE_ID,
+    label: '',
+  },
+  {
+    id: 'name',
+    label: DataBankRoute.name,
+    sortable: true,
+  },
+  {
+    id: 'nationalId',
+    label: DataBankRoute.nationalId,
+    type: 'number',
+    sortable: true,
+  },
+  {
+    id: 'phoneNumber',
+    label: DataBankRoute.phoneNumber,
+    type: 'number',
+    sortable: true,
+  },
+  {
+    id: 'group',
+    label: DataBankRoute.group,
+    sortable: true,
+  },
+  {
+    id: 'nationality',
+    label: DataBankRoute.nationality,
+    sortable: true,
+  },
+  {
+    id: 'supervisortList',
+    label: DataBankRoute.supervisortList,
+    sortable: true,
   },
 ];

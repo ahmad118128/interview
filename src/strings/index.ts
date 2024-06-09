@@ -1224,4 +1224,10 @@ export const ReportModal = {
 export const DataBankRoute = {
   usersList: 'لیست افراد',
   groupList: 'لیست گروه',
+  name: 'نام و نام‌خانوادگی',
+  nationalId: 'کد ملی',
+  phoneNumber: 'شماره موبایل',
+  group: 'گروه',
+  nationality: 'ملیت',
+  supervisortList: 'لیست نظارتی',
 };

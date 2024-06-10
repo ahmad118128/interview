@@ -1,8 +1,8 @@
 import { Box, Tooltip } from '@mui/material';
 import { type Props } from './types';
-import { tablePhrases } from '../../strings';
+import { tablePhrases } from '@/components/CustomTable/strings';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
-import { EFilterTableNameIcon } from '../../widgets/FilterContainer/type';
+import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
 
 export const FilterIcon = (props: Props) => {
   const { onHandleIconClick, active } = props;

@@ -1,4 +1,4 @@
-import { MouseEvent, MouseEventHandler, ReactNode } from 'react';
+import { MouseEvent, ReactNode } from 'react';
 
 export interface ICustomFab {
   onClick?: (event?: MouseEvent<HTMLButtonElement>) => void;

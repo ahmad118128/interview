@@ -1,7 +1,6 @@
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
-import { CustomButton } from '@/components/atoms/CustomButton';
-import { commonWords, generalStr } from '@/strings';
+import { commonWords } from '@/strings';
 import { useState } from 'react';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 import { dataBankHeaderUser, dataBankMockUsers } from '../constants';
@@ -14,7 +13,6 @@ import TableWithFab from '@/components/template/TableWithFab';
 import { FilterContainer } from './FilterContainer';
 import { UsersFilterProps } from '../../image-recognition/types';
 import { initFilter } from '../../image-recognition/constants';
-import FilterForm from './FilterForm';
 
 export default function UsersList() {
   const [collapse, setCollapse] = useState(false);
@@ -33,6 +31,14 @@ export default function UsersList() {
 
   const methods = useForm<FieldValues>({
     mode: 'onSubmit',
+    defaultValues: {
+      name: '',
+      nationalId: '',
+      phoneNumber: '',
+      group: '',
+      supervisortList: '',
+      nationality: '',
+    },
   });
 
   const submitHandler = (data: any) => {
@@ -107,19 +113,22 @@ export default function UsersList() {
       ),
     },
   ];
+
+  const { control, reset } = { ...methods };
+
   return (
     <>
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(submitHandler)}>
           <FilterContainer
+            control={control}
+            reset={reset}
             collapse={collapse}
             onHandleIconClick={handleIconClick}
             chips={filtersChips}
             handleFiltersChips={handleFiltersChips}
             refreshLoading={isLoading}
-          >
-            <FilterForm />
-          </FilterContainer>
+          />
         </form>
       </FormProvider>
       <TableWithFab tableHeads={tableHeadsUser} data={dataBankMockUsers} />

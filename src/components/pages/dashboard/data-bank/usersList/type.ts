@@ -18,7 +18,8 @@ export type HeaderFilterTableProps = MultiModeFilter & {
   activeMode?: ActiveMode;
   refreshLoading: boolean;
   onHandleIconClick: OnHandleIconClick;
-  children: ReactNode;
+  control: any;
+  reset: any;
   collapse: boolean;
   handleFiltersChips: (filterKey: any) => void;
   onSearchClick?: () => void;

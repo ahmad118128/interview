@@ -19,10 +19,12 @@ import { tablePhrases } from '@/components/CustomTable/strings';
 import { FilterIcon, FullTextSearch } from '@/components/CustomTable/shared';
 import { CircularLoading } from '@/components/CustomTable/shared/Loading/circularLoading';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
+import FilterForm from './FilterForm';
 
 export const FilterContainer = (props: HeaderFilterTableProps) => {
   const {
-    children,
+    control,
+    reset,
     chips,
     collapse,
     onHandleIconClick,
@@ -94,7 +96,9 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
           </StyledIconsContainer>
         </Box>
       </StyledAccordionSummary>
-      <StyledAccordionDetails>{children}</StyledAccordionDetails>
+      <StyledAccordionDetails>
+        <FilterForm control={control} reset={reset} />
+      </StyledAccordionDetails>
     </Accordion>
   );
 };

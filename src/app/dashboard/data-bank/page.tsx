@@ -1,4 +1,5 @@
 'use client';
+
 import { CellType } from '@/components/CustomTable/types';
 import {
   headers,

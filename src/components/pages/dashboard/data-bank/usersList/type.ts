@@ -1,3 +1,4 @@
+import { FiltersChips } from '@/components/CustomTable/types';
 import { ReactElement, ReactNode } from 'react';
 
 export type HeaderMode = EFilterModeIcon.TABLE | EFilterModeIcon.CHART;
@@ -13,12 +14,14 @@ type MultiModeFilter =
     };
 
 export type HeaderFilterTableProps = MultiModeFilter & {
+  chips: FiltersChips<any>;
   activeMode?: ActiveMode;
+  refreshLoading: boolean;
   onHandleIconClick: OnHandleIconClick;
   children: ReactNode;
   collapse: boolean;
-  radioButton?: ReactNode;
-  fullWidthInput?: ReactNode;
+  handleFiltersChips: (filterKey: any) => void;
+  onSearchClick?: () => void;
 };
 
 export enum EFilterTableNameIcon {

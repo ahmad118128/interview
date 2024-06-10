@@ -7,7 +7,7 @@ import {
   IconFilterNameTable,
 } from './type';
 import theme from '@/theme';
-import { tablePhrases } from '../../strings';
+import { tablePhrases } from '@/components/CustomTable/strings';
 
 export const rightIcons: IconFilterNameTable[] = [
   {
@@ -49,8 +49,8 @@ export const leftIcons: IconFilterModeTable[] = [
         icon="mdi:chart-line"
         style={{
           color: theme.palette.grey[500],
-          width: 19,
-          height: 19,
+          width: 24,
+          height: 24,
         }}
       />
     ),
@@ -63,8 +63,8 @@ export const leftIcons: IconFilterModeTable[] = [
         icon="uiw:table"
         style={{
           color: theme.palette.grey[500],
-          width: 19,
-          height: 19,
+          width: 24,
+          height: 24,
         }}
       />
     ),

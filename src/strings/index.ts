@@ -1220,3 +1220,20 @@ export const ReportModal = {
   date: 'زمان ثبت',
   results: 'نتایج شناسایی',
 };
+
+export const DataBankRoute = {
+  usersList: 'لیست افراد',
+  groupList: 'لیست گروه',
+  name: 'نام و نام‌خانوادگی',
+  nationalId: 'کد ملی',
+  phoneNumber: 'شماره موبایل',
+  group: 'گروه',
+  nationality: 'ملیت',
+  supervisortList: 'لیست نظارتی',
+  groupName: 'نام گروه',
+  description: 'توصیف',
+  deleteModalRedText: 'این عمل برگشت ناپذیر است',
+  deleteModalBlackText: 'آیا برای حذف این گزینه مطمئن هستید ؟',
+  filter: 'فیلتر',
+  earase: 'پاک‌سازی',
+};

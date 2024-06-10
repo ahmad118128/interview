@@ -1,6 +1,6 @@
 'use client';
 
-import { useForm } from 'react-hook-form';
+import { useForm, FieldValues } from 'react-hook-form';
 import {
   StyledAddFormHeader,
   StyledAddFormMain,
@@ -16,16 +16,32 @@ import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 import { CustomRHFAutocomplete } from '@/components/atoms/Autocomplete';
 import ControlledTimeDatePickerInput from '@/components/organisms/TimeDatePicker/ControlledTimeDatePicker';
 import { CustomTextArea } from '@/components/atoms/CustomTextarea/CustomTextarea';
-import { useState } from 'react';
-import AddGropModal from './AddGropModal';
 import UploaderInput from '@/components/organisms/UploaderInput';
-import { CustomButton } from '@/components/atoms/CustomButton';
 
-export default function AddForm() {
-  const [isOpen, setIsOpen] = useState(false);
-
+export default function EditForm() {
   const router = useRouter();
-  const { control, handleSubmit } = useForm();
+  const { control, handleSubmit } = useForm<FieldValues>({
+    defaultValues: {
+      firstName: 'متن ورودی',
+      lastName: 'متن ورودی',
+      fatherName: 'متن ورودی',
+      nationalId: 0,
+      birthCertificateNumber: 0,
+      placeOfIssue: 'متن ورودی',
+      birthCity: 'متن ورودی',
+      birthDate: 0,
+      sex: 'متن ورودی',
+      education: 'متن ورودی',
+      phone: 0,
+      mobile: 0,
+      texteara1: 'متن ورودی',
+      texteara2: 'متن ورودی',
+      groupName: 'متن ورودی',
+      nationality: 'متن ورودی',
+      supervisortList: 'متن ورودی',
+      uploadImage: [],
+    },
+  });
   const submitHadler = (data: any) => console.log(data);
 
   const goBackUrl = () => {
@@ -39,10 +55,8 @@ export default function AddForm() {
           <Typography variant="h2">
             {DataBankRoute.addSingleUserTitle}
           </Typography>
-
           <IconButton iconName="tabler:arrow-narrow-left" onClick={goBackUrl} />
         </StyledAddFormHeader>
-
         <StyledAddFormMain>
           <form onSubmit={handleSubmit(submitHadler)}>
             <label>
@@ -50,7 +64,6 @@ export default function AddForm() {
                 {DataBankRoute.personalInfo}
               </Typography>
             </label>
-
             <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
               <Grid item xs={12} md={3}>
                 <CustomInput
@@ -60,7 +73,6 @@ export default function AddForm() {
                   label={DataBankRoute.firstName}
                 />
               </Grid>
-
               <Grid item xs={12} md={3}>
                 <CustomInput
                   control={control}
@@ -69,7 +81,6 @@ export default function AddForm() {
                   label={DataBankRoute.lastName}
                 />
               </Grid>
-
               <Grid item xs={12} md={3}>
                 <CustomInput
                   control={control}
@@ -78,7 +89,6 @@ export default function AddForm() {
                   label={DataBankRoute.fatherName}
                 />
               </Grid>
-
               <Grid item xs={12} md={3}>
                 <CustomInput
                   control={control}
@@ -88,7 +98,6 @@ export default function AddForm() {
                   type="number"
                 />
               </Grid>
-
               <Grid item xs={12} md={3}>
                 <CustomInput
                   control={control}
@@ -98,7 +107,6 @@ export default function AddForm() {
                   type="number"
                 />
               </Grid>
-
               <Grid item xs={12} md={3}>
                 <CustomRHFAutocomplete
                   label={DataBankRoute.placeOfIssue}
@@ -107,7 +115,6 @@ export default function AddForm() {
                   options={[]}
                 />
               </Grid>
-
               <Grid item xs={12} md={3}>
                 <CustomRHFAutocomplete
                   label={DataBankRoute.birthCity}
@@ -116,7 +123,6 @@ export default function AddForm() {
                   options={[]}
                 />
               </Grid>
-
               <Grid item xs={12} md={3}>
                 <ControlledTimeDatePickerInput
                   name="birthDate"
@@ -127,7 +133,6 @@ export default function AddForm() {
                   rules={{ required: 'Require' }}
                 />
               </Grid>
-
               <Grid item xs={12} md={3}>
                 <CustomRHFAutocomplete
                   label={DataBankRoute.sex}
@@ -136,7 +141,6 @@ export default function AddForm() {
                   options={[]}
                 />
               </Grid>
-
               <Grid item xs={12} md={3}>
                 <CustomRHFAutocomplete
                   label={DataBankRoute.education}
@@ -145,7 +149,6 @@ export default function AddForm() {
                   options={[]}
                 />
               </Grid>
-
               <Grid item xs={12} md={3}>
                 <CustomInput
                   control={control}
@@ -155,7 +158,6 @@ export default function AddForm() {
                   type="number"
                 />
               </Grid>
-
               <Grid item xs={12} md={3}>
                 <CustomInput
                   control={control}
@@ -165,21 +167,19 @@ export default function AddForm() {
                   type="number"
                 />
               </Grid>
-
               <Grid item xs={12} md={6}>
                 <CustomTextArea
-                  label={DataBankRoute.address}
                   control={control}
+                  label={DataBankRoute.address}
                   name="texteara1"
                   placeholder={DataBankRoute.infoDialog}
                 />
               </Grid>
-
               <Grid item xs={12} md={6}>
                 <CustomTextArea
                   label={DataBankRoute.information}
                   control={control}
-                  name="texteara1"
+                  name="texteara2"
                   placeholder={DataBankRoute.infoDialog}
                 />
               </Grid>
@@ -189,7 +189,6 @@ export default function AddForm() {
                   {DataBankRoute.generalKnowledge}
                 </Typography>
               </Grid>
-
               <Grid item xs={12} md={4}>
                 <StyledGroupWrapper>
                   <Box sx={{ flexGrow: 1 }}>
@@ -200,14 +199,9 @@ export default function AddForm() {
                       options={[]}
                     />
                   </Box>
-
-                  <IconButton
-                    iconName="fluent:people-add-24-filled"
-                    onClick={() => setIsOpen(true)}
-                  />
+                  <IconButton iconName="fluent:people-add-24-filled" />
                 </StyledGroupWrapper>
               </Grid>
-
               <Grid item xs={12} md={4}>
                 <CustomRHFAutocomplete
                   label={DataBankRoute.nationality}
@@ -216,7 +210,6 @@ export default function AddForm() {
                   options={[]}
                 />
               </Grid>
-
               <Grid item xs={12} md={4}>
                 <CustomRHFAutocomplete
                   label={DataBankRoute.supervisortList}
@@ -225,27 +218,18 @@ export default function AddForm() {
                   options={[]}
                 />
               </Grid>
-
               <Grid item xs={12}>
                 <Typography variant="h3">
                   {DataBankRoute.uploadImage}
                 </Typography>
               </Grid>
-
               <Grid item xs={12}>
                 <UploaderInput control={control} name={'uploadImage'} />
-              </Grid>
-
-              <Grid item xs={12} sx={{ marginTop: '1.25rem' }}>
-                <CustomButton fullWidth type="submit">
-                  {DataBankRoute.add}
-                </CustomButton>
               </Grid>
             </StyledFilterChild>
           </form>
         </StyledAddFormMain>
       </StyledAddFormWrapper>
-      <AddGropModal isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   );
 }

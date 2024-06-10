@@ -1222,6 +1222,18 @@ export const ReportModal = {
 };
 
 export const DataBankRoute = {
+  add: 'افزودن',
+  mobile: 'تلفن همراه',
+  phone: 'تلفن ثابت',
+  education: 'تحصیلات',
+  sex: 'جنسیت',
+  birthDate: 'تاریخ تولد',
+  birthCity: 'محل تولد',
+  placeOfIssue: 'محل صدور',
+  birthCertificateNumber: 'شماره شناسنامه',
+  fatherName: 'نام پدر',
+  lastName: 'نام‌خانوادگی',
+  firstName: 'نام',
   uploadImage: 'بازگذاری تصاویر',
   addGropModalTitle: 'افزودن گروه',
   generalKnowledge: 'اطلاعات عمومی',

@@ -113,13 +113,6 @@ export const StyledAddFormMain = styled(Box)`
   padding: 1.75rem 11.875rem;
 `;
 
-export const StyledTextfieldWrapper = styled(Box)`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.0625rem;
-`;
-
 export const StyledGroupWrapper = styled(Box)`
   width: 100%;
   display: flex;

@@ -8,6 +8,7 @@ import {
 import { styled } from '@mui/material/styles';
 
 import { StyledHoverIconProps } from './type';
+import theme from '@/theme';
 
 export const StyledNumberOfTheTitle = styled(Typography)`
   display: flex;
@@ -89,4 +90,39 @@ export const StyledIconsContainer = styled(Box)`
 
 export const StyledForm = styled('form')`
   width: 100%;
+`;
+
+export const StyledAddFormWrapper = styled(Box)`
+  border-radius: 0.625rem;
+  border: 1px solid ${theme.palette.grey[300]};
+  background: ${theme.palette.grey[50]};
+  padding: 0;
+`;
+
+export const StyledAddFormHeader = styled(Box)`
+  border-bottom: 1px solid ${theme.palette.grey[300]};
+  padding: 1.75rem 11.875rem;
+  border-radius: 0.625rem 0.625rem 0 0;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const StyledAddFormMain = styled(Box)`
+  padding: 1.75rem 11.875rem;
+`;
+
+export const StyledTextfieldWrapper = styled(Box)`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.0625rem;
+`;
+
+export const StyledGroupWrapper = styled(Box)`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;

@@ -1222,6 +1222,14 @@ export const ReportModal = {
 };
 
 export const DataBankRoute = {
+  uploadImage: 'بازگذاری تصاویر',
+  addGropModalTitle: 'افزودن گروه',
+  generalKnowledge: 'اطلاعات عمومی',
+  information: 'توضیحات',
+  address: 'آدرس',
+  infoDialog: 'متن راهنما پیش‌فرض',
+  personalInfo: 'اطلاعات شخصی',
+  addSingleUserTitle: 'ثبت نام انفرادی',
   usersList: 'لیست افراد',
   groupList: 'لیست گروه',
   name: 'نام و نام‌خانوادگی',

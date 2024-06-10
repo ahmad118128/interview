@@ -16,7 +16,7 @@ export default function FilterForm({ control, reset }: any) {
           control={control}
           name="nationalId"
           fullWidth
-          label="nationalId"
+          label={DataBankRoute.nationalId}
           type="number"
         />
       </Grid>
@@ -25,13 +25,13 @@ export default function FilterForm({ control, reset }: any) {
           control={control}
           name="phoneNumber"
           fullWidth
-          label="phoneNumber"
+          label={DataBankRoute.phoneNumber}
           type="number"
         />
       </Grid>
       <Grid item xs={12} md={4}>
         <CustomRHFAutocomplete
-          label="group"
+          label={DataBankRoute.group}
           control={control}
           name="group"
           options={[]}
@@ -39,7 +39,7 @@ export default function FilterForm({ control, reset }: any) {
       </Grid>
       <Grid item xs={12} md={4}>
         <CustomRHFAutocomplete
-          label="nationality"
+          label={DataBankRoute.nationality}
           control={control}
           name="nationality"
           options={[]}
@@ -47,7 +47,7 @@ export default function FilterForm({ control, reset }: any) {
       </Grid>
       <Grid item xs={12} md={4}>
         <CustomRHFAutocomplete
-          label="supervisortList"
+          label={DataBankRoute.supervisortList}
           control={control}
           name="supervisortList"
           options={[]}

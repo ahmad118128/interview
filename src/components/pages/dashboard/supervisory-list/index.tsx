@@ -14,12 +14,8 @@ import { initFilter } from '../image-recognition/constants';
 import { UsersFilterProps } from '../image-recognition/types';
 import { FilterContainer } from './FilterContainer';
 
-export default function SuperVisoryList() {
+export default function SuperVisoryList({ setModal, modal }: any) {
   const [collapse, setCollapse] = useState(false);
-  const [modalData, setModalData] = useState<IModalState>({
-    state: false,
-  });
-  const [imgModal, setImgModal] = useState(false);
   const [filtersChips, setFiltersChips] = useState<
     FiltersChips<UsersFilterProps>
   >([]);
@@ -105,8 +101,8 @@ export default function SuperVisoryList() {
             height="24"
             color={theme.palette.primary.main}
             onClick={(e) =>
-              setModalData({
-                ...modalData,
+              setModal({
+                ...modal,
                 state: true,
                 id: row?.id,
               })

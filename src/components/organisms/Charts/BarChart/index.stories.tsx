@@ -8,7 +8,13 @@ import theme from '@/theme';
 export default {
   title: 'BarChart',
   component: BarChart,
-  decorators:[(Story)=> (<ThemeProvider theme={theme}><Story /></ThemeProvider>)]
+  decorators: [
+    (Story) => (
+      <ThemeProvider theme={theme}>
+        <Story />
+      </ThemeProvider>
+    ),
+  ],
 } as Meta;
 
 const Template: StoryFn<BarChartProps> = (args) => {

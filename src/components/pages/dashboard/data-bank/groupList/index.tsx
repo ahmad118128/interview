@@ -84,7 +84,7 @@ export default function GroupList() {
             color={theme.palette.primary.main}
             style={{ marginLeft: '0.5rem' }}
             onClick={(e) => {
-              const editPath = `${currentPath}/edit/${row.id}`;
+              const editPath = `${currentPath}/editGroup/${row.id}`;
               router.push(editPath);
             }}
           />

@@ -1222,6 +1222,8 @@ export const ReportModal = {
 };
 
 export const DataBankRoute = {
+  addGroupFormTitle: 'افزودن گروه',
+  groupInformation: 'اطلاعات گروه',
   add: 'افزودن',
   mobile: 'تلفن همراه',
   phone: 'تلفن ثابت',

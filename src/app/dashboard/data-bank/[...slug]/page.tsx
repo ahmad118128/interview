@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 import { DynamicRouteProps } from '../type';
 import AddForm from '@/components/pages/dashboard/data-bank/usersList/AddForm';
+import AddFormGroup from '@/components/pages/dashboard/data-bank/groupList/AddFormGroup';
 import EditForm from '@/components/pages/dashboard/data-bank/usersList/EditForm';
 
 export default function Page({ params }: { params: DynamicRouteProps }) {
@@ -10,6 +11,8 @@ export default function Page({ params }: { params: DynamicRouteProps }) {
     return redirect('/404');
   }
   return (
-    (path === 'addUser' && <AddForm />) || (path === 'editUser' && <EditForm />)
+    (path === 'addUser' && <AddForm />) ||
+    (path === 'editUser' && <EditForm />) ||
+    (path === 'addGroup' && <AddFormGroup />)
   );
 }

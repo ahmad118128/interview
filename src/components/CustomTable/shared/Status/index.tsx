@@ -1,9 +1,9 @@
-import { VFC, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Typography } from '@mui/material';
 import { EStatus, type Props } from './types';
 import theme from '@/theme';
 
-export const Status: VFC<Props> = (props: Props) => {
+export const Status = (props: Props) => {
   const { state, size = 8, color, style } = props;
   const [fillColor, setFillColor] = useState<string>('transparent');
   const cSize = size ? size / 2 : 4;

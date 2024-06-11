@@ -1,4 +1,4 @@
-import { OnHandleIconClick } from '../../widgets/FilterContainer/type';
+import { OnHandleIconClick } from '@/components/CustomTable/widgets/FilterContainer/type';
 
 export type Props = {
   onHandleIconClick: OnHandleIconClick;

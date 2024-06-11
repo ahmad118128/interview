@@ -1,6 +1,6 @@
 import { MouseEvent } from 'react';
-import { type CustomPaginationProps } from '../TablePagination/types';
-import { CellType } from '../../types';
+import { type CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
+import { CellType } from '@/components/CustomTable/types';
 
 export interface BaseTableProps {
   headers: CellType[];

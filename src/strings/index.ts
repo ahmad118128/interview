@@ -1265,4 +1265,9 @@ export const SupervisitoryListRoute = {
   listName: 'نام',
   similarityPercentage: 'درصد تشابه',
   status: 'وضعیت',
+  addSupervisoryListFormTitle: 'افزودن لیست نظارتی',
+  listInfo: 'اطلاعات لیست',
+  supervisoryListName: 'نام لیست نظارتی',
+  supervisitoryListMembers: 'اعضای لیست نظارتی',
+  submitter: 'ثبت کننده',
 };

@@ -78,12 +78,15 @@ export default function SuperVisoryList() {
       function: (row) => (
         <TableCell>
           <Icon
-            icon="tabler:photo-filled"
+            icon="fluent:people-20-filled"
             width="24"
             height="24"
             color={theme.palette.primary.main}
             style={{ marginLeft: '0.5rem' }}
-            onClick={() => setImgModal(true)}
+            onClick={() => {
+              const membersRoute = `${currentPath}/members`;
+              router.push(membersRoute);
+            }}
           />
           <Icon
             icon="fluent:document-edit-20-filled"

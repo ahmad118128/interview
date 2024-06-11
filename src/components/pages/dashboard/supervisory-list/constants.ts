@@ -75,3 +75,88 @@ export const supervisitoryListMock = [
     status: 'فعال',
   },
 ];
+
+export const supervisitoryListMembersHeader: CellType[] = [
+  {
+    id: COLLAPSE_ID,
+    label: '',
+  },
+  {
+    id: 'fullName',
+    label: DataBankRoute.name,
+    sortable: true,
+  },
+  {
+    id: 'nationalId',
+    label: DataBankRoute.nationalId,
+    sortable: true,
+  },
+  {
+    id: 'mobile',
+    label: DataBankRoute.mobile,
+    sortable: true,
+  },
+  {
+    id: 'group',
+    label: DataBankRoute.group,
+    sortable: true,
+  },
+  {
+    id: 'nationality',
+    label: DataBankRoute.nationality,
+    sortable: true,
+  },
+  {
+    id: 'sex',
+    label: DataBankRoute.sex,
+    sortable: true,
+  },
+  {
+    id: 'submitter',
+    label: SupervisitoryListRoute.submitter,
+    sortable: true,
+  },
+];
+
+export const supervisitoryListMembersMock = [
+  {
+    id: 1,
+    fullName: 'نام و نام‌خانوادگی',
+    nationalId: '0052368741',
+    mobile: '09111111111',
+    group: 'گروه یک',
+    nationality: 'ایرانی',
+    sex: 'مرد',
+    submitter: 'ادمین',
+  },
+  {
+    id: 2,
+    fullName: 'نام و نام‌خانوادگی',
+    nationalId: '0052368741',
+    mobile: '09111111111',
+    group: 'گروه یک',
+    nationality: 'ایرانی',
+    sex: 'مرد',
+    submitter: 'ادمین',
+  },
+  {
+    id: 3,
+    fullName: 'نام و نام‌خانوادگی',
+    nationalId: '0052368741',
+    mobile: '09111111111',
+    group: 'گروه یک',
+    nationality: 'ایرانی',
+    sex: 'مرد',
+    submitter: 'ادمین',
+  },
+  {
+    id: 4,
+    fullName: 'نام و نام‌خانوادگی',
+    nationalId: '0052368741',
+    mobile: '09111111111',
+    group: 'گروه یک',
+    nationality: 'ایرانی',
+    sex: 'مرد',
+    submitter: 'ادمین',
+  },
+];

@@ -1,6 +1,5 @@
-import { MouseEventHandler, ReactNode } from 'react';
-import { MouseEvent } from 'react';
-import { FabOwnProps, FabProps } from '@mui/material';
+import { ReactNode, MouseEvent } from 'react';
+import { FabProps } from '@mui/material';
 
 export interface IBasedFabButton extends FabProps {
   fabType: EFabMode;

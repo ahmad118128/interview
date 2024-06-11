@@ -19,6 +19,7 @@ import {
   dataBankMockgrous,
 } from '@/components/pages/dashboard/data-bank/constants';
 import UsersList from '@/components/pages/dashboard/data-bank/usersList';
+import GroupList from '@/components/pages/dashboard/data-bank/groupList';
 
 export default function DatabankTemplate() {
   const [modalData, setModalData] = useState<IModalState>({
@@ -28,43 +29,6 @@ export default function DatabankTemplate() {
 
   const router = useRouter();
   const currentPath = usePathname();
-
-  const tableHeadsgroup: CellType[] = [
-    ...dataBankHeadergroup,
-    {
-      id: 'actions',
-      label: commonWords.action,
-      type: 'function',
-      function: (row) => (
-        <TableCell>
-          <Icon
-            icon="fluent:document-edit-20-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
-            style={{ marginLeft: '0.5rem' }}
-            onClick={(e) => {
-              const editPath = `${currentPath}/edit/${row.id}`;
-              router.push(editPath);
-            }}
-          />
-          <Icon
-            icon="tabler:trash-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
-            onClick={(e) =>
-              setModalData({
-                ...modalData,
-                state: true,
-                id: row?.id,
-              })
-            }
-          />
-        </TableCell>
-      ),
-    },
-  ];
 
   const tabs = [
     {
@@ -77,9 +41,7 @@ export default function DatabankTemplate() {
       id: 1,
       label: <Typography>{DataBankRoute.groupList}</Typography>,
       disableTabRipple: false,
-      tabPanel: (
-        <TableWithFab tableHeads={tableHeadsgroup} data={dataBankMockgrous} />
-      ),
+      tabPanel: <GroupList />,
     },
   ];
 

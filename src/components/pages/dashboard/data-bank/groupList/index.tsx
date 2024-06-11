@@ -3,7 +3,7 @@ import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterCon
 import { commonWords } from '@/strings';
 import { useState } from 'react';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
-import { dataBankHeaderUser, dataBankMockUsers } from '../constants';
+import { dataBankHeadergroup, dataBankMockgrous } from '../constants';
 import { TableCell } from '@mui/material';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import theme from '@/theme';
@@ -14,7 +14,7 @@ import { FilterContainer } from './FilterContainer';
 import { UsersFilterProps } from '../../image-recognition/types';
 import { initFilter } from '../../image-recognition/constants';
 
-export default function UsersList() {
+export default function GroupList() {
   const [collapse, setCollapse] = useState(false);
   const [modalData, setModalData] = useState<IModalState>({
     state: false,
@@ -69,8 +69,8 @@ export default function UsersList() {
     });
   };
 
-  const tableHeadsUser: CellType[] = [
-    ...dataBankHeaderUser,
+  const tableHeadsgroup: CellType[] = [
+    ...dataBankHeadergroup,
     {
       id: 'actions',
       label: commonWords.action,
@@ -78,21 +78,13 @@ export default function UsersList() {
       function: (row) => (
         <TableCell>
           <Icon
-            icon="tabler:photo-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
-            style={{ marginLeft: '0.5rem' }}
-            onClick={() => setImgModal(true)}
-          />
-          <Icon
             icon="fluent:document-edit-20-filled"
             width="24"
             height="24"
             color={theme.palette.primary.main}
             style={{ marginLeft: '0.5rem' }}
             onClick={(e) => {
-              const editPath = `${currentPath}/editUser/${row.id}`;
+              const editPath = `${currentPath}/edit/${row.id}`;
               router.push(editPath);
             }}
           />
@@ -132,9 +124,9 @@ export default function UsersList() {
         </form>
       </FormProvider>
       <TableWithFab
-        tableHeads={tableHeadsUser}
-        data={dataBankMockUsers}
-        path={'/addUser'}
+        tableHeads={tableHeadsgroup}
+        data={dataBankMockgrous}
+        path={'/addGroup'}
       />
     </>
   );

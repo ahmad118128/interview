@@ -6,8 +6,10 @@ import EditForm from '@/components/pages/dashboard/data-bank/usersList/EditForm'
 export default function Page({ params }: { params: DynamicRouteProps }) {
   const path = params.slug[0];
 
-  if (path !== 'add' && path !== 'edit') {
+  if (!path.startsWith('add') && !path.startsWith('edit')) {
     return redirect('/404');
   }
-  return (path === 'add' && <AddForm />) || (path === 'edit' && <EditForm />);
+  return (
+    (path === 'addUser' && <AddForm />) || (path === 'editUser' && <EditForm />)
+  );
 }

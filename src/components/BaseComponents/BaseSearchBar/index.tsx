@@ -41,7 +41,7 @@ export const BaseSearchBar = (props: searchbarProps) => {
           spinner
         ) : (
           <IconButton onClick={() => searchHandler(value)}>
-            <Icon icon="tabler:search" width="24" height="24" />
+            <Icon icon="tabler:search" width="24" />
           </IconButton>
         ),
       }}

@@ -1252,11 +1252,17 @@ export const DataBankRoute = {
   phoneNumber: 'شماره موبایل',
   group: 'گروه',
   nationality: 'ملیت',
-  supervisortList: 'لیست نظارتی',
+  supervisoryList: 'لیست نظارتی',
   groupName: 'نام گروه',
   description: 'توصیف',
   deleteModalRedText: 'این عمل برگشت ناپذیر است',
   deleteModalBlackText: 'آیا برای حذف این گزینه مطمئن هستید ؟',
   filter: 'فیلتر',
   earase: 'پاک‌سازی',
+};
+
+export const SupervisitoryListRoute = {
+  listName: 'نام',
+  similarityPercentage: 'درصد تشابه',
+  status: 'وضعیت',
 };

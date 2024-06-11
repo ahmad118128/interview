@@ -14,12 +14,8 @@ import { FilterContainer } from './FilterContainer';
 import { UsersFilterProps } from '../../image-recognition/types';
 import { initFilter } from '../../image-recognition/constants';
 
-export default function UsersList() {
+export default function UsersList({ modal, setModal, setImgModal }: any) {
   const [collapse, setCollapse] = useState(false);
-  const [modalData, setModalData] = useState<IModalState>({
-    state: false,
-  });
-  const [imgModal, setImgModal] = useState(false);
   const [filtersChips, setFiltersChips] = useState<
     FiltersChips<UsersFilterProps>
   >([]);
@@ -102,8 +98,8 @@ export default function UsersList() {
             height="24"
             color={theme.palette.primary.main}
             onClick={(e) =>
-              setModalData({
-                ...modalData,
+              setModal({
+                ...modal,
                 state: true,
                 id: row?.id,
               })

@@ -35,13 +35,19 @@ export default function DatabankTemplate() {
       id: 0,
       label: <Typography>{DataBankRoute.usersList}</Typography>,
       disableTabRipple: false,
-      tabPanel: <UsersList />,
+      tabPanel: (
+        <UsersList
+          modal={modalData}
+          setModal={setModalData}
+          setImgModal={setImgModal}
+        />
+      ),
     },
     {
       id: 1,
       label: <Typography>{DataBankRoute.groupList}</Typography>,
       disableTabRipple: false,
-      tabPanel: <GroupList />,
+      tabPanel: <GroupList modal={modalData} setModal={setModalData} />,
     },
   ];
 

@@ -7,7 +7,6 @@ const meta: Meta<typeof CustomSearchBar> = {
   title: 'atoms/CustomSearchBar',
   component: CustomSearchBar,
   tags: ['autodocs'],
-
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>
@@ -15,6 +14,11 @@ const meta: Meta<typeof CustomSearchBar> = {
       </ThemeProvider>
     ),
   ],
+  args: {
+    searchHandler: () => {},
+    name: '',
+    placeholder: '',
+  },
 };
 export default meta;
 type Story = StoryObj<typeof meta>;

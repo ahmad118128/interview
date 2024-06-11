@@ -1,21 +1,32 @@
 import * as React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react'; // Import Story instead of StoryFn
 import { CustomAutocomplete } from '../Autocomplete';
 import { ExtendedAutocompleteProps } from '../type';
+import { ThemeProvider } from '@emotion/react';
+import theme from '@/theme';
 
-export default {
+const meta: Meta<typeof CustomAutocomplete> = {
   title: 'Components/Autocomplete',
   component: CustomAutocomplete,
-} as Meta;
+  tags: ['autodocs'],
+  decorators: [
+    (Story) => (
+      <ThemeProvider theme={theme}>
+        <Story />
+      </ThemeProvider>
+    ),
+  ],
+};
+export default meta;
 
-const Template: StoryFn<ExtendedAutocompleteProps<string, false, false>> = (
-  args
-) => <CustomAutocomplete {...args} />;
+type StoryArgs = ExtendedAutocompleteProps<string, false, false>;
 
-export const Default = Template.bind({});
+export const Default: StoryFn<StoryArgs> = (args) => (
+  <CustomAutocomplete {...args} />
+);
 Default.args = {
   label: 'Autocomplete',
-  options: ['Option 1', 'Option 2', 'Option 3'],
+  options: ['1', '2', '3'],
   onChange: (event: React.ChangeEvent<{}>, newValue: string | null) => {
     console.log(newValue);
   },

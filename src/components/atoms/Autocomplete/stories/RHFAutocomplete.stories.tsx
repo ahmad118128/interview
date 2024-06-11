@@ -6,10 +6,20 @@ import { useForm } from 'react-hook-form';
 import { CustomRHFAutocomplete } from '../RHFAutocomplete';
 import { RHFAutoCompleteProps } from '../type';
 import { generalStr } from '@/strings';
+import { ThemeProvider } from '@emotion/react';
+import theme from '@/theme';
 
 export default {
   title: 'Components/Autocomplete/RHFAutocomplete',
   component: CustomRHFAutocomplete,
+  tags: ['autodocs'],
+  decorators: [
+    (Story) => (
+      <ThemeProvider theme={theme}>
+        <Story />
+      </ThemeProvider>
+    ),
+  ],
 } as Meta;
 
 const Template: StoryFn<RHFAutoCompleteProps<string, any, false>> = (args) => {

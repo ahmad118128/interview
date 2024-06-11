@@ -95,7 +95,7 @@ export default function SuperVisoryList() {
             color={theme.palette.primary.main}
             style={{ marginLeft: '0.5rem' }}
             onClick={(e) => {
-              const editPath = `${currentPath}/editUser/${row.id}`;
+              const editPath = `${currentPath}/edit/${row.id}`;
               router.push(editPath);
             }}
           />

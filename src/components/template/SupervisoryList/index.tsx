@@ -45,15 +45,6 @@ export default function SupervisoryListTemplate() {
           handleClose={() => setModalData({ state: false })}
         ></CustomModal>
       ) : null}
-
-      {imgModal ? (
-        <ThumbnailPicModal
-          handleClose={() => setImgModal(false)}
-          open={imgModal}
-          setOpen={setImgModal}
-          src={'/assets/images/dashboard/technology 1.svg'}
-        />
-      ) : null}
     </>
   );
 }

@@ -5,6 +5,7 @@ export const SliderContainer = styled(Box)`
   width: min(100%, 394px);
   margin: 0 auto;
   overflow-x: hidden;
+  padding-bottom: 2px;
 `;
 
 export const SlideShow = styled(Box)`

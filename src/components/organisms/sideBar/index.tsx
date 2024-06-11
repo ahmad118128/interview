@@ -16,6 +16,7 @@ import {
   StyledTypography,
   StyledsideBarWrapper,
 } from './styled';
+import { sidebarList } from '@/constants';
 
 export default function SideBar() {
   const { isOpen, setIsOpen } = useContext(openDashboard);
@@ -25,48 +26,6 @@ export default function SideBar() {
   const handleListItemClick = (index: number) => {
     setSelectedIndex(index);
   };
-
-  const sidebarList = [
-    {
-      title: 'دشبورد',
-      icon: 'material-symbols:home-rounded',
-    },
-    {
-      title: 'بانک اطلاعاتی',
-      icon: 'material-symbols:database',
-      url: 'dataBank',
-    },
-    {
-      title: 'لیست نظارتی',
-      icon: 'material-symbols:patient-list-rounded',
-      url: 'supervisitoryList',
-    },
-    {
-      title: 'شناسایی تصویر',
-      icon: 'mdi:user-search',
-      url: 'imageRecognition',
-    },
-    {
-      title: 'گزارشات',
-      icon: 'solar:clipboard-list-bold',
-      url: 'report',
-    },
-    {
-      title: 'آنالیز تردد',
-      icon: 'mdi:report-box',
-      url: 'trafficAnalysis',
-    },
-    {
-      title: 'کاربران',
-      icon: 'mdi:users-group',
-      url: 'userManagment',
-    },
-    {
-      title: 'تنظیمات',
-      icon: 'ant-design:setting-filled',
-      url: 'setting',
-    },
-  ];
 
   return (
     <StyledContainerSideBar isOpen={isOpen}>

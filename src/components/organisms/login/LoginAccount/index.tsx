@@ -1,14 +1,13 @@
 'use client';
 import { useForm } from 'react-hook-form';
 import { Box, InputAdornment, Typography } from '@mui/material';
-
-import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
 import { ControledCheckbox } from '@/components/atoms/Checkbox';
 
 import { StyledContainerInput } from './styled';
 import { registrationStr } from '@/strings';
 import { CustomButton } from '@/components/atoms/CustomButton';
 import { Icon } from '@iconify/react/dist/iconify.js';
+import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 
 export const LoginAccount = () => {
   const { control } = useForm({

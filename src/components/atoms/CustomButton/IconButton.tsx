@@ -7,6 +7,8 @@ export const IconButton = ({
   iconName,
   title,
   size,
+  height,
+  width,
   disabled = false,
   ...restProps
 }: IconButtonProps) => {
@@ -27,7 +29,12 @@ export const IconButton = ({
           },
         }}
       >
-        <Icon className="iconify" icon={iconName} height={24} />
+        <Icon
+          className="iconify"
+          icon={iconName}
+          height={height ? height : 16}
+          width={width ? width : 16}
+        />
       </Tooltip>
     </StyledIconButton>
   );

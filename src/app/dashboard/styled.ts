@@ -2,11 +2,25 @@
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { StyledSideBarType } from './type';
+import theme from '@/theme';
 
 export const StyledChildLayout = styled('main')`
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 2rem 2.5rem;
+  padding: 1.5rem 1rem;
+
+  ${({ theme }) => theme.breakpoints.up('sm')} {
+    padding: 1.5rem 1.5rem;
+  }
+
+  ${({ theme }) => theme.breakpoints.up('md')} {
+    padding: 1.5rem 2rem;
+  }
+
+  ${({ theme }) => theme.breakpoints.up('lg')} {
+    padding: 2rem 2.5rem;
+  }
+
   flex-wrap: wrap;
   height: 100vh;
   flex: 1;
@@ -22,6 +36,7 @@ export const StyledMainLayout = styled(Box)<StyledSideBarType>`
     margin-right: ${({ isOpen }) => (isOpen ? '12.6rem' : '5.1rem')};
   }
   overflow-y: hidden;
+  background-color: ${({ theme }) => theme.palette.grey[100]};
 `;
 
 export const StyledContainerLayout = styled(Box)`

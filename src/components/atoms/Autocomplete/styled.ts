@@ -17,7 +17,7 @@ export const AutocompleteTextField = styled(
     color: ${({ theme }) => theme.palette.common.black};
     border-radius: 0.375rem 0.375rem 0 0;
     background-color: ${({ theme }) => theme.palette.grey[100]};
-    min-height: 3rem;
+    min-height: 3.32rem;
     padding-block: 0.5rem !important;
     align-items: flex-end;
 

@@ -1198,3 +1198,25 @@ export const deleteMessages = {
   deleteCameraGroup: 'آیا برای حذف این گروه بندی مطمئن هستید؟',
   deleteUserGroup: 'آیا برای حذف این گروه کاربری مطمئن هستید؟',
 };
+
+export const siderBarList = {
+  dashboard: 'دشبورد',
+  informationBank: 'بانک اطلاعاتی',
+  supervisitoryList: 'لیست نظارتی',
+  imageRecognition: 'شناسایی تصویر',
+  report: 'گزارشات',
+  trafficAnalysis: 'آنالیز تردد',
+  userManagement: 'کاربران',
+  setting: 'تنظیمات',
+};
+
+export const ReportModal = {
+  name: 'نام گیت',
+  sex: 'جنسیت',
+  arow: 'جهت گیت',
+  bithCity: 'محل تولد',
+  age: 'سن',
+  agreementPercent: 'درصد تطابق',
+  date: 'زمان ثبت',
+  results: 'نتایج شناسایی',
+};

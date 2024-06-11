@@ -15,9 +15,7 @@ import {
 } from './styled';
 import theme from '@/theme';
 import { leftIcons } from '@/components/CustomTable/widgets/FilterContainer/constants';
-import { tablePhrases } from '@/components/CustomTable/strings';
-import { FilterIcon, FullTextSearch } from '@/components/CustomTable/shared';
-import { CircularLoading } from '@/components/CustomTable/shared/Loading/circularLoading';
+import { FilterIcon } from '@/components/CustomTable/shared';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 import FilterForm from './FilterForm';
 
@@ -41,7 +39,7 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
   }
 
   return (
-    <Accordion expanded={collapse}>
+    <Accordion expanded={collapse} sx={{ boxShadow: 'none' }}>
       <StyledAccordionSummary
         sx={{
           backgroundColor: theme.palette.grey[100],
@@ -74,25 +72,20 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
             </Box>
           )}
           <StyledIconsContainer gap="1rem">
+            <IconButton
+              iconName="tabler:search"
+              width={24}
+              height={24}
+              style={{
+                border: `1px solid ${theme.palette.primary.main}`,
+              }}
+            />
             <FilterIcon
               onHandleIconClick={onHandleIconClick}
               handleFiltersChips={handleFiltersChips}
               chips={chips}
               active={false}
             />
-            {/* <FullTextSearch onSearchClick={onSearchClick} /> */}
-            {refreshLoading ? (
-              <CircularLoading size={24} />
-            ) : (
-              <Tooltip title={tablePhrases.refresh} placement="bottom" arrow>
-                <IconButton
-                  iconName="ion:refresh-outline"
-                  onClick={() =>
-                    onHandleIconClick(EFilterTableNameIcon.REFRESH)
-                  }
-                />
-              </Tooltip>
-            )}
           </StyledIconsContainer>
         </Box>
       </StyledAccordionSummary>

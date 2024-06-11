@@ -17,10 +17,11 @@ import { CustomRHFAutocomplete } from '@/components/atoms/Autocomplete';
 import ControlledTimeDatePickerInput from '@/components/organisms/TimeDatePicker/ControlledTimeDatePicker';
 import { CustomTextArea } from '@/components/atoms/CustomTextarea/CustomTextarea';
 import UploaderInput from '@/components/organisms/UploaderInput';
+import { CustomButton } from '@/components/atoms/CustomButton';
 
 export default function EditForm() {
   const router = useRouter();
-  const { control, handleSubmit } = useForm<FieldValues>({
+  const { control, handleSubmit, reset } = useForm<FieldValues>({
     defaultValues: {
       firstName: 'متن ورودی',
       lastName: 'متن ورودی',
@@ -199,7 +200,10 @@ export default function EditForm() {
                       options={[]}
                     />
                   </Box>
-                  <IconButton iconName="fluent:people-add-24-filled" />
+                  <IconButton
+                    iconName="fluent:people-add-24-filled"
+                    height={24}
+                  />
                 </StyledGroupWrapper>
               </Grid>
               <Grid item xs={12} md={4}>
@@ -226,6 +230,22 @@ export default function EditForm() {
               <Grid item xs={12}>
                 <UploaderInput control={control} name={'uploadImage'} />
               </Grid>
+              <Box
+                sx={{
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  gap: '0.75rem',
+                  marginTop: '2rem',
+                }}
+              >
+                <CustomButton variant="contained" type="submit">
+                  {DataBankRoute.submit}
+                </CustomButton>
+                <CustomButton variant="outlined" onClick={() => reset()}>
+                  {DataBankRoute.earase}
+                </CustomButton>
+              </Box>
             </StyledFilterChild>
           </form>
         </StyledAddFormMain>

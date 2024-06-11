@@ -1,6 +1,6 @@
 import { Box, Tooltip } from '@mui/material';
 import { Icon } from '@iconify/react';
-
+import theme from '@/theme';
 import { type Props } from './types';
 import { tablePhrases } from '../../strings';
 import { StyledChip } from '../../widgets/FilterContainer/styled';
@@ -36,6 +36,11 @@ export const FilterIcon = (props: Props) => {
           onClick={() => onHandleIconClick(EFilterTableNameIcon.FILTER)}
           key={tablePhrases.filtering}
           iconName={'iconoir:filter'}
+          height={24}
+          width={24}
+          style={{
+            border: `1px solid ${theme.palette.primary.main}`,
+          }}
         />
       </Tooltip>
     </Box>

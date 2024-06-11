@@ -58,8 +58,8 @@ export const StyledChip = styled(Chip)`
 `;
 
 export const StyledAccordionSummary = styled(AccordionSummary)`
-  // height: 3.75rem;
   padding: 0.5rem 1.5rem;
+
   .MuiAccordionSummary-contentGutters {
     justify-content: flex-end !important;
     margin: 0;

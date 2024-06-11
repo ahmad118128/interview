@@ -81,7 +81,7 @@ export default function EditFormGroup() {
                 }}
               >
                 <CustomButton variant="contained" type="submit">
-                  {DataBankRoute.filter}
+                  {DataBankRoute.submit}
                 </CustomButton>
                 <CustomButton variant="outlined" onClick={() => reset()}>
                   {DataBankRoute.earase}

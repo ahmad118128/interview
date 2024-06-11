@@ -55,7 +55,7 @@ const meta: Meta<typeof CustomModal> = {
 
 export default meta;
 
-type Story = StoryObj<typeof CustomModal>;
+type Story = StoryObj<typeof meta>;
 
 export const Modal: Story = {
   render: (args) => {

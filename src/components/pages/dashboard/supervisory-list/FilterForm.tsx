@@ -1,55 +1,42 @@
 import { Box, Grid } from '@mui/material';
 import { StyledFilterChild } from '@/components/pages/dashboard/image-recognition/FilterChild/styled';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
-import { DataBankRoute } from '@/strings';
+import { DataBankRoute, SupervisitoryListRoute } from '@/strings';
 import { CustomRHFAutocomplete } from '@/components/atoms/Autocomplete';
 import { CustomButton } from '@/components/atoms/CustomButton';
 
 export default function FilterForm({ control, reset }: any) {
   return (
     <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
-      <Grid item xs={12} md={4}>
-        <CustomInput control={control} name="name" fullWidth label="name" />
-      </Grid>
-      <Grid item xs={12} md={4}>
+      <Grid item xs={12} md={3}>
         <CustomInput
           control={control}
-          name="nationalId"
+          name="name"
           fullWidth
-          label={DataBankRoute.nationalId}
-          type="number"
+          label={DataBankRoute.firstName}
         />
       </Grid>
-      <Grid item xs={12} md={4}>
+      <Grid item xs={12} md={3}>
         <CustomInput
           control={control}
-          name="phoneNumber"
+          name="similarityPercentage"
           fullWidth
-          label={DataBankRoute.phoneNumber}
-          type="number"
+          label={SupervisitoryListRoute.similarityPercentage}
         />
       </Grid>
-      <Grid item xs={12} md={4}>
-        <CustomRHFAutocomplete
-          label={DataBankRoute.group}
+      <Grid item xs={12} md={3}>
+        <CustomInput
           control={control}
-          name="group"
-          options={[]}
+          name="description"
+          fullWidth
+          label={DataBankRoute.description}
         />
       </Grid>
-      <Grid item xs={12} md={4}>
+      <Grid item xs={12} md={3}>
         <CustomRHFAutocomplete
-          label={DataBankRoute.nationality}
+          label={SupervisitoryListRoute.status}
           control={control}
-          name="nationality"
-          options={[]}
-        />
-      </Grid>
-      <Grid item xs={12} md={4}>
-        <CustomRHFAutocomplete
-          label={DataBankRoute.supervisoryList}
-          control={control}
-          name="supervisortList"
+          name="status"
           options={[]}
         />
       </Grid>

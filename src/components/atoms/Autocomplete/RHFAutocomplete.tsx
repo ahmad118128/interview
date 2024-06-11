@@ -7,7 +7,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import { RHFAutoCompleteProps } from './type';
 import { AutocompleteTextField, CustomPaper, Listbox } from './styled';
-import { CustomChip } from '../CustomChip';
+import { CustomChip } from '@/components/atoms/CustomChip/index';
 import { generalStr } from '@/strings';
 
 export const CustomRHFAutocomplete = <

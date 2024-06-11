@@ -2,7 +2,7 @@
 import { useState, ChangeEvent, KeyboardEvent } from 'react';
 import { Icon } from '@iconify/react';
 import { IconButton, TextField } from '@mui/material';
-import { searchbarProps } from './type';
+import { searchbarProps } from '@/components/BaseComponents/BaseSearchBar/type';
 
 export const BaseSearchBar = (props: searchbarProps) => {
   const {
@@ -41,7 +41,7 @@ export const BaseSearchBar = (props: searchbarProps) => {
           spinner
         ) : (
           <IconButton onClick={() => searchHandler(value)}>
-            <Icon icon="tabler:search" width="24" height="24" />
+            <Icon icon="tabler:search" width="24" />
           </IconButton>
         ),
       }}

@@ -102,7 +102,7 @@ export const dataBankHeaderUser: CellType[] = [
   },
   {
     id: 'supervisortList',
-    label: DataBankRoute.supervisortList,
+    label: DataBankRoute.supervisoryList,
     sortable: true,
   },
 ];

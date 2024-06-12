@@ -1252,7 +1252,7 @@ export const DataBankRoute = {
   phoneNumber: 'شماره موبایل',
   group: 'گروه',
   nationality: 'ملیت',
-  supervisortList: 'لیست نظارتی',
+  supervisoryList: 'لیست نظارتی',
   groupName: 'نام گروه',
   description: 'توصیف',
   deleteModalRedText: 'این عمل برگشت ناپذیر است',
@@ -1261,4 +1261,15 @@ export const DataBankRoute = {
   earase: 'پاک‌سازی',
   accurancyStart: 'آستانه تطابق',
   accurancyNumber: 'تعداد تطابق',
+};
+
+export const SupervisitoryListRoute = {
+  listName: 'نام',
+  similarityPercentage: 'درصد تشابه',
+  status: 'وضعیت',
+  addSupervisoryListFormTitle: 'افزودن لیست نظارتی',
+  listInfo: 'اطلاعات لیست',
+  supervisoryListName: 'نام لیست نظارتی',
+  supervisitoryListMembers: 'اعضای لیست نظارتی',
+  submitter: 'ثبت کننده',
 };

@@ -219,7 +219,7 @@ export default function AddForm() {
 
               <Grid item xs={12} md={4}>
                 <CustomRHFAutocomplete
-                  label={DataBankRoute.supervisortList}
+                  label={DataBankRoute.supervisoryList}
                   control={control}
                   name="supervisortList"
                   options={[]}

@@ -1,10 +1,20 @@
 import { redirect } from 'next/navigation';
 import { DynamicRouteProps } from '../type';
+import AddForm from '@/components/pages/dashboard/data-bank/usersList/AddForm';
+import AddFormGroup from '@/components/pages/dashboard/data-bank/groupList/AddFormGroup';
+import EditForm from '@/components/pages/dashboard/data-bank/usersList/EditForm';
+import EditFormGroup from '@/components/pages/dashboard/data-bank/groupList/EditFormGroup';
 
 export default function Page({ params }: { params: DynamicRouteProps }) {
   const path = params.slug[0];
-  if (path !== 'add' && path !== 'edit') {
+
+  if (!path.startsWith('add') && !path.startsWith('edit')) {
     return redirect('/404');
   }
-  return <div>My Post: {params.slug}</div>;
+  return (
+    (path === 'addUser' && <AddForm />) ||
+    (path === 'editUser' && <EditForm />) ||
+    (path === 'addGroup' && <AddFormGroup />) ||
+    (path === 'editGroup' && <EditFormGroup />)
+  );
 }

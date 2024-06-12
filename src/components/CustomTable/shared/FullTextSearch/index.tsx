@@ -6,10 +6,11 @@ import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 
 interface IProps {
   disabled?: boolean;
+  onSearchClick?: () => void;
 }
 
 export const FullTextSearch = (props: IProps) => {
-  const { disabled } = props;
+  const { disabled, onSearchClick } = props;
 
   const { control } = useFormContext();
 
@@ -25,6 +26,7 @@ export const FullTextSearch = (props: IProps) => {
         placeholder={generalStr.search}
         variant="filled"
         fullWidth
+        onClick={onSearchClick}
       />
     </StyledSearchContainer>
   );

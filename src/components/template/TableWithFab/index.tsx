@@ -17,6 +17,7 @@ import { TableWithFabProps } from './type';
 export default function TableWithFab<T>({
   tableHeads,
   data,
+  path,
 }: TableWithFabProps<T>) {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [tableData, setTableData] = useState<null | ISuccess | IError>(null);
@@ -25,7 +26,7 @@ export default function TableWithFab<T>({
   const router = useRouter();
   const currentPath = usePathname();
 
-  const newRoute = `${currentPath}/add`;
+  const newRoute = `${currentPath}/${path}`;
 
   const pagination: CustomPaginationProps = {
     all_page: tableData?.data?.all_page as number,

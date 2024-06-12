@@ -1,5 +1,5 @@
-import { type CustomPaginationProps } from '../../shared/TablePagination/types';
-import { type CellType } from '../../types';
+import { type CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
+import { type CellType } from '@/components/CustomTable/types';
 
 export interface MobileCollapseRowProps {
   header: CellType[];

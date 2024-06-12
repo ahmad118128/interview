@@ -1,4 +1,3 @@
-import { VFC } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { StyledSearchContainer } from './styled';
 import { Icon } from '@iconify/react/dist/iconify.js';
@@ -7,10 +6,11 @@ import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 
 interface IProps {
   disabled?: boolean;
+  onSearchClick?: () => void;
 }
 
-export const FullTextSearch: VFC<IProps> = (props: IProps) => {
-  const { disabled } = props;
+export const FullTextSearch = (props: IProps) => {
+  const { disabled, onSearchClick } = props;
 
   const { control } = useFormContext();
 
@@ -26,6 +26,7 @@ export const FullTextSearch: VFC<IProps> = (props: IProps) => {
         placeholder={generalStr.search}
         variant="filled"
         fullWidth
+        onClick={onSearchClick}
       />
     </StyledSearchContainer>
   );

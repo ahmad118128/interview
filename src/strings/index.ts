@@ -1275,6 +1275,8 @@ export const SupervisitoryListRoute = {
 };
 
 export const SettingRoute = {
+  minimumPassingTime: 'حداقل زمان عبور',
+  maximumPassingTime: 'حداکثر زمان عبور',
   face: 'چهره',
   client: 'کلاینت',
   publicSetting: 'تنظیمات عمومی',
@@ -1295,10 +1297,12 @@ export const SettingRoute = {
   executionStatus: 'وضعیت اجرا',
   savingPath: 'مسیر ذخیره سازی',
   faceRecognitionThroughClient: 'شناسایی چهره عبوری از کلاینت',
+  minimumSimilarityPercent: 'حداقل درصد تشابه',
   entryAndExitStatus: 'وضعیت ورود و خروج',
   facesRecordStatus: 'وضعیت ثبت چهره ها',
   doNotRecordFaces: 'تصاویر ثبت نشوند',
   justRecordMatchedFaces: 'فقط تصاویر تطبیق یافته ثبت شوند',
+  passingFacesRecord: 'تصاویر عبوری ثبت شوند',
   recordFaceParameters: 'پارامترهای ثبت چهره',
   minimumFaceWidth: 'حداقل عرض چهره',
   maximumFaceWidth: 'حداکثر عرض چهره',

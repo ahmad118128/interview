@@ -1,17 +1,20 @@
 'use client';
 
-import { CustomTab } from '@/components/molecules/CustomTab/styled';
-import { DataBankRoute } from '@/strings';
-import { Typography } from '@mui/material';
 import { useState } from 'react';
-import { IModalState } from '../DataBank/type';
-import CustomModal from '@/components/organisms/Modal/CustomModal';
 import { usePathname, useRouter } from 'next/navigation';
+
+import { CustomTab } from '@/components/molecules/CustomTab/styled';
+import { DataBankRoute, SettingRoute } from '@/strings';
+import { Typography } from '@mui/material';
+import CustomModal from '@/components/organisms/Modal/CustomModal';
 import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
 import UsersList from '@/components/pages/dashboard/data-bank/usersList';
 import GroupList from '@/components/pages/dashboard/data-bank/groupList';
 
-export default function SettingTemplate() {
+import { IModalState } from '../DataBank/type';
+import { FaceCP } from '@/components/pages/dashboard/setting/FaceCP';
+
+export function SettingTemplate() {
   const [modalData, setModalData] = useState<IModalState>({
     state: false,
   });
@@ -23,19 +26,25 @@ export default function SettingTemplate() {
   const tabs = [
     {
       id: 0,
-      label: <Typography>{DataBankRoute.usersList}</Typography>,
+      label: <Typography>{SettingRoute.face}</Typography>,
       disableTabRipple: false,
-      tabPanel: (
-        <UsersList
-          modal={modalData}
-          setModal={setModalData}
-          setImgModal={setImgModal}
-        />
-      ),
+      tabPanel: <FaceCP />,
     },
     {
       id: 1,
-      label: <Typography>{DataBankRoute.groupList}</Typography>,
+      label: <Typography>{SettingRoute.client}</Typography>,
+      disableTabRipple: false,
+      tabPanel: <GroupList modal={modalData} setModal={setModalData} />,
+    },
+    {
+      id: 2,
+      label: <Typography>{SettingRoute.publicSetting}</Typography>,
+      disableTabRipple: false,
+      tabPanel: <GroupList modal={modalData} setModal={setModalData} />,
+    },
+    {
+      id: 3,
+      label: <Typography>{SettingRoute.backup}</Typography>,
       disableTabRipple: false,
       tabPanel: <GroupList modal={modalData} setModal={setModalData} />,
     },

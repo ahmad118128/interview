@@ -1,4 +1,4 @@
-import SettingTemplate from '@/components/template/Setting';
+import { SettingTemplate } from '@/components/template/Setting';
 
 export default function Setting() {
   return <SettingTemplate />;

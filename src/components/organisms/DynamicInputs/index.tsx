@@ -50,13 +50,7 @@
 //                 />
 //               )}
 //               {typeInput === 'textField' && (
-//                 <CustomInput
-//                   defaultValue={value}
-//                   name={name}
-//                   label={label}
-//                   control={control}
-//                   {...props}
-//                 />
+//                 c
 //               )}
 //               {typeInput === 'datepicker' && (
 //                 <ControlledTimeDatePickerInput

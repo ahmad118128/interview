@@ -16,7 +16,6 @@ import { useState } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { CustomButton } from '@/components/atoms/CustomButton';
-// import { FilterChild } from '@/components/pages/dashboard/image-recognition/FilterChild';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
 import { FilterIcon } from '@/components/CustomTable/shared';
 import { MobileCollapseTable } from '@/components/CustomTable/widgets';
@@ -35,6 +34,10 @@ import {
 } from '@/components/pages/dashboard/image-recognition/constants';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 import { StyledContainerImageRecognition } from './styled';
+import {
+  FilterChildSecond,
+  FilterChildFirst,
+} from '@/components/pages/dashboard/image-recognition/FilterChild';
 
 const CustomAccordion = styled(Accordion)({
   backgroundColor: 'transparent',
@@ -212,7 +215,7 @@ export default function ImageRecognitionTemplate() {
                 </Box>
               </AccordionSummary>
               <AccordionDetails sx={{ marginTop: '2rem' }}>
-                {/* <FilterChild control={control} /> */}
+                <FilterChildFirst control={control} />
               </AccordionDetails>
             </CustomAccordion>
 
@@ -279,7 +282,7 @@ export default function ImageRecognitionTemplate() {
                 </Box>
               </AccordionSummary>
               <AccordionDetails sx={{ marginTop: '2rem' }}>
-                {/* <FilterChild control={control} /> */}
+                <FilterChildSecond control={control} />
               </AccordionDetails>
             </CustomAccordion>
           </RadioGroup>

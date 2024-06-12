@@ -1259,4 +1259,6 @@ export const DataBankRoute = {
   deleteModalBlackText: 'آیا برای حذف این گزینه مطمئن هستید ؟',
   filter: 'فیلتر',
   earase: 'پاک‌سازی',
+  accurancyStart: 'آستانه تطابق',
+  accurancyNumber: 'تعداد تطابق',
 };

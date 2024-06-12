@@ -14,12 +14,8 @@ import { FilterContainer } from './FilterContainer';
 import { UsersFilterProps } from '../../image-recognition/types';
 import { initFilter } from '../../image-recognition/constants';
 
-export default function GroupList() {
+export default function GroupList({ modal, setModal }: any) {
   const [collapse, setCollapse] = useState(false);
-  const [modalData, setModalData] = useState<IModalState>({
-    state: false,
-  });
-  const [imgModal, setImgModal] = useState(false);
   const [filtersChips, setFiltersChips] = useState<
     FiltersChips<UsersFilterProps>
   >([]);
@@ -94,8 +90,8 @@ export default function GroupList() {
             height="24"
             color={theme.palette.primary.main}
             onClick={(e) =>
-              setModalData({
-                ...modalData,
+              setModal({
+                ...modal,
                 state: true,
                 id: row?.id,
               })

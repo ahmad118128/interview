@@ -16,12 +16,11 @@ import { useState } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { CustomButton } from '@/components/atoms/CustomButton';
-// import { FilterChild } from '@/components/pages/dashboard/image-recognition/FilterChild';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
 import { FilterIcon } from '@/components/CustomTable/shared';
 import { MobileCollapseTable } from '@/components/CustomTable/widgets';
 import { CellType } from '@/components/CustomTable/types';
-import { commonWords } from '@/strings';
+import { DataBankRoute, commonWords } from '@/strings';
 import theme from '@/theme';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 import {
@@ -35,6 +34,14 @@ import {
 } from '@/components/pages/dashboard/image-recognition/constants';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 import { StyledContainerImageRecognition } from './styled';
+import {
+  FilterChildSecond,
+  FilterChildFirst,
+} from '@/components/pages/dashboard/image-recognition/FilterChild';
+import { IModalState } from '../DataBank/type';
+import CustomModal from '@/components/organisms/Modal/CustomModal';
+import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
+import ReportPictureModal from '@/components/organisms/Modal/ReportPictureModal';
 
 const CustomAccordion = styled(Accordion)({
   backgroundColor: 'transparent',
@@ -63,6 +70,10 @@ export default function ImageRecognitionTemplate() {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [tableData, setTableData] = useState<null | ISuccess | IError>(null);
   const [order, setOrder] = useState<string | unknown>('');
+  const [modalData, setModalData] = useState<IModalState>({
+    state: false,
+  });
+  const [imgModal, setImgModal] = useState(false);
 
   const methods = useForm({
     defaultValues: {
@@ -119,17 +130,25 @@ export default function ImageRecognitionTemplate() {
       function: (row) => (
         <TableCell>
           <Icon
-            icon="ic:baseline-delete"
+            icon="fluent:clipboard-text-32-filled"
             width="24"
             height="24"
             color={theme.palette.primary.main}
             style={{ marginLeft: '0.5rem' }}
+            onClick={(e) =>
+              setModalData({
+                ...modalData,
+                state: true,
+                id: row?.id,
+              })
+            }
           />
           <Icon
             icon="ep:picture-filled"
             width="24"
             height="24"
             color={theme.palette.primary.main}
+            onClick={() => setImgModal(true)}
           />
         </TableCell>
       ),
@@ -212,7 +231,7 @@ export default function ImageRecognitionTemplate() {
                 </Box>
               </AccordionSummary>
               <AccordionDetails sx={{ marginTop: '2rem' }}>
-                {/* <FilterChild control={control} /> */}
+                <FilterChildFirst control={control} />
               </AccordionDetails>
             </CustomAccordion>
 
@@ -279,7 +298,7 @@ export default function ImageRecognitionTemplate() {
                 </Box>
               </AccordionSummary>
               <AccordionDetails sx={{ marginTop: '2rem' }}>
-                {/* <FilterChild control={control} /> */}
+                <FilterChildSecond control={control} />
               </AccordionDetails>
             </CustomAccordion>
           </RadioGroup>
@@ -315,6 +334,35 @@ export default function ImageRecognitionTemplate() {
           setOrder(id);
         }}
       />
+
+      {modalData.state ? (
+        <ReportPictureModal
+          id={modalData.id ? modalData.id : 0}
+          open={modalData.state}
+          activeButtonHandler={() => console.log(modalData.id)}
+          title={DataBankRoute.deleteModalBlackText}
+          handleClose={() => setModalData({ state: false })}
+          data={{
+            src: '/assets/images/dashboard/technology 1.svg',
+            name: 'test',
+            sex: 'مرد',
+            age: 0,
+            date: '1373/09/04 09:19',
+            arrow: 'ورودی-خروجی',
+            birthCity: 'تهران',
+            agreementPercent: '35-45',
+          }}
+        />
+      ) : null}
+
+      {imgModal ? (
+        <ThumbnailPicModal
+          handleClose={() => setImgModal(false)}
+          open={imgModal}
+          setOpen={setImgModal}
+          src={'/assets/images/dashboard/technology 1.svg'}
+        />
+      ) : null}
     </>
   );
 }

@@ -1,7 +1,6 @@
 'use client';
-import { useState } from 'react';
+
 import { StyledContainer, StyledFilterChild } from './styled';
-import { allValidateType } from '@/components/BaseComponents/baseInput';
 import { StyledInputContainer } from '@/components/pages/dashboard/image-recognition/FilterChild/styled';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 import { DataBankRoute } from '@/strings';

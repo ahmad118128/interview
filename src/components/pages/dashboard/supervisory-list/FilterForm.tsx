@@ -5,7 +5,7 @@ import { DataBankRoute, SupervisitoryListRoute } from '@/strings';
 import { CustomRHFAutocomplete } from '@/components/atoms/Autocomplete';
 import { CustomButton } from '@/components/atoms/CustomButton';
 
-export default function FilterForm({ control, reset }: any) {
+export function FilterForm({ control, reset }: any) {
   return (
     <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
       <Grid item xs={12} md={3}>

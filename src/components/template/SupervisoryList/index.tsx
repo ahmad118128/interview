@@ -1,14 +1,16 @@
 'use client';
 
+import { useState } from 'react';
+
 import { CustomTab } from '@/components/molecules/CustomTab/styled';
 import { DataBankRoute } from '@/strings';
 import { Typography } from '@mui/material';
-import { useState } from 'react';
 import CustomModal from '@/components/organisms/Modal/CustomModal';
-import { IModalState } from '../DataBank/type';
-import SuperVisoryList from '@/components/pages/dashboard/supervisory-list';
+import { SuperVisoryList } from '@/components/pages/dashboard/supervisory-list';
 
-export default function SupervisoryListTemplate() {
+import { IModalState } from '../DataBank/type';
+
+export function SupervisoryListTemplate() {
   const [modalData, setModalData] = useState<IModalState>({
     state: false,
   });

@@ -1,20 +1,22 @@
+import { useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
 import { commonWords } from '@/strings';
-import { useState } from 'react';
-import { FieldValues, FormProvider, useForm } from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
 import { TableCell } from '@mui/material';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import theme from '@/theme';
-import { usePathname, useRouter } from 'next/navigation';
 import { IModalState } from '@/components/template/DataBank/type';
 import TableWithFab from '@/components/template/TableWithFab';
+
 import { supervisitoryListHeader, supervisitoryListMock } from './constants';
 import { initFilter } from '../image-recognition/constants';
 import { UsersFilterProps } from '../image-recognition/types';
 import { FilterContainer } from './FilterContainer';
 
-export default function SuperVisoryList({ setModal, modal }: any) {
+export function SuperVisoryList({ setModal, modal }: any) {
   const [collapse, setCollapse] = useState(false);
   const [filtersChips, setFiltersChips] = useState<
     FiltersChips<UsersFilterProps>
@@ -113,23 +115,21 @@ export default function SuperVisoryList({ setModal, modal }: any) {
     },
   ];
 
-  const { control, reset } = { ...methods };
+  const { control, reset, handleSubmit } = useForm();
 
   return (
     <>
-      <FormProvider {...methods}>
-        <form onSubmit={methods.handleSubmit(submitHandler)}>
-          <FilterContainer
-            control={control}
-            reset={reset}
-            collapse={collapse}
-            onHandleIconClick={handleIconClick}
-            chips={filtersChips}
-            handleFiltersChips={handleFiltersChips}
-            refreshLoading={isLoading}
-          />
-        </form>
-      </FormProvider>
+      <form onSubmit={handleSubmit(submitHandler)}>
+        <FilterContainer
+          control={control}
+          reset={reset}
+          collapse={collapse}
+          onHandleIconClick={handleIconClick}
+          chips={filtersChips}
+          handleFiltersChips={handleFiltersChips}
+          refreshLoading={isLoading}
+        />
+      </form>
       <TableWithFab
         tableHeads={tableHeadsUser}
         data={supervisitoryListMock}

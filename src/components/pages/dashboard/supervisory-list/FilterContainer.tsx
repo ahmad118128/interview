@@ -3,7 +3,8 @@ import theme from '@/theme';
 import { leftIcons } from '@/components/CustomTable/widgets/FilterContainer/constants';
 import { FilterIcon } from '@/components/CustomTable/shared';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
-import FilterForm from './FilterForm';
+
+import { FilterForm } from './FilterForm';
 import {
   EFilterModeIcon,
   HeaderFilterTableProps,
@@ -25,9 +26,7 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
     collapse,
     onHandleIconClick,
     activeMode = EFilterModeIcon.TABLE,
-    refreshLoading,
     handleFiltersChips,
-    onSearchClick,
   } = props;
 
   if (props.hasModeHandler && !props.onHandleModeChange) {

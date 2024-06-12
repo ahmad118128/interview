@@ -20,7 +20,7 @@ export const FilterChildSecond = ({ control }: any) => {
         </StyledInputContainer>
         <StyledInputContainer item xs={12} md={4} lg={3}>
           <CustomRHFAutocomplete
-            label={DataBankRoute.supervisortList}
+            label={DataBankRoute.supervisoryList}
             control={control}
             name="supervisortList"
             options={[]}

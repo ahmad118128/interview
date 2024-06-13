@@ -2,12 +2,11 @@
 import { useState, SyntheticEvent } from 'react';
 import { Box, Tab, Tabs } from '@mui/material';
 import { Icon } from '@iconify/react';
-
-import { TabPanel } from '@/components/BaseComponents/BaseTab/TabPanel';
 import {
   TabDataItemType,
   TabProps,
 } from '@/components/BaseComponents/BaseTab/type';
+import { TabPanel } from '@/components/BaseComponents/BaseTab/TabPanel';
 
 export const BaseTab = (props: TabProps) => {
   const { data, activeId, type, sx, tabBtnSx, className } = props;

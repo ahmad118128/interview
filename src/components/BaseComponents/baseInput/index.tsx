@@ -16,37 +16,6 @@ export const allValidateType = {
 };
 
 export const BaseInput = (props: BaseInputProps) => {
-  const { validateType, setError, name, ...rest } = props;
-  const onChangeHandler = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-    onChange: any
-  ) => {
-    if (
-      !validateType ||
-      !e.target.value ||
-      e.target.value.match(allValidateType[validateType].value)
-    ) {
-      onChange(e);
-    } else {
-      setError?.(name ? name : '', {
-        message: allValidateType[validateType].message,
-        type: 'manual',
-      });
-      console.log(
-        !validateType ||
-          !e.target.value ||
-          e.target.value.match(allValidateType[validateType].value)
-      );
-    }
-  };
-  return (
-    <TextField
-      {...rest}
-      onChange={(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-        onChangeHandler(e, props.onChange)
-      }
-    />
-  );
+  const { ...rest } = props;
+  return <TextField {...rest} />;
 };
-
-// export * from './type';

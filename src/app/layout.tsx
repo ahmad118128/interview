@@ -10,17 +10,17 @@ const myFont = localFont({
   display: 'swap',
   src: [
     {
-      path: '../../public/fonts/IRANYekanWebRegular.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/IRANYekanWebLight.woff2',
+      path: '../../public/fonts/iranyekanweblightfanum.woff',
       weight: '300',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/IRANYekanWebBold.woff2',
+      path: '../../public/fonts/iranyekanwebregularfanum.woff',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/iranyekanwebboldfanum.woff',
       weight: '700',
       style: 'normal',
     },

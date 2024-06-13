@@ -1,11 +1,18 @@
 'use client';
 
-import { FormProvider, useForm, SubmitHandler } from 'react-hook-form';
+import { CustomRadioButton } from '@/components/atoms/CustomRadioButton';
+import SlidePicture from '@/components/molecules/Slider';
+import {
+  FormProvider,
+  useForm,
+  SubmitHandler,
+  FieldValues,
+} from 'react-hook-form';
 import DragAndDropUpload from '@/components/organisms/UploaderInput';
 import { Box } from '@mui/material';
 import { CustomButton } from '@/components/atoms/CustomButton';
 import CustomModal from '@/components/organisms/Modal/CustomModal';
-import { ReportModal, message } from '@/strings';
+import { ReportModal } from '@/strings';
 import { Button } from '@mui/material';
 import { useState } from 'react';
 import ReportPictureModal from '@/components/organisms/Modal/ReportPictureModal';
@@ -23,6 +30,7 @@ const mockData = {
 
 export interface FormData {
   images: File[];
+  data: any;
 }
 
 type FormInputs = {
@@ -41,14 +49,30 @@ export default function Home() {
   const handleOpen = () => setOpen(true);
   const handleOpenPicModal = () => setOpenPicModal(true);
 
-  const { control, register, handleSubmit } = useForm();
+  const { control, handleSubmit } = useForm<FieldValues>();
 
-  const onSubmit: SubmitHandler<FormData> = (data) => {
+  const onSubmit = (data: FieldValues) => {
     console.log(data);
   };
 
   return (
     <>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <CustomRadioButton
+            control={control}
+            rules={{ required: true }}
+            name={'data'}
+          />
+          <input type="submit" />
+        </form>
+      </div>
       <Box sx={{ padding: '1rem' }}>
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(onSubmit)}>
@@ -73,6 +97,7 @@ export default function Home() {
         open={openPicModal}
         setOpen={setOpenPicModal}
       />
+      <SlidePicture />
     </>
   );
 }

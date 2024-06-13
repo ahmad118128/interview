@@ -1,5 +1,4 @@
 import { ReactElement, ReactNode } from 'react';
-import { type FiltersChips } from '../../types';
 
 export type HeaderMode = EFilterModeIcon.TABLE | EFilterModeIcon.CHART;
 export type onHandleModeChange = (name: HeaderMode) => void;

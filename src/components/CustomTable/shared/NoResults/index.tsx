@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Grid, TableBody, TableCell, Typography } from '@mui/material';
 
 import { StyledTableRow } from './styled';
-import { tablePhrases } from '../../strings';
+import { tablePhrases } from '@/components/CustomTable/strings';
 
 type Props = {
   title?: string;

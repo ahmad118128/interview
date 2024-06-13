@@ -2,7 +2,6 @@
 import { useState, SyntheticEvent } from 'react';
 import { Box, Tab, Tabs } from '@mui/material';
 import { Icon } from '@iconify/react';
-
 import {
   TabDataItemType,
   TabProps,

@@ -1,11 +1,4 @@
-import { TextareaAutosizeProps } from '@mui/material';
-import {
-  Control,
-  FieldValues,
-  InputValidationRules,
-  RegisterOptions,
-  UseControllerProps,
-} from 'react-hook-form';
+import { Control, FieldValues, RegisterOptions } from 'react-hook-form';
 
 export interface TextareaFormControlProps {
   disabled?: boolean;

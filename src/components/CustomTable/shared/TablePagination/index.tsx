@@ -1,5 +1,4 @@
 import { ChangeEvent } from 'react';
-
 import { StyledTablePagination } from './styled';
 import { type CustomPaginationProps } from './types';
 

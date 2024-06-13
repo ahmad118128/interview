@@ -1,13 +1,16 @@
 'use client';
 
+import { BasedFabButton } from '@/components/BaseComponents/BasedFabButton';
 import { styled } from '@mui/material';
-import { BasedFabButton } from '../../BaseComponents/BasedFabButton';
 
 export const StyledFab = styled(BasedFabButton)`
   &.MuiFab-root {
     background-color: ${({ disabled, theme }) =>
       disabled ? theme.palette.grey[300] : theme.palette.primary.light};
     box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+    position: fixed;
+    left: 3rem;
+    bottom: 2.5rem;
   }
 
   &.MuiFab-root svg {

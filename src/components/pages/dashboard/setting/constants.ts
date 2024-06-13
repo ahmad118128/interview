@@ -68,3 +68,79 @@ export const lastBackupStatusHeader: CellType[] = [
     sortable: true,
   },
 ];
+
+export const ClientHeader: CellType[] = [
+  {
+    id: COLLAPSE_ID,
+    label: '',
+  },
+  {
+    id: 'factoryName',
+    label: SettingRoute.factoryName,
+    sortable: true,
+  },
+  {
+    id: 'stationName',
+    label: SettingRoute.stationName,
+    sortable: true,
+  },
+  {
+    id: 'clientAddress',
+    label: SettingRoute.clientAddress,
+    sortable: true,
+  },
+  {
+    id: 'clientStatus',
+    label: SettingRoute.clientStatus,
+    sortable: true,
+  },
+  {
+    id: 'supervisoryList',
+    label: DataBankRoute.supervisoryList,
+    sortable: true,
+  },
+  {
+    id: 'recordFrameStatus',
+    label: SettingRoute.recordFrameStatus,
+    sortable: true,
+  },
+];
+
+export const ClientMock = [
+  {
+    id: 1,
+    factoryName: 'علوم سبز',
+    stationName: 'نام ایستگاه',
+    clientAddress: ' 112.16.14.75',
+    clientStatus: ' دوربین وصل',
+    supervisoryList: 'لیست۱-لیست۲-لیست۳',
+    recordFrameStatus: 'فریم ها ثبت شوند',
+  },
+  {
+    id: 2,
+    factoryName: 'علوم سبز',
+    stationName: 'نام ایستگاه',
+    clientAddress: ' 112.16.14.75',
+    clientStatus: ' دوربین وصل',
+    supervisoryList: 'لیست۱-لیست۲-لیست۳',
+    recordFrameStatus: 'فریم ها ثبت شوند',
+  },
+  {
+    id: 3,
+    factoryName: 'علوم سبز',
+    stationName: 'نام ایستگاه',
+    clientAddress: ' 112.16.14.75',
+    clientStatus: ' دوربین وصل',
+    supervisoryList: 'لیست۱-لیست۲-لیست۳',
+    recordFrameStatus: 'فریم ها ثبت شوند',
+  },
+  {
+    id: 4,
+    factoryName: 'علوم سبز',
+    stationName: 'نام ایستگاه',
+    clientAddress: ' 112.16.14.75',
+    clientStatus: ' دوربین وصل',
+    supervisoryList: 'لیست۱-لیست۲-لیست۳',
+    recordFrameStatus: 'فریم ها ثبت شوند',
+  },
+];

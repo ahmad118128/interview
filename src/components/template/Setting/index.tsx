@@ -13,6 +13,7 @@ import { FaceCP } from '@/components/pages/dashboard/setting/FaceCP';
 
 import { IModalState } from '../DataBank/type';
 import { BackupCP } from '@/components/pages/dashboard/setting/BackupCp';
+import { ClientCp } from '@/components/pages/dashboard/setting/ClientCp';
 
 export function SettingTemplate() {
   const [modalData, setModalData] = useState<IModalState>({
@@ -34,7 +35,7 @@ export function SettingTemplate() {
       id: 1,
       label: <Typography>{SettingRoute.client}</Typography>,
       disableTabRipple: false,
-      // tabPanel: <GroupList modal={modalData} setModal={setModalData} />,
+      tabPanel: <ClientCp modal={modalData} setModal={setModalData} />,
     },
     {
       id: 2,

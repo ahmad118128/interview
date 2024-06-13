@@ -1,23 +1,25 @@
 'use client';
 
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+
 import { Typography } from '@mui/material';
 import { SupervisitoryListRoute } from '@/strings';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
-import { useRouter } from 'next/navigation';
+import { MobileCollapseTable } from '@/components/CustomTable/widgets';
+import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
+
 import {
   StyledAddFormHeader,
   StyledAddFormMain,
   StyledAddFormWrapper,
 } from '../../data-bank/usersList/styled';
-import { MobileCollapseTable } from '@/components/CustomTable/widgets';
 import { COLLAPSE_ID } from '../../image-recognition/constants';
 import {
   supervisitoryListMembersHeader,
   supervisitoryListMembersMock,
 } from '../constants';
-import { useState } from 'react';
 import { IError, ISuccess } from '../../image-recognition/types';
-import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 
 export default function Members() {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -37,29 +39,27 @@ export default function Members() {
   };
 
   return (
-    <>
-      <StyledAddFormWrapper>
-        <StyledAddFormHeader>
-          <Typography variant="h2">
-            {SupervisitoryListRoute.supervisitoryListMembers}
-          </Typography>
+    <StyledAddFormWrapper>
+      <StyledAddFormHeader>
+        <Typography variant="h2">
+          {SupervisitoryListRoute.supervisitoryListMembers}
+        </Typography>
 
-          <IconButton iconName="tabler:arrow-narrow-left" onClick={goBackUrl} />
-        </StyledAddFormHeader>
+        <IconButton iconName="tabler:arrow-narrow-left" onClick={goBackUrl} />
+      </StyledAddFormHeader>
 
-        <StyledAddFormMain>
-          <MobileCollapseTable
-            rows={supervisitoryListMembersMock}
-            headers={supervisitoryListMembersHeader}
-            error={!tableData?.data?.results}
-            mobileIdFilter={[COLLAPSE_ID, 'fullName', 'nationalId']}
-            pagination={pagination}
-            handleSort={(id) => {
-              setOrder(id);
-            }}
-          />
-        </StyledAddFormMain>
-      </StyledAddFormWrapper>
-    </>
+      <StyledAddFormMain>
+        <MobileCollapseTable
+          rows={supervisitoryListMembersMock}
+          headers={supervisitoryListMembersHeader}
+          error={!tableData?.data?.results}
+          mobileIdFilter={[COLLAPSE_ID, 'fullName', 'nationalId']}
+          pagination={pagination}
+          handleSort={(id) => {
+            setOrder(id);
+          }}
+        />
+      </StyledAddFormMain>
+    </StyledAddFormWrapper>
   );
 }

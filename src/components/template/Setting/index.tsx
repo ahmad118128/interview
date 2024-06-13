@@ -8,11 +8,11 @@ import { DataBankRoute, SettingRoute } from '@/strings';
 import { Typography } from '@mui/material';
 import CustomModal from '@/components/organisms/Modal/CustomModal';
 import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
-import UsersList from '@/components/pages/dashboard/data-bank/usersList';
-import GroupList from '@/components/pages/dashboard/data-bank/groupList';
+import { SocialSettingCp } from '@/components/pages/dashboard/setting/SocialSettingCp';
+import { FaceCP } from '@/components/pages/dashboard/setting/FaceCP';
 
 import { IModalState } from '../DataBank/type';
-import { FaceCP } from '@/components/pages/dashboard/setting/FaceCP';
+import { BackupCP } from '@/components/pages/dashboard/setting/BackupCp';
 
 export function SettingTemplate() {
   const [modalData, setModalData] = useState<IModalState>({
@@ -34,19 +34,19 @@ export function SettingTemplate() {
       id: 1,
       label: <Typography>{SettingRoute.client}</Typography>,
       disableTabRipple: false,
-      tabPanel: <GroupList modal={modalData} setModal={setModalData} />,
+      // tabPanel: <GroupList modal={modalData} setModal={setModalData} />,
     },
     {
       id: 2,
       label: <Typography>{SettingRoute.publicSetting}</Typography>,
       disableTabRipple: false,
-      tabPanel: <GroupList modal={modalData} setModal={setModalData} />,
+      tabPanel: <SocialSettingCp />,
     },
     {
       id: 3,
       label: <Typography>{SettingRoute.backup}</Typography>,
       disableTabRipple: false,
-      tabPanel: <GroupList modal={modalData} setModal={setModalData} />,
+      tabPanel: <BackupCP />,
     },
   ];
 

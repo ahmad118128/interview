@@ -36,12 +36,6 @@ export function FaceCP() {
     router.back();
   };
 
-  const radioItems = [
-    { name: `${SettingRoute.doNotRecordFaces}`, id: 1 },
-    { name: `${SettingRoute.justRecordMatchedFaces}`, id: 2 },
-    { name: `${SettingRoute.passingFacesRecord}`, id: 3 },
-  ];
-
   return (
     <StyledAddFormWrapper>
       <StyledAddFormHeader>
@@ -126,28 +120,18 @@ export function FaceCP() {
                   value="doNotRecordFaces"
                   control={<Radio sx={{ paddingRight: '0' }} />}
                   label={SettingRoute.doNotRecordFaces}
-                  // sx={{
-                  //   marginRight: 0,
-                  //   marginBottom: selected === 'female' ? '2rem' : 0,
-                  // }}
                 />
+
                 <FormControlLabel
                   value="justRecordMatchedFaces"
                   control={<Radio sx={{ paddingRight: '0' }} />}
                   label={SettingRoute.justRecordMatchedFaces}
-                  // sx={{
-                  //   marginRight: 0,
-                  //   marginBottom: selected === 'female' ? '2rem' : 0,
-                  // }}
                 />
+
                 <FormControlLabel
                   value="passingFacesRecord"
                   control={<Radio sx={{ paddingRight: '0' }} />}
                   label={SettingRoute.passingFacesRecord}
-                  // sx={{
-                  //   marginRight: 0,
-                  //   marginBottom: selected === 'female' ? '2rem' : 0,
-                  // }}
                 />
               </RadioGroup>
             </Grid>

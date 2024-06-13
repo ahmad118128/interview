@@ -1288,7 +1288,7 @@ export const SettingRoute = {
   backupFileAddress: ' آدرس ذخیره سازی فایل پشتیبان',
   backupDate: 'تاریخ پشتیبان گیری',
   dayCount: 'تعداد روز',
-  hour: 'ساعت',
+  hourCount: 'ساعت',
   record: 'ثبت',
   refuse: 'انصراف',
   lastBackupStatus: 'آخرین وضعیت پشتیبان گیری',

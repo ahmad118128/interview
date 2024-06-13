@@ -24,9 +24,10 @@ import { commonWords, generalStr, registrationStr } from '@/strings';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 import IconWithUrl from './IconWithUrl';
 import { CustomButton } from '@/components/atoms/CustomButton';
-import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
+
 import { Icon } from '@iconify/react/dist/iconify.js';
 import theme from '@/theme';
+import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 
 const payloadSnackbar: SnackBarType = {
   display: true,

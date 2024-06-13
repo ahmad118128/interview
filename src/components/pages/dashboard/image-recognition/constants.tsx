@@ -3,7 +3,7 @@ import { UsersFilterProps } from './types';
 import { Status } from '@/components/CustomTable/shared/Status';
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { handleArray } from '@/components/CustomTable/utils';
-import { commonWords, generalStr, usersStr } from '@/strings';
+import { DataBankRoute, commonWords, generalStr, usersStr } from '@/strings';
 
 export const COLLAPSE_ID = 'collapse';
 
@@ -23,6 +23,7 @@ export const headers: CellType[] = [
     sortable: true,
   },
 ];
+
 export const chipsCreator = (
   newFilter: UsersFilterProps
 ): FiltersChips<UsersFilterProps> => {

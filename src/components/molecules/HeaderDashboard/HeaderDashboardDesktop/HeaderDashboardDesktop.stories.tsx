@@ -1,26 +1,27 @@
-import React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
-import HeaderDashboardDesktop from './index';
+import * as React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeProvider } from '@emotion/react';
 import theme from '@/theme';
+import HeaderDashboardDesktop from '.';
 
-export default {
-  title: 'Components/Header/HeaderDashboard/Desktop',
+const meta: Meta<typeof HeaderDashboardDesktop> = {
+  title: 'Components/Header/HeaderDashboardDesktop',
   component: HeaderDashboardDesktop,
+  tags: ['autodocs'],
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>
-        <div style={{ height: '105vh' }}>
-          <Story />
-        </div>
+        <Story />
       </ThemeProvider>
     ),
   ],
-} as Meta;
+  args: {},
+};
 
-const Template: StoryFn<any> = (args = {}) => (
-  <HeaderDashboardDesktop {...args} />
-);
+export default meta;
 
-export const Default = Template.bind({});
-Default.args = {};
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  render: (args) => <HeaderDashboardDesktop {...args} />,
+};

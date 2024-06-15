@@ -1,3 +1,5 @@
+import { SettingTemplate } from '@/components/template/Setting';
+
 export default function Setting() {
-  return <>setting</>;
+  return <SettingTemplate />;
 }

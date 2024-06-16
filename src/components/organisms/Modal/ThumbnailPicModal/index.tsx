@@ -10,7 +10,12 @@ export default function ThumbnailPicModal({
   handleClose,
 }: thumbnailModalProps) {
   return (
-    <CustomModal open={open} setOpen={setOpen} handleClose={handleClose}>
+    <CustomModal
+      open={open}
+      setOpen={setOpen}
+      handleClose={handleClose}
+      title={title}
+    >
       <Image src={src} alt="thumbnailPic" width={349} height={349} />
     </CustomModal>
   );

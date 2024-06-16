@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 
 export type ReportPictureModalProps = {
-  data: {
+  personInfo: {
     src: string;
     name: string;
     sex: string;
@@ -15,7 +15,7 @@ export type ReportPictureModalProps = {
   setOpen?: Dispatch<SetStateAction<boolean>>;
   title: string;
   id?: number;
-  handleClose?: () => void;
+  onClose?: () => void;
   onSubmit?: () => void;
   buttons?: boolean;
 };

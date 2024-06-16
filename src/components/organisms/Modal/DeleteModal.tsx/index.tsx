@@ -14,7 +14,7 @@ export const DeleteModal = ({
   setOpen,
   title,
   buttons,
-  handleClose,
+  onClose,
   id,
   onSubmit,
 }: CustomModalProps) => {
@@ -23,7 +23,7 @@ export const DeleteModal = ({
       open={open}
       setOpen={setOpen}
       buttons={buttons}
-      handleClose={handleClose}
+      onClose={onClose}
       id={id}
       onSubmit={onSubmit}
     >

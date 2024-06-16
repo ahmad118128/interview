@@ -348,8 +348,8 @@ export default function ImageRecognitionTemplate() {
           open={modalData.state}
           onSubmit={() => console.log(modalData.id)}
           title={ReportModal.results}
-          handleClose={() => setModalData({ state: false })}
-          data={{
+          onClose={() => setModalData({ state: false })}
+          personInfo={{
             src: '/assets/images/dashboard/technology 1.svg',
             name: 'test',
             sex: 'مرد',
@@ -364,7 +364,7 @@ export default function ImageRecognitionTemplate() {
 
       {imgModal ? (
         <ThumbnailPicModal
-          handleClose={() => setImgModal(false)}
+          onClose={() => setImgModal(false)}
           title={ReportModal.uploadedImg}
           open={imgModal}
           setOpen={setImgModal}

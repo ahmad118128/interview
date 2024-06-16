@@ -22,14 +22,14 @@ export default function CustomModal({
   buttons,
   onSubmit,
   id,
-  handleClose,
+  onClose,
   ...res
 }: CustomModalProps) {
   return (
     <Modal
       keepMounted
       open={open}
-      onClose={handleClose}
+      onClose={onClose}
       aria-labelledby="keep-mounted-modal-title"
       aria-describedby="keep-mounted-modal-description"
       {...res}
@@ -39,7 +39,7 @@ export default function CustomModal({
           <IconButton
             iconName="streamline:delete-1"
             size="small"
-            onClick={handleClose}
+            onClick={onClose}
             height={16}
             width={16}
           />
@@ -52,7 +52,7 @@ export default function CustomModal({
             <CustomButton variant="contained" onClick={onSubmit}>
               {registrationStr.ok}
             </CustomButton>
-            <CustomButton variant="outlined" onClick={handleClose}>
+            <CustomButton variant="outlined" onClick={onClose}>
               {generalStr.refuse}
             </CustomButton>
           </StyledActionButtonsBox>

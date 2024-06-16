@@ -40,7 +40,7 @@ export default function Home() {
       <DeleteModal
         open={open}
         setOpen={setOpen}
-        handleClose={handleClose}
+        onClose={handleClose}
         title="آیا برای حذف نام‌ و نام‌خانوادگی مطمئن هستید ؟"
         buttons
       />

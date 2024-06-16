@@ -35,7 +35,7 @@ export function SupervisoryListTemplate() {
           onSubmit={() => console.log(modalData.id)}
           buttons
           title={DataBankRoute.deleteModalBlackText}
-          handleClose={() => setModalData({ state: false })}
+          onClose={() => setModalData({ state: false })}
         ></DeleteModal>
       ) : null}
     </>

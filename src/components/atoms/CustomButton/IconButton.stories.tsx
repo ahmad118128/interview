@@ -1,13 +1,20 @@
 import * as React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { ThemeProvider } from '@emotion/react';
 import theme from '@/theme';
-import { IconButtonProps } from './type';
 import { IconButton } from './IconButton';
 
-export default {
-  title: 'IconButton',
+const meta: Meta<typeof IconButton> = {
+  title: 'atoms/IconButton',
   component: IconButton,
+  tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'This is the IconButton component.',
+      },
+    },
+  },
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>
@@ -15,17 +22,24 @@ export default {
       </ThemeProvider>
     ),
   ],
+  args: {
+    title: '',
+    iconName: '',
+    width: 20,
+    height: 20,
+    disabled: false,
+  },
 } as Meta;
 
-const Template: StoryFn<IconButtonProps> = (args) => {
-  return <IconButton {...args} />;
-};
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const DefaultButton = Template.bind({});
-DefaultButton.args = {
-  title: 'search',
-  iconName: 'tabler:search',
-  width: 20,
-  height: 20,
-  disabled: false,
+export const CloseIconButton: Story = {
+  args: {
+    title: 'close',
+    iconName: 'iconamoon:close',
+    width: 20,
+    height: 20,
+    disabled: false,
+  },
 };

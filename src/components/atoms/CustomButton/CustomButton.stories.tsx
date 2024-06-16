@@ -1,14 +1,21 @@
 import * as React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { ThemeProvider } from '@emotion/react';
 import theme from '@/theme';
 import { CustomButton } from '.';
-import { ButtonProps } from './type';
 import { IconButton } from './IconButton';
 
-export default {
-  title: 'CustomButton',
+const meta: Meta<typeof CustomButton> = {
+  title: 'atoms/CustomButton',
   component: CustomButton,
+  tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'This is the CustomButton component.',
+      },
+    },
+  },
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>
@@ -16,46 +23,44 @@ export default {
       </ThemeProvider>
     ),
   ],
-} as Meta;
-
-const Template: StoryFn<ButtonProps> = (args) => {
-  return <CustomButton {...args} />;
-};
-
-export const DefaultButton = Template.bind({});
-DefaultButton.args = {
-  children: 'Custom Button',
-  loading: false,
-  loadingText: false,
-  type: 'button',
-  variant: 'outlined',
-  disableElevation: false,
-  size: 'large',
-  onClick: () => {
-    console.log('modalData.id');
+  args: {
+    children: 'Custom Button',
+    loading: false,
+    loadingText: false,
+    type: 'button',
+    variant: 'outlined',
+    disableElevation: false,
+    size: 'large',
+    onClick: () => {},
+    disabled: false,
   },
-  disabled: false,
 };
 
-export const Loading = Template.bind({});
-Loading.args = {
-  loading: true,
-  type: 'button',
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Loading: Story = {
+  args: {
+    loading: false,
+    type: 'button',
+  },
 };
 
-export const LoadingText = Template.bind({});
-LoadingText.args = {
-  loadingText: true,
-  type: 'button',
-  variant: 'contained',
+export const LoadingText: Story = {
+  args: {
+    loadingText: false,
+    type: 'button',
+    variant: 'contained',
+  },
 };
 
-export const CustomIconButton = Template.bind({});
-CustomIconButton.args = {
-  children: <IconButton iconName="streamline:delete-1" size="medium" />,
-  loading: false,
-  loadingText: false,
-  type: 'button',
-  variant: 'outlined',
-  size: 'large',
+export const CustomIconButton: Story = {
+  args: {
+    children: <IconButton iconName="streamline:delete-1" size="medium" />,
+    loading: false,
+    loadingText: false,
+    type: 'button',
+    variant: 'outlined',
+    size: 'large',
+  },
 };

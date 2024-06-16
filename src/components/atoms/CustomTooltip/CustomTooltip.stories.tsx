@@ -15,7 +15,11 @@ const meta: Meta<typeof CustomTooltip> = {
       </ThemeProvider>
     ),
   ],
-  args: {},
+  args: {
+    title: 'CustomTooltip',
+    arrow: true,
+    placement: 'top',
+  },
 };
 
 export default meta;
@@ -28,11 +32,6 @@ export const Default: Story = {
       <span>Hover over me</span>
     </CustomTooltip>
   ),
-  args: {
-    title: 'CustomTooltip',
-    arrow: true,
-    placement: 'top',
-  },
 };
 export const ArrowOff: Story = {
   render: (args) => (

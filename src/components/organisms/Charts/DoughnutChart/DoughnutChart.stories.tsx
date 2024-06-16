@@ -7,13 +7,13 @@ import DoughnutChart from '.';
 const meta: Meta<typeof DoughnutChart> = {
   title: 'organism/DoughnutChart',
   component: DoughnutChart,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   parameters: {
     docs: {
       description: {
         component: 'This is the DoughnutChart component.',
       },
-    }
+    },
   },
   decorators: [
     (Story) => (
@@ -26,11 +26,11 @@ const meta: Meta<typeof DoughnutChart> = {
     chartLabel: '',
     labels: [],
     data: [],
-  }
+  },
 } as Meta;
 
 export default meta;
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof meta>;
 
 export const Client: Story = {
   args: {
@@ -38,12 +38,12 @@ export const Client: Story = {
     labels: ['نامشخص', 'شناسایی شده'],
     data: [120, 80],
   },
-}
+};
 
 export const Data: Story = {
   args: {
     chartLabel: 'Data',
     labels: ['زن', 'مرد'],
     data: [120, 80],
-  }
+  },
 };

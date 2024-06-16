@@ -7,13 +7,13 @@ import LineChart from '.';
 const meta: Meta<typeof LineChart> = {
   title: 'organism/LineChart',
   component: LineChart,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   parameters: {
     docs: {
       description: {
         component: 'This is the DoughnutChart component.',
       },
-    }
+    },
   },
   decorators: [
     (Story) => (
@@ -25,15 +25,15 @@ const meta: Meta<typeof LineChart> = {
   args: {
     labels: [],
     data: [],
-  }
+  },
 } as Meta;
 
 export default meta;
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof meta>;
 
 export const GeneralStr: Story = {
   args: {
     labels: ['January', 'February', 'March', 'April'],
     data: [0, 120, 40, 90],
   },
-}
+};

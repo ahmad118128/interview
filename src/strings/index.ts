@@ -1316,3 +1316,14 @@ export const SettingRoute = {
   recordLogsPath: 'مسیر ثبت Logs',
   recordDatabasePath: 'مسیر ثبت پایگاه داده',
 };
+
+export const TrafficAnalysisRoute = {
+  mensTraffic: 'تردد افراد با جنسیت آقا',
+  womensTraffic: 'تردد افراد با جنسیت خانم',
+  sampleChart: 'چارت نمونه',
+  trafficPerHour: 'تردد افراد بر اساس ساعت',
+  ageRange: 'بازه سنی افراد عبوری',
+  gateName: 'نام گیت',
+  startPassingDateAndTime: 'تاریخ و زمان عبور از',
+  endPassingDateAndTime: 'تاریخ و زمان عبور تا',
+};

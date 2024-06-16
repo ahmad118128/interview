@@ -21,15 +21,15 @@ const Template: StoryFn<BarChartProps> = (args) => {
   return <BarChart {...args} />;
 };
 
-export const stateList = Template.bind({});
-stateList.args = {
+export const StateList = Template.bind({});
+StateList.args = {
   labels: ['January', 'February', 'March', 'April'],
   data: [{ label: 'مرد', data: [120, 130, 140, 15] }],
   legend: false,
 };
 
-export const ageRange = Template.bind({});
-ageRange.args = {
+export const AgeRange = Template.bind({});
+AgeRange.args = {
   labels: ['January', 'February', 'March', 'April'],
   data: [
     { label: 'مرد', data: [120, 130, 140, 15] },

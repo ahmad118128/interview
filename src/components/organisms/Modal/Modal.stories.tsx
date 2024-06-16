@@ -31,10 +31,6 @@ const meta: Meta<typeof CustomModal> = {
       description: 'Controls the visibility of the modal.',
     },
     title: { control: 'text', description: 'Title of the modal.' },
-    errorTitle: {
-      control: 'text',
-      description: 'Error title displayed in the modal.',
-    },
     buttons: {
       control: 'boolean',
       description: 'Show action buttons if true.',
@@ -44,7 +40,6 @@ const meta: Meta<typeof CustomModal> = {
   args: {
     open: false,
     title: generalStr.explanationText,
-    errorTitle: generalStr.errors,
     buttons: true,
     onSubmit: () => {},
   },
@@ -121,7 +116,6 @@ export const WithoutTitle: Story = {
 
 export const Error: Story = {
   args: {
-    errorTitle: generalStr.errors,
     open: false,
   },
   render: (args) => {

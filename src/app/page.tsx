@@ -1,10 +1,19 @@
 'use client';
 
+import { CustomButton } from '@/components/atoms/CustomButton';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 import { allValidateType } from '@/components/BaseComponents/baseInput/index';
+import { DeleteModal } from '@/components/organisms/Modal/DeleteModal.tsx';
+import { useState } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 
 export default function Home() {
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => {
+    return setOpen(false);
+  };
+
   const { control, setError } = useForm<FieldValues>({
     mode: 'onChange',
   });
@@ -27,6 +36,14 @@ export default function Home() {
           }}
         />
       </form>
+      <CustomButton onClick={() => setOpen(true)}>openModal</CustomButton>
+      <DeleteModal
+        open={open}
+        setOpen={setOpen}
+        handleClose={handleClose}
+        title="آیا برای حذف نام‌ و نام‌خانوادگی مطمئن هستید ؟"
+        buttons
+      />
     </>
   );
 }

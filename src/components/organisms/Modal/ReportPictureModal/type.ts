@@ -18,5 +18,4 @@ export type ReportPictureModalProps = {
   handleClose?: () => void;
   onSubmit?: () => void;
   buttons?: boolean;
-  errorTitle?: string;
 };

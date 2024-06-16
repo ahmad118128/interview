@@ -4,17 +4,8 @@ import ReportPictureBox from './ReportPicBox';
 import CustomModal from '../CustomModal';
 
 export default function ReportPictureModal(props: ReportPictureModalProps) {
-  const {
-    data,
-    open,
-    id,
-    setOpen,
-    title,
-    onSubmit,
-    buttons,
-    errorTitle,
-    handleClose,
-  } = props;
+  const { data, open, id, setOpen, title, onSubmit, buttons, handleClose } =
+    props;
   const { src, name, sex, age, date, arrow, birthCity, agreementPercent } =
     data;
   return (
@@ -23,7 +14,6 @@ export default function ReportPictureModal(props: ReportPictureModalProps) {
       open={open}
       onSubmit={onSubmit}
       buttons={buttons}
-      errorTitle={errorTitle}
       setOpen={setOpen}
       id={id}
       title={title}

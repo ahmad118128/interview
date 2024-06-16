@@ -5,7 +5,6 @@ export type CustomModalProps = {
   open: boolean;
   handleClose?: () => void;
   setOpen?: Dispatch<SetStateAction<boolean>>;
-  errorTitle?: string;
   title?: string;
   children?: ReactElement;
   buttons?: boolean;

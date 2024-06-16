@@ -5,8 +5,8 @@ import { useState } from 'react';
 import { CustomTab } from '@/components/molecules/CustomTab/styled';
 import { DataBankRoute } from '@/strings';
 import { Typography } from '@mui/material';
-import CustomModal from '@/components/organisms/Modal/CustomModal';
 import { SuperVisoryList } from '@/components/pages/dashboard/supervisory-list';
+import { DeleteModal } from '@/components/organisms/Modal/DeleteModal.tsx';
 
 import { IModalState } from '../DataBank/type';
 
@@ -29,15 +29,14 @@ export function SupervisoryListTemplate() {
       <CustomTab data={tabs} type={'normalTab'}></CustomTab>
 
       {modalData.state ? (
-        <CustomModal
+        <DeleteModal
           id={modalData.id}
           open={modalData.state}
           onSubmit={() => console.log(modalData.id)}
           buttons
-          errorTitle={DataBankRoute.deleteModalRedText}
           title={DataBankRoute.deleteModalBlackText}
           handleClose={() => setModalData({ state: false })}
-        ></CustomModal>
+        ></DeleteModal>
       ) : null}
     </>
   );

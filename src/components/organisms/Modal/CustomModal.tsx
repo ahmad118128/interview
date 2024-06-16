@@ -18,7 +18,6 @@ export default function CustomModal({
   open,
   setOpen,
   title,
-  errorTitle,
   children,
   buttons,
   onSubmit,
@@ -46,9 +45,6 @@ export default function CustomModal({
           />
         </StyledDeleteButtonBox>
 
-        {errorTitle && (
-          <StyledErrorText variant="body1">{errorTitle}</StyledErrorText>
-        )}
         {title && <StyledTitleText variant="body1">{title}</StyledTitleText>}
         {children}
         {buttons && (

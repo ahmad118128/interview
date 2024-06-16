@@ -8,6 +8,11 @@ html {
   font-family: var(--font-iran-yekan);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   box-sizing: border-box;
   padding: 0;

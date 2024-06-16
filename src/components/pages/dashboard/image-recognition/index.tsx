@@ -14,7 +14,7 @@ import {
   initFilter,
   mockData,
 } from './constants';
-import { FilterChild } from './FilterChild';
+// import { FilterChild } from './FilterChild';
 import { IError, ISuccess, SnackBarType, type UsersFilterProps } from './types';
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
@@ -24,9 +24,10 @@ import { commonWords, generalStr, registrationStr } from '@/strings';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 import IconWithUrl from './IconWithUrl';
 import { CustomButton } from '@/components/atoms/CustomButton';
-import { CustomInput } from '@/components/atoms/input/controlledCustomInput';
+
 import { Icon } from '@iconify/react/dist/iconify.js';
 import theme from '@/theme';
+import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 
 const payloadSnackbar: SnackBarType = {
   display: true,
@@ -143,7 +144,7 @@ export const UsersTab = ({ radioButton }: any) => {
               />
             }
           >
-            <FilterChild />
+            {/* <FilterChild /> */}
             <CustomButton
               style={{ margin: '1rem 0 0.25rem 0' }}
               variant="outlined"

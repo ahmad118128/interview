@@ -1,5 +1,3 @@
-import Drawer from '@mui/material/Drawer';
-import { Dispatch } from 'react';
 import DrawerList from './DrawerList';
 import { StyledDrawer } from './styled';
 import { Box } from '@mui/material';

@@ -15,7 +15,7 @@ import { Icon } from '@iconify/react';
 import { Controller, FieldValues, Path, PathValue } from 'react-hook-form';
 import { DragAndDropUploadProps } from './type';
 
-const DragAndDropUpload = <TField extends FieldValues>({
+const UploaderInput = <TField extends FieldValues>({
   name,
   control,
   defaultValue = [] as PathValue<TField, Path<TField>>,
@@ -112,4 +112,4 @@ const DragAndDropUpload = <TField extends FieldValues>({
   );
 };
 
-export default DragAndDropUpload;
+export default UploaderInput;

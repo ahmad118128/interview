@@ -1,5 +1,5 @@
 import { Accordion, Box } from '@mui/material';
-import { FilterIcon } from '../../shared';
+import { FilterIcon } from '@/components/CustomTable/shared/index';
 import { StyledAccordionDetails, StyledAccordionSummary } from './styled';
 import { HeaderFilterTableProps } from './type';
 

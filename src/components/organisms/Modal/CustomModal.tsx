@@ -23,9 +23,10 @@ export default function CustomModal({
   buttons,
   activeButtonHandler,
   deleteButtonHandler,
+  id,
+  handleClose,
+  ...res
 }: CustomModalProps) {
-  const handleClose = () => setOpen(false);
-
   return (
     <Modal
       keepMounted
@@ -33,6 +34,7 @@ export default function CustomModal({
       onClose={handleClose}
       aria-labelledby="keep-mounted-modal-title"
       aria-describedby="keep-mounted-modal-description"
+      {...res}
     >
       <StyledCustomModal>
         <StyledDeleteButtonBox>

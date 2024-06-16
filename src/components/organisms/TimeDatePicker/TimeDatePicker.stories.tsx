@@ -1,21 +1,83 @@
-import React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
+import * as React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { ThemeProvider } from '@emotion/react';
 import { TimeDatePicker } from '../TimeDatePicker';
-import { TProps } from './type';
+import theme from '@/theme';
 
-export default {
+const meta: Meta<typeof TimeDatePicker> = {
   title: 'Components/TimeDatePicker',
   component: TimeDatePicker,
-} as Meta;
+  tags: ['autodocs'],
+  decorators: [
+    (Story) => (
+      <ThemeProvider theme={theme}>
+        <Story />
+      </ThemeProvider>
+    ),
+  ],
+  args: {},
+};
 
-const Template: StoryFn<TProps> = (args) => <TimeDatePicker {...args} />;
+export default meta;
 
-export const Default = Template.bind({});
-Default.args = {
-  label: 'Select Time',
-  value: new Date().getTime(),
-  onChange: (value: number | null) => {
-    console.log(value);
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  render: (args) => <TimeDatePicker {...args} />,
+  args: {
+    name: 'TimeDatePicker',
+    label: 'Select Time',
+    value: new Date().getTime(),
+    onChange: (value: number | null) => {
+      console.log(value);
+    },
   },
-  name: 'timePicker',
+};
+export const ReadOnly: Story = {
+  render: (args) => <TimeDatePicker {...args} />,
+  args: {
+    name: 'TimeDatePicker',
+    label: 'Select Time',
+    readOnly: true,
+    value: new Date().getTime(),
+    onChange: (value: number | null) => {
+      console.log(value);
+    },
+  },
+};
+export const Disabled: Story = {
+  render: (args) => <TimeDatePicker {...args} />,
+  args: {
+    name: 'TimeDatePicker',
+    label: 'Select Time',
+    disabled: true,
+    value: new Date().getTime(),
+    onChange: (value: number | null) => {
+      console.log(value);
+    },
+  },
+};
+export const DisablePast: Story = {
+  render: (args) => <TimeDatePicker {...args} />,
+  args: {
+    name: 'TimeDatePicker',
+    label: 'Select Time',
+    disablePast: true,
+    value: new Date().getTime(),
+    onChange: (value: number | null) => {
+      console.log(value);
+    },
+  },
+};
+export const DisableFuture: Story = {
+  render: (args) => <TimeDatePicker {...args} />,
+  args: {
+    name: 'TimeDatePicker',
+    label: 'Select Time',
+    disableFuture: true,
+    value: new Date().getTime(),
+    onChange: (value: number | null) => {
+      console.log(value);
+    },
+  },
 };

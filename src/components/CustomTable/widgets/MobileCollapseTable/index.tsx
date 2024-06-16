@@ -1,11 +1,10 @@
 import React from 'react';
 import { useMediaQuery, useTheme } from '@mui/material';
-
 import { MobileCollapseRow } from './MobileCollapseRow';
 import { MobileCollapseTableProps } from './type';
 import { StyledTableWrapper } from './styled';
-import { type CellType } from '../../types';
-import { BaseTable } from '../../shared/TableCore';
+import { type CellType } from '@/components/CustomTable/types';
+import { BaseTable } from '@/components/CustomTable/shared/TableCore/index';
 
 const COLLAPSE_ID = 'collapse';
 let mobileHeaders: CellType[] = [];

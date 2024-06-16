@@ -34,7 +34,7 @@ DefaultButton.args = {
   onClick: () => {
     console.log('modalData.id');
   },
-  disabled:false,
+  disabled: false,
 };
 
 export const Loading = Template.bind({});

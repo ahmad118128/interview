@@ -27,5 +27,5 @@ DefaultButton.args = {
   iconName: 'tabler:search',
   width: 20,
   height: 20,
-  disabled:false
+  disabled: false,
 };

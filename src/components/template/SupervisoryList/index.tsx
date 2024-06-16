@@ -32,7 +32,7 @@ export function SupervisoryListTemplate() {
         <CustomModal
           id={modalData.id}
           open={modalData.state}
-          activeButtonHandler={() => console.log(modalData.id)}
+          onSubmit={() => console.log(modalData.id)}
           buttons
           errorTitle={DataBankRoute.deleteModalRedText}
           title={DataBankRoute.deleteModalBlackText}

@@ -39,16 +39,14 @@ const meta: Meta<typeof CustomModal> = {
       control: 'boolean',
       description: 'Show action buttons if true.',
     },
-    activeButtonHandler: { action: 'activeButtonClicked' },
-    deleteButtonHandler: { action: 'deleteButtonClicked' },
+    onSubmit: { action: 'activeButtonClicked' },
   },
   args: {
     open: false,
     title: generalStr.explanationText,
     errorTitle: generalStr.errors,
     buttons: true,
-    activeButtonHandler: () => {},
-    deleteButtonHandler: () => {},
+    onSubmit: () => {},
   },
 };
 
@@ -71,8 +69,7 @@ export const Modal: Story = {
           {...args}
           open={open}
           setOpen={toggleModal}
-          deleteButtonHandler={toggleModal}
-          activeButtonHandler={toggleModal}
+          onSubmit={toggleModal}
         >
           <div style={{ direction: 'rtl' }}>
             <p>{registrationStr.sucsessMsgPart3}</p>
@@ -105,12 +102,7 @@ export const WithoutTitle: Story = {
         <CustomButton onClick={toggleModal}>
           {registrationStr.signIn}
         </CustomButton>
-        <CustomModal
-          {...args}
-          open={open}
-          setOpen={toggleModal}
-          deleteButtonHandler={toggleModal}
-        >
+        <CustomModal {...args} open={open} setOpen={toggleModal}>
           <div style={{ direction: 'rtl' }}>
             <p>{registrationStr.sucsessMsgPart3}</p>
           </div>
@@ -142,12 +134,7 @@ export const Error: Story = {
         <CustomButton onClick={toggleModal}>
           {registrationStr.signIn}
         </CustomButton>
-        <CustomModal
-          {...args}
-          open={open}
-          setOpen={toggleModal}
-          deleteButtonHandler={toggleModal}
-        >
+        <CustomModal {...args} open={open} setOpen={toggleModal}>
           <div style={{ direction: 'rtl' }}>
             <p>{registrationStr.sucsessMsgPart3}</p>
           </div>
@@ -180,12 +167,7 @@ export const WithoutButtons: Story = {
         <CustomButton onClick={toggleModal}>
           {registrationStr.signIn}
         </CustomButton>
-        <CustomModal
-          {...args}
-          open={open}
-          setOpen={toggleModal}
-          deleteButtonHandler={toggleModal}
-        >
+        <CustomModal {...args} open={open} setOpen={toggleModal}>
           <div style={{ direction: 'rtl' }}>
             <p>{registrationStr.sucsessMsgPart3}</p>
           </div>

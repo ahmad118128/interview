@@ -339,7 +339,7 @@ export default function ImageRecognitionTemplate() {
         <ReportPictureModal
           id={modalData.id ? modalData.id : 0}
           open={modalData.state}
-          activeButtonHandler={() => console.log(modalData.id)}
+          onSubmit={() => console.log(modalData.id)}
           title={DataBankRoute.deleteModalBlackText}
           handleClose={() => setModalData({ state: false })}
           data={{

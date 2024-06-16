@@ -21,8 +21,7 @@ export default function CustomModal({
   errorTitle,
   children,
   buttons,
-  activeButtonHandler,
-  deleteButtonHandler,
+  onSubmit,
   id,
   handleClose,
   ...res
@@ -54,10 +53,10 @@ export default function CustomModal({
         {children}
         {buttons && (
           <StyledActionButtonsBox>
-            <CustomButton variant="contained" onClick={activeButtonHandler}>
+            <CustomButton variant="contained" onClick={onSubmit}>
               {registrationStr.ok}
             </CustomButton>
-            <CustomButton variant="outlined" onClick={deleteButtonHandler}>
+            <CustomButton variant="outlined" onClick={handleClose}>
               {generalStr.refuse}
             </CustomButton>
           </StyledActionButtonsBox>

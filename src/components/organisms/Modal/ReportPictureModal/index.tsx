@@ -10,8 +10,7 @@ export default function ReportPictureModal(props: ReportPictureModalProps) {
     id,
     setOpen,
     title,
-    activeButtonHandler,
-    deleteButtonHandler,
+    onSubmit,
     buttons,
     errorTitle,
     handleClose,
@@ -22,8 +21,7 @@ export default function ReportPictureModal(props: ReportPictureModalProps) {
     <CustomModal
       handleClose={handleClose}
       open={open}
-      deleteButtonHandler={deleteButtonHandler}
-      activeButtonHandler={activeButtonHandler}
+      onSubmit={onSubmit}
       buttons={buttons}
       errorTitle={errorTitle}
       setOpen={setOpen}

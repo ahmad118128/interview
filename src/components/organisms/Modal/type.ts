@@ -9,6 +9,5 @@ export type CustomModalProps = {
   title?: string;
   children?: ReactElement;
   buttons?: boolean;
-  activeButtonHandler?: () => void;
-  deleteButtonHandler?: () => void;
+  onSubmit?: () => void;
 };

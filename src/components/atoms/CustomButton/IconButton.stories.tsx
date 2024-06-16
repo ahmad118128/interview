@@ -21,10 +21,11 @@ const Template: StoryFn<IconButtonProps> = (args) => {
   return <IconButton {...args} />;
 };
 
-export const defaultButton = Template.bind({});
-defaultButton.args = {
- title:"search",
- iconName: "tabler:search",
- width:20,
- height:20
- };
+export const DefaultButton = Template.bind({});
+DefaultButton.args = {
+  title: 'search',
+  iconName: 'tabler:search',
+  width: 20,
+  height: 20,
+  disabled:false
+};

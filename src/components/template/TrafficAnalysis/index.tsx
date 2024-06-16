@@ -62,7 +62,6 @@ export default function TrafficAnalysisTemplate() {
         <Grid item xs={12} md={6} lg={3}>
           <DashboardChartCard title={TrafficAnalysisRoute.mensTraffic}>
             <DoughnutChart
-              chartLabel="Clinet"
               labels={['شناسایی شده']}
               data={[120]}
               legend={false}
@@ -71,18 +70,12 @@ export default function TrafficAnalysisTemplate() {
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
           <DashboardChartCard title={TrafficAnalysisRoute.womensTraffic}>
-            <DoughnutChart
-              chartLabel="Clinet"
-              labels={['نامشخص']}
-              data={[120]}
-              legend={false}
-            />
+            <DoughnutChart labels={['نامشخص']} data={[120]} legend={false} />
           </DashboardChartCard>
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
           <DashboardChartCard title={TrafficAnalysisRoute.sampleChart}>
             <DoughnutChart
-              chartLabel="Clinet"
               labels={['شناسایی شده']}
               data={[80]}
               legend={false}
@@ -91,12 +84,7 @@ export default function TrafficAnalysisTemplate() {
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
           <DashboardChartCard title={TrafficAnalysisRoute.sampleChart}>
-            <DoughnutChart
-              chartLabel="Data"
-              labels={['زن']}
-              data={[120]}
-              legend={false}
-            />
+            <DoughnutChart labels={['زن']} data={[120]} legend={false} />
           </DashboardChartCard>
         </Grid>
         <Grid item xs={12} md={6} lg={6}>

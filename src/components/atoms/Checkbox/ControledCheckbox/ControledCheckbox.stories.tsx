@@ -16,7 +16,15 @@ const meta: Meta<typeof ControledCheckbox> = {
       </ThemeProvider>
     ),
   ],
-  args: {},
+  args: {
+    name: 'checkbox',
+    disabled: false,
+    checked: false,
+    error: false,
+    onChange: (event) => {
+      console.log(event?.target.checked);
+    },
+  },
 };
 
 export default meta;
@@ -32,15 +40,6 @@ export const Default: Story = {
       </FormProvider>
     );
   },
-  args: {
-    name: 'checkbox',
-    disabled: false,
-    checked: false,
-    error: false,
-    onChange: (event) => {
-      console.log(event?.target.checked);
-    },
-  },
 };
 export const Disabled: Story = {
   render: (args) => {
@@ -52,13 +51,7 @@ export const Disabled: Story = {
     );
   },
   args: {
-    name: 'checkbox',
     disabled: true,
-    checked: false,
-    error: false,
-    onChange: (event) => {
-      console.log(event?.target.checked);
-    },
   },
 };
 export const Checked: Story = {
@@ -71,13 +64,7 @@ export const Checked: Story = {
     );
   },
   args: {
-    name: 'checkbox',
-    disabled: false,
     checked: true,
-    error: false,
-    onChange: (event) => {
-      console.log(event?.target.checked);
-    },
   },
 };
 export const Error: Story = {
@@ -90,12 +77,6 @@ export const Error: Story = {
     );
   },
   args: {
-    name: 'checkbox',
-    disabled: false,
-    checked: false,
     error: true,
-    onChange: (event) => {
-      console.log(event?.target.checked);
-    },
   },
 };

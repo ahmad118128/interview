@@ -1,13 +1,20 @@
 import * as React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { ThemeProvider } from '@emotion/react';
 import theme from '@/theme';
 import LineChart from '.';
-import { LineChartProps } from './type';
 
-export default {
-  title: 'LineChart',
+const meta: Meta<typeof LineChart> = {
+  title: 'organism/LineChart',
   component: LineChart,
+  tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component: 'This is the DoughnutChart component.',
+      },
+    }
+  },
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>
@@ -15,14 +22,18 @@ export default {
       </ThemeProvider>
     ),
   ],
+  args: {
+    labels: [],
+    data: [],
+  }
 } as Meta;
 
-const Template: StoryFn<LineChartProps> = (args) => {
-  return <LineChart {...args} />;
-};
+export default meta;
+type Story = StoryObj<typeof meta>
 
-export const GeneralStr = Template.bind({});
-GeneralStr.args = {
-  labels: ['January', 'February', 'March', 'April'],
-  data: [0, 120, 40, 90],
-};
+export const GeneralStr: Story = {
+  args: {
+    labels: ['January', 'February', 'March', 'April'],
+    data: [0, 120, 40, 90],
+  },
+}

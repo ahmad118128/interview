@@ -1,13 +1,20 @@
 import * as React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { ThemeProvider } from '@emotion/react';
 import theme from '@/theme';
 import DoughnutChart from '.';
-import { DoughnutChartProps } from './type';
 
-export default {
-  title: 'DoughnutChart',
+const meta: Meta<typeof DoughnutChart> = {
+  title: 'organism/DoughnutChart',
   component: DoughnutChart,
+  tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component: 'This is the DoughnutChart component.',
+      },
+    }
+  },
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>
@@ -15,22 +22,28 @@ export default {
       </ThemeProvider>
     ),
   ],
+  args: {
+    chartLabel: '',
+    labels: [],
+    data: [],
+  }
 } as Meta;
 
-const Template: StoryFn<DoughnutChartProps> = (args) => {
-  return <DoughnutChart {...args} />;
-};
+export default meta;
+type Story = StoryObj<typeof meta>
 
-export const Client = Template.bind({});
-Client.args = {
-  chartLabel: 'Client',
-  labels: ['نامشخص', 'شناسایی شده'],
-  data: [120, 80],
-};
+export const Client: Story = {
+  args: {
+    chartLabel: 'Client',
+    labels: ['نامشخص', 'شناسایی شده'],
+    data: [120, 80],
+  },
+}
 
-export const Data = Template.bind({});
-Data.args = {
-  chartLabel: 'Data',
-  labels: ['زن', 'مرد'],
-  data: [120, 80],
+export const Data: Story = {
+  args: {
+    chartLabel: 'Data',
+    labels: ['زن', 'مرد'],
+    data: [120, 80],
+  }
 };

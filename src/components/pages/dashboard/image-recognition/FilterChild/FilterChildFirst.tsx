@@ -13,7 +13,7 @@ export const FilterChildFirst = ({ control }: any) => {
       <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
         <StyledInputContainer item xs={12} md={4} lg={3}>
           <CustomRHFAutocomplete
-            label={DataBankRoute.supervisortList}
+            label={DataBankRoute.supervisoryList}
             control={control}
             name="supervisortList"
             options={[]}
@@ -21,7 +21,7 @@ export const FilterChildFirst = ({ control }: any) => {
         </StyledInputContainer>
         <StyledInputContainer item xs={12} md={4} lg={3}>
           <CustomRHFAutocomplete
-            label={DataBankRoute.supervisortList}
+            label={DataBankRoute.supervisoryList}
             control={control}
             name="supervisortList"
             options={[]}
@@ -46,7 +46,7 @@ export const FilterChildFirst = ({ control }: any) => {
         </StyledInputContainer>
         <StyledInputContainer item xs={12} md={4} lg={3}>
           <CustomRHFAutocomplete
-            label={DataBankRoute.supervisortList}
+            label={DataBankRoute.supervisoryList}
             control={control}
             name="supervisortList"
             options={[]}

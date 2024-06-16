@@ -1,5 +1,5 @@
-import { styled } from '@mui/material';
 import { BaseSearchBar } from '@/components/BaseComponents/BaseSearchBar';
+import { styled } from '@mui/material';
 
 export const StyledSearchBar = styled(BaseSearchBar)`
   & .MuiInputBase-root {

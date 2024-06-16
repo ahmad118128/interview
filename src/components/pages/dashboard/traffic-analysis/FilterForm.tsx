@@ -1,45 +1,45 @@
 import { Box, Grid } from '@mui/material';
+
 import { StyledFilterChild } from '@/components/pages/dashboard/image-recognition/FilterChild/styled';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
-import { DataBankRoute, SupervisitoryListRoute } from '@/strings';
-import { CustomRHFAutocomplete } from '@/components/atoms/Autocomplete';
+import { DataBankRoute, TrafficAnalysisRoute } from '@/strings';
 import { CustomButton } from '@/components/atoms/CustomButton';
+import ControlledTimeDatePickerInput from '@/components/organisms/TimeDatePicker/ControlledTimeDatePicker';
 
-export function FilterForm({ control, reset }: any) {
+export default function FilterForm({ control, reset }: any) {
   return (
     <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
-      <Grid item xs={12} md={3}>
+      <Grid item xs={12} md={4}>
         <CustomInput
           control={control}
           name="name"
           fullWidth
-          label={DataBankRoute.firstName}
+          label={TrafficAnalysisRoute.gateName}
         />
       </Grid>
-      <Grid item xs={12} md={3}>
-        <CustomInput
+
+      <Grid item xs={12} md={4}>
+        <ControlledTimeDatePickerInput
+          name="startPassingDateAndTime"
           control={control}
-          name="similarityPercentage"
-          fullWidth
-          label={SupervisitoryListRoute.similarityPercentage}
+          label={TrafficAnalysisRoute.startPassingDateAndTime}
+          value={0}
+          onChange={() => console.log('first')}
+          rules={{ required: 'Require' }}
         />
       </Grid>
-      <Grid item xs={12} md={3}>
-        <CustomInput
+
+      <Grid item xs={12} md={4}>
+        <ControlledTimeDatePickerInput
+          name="endPassingDateAndTime"
           control={control}
-          name="description"
-          fullWidth
-          label={DataBankRoute.description}
+          label={TrafficAnalysisRoute.endPassingDateAndTime}
+          value={0}
+          onChange={() => console.log('first')}
+          rules={{ required: 'Require' }}
         />
       </Grid>
-      <Grid item xs={12} md={3}>
-        <CustomRHFAutocomplete
-          label={SupervisitoryListRoute.status}
-          control={control}
-          name="status"
-          options={[]}
-        />
-      </Grid>
+
       <Box
         sx={{
           width: '100%',

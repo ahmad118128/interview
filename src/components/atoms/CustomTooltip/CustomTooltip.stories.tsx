@@ -1,22 +1,84 @@
-import React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
-import { CustomTooltip } from './index';
-import { TooltipProps } from '@mui/material';
+import * as React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { ThemeProvider } from '@emotion/react';
+import { CustomTooltip } from '.';
+import theme from '@/theme';
 
-export default {
+const meta: Meta<typeof CustomTooltip> = {
   title: 'Components/CustomTooltip',
   component: CustomTooltip,
-} as Meta;
+  tags: ['autodocs'],
+  decorators: [
+    (Story) => (
+      <ThemeProvider theme={theme}>
+        <Story />
+      </ThemeProvider>
+    ),
+  ],
+  args: {},
+};
 
-const Template: StoryFn<TooltipProps> = (args: TooltipProps) => (
-  <CustomTooltip {...args}>
-    <span>Hover over me</span>
-  </CustomTooltip>
-);
+export default meta;
 
-export const Default = Template.bind({});
-Default.args = {
-  title: 'This is a custom tooltip',
-  arrow: true,
-  placement: 'top',
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  render: (args) => (
+    <CustomTooltip {...args}>
+      <span>Hover over me</span>
+    </CustomTooltip>
+  ),
+  args: {
+    title: 'CustomTooltip',
+    arrow: true,
+    placement: 'top',
+  },
+};
+export const ArrowOff: Story = {
+  render: (args) => (
+    <CustomTooltip {...args}>
+      <span>Hover over me</span>
+    </CustomTooltip>
+  ),
+  args: {
+    title: 'CustomTooltip',
+    arrow: false,
+    placement: 'top',
+  },
+};
+export const PlacementLeft: Story = {
+  render: (args) => (
+    <CustomTooltip {...args} style={{ marginLeft: '100px' }}>
+      <span>Hover over me</span>
+    </CustomTooltip>
+  ),
+  args: {
+    title: 'CustomTooltip',
+    arrow: false,
+    placement: 'left',
+  },
+};
+export const PlacementRight: Story = {
+  render: (args) => (
+    <CustomTooltip {...args}>
+      <span>Hover over me</span>
+    </CustomTooltip>
+  ),
+  args: {
+    title: 'CustomTooltip',
+    arrow: false,
+    placement: 'right',
+  },
+};
+export const PlacementBottom: Story = {
+  render: (args) => (
+    <CustomTooltip {...args}>
+      <span>Hover over me</span>
+    </CustomTooltip>
+  ),
+  args: {
+    title: 'CustomTooltip',
+    arrow: false,
+    placement: 'bottom',
+  },
 };

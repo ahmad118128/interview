@@ -39,7 +39,7 @@ type Story = StoryObj<ICustomRadio>;
 export const Base: Story = {
   render: (args) => <CustomRadioButton {...args} />,
 };
-export const off: Story = {
+export const Off: Story = {
   parameters: {
     docs: {
       description: {
@@ -49,7 +49,7 @@ export const off: Story = {
   },
   render: (args) => <CustomRadioButton {...args} />,
 };
-export const on: Story = {
+export const On: Story = {
   parameters: {
     docs: {
       description: {
@@ -60,7 +60,7 @@ export const on: Story = {
   render: (args) => <CustomRadioButton {...args} />,
 };
 
-export const error: Story = {
+export const Error: Story = {
   parameters: {
     docs: {
       description: {
@@ -70,7 +70,7 @@ export const error: Story = {
   },
   render: (args) => <CustomRadioButton {...args} />,
 };
-export const disabled: Story = {
+export const Disabled: Story = {
   parameters: {
     docs: {
       description: {
@@ -81,7 +81,7 @@ export const disabled: Story = {
 
   render: (args) => <CustomRadioButton {...args} />,
 };
-export const radioItems: Omit<Story, 'control'> = {
+export const RadioItems: Omit<Story, 'control'> = {
   args: {
     name: '',
   },

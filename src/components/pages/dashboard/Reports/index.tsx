@@ -5,7 +5,7 @@ import { DataBankRoute, ReportRoute, generalStr } from '@/strings';
 import { Typography } from '@mui/material';
 import CustomModal from '@/components/organisms/Modal/CustomModal';
 import { IModalState } from './type';
-import TransientPeople from './components';
+import TransientPeople from './components/TransientPeopleTab';
 
 export function ReportPage() {
   const [modalData, setModalData] = useState<IModalState>({

@@ -5,7 +5,7 @@ import { CustomRHFAutocomplete } from '@/components/atoms/Autocomplete';
 import { CustomButton } from '@/components/atoms/CustomButton';
 
 import ControlledTimeDatePickerInput from '@/components/organisms/TimeDatePicker/ControlledTimeDatePicker';
-import { StyledFilterChild } from '../../image-recognition/FilterChild/styled';
+import { StyledFilterChild } from '../../../image-recognition/FilterChild/styled';
 
 export default function FilterForm({ control, reset }: any) {
   return (

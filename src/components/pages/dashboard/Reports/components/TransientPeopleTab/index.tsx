@@ -4,13 +4,12 @@ import { Icon } from '@iconify/react/dist/iconify.js';
 import { commonWords } from '@/strings';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 import { FiltersChips } from '@/components/CustomTable/types';
-import { usePathname, useRouter } from 'next/navigation';
 import {
   IError,
   ISuccess,
   UsersFilterProps,
-} from '../../image-recognition/types';
-import { initFilter } from '../../image-recognition/constants';
+} from '../../../image-recognition/types';
+import { initFilter } from '../../../image-recognition/constants';
 import { EFilterTableNameIcon } from './type';
 import { FilterContainer } from './FilterContainer';
 import { MobileCollapseTable } from '@/components/CustomTable/widgets';
@@ -18,7 +17,7 @@ import {
   COLLAPSE_ID,
   TransientMockData,
   TransientPeopleHeader,
-} from '../constants';
+} from './constants';
 import { CellType } from '@/components/CustomTable/shared/CustomCell/types';
 import theme from '@/theme';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';

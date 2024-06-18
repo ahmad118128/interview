@@ -1,18 +1,18 @@
 import { Box, Grid } from '@mui/material';
-import { StyledFilterChild } from '@/components/pages/dashboard/image-recognition/FilterChild/styled';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
-import { DataBankRoute, TrafficAnalysisRoute } from '@/strings';
+import { DataBankRoute, ReportRoute, TrafficAnalysisRoute } from '@/strings';
 import { CustomRHFAutocomplete } from '@/components/atoms/Autocomplete';
 import { CustomButton } from '@/components/atoms/CustomButton';
-import { filterInputs } from '../constants';
+
 import ControlledTimeDatePickerInput from '@/components/organisms/TimeDatePicker/ControlledTimeDatePicker';
+import { StyledFilterChild } from '../../image-recognition/FilterChild/styled';
 
 export default function FilterForm({ control, reset }: any) {
   return (
     <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
       <Grid item xs={12} md={4}>
         <CustomRHFAutocomplete
-          label={filterInputs.gateName}
+          label={ReportRoute.gateName}
           control={control}
           name="gateName"
           options={[]}
@@ -20,7 +20,7 @@ export default function FilterForm({ control, reset }: any) {
       </Grid>
       <Grid item xs={12} md={4}>
         <CustomRHFAutocomplete
-          label={filterInputs.orientation}
+          label={ReportRoute.orientation}
           control={control}
           name="orientation"
           options={[]}
@@ -31,13 +31,13 @@ export default function FilterForm({ control, reset }: any) {
           control={control}
           name="minimumSimilarityPercentage"
           fullWidth
-          label={filterInputs.minimumSimilarityPercentage}
+          label={ReportRoute.minimumSimilarityPercentage}
           type="number"
         />
       </Grid>
       <Grid item xs={12} md={4}>
         <CustomRHFAutocomplete
-          label={filterInputs.matchingType}
+          label={ReportRoute.matchingType}
           control={control}
           name="matchingType"
           options={[]}
@@ -48,7 +48,7 @@ export default function FilterForm({ control, reset }: any) {
           control={control}
           name="fromAge"
           fullWidth
-          label={filterInputs.fromAge}
+          label={ReportRoute.fromAge}
           type="number"
         />
       </Grid>
@@ -57,13 +57,13 @@ export default function FilterForm({ control, reset }: any) {
           control={control}
           name="untilAge"
           fullWidth
-          label={filterInputs.untilAge}
+          label={ReportRoute.untilAge}
           type="number"
         />
       </Grid>
       <Grid item xs={12} md={4}>
         <CustomRHFAutocomplete
-          label={filterInputs.gender}
+          label={ReportRoute.gender}
           control={control}
           name="gender"
           options={[]}
@@ -73,7 +73,7 @@ export default function FilterForm({ control, reset }: any) {
         <ControlledTimeDatePickerInput
           name="registrationTimeOf"
           control={control}
-          label={filterInputs.registrationTimeOf}
+          label={ReportRoute.registrationTimeOf}
           value={0}
           onChange={() => console.log('first')}
           rules={{ required: 'Require' }}
@@ -83,7 +83,7 @@ export default function FilterForm({ control, reset }: any) {
         <ControlledTimeDatePickerInput
           name="registrationTimeUpTo"
           control={control}
-          label={filterInputs.registrationTimeUpTo}
+          label={ReportRoute.registrationTimeUpTo}
           value={0}
           onChange={() => console.log('first')}
           rules={{ required: 'Require' }}

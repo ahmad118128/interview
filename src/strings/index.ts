@@ -1327,3 +1327,18 @@ export const TrafficAnalysisRoute = {
   startPassingDateAndTime: 'تاریخ و زمان عبور از',
   endPassingDateAndTime: 'تاریخ و زمان عبور تا',
 };
+
+export const ReportRoute = {
+  gateName: 'نام گیت',
+  orientation: 'جهت گیری',
+  minimumSimilarityPercentage: 'حداقل درصد تشابه ',
+  matchingType: 'نوع تطبیق',
+  fromAge: 'از سن',
+  untilAge: 'تا سن ',
+  gender: 'جنسیت',
+  registrationTimeOf: 'زمان ثبت از',
+  registrationTimeUpTo: 'زمان ثبت تا',
+  transientPeople: 'افراد عبوری',
+  trafficOfPeople: 'تردد افراد',
+  arrivalsDepartures: ' ورود و خروج',
+};

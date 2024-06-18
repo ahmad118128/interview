@@ -2,18 +2,6 @@ import { CellType } from '@/components/CustomTable/types';
 import { COLLAPSE_ID } from '../image-recognition/constants';
 import { DataBankRoute } from '@/strings';
 
-export const filterInputs = {
-  gateName: 'نام گیت',
-  orientation: 'جهت گیری',
-  minimumSimilarityPercentage: 'حداقل درصد تشابه ',
-  matchingType: 'نوع تطبیق',
-  fromAge: 'از سن',
-  untilAge: 'تا سن ',
-  gender: 'جنسیت',
-  registrationTimeOf: 'زمان ثبت از',
-  registrationTimeUpTo: 'زمان ثبت تا',
-};
-
 export const dataBankMockUsers = [
   {
     id: 1,

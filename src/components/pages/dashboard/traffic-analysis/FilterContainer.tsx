@@ -25,16 +25,8 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
     collapse,
     onHandleIconClick,
     activeMode = EFilterModeIcon.TABLE,
-    refreshLoading,
     handleFiltersChips,
-    onSearchClick,
   } = props;
-
-  if (props.hasModeHandler && !props.onHandleModeChange) {
-    throw new Error(
-      'if hasModeHandler equals true, you should pass onHandleModeChange prop!'
-    );
-  }
 
   return (
     <Accordion expanded={collapse} sx={{ boxShadow: 'none' }}>

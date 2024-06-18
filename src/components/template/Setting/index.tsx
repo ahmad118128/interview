@@ -6,14 +6,14 @@ import { usePathname, useRouter } from 'next/navigation';
 import { CustomTab } from '@/components/molecules/CustomTab/styled';
 import { DataBankRoute, SettingRoute } from '@/strings';
 import { Typography } from '@mui/material';
-import CustomModal from '@/components/organisms/Modal/CustomModal';
 import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
 import { SocialSettingCp } from '@/components/pages/dashboard/setting/SocialSettingCp';
 import { FaceCP } from '@/components/pages/dashboard/setting/FaceCP';
-
-import { IModalState } from '../DataBank/type';
 import { BackupCP } from '@/components/pages/dashboard/setting/BackupCp';
 import { ClientCp } from '@/components/pages/dashboard/setting/ClientCp';
+import { DeleteModal } from '@/components/organisms/Modal/DeleteModal.tsx';
+
+import { IModalState } from '../DataBank/type';
 
 export function SettingTemplate() {
   const [modalData, setModalData] = useState<IModalState>({
@@ -56,20 +56,19 @@ export function SettingTemplate() {
       <CustomTab data={tabs} type={'normalTab'}></CustomTab>
 
       {modalData.state ? (
-        <CustomModal
+        <DeleteModal
           id={modalData.id}
           open={modalData.state}
-          activeButtonHandler={() => console.log(modalData.id)}
+          onSubmit={() => console.log(modalData.id)}
           buttons
-          errorTitle={DataBankRoute.deleteModalRedText}
           title={DataBankRoute.deleteModalBlackText}
-          handleClose={() => setModalData({ state: false })}
-        ></CustomModal>
+          onClose={() => setModalData({ state: false })}
+        ></DeleteModal>
       ) : null}
 
       {imgModal ? (
         <ThumbnailPicModal
-          handleClose={() => setImgModal(false)}
+          onClose={() => setImgModal(false)}
           open={imgModal}
           setOpen={setImgModal}
           src={'/assets/images/dashboard/technology 1.svg'}

@@ -3,12 +3,10 @@ import { Dispatch, ReactElement, SetStateAction } from 'react';
 export type CustomModalProps = {
   id?: number | string;
   open: boolean;
-  handleClose?: () => void;
+  onClose?: () => void;
   setOpen?: Dispatch<SetStateAction<boolean>>;
-  errorTitle?: string;
   title?: string;
   children?: ReactElement;
   buttons?: boolean;
-  activeButtonHandler?: () => void;
-  deleteButtonHandler?: () => void;
+  onSubmit?: () => void;
 };

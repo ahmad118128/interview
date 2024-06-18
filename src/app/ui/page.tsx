@@ -93,7 +93,7 @@ export default function Home() {
       <Button onClick={handleOpenPicModal}>Open picModal</Button>
       <ReportPictureModal
         title={ReportModal.results}
-        data={mockData}
+        personInfo={mockData}
         open={openPicModal}
         setOpen={setOpenPicModal}
       />

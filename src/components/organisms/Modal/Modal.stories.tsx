@@ -31,24 +31,17 @@ const meta: Meta<typeof CustomModal> = {
       description: 'Controls the visibility of the modal.',
     },
     title: { control: 'text', description: 'Title of the modal.' },
-    errorTitle: {
-      control: 'text',
-      description: 'Error title displayed in the modal.',
-    },
     buttons: {
       control: 'boolean',
       description: 'Show action buttons if true.',
     },
-    activeButtonHandler: { action: 'activeButtonClicked' },
-    deleteButtonHandler: { action: 'deleteButtonClicked' },
+    onSubmit: { action: 'activeButtonClicked' },
   },
   args: {
     open: false,
     title: generalStr.explanationText,
-    errorTitle: generalStr.errors,
     buttons: true,
-    activeButtonHandler: () => {},
-    deleteButtonHandler: () => {},
+    onSubmit: () => {},
   },
 };
 
@@ -71,8 +64,7 @@ export const Modal: Story = {
           {...args}
           open={open}
           setOpen={toggleModal}
-          deleteButtonHandler={toggleModal}
-          activeButtonHandler={toggleModal}
+          onSubmit={toggleModal}
         >
           <div style={{ direction: 'rtl' }}>
             <p>{registrationStr.sucsessMsgPart3}</p>
@@ -105,12 +97,7 @@ export const WithoutTitle: Story = {
         <CustomButton onClick={toggleModal}>
           {registrationStr.signIn}
         </CustomButton>
-        <CustomModal
-          {...args}
-          open={open}
-          setOpen={toggleModal}
-          deleteButtonHandler={toggleModal}
-        >
+        <CustomModal {...args} open={open} setOpen={toggleModal}>
           <div style={{ direction: 'rtl' }}>
             <p>{registrationStr.sucsessMsgPart3}</p>
           </div>
@@ -129,7 +116,6 @@ export const WithoutTitle: Story = {
 
 export const Error: Story = {
   args: {
-    errorTitle: generalStr.errors,
     open: false,
   },
   render: (args) => {
@@ -142,12 +128,7 @@ export const Error: Story = {
         <CustomButton onClick={toggleModal}>
           {registrationStr.signIn}
         </CustomButton>
-        <CustomModal
-          {...args}
-          open={open}
-          setOpen={toggleModal}
-          deleteButtonHandler={toggleModal}
-        >
+        <CustomModal {...args} open={open} setOpen={toggleModal}>
           <div style={{ direction: 'rtl' }}>
             <p>{registrationStr.sucsessMsgPart3}</p>
           </div>
@@ -180,12 +161,7 @@ export const WithoutButtons: Story = {
         <CustomButton onClick={toggleModal}>
           {registrationStr.signIn}
         </CustomButton>
-        <CustomModal
-          {...args}
-          open={open}
-          setOpen={toggleModal}
-          deleteButtonHandler={toggleModal}
-        >
+        <CustomModal {...args} open={open} setOpen={toggleModal}>
           <div style={{ direction: 'rtl' }}>
             <p>{registrationStr.sucsessMsgPart3}</p>
           </div>

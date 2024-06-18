@@ -1,5 +1,5 @@
-import { TransientPeoplePage } from '@/components/pages/dashboard/Reports';
+import { ReportPage } from '@/components/pages/dashboard/Reports';
 
 export default function Report() {
-  return <TransientPeoplePage />;
+  return <ReportPage />;
 }

@@ -4,20 +4,27 @@ import { CustomTab } from '@/components/molecules/CustomTab/styled';
 import { DataBankRoute, ReportRoute, generalStr } from '@/strings';
 import { Typography } from '@mui/material';
 import CustomModal from '@/components/organisms/Modal/CustomModal';
-import { SuperVisoryList } from '@/components/pages/dashboard/supervisory-list';
 import { IModalState } from './type';
 import TransientPeople from './components';
 
-export function TransientPeoplePage() {
+export function ReportPage() {
   const [modalData, setModalData] = useState<IModalState>({
     state: false,
   });
+  const [imgModal, setImgModal] = useState(false);
+
   const tabs = [
     {
       id: 0,
       label: <Typography>{ReportRoute.transientPeople}</Typography>,
       disableTabRipple: false,
-      tabPanel: <TransientPeople modal={modalData} setModal={setModalData} />,
+      tabPanel: (
+        <TransientPeople
+          modal={modalData}
+          setModal={setModalData}
+          setImgModal={setImgModal}
+        />
+      ),
     },
     {
       id: 1,

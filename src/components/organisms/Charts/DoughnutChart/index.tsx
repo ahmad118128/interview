@@ -85,7 +85,7 @@ export default function DoughnutChart(props: DoughnutChartProps) {
         </Typography>
         <Typography variant="h2">{chartLabel}</Typography>
       </DetailsBox>
-      {legend ? <CustomLegend labels={labels as string[]} /> : null}
+      {legend ? <CustomLegend labels={labels} /> : null}
     </DoughnutBox>
   );
 }

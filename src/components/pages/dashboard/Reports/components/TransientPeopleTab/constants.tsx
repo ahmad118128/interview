@@ -199,13 +199,11 @@ export const TransientPeopleHeader: CellType[] = [
   {
     id: 'directionOfGate',
     label: ReportRoute.directionOfGate,
-    type: 'number',
     sortable: true,
   },
   {
     id: 'registrationTime',
     label: ReportRoute.registrationTime,
-    type: 'number',
     sortable: true,
   },
   {

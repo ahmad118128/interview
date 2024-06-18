@@ -6,6 +6,7 @@ import { Typography } from '@mui/material';
 import CustomModal from '@/components/organisms/Modal/CustomModal';
 import { IModalState } from './type';
 import TransientPeople from './components/TransientPeopleTab';
+import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
 
 export function ReportPage() {
   const [modalData, setModalData] = useState<IModalState>({
@@ -54,6 +55,14 @@ export function ReportPage() {
           title={DataBankRoute.deleteModalBlackText}
           handleClose={() => setModalData({ state: false })}
         ></CustomModal>
+      ) : null}
+      {imgModal ? (
+        <ThumbnailPicModal
+          handleClose={() => setImgModal(false)}
+          open={imgModal}
+          setOpen={setImgModal}
+          src={'/assets/images/dashboard/technology 1.svg'}
+        />
       ) : null}
     </>
   );

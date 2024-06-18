@@ -1,3 +1,9 @@
+import EmptyState from '@/components/atoms/EmptyState';
+
 export default function Report() {
-  return <>report</>;
+  return (
+    <>
+      <EmptyState />
+    </>
+  );
 }

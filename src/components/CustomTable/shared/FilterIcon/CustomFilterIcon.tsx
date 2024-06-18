@@ -35,7 +35,7 @@ export const CustomFilterIcon = (props: Props) => {
         <IconButton
           onClick={() => onHandleIconClick(EFilterTableNameIcon.FILTER)}
           key={tablePhrases.filtering}
-          iconName={'fluent:filter-32-filled'}
+          iconName="fluent:filter-32-filled"
           height={24}
           width={24}
           style={{

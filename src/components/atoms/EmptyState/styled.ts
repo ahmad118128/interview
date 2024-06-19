@@ -8,6 +8,7 @@ export const EmptyStateContainer = styled(Box)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 20px;
 `;
 
 export const EmptyStateImage = styled(Image)`
@@ -15,7 +16,7 @@ export const EmptyStateImage = styled(Image)`
     width: 430px;
     height: 360px;
   }
-  ${({ theme }) => theme.breakpoints.up('sm')} {
+  ${({ theme }) => theme.breakpoints.down('lg')} {
     width: 265px;
     height: 222px;
   }

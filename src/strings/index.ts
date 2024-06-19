@@ -1223,6 +1223,7 @@ export const ReportModal = {
 
 export const DataBankRoute = {
   submit: 'ثبت',
+  cancel: 'انصراف',
   addGroupFormTitle: 'افزودن گروه',
   groupInformation: 'اطلاعات گروه',
   add: 'افزودن',
@@ -1237,7 +1238,7 @@ export const DataBankRoute = {
   fatherName: 'نام پدر',
   lastName: 'نام‌خانوادگی',
   firstName: 'نام',
-  uploadImage: 'بازگذاری تصاویر',
+  uploadImage: 'بارگذاری تصاویر',
   addGropModalTitle: 'افزودن گروه',
   generalKnowledge: 'اطلاعات عمومی',
   information: 'توضیحات',
@@ -1261,6 +1262,12 @@ export const DataBankRoute = {
   earase: 'پاک‌سازی',
   accurancyStart: 'آستانه تطابق',
   accurancyNumber: 'تعداد تطابق',
+  groupRegister: 'ثبت نام گروهی',
+  uploadFile: 'بارگذاری فایل',
+  excelFile: 'فایل اکسل',
+  registerType: 'نوع ثبت ',
+  fileUsage: 'نحوه استفاده از فایل',
+  imageDirectory: 'مسیر دایرکتوری تصاویر',
 };
 
 export const SupervisitoryListRoute = {

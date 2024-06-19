@@ -86,3 +86,4 @@ export const CustomTab = styled(BaseTab)`
     }
   }
 `;
+export default CustomTab;

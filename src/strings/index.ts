@@ -1328,3 +1328,25 @@ export const TrafficAnalysisRoute = {
   startPassingDateAndTime: 'تاریخ و زمان عبور از',
   endPassingDateAndTime: 'تاریخ و زمان عبور تا',
 };
+
+export const UsersManagementRoute = {
+  usersManagement: 'مدیریت کاربران',
+  users: 'کاربران',
+  accessingPanelState: 'سطح دسترسی پنل',
+  addPerson: 'افزودن فرد',
+  editPerson: 'ویرایش فرد',
+  deletePerson: 'حذف فرد',
+  deleteGroup: 'حذف گروه',
+  addList: 'افزودن لیست',
+  editList: 'ویرایش لیست',
+  deleteList: 'حذف لیست',
+  passingPeopleImageRecognition: 'شناسایی تصویر افرادعبوری',
+  registeredPeopleImageRecognition: 'شناسایی تصویر افرادثبت نامی',
+  reports: 'گزارش‌ها',
+  passingPeopleReport: 'گزارش افراد عبوری',
+  peoplesTrafficReport: 'گزارش تردد افراد',
+  entryAndExitReport: 'گزارش ورود و خروج',
+  addStaff: 'افزودن پرسنل',
+  editStaff: 'ویرایش پرسنل',
+  deleteStaff: 'حذف پرسنل',
+};

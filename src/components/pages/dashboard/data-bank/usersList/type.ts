@@ -23,6 +23,7 @@ export type HeaderFilterTableProps = MultiModeFilter & {
   collapse: boolean;
   handleFiltersChips: (filterKey: any) => void;
   onSearchClick?: () => void;
+  tableName?: string;
 };
 
 export enum EFilterTableNameIcon {

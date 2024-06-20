@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from '@mui/material';
-import { StyledImage, StyledWrapperModal } from './styled';
+import { StyledImage, StyledWrapperImage, StyledWrapperModal } from './styled';
 import { reportPicModalProps } from './type';
 import { ReportModal } from '@/strings';
 import theme from '@/theme';
@@ -9,17 +9,11 @@ export default function ReportPictureBox({ personInfo }: reportPicModalProps) {
     personInfo;
   return (
     <StyledWrapperModal>
-      <StyledImage
-        alt={src}
-        src={src}
-        width={210}
-        height={210}
-        layout="responsive"
-        // sizes="(max-width: 450px) 33vw, (max-width:768px) 50vw,(max-width:1200)70vw, 33vw"
-      />
+      <StyledWrapperImage>
+        <StyledImage alt={src} src={src} objectFit="cover" fill />
+      </StyledWrapperImage>
       <Box
         sx={{
-          // width: '100%',
           display: 'flex',
           flexDirection: 'row',
           gap: '1.5rem',

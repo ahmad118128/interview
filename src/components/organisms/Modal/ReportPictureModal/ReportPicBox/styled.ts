@@ -67,7 +67,7 @@ export const StyledInfoTitles = styled(Box)`
 
 export const StyledInfoData = styled(Box)`
   width: 120px;
-  display: flex
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   gap: 0.875rem;
 `;

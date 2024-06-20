@@ -4,7 +4,19 @@ import Image from 'next/image';
 export const StyledWrapperModal = styled(Box)`
   display: flex;
   padding: 12px;
-  align-items: stretch;
+  flex-direction: column;
+
+  ${({ theme }) => theme.breakpoints.up('sm')} {
+    flex-direction: row;
+  }
+
+  ${({ theme }) => theme.breakpoints.up('md')} {
+    flex-direction: row;
+  }
+
+  ${({ theme }) => theme.breakpoints.up('lg')} {
+    flex-direction: row;
+  }
   gap: 20px;
   border-radius: 6px;
   margin-top: 1.25rem;

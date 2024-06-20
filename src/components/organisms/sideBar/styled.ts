@@ -14,7 +14,7 @@ export const StyledsideBarWrapper = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  gap: 2rem;
 `;
 
 export const StyledNavWrapper = styled(Box)`
@@ -22,10 +22,14 @@ export const StyledNavWrapper = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-height: 450px;
+  overflow: scroll;
+  padding: 0 12px;
 `;
 
 export const StyledListItemButton = styled(ListItemButton)<StyledSideBarType>(
   ({ theme, isOpen }) => ({
+    width: '100%',
     display: 'flex',
     alignItems: 'center',
     transition: 'all 0.5s',

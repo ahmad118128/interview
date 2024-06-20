@@ -20,9 +20,9 @@ export default function FilterForm({ control, reset }: any) {
       </Grid>
       <Grid item xs={12} md={4}>
         <CustomRHFAutocomplete
-          label={ReportRoute.orientation}
+          label={ReportRoute.directionOfGate}
           control={control}
-          name="orientation"
+          name="directionOfGate"
           options={[]}
         />
       </Grid>

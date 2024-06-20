@@ -1,25 +1,26 @@
 import { Box, Grid } from '@mui/material';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
-import { DataBankRoute, ReportRoute, TrafficAnalysisRoute } from '@/strings';
+import { DataBankRoute, ReportRoute } from '@/strings';
 import { CustomRHFAutocomplete } from '@/components/atoms/Autocomplete';
 import { CustomButton } from '@/components/atoms/CustomButton';
 
 import ControlledTimeDatePickerInput from '@/components/organisms/TimeDatePicker/ControlledTimeDatePicker';
-import { StyledFilterChild } from '../../../image-recognition/FilterChild/styled';
 
 export default function FilterForm({ control, reset }: any) {
   return (
-    <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
+    <Grid container spacing={{ xs: 8, md: 8 }}>
       <Grid item xs={12} md={4}>
         <CustomRHFAutocomplete
           label={ReportRoute.gateName}
           control={control}
           name="gateName"
           options={[]}
+          fullWidth
         />
       </Grid>
       <Grid item xs={12} md={4}>
         <CustomRHFAutocomplete
+          fullWidth
           label={ReportRoute.directionOfGate}
           control={control}
           name="directionOfGate"
@@ -37,6 +38,7 @@ export default function FilterForm({ control, reset }: any) {
       </Grid>
       <Grid item xs={12} md={4}>
         <CustomRHFAutocomplete
+          fullWidth
           label={ReportRoute.matchingType}
           control={control}
           name="matchingType"
@@ -63,6 +65,7 @@ export default function FilterForm({ control, reset }: any) {
       </Grid>
       <Grid item xs={12} md={4}>
         <CustomRHFAutocomplete
+          fullWidth
           label={ReportRoute.gender}
           control={control}
           name="gender"
@@ -105,6 +108,6 @@ export default function FilterForm({ control, reset }: any) {
           {DataBankRoute.earase}
         </CustomButton>
       </Box>
-    </StyledFilterChild>
+    </Grid>
   );
 }

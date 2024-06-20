@@ -2,6 +2,7 @@ import { ChangeEventHandler } from 'react';
 import {
   AutocompleteFreeSoloValueMapping,
   AutocompleteProps,
+  TextFieldProps,
 } from '@mui/material';
 import {
   Control,
@@ -51,7 +52,12 @@ export type ExtendedAutocompleteProps<
   >;
 };
 
-export type AutocompleteTextFieldTypes = {
+// export type AutocompleteTextFieldTypes = {
+//   direction?: 'rtl' | 'ltr';
+//   labelDirection?: 'rtl' | 'ltr';
+// };
+
+export type AutocompleteTextFieldTypes = TextFieldProps & {
   direction?: 'rtl' | 'ltr';
   labelDirection?: 'rtl' | 'ltr';
 };

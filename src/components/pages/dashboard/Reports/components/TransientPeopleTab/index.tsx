@@ -118,7 +118,7 @@ export default function TransientPeople({ modal, setModal, setImgModal }: any) {
         rows={TransientMockData}
         headers={tableHeads}
         error={!tableData?.data?.results}
-        mobileIdFilter={[COLLAPSE_ID, 'description', 'matchCount']}
+        mobileIdFilter={[COLLAPSE_ID, 'gateName', 'matchCount']}
         pagination={pagination}
         handleSort={(id) => {
           setOrder(id);

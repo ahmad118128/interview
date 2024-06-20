@@ -45,7 +45,7 @@ export default function CustomModal({
           />
         </StyledDeleteButtonBox>
 
-        {title && <StyledTitleText variant="body1">{title}</StyledTitleText>}
+        {title && <StyledTitleText variant="h3">{title}</StyledTitleText>}
         {children}
         {buttons && (
           <StyledActionButtonsBox>

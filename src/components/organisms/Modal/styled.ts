@@ -9,7 +9,7 @@ export const StyledCustomModal = styled(Box)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 1.5rem;
+  padding: 1.25rem;
 `;
 
 export const StyledDeleteButtonBox = styled(Box)`
@@ -43,6 +43,5 @@ export const StyledErrorText = styled(Typography)`
 
 export const StyledTitleText = styled(Typography)`
   text-align: center;
-  margin: 1.5rem 0;
   margin-top: -1.1rem;
 `;

@@ -28,7 +28,6 @@ export const StyledWrapperModal = styled(Box)`
 
 export const StyledImage = styled(Image)`
   border-radius: 6px;
-  border: 2px solid ${({ theme }) => theme.palette.primary.main};
 `;
 
 export const StyledWrapperImage = styled(Box)`
@@ -52,4 +51,23 @@ export const StyledWrapperImage = styled(Box)`
     width: 216px;
     height: 216px;
   }
+`;
+export const StyledInfoWrapper = styled(Box)`
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+`;
+
+export const StyledInfoTitles = styled(Box)`
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+`;
+
+export const StyledInfoData = styled(Box)`
+  width: 120px;
+  display: flex
+  flex-direction:column;
+  gap: 0.875rem;
 `;

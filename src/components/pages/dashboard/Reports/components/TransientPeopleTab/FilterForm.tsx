@@ -5,10 +5,11 @@ import { CustomRHFAutocomplete } from '@/components/atoms/Autocomplete';
 import { CustomButton } from '@/components/atoms/CustomButton';
 
 import ControlledTimeDatePickerInput from '@/components/organisms/TimeDatePicker/ControlledTimeDatePicker';
+import { StyledFilterChild } from '../../../image-recognition/FilterChild/styled';
 
 export default function FilterForm({ control, reset }: any) {
   return (
-    <Grid container spacing={{ xs: 8, md: 8 }}>
+    <StyledFilterChild container spacing={{ xs: 8, md: 8 }}>
       <Grid item xs={12} md={4}>
         <CustomRHFAutocomplete
           label={ReportRoute.gateName}
@@ -108,6 +109,6 @@ export default function FilterForm({ control, reset }: any) {
           {DataBankRoute.earase}
         </CustomButton>
       </Box>
-    </Grid>
+    </StyledFilterChild>
   );
 }

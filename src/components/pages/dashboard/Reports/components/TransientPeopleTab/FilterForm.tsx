@@ -9,7 +9,7 @@ import { StyledFilterChild } from '../../../image-recognition/FilterChild/styled
 
 export default function FilterForm({ control, reset }: any) {
   return (
-    <StyledFilterChild container spacing={{ xs: 8, md: 8 }}>
+    <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
       <Grid item xs={12} md={4}>
         <CustomRHFAutocomplete
           label={ReportRoute.gateName}

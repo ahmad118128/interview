@@ -17,6 +17,14 @@ export const StyledsideBarWrapper = styled(Box)`
   gap: 2rem;
 `;
 
+export const StyledSpacingFlex = styled(Box)`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
 export const StyledNavWrapper = styled(Box)`
   width: 100%;
   display: flex;
@@ -85,7 +93,7 @@ export const StyledFooterSideBar = styled(Box)<StyledSideBarType>(
     flexDirection: 'column',
     alignItems: 'center',
     gap: '0.25rem',
-    marginBottom: isOpen ? '2rem' : '1.5rem',
+    marginBottom: '1.5rem',
     backgroundColor: theme.palette.common.white,
   })
 );

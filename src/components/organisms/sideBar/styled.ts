@@ -24,12 +24,12 @@ export const StyledNavWrapper = styled(Box)`
   align-items: center;
   max-height: 450px;
   overflow: scroll;
-  padding: 0 12px;
+  padding-inline: 0 15px;
 `;
 
 export const StyledListItemButton = styled(ListItemButton)<StyledSideBarType>(
   ({ theme, isOpen }) => ({
-    width: '100%',
+    width: isOpen ? '100%' : '57.6px',
     display: 'flex',
     alignItems: 'center',
     transition: 'all 0.5s',

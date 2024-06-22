@@ -4,8 +4,25 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation';
 
-import { Box, Grid, Typography } from '@mui/material';
-import { DataBankRoute, SupervisitoryListRoute } from '@/strings';
+import {
+  Box,
+  Checkbox,
+  FormControl,
+  FormControlLabel,
+  FormGroup,
+  FormLabel,
+  Grid,
+  Typography,
+} from '@mui/material';
+import {
+  DataBankRoute,
+  SupervisitoryListRoute,
+  UsersManagementRoute,
+  commonWords,
+  generalStr,
+  gpuServersString,
+  registrationStr,
+} from '@/strings';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 import { CustomRHFAutocomplete } from '@/components/atoms/Autocomplete';
@@ -25,6 +42,8 @@ import {
 } from '../../supervisory-list/constants';
 import { COLLAPSE_ID } from '../../image-recognition/constants';
 import { IError, ISuccess } from '../../image-recognition/types';
+import { CustomPasswordInput } from '@/components/atoms/CustomInput/RHFPasswordInput';
+import { ControledCheckbox } from '@/components/atoms/Checkbox';
 
 export function AddFormUsers() {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -48,9 +67,7 @@ export function AddFormUsers() {
   return (
     <StyledAddFormWrapper>
       <StyledAddFormHeader>
-        <Typography variant="h2">
-          {SupervisitoryListRoute.addSupervisoryListFormTitle}
-        </Typography>
+        <Typography variant="h2">{commonWords.addUser}</Typography>
 
         <IconButton iconName="tabler:arrow-narrow-left" onClick={goBackUrl} />
       </StyledAddFormHeader>
@@ -59,7 +76,7 @@ export function AddFormUsers() {
         <form onSubmit={handleSubmit(submitHadler)}>
           <label>
             <Typography variant="h3" sx={{ marginBottom: '1.25rem' }}>
-              {SupervisitoryListRoute.listInfo}
+              {DataBankRoute.personalInfo}
             </Typography>
           </label>
 
@@ -67,50 +84,202 @@ export function AddFormUsers() {
             <Grid item xs={12} md={4}>
               <CustomInput
                 control={control}
-                name="supervisoryListName"
+                name="userName"
                 fullWidth
-                label={SupervisitoryListRoute.supervisoryListName}
+                label={gpuServersString.userName}
+              />
+            </Grid>
+
+            <Grid item xs={12} md={4}>
+              <CustomPasswordInput
+                control={control}
+                name="roobinPassword"
+                fullWidth
+                label={registrationStr.roobinPassword}
+              />
+            </Grid>
+
+            <Grid item xs={12} md={4}>
+              <CustomPasswordInput
+                control={control}
+                name="repeatRoobinPassword"
+                fullWidth
+                label={registrationStr.repeatRoobinPassword}
               />
             </Grid>
 
             <Grid item xs={12} md={4}>
               <CustomInput
                 control={control}
-                name="similarityPercentage"
+                name="name"
                 fullWidth
-                label={SupervisitoryListRoute.similarityPercentage}
+                label={generalStr.name}
               />
             </Grid>
 
             <Grid item xs={12} md={4}>
-              <CustomRHFAutocomplete
-                label={SupervisitoryListRoute.status}
+              <CustomInput
                 control={control}
-                name="status"
-                options={[]}
+                name="lastName"
+                fullWidth
+                label={generalStr.lastName}
+              />
+            </Grid>
+
+            <Grid item xs={12} md={4}>
+              <CustomInput
+                control={control}
+                name="nationalId"
+                fullWidth
+                label={DataBankRoute.nationalId}
+                type="number"
               />
             </Grid>
 
             <Grid item xs={12}>
-              <CustomTextArea
-                label={DataBankRoute.information}
-                control={control}
-                name="texteara1"
-                placeholder={DataBankRoute.infoDialog}
-              />
+              <Typography variant="h3">
+                {UsersManagementRoute.accessingPanelState}
+              </Typography>
             </Grid>
 
-            <Grid item xs={12}>
-              <MobileCollapseTable
-                rows={supervisitoryListMembersMock}
-                headers={supervisitoryListMembersHeader}
-                error={!tableData?.data?.results}
-                mobileIdFilter={[COLLAPSE_ID, 'fullName', 'nationalId']}
-                pagination={pagination}
-                handleSort={(id) => {
-                  setOrder(id);
-                }}
-              />
+            <Grid item xs={12} md={3} alignSelf="center">
+              <label>
+                <Typography variant="body1">
+                  {UsersManagementRoute.accessingPanelState}
+                </Typography>
+              </label>
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3} alignSelf="center">
+              <label>
+                <Typography variant="body1">
+                  {UsersManagementRoute.accessingPanelState}
+                </Typography>
+              </label>
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3} alignSelf="center">
+              <label>
+                <Typography variant="body1">
+                  {UsersManagementRoute.accessingPanelState}
+                </Typography>
+              </label>
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3} alignSelf="center">
+              <label>
+                <Typography variant="body1">
+                  {UsersManagementRoute.accessingPanelState}
+                </Typography>
+              </label>
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3} alignSelf="center">
+              <label>
+                <Typography variant="body1">
+                  {UsersManagementRoute.accessingPanelState}
+                </Typography>
+              </label>
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3} alignSelf="center">
+              <label>
+                <Typography variant="body1">
+                  {UsersManagementRoute.accessingPanelState}
+                </Typography>
+              </label>
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3} alignSelf="center">
+              <label>
+                <Typography variant="body1">
+                  {UsersManagementRoute.accessingPanelState}
+                </Typography>
+              </label>
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
+            </Grid>
+
+            <Grid item xs={12} md={3}>
+              <ControledCheckbox control={control} name="test" label="test1" />
             </Grid>
 
             <Box

@@ -357,6 +357,7 @@ export const registrationStr = {
   username: 'نام کاربری',
   email: 'ایمیل',
   password: 'گذرواژه',
+  repeatRoobinPassword: 'تکرار رمز عبور',
   roobinPassword: 'رمز عبور',
   newPass: 'گذرواژه جدید',
   ReNewPass: 'تکرار گذرواژه جدید',

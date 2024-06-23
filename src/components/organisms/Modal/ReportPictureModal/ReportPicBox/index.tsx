@@ -3,16 +3,9 @@ import { StyledImage, StyledWrapperModal } from './styled';
 import { reportPicModalProps } from './type';
 import { ReportModal } from '@/strings';
 
-export default function ReportPictureBox({
-  src,
-  name,
-  sex,
-  age,
-  date,
-  arrow,
-  birthCity,
-  agreementPercent,
-}: reportPicModalProps) {
+export default function ReportPictureBox({ personInfo }: reportPicModalProps) {
+  const { src, name, sex, age, date, arrow, birthCity, agreementPercent } =
+    personInfo;
   return (
     <StyledWrapperModal>
       <StyledImage alt={src} src={src} width={180} height={180} />

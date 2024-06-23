@@ -1222,6 +1222,7 @@ export const ReportModal = {
   agreementPercent: 'درصد تطابق',
   date: 'زمان ثبت',
   results: 'نتایج شناسایی',
+  uploadedImg: 'تصویر آپلود شده',
 };
 
 export const DataBankRoute = {

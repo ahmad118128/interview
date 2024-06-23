@@ -1,25 +1,17 @@
 'use client';
 
-import { CellType } from '@/components/CustomTable/types';
-import { CustomTab } from '@/components/molecules/CustomTab/styled';
-import TableWithFab from '@/components/template/TableWithFab';
-import { DataBankRoute, commonWords, generalStr } from '@/strings';
-import theme from '@/theme';
-import { Icon } from '@iconify/react/dist/iconify.js';
-import { TableCell, Typography } from '@mui/material';
 import { useState } from 'react';
-import { IModalState } from './type';
-import CustomModal from '@/components/organisms/Modal/CustomModal';
 import { usePathname, useRouter } from 'next/navigation';
+import { TableCell, Typography } from '@mui/material';
+
+import { CustomTab } from '@/components/molecules/CustomTab/styled';
+import { DataBankRoute } from '@/strings';
 import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
-import {
-  dataBankHeaderUser,
-  dataBankHeadergroup,
-  dataBankMockUsers,
-  dataBankMockgrous,
-} from '@/components/pages/dashboard/data-bank/constants';
 import UsersList from '@/components/pages/dashboard/data-bank/usersList';
 import GroupList from '@/components/pages/dashboard/data-bank/groupList';
+import { DeleteModal } from '@/components/organisms/Modal/DeleteModal.tsx';
+
+import { IModalState } from './type';
 
 export default function DatabankTemplate() {
   const [modalData, setModalData] = useState<IModalState>({
@@ -56,20 +48,19 @@ export default function DatabankTemplate() {
       <CustomTab data={tabs} type={'normalTab'}></CustomTab>
 
       {modalData.state ? (
-        <CustomModal
+        <DeleteModal
           id={modalData.id}
           open={modalData.state}
-          activeButtonHandler={() => console.log(modalData.id)}
+          onSubmit={() => console.log(modalData.id)}
           buttons
-          errorTitle={DataBankRoute.deleteModalRedText}
           title={DataBankRoute.deleteModalBlackText}
-          handleClose={() => setModalData({ state: false })}
-        ></CustomModal>
+          onClose={() => setModalData({ state: false })}
+        ></DeleteModal>
       ) : null}
 
       {imgModal ? (
         <ThumbnailPicModal
-          handleClose={() => setImgModal(false)}
+          onClose={() => setImgModal(false)}
           open={imgModal}
           setOpen={setImgModal}
           src={'/assets/images/dashboard/technology 1.svg'}

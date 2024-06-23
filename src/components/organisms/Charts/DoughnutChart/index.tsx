@@ -45,7 +45,7 @@ function getGradient(
 }
 
 export default function DoughnutChart(props: DoughnutChartProps) {
-  const { data, labels, chartLabel } = props;
+  const { data, labels, chartLabel, legend } = props;
 
   const chartData = {
     labels,
@@ -85,7 +85,7 @@ export default function DoughnutChart(props: DoughnutChartProps) {
         </Typography>
         <Typography variant="h2">{chartLabel}</Typography>
       </DetailsBox>
-      <CustomLegend labels={labels as string[]} />
+      {legend ? <CustomLegend labels={labels} /> : null}
     </DoughnutBox>
   );
 }

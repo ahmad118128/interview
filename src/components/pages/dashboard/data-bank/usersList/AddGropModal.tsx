@@ -13,7 +13,7 @@ export default function AddGropModal({ isOpen, setIsOpen }: any) {
       setOpen={setIsOpen}
       title={DataBankRoute.addGropModalTitle}
       buttons
-      handleClose={() => setIsOpen(false)}
+      onClose={() => setIsOpen(false)}
     >
       <AddGroupModalForm control={control} handleSubmit={handleSubmit} />
     </CustomModal>

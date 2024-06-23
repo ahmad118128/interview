@@ -3,11 +3,15 @@ import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 import { DataBankRoute, ReportRoute } from '@/strings';
 import { CustomRHFAutocomplete } from '@/components/atoms/Autocomplete';
 import { CustomButton } from '@/components/atoms/CustomButton';
-
 import ControlledTimeDatePickerInput from '@/components/organisms/TimeDatePicker/ControlledTimeDatePicker';
 import { StyledFilterChild } from '../../../image-recognition/FilterChild/styled';
+import React from 'react';
+import { HeaderFilterTableProps } from './type';
+import { FieldValues } from 'react-hook-form';
 
-export default function FilterForm({ control, reset }: any) {
+const FilterForm: React.FC<
+  Pick<HeaderFilterTableProps<FieldValues>, 'control' | 'reset'>
+> = ({ control, reset }) => {
   return (
     <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
       <Grid item xs={12} md={4}>
@@ -111,4 +115,6 @@ export default function FilterForm({ control, reset }: any) {
       </Box>
     </StyledFilterChild>
   );
-}
+};
+
+export default FilterForm;

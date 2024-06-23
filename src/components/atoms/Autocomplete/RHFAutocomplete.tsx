@@ -9,7 +9,6 @@ import { RHFAutoCompleteProps } from './type';
 import { AutocompleteTextField, CustomPaper, Listbox } from './styled';
 import { CustomChip } from '@/components/atoms/CustomChip/index';
 import { generalStr } from '@/strings';
-import { CustomInput } from '../CustomInput/RHFCustomInput';
 
 export const CustomRHFAutocomplete = <
   OptionType,
@@ -91,14 +90,6 @@ export const CustomRHFAutocomplete = <
               error={!!error}
               helperText={error?.message}
             />
-            // <CustomInput
-            //   {...params}
-            //   control={control}
-            //   name={name}
-            //   rules={rules}
-            //   label={label}
-            //   fullWidth={fullWidth}
-            // />
           )}
           renderOption={(props, option) => (
             <Listbox {...props} dir={dir}>

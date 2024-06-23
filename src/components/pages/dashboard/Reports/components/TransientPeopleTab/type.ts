@@ -1,5 +1,6 @@
 import { FiltersChips } from '@/components/CustomTable/types';
 import { ReactElement, ReactNode } from 'react';
+import { Control, FieldValues } from 'react-hook-form';
 
 export type HeaderMode = EFilterModeIcon.TABLE | EFilterModeIcon.CHART;
 export type onHandleModeChange = (name: HeaderMode) => void;
@@ -13,17 +14,18 @@ type MultiModeFilter =
       hasModeHandler?: false;
     };
 
-export type HeaderFilterTableProps = MultiModeFilter & {
-  chips: FiltersChips<any>;
-  activeMode?: ActiveMode;
-  refreshLoading: boolean;
-  onHandleIconClick: OnHandleIconClick;
-  control: any;
-  reset: any;
-  collapse: boolean;
-  handleFiltersChips: (filterKey: any) => void;
-  onSearchClick?: () => void;
-};
+export type HeaderFilterTableProps<TField extends FieldValues> =
+  MultiModeFilter & {
+    chips: FiltersChips<TField>;
+    activeMode?: ActiveMode;
+    refreshLoading: boolean;
+    onHandleIconClick: OnHandleIconClick;
+    control: Control<TField>;
+    reset: () => void;
+    collapse: boolean;
+    handleFiltersChips: (filterKey: any) => void;
+    onSearchClick?: () => void;
+  };
 
 export enum EFilterTableNameIcon {
   FILTER = 'filter',

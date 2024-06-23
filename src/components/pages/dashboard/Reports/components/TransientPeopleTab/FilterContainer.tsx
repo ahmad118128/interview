@@ -18,8 +18,9 @@ import { leftIcons } from '@/components/CustomTable/widgets/FilterContainer/cons
 import { FilterIcon } from '@/components/CustomTable/shared';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 import FilterForm from './FilterForm';
+import { FieldValues } from 'react-hook-form';
 
-export const FilterContainer = (props: HeaderFilterTableProps) => {
+export const FilterContainer = (props: HeaderFilterTableProps<FieldValues>) => {
   const {
     control,
     reset,
@@ -31,12 +32,6 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
     handleFiltersChips,
     onSearchClick,
   } = props;
-
-  if (props.hasModeHandler && !props.onHandleModeChange) {
-    throw new Error(
-      'if hasModeHandler equals true, you should pass onHandleModeChange prop!'
-    );
-  }
 
   return (
     <Accordion expanded={collapse} sx={{ boxShadow: 'none' }}>

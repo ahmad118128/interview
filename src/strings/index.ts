@@ -1,7 +1,7 @@
 /** ********** GENERAL ********** */
 
 export const generalStr = {
-  noDataFetchingYet: 'تاکنون اطلاعاتی ثبت نشده است.',
+  emptyState: 'تاکنون اطلاعاتی ثبت نشده است.',
   matchCount: 'تعداد تطبیق',
   creditFrom: 'مقدار اعتبار از',
   creditTo: 'مقدار اعتبار تا',

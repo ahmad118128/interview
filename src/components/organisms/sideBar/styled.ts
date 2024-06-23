@@ -30,14 +30,14 @@ export const StyledNavWrapper = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 450px;
+  max-height: 28.125rem;
   overflow: scroll;
-  padding-inline: 0 15px;
+  padding-inline: 0 0.9375rem;
 `;
 
 export const StyledListItemButton = styled(ListItemButton)<StyledSideBarType>(
   ({ theme, isOpen }) => ({
-    width: isOpen ? '100%' : '57.6px',
+    width: isOpen ? '100%' : '3.6rem',
     display: 'flex',
     alignItems: 'center',
     transition: 'all 0.5s',

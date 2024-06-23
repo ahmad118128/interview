@@ -1,4 +1,3 @@
-// reportTabs.tsx
 import { ReportRoute } from '@/strings';
 import { Typography } from '@mui/material';
 import TransientPeople from './components/TransientPeopleTab';

@@ -23,7 +23,7 @@ const ErrorPage500 = ({ statusCode }: ErrorTestProps) => {
             alt="Error500"
             layout="fill"
             objectFit="contained"
-          ></Image>
+          />
         </StyledImageContainer>
         <Box
           sx={{

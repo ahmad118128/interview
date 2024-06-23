@@ -82,6 +82,7 @@ export const StyledButton = styled(MUIButton)<ButtonProps>(({ theme }) => ({
 
 export const StyledIconButton = styled(IconButton)(({ theme }) => ({
   borderRadius: '6px',
+  padding: '0.1875rem',
 
   '& .iconify': {
     color: theme.palette.primary.main,

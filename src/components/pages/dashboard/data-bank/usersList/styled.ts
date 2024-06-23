@@ -71,14 +71,6 @@ export const StyledAccordionSummary = styled(AccordionSummary)`
 `;
 
 export const StyledAccordionDetails = styled(AccordionDetails)`
-  .MuiCollapse-wrapperInner {
-    background: red !important;
-  }
-  .MuiAccordionDetails-root {
-    background: ${theme.palette.grey[50]};
-  }
-  margin-top: 0.5rem;
-  margin-bottom: 0.25rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -88,6 +80,9 @@ export const StyledAccordionDetails = styled(AccordionDetails)`
   background: ${theme.palette.grey[50]};
   border: 1px solid ${theme.palette.grey[200]};
   border-radius: 0.625rem;
+  .MuiCollapse-vertical {
+    border-radius: 0.625rem;
+  }
 `;
 
 export const StyledIconsContainer = styled(Box)`

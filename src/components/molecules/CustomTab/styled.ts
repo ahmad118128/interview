@@ -15,7 +15,7 @@ export const CustomTab = styled(BaseTab)`
         color: ${({ theme }) => theme.palette.common.black};
       }
       &:hover {
-        color: ${({ theme }) => theme.palette.primary.dark};
+        border-bottom: 1px solid ${({ theme }) => theme.palette.primary.main};
       }
     }
     .MuiTabs-scroller {

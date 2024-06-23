@@ -37,7 +37,10 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
   }
 
   return (
-    <Accordion expanded={collapse} sx={{ boxShadow: 'none', padding: 0 }}>
+    <Accordion
+      expanded={collapse}
+      sx={{ boxShadow: 'none', padding: 0, borderRadius: '10px' }}
+    >
       <StyledAccordionSummary
         sx={{
           backgroundColor: theme.palette.grey[100],

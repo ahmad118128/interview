@@ -1,10 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import TrafficOfPeople from './components/Traffic-of-people';
 import { usePathname, useRouter } from 'next/navigation';
 import { Typography } from '@mui/material';
-import { TrafficAnalysisRoute, generalStr } from '@/strings';
+import TrafficOfPeople from './components/Traffic-of-people';
+import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
+import { DeleteModal } from '@/components/organisms/Modal/DeleteModal.tsx';
+import { DataBankRoute, TrafficAnalysisRoute, generalStr } from '@/strings';
 import { IModalState } from '@/components/template/DataBank/type';
 import CustomTab from '@/components/molecules/CustomTab/styled';
 
@@ -47,6 +49,26 @@ export default function Report() {
   return (
     <>
       <CustomTab data={tabs} type={'normalTab'}></CustomTab>
+
+      {modalData.state ? (
+        <DeleteModal
+          id={modalData.id}
+          open={modalData.state}
+          onSubmit={() => console.log(modalData.id)}
+          buttons
+          title={DataBankRoute.deleteModalBlackText}
+          onClose={() => setModalData({ state: false })}
+        ></DeleteModal>
+      ) : null}
+
+      {imgModal ? (
+        <ThumbnailPicModal
+          onClose={() => setImgModal(false)}
+          open={imgModal}
+          setOpen={setImgModal}
+          src={'/assets/images/dashboard/technology 1.svg'}
+        />
+      ) : null}
     </>
   );
 }

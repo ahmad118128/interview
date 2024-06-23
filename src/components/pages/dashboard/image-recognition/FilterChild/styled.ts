@@ -15,7 +15,7 @@ export const StyledFilterChild = styled(Grid)`
   ${({ theme }) => theme.breakpoints.down('md')} {
     row-gap: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
   }

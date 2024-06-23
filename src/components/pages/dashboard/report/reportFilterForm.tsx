@@ -2,7 +2,7 @@ import { CustomRHFAutocomplete } from '@/components/atoms/Autocomplete';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 import { CustomButton } from '@/components/atoms/CustomButton';
 import ControlledTimeDatePickerInput from '@/components/organisms/TimeDatePicker/ControlledTimeDatePicker';
-import { Box, Grid, Unstable_Grid2 } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import { StyledFilterChild } from '../image-recognition/FilterChild/styled';
 import {
   DataBankRoute,
@@ -15,7 +15,7 @@ import {
 
 export default function ReportFilterForm({ control, reset }: any) {
   return (
-    <Grid container spacing={{ xs: 0, md: 8 }}>
+    <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
       <Grid item xs={12} md={4}>
         <CustomInput
           control={control}
@@ -94,6 +94,6 @@ export default function ReportFilterForm({ control, reset }: any) {
           {DataBankRoute.earase}
         </CustomButton>
       </Box>
-    </Grid>
+    </StyledFilterChild>
   );
 }

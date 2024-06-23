@@ -128,7 +128,7 @@ const TrafficOfPeople = ({ modal, setModal, setImgModal }: any) => {
         rows={reportMocTrafficOfPeople}
         headers={tableHeadsClient}
         error={!tableData?.data?.results}
-        mobileIdFilter={[COLLAPSE_ID, 'factoryName', 'clientStatus']}
+        mobileIdFilter={[COLLAPSE_ID, 'name', 'supervisortList']}
         pagination={pagination}
         handleSort={(id) => {
           setOrder(id);

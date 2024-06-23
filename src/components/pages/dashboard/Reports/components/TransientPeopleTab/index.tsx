@@ -17,11 +17,14 @@ import {
   COLLAPSE_ID,
   TransientMockData,
   TransientPeopleHeader,
+  defaultTransientPeopleFormValues,
 } from './constants';
 import { CellType } from '@/components/CustomTable/shared/CustomCell/types';
 import theme from '@/theme';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
-export default function TransientPeople({ modal, setModal, setImgModal }: any) {
+import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
+export default function TransientPeople() {
+  const [imgModal, setImgModal] = useState(false);
   const [collapse, setCollapse] = useState(false);
   const [filtersChips, setFiltersChips] = useState<
     FiltersChips<UsersFilterProps>
@@ -34,19 +37,9 @@ export default function TransientPeople({ modal, setModal, setImgModal }: any) {
 
   const methods = useForm<FieldValues>({
     mode: 'onSubmit',
-    defaultValues: {
-      gateName: '',
-      orientation: '',
-      minimumSimilarityPercentage: '',
-      matchingType: '',
-      fromAge: '',
-      untilAge: '',
-      gender: '',
-      registrationTimeOf: '',
-      registrationTimeUpTo: '',
-    },
+    defaultValues: defaultTransientPeopleFormValues,
   });
-  const { control, reset, handleSubmit } = { ...methods };
+  const { control, reset } = { ...methods };
 
   const submitHandler = (data: any) => {
     console.log(data);
@@ -124,6 +117,14 @@ export default function TransientPeople({ modal, setModal, setImgModal }: any) {
           setOrder(id);
         }}
       />
+      {imgModal ? (
+        <ThumbnailPicModal
+          handleClose={() => setImgModal(false)}
+          open={imgModal}
+          setOpen={setImgModal}
+          src={'/assets/images/dashboard/technology 1.svg'}
+        />
+      ) : null}
     </>
   );
 }

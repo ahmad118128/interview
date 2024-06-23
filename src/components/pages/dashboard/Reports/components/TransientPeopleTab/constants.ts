@@ -1,6 +1,18 @@
 import { CellType } from '@/components/CustomTable/types';
 import { ReportRoute } from '@/strings';
 
+export const defaultTransientPeopleFormValues = {
+  gateName: '',
+  orientation: '',
+  minimumSimilarityPercentage: '',
+  matchingType: '',
+  fromAge: '',
+  untilAge: '',
+  gender: '',
+  registrationTimeOf: '',
+  registrationTimeUpTo: '',
+};
+
 export const COLLAPSE_ID = 'collapse';
 
 export const TransientMockData = [

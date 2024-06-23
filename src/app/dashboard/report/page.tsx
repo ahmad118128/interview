@@ -1,12 +1,12 @@
 'use client';
 
+import { useState } from 'react';
 import TrafficOfPeople from './components/Traffic-of-people';
+import { usePathname, useRouter } from 'next/navigation';
 import { Typography } from '@mui/material';
 import { TrafficAnalysisRoute, generalStr } from '@/strings';
 import { IModalState } from '@/components/template/DataBank/type';
-import { useState } from 'react';
 import CustomTab from '@/components/molecules/CustomTab/styled';
-import { usePathname, useRouter } from 'next/navigation';
 
 export default function Report() {
   const router = useRouter();

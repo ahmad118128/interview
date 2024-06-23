@@ -1,10 +1,14 @@
+import { leftIcons } from '@/components/CustomTable/widgets/FilterContainer/constants';
+import { IconButton } from '@/components/atoms/CustomButton/IconButton';
+import { FilterIcon } from '@/components/CustomTable/shared';
+import ReportFilterForm from './reportFilterForm';
 import { Accordion, Box, Tooltip } from '@mui/material';
 import {
   EFilterModeIcon,
   HeaderFilterTableProps,
   HeaderMode,
   IconFilterModeTable,
-} from '../data-bank/usersList/type';
+} from './type';
 import {
   StyledAccordionDetails,
   StyledAccordionSummary,
@@ -12,10 +16,6 @@ import {
   StyledIconsContainer,
 } from '../data-bank/usersList/styled';
 import theme from '@/theme';
-import { leftIcons } from '@/components/CustomTable/widgets/FilterContainer/constants';
-import { IconButton } from '@/components/atoms/CustomButton/IconButton';
-import { FilterIcon } from '@/components/CustomTable/shared';
-import ReportFilterForm from './reportFilterForm';
 
 const ReportFilterContainer = (props: HeaderFilterTableProps) => {
   const {

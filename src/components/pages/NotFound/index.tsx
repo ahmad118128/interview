@@ -2,29 +2,35 @@
 
 import { CustomButton } from '@/components/atoms/CustomButton';
 import { generalStr, messageStr } from '@/strings';
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { StyledContainer } from './styled';
+import {
+  StyledContainer,
+  StyledImageContainer,
+  StyledText,
+  StyledTitle,
+} from './styled';
 
 const NotFound = () => {
   const router = useRouter();
+
   return (
     <StyledContainer>
-      <Image
-        src="/assets/images/Group2.svg"
-        width={448}
-        height={390}
-        alt="Picture of the author"
-      />
+      <StyledImageContainer>
+        <Image
+          src="/assets/images/Group2.svg"
+          alt="Picture of the author"
+          layout="fill"
+          objectFit="contained"
+        />
+      </StyledImageContainer>
 
-      <Typography variant="h2" component="h1">
-        {messageStr.notFound}
-      </Typography>
+      <StyledTitle component="h1">{messageStr.notFound}</StyledTitle>
 
-      <Typography variant="button" component="p">
+      <StyledText component="p">
         {generalStr.RemovedRenamedOrUnavailablePage}{' '}
-      </Typography>
+      </StyledText>
 
       <CustomButton
         variant="contained"

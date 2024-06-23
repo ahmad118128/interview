@@ -6,6 +6,7 @@ import Error500 from '../../../../public/Error500.png';
 import { Error500PageStr } from '@/strings';
 import { CustomButton } from '@/components/atoms/CustomButton';
 import { useRouter } from 'next/navigation';
+import { StyledBox, StyledContainer, StyledImageContainer } from './styled';
 
 interface ErrorTestProps {
   statusCode: number;
@@ -14,55 +15,54 @@ interface ErrorTestProps {
 const ErrorPage500 = ({ statusCode }: ErrorTestProps) => {
   const router = useRouter();
   return (
-    <Box
-      sx={{
-        width: '100vw',
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: '1.25rem',
-      }}
-    >
-      <Image src={Error500} alt="Error500"></Image>
-      <Box
-        sx={{
-          display: 'flex',
-          alignSelf: 'center',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '1rem',
-        }}
-      >
-        <Typography variant="button">
-          {Error500PageStr.problemOccurred}
-        </Typography>
-        <Typography
-          component={'ul'}
-          sx={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
+    <StyledContainer>
+      <StyledBox>
+        <StyledImageContainer>
+          <Image
+            src={Error500}
+            alt="Error500"
+            layout="fill"
+            objectFit="contained"
+          ></Image>
+        </StyledImageContainer>
+        <Box
+          sx={{
+            display: 'flex',
+            alignSelf: 'center',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '1rem',
+          }}
         >
-          <Typography variant="body1">
-            {Error500PageStr.solveTheProblem}
+          <Typography variant="button">
+            {Error500PageStr.problemOccurred}
           </Typography>
-          <Typography variant="body1" component={'li'}>
-            {Error500PageStr.problemSolution1}
+          <Typography
+            component={'ul'}
+            sx={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
+          >
+            <Typography variant="body1">
+              {Error500PageStr.solveTheProblem}
+            </Typography>
+            <Typography variant="body1" component={'li'}>
+              {Error500PageStr.problemSolution1}
+            </Typography>
+            <Typography variant="body1" component={'li'}>
+              {Error500PageStr.problemSolution2}
+            </Typography>
+            <Typography variant="body1" component={'li'}>
+              {Error500PageStr.problemSolution3}
+            </Typography>
           </Typography>
-          <Typography variant="body1" component={'li'}>
-            {Error500PageStr.problemSolution2}
-          </Typography>
-          <Typography variant="body1" component={'li'}>
-            {Error500PageStr.problemSolution3}
-          </Typography>
-        </Typography>
-        <CustomButton
-          variant="contained"
-          onClick={() => router.push('/dashboard')}
-        >
-          {Error500PageStr.bottomTitle}
-        </CustomButton>
-      </Box>
-    </Box>
+          <CustomButton
+            variant="contained"
+            onClick={() => router.push('/dashboard')}
+          >
+            {Error500PageStr.bottomTitle}
+          </CustomButton>
+        </Box>
+      </StyledBox>
+    </StyledContainer>
   );
 };
 

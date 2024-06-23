@@ -16,6 +16,7 @@ import { ReportModal } from '@/strings';
 import { Button } from '@mui/material';
 import { useState } from 'react';
 import ReportPictureModal from '@/components/organisms/Modal/ReportPictureModal';
+import { UnControlledCustomInput } from '@/components/atoms/CustomInput/CustomInput';
 
 const mockData = {
   src: '/assets/images/dashboard/technology 1.svg',

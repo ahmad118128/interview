@@ -30,9 +30,11 @@ export const StyledNavWrapper = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 28.125rem;
-  overflow: scroll;
+  overflow: auto;
   padding-inline: 0 0.9375rem;
+  flex-basis: 1;
+  flex-grow: 1;
+  margin-bottom: 5rem;
 `;
 
 export const StyledListItemButton = styled(ListItemButton)<StyledSideBarType>(
@@ -89,6 +91,8 @@ export const StyledListItemButton = styled(ListItemButton)<StyledSideBarType>(
 export const StyledFooterSideBar = styled(Box)<StyledSideBarType>(
   ({ theme, isOpen }) => ({
     width: '100%',
+    position: 'absolute',
+    bottom: 0,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

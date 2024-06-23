@@ -30,37 +30,34 @@ export default function SideBar() {
 
   return (
     <StyledContainerSideBar isOpen={isOpen}>
-      <StyledSpacingFlex>
-        <StyledsideBarWrapper>
-          <Image
-            src="/assets/icons/roobinLogo/dashboardLogo.svg"
-            alt="dashboardLogo"
-            width="56"
-            height="56"
-          />
-          <StyledNavWrapper>
-            <List component="nav" sx={{ width: '100%' }}>
-              {sidebarList.map((item, index) => {
-                return (
-                  <Link
-                    key={index}
-                    href={item.url ? `/dashboard/${item.url}` : '/dashboard'}
-                  >
-                    <SideBarItem
-                      className={selectedIndex === index ? 'selected' : ''}
-                      title={item.title}
-                      icon={item.icon}
-                      open={isOpen}
-                      selected={selectedIndex === index}
-                      onClick={() => handleListItemClick(index)}
-                    />
-                  </Link>
-                );
-              })}
-            </List>
-          </StyledNavWrapper>
-        </StyledsideBarWrapper>
-
+      <StyledsideBarWrapper>
+        <Image
+          src="/assets/icons/roobinLogo/dashboardLogo.svg"
+          alt="dashboardLogo"
+          width="56"
+          height="56"
+        />
+        <StyledNavWrapper>
+          <List component="nav" sx={{ width: '100%' }}>
+            {sidebarList.map((item, index) => {
+              return (
+                <Link
+                  key={index}
+                  href={item.url ? `/dashboard/${item.url}` : '/dashboard'}
+                >
+                  <SideBarItem
+                    className={selectedIndex === index ? 'selected' : ''}
+                    title={item.title}
+                    icon={item.icon}
+                    open={isOpen}
+                    selected={selectedIndex === index}
+                    onClick={() => handleListItemClick(index)}
+                  />
+                </Link>
+              );
+            })}
+          </List>
+        </StyledNavWrapper>
         <StyledFooterSideBar isOpen={isOpen}>
           <StyledDivider />
 
@@ -88,7 +85,7 @@ export default function SideBar() {
             )}
           </StyledFooterOpen>
         </StyledFooterSideBar>
-      </StyledSpacingFlex>
+      </StyledsideBarWrapper>
     </StyledContainerSideBar>
   );
 }

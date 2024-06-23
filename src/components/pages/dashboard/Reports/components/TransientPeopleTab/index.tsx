@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { TableCell, Typography } from '@mui/material';
-import { Icon } from '@iconify/react/dist/iconify.js';
 import { commonWords } from '@/strings';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 import { FiltersChips } from '@/components/CustomTable/types';
@@ -22,9 +20,9 @@ import {
 import { CellType } from '@/components/CustomTable/shared/CustomCell/types';
 import theme from '@/theme';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
-import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
+import ViewImageModal from './ViewImageModal';
+
 export default function TransientPeople() {
-  const [imgModal, setImgModal] = useState(false);
   const [collapse, setCollapse] = useState(false);
   const [filtersChips, setFiltersChips] = useState<
     FiltersChips<UsersFilterProps>
@@ -78,20 +76,11 @@ export default function TransientPeople() {
       id: 'actions',
       label: commonWords.action,
       type: 'function',
-      function: (row) => (
-        <TableCell>
-          <Icon
-            icon="tabler:photo-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
-            style={{ marginLeft: '0.5rem' }}
-            onClick={() => setImgModal(true)}
-          />
-        </TableCell>
-      ),
+      function: (row) => <ViewImageModal />,
     },
   ];
+  console.log('updated');
+
   return (
     <>
       <FormProvider {...methods}>
@@ -117,14 +106,6 @@ export default function TransientPeople() {
           setOrder(id);
         }}
       />
-      {imgModal ? (
-        <ThumbnailPicModal
-          handleClose={() => setImgModal(false)}
-          open={imgModal}
-          setOpen={setImgModal}
-          src={'/assets/images/dashboard/technology 1.svg'}
-        />
-      ) : null}
     </>
   );
 }

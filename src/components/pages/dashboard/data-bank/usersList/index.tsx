@@ -1,6 +1,6 @@
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
-import { commonWords } from '@/strings';
+import { DataBankRoute, commonWords } from '@/strings';
 import { useState } from 'react';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 import { dataBankHeaderUser, dataBankMockUsers } from '../constants';
@@ -124,6 +124,7 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
             chips={filtersChips}
             handleFiltersChips={handleFiltersChips}
             refreshLoading={isLoading}
+            tableName={DataBankRoute.usersList}
           />
         </form>
       </FormProvider>

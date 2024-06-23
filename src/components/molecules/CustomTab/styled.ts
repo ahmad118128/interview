@@ -4,7 +4,7 @@ import { BaseTab } from '@/components/BaseComponents/BaseTab';
 
 export const CustomTab = styled(BaseTab)`
   &.normalTab {
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     .MuiTab-root {
       font-style: normal;
       font-weight: ${({ theme }) => theme.typography.subtitle1.fontWeight};

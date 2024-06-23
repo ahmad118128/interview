@@ -26,7 +26,7 @@ export default function DatabankTemplate() {
     {
       id: 0,
       label: <Typography>{DataBankRoute.usersList}</Typography>,
-      disableTabRipple: false,
+      disableTabRipple: true,
       tabPanel: (
         <UsersList
           modal={modalData}

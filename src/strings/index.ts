@@ -1328,3 +1328,13 @@ export const TrafficAnalysisRoute = {
   startPassingDateAndTime: 'تاریخ و زمان عبور از',
   endPassingDateAndTime: 'تاریخ و زمان عبور تا',
 };
+
+export const Error500PageStr = {
+  problemOccurred: 'مشکلی رخ داده است.',
+  solveTheProblem: 'جهت رفع مشکل موارد زیر را بررسی نمایید:',
+  problemSolution1: 'از اتصال خود به اینترنت اطمینان حاصل نمایید.',
+  problemSolution2: 'صفحه را مجدداً بارگذاری نمایید.',
+  problemSolution3: 'چند دقیقه بعد مجدداً تلاش نمایید.',
+  bottomTitle: 'بازگشت به دشبورد',
+};
+1;

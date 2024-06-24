@@ -30,7 +30,7 @@ export default function TrafficAnalysisTemplate() {
         setCollapse((prev) => !prev);
         break;
 
-      case EFilterTableNameIcon.REFRESH:
+      case EFilterTableNameIcon.SEARCH:
         // serviceCall();
         break;
 

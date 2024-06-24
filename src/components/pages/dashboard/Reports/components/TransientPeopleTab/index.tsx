@@ -49,7 +49,7 @@ export default function TransientPeople() {
         setCollapse((prev) => !prev);
         break;
 
-      case EFilterTableNameIcon.REFRESH:
+      case EFilterTableNameIcon.SEARCH:
         // serviceCall();
         break;
 

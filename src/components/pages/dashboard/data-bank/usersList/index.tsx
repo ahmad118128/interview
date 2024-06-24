@@ -21,6 +21,7 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
   >([]);
   const [filter, setFilter] = useState(initFilter);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [search, setSearch] = useState<boolean>(false);
 
   const router = useRouter();
   const currentPath = usePathname();
@@ -48,7 +49,9 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
         setCollapse((prev) => !prev);
         break;
 
-      case EFilterTableNameIcon.REFRESH:
+      case EFilterTableNameIcon.SEARCH:
+        setSearch(true);
+        console.log('search');
         // serviceCall();
         break;
 

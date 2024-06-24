@@ -51,7 +51,7 @@ export function ClientCp({ modal, setModal, setImgModal }: any) {
         setCollapse((prev) => !prev);
         break;
 
-      case EFilterTableNameIcon.REFRESH:
+      case EFilterTableNameIcon.SEARCH:
         // serviceCall();
         break;
 

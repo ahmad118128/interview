@@ -17,6 +17,7 @@ import {
   StyledIconsContainer,
 } from '../../data-bank/usersList/styled';
 import FilterForm from './FilterForm';
+import { SearchIcon } from '@/components/CustomTable/shared/SearchIcon';
 
 export const FilterContainer = (props: HeaderFilterTableProps) => {
   const {
@@ -28,6 +29,8 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
     activeMode = EFilterModeIcon.TABLE,
     handleFiltersChips,
     tableName,
+    search,
+    setSearch,
   } = props;
 
   if (props.hasModeHandler && !props.onHandleModeChange) {
@@ -86,7 +89,15 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
             </>
           )}
           <StyledIconsContainer gap="0.5rem">
-            <IconButton iconName="tabler:search" width={24} height={24} />
+            <SearchIcon
+              onHandleIconClick={onHandleIconClick}
+              handleFiltersChips={handleFiltersChips}
+              chips={chips}
+              active={false}
+              search={search}
+              setSearch={setSearch}
+            />
+
             <FilterIcon
               onHandleIconClick={onHandleIconClick}
               handleFiltersChips={handleFiltersChips}

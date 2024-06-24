@@ -36,6 +36,7 @@ export default function CustomModal({
     >
       <StyledCustomModal>
         <StyledDeleteButtonBox>
+          {title && <StyledTitleText variant="h3">{title}</StyledTitleText>}
           <IconButton
             iconName="streamline:delete-1"
             size="small"
@@ -45,7 +46,6 @@ export default function CustomModal({
           />
         </StyledDeleteButtonBox>
 
-        {title && <StyledTitleText variant="body1">{title}</StyledTitleText>}
         {children}
         {buttons && (
           <StyledActionButtonsBox>

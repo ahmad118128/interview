@@ -7,7 +7,7 @@ import { Error500PageStr } from '@/strings';
 import { CustomButton } from '@/components/atoms/CustomButton';
 import { useRouter } from 'next/navigation';
 import { StyledBox, StyledContainer, StyledImageContainer } from './styled';
-
+//test
 interface ErrorTestProps {
   statusCode: number;
 }

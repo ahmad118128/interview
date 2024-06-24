@@ -1,6 +1,7 @@
 import { Controller } from 'react-hook-form';
 import { StyledCheckbox, StyledWrapper } from './styled';
 import { IControledCheckboxProps } from './type';
+import { Typography } from '@mui/material';
 
 export const ControledCheckbox = (props: IControledCheckboxProps) => {
   const { name, control, disabled, checked, error, onChange, label } = props;
@@ -18,7 +19,9 @@ export const ControledCheckbox = (props: IControledCheckboxProps) => {
             error={error}
             onChange={onChange}
           />
-          <label>{label}</label>
+          <Typography variant="body1" noWrap>
+            {label}
+          </Typography>
         </StyledWrapper>
       )}
     />

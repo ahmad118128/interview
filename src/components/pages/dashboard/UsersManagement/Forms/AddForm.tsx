@@ -44,6 +44,8 @@ import { COLLAPSE_ID } from '../../image-recognition/constants';
 import { IError, ISuccess } from '../../image-recognition/types';
 import { CustomPasswordInput } from '@/components/atoms/CustomInput/RHFPasswordInput';
 import { ControledCheckbox } from '@/components/atoms/Checkbox';
+import theme from '@/theme';
+import { StyledBox } from './styled';
 
 export function AddFormUsers() {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -142,144 +144,190 @@ export function AddFormUsers() {
               </Typography>
             </Grid>
 
-            <Grid item xs={12} md={3} alignSelf="center">
-              <label>
-                <Typography variant="body1">
-                  {UsersManagementRoute.accessingPanelState}
+            <Grid
+              item
+              xs={12}
+              sx={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}
+            >
+              <StyledBox>
+                <Typography
+                  variant="h4"
+                  noWrap
+                  sx={{
+                    fontWeight: theme.typography.h4.fontWeight,
+                    width: '100%',
+                  }}
+                >
+                  {DataBankRoute.usersList}
                 </Typography>
-              </label>
-            </Grid>
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
+                <ControledCheckbox
+                  control={control}
+                  name="addPerson"
+                  label={UsersManagementRoute.addPerson}
+                />
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
+                <ControledCheckbox
+                  control={control}
+                  name="editPerson"
+                  label={UsersManagementRoute.editPerson}
+                />
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
+                <ControledCheckbox
+                  control={control}
+                  name="deletePerson"
+                  label={UsersManagementRoute.deletePerson}
+                />
+              </StyledBox>
 
-            <Grid item xs={12} md={3} alignSelf="center">
-              <label>
-                <Typography variant="body1">
-                  {UsersManagementRoute.accessingPanelState}
+              <StyledBox>
+                <Typography
+                  variant="h4"
+                  noWrap
+                  sx={{
+                    fontWeight: theme.typography.h4.fontWeight,
+                    width: '100%',
+                  }}
+                >
+                  {commonWords.groupsList}
                 </Typography>
-              </label>
-            </Grid>
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
+                <ControledCheckbox
+                  control={control}
+                  name="addGroup"
+                  label={DataBankRoute.addGropModalTitle}
+                />
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
+                <ControledCheckbox
+                  control={control}
+                  name="editGroup"
+                  label={commonWords.editGroup}
+                />
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
+                <ControledCheckbox
+                  control={control}
+                  name="deleteGroup"
+                  label={UsersManagementRoute.deleteGroup}
+                />
+              </StyledBox>
 
-            <Grid item xs={12} md={3} alignSelf="center">
-              <label>
-                <Typography variant="body1">
-                  {UsersManagementRoute.accessingPanelState}
+              <StyledBox>
+                <Typography
+                  variant="h4"
+                  noWrap
+                  sx={{
+                    fontWeight: theme.typography.h4.fontWeight,
+                    width: '100%',
+                  }}
+                >
+                  {DataBankRoute.supervisoryList}
                 </Typography>
-              </label>
-            </Grid>
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
+                <ControledCheckbox
+                  control={control}
+                  name="addList"
+                  label={UsersManagementRoute.addList}
+                />
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
+                <ControledCheckbox
+                  control={control}
+                  name="editList"
+                  label={UsersManagementRoute.editList}
+                />
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
+                <ControledCheckbox
+                  control={control}
+                  name="deleteList"
+                  label={UsersManagementRoute.deleteList}
+                />
+              </StyledBox>
 
-            <Grid item xs={12} md={3} alignSelf="center">
-              <label>
-                <Typography variant="body1">
-                  {UsersManagementRoute.accessingPanelState}
+              <StyledBox>
+                <Typography
+                  variant="h4"
+                  noWrap
+                  sx={{
+                    fontWeight: theme.typography.h4.fontWeight,
+                    width: '100%',
+                  }}
+                >
+                  {UsersManagementRoute.passingPeopleImageRecognition}
                 </Typography>
-              </label>
-            </Grid>
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
+                <ControledCheckbox
+                  control={control}
+                  name="registeredPeopleImageRecognition"
+                  label={UsersManagementRoute.registeredPeopleImageRecognition}
+                />
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
+                <ControledCheckbox
+                  control={control}
+                  name="passingPeopleImageRecognition"
+                  label={UsersManagementRoute.passingPeopleImageRecognition}
+                />
+              </StyledBox>
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3} alignSelf="center">
-              <label>
-                <Typography variant="body1">
-                  {UsersManagementRoute.accessingPanelState}
+              <StyledBox>
+                <Typography
+                  variant="h4"
+                  noWrap
+                  sx={{
+                    fontWeight: theme.typography.h4.fontWeight,
+                    width: '100%',
+                  }}
+                >
+                  {UsersManagementRoute.reports}
                 </Typography>
-              </label>
-            </Grid>
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
+                <ControledCheckbox
+                  control={control}
+                  name="passingPeopleReport"
+                  label={UsersManagementRoute.passingPeopleReport}
+                />
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
+                <ControledCheckbox
+                  control={control}
+                  name="peoplesTrafficReport"
+                  label={UsersManagementRoute.peoplesTrafficReport}
+                />
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
+                <ControledCheckbox
+                  control={control}
+                  name="entryAndExitReport"
+                  label={UsersManagementRoute.entryAndExitReport}
+                />
+              </StyledBox>
 
-            <Grid item xs={12} md={3} alignSelf="center">
-              <label>
-                <Typography variant="body1">
-                  {UsersManagementRoute.accessingPanelState}
+              <StyledBox>
+                <Typography
+                  variant="h4"
+                  noWrap
+                  sx={{
+                    fontWeight: theme.typography.h4.fontWeight,
+                    width: '100%',
+                  }}
+                >
+                  {UsersManagementRoute.usersManagement}
                 </Typography>
-              </label>
-            </Grid>
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
+                <ControledCheckbox
+                  control={control}
+                  name="addStaff"
+                  label={UsersManagementRoute.addStaff}
+                />
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
+                <ControledCheckbox
+                  control={control}
+                  name="editStaff"
+                  label={UsersManagementRoute.editStaff}
+                />
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3} alignSelf="center">
-              <label>
-                <Typography variant="body1">
-                  {UsersManagementRoute.accessingPanelState}
-                </Typography>
-              </label>
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
+                <ControledCheckbox
+                  control={control}
+                  name="deleteStaff"
+                  label={UsersManagementRoute.deleteStaff}
+                />
+              </StyledBox>
             </Grid>
 
             <Box

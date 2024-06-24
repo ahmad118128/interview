@@ -13,7 +13,6 @@ import {
   StyledFooterOpen,
   StyledFooterSideBar,
   StyledNavWrapper,
-  StyledSpacingFlex,
   StyledTypography,
   StyledsideBarWrapper,
 } from './styled';

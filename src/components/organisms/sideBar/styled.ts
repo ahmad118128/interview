@@ -17,14 +17,6 @@ export const StyledsideBarWrapper = styled(Box)`
   gap: 2rem;
 `;
 
-export const StyledSpacingFlex = styled(Box)`
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
 export const StyledNavWrapper = styled(Box)`
   width: 100%;
   display: flex;

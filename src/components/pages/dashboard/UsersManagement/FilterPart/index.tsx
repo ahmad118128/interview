@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 
@@ -17,7 +19,7 @@ import { initFilter } from '../../image-recognition/constants';
 import { usersHeader, usersMock } from '../constants';
 
 export function FilterPart({ setModal, modal }: any) {
-  const [collapse, setCollapse] = useState(false);
+  const [collapse, setCollapse] = useState<boolean>(false);
   const [filtersChips, setFiltersChips] = useState<
     FiltersChips<UsersFilterProps>
   >([]);
@@ -27,7 +29,7 @@ export function FilterPart({ setModal, modal }: any) {
   const router = useRouter();
   const currentPath = usePathname();
 
-  const methods = useForm<FieldValues>({
+  const { control, reset, handleSubmit, setValue } = useForm<FieldValues>({
     mode: 'onSubmit',
     defaultValues: {
       name: '',
@@ -39,10 +41,7 @@ export function FilterPart({ setModal, modal }: any) {
     },
   });
 
-  const submitHandler = (data: any) => {
-    console.log(data);
-    setCollapse(true);
-  };
+  const submitHandler = (data: any) => {};
 
   const handleIconClick = (name: EFilterTableNameIcon) => {
     switch (name) {
@@ -60,7 +59,7 @@ export function FilterPart({ setModal, modal }: any) {
   };
 
   const handleFiltersChips = (filterKey: keyof typeof initFilter) => {
-    methods.setValue(filterKey, initFilter[filterKey]);
+    setValue(filterKey, initFilter[filterKey]);
     setFilter({ ...filter, [filterKey]: initFilter[filterKey] });
     setFiltersChips((prevFiltersChips) => {
       return prevFiltersChips.filter((chip) => chip.key !== filterKey);
@@ -104,8 +103,6 @@ export function FilterPart({ setModal, modal }: any) {
     },
   ];
 
-  const { control, reset, handleSubmit } = useForm();
-
   return (
     <>
       <form onSubmit={handleSubmit(submitHandler)}>
@@ -118,6 +115,7 @@ export function FilterPart({ setModal, modal }: any) {
           handleFiltersChips={handleFiltersChips}
           refreshLoading={isLoading}
           tableName={UsersManagementRoute.users}
+          setCollapse={setCollapse}
         />
       </form>
       <TableWithFab

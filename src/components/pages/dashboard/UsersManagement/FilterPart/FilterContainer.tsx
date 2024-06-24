@@ -17,6 +17,7 @@ import {
   StyledIconsContainer,
 } from '../../data-bank/usersList/styled';
 import { FilterForm } from './FilterForm';
+import { StyledTitleNameWrapper } from './styled';
 
 export const FilterContainer = (props: HeaderFilterTableProps) => {
   const {
@@ -28,6 +29,7 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
     activeMode = EFilterModeIcon.TABLE,
     handleFiltersChips,
     tableName,
+    setCollapse,
   } = props;
 
   if (props.hasModeHandler && !props.onHandleModeChange) {
@@ -98,23 +100,16 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
               active={false}
             />
           </StyledIconsContainer>
-          <Box
-            sx={{
-              width: '100%',
-              display: 'flex',
-              gap: '0.5rem',
-              alignItems: 'center',
-            }}
-          >
+          <StyledTitleNameWrapper>
             <Typography variant="body1" color={theme.palette.primary.main}>
               {tableName}
             </Typography>
-            <StyledChip label="24"></StyledChip>
-          </Box>
+            <StyledChip label="24" />
+          </StyledTitleNameWrapper>
         </Box>
       </StyledAccordionSummary>
       <StyledAccordionDetails>
-        <FilterForm control={control} reset={reset} />
+        <FilterForm control={control} reset={reset} setCollapse={setCollapse} />
       </StyledAccordionDetails>
     </Accordion>
   );

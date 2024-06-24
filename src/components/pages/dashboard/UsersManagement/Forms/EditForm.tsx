@@ -46,6 +46,7 @@ import { CustomPasswordInput } from '@/components/atoms/CustomInput/RHFPasswordI
 import { ControledCheckbox } from '@/components/atoms/Checkbox';
 import theme from '@/theme';
 import { StyledBox } from './styled';
+import { addDataArray } from '../constants';
 
 export function EditFormUsers() {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -158,214 +159,45 @@ export function EditFormUsers() {
               xs={12}
               sx={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}
             >
-              <StyledBox>
-                <Typography
-                  variant="h4"
-                  noWrap
-                  sx={{
-                    fontWeight: theme.typography.h4.fontWeight,
-                    width: '100%',
-                  }}
-                >
-                  {DataBankRoute.usersList}
-                </Typography>
+              {addDataArray.map((item: any, index: number) => {
+                return (
+                  <StyledBox key={index}>
+                    <Typography
+                      variant="h4"
+                      noWrap
+                      sx={{
+                        fontWeight: theme.typography.h4.fontWeight,
+                        width: '100%',
+                      }}
+                    >
+                      {item.title}
+                    </Typography>
 
-                <ControledCheckbox
-                  control={control}
-                  name="addPerson"
-                  label={UsersManagementRoute.addPerson}
-                />
+                    <ControledCheckbox
+                      control={control}
+                      name={item.check1Name}
+                      label={item.check1Label}
+                      checked={item.check1}
+                    />
 
-                <ControledCheckbox
-                  control={control}
-                  checked
-                  name="editPerson"
-                  label={UsersManagementRoute.editPerson}
-                />
+                    <ControledCheckbox
+                      control={control}
+                      name={item.check2Name}
+                      label={item.check2Label}
+                      checked={item.check2}
+                    />
 
-                <ControledCheckbox
-                  control={control}
-                  name="deletePerson"
-                  label={UsersManagementRoute.deletePerson}
-                />
-              </StyledBox>
-
-              <StyledBox>
-                <Typography
-                  variant="h4"
-                  noWrap
-                  sx={{
-                    fontWeight: theme.typography.h4.fontWeight,
-                    width: '100%',
-                  }}
-                >
-                  {commonWords.groupsList}
-                </Typography>
-
-                <ControledCheckbox
-                  control={control}
-                  name="addGroup"
-                  label={DataBankRoute.addGropModalTitle}
-                />
-
-                <ControledCheckbox
-                  control={control}
-                  name="editGroup"
-                  label={commonWords.editGroup}
-                />
-
-                <ControledCheckbox
-                  control={control}
-                  name="deleteGroup"
-                  label={UsersManagementRoute.deleteGroup}
-                />
-              </StyledBox>
-
-              <StyledBox>
-                <Typography
-                  variant="h4"
-                  noWrap
-                  sx={{
-                    fontWeight: theme.typography.h4.fontWeight,
-                    width: '100%',
-                  }}
-                >
-                  {DataBankRoute.supervisoryList}
-                </Typography>
-
-                <ControledCheckbox
-                  control={control}
-                  checked
-                  name="addList"
-                  label={UsersManagementRoute.addList}
-                />
-
-                <ControledCheckbox
-                  control={control}
-                  name="editList"
-                  label={UsersManagementRoute.editList}
-                />
-
-                <ControledCheckbox
-                  control={control}
-                  name="deleteList"
-                  label={UsersManagementRoute.deleteList}
-                />
-              </StyledBox>
-
-              <StyledBox>
-                <Typography
-                  variant="h4"
-                  noWrap
-                  sx={{
-                    fontWeight: theme.typography.h4.fontWeight,
-                    width: '100%',
-                  }}
-                >
-                  {UsersManagementRoute.passingPeopleImageRecognition}
-                </Typography>
-
-                <ControledCheckbox
-                  control={control}
-                  name="registeredPeopleImageRecognition"
-                  label={UsersManagementRoute.registeredPeopleImageRecognition}
-                />
-
-                <ControledCheckbox
-                  control={control}
-                  name="passingPeopleImageRecognition"
-                  label={UsersManagementRoute.passingPeopleImageRecognition}
-                />
-              </StyledBox>
-
-              <StyledBox>
-                <Typography
-                  variant="h4"
-                  noWrap
-                  sx={{
-                    fontWeight: theme.typography.h4.fontWeight,
-                    width: '100%',
-                  }}
-                >
-                  {UsersManagementRoute.reports}
-                </Typography>
-
-                <ControledCheckbox
-                  control={control}
-                  name="passingPeopleReport"
-                  label={UsersManagementRoute.passingPeopleReport}
-                />
-
-                <ControledCheckbox
-                  control={control}
-                  name="peoplesTrafficReport"
-                  label={UsersManagementRoute.peoplesTrafficReport}
-                />
-
-                <ControledCheckbox
-                  control={control}
-                  checked
-                  name="entryAndExitReport"
-                  label={UsersManagementRoute.entryAndExitReport}
-                />
-              </StyledBox>
-
-              <StyledBox>
-                <Typography
-                  variant="h4"
-                  noWrap
-                  sx={{
-                    fontWeight: theme.typography.h4.fontWeight,
-                    width: '100%',
-                  }}
-                >
-                  {UsersManagementRoute.usersManagement}
-                </Typography>
-
-                <ControledCheckbox
-                  control={control}
-                  name="addStaff"
-                  label={UsersManagementRoute.addStaff}
-                />
-
-                <ControledCheckbox
-                  control={control}
-                  name="editStaff"
-                  label={UsersManagementRoute.editStaff}
-                />
-
-                <ControledCheckbox
-                  control={control}
-                  name="deleteStaff"
-                  label={UsersManagementRoute.deleteStaff}
-                />
-              </StyledBox>
-
-              <StyledBox>
-                <Typography
-                  variant="h4"
-                  noWrap
-                  sx={{
-                    fontWeight: theme.typography.h4.fontWeight,
-                    width: '100%',
-                  }}
-                >
-                  {generalStr.settings}
-                </Typography>
-
-                <ControledCheckbox
-                  control={control}
-                  checked
-                  name="generalSetting"
-                  label={commonWords.generalSetting}
-                />
-
-                <ControledCheckbox
-                  control={control}
-                  name="databaseSetting"
-                  label={UsersManagementRoute.databaseSetting}
-                />
-              </StyledBox>
+                    {item.check3Label ? (
+                      <ControledCheckbox
+                        control={control}
+                        name={item.check3Name}
+                        label={item.check3Label}
+                        checked={item.check3}
+                      />
+                    ) : null}
+                  </StyledBox>
+                );
+              })}
             </Grid>
 
             <Box

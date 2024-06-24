@@ -36,7 +36,7 @@ export function UserManagement() {
           buttons
           title={DataBankRoute.deleteModalBlackText}
           onClose={() => setModalData({ state: false })}
-        ></DeleteModal>
+        />
       ) : null}
     </>
   );

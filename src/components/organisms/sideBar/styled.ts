@@ -31,15 +31,15 @@ export const StyledNavWrapper = styled(Box)`
   flex-direction: column;
   align-items: center;
   overflow: auto;
-  padding-inline: 0 0.9375rem;
   flex-basis: 1;
   flex-grow: 1;
   margin-bottom: 5rem;
+  padding-inline: 0.75rem;
 `;
 
 export const StyledListItemButton = styled(ListItemButton)<StyledSideBarType>(
   ({ theme, isOpen }) => ({
-    width: isOpen ? '100%' : '3.6rem',
+    width: '100%',
     display: 'flex',
     alignItems: 'center',
     transition: 'all 0.5s',

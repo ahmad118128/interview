@@ -86,14 +86,7 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
             </>
           )}
           <StyledIconsContainer gap="0.5rem">
-            <IconButton
-              iconName="tabler:search"
-              width={24}
-              height={24}
-              style={{
-                border: `1px solid ${theme.palette.primary.main}`,
-              }}
-            />
+            <IconButton iconName="tabler:search" width={24} height={24} />
             <FilterIcon
               onHandleIconClick={onHandleIconClick}
               handleFiltersChips={handleFiltersChips}

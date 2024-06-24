@@ -7,12 +7,8 @@ import { Error500PageStr } from '@/strings';
 import { CustomButton } from '@/components/atoms/CustomButton';
 import { useRouter } from 'next/navigation';
 import { StyledBox, StyledContainer, StyledImageContainer } from './styled';
-//test
-interface ErrorTestProps {
-  statusCode: number;
-}
 
-const ErrorPage500 = ({ statusCode }: ErrorTestProps) => {
+const ErrorPage500 = () => {
   const router = useRouter();
   return (
     <StyledContainer>
@@ -44,13 +40,13 @@ const ErrorPage500 = ({ statusCode }: ErrorTestProps) => {
             <Typography variant="body1">
               {Error500PageStr.solveTheProblem}
             </Typography>
-            <Typography variant="body1" component={'li'}>
+            <Typography variant="body1" component="li">
               {Error500PageStr.problemSolution1}
             </Typography>
-            <Typography variant="body1" component={'li'}>
+            <Typography variant="body1" component="li">
               {Error500PageStr.problemSolution2}
             </Typography>
-            <Typography variant="body1" component={'li'}>
+            <Typography variant="body1" component="li">
               {Error500PageStr.problemSolution3}
             </Typography>
           </Typography>

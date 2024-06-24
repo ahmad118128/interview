@@ -60,7 +60,9 @@ export function SocialSettingCp() {
                   width: '100%',
                 }}
               >
-                <CustomButton type="submit">{DataBankRoute.add}</CustomButton>
+                <CustomButton type="submit" variant="contained">
+                  {SettingRoute.record}
+                </CustomButton>
                 <CustomButton type="reset" variant="outlined">
                   {SettingRoute.refuse}
                 </CustomButton>
@@ -86,7 +88,9 @@ export function SocialSettingCp() {
                   width: '100%',
                 }}
               >
-                <CustomButton type="submit">{DataBankRoute.add}</CustomButton>
+                <CustomButton type="submit" variant="contained">
+                  {SettingRoute.record}
+                </CustomButton>
                 <CustomButton type="reset" variant="outlined">
                   {SettingRoute.refuse}
                 </CustomButton>

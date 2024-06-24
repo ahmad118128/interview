@@ -53,7 +53,7 @@ export function FaceCP() {
           </label>
 
           <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} md={4}>
               <CustomInput
                 control={control}
                 name="minimumSimilarityPercent"
@@ -110,7 +110,7 @@ export function FaceCP() {
                 }}
                 sx={{
                   width: '100%',
-                  paddingY: 0,
+                  padding: 0,
                   display: 'flex',
                   flexDirection: 'row',
                   justifyContent: 'space-between',
@@ -120,18 +120,21 @@ export function FaceCP() {
                   value="doNotRecordFaces"
                   control={<Radio sx={{ paddingRight: '0' }} />}
                   label={SettingRoute.doNotRecordFaces}
+                  sx={{ margin: '0' }}
                 />
 
                 <FormControlLabel
                   value="justRecordMatchedFaces"
                   control={<Radio sx={{ paddingRight: '0' }} />}
                   label={SettingRoute.justRecordMatchedFaces}
+                  sx={{ margin: '0' }}
                 />
 
                 <FormControlLabel
                   value="passingFacesRecord"
                   control={<Radio sx={{ paddingRight: '0' }} />}
                   label={SettingRoute.passingFacesRecord}
+                  sx={{ margin: '0' }}
                 />
               </RadioGroup>
             </Grid>
@@ -176,7 +179,9 @@ export function FaceCP() {
                   width: '100%',
                 }}
               >
-                <CustomButton type="submit">{DataBankRoute.add}</CustomButton>
+                <CustomButton type="submit" variant="contained">
+                  {SettingRoute.record}
+                </CustomButton>
                 <CustomButton type="reset" variant="outlined">
                   {SettingRoute.refuse}
                 </CustomButton>

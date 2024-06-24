@@ -89,18 +89,21 @@ export function BackupCP() {
                   value="emergencyBackup"
                   control={<Radio sx={{ paddingRight: '0' }} />}
                   label={SettingRoute.emergencyBackup}
+                  sx={{ margin: '0' }}
                 />
 
                 <FormControlLabel
                   value="partialBackup"
                   control={<Radio sx={{ paddingRight: '0' }} />}
                   label={SettingRoute.partialBackup}
+                  sx={{ margin: '0' }}
                 />
 
                 <FormControlLabel
                   value="automaticBackup"
                   control={<Radio sx={{ paddingRight: '0' }} />}
                   label={SettingRoute.automaticBackup}
+                  sx={{ margin: '0' }}
                 />
               </RadioGroup>
             </Grid>
@@ -154,7 +157,9 @@ export function BackupCP() {
                   width: '100%',
                 }}
               >
-                <CustomButton type="submit">{DataBankRoute.add}</CustomButton>
+                <CustomButton type="submit" variant="contained">
+                  {SettingRoute.record}
+                </CustomButton>
                 <CustomButton type="reset" variant="outlined">
                   {SettingRoute.refuse}
                 </CustomButton>
@@ -179,7 +184,9 @@ export function BackupCP() {
                   width: '100%',
                 }}
               >
-                <CustomButton type="submit">{DataBankRoute.add}</CustomButton>
+                <CustomButton type="submit" variant="contained">
+                  {SettingRoute.record}
+                </CustomButton>
                 <CustomButton type="reset" variant="outlined">
                   {SettingRoute.refuse}
                 </CustomButton>

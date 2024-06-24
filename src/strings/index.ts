@@ -1350,4 +1350,5 @@ export const UsersManagementRoute = {
   addStaff: 'افزودن پرسنل',
   editStaff: 'ویرایش پرسنل',
   deleteStaff: 'حذف پرسنل',
+  databaseSetting: 'تنظیمات پایگاه داده',
 };

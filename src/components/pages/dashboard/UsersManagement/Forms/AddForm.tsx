@@ -328,6 +328,31 @@ export function AddFormUsers() {
                   label={UsersManagementRoute.deleteStaff}
                 />
               </StyledBox>
+
+              <StyledBox>
+                <Typography
+                  variant="h4"
+                  noWrap
+                  sx={{
+                    fontWeight: theme.typography.h4.fontWeight,
+                    width: '100%',
+                  }}
+                >
+                  {generalStr.settings}
+                </Typography>
+
+                <ControledCheckbox
+                  control={control}
+                  name="generalSetting"
+                  label={commonWords.generalSetting}
+                />
+
+                <ControledCheckbox
+                  control={control}
+                  name="databaseSetting"
+                  label={UsersManagementRoute.databaseSetting}
+                />
+              </StyledBox>
             </Grid>
 
             <Box

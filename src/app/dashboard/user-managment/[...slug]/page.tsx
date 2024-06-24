@@ -4,6 +4,7 @@ import { EditFormSupervisory } from '@/components/pages/dashboard/supervisory-li
 import { AddFormUsers } from '@/components/pages/dashboard/UsersManagement/Forms/AddForm';
 
 import { DynamicRouteProps } from '../../data-bank/type';
+import { EditFormUsers } from '@/components/pages/dashboard/UsersManagement/Forms/EditForm';
 
 export default function SupervisitortDetailPage({
   params,
@@ -16,7 +17,7 @@ export default function SupervisitortDetailPage({
 
   const routes: Record<string, React.ReactNode> = {
     add: <AddFormUsers />,
-    edit: <EditFormSupervisory />,
+    edit: <EditFormUsers />,
   };
 
   const pathValue = path[0];

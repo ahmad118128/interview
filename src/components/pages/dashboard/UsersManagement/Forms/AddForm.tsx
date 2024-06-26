@@ -44,6 +44,9 @@ import { COLLAPSE_ID } from '../../image-recognition/constants';
 import { IError, ISuccess } from '../../image-recognition/types';
 import { CustomPasswordInput } from '@/components/atoms/CustomInput/RHFPasswordInput';
 import { ControledCheckbox } from '@/components/atoms/Checkbox';
+import theme from '@/theme';
+import { StyledBox } from './styled';
+import { addDataArray } from '../constants';
 
 export function AddFormUsers() {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -142,144 +145,47 @@ export function AddFormUsers() {
               </Typography>
             </Grid>
 
-            <Grid item xs={12} md={3} alignSelf="center">
-              <label>
-                <Typography variant="body1">
-                  {UsersManagementRoute.accessingPanelState}
-                </Typography>
-              </label>
-            </Grid>
+            <Grid
+              item
+              xs={12}
+              sx={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}
+            >
+              {addDataArray.map((item: any, index: number) => {
+                return (
+                  <StyledBox key={index}>
+                    <Typography
+                      variant="h4"
+                      noWrap
+                      sx={{
+                        fontWeight: theme.typography.h4.fontWeight,
+                        width: '100%',
+                      }}
+                    >
+                      {item.title}
+                    </Typography>
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
+                    <ControledCheckbox
+                      control={control}
+                      name={item.check1Name}
+                      label={item.check1Label}
+                    />
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
+                    <ControledCheckbox
+                      control={control}
+                      name={item.check2Name}
+                      label={item.check2Label}
+                    />
 
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3} alignSelf="center">
-              <label>
-                <Typography variant="body1">
-                  {UsersManagementRoute.accessingPanelState}
-                </Typography>
-              </label>
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3} alignSelf="center">
-              <label>
-                <Typography variant="body1">
-                  {UsersManagementRoute.accessingPanelState}
-                </Typography>
-              </label>
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3} alignSelf="center">
-              <label>
-                <Typography variant="body1">
-                  {UsersManagementRoute.accessingPanelState}
-                </Typography>
-              </label>
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3} alignSelf="center">
-              <label>
-                <Typography variant="body1">
-                  {UsersManagementRoute.accessingPanelState}
-                </Typography>
-              </label>
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3} alignSelf="center">
-              <label>
-                <Typography variant="body1">
-                  {UsersManagementRoute.accessingPanelState}
-                </Typography>
-              </label>
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3} alignSelf="center">
-              <label>
-                <Typography variant="body1">
-                  {UsersManagementRoute.accessingPanelState}
-                </Typography>
-              </label>
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
-            </Grid>
-
-            <Grid item xs={12} md={3}>
-              <ControledCheckbox control={control} name="test" label="test1" />
+                    {item.check3Label ? (
+                      <ControledCheckbox
+                        control={control}
+                        name={item.check3Name}
+                        label={item.check3Label}
+                      />
+                    ) : null}
+                  </StyledBox>
+                );
+              })}
             </Grid>
 
             <Box

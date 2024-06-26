@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Controller, FieldValues } from 'react-hook-form';
-import { InputAdornment, IconButton, TextField } from '@mui/material';
+import { InputAdornment } from '@mui/material';
 import VisibilityIcon from '../SvgIcons/VisibilityIcon';
 import VisibilityOffIcon from '../SvgIcons/VisibilityOffIcon';
 
 import { TCustomInput } from './type';
 import { UnControlledCustomInput } from './CustomInput';
+import { IconButton } from '../CustomButton/IconButton';
 
 export function CustomPasswordInput<TField extends FieldValues>(
   props: TCustomInput<TField>
@@ -25,9 +26,15 @@ export function CustomPasswordInput<TField extends FieldValues>(
     ) : (
       <VisibilityIcon />
     );
+
     return (
       <InputAdornment position="end">
-        <IconButton onClick={handleTogglePassword}>{visibilityIcon}</IconButton>
+        <IconButton
+          onClick={handleTogglePassword}
+          iconName={
+            showPassword ? 'fluent:eye-off-16-filled' : 'fluent:eye-12-filled'
+          }
+        ></IconButton>
       </InputAdornment>
     );
   };

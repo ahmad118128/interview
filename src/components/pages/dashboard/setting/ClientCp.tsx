@@ -133,6 +133,7 @@ export function ClientCp({ modal, setModal, setImgModal }: any) {
             chips={filtersChips}
             handleFiltersChips={handleFiltersChips}
             refreshLoading={isLoading}
+            setCollapse={setCollapse}
           />
         </form>
       </FormProvider>

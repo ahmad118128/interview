@@ -67,7 +67,7 @@ export function BackupCP() {
           </label>
 
           <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
-            <Grid item xs={12}>
+            <Grid item xs={12} width="100%">
               <RadioGroup
                 aria-labelledby="demo-radio-buttons-group-label"
                 defaultValue="female"

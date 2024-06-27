@@ -100,7 +100,20 @@ export const StyledAddFormWrapper = styled(Box)`
 
 export const StyledAddFormHeader = styled(Box)`
   border-bottom: 1px solid ${theme.palette.grey[300]};
-  padding: 1.75rem 11.875rem;
+  padding: 1.75rem 1rem;
+
+  ${({ theme }) => theme.breakpoints.up('sm')} {
+    padding: 1.75rem 1rem;
+  }
+
+  ${({ theme }) => theme.breakpoints.up('md')} {
+    padding: 1.75rem 1.25rem;
+  }
+
+  ${({ theme }) => theme.breakpoints.up('lg')} {
+    padding: 1.75rem 11.875rem;
+  }
+
   border-radius: 0.625rem 0.625rem 0 0;
   background: transparent;
   display: flex;
@@ -109,7 +122,19 @@ export const StyledAddFormHeader = styled(Box)`
 `;
 
 export const StyledAddFormMain = styled(Box)`
-  padding: 1.75rem 11.875rem;
+  padding: 1.75rem 1rem;
+
+  ${({ theme }) => theme.breakpoints.up('sm')} {
+    padding: 1.75rem 1rem;
+  }
+
+  ${({ theme }) => theme.breakpoints.up('md')} {
+    padding: 1.75rem 1.25rem;
+  }
+
+  ${({ theme }) => theme.breakpoints.up('lg')} {
+    padding: 1.75rem 11.875rem;
+  }
 `;
 
 export const StyledGroupWrapper = styled(Box)`

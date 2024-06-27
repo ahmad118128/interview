@@ -1,5 +1,6 @@
 export interface DoughnutChartProps {
-  chartLabel: string;
-  labels: unknown[];
+  chartLabel?: string;
+  labels: string[];
   data: number[];
+  legend: boolean;
 }

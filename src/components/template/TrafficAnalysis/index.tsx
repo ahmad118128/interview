@@ -57,42 +57,35 @@ export default function TrafficAnalysisTemplate() {
         chips={filtersChips}
         handleFiltersChips={handleFiltersChips}
         refreshLoading={isLoading}
+        setCollapse={setCollapse}
       />
       <Grid container spacing={4}>
         <Grid item xs={12} md={6} lg={3}>
           <DashboardChartCard title={TrafficAnalysisRoute.mensTraffic}>
             <DoughnutChart
-              chartLabel="Clinet"
-              labels={['نامشخص', 'شناسایی شده']}
-              data={[120, 80]}
+              labels={['شناسایی شده']}
+              data={[120]}
+              legend={false}
             />
           </DashboardChartCard>
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
           <DashboardChartCard title={TrafficAnalysisRoute.womensTraffic}>
-            <DoughnutChart
-              chartLabel="Clinet"
-              labels={['نامشخص', 'شناسایی شده']}
-              data={[120, 80]}
-            />
+            <DoughnutChart labels={['نامشخص']} data={[120]} legend={false} />
           </DashboardChartCard>
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
           <DashboardChartCard title={TrafficAnalysisRoute.sampleChart}>
             <DoughnutChart
-              chartLabel="Clinet"
-              labels={['نامشخص', 'شناسایی شده']}
-              data={[120, 80]}
+              labels={['شناسایی شده']}
+              data={[80]}
+              legend={false}
             />
           </DashboardChartCard>
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
           <DashboardChartCard title={TrafficAnalysisRoute.sampleChart}>
-            <DoughnutChart
-              chartLabel="Data"
-              labels={['زن', 'مرد']}
-              data={[120, 80]}
-            />
+            <DoughnutChart labels={['زن']} data={[120]} legend={false} />
           </DashboardChartCard>
         </Grid>
         <Grid item xs={12} md={6} lg={6}>

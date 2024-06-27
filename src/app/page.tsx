@@ -1,7 +1,10 @@
 'use client';
 
+import { CustomButton } from '@/components/atoms/CustomButton';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 import { allValidateType } from '@/components/BaseComponents/baseInput/index';
+import { DeleteModal } from '@/components/organisms/Modal/DeleteModal.tsx';
+import { useState } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 
 export default function Home() {

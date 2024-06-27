@@ -18,46 +18,41 @@ export default function CustomModal({
   open,
   setOpen,
   title,
-  errorTitle,
   children,
   buttons,
-  activeButtonHandler,
-  deleteButtonHandler,
+  onSubmit,
   id,
-  handleClose,
+  onClose,
   ...res
 }: CustomModalProps) {
   return (
     <Modal
       keepMounted
       open={open}
-      onClose={handleClose}
+      onClose={onClose}
       aria-labelledby="keep-mounted-modal-title"
       aria-describedby="keep-mounted-modal-description"
       {...res}
     >
       <StyledCustomModal>
         <StyledDeleteButtonBox>
+          {title && <StyledTitleText variant="h3">{title}</StyledTitleText>}
           <IconButton
             iconName="streamline:delete-1"
             size="small"
-            onClick={handleClose}
+            onClick={onClose}
             height={16}
             width={16}
           />
         </StyledDeleteButtonBox>
 
-        {errorTitle && (
-          <StyledErrorText variant="body1">{errorTitle}</StyledErrorText>
-        )}
-        {title && <StyledTitleText variant="body1">{title}</StyledTitleText>}
         {children}
         {buttons && (
           <StyledActionButtonsBox>
-            <CustomButton variant="contained" onClick={activeButtonHandler}>
+            <CustomButton variant="contained" onClick={onSubmit}>
               {registrationStr.ok}
             </CustomButton>
-            <CustomButton variant="outlined" onClick={deleteButtonHandler}>
+            <CustomButton variant="outlined" onClick={onClose}>
               {generalStr.refuse}
             </CustomButton>
           </StyledActionButtonsBox>

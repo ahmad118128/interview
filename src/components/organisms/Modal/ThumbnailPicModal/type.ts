@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 
 export type thumbnailModalProps = {
   open: boolean;
-  handleClose: () => void;
+  onClose: () => void;
   setOpen: Dispatch<SetStateAction<boolean>>;
   errorTitle?: string;
   title?: string;

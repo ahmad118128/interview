@@ -124,6 +124,7 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
             chips={filtersChips}
             handleFiltersChips={handleFiltersChips}
             refreshLoading={isLoading}
+            setCollapse={setCollapse}
           />
         </form>
       </FormProvider>

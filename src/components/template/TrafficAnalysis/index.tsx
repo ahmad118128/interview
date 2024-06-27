@@ -48,7 +48,7 @@ export default function TrafficAnalysisTemplate() {
   const tabs = [
     {
       id: 0,
-      label: <Typography>{siderBarList.trafficAnalysis}</Typography>,
+      label: siderBarList.trafficAnalysis,
       disableTabRipple: false,
       tabPanel: <TrafficAnalysisCp />,
     },

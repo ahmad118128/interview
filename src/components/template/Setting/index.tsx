@@ -27,19 +27,19 @@ export function SettingTemplate() {
   const tabs = [
     {
       id: 0,
-      label: <Typography>{SettingRoute.face}</Typography>,
+      label: SettingRoute.face,
       disableTabRipple: false,
       tabPanel: <FaceCP />,
     },
     {
       id: 1,
-      label: <Typography>{SettingRoute.client}</Typography>,
+      label: SettingRoute.client,
       disableTabRipple: false,
       tabPanel: <ClientCp modal={modalData} setModal={setModalData} />,
     },
     {
       id: 2,
-      label: <Typography>{SettingRoute.publicSetting}</Typography>,
+      label: SettingRoute.publicSetting,
       disableTabRipple: false,
       tabPanel: <SocialSettingCp />,
     },

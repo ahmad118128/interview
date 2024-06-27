@@ -53,7 +53,7 @@ export function BackupCP() {
   return (
     <StyledAddFormWrapper>
       <StyledAddFormHeader>
-        <Typography variant="h2">{SettingRoute.publicSetting}</Typography>
+        <Typography variant="h2">{SettingRoute.backup}</Typography>
 
         <IconButton iconName="tabler:arrow-narrow-left" onClick={goBackUrl} />
       </StyledAddFormHeader>
@@ -108,7 +108,7 @@ export function BackupCP() {
               </RadioGroup>
             </Grid>
 
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} md={4}>
               <CustomInput
                 control={control}
                 name="backupFileAddress"
@@ -117,18 +117,7 @@ export function BackupCP() {
               />
             </Grid>
 
-            <Grid item xs={12} md={3}>
-              <ControlledTimeDatePickerInput
-                name="backupDate"
-                control={control}
-                label={SettingRoute.backupDate}
-                value={0}
-                onChange={() => console.log('first')}
-                rules={{ required: 'Require' }}
-              />
-            </Grid>
-
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} md={4}>
               <CustomInput
                 control={control}
                 name="dayCount"
@@ -138,13 +127,14 @@ export function BackupCP() {
               />
             </Grid>
 
-            <Grid item xs={12} md={3}>
-              <CustomInput
+            <Grid item xs={12} md={4}>
+              <ControlledTimeDatePickerInput
+                name="backupDate"
                 control={control}
-                name="hourCount"
-                type="number"
-                fullWidth
-                label={SettingRoute.hourCount}
+                label={SettingRoute.backupDate}
+                value={0}
+                onChange={() => console.log('first')}
+                rules={{ required: 'Require' }}
               />
             </Grid>
 

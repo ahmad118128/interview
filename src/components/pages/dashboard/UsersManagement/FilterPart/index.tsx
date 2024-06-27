@@ -1,21 +1,25 @@
+'use client';
+
+import { useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
-import { commonWords } from '@/strings';
-import { useState } from 'react';
-import { FieldValues, FormProvider, useForm } from 'react-hook-form';
-import { dataBankHeaderUser, dataBankMockUsers } from '../constants';
+import { UsersManagementRoute, commonWords } from '@/strings';
+import { FieldValues, useForm } from 'react-hook-form';
 import { TableCell } from '@mui/material';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import theme from '@/theme';
-import { usePathname, useRouter } from 'next/navigation';
 import { IModalState } from '@/components/template/DataBank/type';
 import TableWithFab from '@/components/template/TableWithFab';
+
 import { FilterContainer } from './FilterContainer';
 import { UsersFilterProps } from '../../image-recognition/types';
 import { initFilter } from '../../image-recognition/constants';
+import { usersHeader, usersMock } from '../constants';
 
-export default function UsersList({ modal, setModal, setImgModal }: any) {
-  const [collapse, setCollapse] = useState(false);
+export function FilterPart({ setModal, modal }: any) {
+  const [collapse, setCollapse] = useState<boolean>(false);
   const [filtersChips, setFiltersChips] = useState<
     FiltersChips<UsersFilterProps>
   >([]);
@@ -25,7 +29,7 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
   const router = useRouter();
   const currentPath = usePathname();
 
-  const methods = useForm<FieldValues>({
+  const { control, reset, handleSubmit, setValue } = useForm<FieldValues>({
     mode: 'onSubmit',
     defaultValues: {
       name: '',
@@ -37,10 +41,7 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
     },
   });
 
-  const submitHandler = (data: any) => {
-    console.log(data);
-    setCollapse(true);
-  };
+  const submitHandler = (data: any) => {};
 
   const handleIconClick = (name: EFilterTableNameIcon) => {
     switch (name) {
@@ -58,7 +59,7 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
   };
 
   const handleFiltersChips = (filterKey: keyof typeof initFilter) => {
-    methods.setValue(filterKey, initFilter[filterKey]);
+    setValue(filterKey, initFilter[filterKey]);
     setFilter({ ...filter, [filterKey]: initFilter[filterKey] });
     setFiltersChips((prevFiltersChips) => {
       return prevFiltersChips.filter((chip) => chip.key !== filterKey);
@@ -66,7 +67,7 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
   };
 
   const tableHeadsUser: CellType[] = [
-    ...dataBankHeaderUser,
+    ...usersHeader,
     {
       id: 'actions',
       label: commonWords.action,
@@ -74,21 +75,13 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
       function: (row) => (
         <TableCell>
           <Icon
-            icon="tabler:photo-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
-            style={{ marginLeft: '0.5rem' }}
-            onClick={() => setImgModal(true)}
-          />
-          <Icon
             icon="fluent:document-edit-20-filled"
             width="24"
             height="24"
             color={theme.palette.primary.main}
             style={{ marginLeft: '0.5rem' }}
             onClick={(e) => {
-              const editPath = `${currentPath}/editUser/${row.id}`;
+              const editPath = `${currentPath}/edit/${row.id}`;
               router.push(editPath);
             }}
           />
@@ -110,28 +103,25 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
     },
   ];
 
-  const { control, reset } = { ...methods };
-
   return (
     <>
-      <FormProvider {...methods}>
-        <form onSubmit={methods.handleSubmit(submitHandler)}>
-          <FilterContainer
-            control={control}
-            reset={reset}
-            collapse={collapse}
-            onHandleIconClick={handleIconClick}
-            chips={filtersChips}
-            handleFiltersChips={handleFiltersChips}
-            refreshLoading={isLoading}
-            setCollapse={setCollapse}
-          />
-        </form>
-      </FormProvider>
+      <form onSubmit={handleSubmit(submitHandler)}>
+        <FilterContainer
+          control={control}
+          reset={reset}
+          collapse={collapse}
+          onHandleIconClick={handleIconClick}
+          chips={filtersChips}
+          handleFiltersChips={handleFiltersChips}
+          refreshLoading={isLoading}
+          tableName={UsersManagementRoute.users}
+          setCollapse={setCollapse}
+        />
+      </form>
       <TableWithFab
         tableHeads={tableHeadsUser}
-        data={dataBankMockUsers}
-        path={'/addUser'}
+        data={usersMock}
+        path={'/add'}
       />
     </>
   );

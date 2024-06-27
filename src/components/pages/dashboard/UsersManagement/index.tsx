@@ -1,21 +1,32 @@
 'use client';
+
 import { useState } from 'react';
+
 import { CustomTab } from '@/components/molecules/CustomTab/styled';
-import { DataBankRoute } from '@/strings';
-import CustomModal from '@/components/organisms/Modal/CustomModal';
-import { IModalState } from './type';
-
-import { tabs } from './constants';
+import { DataBankRoute, UsersManagementRoute } from '@/strings';
+import { Typography } from '@mui/material';
+import { SuperVisoryList } from '@/components/pages/dashboard/supervisory-list';
 import { DeleteModal } from '@/components/organisms/Modal/DeleteModal.tsx';
+import { IModalState } from '@/components/template/DataBank/type';
+import { FilterPart } from './FilterPart';
 
-export function ReportPage() {
+export function UserManagement() {
   const [modalData, setModalData] = useState<IModalState>({
     state: false,
   });
 
+  const tabs = [
+    {
+      id: 0,
+      label: <Typography>{UsersManagementRoute.usersManagement}</Typography>,
+      disableTabRipple: false,
+      tabPanel: <FilterPart modal={modalData} setModal={setModalData} />,
+    },
+  ];
+
   return (
     <>
-      <CustomTab data={tabs} type={'normalTab'} />
+      <CustomTab data={tabs} type={'normalTab'}></CustomTab>
 
       {modalData.state ? (
         <DeleteModal

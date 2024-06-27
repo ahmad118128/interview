@@ -1354,7 +1354,17 @@ export const ReportRoute = {
   action: 'عملیات',
   transientPeople: 'افراد عبوری',
   trafficOfPeople: 'تردد افراد',
-  arrivalsDepartures: ' ورود و خروج',
+
+  arrivalsAndDepartures: ' ورود و خروج',
+  arrivalsAndDeparturesَArrivalGateName: 'نام گیت ورودی',
+  arrivalsAndDeparturesArrivalGateِOrientation: 'جهت گیت ورودی',
+  arrivalsAndDeparturesَArrivalTime: 'زمان ورود',
+  arrivalsAndDeparturesExitGateName: 'نام گیت خروجی',
+  arrivalsAndDeparturesExitGateِOrientation: 'جهت گیت خروجی',
+  arrivalsAndDeparturesَExitTime: 'زمان خروج',
+  arrivalsAndDeparturesMatchPercentage: 'درصد تطابق',
+  arrivalsAndDeparturesTimeOf: ' تاریخ و زمان عبور از',
+  arrivalsAndDeparturesTimeTo: ' تاریخ و زمان عبور تا',
 };
 
 export const UsersManagementRoute = {

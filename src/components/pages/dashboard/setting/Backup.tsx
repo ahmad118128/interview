@@ -30,7 +30,7 @@ import { lastBackupStatusHeader, lastBackupStatusMock } from './constants';
 import { COLLAPSE_ID } from '../image-recognition/constants';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 
-export function BackupCP() {
+export function Backup() {
   const [selected, setSelected] = useState('emergencyBackup');
   const [tableData, setTableData] = useState<null | ISuccess | IError>(null);
   const [order, setOrder] = useState<string | unknown>('');
@@ -53,7 +53,7 @@ export function BackupCP() {
   return (
     <StyledAddFormWrapper>
       <StyledAddFormHeader>
-        <Typography variant="h2">{SettingRoute.publicSetting}</Typography>
+        <Typography variant="h2">{SettingRoute.backup}</Typography>
 
         <IconButton iconName="tabler:arrow-narrow-left" onClick={goBackUrl} />
       </StyledAddFormHeader>
@@ -67,7 +67,7 @@ export function BackupCP() {
           </label>
 
           <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
-            <Grid item xs={12}>
+            <Grid item xs={12} width="100%">
               <RadioGroup
                 aria-labelledby="demo-radio-buttons-group-label"
                 defaultValue="female"
@@ -89,23 +89,26 @@ export function BackupCP() {
                   value="emergencyBackup"
                   control={<Radio sx={{ paddingRight: '0' }} />}
                   label={SettingRoute.emergencyBackup}
+                  sx={{ margin: '0' }}
                 />
 
                 <FormControlLabel
                   value="partialBackup"
                   control={<Radio sx={{ paddingRight: '0' }} />}
                   label={SettingRoute.partialBackup}
+                  sx={{ margin: '0' }}
                 />
 
                 <FormControlLabel
                   value="automaticBackup"
                   control={<Radio sx={{ paddingRight: '0' }} />}
                   label={SettingRoute.automaticBackup}
+                  sx={{ margin: '0' }}
                 />
               </RadioGroup>
             </Grid>
 
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} md={4}>
               <CustomInput
                 control={control}
                 name="backupFileAddress"
@@ -114,18 +117,7 @@ export function BackupCP() {
               />
             </Grid>
 
-            <Grid item xs={12} md={3}>
-              <ControlledTimeDatePickerInput
-                name="backupDate"
-                control={control}
-                label={SettingRoute.backupDate}
-                value={0}
-                onChange={() => console.log('first')}
-                rules={{ required: 'Require' }}
-              />
-            </Grid>
-
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} md={4}>
               <CustomInput
                 control={control}
                 name="dayCount"
@@ -135,13 +127,14 @@ export function BackupCP() {
               />
             </Grid>
 
-            <Grid item xs={12} md={3}>
-              <CustomInput
+            <Grid item xs={12} md={4}>
+              <ControlledTimeDatePickerInput
+                name="backupDate"
                 control={control}
-                name="hourCount"
-                type="number"
-                fullWidth
-                label={SettingRoute.hourCount}
+                label={SettingRoute.backupDate}
+                value={0}
+                onChange={() => console.log('first')}
+                rules={{ required: 'Require' }}
               />
             </Grid>
 
@@ -154,7 +147,9 @@ export function BackupCP() {
                   width: '100%',
                 }}
               >
-                <CustomButton type="submit">{DataBankRoute.add}</CustomButton>
+                <CustomButton type="submit" variant="contained">
+                  {SettingRoute.record}
+                </CustomButton>
                 <CustomButton type="reset" variant="outlined">
                   {SettingRoute.refuse}
                 </CustomButton>
@@ -179,7 +174,9 @@ export function BackupCP() {
                   width: '100%',
                 }}
               >
-                <CustomButton type="submit">{DataBankRoute.add}</CustomButton>
+                <CustomButton type="submit" variant="contained">
+                  {SettingRoute.record}
+                </CustomButton>
                 <CustomButton type="reset" variant="outlined">
                   {SettingRoute.refuse}
                 </CustomButton>

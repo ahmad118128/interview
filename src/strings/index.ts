@@ -1,6 +1,9 @@
 /** ********** GENERAL ********** */
 
 export const generalStr = {
+  backToDashboard: 'بازگشت به داشبورد',
+  RemovedRenamedOrUnavailablePage:
+    'صفحه ای که به دنبال آن می گردید ممکن است حذف شده باشد ، نام آن تغییر کرده باشد و یا موقتا در دسترس نباشد.',
   matchCount: 'تعداد تطبیق',
   creditFrom: 'مقدار اعتبار از',
   creditTo: 'مقدار اعتبار تا',

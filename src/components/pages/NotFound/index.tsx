@@ -2,7 +2,6 @@
 
 import { CustomButton } from '@/components/atoms/CustomButton';
 import { generalStr, messageStr } from '@/strings';
-import { Typography } from '@mui/material';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import {

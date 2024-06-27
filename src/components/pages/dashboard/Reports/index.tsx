@@ -6,6 +6,7 @@ import CustomModal from '@/components/organisms/Modal/CustomModal';
 import { IModalState } from './type';
 
 import { tabs } from './constants';
+import { DeleteModal } from '@/components/organisms/Modal/DeleteModal.tsx';
 
 export function ReportPage() {
   const [modalData, setModalData] = useState<IModalState>({
@@ -17,15 +18,14 @@ export function ReportPage() {
       <CustomTab data={tabs} type={'normalTab'} />
 
       {modalData.state ? (
-        <CustomModal
+        <DeleteModal
           id={modalData.id}
           open={modalData.state}
-          activeButtonHandler={() => console.log(modalData.id)}
+          onSubmit={() => console.log(modalData.id)}
           buttons
-          errorTitle={DataBankRoute.deleteModalRedText}
           title={DataBankRoute.deleteModalBlackText}
-          handleClose={() => setModalData({ state: false })}
-        ></CustomModal>
+          onClose={() => setModalData({ state: false })}
+        />
       ) : null}
     </>
   );

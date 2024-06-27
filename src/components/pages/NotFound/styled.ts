@@ -7,18 +7,15 @@ export const StyledContainer = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   gap: '1.25rem',
   height: '100vh',
-  padding: ' 36px',
-  [theme.breakpoints.up('sm')]: {},
-  [theme.breakpoints.up('md')]: {},
-  [theme.breakpoints.up('lg')]: {},
+  padding: '0px 36px',
 }));
 
 export const StyledImageContainer = styled(Box)(({ theme }) => ({
   position: 'relative',
   width: '266px',
   height: '230px',
-  [theme.breakpoints.up('sm')]: { width: '448px', height: '390px' },
-  [theme.breakpoints.up('md')]: { width: '360px', height: '316px' },
+  [theme.breakpoints.up('sm')]: { width: '360px', height: '316px' },
+  [theme.breakpoints.up('md')]: { width: '448px', height: '390px' },
   [theme.breakpoints.up('lg')]: { width: '448px', height: '390px' },
 }));
 

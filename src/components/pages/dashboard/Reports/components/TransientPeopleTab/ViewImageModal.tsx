@@ -21,7 +21,7 @@ export default function ViewImageModal() {
 
       {imgModal ? (
         <ThumbnailPicModal
-          handleClose={() => setImgModal(false)}
+          onClose={() => setImgModal(false)}
           open={imgModal}
           setOpen={setImgModal}
           src={'/assets/images/dashboard/technology 1.svg'}

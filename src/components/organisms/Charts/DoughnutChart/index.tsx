@@ -59,8 +59,8 @@ export default function DoughnutChart(props: DoughnutChartProps) {
             return;
           }
           return [
-            getGradient(ctx, chartArea, '#383838', '#262626'),
             getGradient(ctx, chartArea, '#7EBC59', '#4D7C32'),
+            getGradient(ctx, chartArea, '#383838', '#262626'),
           ];
         },
       },

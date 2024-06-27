@@ -14,8 +14,8 @@ import { MobileCollapseTable } from '@/components/CustomTable/widgets';
 import {
   COLLAPSE_ID,
   defaultArrivalsAndDeparturesModalPicFormValues,
-  ArrivalsAndDeparturesَMockData,
-  ArrivalsAndDeparturesَHeader,
+  ArrivalsAndDeparturesMockData,
+  ArrivalsAndDeparturesHeader,
 } from './constants';
 import { CellType } from '@/components/CustomTable/shared/CustomCell/types';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
@@ -70,7 +70,7 @@ export default function ArrivalDepartures() {
   };
 
   const tableHeads: CellType[] = [
-    ...ArrivalsAndDeparturesَHeader,
+    ...ArrivalsAndDeparturesHeader,
     {
       id: 'actions',
       label: commonWords.action,
@@ -95,14 +95,10 @@ export default function ArrivalDepartures() {
         </form>
       </FormProvider>
       <MobileCollapseTable
-        rows={ArrivalsAndDeparturesَMockData}
+        rows={ArrivalsAndDeparturesMockData}
         headers={tableHeads}
         error={!tableData?.data?.results}
-        mobileIdFilter={[
-          COLLAPSE_ID,
-          'arrivalsAndDeparturesَArrivalGateName',
-          'arrivalsAndDeparturesMatchPercentage',
-        ]}
+        mobileIdFilter={[COLLAPSE_ID, 'ArrivalGateName', 'MatchPercentage']}
         pagination={pagination}
         handleSort={(id) => {
           setOrder(id);

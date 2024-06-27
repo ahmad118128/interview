@@ -1356,15 +1356,15 @@ export const ReportRoute = {
   trafficOfPeople: 'تردد افراد',
 
   arrivalsAndDepartures: ' ورود و خروج',
-  arrivalsAndDeparturesَArrivalGateName: 'نام گیت ورودی',
-  arrivalsAndDeparturesArrivalGateِOrientation: 'جهت گیت ورودی',
-  arrivalsAndDeparturesَArrivalTime: 'زمان ورود',
-  arrivalsAndDeparturesExitGateName: 'نام گیت خروجی',
-  arrivalsAndDeparturesExitGateِOrientation: 'جهت گیت خروجی',
-  arrivalsAndDeparturesَExitTime: 'زمان خروج',
-  arrivalsAndDeparturesMatchPercentage: 'درصد تطابق',
-  arrivalsAndDeparturesTimeOf: ' تاریخ و زمان عبور از',
-  arrivalsAndDeparturesTimeTo: ' تاریخ و زمان عبور تا',
+  ArrivalGateName: 'نام گیت ورودی',
+  ArrivalGateOrientation: 'جهت گیت ورودی',
+  ArrivalTime: 'زمان ورود',
+  ExitGateName: 'نام گیت خروجی',
+  ExitGateOrientation: 'جهت گیت خروجی',
+  ExitTime: 'زمان خروج',
+  MatchPercentage: 'درصد تطابق',
+  TimeOf: ' تاریخ و زمان عبور از',
+  TimeTo: ' تاریخ و زمان عبور تا',
 };
 
 export const UsersManagementRoute = {

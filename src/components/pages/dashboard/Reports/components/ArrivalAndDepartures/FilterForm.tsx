@@ -16,9 +16,9 @@ const FilterForm: React.FC<
     <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
       <Grid item xs={12} md={3}>
         <CustomRHFAutocomplete
-          label={ReportRoute.arrivalsAndDeparturesَArrivalGateName}
+          label={ReportRoute.gateName}
           control={control}
-          name="arrivalsAndDeparturesَArrivalGateName"
+          name="ArrivalGateName"
           options={[]}
           fullWidth
         />
@@ -34,9 +34,9 @@ const FilterForm: React.FC<
       </Grid>
       <Grid item xs={12} md={3}>
         <ControlledTimeDatePickerInput
-          name="arrivalsAndDeparturesTimeOf"
+          name="TimeOf"
           control={control}
-          label={ReportRoute.arrivalsAndDeparturesTimeOf}
+          label={ReportRoute.TimeOf}
           value={0}
           onChange={() => console.log('first')}
           rules={{ required: 'Require' }}
@@ -44,9 +44,9 @@ const FilterForm: React.FC<
       </Grid>
       <Grid item xs={12} md={3}>
         <ControlledTimeDatePickerInput
-          name="arrivalsAndDeparturesTimeTo"
+          name="TimeTo"
           control={control}
-          label={ReportRoute.arrivalsAndDeparturesTimeTo}
+          label={ReportRoute.TimeTo}
           value={0}
           onChange={() => console.log('first')}
           rules={{ required: 'Require' }}

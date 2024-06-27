@@ -4,11 +4,6 @@ import { ReportRoute } from '@/strings';
 export const defaultArrivalsAndDeparturesModalPicFormValues = {
   arrivalsAndDeparturesَArrivalGateName: '',
   arrivalsAndDeparturesArrivalGateِOrientation: '',
-  arrivalsAndDeparturesَArrivalTime: '',
-  arrivalsAndDeparturesExitGateName: '',
-  arrivalsAndDeparturesExitGateِOrientation: '',
-  arrivalsAndDeparturesَExitTime: '',
-  arrivalsAndDeparturesMatchPercentage: '',
   arrivalsAndDeparturesTimeOf: '',
   arrivalsAndDeparturesTimeTo: '',
 };

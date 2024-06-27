@@ -21,6 +21,7 @@ export default function ViewImageModal() {
 
       {imgModal ? (
         <ThumbnailPicModal
+          title={' '}
           open={imgModal}
           setOpen={setImgModal}
           src={'/assets/images/dashboard/arrivalsDeparturesModalPic.svg'}

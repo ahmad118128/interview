@@ -17,7 +17,7 @@ import {
 } from '../data-bank/usersList/styled';
 import { StyledFilterChild } from '../image-recognition/FilterChild/styled';
 
-export function SocialSettingCp() {
+export function SocialSetting() {
   const router = useRouter();
   const { control, handleSubmit } = useForm();
   const submitHadler = (data: any) => console.log(data);

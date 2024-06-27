@@ -14,7 +14,7 @@ import { MobileCollapseTable } from '@/components/CustomTable/widgets';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 import { FilterContainer } from './FilterContainer';
 
-export function ClientCp({ modal, setModal, setImgModal }: any) {
+export function Client({ modal, setModal, setImgModal }: any) {
   const [collapse, setCollapse] = useState(false);
   const [filtersChips, setFiltersChips] = useState<
     FiltersChips<UsersFilterProps>

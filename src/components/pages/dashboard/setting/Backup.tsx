@@ -30,7 +30,7 @@ import { lastBackupStatusHeader, lastBackupStatusMock } from './constants';
 import { COLLAPSE_ID } from '../image-recognition/constants';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 
-export function BackupCP() {
+export function Backup() {
   const [selected, setSelected] = useState('emergencyBackup');
   const [tableData, setTableData] = useState<null | ISuccess | IError>(null);
   const [order, setOrder] = useState<string | unknown>('');

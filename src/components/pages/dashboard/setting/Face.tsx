@@ -25,7 +25,7 @@ import {
 import { StyledFilterChild } from '../image-recognition/FilterChild/styled';
 import { CustomRadioButton } from '@/components/atoms/CustomRadioButton';
 
-export function FaceCP() {
+export function Face() {
   const [selected, setSelected] = useState('doNotRecordFaces');
 
   const router = useRouter();

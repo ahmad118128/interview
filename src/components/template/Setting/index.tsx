@@ -7,13 +7,14 @@ import { CustomTab } from '@/components/molecules/CustomTab/styled';
 import { DataBankRoute, SettingRoute } from '@/strings';
 import { Typography } from '@mui/material';
 import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
-import { SocialSettingCp } from '@/components/pages/dashboard/setting/SocialSettingCp';
-import { FaceCP } from '@/components/pages/dashboard/setting/FaceCP';
-import { BackupCP } from '@/components/pages/dashboard/setting/BackupCp';
-import { ClientCp } from '@/components/pages/dashboard/setting/ClientCp';
+
 import { DeleteModal } from '@/components/organisms/Modal/DeleteModal.tsx';
 
 import { IModalState } from '../DataBank/type';
+import { Backup } from '@/components/pages/dashboard/setting/Backup';
+import { Client } from '@/components/pages/dashboard/setting/Client';
+import { Face } from '@/components/pages/dashboard/setting/Face';
+import { SocialSetting } from '@/components/pages/dashboard/setting/SocialSetting';
 
 export function SettingTemplate() {
   const [modalData, setModalData] = useState<IModalState>({
@@ -29,25 +30,25 @@ export function SettingTemplate() {
       id: 0,
       label: SettingRoute.face,
       disableTabRipple: false,
-      tabPanel: <FaceCP />,
+      tabPanel: <Face />,
     },
     {
       id: 1,
       label: SettingRoute.client,
       disableTabRipple: false,
-      tabPanel: <ClientCp modal={modalData} setModal={setModalData} />,
+      tabPanel: <Client modal={modalData} setModal={setModalData} />,
     },
     {
       id: 2,
       label: SettingRoute.publicSetting,
       disableTabRipple: false,
-      tabPanel: <SocialSettingCp />,
+      tabPanel: <SocialSetting />,
     },
     {
       id: 3,
       label: <Typography>{SettingRoute.backup}</Typography>,
       disableTabRipple: false,
-      tabPanel: <BackupCP />,
+      tabPanel: <Backup />,
     },
   ];
 

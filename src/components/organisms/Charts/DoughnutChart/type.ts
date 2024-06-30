@@ -8,5 +8,5 @@ export interface DoughnutChartProps {
   firstColorGrade2?: string;
   secondColorGrade1?: any;
   secondColorGrade2?: any;
-  showTooltip?: boolean;
+  showTooltip: boolean;
 }

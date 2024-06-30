@@ -97,7 +97,7 @@ export default function DoughnutChart(props: DoughnutChartProps) {
           responsive: true,
           plugins: {
             tooltip: {
-              enabled: showTooltip ? showTooltip : true,
+              enabled: showTooltip,
             },
             legend: {
               display: false,

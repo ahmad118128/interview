@@ -64,6 +64,7 @@ export default function TrafficAnalysisCp() {
         <Grid item xs={12} md={6} lg={3}>
           <DashboardChartCard title={TrafficAnalysisRoute.mensTraffic}>
             <DoughnutChart
+              showTooltip={false}
               labels={['شناسایی شده']}
               data={[76, 100 - 76]}
               legend={false}
@@ -73,7 +74,6 @@ export default function TrafficAnalysisCp() {
               firstColorGrade2="#4D7C32"
               secondColorGrade1={theme.palette.grey[200]}
               secondColorGrade2={theme.palette.grey[200]}
-              showTooltip={false}
             />
           </DashboardChartCard>
         </Grid>
@@ -114,6 +114,7 @@ export default function TrafficAnalysisCp() {
             <DoughnutChart
               labels={['زن']}
               data={[15, 100 - 15]}
+              showTooltip={false}
               legend={false}
               chartLabel="%"
               selectedData={15}
@@ -121,7 +122,6 @@ export default function TrafficAnalysisCp() {
               firstColorGrade2={theme.palette.primary.main}
               secondColorGrade1={theme.palette.grey[200]}
               secondColorGrade2={theme.palette.grey[200]}
-              showTooltip={false}
             />
           </DashboardChartCard>
         </Grid>

@@ -47,9 +47,10 @@ export const StyledHoverIcon = styled(Box)<StyledHoverIconProps>`
 `;
 
 export const StyledChip = styled(Chip)`
-  padding: 0 0.625rem;
   height: 1.75rem;
   cursor: pointer;
+  background: ${({ theme }) => theme.palette.primary.light};
+  color: ${({ theme }) => theme.palette.common.white};
   .css-6od3lo-MuiChip-label {
     padding-right: 0 !important;
     padding-left: 0.375rem !important;
@@ -58,15 +59,13 @@ export const StyledChip = styled(Chip)`
 `;
 
 export const StyledAccordionSummary = styled(AccordionSummary)`
-  padding: 0.5rem 1.5rem;
-
+  padding: 0;
   .MuiAccordionSummary-contentGutters {
     justify-content: flex-end !important;
     margin: 0;
   }
   &[aria-expanded='true'] {
     height: 3.75rem;
-    padding: 0.5rem 1.5rem;
     margin-bottom: 0;
   }
 `;
@@ -101,7 +100,20 @@ export const StyledAddFormWrapper = styled(Box)`
 
 export const StyledAddFormHeader = styled(Box)`
   border-bottom: 1px solid ${theme.palette.grey[300]};
-  padding: 1.75rem 11.875rem;
+  padding: 1.75rem 1rem;
+
+  ${({ theme }) => theme.breakpoints.up('sm')} {
+    padding: 1.75rem 1rem;
+  }
+
+  ${({ theme }) => theme.breakpoints.up('md')} {
+    padding: 1.75rem 1.25rem;
+  }
+
+  ${({ theme }) => theme.breakpoints.up('lg')} {
+    padding: 1.75rem 11.875rem;
+  }
+
   border-radius: 0.625rem 0.625rem 0 0;
   background: transparent;
   display: flex;
@@ -110,7 +122,19 @@ export const StyledAddFormHeader = styled(Box)`
 `;
 
 export const StyledAddFormMain = styled(Box)`
-  padding: 1.75rem 11.875rem;
+  padding: 1.75rem 1rem;
+
+  ${({ theme }) => theme.breakpoints.up('sm')} {
+    padding: 1.75rem 1rem;
+  }
+
+  ${({ theme }) => theme.breakpoints.up('md')} {
+    padding: 1.75rem 1.25rem;
+  }
+
+  ${({ theme }) => theme.breakpoints.up('lg')} {
+    padding: 1.75rem 11.875rem;
+  }
 `;
 
 export const StyledGroupWrapper = styled(Box)`

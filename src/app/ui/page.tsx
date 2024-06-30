@@ -19,7 +19,7 @@ import ReportPictureModal from '@/components/organisms/Modal/ReportPictureModal'
 import { UnControlledCustomInput } from '@/components/atoms/CustomInput/CustomInput';
 
 const mockData = {
-  src: '/assets/images/dashboard/technology 1.svg',
+  src: '/assets/images/dashboard/avatar1.png',
   name: 'test1',
   sex: 'مرد با احتمال بالا',
   age: 24,

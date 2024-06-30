@@ -121,6 +121,7 @@ export function SuperVisoryList({ setModal, modal }: any) {
     <>
       <form onSubmit={handleSubmit(submitHandler)}>
         <FilterContainer
+          setCollapse={setCollapse}
           control={control}
           reset={reset}
           collapse={collapse}

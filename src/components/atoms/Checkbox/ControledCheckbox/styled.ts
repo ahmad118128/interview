@@ -1,5 +1,5 @@
 'use client';
-import { Checkbox, styled } from '@mui/material';
+import { Box, Checkbox, styled } from '@mui/material';
 import { IStyledCheckbox } from './type';
 
 export const StyledCheckbox = styled(Checkbox)<IStyledCheckbox>`
@@ -28,4 +28,10 @@ export const StyledCheckbox = styled(Checkbox)<IStyledCheckbox>`
         error ? theme.palette.error.main : theme.palette.primary.light};
     }
   }
+`;
+
+export const StyledWrapper = styled(Box)`
+  width: 100%;
+  display: flex;
+  align-items: center;
 `;

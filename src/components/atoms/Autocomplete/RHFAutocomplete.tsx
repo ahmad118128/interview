@@ -26,6 +26,7 @@ export const CustomRHFAutocomplete = <
   getOptionLabel,
   defaultValue,
   rules,
+  fullWidth,
   ...rest
 }: RHFAutoCompleteProps<OptionType, TField, FreeSolo>) => {
   const getValueFromOption = (option: OptionType) =>

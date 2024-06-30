@@ -18,7 +18,7 @@ export function SupervisoryListTemplate() {
   const tabs = [
     {
       id: 0,
-      label: <Typography>{DataBankRoute.supervisoryList}</Typography>,
+      label: DataBankRoute.supervisoryList,
       disableTabRipple: false,
       tabPanel: <SuperVisoryList modal={modalData} setModal={setModalData} />,
     },

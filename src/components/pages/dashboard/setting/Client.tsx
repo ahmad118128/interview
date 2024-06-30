@@ -1,32 +1,20 @@
-'use client';
-
-import { useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
-import { FieldValues, FormProvider, useForm } from 'react-hook-form';
-import { TableCell } from '@mui/material';
-import { Icon } from '@iconify/react/dist/iconify.js';
-import ReportFilterContainer from '@/components/pages/dashboard/report/reportFilterContainer';
-import { MobileCollapseTable } from '@/components/CustomTable/widgets';
-import {
-  COLLAPSE_ID,
-  initFilter,
-} from '@/components/pages/dashboard/image-recognition/constants';
-import {
-  reportHeaderTrafficOfPeople,
-  reportMocTrafficOfPeople,
-} from '@/components/pages/dashboard/report/constants';
-import {
-  IError,
-  ISuccess,
-  UsersFilterProps,
-} from '@/components/pages/dashboard/image-recognition/types';
-import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
 import { commonWords } from '@/strings';
+import { useState } from 'react';
+import { FieldValues, FormProvider, useForm } from 'react-hook-form';
+import { TableCell } from '@mui/material';
+import { Icon } from '@iconify/react/dist/iconify.js';
 import theme from '@/theme';
+import { usePathname, useRouter } from 'next/navigation';
+import { IError, ISuccess, UsersFilterProps } from '../image-recognition/types';
+import { COLLAPSE_ID, initFilter } from '../image-recognition/constants';
+import { ClientHeader, ClientMock } from './constants';
+import { MobileCollapseTable } from '@/components/CustomTable/widgets';
+import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
+import { FilterContainer } from './FilterContainer';
 
-const TrafficOfPeople = ({ modal, setModal, setImgModal }: any) => {
+export function Client({ modal, setModal, setImgModal }: any) {
   const [collapse, setCollapse] = useState(false);
   const [filtersChips, setFiltersChips] = useState<
     FiltersChips<UsersFilterProps>
@@ -87,7 +75,7 @@ const TrafficOfPeople = ({ modal, setModal, setImgModal }: any) => {
   };
 
   const tableHeadsClient: CellType[] = [
-    ...reportHeaderTrafficOfPeople,
+    ...ClientHeader,
     {
       id: 'actions',
       label: commonWords.action,
@@ -102,6 +90,30 @@ const TrafficOfPeople = ({ modal, setModal, setImgModal }: any) => {
             style={{ marginLeft: '0.5rem' }}
             onClick={() => setImgModal(true)}
           />
+          <Icon
+            icon="fluent:document-edit-20-filled"
+            width="24"
+            height="24"
+            color={theme.palette.primary.main}
+            style={{ marginLeft: '0.5rem' }}
+            onClick={(e) => {
+              const editPath = `${currentPath}/editUser/${row.id}`;
+              router.push(editPath);
+            }}
+          />
+          <Icon
+            icon="tabler:trash-filled"
+            width="24"
+            height="24"
+            color={theme.palette.primary.main}
+            onClick={(e) =>
+              setModal({
+                ...modal,
+                state: true,
+                id: row?.id,
+              })
+            }
+          />
         </TableCell>
       ),
     },
@@ -113,7 +125,7 @@ const TrafficOfPeople = ({ modal, setModal, setImgModal }: any) => {
     <>
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(submitHandler)}>
-          <ReportFilterContainer
+          <FilterContainer
             control={control}
             reset={reset}
             collapse={collapse}
@@ -121,14 +133,15 @@ const TrafficOfPeople = ({ modal, setModal, setImgModal }: any) => {
             chips={filtersChips}
             handleFiltersChips={handleFiltersChips}
             refreshLoading={isLoading}
+            setCollapse={setCollapse}
           />
         </form>
       </FormProvider>
       <MobileCollapseTable
-        rows={reportMocTrafficOfPeople}
+        rows={ClientMock}
         headers={tableHeadsClient}
         error={!tableData?.data?.results}
-        mobileIdFilter={[COLLAPSE_ID, 'name', 'supervisortList']}
+        mobileIdFilter={[COLLAPSE_ID, 'factoryName', 'clientStatus']}
         pagination={pagination}
         handleSort={(id) => {
           setOrder(id);
@@ -136,6 +149,4 @@ const TrafficOfPeople = ({ modal, setModal, setImgModal }: any) => {
       />
     </>
   );
-};
-
-export default TrafficOfPeople;
+}

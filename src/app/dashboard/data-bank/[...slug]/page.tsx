@@ -3,7 +3,6 @@ import { DynamicRouteProps } from '../type';
 import AddForm from '@/components/pages/dashboard/data-bank/usersList/AddForm';
 import AddFormGroup from '@/components/pages/dashboard/data-bank/groupList/AddFormGroup';
 import EditForm from '@/components/pages/dashboard/data-bank/usersList/EditForm';
-import EditFormGroup from '@/components/pages/dashboard/data-bank/groupList/EditFormGroup';
 
 export default function Page({ params }: { params: DynamicRouteProps }) {
   const path = params.slug[0];
@@ -14,7 +13,6 @@ export default function Page({ params }: { params: DynamicRouteProps }) {
   return (
     (path === 'addUser' && <AddForm />) ||
     (path === 'editUser' && <EditForm />) ||
-    (path === 'addGroup' && <AddFormGroup />) ||
-    (path === 'editGroup' && <EditFormGroup />)
+    (path === 'addGroup' && <AddFormGroup />)
   );
 }

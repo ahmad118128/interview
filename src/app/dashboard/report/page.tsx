@@ -2,13 +2,14 @@
 
 import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
-import { Typography } from '@mui/material';
-import TrafficOfPeople from './components/Traffic-of-people';
 import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
 import { DeleteModal } from '@/components/organisms/Modal/DeleteModal.tsx';
 import { DataBankRoute, TrafficAnalysisRoute, generalStr } from '@/strings';
 import { IModalState } from '@/components/template/DataBank/type';
 import CustomTab from '@/components/molecules/CustomTab/styled';
+import { ReportPage } from '@/components/pages/dashboard/Reports';
+import { tabs } from '@/components/pages/dashboard/Reports/constants';
+import TrafficOfPeople from '../../../components/pages/dashboard/report';
 
 export default function Report() {
   const router = useRouter();
@@ -19,36 +20,9 @@ export default function Report() {
   });
   const [imgModal, setImgModal] = useState(false);
 
-  const tabs = [
-    {
-      id: 0,
-      label: <Typography>{generalStr.transientPeople}</Typography>,
-      disableTabRipple: false,
-      tabPanel: null,
-    },
-    {
-      id: 1,
-      label: <Typography>{TrafficAnalysisRoute.trafficPeople}</Typography>,
-      disableTabRipple: false,
-      tabPanel: (
-        <TrafficOfPeople
-          modal={modalData}
-          setModal={setModalData}
-          setImgModal={setImgModal}
-        />
-      ),
-    },
-    {
-      id: 2,
-      label: <Typography>{generalStr.loginLogout}</Typography>,
-      disableTabRipple: false,
-      tabPanel: null,
-    },
-  ];
-
   return (
     <>
-      <CustomTab data={tabs} type={'normalTab'}></CustomTab>
+      <CustomTab data={tabs} type="normalTab"></CustomTab>
 
       {modalData.state ? (
         <DeleteModal

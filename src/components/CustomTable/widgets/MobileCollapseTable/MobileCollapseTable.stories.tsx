@@ -85,10 +85,6 @@ export const DefaultMobileCollapseTable: Story = {
   args: {
     headers: [
       {
-        id: COLLAPSE_ID,
-        label: '',
-      },
-      {
         id: 'description',
         label: generalStr.description,
       },

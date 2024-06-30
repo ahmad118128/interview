@@ -13,6 +13,7 @@ import { initFilter } from '@/components/pages/dashboard/image-recognition/const
 import { FilterContainer } from '@/components/pages/dashboard/traffic-analysis/FilterContainer';
 import { useForm } from 'react-hook-form';
 import { EFilterTableNameIcon } from '@/components/pages/dashboard/data-bank/usersList/type';
+import theme from '@/theme';
 
 export default function TrafficAnalysisCp() {
   const [collapse, setCollapse] = useState(false);
@@ -59,33 +60,65 @@ export default function TrafficAnalysisCp() {
         refreshLoading={isLoading}
         setCollapse={setCollapse}
       />
-      <Grid container spacing={4}>
+      <Grid container spacing={4} marginTop="1rem">
         <Grid item xs={12} md={6} lg={3}>
           <DashboardChartCard title={TrafficAnalysisRoute.mensTraffic}>
             <DoughnutChart
               labels={['شناسایی شده']}
-              data={[120]}
+              data={[76, 100 - 76]}
               legend={false}
+              chartLabel="%"
+              selectedData={76}
+              firstColorGrade1={theme.palette.primary.light}
+              firstColorGrade2="#4D7C32"
+              secondColorGrade1={theme.palette.grey[200]}
+              secondColorGrade2={theme.palette.grey[200]}
             />
           </DashboardChartCard>
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
           <DashboardChartCard title={TrafficAnalysisRoute.womensTraffic}>
-            <DoughnutChart labels={['نامشخص']} data={[120]} legend={false} />
+            <DoughnutChart
+              labels={['نامشخص', '']}
+              data={[35, 100 - 35]}
+              legend={false}
+              chartLabel="%"
+              selectedData={35}
+              firstColorGrade1="#858585"
+              firstColorGrade2={theme.palette.primary.main}
+              secondColorGrade1={theme.palette.grey[200]}
+              secondColorGrade2={theme.palette.grey[200]}
+            />
           </DashboardChartCard>
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
           <DashboardChartCard title={TrafficAnalysisRoute.sampleChart}>
             <DoughnutChart
               labels={['شناسایی شده']}
-              data={[80]}
+              data={[62, 100 - 62]}
               legend={false}
+              chartLabel="%"
+              selectedData={62}
+              firstColorGrade1={theme.palette.primary.light}
+              firstColorGrade2="#4D7C32"
+              secondColorGrade1={theme.palette.grey[200]}
+              secondColorGrade2={theme.palette.grey[200]}
             />
           </DashboardChartCard>
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
           <DashboardChartCard title={TrafficAnalysisRoute.sampleChart}>
-            <DoughnutChart labels={['زن']} data={[120]} legend={false} />
+            <DoughnutChart
+              labels={['زن']}
+              data={[15, 100 - 15]}
+              legend={false}
+              chartLabel="%"
+              selectedData={15}
+              firstColorGrade1="#858585"
+              firstColorGrade2={theme.palette.primary.main}
+              secondColorGrade1={theme.palette.grey[200]}
+              secondColorGrade2={theme.palette.grey[200]}
+            />
           </DashboardChartCard>
         </Grid>
         <Grid item xs={12} md={6} lg={6}>

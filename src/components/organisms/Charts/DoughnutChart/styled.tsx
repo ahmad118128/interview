@@ -5,6 +5,7 @@ export const DoughnutBox = styled(Box)`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  padding: 0 0.5rem;
   position: relative;
 `;
 

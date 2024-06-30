@@ -48,6 +48,7 @@ export default function DoughnutChart(props: DoughnutChartProps) {
   const {
     data,
     labels,
+    showTooltip,
     chartLabel,
     firstColorGrade1,
     firstColorGrade2,
@@ -95,6 +96,9 @@ export default function DoughnutChart(props: DoughnutChartProps) {
         options={{
           responsive: true,
           plugins: {
+            tooltip: {
+              enabled: showTooltip ? showTooltip : true,
+            },
             legend: {
               display: false,
             },

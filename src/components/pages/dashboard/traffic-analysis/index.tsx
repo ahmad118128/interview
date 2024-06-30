@@ -73,6 +73,7 @@ export default function TrafficAnalysisCp() {
               firstColorGrade2="#4D7C32"
               secondColorGrade1={theme.palette.grey[200]}
               secondColorGrade2={theme.palette.grey[200]}
+              showTooltip={false}
             />
           </DashboardChartCard>
         </Grid>
@@ -88,6 +89,7 @@ export default function TrafficAnalysisCp() {
               firstColorGrade2={theme.palette.primary.main}
               secondColorGrade1={theme.palette.grey[200]}
               secondColorGrade2={theme.palette.grey[200]}
+              showTooltip={false}
             />
           </DashboardChartCard>
         </Grid>
@@ -103,6 +105,7 @@ export default function TrafficAnalysisCp() {
               firstColorGrade2="#4D7C32"
               secondColorGrade1={theme.palette.grey[200]}
               secondColorGrade2={theme.palette.grey[200]}
+              showTooltip={false}
             />
           </DashboardChartCard>
         </Grid>
@@ -118,6 +121,7 @@ export default function TrafficAnalysisCp() {
               firstColorGrade2={theme.palette.primary.main}
               secondColorGrade1={theme.palette.grey[200]}
               secondColorGrade2={theme.palette.grey[200]}
+              showTooltip={false}
             />
           </DashboardChartCard>
         </Grid>

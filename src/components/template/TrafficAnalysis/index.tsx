@@ -57,6 +57,7 @@ export default function TrafficAnalysisTemplate() {
         chips={filtersChips}
         handleFiltersChips={handleFiltersChips}
         refreshLoading={isLoading}
+        setCollapse={setCollapse}
       />
       <Grid container spacing={4}>
         <Grid item xs={12} md={6} lg={3}>

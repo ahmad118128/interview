@@ -3,14 +3,14 @@
 import { useState } from 'react';
 
 import { CustomTab } from '@/components/molecules/CustomTab/styled';
-import { DataBankRoute } from '@/strings';
+import { DataBankRoute, UsersManagementRoute } from '@/strings';
 import { Typography } from '@mui/material';
 import { SuperVisoryList } from '@/components/pages/dashboard/supervisory-list';
 import { DeleteModal } from '@/components/organisms/Modal/DeleteModal.tsx';
+import { IModalState } from '@/components/template/DataBank/type';
+import { FilterPart } from './FilterPart';
 
-import { IModalState } from '../DataBank/type';
-
-export function SupervisoryListTemplate() {
+export function UserManagement() {
   const [modalData, setModalData] = useState<IModalState>({
     state: false,
   });
@@ -18,9 +18,9 @@ export function SupervisoryListTemplate() {
   const tabs = [
     {
       id: 0,
-      label: DataBankRoute.supervisoryList,
+      label: <Typography>{UsersManagementRoute.usersManagement}</Typography>,
       disableTabRipple: false,
-      tabPanel: <SuperVisoryList modal={modalData} setModal={setModalData} />,
+      tabPanel: <FilterPart modal={modalData} setModal={setModalData} />,
     },
   ];
 
@@ -36,7 +36,7 @@ export function SupervisoryListTemplate() {
           buttons
           title={DataBankRoute.deleteModalBlackText}
           onClose={() => setModalData({ state: false })}
-        ></DeleteModal>
+        />
       ) : null}
     </>
   );

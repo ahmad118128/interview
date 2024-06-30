@@ -128,6 +128,7 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
             handleFiltersChips={handleFiltersChips}
             refreshLoading={isLoading}
             tableName={DataBankRoute.usersList}
+            setCollapse={setCollapse}
           />
         </form>
       </FormProvider>

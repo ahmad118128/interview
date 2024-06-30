@@ -1,5 +1,5 @@
 import { FiltersChips } from '@/components/CustomTable/types';
-import { Dispatch, ReactElement, ReactNode, SetStateAction } from 'react';
+import { Dispatch, ReactElement, SetStateAction } from 'react';
 
 export type HeaderMode = EFilterModeIcon.TABLE | EFilterModeIcon.CHART;
 export type onHandleModeChange = (name: HeaderMode) => void;
@@ -21,6 +21,7 @@ export type HeaderFilterTableProps = MultiModeFilter & {
   control: any;
   reset: any;
   collapse: boolean;
+  setCollapse?: Dispatch<SetStateAction<boolean>>;
   handleFiltersChips: (filterKey: any) => void;
   onSearchClick?: () => void;
   tableName?: string;

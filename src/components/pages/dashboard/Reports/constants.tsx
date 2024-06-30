@@ -1,6 +1,7 @@
 import { ReportRoute } from '@/strings';
 import { Typography } from '@mui/material';
 import TransientPeople from './components/TransientPeopleTab';
+import ArrivalDepartures from './components/ArrivalAndDepartures';
 
 export const tabs = [
   {
@@ -17,8 +18,8 @@ export const tabs = [
   },
   {
     id: 2,
-    label: <Typography>{ReportRoute.arrivalsDepartures}</Typography>,
+    label: <Typography>{ReportRoute.arrivalsAndDepartures}</Typography>,
     disableTabRipple: false,
-    tabPanel: <div>Tab 3</div>,
+    tabPanel: <ArrivalDepartures />,
   },
 ];

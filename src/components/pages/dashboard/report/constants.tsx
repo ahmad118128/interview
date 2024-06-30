@@ -68,3 +68,12 @@ export const reportHeaderTrafficOfPeople: CellType[] = [
     sortable: true,
   },
 ];
+
+export const defaultReportValues = {
+  name: '',
+  nationalId: '',
+  phoneNumber: '',
+  group: '',
+  supervisortList: '',
+  nationality: '',
+};

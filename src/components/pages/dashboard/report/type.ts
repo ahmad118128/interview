@@ -61,3 +61,12 @@ export type StyledHoverIconProps = {
   active: boolean;
   filters?: boolean;
 };
+
+export type ReportFormValues = {
+  name: string;
+  nationalId: string;
+  phoneNumber: string;
+  group: string;
+  supervisortList: string;
+  nationality: string;
+};

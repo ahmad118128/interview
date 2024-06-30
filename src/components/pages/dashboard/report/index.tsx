@@ -13,6 +13,7 @@ import {
   initFilter,
 } from '@/components/pages/dashboard/image-recognition/constants';
 import {
+  defaultReportValues,
   reportHeaderTrafficOfPeople,
   reportMocTrafficOfPeople,
 } from '@/components/pages/dashboard/report/constants';
@@ -26,11 +27,12 @@ import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
 import { commonWords } from '@/strings';
 import theme from '@/theme';
+import { ReportFormValues } from './type';
 
 const TrafficOfPeople = () => {
   const [collapse, setCollapse] = useState(false);
   const [filtersChips, setFiltersChips] = useState<
-    FiltersChips<UsersFilterProps>
+    FiltersChips<ReportFormValues>
   >([]);
   const [filter, setFilter] = useState(initFilter);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -41,20 +43,12 @@ const TrafficOfPeople = () => {
   const router = useRouter();
   const currentPath = usePathname();
 
-  const methods = useForm<FieldValues>({
+  const methods = useForm<ReportFormValues>({
     mode: 'onSubmit',
-    defaultValues: {
-      name: '',
-      nationalId: '',
-      phoneNumber: '',
-      group: '',
-      supervisortList: '',
-      nationality: '',
-    },
+    defaultValues: defaultReportValues,
   });
 
-  const submitHandler = (data: any) => {
-    console.log(`this is my typeof ${typeof data}`);
+  const submitHandler = (data: ReportFormValues) => {
     setCollapse(true);
   };
 
@@ -73,9 +67,9 @@ const TrafficOfPeople = () => {
     }
   };
 
-  const handleFiltersChips = (filterKey: keyof typeof initFilter) => {
-    methods.setValue(filterKey, initFilter[filterKey]);
-    setFilter({ ...filter, [filterKey]: initFilter[filterKey] });
+  const handleFiltersChips = (filterKey: keyof typeof defaultReportValues) => {
+    methods.setValue(filterKey, defaultReportValues[filterKey]);
+    setFilter({ ...filter, [filterKey]: defaultReportValues[filterKey] });
     setFiltersChips((prevFiltersChips) => {
       return prevFiltersChips.filter((chip) => chip.key !== filterKey);
     });

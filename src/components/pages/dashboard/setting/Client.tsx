@@ -83,7 +83,7 @@ export function Client({ modal, setModal, setImgModal }: any) {
       function: (row) => (
         <TableCell>
           <Icon
-            icon="tabler:photo-filled"
+            icon="fluent:circle-multiple-subtract-checkmark-20-filled"
             width="24"
             height="24"
             color={theme.palette.primary.main}
@@ -91,7 +91,7 @@ export function Client({ modal, setModal, setImgModal }: any) {
             onClick={() => setImgModal(true)}
           />
           <Icon
-            icon="fluent:document-edit-20-filled"
+            icon="fluent:dismiss-circle-12-filled"
             width="24"
             height="24"
             color={theme.palette.primary.main}
@@ -102,7 +102,7 @@ export function Client({ modal, setModal, setImgModal }: any) {
             }}
           />
           <Icon
-            icon="tabler:trash-filled"
+            icon="fluent:document-edit-20-filled"
             width="24"
             height="24"
             color={theme.palette.primary.main}

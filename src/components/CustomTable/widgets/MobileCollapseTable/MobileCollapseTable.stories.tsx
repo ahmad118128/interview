@@ -81,7 +81,7 @@ const meta: Meta<typeof MobileCollapseTable> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const defaultMobileCollapseTable: Story = {
+export const DefaultMobileCollapseTable: Story = {
   args: {
     headers: [
       {

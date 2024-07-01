@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { CustomTab } from '@/components/molecules/CustomTab/styled';
 import { DataBankRoute, SettingRoute } from '@/strings';
@@ -49,10 +49,10 @@ export function SettingTemplate() {
       tabPanel: <Backup />,
     },
   ];
-
+  // const activeId = Number(searchParams.get('index')) ?? 0;
   return (
     <>
-      <CustomTab data={tabs} type={'normalTab'}></CustomTab>
+      <CustomTab data={tabs} type={'normalTab'} tabKey={'index'} />
 
       {frameModal ? (
         <CustomModal

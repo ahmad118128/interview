@@ -34,6 +34,7 @@ export const StyledActionButtonsBox = styled(Box)`
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  margin-top: 1.25rem;
 `;
 export const StyledErrorText = styled(Typography)`
   text-align: center;

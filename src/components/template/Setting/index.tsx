@@ -15,12 +15,13 @@ import { Backup } from '@/components/pages/dashboard/setting/Backup';
 import { Client } from '@/components/pages/dashboard/setting/Client';
 import { Face } from '@/components/pages/dashboard/setting/Face';
 import { SocialSetting } from '@/components/pages/dashboard/setting/SocialSetting';
+import CustomModal from '@/components/organisms/Modal/CustomModal';
 
 export function SettingTemplate() {
   const [modalData, setModalData] = useState<IModalState>({
     state: false,
   });
-  const [imgModal, setImgModal] = useState(false);
+  const [frameModal, setFrameModal] = useState(false);
 
   const router = useRouter();
   const currentPath = usePathname();
@@ -36,7 +37,7 @@ export function SettingTemplate() {
       id: 1,
       label: SettingRoute.client,
       disableTabRipple: false,
-      tabPanel: <Client modal={modalData} setModal={setModalData} />,
+      tabPanel: <Client modal={frameModal} setModal={setFrameModal} />,
     },
     {
       id: 2,
@@ -67,12 +68,13 @@ export function SettingTemplate() {
         ></DeleteModal>
       ) : null}
 
-      {imgModal ? (
-        <ThumbnailPicModal
-          onClose={() => setImgModal(false)}
-          open={imgModal}
-          setOpen={setImgModal}
-          src={'/assets/images/dashboard/technology 1.svg'}
+      {frameModal ? (
+        <CustomModal
+          onClose={() => setFrameModal(false)}
+          open={frameModal}
+          setOpen={setFrameModal}
+          title={SettingRoute.canFramesBeRecorded}
+          buttons
         />
       ) : null}
     </>

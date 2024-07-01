@@ -14,7 +14,7 @@ import { MobileCollapseTable } from '@/components/CustomTable/widgets';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 import { FilterContainer } from './FilterContainer';
 
-export function Client({ modal, setModal, setImgModal }: any) {
+export function Client({ modal, setModal }: any) {
   const [collapse, setCollapse] = useState(false);
   const [filtersChips, setFiltersChips] = useState<
     FiltersChips<UsersFilterProps>
@@ -88,7 +88,7 @@ export function Client({ modal, setModal, setImgModal }: any) {
             height="24"
             color={theme.palette.primary.main}
             style={{ marginLeft: '0.5rem' }}
-            onClick={() => setImgModal(true)}
+            onClick={() => setModal(true)}
           />
           <Icon
             icon="fluent:dismiss-circle-12-filled"

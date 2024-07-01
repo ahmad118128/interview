@@ -1,5 +1,10 @@
 import { SettingTemplate } from '@/components/template/Setting';
+import { Suspense } from 'react';
 
 export default function Setting() {
-  return <SettingTemplate />;
+  return (
+    <Suspense fallback={'loading'}>
+      <SettingTemplate />;
+    </Suspense>
+  );
 }

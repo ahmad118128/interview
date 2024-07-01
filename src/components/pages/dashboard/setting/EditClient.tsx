@@ -22,7 +22,16 @@ export default function EditClient() {
   const router = useRouter();
   const currentPath = usePathname();
 
-  const { control, handleSubmit, reset } = useForm<FieldValues>();
+  const { control, handleSubmit, reset } = useForm<FieldValues>({
+    defaultValues: {
+      clientAddress: 'متن ورودی',
+      clientStatus: 'متن ورودی',
+      factoryName: 'متن ورودی',
+      stationName: 'متن ورودی',
+      recordFrameStatus: 'متن ورودی',
+      supervisitoryList: 'متن ورودی',
+    },
+  });
   const submitHadler = (data: any) => console.log(data);
 
   const urlArray = Array.from(currentPath.split('/'));
@@ -103,7 +112,7 @@ export default function EditClient() {
                 <CustomRHFAutocomplete
                   label={siderBarList.supervisitoryList}
                   control={control}
-                  name="clientStatus"
+                  name="supervisitoryList"
                   options={[]}
                 />
               </Grid>

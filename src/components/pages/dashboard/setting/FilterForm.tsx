@@ -1,7 +1,7 @@
 import { Box, Grid } from '@mui/material';
 import { StyledFilterChild } from '@/components/pages/dashboard/image-recognition/FilterChild/styled';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
-import { DataBankRoute, SettingRoute } from '@/strings';
+import { DataBankRoute, SettingRoute, SupervisitoryListRoute } from '@/strings';
 import { CustomRHFAutocomplete } from '@/components/atoms/Autocomplete';
 import { CustomButton } from '@/components/atoms/CustomButton';
 
@@ -37,25 +37,25 @@ export default function FilterForm({ control, reset }: any) {
 
       <Grid item xs={12} md={4}>
         <CustomRHFAutocomplete
-          label={SettingRoute.stationName}
+          label={SupervisitoryListRoute.listName}
           control={control}
-          name="stationName"
+          name="name"
           options={[]}
         />
       </Grid>
 
       <Grid item xs={12} md={4}>
         <CustomRHFAutocomplete
-          label={SettingRoute.stationName}
+          label={SupervisitoryListRoute.similarityPercentage}
           control={control}
-          name="stationName"
+          name="similarityPercentage"
           options={[]}
         />
       </Grid>
 
       <Grid item xs={12} md={4}>
         <CustomRHFAutocomplete
-          label={SettingRoute.stationName}
+          label={DataBankRoute.description}
           control={control}
           name="stationName"
           options={[]}

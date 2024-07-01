@@ -96,23 +96,17 @@ export function Client({ modal, setModal }: any) {
             height="24"
             color={theme.palette.primary.main}
             style={{ marginLeft: '0.5rem' }}
-            onClick={(e) => {
-              const editPath = `${currentPath}/editUser/${row.id}`;
-              router.push(editPath);
-            }}
+            onClick={() => setModal(true)}
           />
           <Icon
             icon="fluent:document-edit-20-filled"
             width="24"
             height="24"
             color={theme.palette.primary.main}
-            onClick={(e) =>
-              setModal({
-                ...modal,
-                state: true,
-                id: row?.id,
-              })
-            }
+            onClick={(e) => {
+              const editPath = `${currentPath}/edit/${row.id}`;
+              router.push(editPath);
+            }}
           />
         </TableCell>
       ),

@@ -18,9 +18,6 @@ import { SocialSetting } from '@/components/pages/dashboard/setting/SocialSettin
 import CustomModal from '@/components/organisms/Modal/CustomModal';
 
 export function SettingTemplate() {
-  const [modalData, setModalData] = useState<IModalState>({
-    state: false,
-  });
   const [frameModal, setFrameModal] = useState(false);
 
   const router = useRouter();
@@ -56,17 +53,6 @@ export function SettingTemplate() {
   return (
     <>
       <CustomTab data={tabs} type={'normalTab'}></CustomTab>
-
-      {modalData.state ? (
-        <DeleteModal
-          id={modalData.id}
-          open={modalData.state}
-          onSubmit={() => console.log(modalData.id)}
-          buttons
-          title={DataBankRoute.deleteModalBlackText}
-          onClose={() => setModalData({ state: false })}
-        ></DeleteModal>
-      ) : null}
 
       {frameModal ? (
         <CustomModal

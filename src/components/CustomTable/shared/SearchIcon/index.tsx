@@ -8,6 +8,7 @@ import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 import { EFilterTableNameIcon } from '../../widgets/FilterContainer/type';
 import { Props } from './type';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
+import CustomSearchBar from '@/components/atoms/CustomSearchBar';
 
 export const SearchIcon = (props: Props) => {
   const {
@@ -38,7 +39,10 @@ export const SearchIcon = (props: Props) => {
 
       {search ? (
         <>
-          <CustomInput control={control} name="search" type="search" />
+          <CustomSearchBar
+            name="search"
+            searchHandler={(value) => console.log(value)}
+          />
           <IconButton
             onClick={() => (setSearch ? setSearch(false) : null)}
             iconName="tabler:arrow-narrow-left"

@@ -57,38 +57,6 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
           width="100%"
           alignItems="flex-start"
         >
-          {props.hasModeHandler && (
-            <>
-              <Box
-                display="flex"
-                gap="1rem"
-                alignItems="baseline"
-                justifyContent="space-between"
-              >
-                <Box height="36px" width="1px" />
-                {leftIcons.map((item: IconFilterModeTable) => {
-                  return (
-                    <Tooltip
-                      key={item.title}
-                      title={item.title}
-                      placement="bottom"
-                      arrow
-                    >
-                      <StyledHoverIcon
-                        onClick={() =>
-                          props.onHandleModeChange(item.mode as HeaderMode)
-                        }
-                        active={activeMode === item.mode}
-                        key={item.title}
-                      >
-                        {item.img}
-                      </StyledHoverIcon>
-                    </Tooltip>
-                  );
-                })}
-              </Box>
-            </>
-          )}
           <StyledIconsContainer gap="0.5rem">
             <SearchIcon
               onHandleIconClick={onHandleIconClick}

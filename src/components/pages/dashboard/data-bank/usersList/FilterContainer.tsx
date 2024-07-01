@@ -18,6 +18,7 @@ import {
 } from '../../data-bank/usersList/styled';
 import FilterForm from './FilterForm';
 import { SearchIcon } from '@/components/CustomTable/shared/SearchIcon';
+import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 
 export const FilterContainer = (props: HeaderFilterTableProps) => {
   const {
@@ -96,6 +97,7 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
               active={false}
               search={search}
               setSearch={setSearch}
+              control={control}
             />
 
             <FilterIcon

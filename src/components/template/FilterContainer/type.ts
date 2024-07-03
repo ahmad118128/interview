@@ -18,15 +18,15 @@ export type HeaderFilterTableProps = MultiModeFilter & {
   activeMode?: ActiveMode;
   refreshLoading: boolean;
   onHandleIconClick: OnHandleIconClick;
-  control: any;
-  reset: any;
   collapse: boolean;
   setCollapse?: Dispatch<SetStateAction<boolean>>;
   handleFiltersChips: (filterKey: any) => void;
   onSearchClick?: () => void;
-  tableName?: string;
+  tableName: string;
   search?: boolean;
   setSearch?: Dispatch<SetStateAction<boolean>>;
+  children: ReactElement;
+  chipNumber: number;
 };
 
 export enum EFilterTableNameIcon {

@@ -2,34 +2,33 @@ import { Accordion, Box, Tooltip, Typography } from '@mui/material';
 import theme from '@/theme';
 import { leftIcons } from '@/components/CustomTable/widgets/FilterContainer/constants';
 import { FilterIcon } from '@/components/CustomTable/shared';
-import { IconButton } from '@/components/atoms/CustomButton/IconButton';
+import { SearchIcon } from '@/components/CustomTable/shared/SearchIcon';
 import {
   EFilterModeIcon,
   HeaderFilterTableProps,
   HeaderMode,
   IconFilterModeTable,
-} from '../../data-bank/usersList/type';
+} from './type';
 import {
   StyledAccordionDetails,
   StyledAccordionSummary,
   StyledChip,
   StyledHoverIcon,
   StyledIconsContainer,
-} from '../../data-bank/usersList/styled';
-import { FilterForm } from './FilterForm';
-import { StyledTitleNameWrapper } from './styled';
+} from './styled';
 
 export const FilterContainer = (props: HeaderFilterTableProps) => {
   const {
-    control,
-    reset,
     chips,
     collapse,
     onHandleIconClick,
     activeMode = EFilterModeIcon.TABLE,
     handleFiltersChips,
     tableName,
-    setCollapse,
+    search,
+    setSearch,
+    chipNumber,
+    children,
   } = props;
 
   if (props.hasModeHandler && !props.onHandleModeChange) {
@@ -39,7 +38,14 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
   }
 
   return (
-    <Accordion expanded={collapse} sx={{ boxShadow: 'none', padding: 0 }}>
+    <Accordion
+      expanded={collapse}
+      sx={{
+        boxShadow: 'none',
+        padding: 0,
+        borderRadius: '10px',
+      }}
+    >
       <StyledAccordionSummary
         sx={{
           backgroundColor: theme.palette.grey[100],
@@ -50,14 +56,14 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
           flexDirection="row-reverse"
           justifyContent="space-between"
           width="100%"
-          alignItems="center"
+          alignItems="flex-start"
         >
           {props.hasModeHandler && (
             <>
               <Box
                 display="flex"
                 gap="1rem"
-                alignItems="center"
+                alignItems="baseline"
                 justifyContent="space-between"
               >
                 <Box height="36px" width="1px" />
@@ -84,15 +90,16 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
               </Box>
             </>
           )}
-          <StyledIconsContainer gap="1rem">
-            <IconButton
-              iconName="tabler:search"
-              width={24}
-              height={24}
-              style={{
-                border: `1px solid ${theme.palette.primary.main}`,
-              }}
+          <StyledIconsContainer gap="0.5rem">
+            <SearchIcon
+              onHandleIconClick={onHandleIconClick}
+              handleFiltersChips={handleFiltersChips}
+              chips={chips}
+              active={false}
+              search={search}
+              setSearch={setSearch}
             />
+
             <FilterIcon
               onHandleIconClick={onHandleIconClick}
               handleFiltersChips={handleFiltersChips}
@@ -100,17 +107,22 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
               active={false}
             />
           </StyledIconsContainer>
-          <StyledTitleNameWrapper>
+          <Box
+            sx={{
+              width: '100%',
+              display: 'flex',
+              gap: '0.5rem',
+              alignItems: 'baseline',
+            }}
+          >
             <Typography variant="body1" color={theme.palette.primary.main}>
               {tableName}
             </Typography>
-            <StyledChip label="24" />
-          </StyledTitleNameWrapper>
+            <StyledChip label={chipNumber}></StyledChip>
+          </Box>
         </Box>
       </StyledAccordionSummary>
-      <StyledAccordionDetails>
-        <FilterForm control={control} reset={reset} setCollapse={setCollapse} />
-      </StyledAccordionDetails>
+      <StyledAccordionDetails>{children}</StyledAccordionDetails>
     </Accordion>
   );
 };

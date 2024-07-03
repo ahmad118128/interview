@@ -66,7 +66,7 @@ export const StyledAccordionSummary = styled(AccordionSummary)`
     margin: 0;
   }
   &[aria-expanded='true'] {
-    margin-bottom: 0;
+    margin: 0;
   }
 `;
 
@@ -80,9 +80,6 @@ export const StyledAccordionDetails = styled(AccordionDetails)`
   background: ${theme.palette.grey[50]};
   border: 1px solid ${theme.palette.grey[200]};
   border-radius: 0.625rem;
-  .MuiCollapse-vertical {
-    border-radius: 0.625rem;
-  }
 `;
 
 export const StyledIconsContainer = styled(Box)`

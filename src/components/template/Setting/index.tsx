@@ -46,7 +46,7 @@ export function SettingTemplate() {
     },
     {
       id: 3,
-      label: <Typography>{SettingRoute.backup}</Typography>,
+      label: SettingRoute.backup,
       disableTabRipple: false,
       tabPanel: <Backup />,
     },

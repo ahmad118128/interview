@@ -1,6 +1,6 @@
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
-import { commonWords } from '@/strings';
+import { DataBankRoute, SettingRoute, commonWords } from '@/strings';
 import { useState } from 'react';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 import { TableCell } from '@mui/material';
@@ -12,7 +12,8 @@ import { COLLAPSE_ID, initFilter } from '../image-recognition/constants';
 import { ClientHeader, ClientMock } from './constants';
 import { MobileCollapseTable } from '@/components/CustomTable/widgets';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
-import { FilterContainer } from './FilterContainer';
+import { FilterContainer } from '@/components/template/FilterContainer';
+import FilterForm from './FilterForm';
 
 export function Client({ modal, setModal, setImgModal }: any) {
   const [collapse, setCollapse] = useState(false);
@@ -24,6 +25,7 @@ export function Client({ modal, setModal, setImgModal }: any) {
   const [tableData, setTableData] = useState<null | ISuccess | IError>(null);
   const [order, setOrder] = useState<string | unknown>('');
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [search, setSearch] = useState<boolean>(false);
 
   const router = useRouter();
   const currentPath = usePathname();
@@ -52,7 +54,7 @@ export function Client({ modal, setModal, setImgModal }: any) {
         break;
 
       case EFilterTableNameIcon.SEARCH:
-        // serviceCall();
+        setSearch(true);
         break;
 
       default:
@@ -126,15 +128,19 @@ export function Client({ modal, setModal, setImgModal }: any) {
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(submitHandler)}>
           <FilterContainer
-            control={control}
-            reset={reset}
+            chipNumber={36}
+            tableName={SettingRoute.client}
             collapse={collapse}
             onHandleIconClick={handleIconClick}
             chips={filtersChips}
             handleFiltersChips={handleFiltersChips}
             refreshLoading={isLoading}
             setCollapse={setCollapse}
-          />
+            search={search}
+            setSearch={setSearch}
+          >
+            <FilterForm control={control} reset={reset} />
+          </FilterContainer>
         </form>
       </FormProvider>
       <MobileCollapseTable

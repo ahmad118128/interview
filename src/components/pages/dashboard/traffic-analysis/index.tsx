@@ -6,14 +6,15 @@ import { Grid } from '@mui/material';
 import DashboardChartCard from '@/components/organisms/DashboardChartCard';
 import { BarChart } from '@/components/organisms/Charts/BarChart';
 import DoughnutChart from '@/components/organisms/Charts/DoughnutChart';
-import { TrafficAnalysisRoute } from '@/strings';
+import { DataBankRoute, TrafficAnalysisRoute } from '@/strings';
 import { FiltersChips } from '@/components/CustomTable/types';
 import { UsersFilterProps } from '@/components/pages/dashboard/image-recognition/types';
 import { initFilter } from '@/components/pages/dashboard/image-recognition/constants';
-import { FilterContainer } from '@/components/pages/dashboard/traffic-analysis/FilterContainer';
 import { useForm } from 'react-hook-form';
-import { EFilterTableNameIcon } from '@/components/pages/dashboard/data-bank/usersList/type';
 import theme from '@/theme';
+import { EFilterTableNameIcon } from '@/components/template/FilterContainer/type';
+import { FilterContainer } from '@/components/template/FilterContainer';
+import FilterForm from './FilterForm';
 
 export default function TrafficAnalysisCp() {
   const [collapse, setCollapse] = useState(false);
@@ -51,15 +52,17 @@ export default function TrafficAnalysisCp() {
   return (
     <>
       <FilterContainer
-        control={control}
-        reset={reset}
+        tableName={DataBankRoute.usersList}
+        chipNumber={14}
         collapse={collapse}
         onHandleIconClick={handleIconClick}
         chips={filtersChips}
         handleFiltersChips={handleFiltersChips}
         refreshLoading={isLoading}
         setCollapse={setCollapse}
-      />
+      >
+        <FilterForm control={control} reset={reset} />
+      </FilterContainer>
       <Grid container spacing={4} marginTop="1rem">
         <Grid item xs={12} md={6} lg={3}>
           <DashboardChartCard title={TrafficAnalysisRoute.mensTraffic}>

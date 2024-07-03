@@ -3,7 +3,7 @@ import { styled } from '@mui/material';
 
 export const StyledSearchBar = styled(BaseSearchBar)`
   & .MuiInputBase-root {
-    height: 3rem;
+    height: 2rem;
     width: 35rem;
     padding: 0.75rem 0.5rem;
     background-color: ${({ theme }) => theme.palette.grey[50]};

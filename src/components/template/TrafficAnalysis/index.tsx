@@ -8,9 +8,9 @@ import { FiltersChips } from '@/components/CustomTable/types';
 import { UsersFilterProps } from '@/components/pages/dashboard/image-recognition/types';
 import { initFilter } from '@/components/pages/dashboard/image-recognition/constants';
 import { useForm } from 'react-hook-form';
-import { EFilterTableNameIcon } from '@/components/pages/dashboard/data-bank/usersList/type';
 import TrafficAnalysisCp from '@/components/pages/dashboard/traffic-analysis';
 import CustomTab from '@/components/molecules/CustomTab/styled';
+import { EFilterTableNameIcon } from '@/components/pages/dashboard/Reports/components/TransientPeopleTab/type';
 
 export default function TrafficAnalysisTemplate() {
   const [collapse, setCollapse] = useState(false);

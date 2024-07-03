@@ -34,13 +34,8 @@ import {
   StyledAddFormHeader,
   StyledAddFormMain,
   StyledAddFormWrapper,
-} from '../../data-bank/usersList/styled';
+} from '@/components/template/FilterContainer/styled';
 import { StyledFilterChild } from '../../image-recognition/FilterChild/styled';
-import {
-  supervisitoryListMembersHeader,
-  supervisitoryListMembersMock,
-} from '../../supervisory-list/constants';
-import { COLLAPSE_ID } from '../../image-recognition/constants';
 import { IError, ISuccess } from '../../image-recognition/types';
 import { CustomPasswordInput } from '@/components/atoms/CustomInput/RHFPasswordInput';
 import { ControledCheckbox } from '@/components/atoms/Checkbox';

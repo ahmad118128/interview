@@ -16,6 +16,7 @@ import { ReportModal } from '@/strings';
 import { Button } from '@mui/material';
 import { useState } from 'react';
 import ReportPictureModal from '@/components/organisms/Modal/ReportPictureModal';
+import { BaseTable } from '@/components/CustomTable/shared/TableCore/index';
 
 const mockData = {
   src: '/assets/images/dashboard/avatar1.png',

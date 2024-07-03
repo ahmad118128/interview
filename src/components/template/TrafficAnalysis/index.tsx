@@ -1,18 +1,16 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Grid } from '@mui/material';
+import { Typography } from '@mui/material';
 
-import DashboardChartCard from '@/components/organisms/DashboardChartCard';
-import { BarChart } from '@/components/organisms/Charts/BarChart';
-import DoughnutChart from '@/components/organisms/Charts/DoughnutChart';
-import { TrafficAnalysisRoute } from '@/strings';
+import { siderBarList } from '@/strings';
 import { FiltersChips } from '@/components/CustomTable/types';
 import { UsersFilterProps } from '@/components/pages/dashboard/image-recognition/types';
 import { initFilter } from '@/components/pages/dashboard/image-recognition/constants';
-import { FilterContainer } from '@/components/pages/dashboard/traffic-analysis/FilterContainer';
 import { useForm } from 'react-hook-form';
 import { EFilterTableNameIcon } from '@/components/pages/dashboard/data-bank/usersList/type';
+import TrafficAnalysisCp from '@/components/pages/dashboard/traffic-analysis';
+import CustomTab from '@/components/molecules/CustomTab/styled';
 
 export default function TrafficAnalysisTemplate() {
   const [collapse, setCollapse] = useState(false);
@@ -47,67 +45,14 @@ export default function TrafficAnalysisTemplate() {
     });
   };
 
-  return (
-    <>
-      <FilterContainer
-        control={control}
-        reset={reset}
-        collapse={collapse}
-        onHandleIconClick={handleIconClick}
-        chips={filtersChips}
-        handleFiltersChips={handleFiltersChips}
-        refreshLoading={isLoading}
-      />
-      <Grid container spacing={4}>
-        <Grid item xs={12} md={6} lg={3}>
-          <DashboardChartCard title={TrafficAnalysisRoute.mensTraffic}>
-            <DoughnutChart
-              labels={['شناسایی شده']}
-              data={[120]}
-              legend={false}
-            />
-          </DashboardChartCard>
-        </Grid>
-        <Grid item xs={12} md={6} lg={3}>
-          <DashboardChartCard title={TrafficAnalysisRoute.womensTraffic}>
-            <DoughnutChart labels={['نامشخص']} data={[120]} legend={false} />
-          </DashboardChartCard>
-        </Grid>
-        <Grid item xs={12} md={6} lg={3}>
-          <DashboardChartCard title={TrafficAnalysisRoute.sampleChart}>
-            <DoughnutChart
-              labels={['شناسایی شده']}
-              data={[80]}
-              legend={false}
-            />
-          </DashboardChartCard>
-        </Grid>
-        <Grid item xs={12} md={6} lg={3}>
-          <DashboardChartCard title={TrafficAnalysisRoute.sampleChart}>
-            <DoughnutChart labels={['زن']} data={[120]} legend={false} />
-          </DashboardChartCard>
-        </Grid>
-        <Grid item xs={12} md={6} lg={6}>
-          <DashboardChartCard title={TrafficAnalysisRoute.trafficPerHour}>
-            <BarChart
-              labels={['January', 'February', 'March', 'April']}
-              data={[{ label: 'مرد', data: [120, 130, 140, 15] }]}
-            />
-          </DashboardChartCard>
-        </Grid>
-        <Grid item xs={12} md={6} lg={6}>
-          <DashboardChartCard title={TrafficAnalysisRoute.ageRange}>
-            <BarChart
-              labels={['January', 'February', 'March', 'April']}
-              data={[
-                { label: 'مرد', data: [120, 130, 140, 15] },
-                { label: 'زن', data: [30, 40, 50, 120] },
-              ]}
-              legend={true}
-            />
-          </DashboardChartCard>
-        </Grid>
-      </Grid>
-    </>
-  );
+  const tabs = [
+    {
+      id: 0,
+      label: siderBarList.trafficAnalysis,
+      disableTabRipple: false,
+      tabPanel: <TrafficAnalysisCp />,
+    },
+  ];
+
+  return <CustomTab data={tabs} type={'normalTab'}></CustomTab>;
 }

@@ -1,6 +1,9 @@
 /** ********** GENERAL ********** */
 
 export const generalStr = {
+  backToDashboard: 'بازگشت به داشبورد',
+  RemovedRenamedOrUnavailablePage:
+    'صفحه ای که به دنبال آن می گردید ممکن است حذف شده باشد ، نام آن تغییر کرده باشد و یا موقتا در دسترس نباشد.',
   matchCount: 'تعداد تطبیق',
   creditFrom: 'مقدار اعتبار از',
   creditTo: 'مقدار اعتبار تا',
@@ -357,6 +360,7 @@ export const registrationStr = {
   username: 'نام کاربری',
   email: 'ایمیل',
   password: 'گذرواژه',
+  repeatRoobinPassword: 'تکرار رمز عبور',
   roobinPassword: 'رمز عبور',
   newPass: 'گذرواژه جدید',
   ReNewPass: 'تکرار گذرواژه جدید',
@@ -1336,6 +1340,16 @@ export const TrafficAnalysisRoute = {
   endPassingDateAndTime: 'تاریخ و زمان عبور تا',
 };
 
+export const Error500PageStr = {
+  problemOccurred: 'مشکلی رخ داده است.',
+  solveTheProblem: 'جهت رفع مشکل موارد زیر را بررسی نمایید:',
+  problemSolution1: 'از اتصال خود به اینترنت اطمینان حاصل نمایید.',
+  problemSolution2: 'صفحه را مجدداً بارگذاری نمایید.',
+  problemSolution3: 'چند دقیقه بعد مجدداً تلاش نمایید.',
+  bottomTitle: 'بازگشت به دشبورد',
+};
+1;
+
 export const ReportRoute = {
   gateName: 'نام گیت',
   orientation: 'جهت گیری',
@@ -1353,5 +1367,38 @@ export const ReportRoute = {
   action: 'عملیات',
   transientPeople: 'افراد عبوری',
   trafficOfPeople: 'تردد افراد',
-  arrivalsDepartures: ' ورود و خروج',
+
+  arrivalsAndDepartures: ' ورود و خروج',
+  ArrivalGateName: 'نام گیت ورودی',
+  ArrivalGateOrientation: 'جهت گیت ورودی',
+  ArrivalTime: 'زمان ورود',
+  ExitGateName: 'نام گیت خروجی',
+  ExitGateOrientation: 'جهت گیت خروجی',
+  ExitTime: 'زمان خروج',
+  MatchPercentage: 'درصد تطابق',
+  TimeOf: ' تاریخ و زمان عبور از',
+  TimeTo: ' تاریخ و زمان عبور تا',
+};
+
+export const UsersManagementRoute = {
+  usersManagement: 'مدیریت کاربران',
+  users: 'کاربران',
+  accessingPanelState: 'سطح دسترسی پنل',
+  addPerson: 'افزودن فرد',
+  editPerson: 'ویرایش فرد',
+  deletePerson: 'حذف فرد',
+  deleteGroup: 'حذف گروه',
+  addList: 'افزودن لیست',
+  editList: 'ویرایش لیست',
+  deleteList: 'حذف لیست',
+  passingPeopleImageRecognition: 'شناسایی تصویر افرادعبوری',
+  registeredPeopleImageRecognition: 'شناسایی تصویر افرادثبت نامی',
+  reports: 'گزارش‌ها',
+  passingPeopleReport: 'گزارش افراد عبوری',
+  peoplesTrafficReport: 'گزارش تردد افراد',
+  entryAndExitReport: 'گزارش ورود و خروج',
+  addStaff: 'افزودن پرسنل',
+  editStaff: 'ویرایش پرسنل',
+  deleteStaff: 'حذف پرسنل',
+  databaseSetting: 'تنظیمات پایگاه داده',
 };

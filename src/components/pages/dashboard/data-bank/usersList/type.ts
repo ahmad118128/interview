@@ -21,6 +21,7 @@ export type HeaderFilterTableProps = MultiModeFilter & {
   control: any;
   reset: any;
   collapse: boolean;
+  setCollapse?: Dispatch<SetStateAction<boolean>>;
   handleFiltersChips: (filterKey: any) => void;
   onSearchClick?: () => void;
   tableName?: string;

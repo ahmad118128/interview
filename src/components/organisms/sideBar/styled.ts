@@ -14,7 +14,7 @@ export const StyledsideBarWrapper = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  gap: 2rem;
 `;
 
 export const StyledNavWrapper = styled(Box)`
@@ -22,10 +22,16 @@ export const StyledNavWrapper = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: auto;
+  flex-basis: 1;
+  flex-grow: 1;
+  margin-bottom: 5rem;
+  padding-inline: 0.75rem;
 `;
 
 export const StyledListItemButton = styled(ListItemButton)<StyledSideBarType>(
   ({ theme, isOpen }) => ({
+    width: '100%',
     display: 'flex',
     alignItems: 'center',
     transition: 'all 0.5s',
@@ -77,11 +83,13 @@ export const StyledListItemButton = styled(ListItemButton)<StyledSideBarType>(
 export const StyledFooterSideBar = styled(Box)<StyledSideBarType>(
   ({ theme, isOpen }) => ({
     width: '100%',
+    position: 'absolute',
+    bottom: 0,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     gap: '0.25rem',
-    marginBottom: isOpen ? '2rem' : '1.5rem',
+    marginBottom: '1.5rem',
     backgroundColor: theme.palette.common.white,
   })
 );

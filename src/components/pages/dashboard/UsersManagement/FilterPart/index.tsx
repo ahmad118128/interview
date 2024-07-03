@@ -1,9 +1,11 @@
+'use client';
+
 import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
-import { commonWords } from '@/strings';
+import { UsersManagementRoute, commonWords } from '@/strings';
 import { FieldValues, useForm } from 'react-hook-form';
 import { TableCell } from '@mui/material';
 import { Icon } from '@iconify/react/dist/iconify.js';
@@ -11,13 +13,13 @@ import theme from '@/theme';
 import { IModalState } from '@/components/template/DataBank/type';
 import TableWithFab from '@/components/template/TableWithFab';
 
-import { supervisitoryListHeader, supervisitoryListMock } from './constants';
-import { initFilter } from '../image-recognition/constants';
-import { UsersFilterProps } from '../image-recognition/types';
 import { FilterContainer } from './FilterContainer';
+import { UsersFilterProps } from '../../image-recognition/types';
+import { initFilter } from '../../image-recognition/constants';
+import { usersHeader, usersMock } from '../constants';
 
-export function SuperVisoryList({ setModal, modal }: any) {
-  const [collapse, setCollapse] = useState(false);
+export function FilterPart({ setModal, modal }: any) {
+  const [collapse, setCollapse] = useState<boolean>(false);
   const [filtersChips, setFiltersChips] = useState<
     FiltersChips<UsersFilterProps>
   >([]);
@@ -27,7 +29,7 @@ export function SuperVisoryList({ setModal, modal }: any) {
   const router = useRouter();
   const currentPath = usePathname();
 
-  const methods = useForm<FieldValues>({
+  const { control, reset, handleSubmit, setValue } = useForm<FieldValues>({
     mode: 'onSubmit',
     defaultValues: {
       name: '',
@@ -39,10 +41,7 @@ export function SuperVisoryList({ setModal, modal }: any) {
     },
   });
 
-  const submitHandler = (data: any) => {
-    console.log(data);
-    setCollapse(true);
-  };
+  const submitHandler = (data: any) => {};
 
   const handleIconClick = (name: EFilterTableNameIcon) => {
     switch (name) {
@@ -60,7 +59,7 @@ export function SuperVisoryList({ setModal, modal }: any) {
   };
 
   const handleFiltersChips = (filterKey: keyof typeof initFilter) => {
-    methods.setValue(filterKey, initFilter[filterKey]);
+    setValue(filterKey, initFilter[filterKey]);
     setFilter({ ...filter, [filterKey]: initFilter[filterKey] });
     setFiltersChips((prevFiltersChips) => {
       return prevFiltersChips.filter((chip) => chip.key !== filterKey);
@@ -68,24 +67,13 @@ export function SuperVisoryList({ setModal, modal }: any) {
   };
 
   const tableHeadsUser: CellType[] = [
-    ...supervisitoryListHeader,
+    ...usersHeader,
     {
       id: 'actions',
       label: commonWords.action,
       type: 'function',
       function: (row) => (
         <TableCell>
-          <Icon
-            icon="fluent:people-20-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
-            style={{ marginLeft: '0.5rem' }}
-            onClick={() => {
-              const membersRoute = `${currentPath}/members`;
-              router.push(membersRoute);
-            }}
-          />
           <Icon
             icon="fluent:document-edit-20-filled"
             width="24"
@@ -115,13 +103,10 @@ export function SuperVisoryList({ setModal, modal }: any) {
     },
   ];
 
-  const { control, reset, handleSubmit } = useForm();
-
   return (
     <>
       <form onSubmit={handleSubmit(submitHandler)}>
         <FilterContainer
-          setCollapse={setCollapse}
           control={control}
           reset={reset}
           collapse={collapse}
@@ -129,11 +114,13 @@ export function SuperVisoryList({ setModal, modal }: any) {
           chips={filtersChips}
           handleFiltersChips={handleFiltersChips}
           refreshLoading={isLoading}
+          tableName={UsersManagementRoute.users}
+          setCollapse={setCollapse}
         />
       </form>
       <TableWithFab
         tableHeads={tableHeadsUser}
-        data={supervisitoryListMock}
+        data={usersMock}
         path={'/add'}
       />
     </>

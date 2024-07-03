@@ -82,8 +82,6 @@ const FilterForm: React.FC<
           name="registrationTimeOf"
           control={control}
           label={ReportRoute.registrationTimeOf}
-          value={0}
-          onChange={() => console.log('first')}
           rules={{ required: 'Require' }}
         />
       </Grid>
@@ -92,8 +90,6 @@ const FilterForm: React.FC<
           name="registrationTimeUpTo"
           control={control}
           label={ReportRoute.registrationTimeUpTo}
-          value={0}
-          onChange={() => console.log('first')}
           rules={{ required: 'Require' }}
         />
       </Grid>

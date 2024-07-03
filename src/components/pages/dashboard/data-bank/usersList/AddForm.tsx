@@ -122,8 +122,6 @@ export default function AddForm() {
                   name="birthDate"
                   control={control}
                   label={DataBankRoute.birthDate}
-                  value={0}
-                  onChange={() => console.log('first')}
                   rules={{ required: 'Require' }}
                 />
               </Grid>

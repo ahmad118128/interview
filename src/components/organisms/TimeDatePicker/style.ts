@@ -1,13 +1,18 @@
 import theme from '@/theme';
 import { styled } from '@mui/material';
-import { DesktopDateTimePicker } from '@mui/x-date-pickers';
+import { MobileDateTimePicker } from '@mui/x-date-pickers';
 
-export const StyledDateTimePicker = styled(DesktopDateTimePicker)<{
+export const StyledDateTimePicker = styled(MobileDateTimePicker)<{
   hasError: boolean;
 }>`
   direction: rtl;
   width: 100%;
+  position: relative;
 
+  .MuiFormControl-root,
+  .MuiInputBase-root {
+    z-index: 0;
+  }
   & label {
     color: ${theme.palette.grey[300]};
     font-weight: 400;
@@ -15,17 +20,18 @@ export const StyledDateTimePicker = styled(DesktopDateTimePicker)<{
     line-height: 1.25rem;
     right: 25px;
     left: unset !important;
-  }
 
-  & label[data-shrink='true'] {
-    right: 25px;
-    color: ${theme.palette.grey[300]} !important;
+    &[data-shrink='true'] {
+      right: 16px;
+      color: ${theme.palette.grey[300]} !important;
+    }
   }
 
   & input {
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.25rem;
+    color: ${theme.palette.primary.main};
   }
 
   & .MuiInputBase-root {
@@ -35,9 +41,13 @@ export const StyledDateTimePicker = styled(DesktopDateTimePicker)<{
     direction: rtl;
     font-family: 'iran-sans, serif, sans-serif';
 
-    & button {
-      color: ${theme.palette.grey[300]};
+    & .MuiInputAdornment-root > svg {
+      fill: ${theme.palette.grey[300]};
       padding: 0;
+      cursor: default;
+      &.clear {
+        cursor: pointer;
+      }
     }
   }
   & fieldset {

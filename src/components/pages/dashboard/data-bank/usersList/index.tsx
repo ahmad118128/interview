@@ -129,6 +129,8 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
             refreshLoading={isLoading}
             tableName={DataBankRoute.usersList}
             setCollapse={setCollapse}
+            search={search}
+            setSearch={setSearch}
           />
         </form>
       </FormProvider>

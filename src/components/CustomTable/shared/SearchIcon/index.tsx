@@ -7,6 +7,7 @@ import { StyledChip } from '../../widgets/FilterContainer/styled';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 import { EFilterTableNameIcon } from '../../widgets/FilterContainer/type';
 import { Props } from './type';
+import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 
 export const SearchIcon = (props: Props) => {
   const {
@@ -16,6 +17,7 @@ export const SearchIcon = (props: Props) => {
     active,
     search,
     setSearch,
+    control,
   } = props;
   return (
     <Box display="flex" key={tablePhrases.search} alignItems="center" gap={2}>
@@ -34,23 +36,26 @@ export const SearchIcon = (props: Props) => {
             />
           ))}
 
-      <Tooltip title={tablePhrases.search} placement="bottom" arrow>
-        {search ? (
+      {search ? (
+        <>
+          <CustomInput control={control} name="search" type="search" />
           <IconButton
             onClick={() => (setSearch ? setSearch(false) : null)}
             iconName="tabler:arrow-narrow-left"
             height={24}
             width={24}
           />
-        ) : (
+        </>
+      ) : (
+        <Tooltip title={tablePhrases.search} placement="bottom" arrow>
           <IconButton
             onClick={() => onHandleIconClick(EFilterTableNameIcon.SEARCH)}
             iconName="tabler:search"
             height={24}
             width={24}
           />
-        )}
-      </Tooltip>
+        </Tooltip>
+      )}
     </Box>
   );
 };

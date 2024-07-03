@@ -10,11 +10,14 @@ import {
   IconFilterModeTable,
 } from './type';
 import {
+  IconsWrapper,
+  InnerAccardionSummary,
   StyledAccordionDetails,
   StyledAccordionSummary,
   StyledChip,
   StyledHoverIcon,
   StyledIconsContainer,
+  TableNameWrapper,
 } from './styled';
 
 export const FilterContainer = (props: HeaderFilterTableProps) => {
@@ -51,21 +54,10 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
           backgroundColor: theme.palette.grey[100],
         }}
       >
-        <Box
-          display="flex"
-          flexDirection="row-reverse"
-          justifyContent="space-between"
-          width="100%"
-          alignItems="flex-start"
-        >
+        <InnerAccardionSummary>
           {props.hasModeHandler && (
             <>
-              <Box
-                display="flex"
-                gap="1rem"
-                alignItems="baseline"
-                justifyContent="space-between"
-              >
+              <IconsWrapper>
                 <Box height="36px" width="1px" />
                 {leftIcons.map((item: IconFilterModeTable) => {
                   return (
@@ -87,7 +79,7 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
                     </Tooltip>
                   );
                 })}
-              </Box>
+              </IconsWrapper>
             </>
           )}
           <StyledIconsContainer gap="0.5rem">
@@ -107,20 +99,13 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
               active={false}
             />
           </StyledIconsContainer>
-          <Box
-            sx={{
-              width: '100%',
-              display: 'flex',
-              gap: '0.5rem',
-              alignItems: 'baseline',
-            }}
-          >
+          <TableNameWrapper>
             <Typography variant="body1" color={theme.palette.primary.main}>
               {tableName}
             </Typography>
             <StyledChip label={chipNumber}></StyledChip>
-          </Box>
-        </Box>
+          </TableNameWrapper>
+        </InnerAccardionSummary>
       </StyledAccordionSummary>
       <StyledAccordionDetails>{children}</StyledAccordionDetails>
     </Accordion>

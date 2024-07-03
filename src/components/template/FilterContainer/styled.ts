@@ -144,3 +144,25 @@ export const StyledGroupWrapper = styled(Box)`
   flex-direction: row;
   justify-content: space-between;
 `;
+
+export const InnerAccardionSummary = styled(Box)`
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-start;
+`;
+
+export const IconsWrapper = styled(Box)`
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+`;
+
+export const TableNameWrapper = styled(Box)`
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+`;

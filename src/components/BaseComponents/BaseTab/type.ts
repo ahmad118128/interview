@@ -6,6 +6,7 @@ export interface TabProps extends TabsProps {
   type: 'normalTab' | 'buttonTab';
   activeId?: number;
   tabBtnSx?: SxProps;
+  tabKey: string;
 }
 
 export type TabPanelProps = {

@@ -108,7 +108,7 @@ export const ClientHeader: CellType[] = [
 
 export const ClientMock = [
   {
-    id: 1,
+    id: '112.16.14.75',
     factoryName: 'علوم سبز',
     stationName: 'نام ایستگاه',
     clientAddress: ' 112.16.14.75',
@@ -117,28 +117,28 @@ export const ClientMock = [
     recordFrameStatus: 'فریم ها ثبت شوند',
   },
   {
-    id: 2,
+    id: '112.16.14.76',
     factoryName: 'علوم سبز',
     stationName: 'نام ایستگاه',
-    clientAddress: ' 112.16.14.75',
+    clientAddress: ' 112.16.14.76',
     clientStatus: ' دوربین وصل',
     supervisoryList: 'لیست۱-لیست۲-لیست۳',
     recordFrameStatus: 'فریم ها ثبت شوند',
   },
   {
-    id: 3,
+    id: '114.16.14.75',
     factoryName: 'علوم سبز',
     stationName: 'نام ایستگاه',
-    clientAddress: ' 112.16.14.75',
+    clientAddress: ' 114.16.14.75',
     clientStatus: ' دوربین وصل',
     supervisoryList: 'لیست۱-لیست۲-لیست۳',
     recordFrameStatus: 'فریم ها ثبت شوند',
   },
   {
-    id: 4,
+    id: '172.16.14.75',
     factoryName: 'علوم سبز',
     stationName: 'نام ایستگاه',
-    clientAddress: ' 112.16.14.75',
+    clientAddress: ' 172.16.14.75',
     clientStatus: ' دوربین وصل',
     supervisoryList: 'لیست۱-لیست۲-لیست۳',
     recordFrameStatus: 'فریم ها ثبت شوند',

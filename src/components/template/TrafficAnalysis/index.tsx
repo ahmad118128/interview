@@ -29,7 +29,6 @@ export default function TrafficAnalysisTemplate() {
         break;
 
       case EFilterTableNameIcon.SEARCH:
-        // serviceCall();
         break;
 
       default:

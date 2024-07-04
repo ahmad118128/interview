@@ -100,7 +100,6 @@ export default function ImageRecognitionTemplate() {
         }
         break;
       case EFilterTableNameIcon.SEARCH:
-        // serviceCall();
         break;
       default:
         break;
@@ -117,7 +116,6 @@ export default function ImageRecognitionTemplate() {
         }
         break;
       case EFilterTableNameIcon.SEARCH:
-        // serviceCall();
         break;
       default:
         break;

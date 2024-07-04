@@ -81,7 +81,6 @@ export const UsersTab = ({ radioButton }: any) => {
         break;
 
       case EFilterTableNameIcon.SEARCH:
-        // serviceCall();
         break;
 
       default:

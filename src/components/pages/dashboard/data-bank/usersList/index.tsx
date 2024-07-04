@@ -52,7 +52,6 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
       case EFilterTableNameIcon.SEARCH:
         setSearch(true);
         console.log('search');
-        // serviceCall();
         break;
 
       default:

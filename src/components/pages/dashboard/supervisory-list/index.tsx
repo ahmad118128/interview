@@ -54,7 +54,6 @@ export function SuperVisoryList({ setModal, modal }: any) {
 
       case EFilterTableNameIcon.SEARCH:
         setSearch(true);
-        // serviceCall();
         break;
 
       default:

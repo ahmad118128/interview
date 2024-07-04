@@ -23,8 +23,8 @@ export type HeaderFilterTableProps = MultiModeFilter & {
   handleFiltersChips: (filterKey: any) => void;
   onSearchClick?: () => void;
   tableName: string;
-  search?: boolean;
-  setSearch?: Dispatch<SetStateAction<boolean>>;
+  search: boolean;
+  setSearch: Dispatch<SetStateAction<boolean>>;
   children: ReactElement;
   chipNumber: number;
 };

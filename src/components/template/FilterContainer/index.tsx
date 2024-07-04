@@ -12,6 +12,7 @@ import {
 import {
   IconsWrapper,
   InnerAccardionSummary,
+  StyledAccardion,
   StyledAccordionDetails,
   StyledAccordionSummary,
   StyledChip,
@@ -41,14 +42,7 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
   }
 
   return (
-    <Accordion
-      expanded={collapse}
-      sx={{
-        boxShadow: 'none',
-        padding: 0,
-        borderRadius: '10px',
-      }}
-    >
+    <StyledAccardion expanded={collapse}>
       <StyledAccordionSummary
         sx={{
           backgroundColor: theme.palette.grey[100],
@@ -108,6 +102,6 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
         </InnerAccardionSummary>
       </StyledAccordionSummary>
       <StyledAccordionDetails>{children}</StyledAccordionDetails>
-    </Accordion>
+    </StyledAccardion>
   );
 };

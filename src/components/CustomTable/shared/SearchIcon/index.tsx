@@ -7,7 +7,6 @@ import { StyledChip } from '../../widgets/FilterContainer/styled';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 import { EFilterTableNameIcon } from '../../widgets/FilterContainer/type';
 import { Props } from './type';
-import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 import CustomSearchBar from '@/components/atoms/CustomSearchBar';
 import { filterTable } from '@/strings';
 
@@ -44,7 +43,7 @@ export const SearchIcon = (props: Props) => {
             placeholder={filterTable.searching}
           />
           <IconButton
-            onClick={() => (setSearch ? setSearch(false) : null)}
+            onClick={() => setSearch(false)}
             iconName="tabler:arrow-narrow-left"
             height={24}
             width={24}

@@ -1,4 +1,5 @@
 import {
+  Accordion,
   AccordionDetails,
   AccordionSummary,
   Box,
@@ -56,6 +57,13 @@ export const StyledChip = styled(Chip)`
     padding-left: 0.375rem !important;
     margin-top: 0.063rem;
   }
+`;
+
+export const StyledAccardion = styled(Accordion)`
+  box-shadow: none;
+  padding: 0;
+  border-radius: 10px;
+  background: transparent;
 `;
 
 export const StyledAccordionSummary = styled(AccordionSummary)`

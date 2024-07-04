@@ -7,6 +7,6 @@ export type Props = {
   active?: boolean;
   chips?: FiltersChips<any>;
   handleFiltersChips?: (key: unknown) => void;
-  search?: boolean;
-  setSearch?: Dispatch<SetStateAction<boolean>>;
+  search: boolean;
+  setSearch: Dispatch<SetStateAction<boolean>>;
 };

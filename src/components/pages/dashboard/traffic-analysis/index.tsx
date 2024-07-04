@@ -23,6 +23,7 @@ export default function TrafficAnalysisCp() {
   >([]);
   const [filter, setFilter] = useState(initFilter);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [search, setSearch] = useState<boolean>(false);
 
   const { control, reset, setValue } = useForm();
 
@@ -33,7 +34,7 @@ export default function TrafficAnalysisCp() {
         break;
 
       case EFilterTableNameIcon.SEARCH:
-        // serviceCall();
+        setSearch(true);
         break;
 
       default:
@@ -60,6 +61,8 @@ export default function TrafficAnalysisCp() {
         handleFiltersChips={handleFiltersChips}
         refreshLoading={isLoading}
         setCollapse={setCollapse}
+        search={search}
+        setSearch={setSearch}
       >
         <FilterForm control={control} reset={reset} />
       </FilterContainer>

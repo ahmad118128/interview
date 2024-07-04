@@ -7,4 +7,5 @@ export const tablePhrases = {
   pleaseBePatient: 'لطفاً شکیبا باشید',
   refresh: 'نوسازی اطلاعات',
   tableMode: 'جدول اطلاعات',
+  search: 'جستجو',
 };

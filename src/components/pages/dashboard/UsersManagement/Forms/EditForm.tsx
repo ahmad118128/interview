@@ -4,19 +4,9 @@ import { useState } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation';
 
-import {
-  Box,
-  Checkbox,
-  FormControl,
-  FormControlLabel,
-  FormGroup,
-  FormLabel,
-  Grid,
-  Typography,
-} from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import {
   DataBankRoute,
-  SupervisitoryListRoute,
   UsersManagementRoute,
   commonWords,
   generalStr,
@@ -34,7 +24,7 @@ import {
   StyledAddFormHeader,
   StyledAddFormMain,
   StyledAddFormWrapper,
-} from '../../data-bank/usersList/styled';
+} from '@/components/template/FilterContainer/styled';
 import { StyledFilterChild } from '../../image-recognition/FilterChild/styled';
 import {
   supervisitoryListMembersHeader,

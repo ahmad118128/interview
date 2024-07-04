@@ -10,13 +10,12 @@ import { FieldValues, useForm } from 'react-hook-form';
 import { TableCell } from '@mui/material';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import theme from '@/theme';
-import { IModalState } from '@/components/template/DataBank/type';
 import TableWithFab from '@/components/template/TableWithFab';
-
-import { FilterContainer } from './FilterContainer';
 import { UsersFilterProps } from '../../image-recognition/types';
 import { initFilter } from '../../image-recognition/constants';
 import { usersHeader, usersMock } from '../constants';
+import { FilterContainer } from '@/components/template/FilterContainer';
+import { FilterForm } from './FilterForm';
 
 export function FilterPart({ setModal, modal }: any) {
   const [collapse, setCollapse] = useState<boolean>(false);
@@ -25,6 +24,7 @@ export function FilterPart({ setModal, modal }: any) {
   >([]);
   const [filter, setFilter] = useState(initFilter);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [search, setSearch] = useState<boolean>(false);
 
   const router = useRouter();
   const currentPath = usePathname();
@@ -49,8 +49,8 @@ export function FilterPart({ setModal, modal }: any) {
         setCollapse((prev) => !prev);
         break;
 
-      case EFilterTableNameIcon.REFRESH:
-        // serviceCall();
+      case EFilterTableNameIcon.SEARCH:
+        setSearch(true);
         break;
 
       default:
@@ -107,8 +107,7 @@ export function FilterPart({ setModal, modal }: any) {
     <>
       <form onSubmit={handleSubmit(submitHandler)}>
         <FilterContainer
-          control={control}
-          reset={reset}
+          chipNumber={17}
           collapse={collapse}
           onHandleIconClick={handleIconClick}
           chips={filtersChips}
@@ -116,7 +115,11 @@ export function FilterPart({ setModal, modal }: any) {
           refreshLoading={isLoading}
           tableName={UsersManagementRoute.users}
           setCollapse={setCollapse}
-        />
+          search={search}
+          setSearch={setSearch}
+        >
+          <FilterForm control={control} reset={reset} />
+        </FilterContainer>
       </form>
       <TableWithFab
         tableHeads={tableHeadsUser}

@@ -38,9 +38,6 @@ export const FilterIcon = (props: Props) => {
           iconName={'iconoir:filter'}
           height={24}
           width={24}
-          style={{
-            border: `1px solid ${theme.palette.primary.main}`,
-          }}
         />
       </Tooltip>
     </Box>

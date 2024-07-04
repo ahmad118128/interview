@@ -16,12 +16,6 @@ import { DataBankRoute, SettingRoute } from '@/strings';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 import { CustomButton } from '@/components/atoms/CustomButton';
-
-import {
-  StyledAddFormHeader,
-  StyledAddFormMain,
-  StyledAddFormWrapper,
-} from '../data-bank/usersList/styled';
 import { StyledFilterChild } from '../image-recognition/FilterChild/styled';
 import ControlledTimeDatePickerInput from '@/components/organisms/TimeDatePicker/ControlledTimeDatePicker';
 import { MobileCollapseTable } from '@/components/CustomTable/widgets';
@@ -29,6 +23,11 @@ import { IError, ISuccess } from '../image-recognition/types';
 import { lastBackupStatusHeader, lastBackupStatusMock } from './constants';
 import { COLLAPSE_ID } from '../image-recognition/constants';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
+import {
+  StyledAddFormHeader,
+  StyledAddFormMain,
+  StyledAddFormWrapper,
+} from '@/components/template/FilterContainer/styled';
 
 export function Backup() {
   const [selected, setSelected] = useState('emergencyBackup');

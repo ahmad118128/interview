@@ -80,8 +80,7 @@ export const UsersTab = ({ radioButton }: any) => {
         setCollapse((prev) => !prev);
         break;
 
-      case EFilterTableNameIcon.REFRESH:
-        // serviceCall();
+      case EFilterTableNameIcon.SEARCH:
         break;
 
       default:

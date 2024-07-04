@@ -50,7 +50,6 @@ a {
   .MuiPaper-root {
     margin: 0;
     width: 25rem;
-    /* height: 520px; */
     border-radius: 0.5rem;
   }
 
@@ -156,7 +155,7 @@ a {
   }
 
   .Mui-selected {
-    background-color: #383838 80 !important;
+    background-color: #383838 !important;
   }
 
   .MuiPickersMonth-monthButton {

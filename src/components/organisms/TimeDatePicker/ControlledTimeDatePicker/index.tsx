@@ -1,6 +1,6 @@
 import { Controller, FieldValues } from 'react-hook-form';
 import { TControlledProps } from './type';
-import { TimeDatePicker } from '@/components/organisms/TimeDatePicker/index';
+import { TimeDatePicker } from '@/components/organisms/TimeDatePicker';
 
 function ControlledTimeDatePickerInput<TField extends FieldValues>(
   props: TControlledProps<TField>

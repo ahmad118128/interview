@@ -18,7 +18,7 @@ import {
   StyledAddFormHeader,
   StyledAddFormMain,
   StyledAddFormWrapper,
-} from '../data-bank/usersList/styled';
+} from '@/components/template/FilterContainer/styled';
 import { StyledFilterChild } from '../image-recognition/FilterChild/styled';
 import {
   supervisitoryListMembersHeader,

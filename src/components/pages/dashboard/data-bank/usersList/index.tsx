@@ -8,11 +8,11 @@ import { TableCell } from '@mui/material';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import theme from '@/theme';
 import { usePathname, useRouter } from 'next/navigation';
-import { IModalState } from '@/components/template/DataBank/type';
 import TableWithFab from '@/components/template/TableWithFab';
-import { FilterContainer } from './FilterContainer';
 import { UsersFilterProps } from '../../image-recognition/types';
 import { initFilter } from '../../image-recognition/constants';
+import FilterForm from './FilterForm';
+import { FilterContainer } from '@/components/template/FilterContainer';
 
 export default function UsersList({ modal, setModal, setImgModal }: any) {
   const [collapse, setCollapse] = useState(false);
@@ -120,8 +120,6 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(submitHandler)}>
           <FilterContainer
-            control={control}
-            reset={reset}
             collapse={collapse}
             onHandleIconClick={handleIconClick}
             chips={filtersChips}
@@ -131,7 +129,10 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
             setCollapse={setCollapse}
             search={search}
             setSearch={setSearch}
-          />
+            chipNumber={24}
+          >
+            <FilterForm control={control} reset={reset} />
+          </FilterContainer>
         </form>
       </FormProvider>
       <TableWithFab

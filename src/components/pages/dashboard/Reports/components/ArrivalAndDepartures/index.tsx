@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { commonWords } from '@/strings';
+import { ReportRoute, commonWords } from '@/strings';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 import { FiltersChips } from '@/components/CustomTable/types';
 import {
@@ -8,8 +8,6 @@ import {
   UsersFilterProps,
 } from '../../../image-recognition/types';
 import { initFilter } from '../../../image-recognition/constants';
-import { EFilterTableNameIcon } from '../TransientPeopleTab/type';
-import { FilterContainer } from './FilterContainer';
 import { MobileCollapseTable } from '@/components/CustomTable/widgets';
 import {
   COLLAPSE_ID,
@@ -20,6 +18,9 @@ import {
 import { CellType } from '@/components/CustomTable/shared/CustomCell/types';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 import ViewImageModal from './ViewImageModal';
+import { FilterContainer } from '@/components/template/FilterContainer';
+import FilterForm from './FilterForm';
+import { EFilterTableNameIcon } from '@/components/template/FilterContainer/type';
 
 export default function ArrivalDepartures() {
   const [collapse, setCollapse] = useState(false);
@@ -31,6 +32,7 @@ export default function ArrivalDepartures() {
   const [tableData, setTableData] = useState<null | ISuccess | IError>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [order, setOrder] = useState<string | unknown>('');
+  const [search, setSearch] = useState<boolean>(false);
 
   const methods = useForm<FieldValues>({
     mode: 'onSubmit',
@@ -49,7 +51,7 @@ export default function ArrivalDepartures() {
         break;
 
       case EFilterTableNameIcon.SEARCH:
-        // serviceCall();
+        setSearch(true);
         break;
 
       default:
@@ -84,14 +86,18 @@ export default function ArrivalDepartures() {
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(submitHandler)}>
           <FilterContainer
-            control={control}
-            reset={reset}
+            chipNumber={14}
+            tableName={ReportRoute.arrivalsAndDepartures}
             collapse={collapse}
             onHandleIconClick={handleIconClick}
             chips={filtersChips}
             handleFiltersChips={handleFiltersChips}
             refreshLoading={isLoading}
-          />
+            search={search}
+            setSearch={setSearch}
+          >
+            <FilterForm control={control} reset={reset} />
+          </FilterContainer>
         </form>
       </FormProvider>
       <MobileCollapseTable

@@ -7,8 +7,8 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-import theme from '@/theme';
 import { StyledHoverIconProps } from './type';
+import theme from '@/theme';
 
 export const StyledNumberOfTheTitle = styled(Typography)`
   display: flex;
@@ -47,9 +47,10 @@ export const StyledHoverIcon = styled(Box)<StyledHoverIconProps>`
 `;
 
 export const StyledChip = styled(Chip)`
-  padding: 0 0.625rem;
   height: 1.75rem;
   cursor: pointer;
+  background: ${({ theme }) => theme.palette.primary.light};
+  color: ${({ theme }) => theme.palette.common.white};
   .css-6od3lo-MuiChip-label {
     padding-right: 0 !important;
     padding-left: 0.375rem !important;
@@ -58,28 +59,27 @@ export const StyledChip = styled(Chip)`
 `;
 
 export const StyledAccordionSummary = styled(AccordionSummary)`
-  padding: 0.5rem 1.5rem;
-
+  padding: 0;
+  min-height: 0;
   .MuiAccordionSummary-contentGutters {
     justify-content: flex-end !important;
     margin: 0;
   }
   &[aria-expanded='true'] {
-    height: 3.75rem;
-    padding: 0.5rem 1.5rem;
-    margin-bottom: 0;
+    margin: 0;
   }
 `;
 
 export const StyledAccordionDetails = styled(AccordionDetails)`
-  margin-top: 0.5rem;
-  margin-bottom: 0.25rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: base-line;
+  align-items: baseline;
   gap: 2rem;
+  background: ${theme.palette.grey[50]};
+  border: 1px solid ${theme.palette.grey[200]};
+  border-radius: 0.625rem;
 `;
 
 export const StyledIconsContainer = styled(Box)`
@@ -97,11 +97,25 @@ export const StyledAddFormWrapper = styled(Box)`
   border: 1px solid ${theme.palette.grey[300]};
   background: ${theme.palette.grey[50]};
   padding: 0;
+  min-height: 99.5%;
 `;
 
 export const StyledAddFormHeader = styled(Box)`
   border-bottom: 1px solid ${theme.palette.grey[300]};
-  padding: 1.75rem 11.875rem;
+  padding: 1.75rem 1rem;
+
+  ${({ theme }) => theme.breakpoints.up('sm')} {
+    padding: 1.75rem 1rem;
+  }
+
+  ${({ theme }) => theme.breakpoints.up('md')} {
+    padding: 1.75rem 1.25rem;
+  }
+
+  ${({ theme }) => theme.breakpoints.up('lg')} {
+    padding: 1.75rem 11.875rem;
+  }
+
   border-radius: 0.625rem 0.625rem 0 0;
   background: transparent;
   display: flex;
@@ -110,7 +124,19 @@ export const StyledAddFormHeader = styled(Box)`
 `;
 
 export const StyledAddFormMain = styled(Box)`
-  padding: 1.75rem 11.875rem;
+  padding: 1.75rem 1rem;
+
+  ${({ theme }) => theme.breakpoints.up('sm')} {
+    padding: 1.75rem 1rem;
+  }
+
+  ${({ theme }) => theme.breakpoints.up('md')} {
+    padding: 1.75rem 1.25rem;
+  }
+
+  ${({ theme }) => theme.breakpoints.up('lg')} {
+    padding: 1.75rem 11.875rem;
+  }
 `;
 
 export const StyledGroupWrapper = styled(Box)`
@@ -118,4 +144,26 @@ export const StyledGroupWrapper = styled(Box)`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+`;
+
+export const InnerAccardionSummary = styled(Box)`
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-start;
+`;
+
+export const IconsWrapper = styled(Box)`
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+`;
+
+export const TableNameWrapper = styled(Box)`
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
 `;

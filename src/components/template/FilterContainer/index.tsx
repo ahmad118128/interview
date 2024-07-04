@@ -2,28 +2,26 @@ import { Accordion, Box, Tooltip, Typography } from '@mui/material';
 import theme from '@/theme';
 import { leftIcons } from '@/components/CustomTable/widgets/FilterContainer/constants';
 import { FilterIcon } from '@/components/CustomTable/shared';
-import { IconButton } from '@/components/atoms/CustomButton/IconButton';
+import { SearchIcon } from '@/components/CustomTable/shared/SearchIcon';
 import {
   EFilterModeIcon,
   HeaderFilterTableProps,
   HeaderMode,
   IconFilterModeTable,
-} from '../../data-bank/usersList/type';
+} from './type';
 import {
+  IconsWrapper,
+  InnerAccardionSummary,
   StyledAccordionDetails,
   StyledAccordionSummary,
   StyledChip,
   StyledHoverIcon,
   StyledIconsContainer,
-} from '../../data-bank/usersList/styled';
-import FilterForm from './FilterForm';
-import { SearchIcon } from '@/components/CustomTable/shared/SearchIcon';
-import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
+  TableNameWrapper,
+} from './styled';
 
 export const FilterContainer = (props: HeaderFilterTableProps) => {
   const {
-    control,
-    reset,
     chips,
     collapse,
     onHandleIconClick,
@@ -32,6 +30,8 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
     tableName,
     search,
     setSearch,
+    chipNumber,
+    children,
   } = props;
 
   if (props.hasModeHandler && !props.onHandleModeChange) {
@@ -43,20 +43,45 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
   return (
     <Accordion
       expanded={collapse}
-      sx={{ boxShadow: 'none', padding: 0, borderRadius: '10px' }}
+      sx={{
+        boxShadow: 'none',
+        padding: 0,
+        borderRadius: '10px',
+      }}
     >
       <StyledAccordionSummary
         sx={{
           backgroundColor: theme.palette.grey[100],
         }}
       >
-        <Box
-          display="flex"
-          flexDirection="row-reverse"
-          justifyContent="space-between"
-          width="100%"
-          alignItems="flex-start"
-        >
+        <InnerAccardionSummary>
+          {props.hasModeHandler && (
+            <>
+              <IconsWrapper>
+                <Box height="36px" width="1px" />
+                {leftIcons.map((item: IconFilterModeTable) => {
+                  return (
+                    <Tooltip
+                      key={item.title}
+                      title={item.title}
+                      placement="bottom"
+                      arrow
+                    >
+                      <StyledHoverIcon
+                        onClick={() =>
+                          props.onHandleModeChange(item.mode as HeaderMode)
+                        }
+                        active={activeMode === item.mode}
+                        key={item.title}
+                      >
+                        {item.img}
+                      </StyledHoverIcon>
+                    </Tooltip>
+                  );
+                })}
+              </IconsWrapper>
+            </>
+          )}
           <StyledIconsContainer gap="0.5rem">
             <SearchIcon
               onHandleIconClick={onHandleIconClick}
@@ -65,7 +90,6 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
               active={false}
               search={search}
               setSearch={setSearch}
-              control={control}
             />
 
             <FilterIcon
@@ -75,24 +99,15 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
               active={false}
             />
           </StyledIconsContainer>
-          <Box
-            sx={{
-              width: '100%',
-              display: 'flex',
-              gap: '0.5rem',
-              alignItems: 'baseline',
-            }}
-          >
+          <TableNameWrapper>
             <Typography variant="body1" color={theme.palette.primary.main}>
               {tableName}
             </Typography>
-            <StyledChip label="24"></StyledChip>
-          </Box>
-        </Box>
+            <StyledChip label={chipNumber}></StyledChip>
+          </TableNameWrapper>
+        </InnerAccardionSummary>
       </StyledAccordionSummary>
-      <StyledAccordionDetails>
-        <FilterForm control={control} reset={reset} />
-      </StyledAccordionDetails>
+      <StyledAccordionDetails>{children}</StyledAccordionDetails>
     </Accordion>
   );
 };

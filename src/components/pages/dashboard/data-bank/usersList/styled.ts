@@ -100,6 +100,7 @@ export const StyledAddFormWrapper = styled(Box)`
   border: 1px solid ${theme.palette.grey[300]};
   background: ${theme.palette.grey[50]};
   padding: 0;
+  min-height: 99.5%;
 `;
 
 export const StyledAddFormHeader = styled(Box)`

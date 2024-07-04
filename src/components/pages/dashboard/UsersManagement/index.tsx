@@ -26,7 +26,7 @@ export function UserManagement() {
 
   return (
     <>
-      <CustomTab data={tabs} type={'normalTab'}></CustomTab>
+      <CustomTab data={tabs} type={'normalTab'} tabKey="index"></CustomTab>
 
       {modalData.state ? (
         <DeleteModal

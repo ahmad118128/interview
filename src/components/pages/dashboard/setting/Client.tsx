@@ -14,7 +14,7 @@ import { MobileCollapseTable } from '@/components/CustomTable/widgets';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 import { FilterContainer } from './FilterContainer';
 
-export function Client({ modal, setModal, setImgModal }: any) {
+export function Client({ modal, setModal }: any) {
   const [collapse, setCollapse] = useState(false);
   const [filtersChips, setFiltersChips] = useState<
     FiltersChips<UsersFilterProps>
@@ -83,36 +83,29 @@ export function Client({ modal, setModal, setImgModal }: any) {
       function: (row) => (
         <TableCell>
           <Icon
-            icon="tabler:photo-filled"
+            icon="fluent:circle-multiple-subtract-checkmark-20-filled"
             width="24"
             height="24"
             color={theme.palette.primary.main}
             style={{ marginLeft: '0.5rem' }}
-            onClick={() => setImgModal(true)}
+            onClick={() => setModal(true)}
+          />
+          <Icon
+            icon="fluent:dismiss-circle-12-filled"
+            width="24"
+            height="24"
+            color={theme.palette.primary.main}
+            style={{ marginLeft: '0.5rem' }}
+            onClick={() => setModal(true)}
           />
           <Icon
             icon="fluent:document-edit-20-filled"
             width="24"
             height="24"
             color={theme.palette.primary.main}
-            style={{ marginLeft: '0.5rem' }}
             onClick={(e) => {
-              const editPath = `${currentPath}/editUser/${row.id}`;
-              router.push(editPath);
+              router.push(`${currentPath}/edit/${row.id}`);
             }}
-          />
-          <Icon
-            icon="tabler:trash-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
-            onClick={(e) =>
-              setModal({
-                ...modal,
-                state: true,
-                id: row?.id,
-              })
-            }
           />
         </TableCell>
       ),

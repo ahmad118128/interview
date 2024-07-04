@@ -73,7 +73,7 @@ export const StyledDateTimePicker = styled(MobileDateTimePicker)<{
       fill: ${theme.palette.primary.light};
     }
   }
-  &[data-shrink='true'] {
+  &:active {
     .MuiInputAdornment-root > svg {
       fill: ${theme.palette.primary.light};
       &.clear {

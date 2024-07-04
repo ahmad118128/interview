@@ -82,8 +82,10 @@ export const StyledButton = styled(MUIButton)<ButtonProps>(({ theme }) => ({
 
 export const StyledIconButton = styled(IconButton)(({ theme }) => ({
   borderRadius: '6px',
-  padding: '0.25rem',
-  outline: `1px solid ${theme.palette.primary.main}`,
+  padding: '0.5rem',
+  border: `1px solid ${theme.palette.primary.main}`,
+  width: '40px',
+  height: '40px',
 
   '& .iconify': {
     color: theme.palette.primary.main,
@@ -98,7 +100,7 @@ export const StyledIconButton = styled(IconButton)(({ theme }) => ({
 
   '&:hover': {
     backgroundColor: theme.palette.grey[100],
-    outline: `1px solid ${theme.palette.primary.light}`,
+    border: `1px solid ${theme.palette.primary.light}`,
     '& .iconify': {
       color: theme.palette.primary.light,
     },
@@ -117,7 +119,7 @@ export const StyledIconButton = styled(IconButton)(({ theme }) => ({
   },
 
   '&.MuiIconButton-sizeLarge': {
-    padding: '0.25rem',
+    padding: '0.5rem',
   },
 
   '&.MuiIconButton-sizeMedium': {
@@ -125,7 +127,7 @@ export const StyledIconButton = styled(IconButton)(({ theme }) => ({
   },
 
   '&.MuiIconButton-sizeSmall': {
-    padding: '0.125rem',
+    padding: '0.5rem',
     minWidth: '1.25rem',
     minHeight: '1.25rem',
   },

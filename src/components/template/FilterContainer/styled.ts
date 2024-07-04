@@ -22,12 +22,12 @@ export const StyledNumberOfTheTitle = styled(Typography)`
 `;
 
 export const StyledHoverIcon = styled(Box)<StyledHoverIconProps>`
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.8rem;
+  height: 2.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.25rem;
+  padding: 0.5rem;
   border-radius: 0.875rem;
   cursor: pointer;
   * {

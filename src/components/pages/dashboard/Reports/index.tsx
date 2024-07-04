@@ -15,7 +15,7 @@ export function ReportPage() {
 
   return (
     <>
-      <CustomTab data={tabs} type={'normalTab'} />
+      <CustomTab data={tabs} type={'normalTab'} tabKey="index" />
 
       {modalData.state ? (
         <DeleteModal

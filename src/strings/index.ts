@@ -1327,6 +1327,8 @@ export const SettingRoute = {
   recordFrameStatus: 'وضعیت ثبت فریم',
   recordLogsPath: 'مسیر ثبت Logs',
   recordDatabasePath: 'مسیر ثبت پایگاه داده',
+  canFramesBeRecorded: 'فریم ‌ها ثبت شوند؟',
+  editClient: 'ویرایش کلاینت',
 };
 
 export const TrafficAnalysisRoute = {

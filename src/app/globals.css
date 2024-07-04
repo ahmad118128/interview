@@ -44,7 +44,7 @@ a {
   }
 
   .MuiSvgIcon-root {
-    color: #ffffff !important;
+    color: #383838 !important;
   }
 
   .MuiPaper-root {
@@ -95,7 +95,7 @@ a {
 
   .MuiPickersDay-root,
   .MuiPickersArrowSwitcher-root > button {
-    color: #ffffff;
+    color: #383838;
   }
 
   .MuiPickersDay-root.Mui-disabled {
@@ -109,8 +109,8 @@ a {
 
     & > .Mui-selected {
       border-radius: 8px;
-      background-color: #fafafa !important;
-      color: #000000 !important;
+      background-color: #7ebc59 !important;
+      color: #ffffff !important;
     }
 
     & > button {
@@ -164,7 +164,7 @@ a {
 
   .MuiPickersLayout-root {
     display: flex;
-    background-color: #383838;
+    background-color: #fafafa;
     flex-direction: column !important;
     gap: 0;
     border-radius: 0 0 8px 8px;
@@ -213,7 +213,7 @@ a {
         padding: 0;
         font-weight: 500;
         font-size: 0.875rem;
-        color: white;
+        color: #383838;
         &.Mui-selected {
           background-color: #7ebc59 !important;
           border-radius: 8px;
@@ -281,12 +281,12 @@ a {
     }
 
     .MuiClock-squareMask {
-      z-index: 2;
+      background-color: #f5f5f5;
       width: 100%;
     }
 
     .MuiClockNumber-root {
-      color: #ffffff;
+      color: #383838;
 
       &.Mui-disabled {
         color: #aaaaaa;
@@ -294,7 +294,7 @@ a {
     }
 
     .MuiClock-pin {
-      background-color: #ffffff;
+      background: #f5f5f5;
     }
 
     .MuiClockNumber-root.Mui-selected {

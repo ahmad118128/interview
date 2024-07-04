@@ -151,7 +151,7 @@ export const InnerAccardionSummary = styled(Box)`
   flex-direction: row-reverse;
   justify-content: space-between;
   width: 100%;
-  align-items: flex-start;
+  align-items: center;
 `;
 
 export const IconsWrapper = styled(Box)`

@@ -63,7 +63,7 @@ export default function TrafficAnalysisCp() {
       >
         <FilterForm control={control} reset={reset} />
       </FilterContainer>
-      <Grid container spacing={4} marginTop="1rem">
+      <Grid container spacing={4} marginTop="0.5rem">
         <Grid item xs={12} md={6} lg={3}>
           <DashboardChartCard title={TrafficAnalysisRoute.mensTraffic}>
             <DoughnutChart

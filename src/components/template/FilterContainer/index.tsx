@@ -97,7 +97,7 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
             <Typography variant="body1" color={theme.palette.primary.main}>
               {tableName}
             </Typography>
-            <StyledChip label={chipNumber}></StyledChip>
+            <StyledChip label={chipNumber} />
           </TableNameWrapper>
         </InnerAccardionSummary>
       </StyledAccordionSummary>

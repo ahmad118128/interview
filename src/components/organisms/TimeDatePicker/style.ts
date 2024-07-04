@@ -14,7 +14,7 @@ export const StyledDateTimePicker = styled(MobileDateTimePicker)<{
     z-index: 0;
   }
   & label {
-    color: ${theme.palette.grey[300]};
+    color: ${theme.palette.primary.main};
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -23,7 +23,7 @@ export const StyledDateTimePicker = styled(MobileDateTimePicker)<{
 
     &[data-shrink='true'] {
       right: 16px;
-      color: ${theme.palette.grey[300]} !important;
+      color: ${theme.palette.primary.light} !important;
     }
   }
 
@@ -42,9 +42,10 @@ export const StyledDateTimePicker = styled(MobileDateTimePicker)<{
     font-family: 'iran-sans, serif, sans-serif';
 
     & .MuiInputAdornment-root > svg {
-      fill: ${theme.palette.grey[300]};
+      fill: ${theme.palette.primary.main};
       padding: 0;
       cursor: default;
+
       &.clear {
         cursor: pointer;
       }
@@ -57,7 +58,7 @@ export const StyledDateTimePicker = styled(MobileDateTimePicker)<{
       ${({ hasError }) =>
         hasError
           ? theme.palette.error.main
-          : theme.palette.grey[300]} !important;
+          : theme.palette.primary.main} !important;
     border-radius: unset;
   }
   &:hover {
@@ -66,7 +67,21 @@ export const StyledDateTimePicker = styled(MobileDateTimePicker)<{
         ${({ hasError }) =>
           hasError
             ? theme.palette.error.main
-            : theme.palette.secondary.main} !important;
+            : theme.palette.primary.light} !important;
+    }
+    .MuiInputAdornment-root > svg {
+      fill: ${theme.palette.primary.light};
+    }
+  }
+  &[data-shrink='true'] {
+    .MuiInputAdornment-root > svg {
+      fill: ${theme.palette.primary.light};
+      &.clear {
+        color: ${theme.palette.primary.light};
+      }
+    }
+    fieldset {
+      border-bottom: 1px solid ${theme.palette.primary.light};
     }
   }
 `;

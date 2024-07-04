@@ -54,5 +54,5 @@ export default function TrafficAnalysisTemplate() {
     },
   ];
 
-  return <CustomTab data={tabs} type={'normalTab'}></CustomTab>;
+  return <CustomTab data={tabs} type={'normalTab'} tabKey="index"></CustomTab>;
 }

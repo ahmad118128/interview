@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 
 export default function Databank() {
   return (
-    <Suspense fallback={'loading'}>
+    <Suspense fallback="loading">
       <DatabankTemplate />
     </Suspense>
   );

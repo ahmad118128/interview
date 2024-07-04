@@ -104,8 +104,7 @@ export function Client({ modal, setModal }: any) {
             height="24"
             color={theme.palette.primary.main}
             onClick={(e) => {
-              const editPath = `${currentPath}/edit/${row.id}`;
-              router.push(editPath);
+              router.push(`${currentPath}/edit/${row.id}`);
             }}
           />
         </TableCell>

@@ -16,7 +16,7 @@ import { DetailsBox, DoughnutBox } from './styled';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-function getGradient(
+export function getGradient(
   ctx: CanvasRenderingContext2D,
   chartArea: ChartArea,
   color1: string,
@@ -45,13 +45,25 @@ function getGradient(
 }
 
 export default function DoughnutChart(props: DoughnutChartProps) {
-  const { data, labels, chartLabel, legend } = props;
+  const {
+    data,
+    labels,
+    showTooltip,
+    chartLabel,
+    firstColorGrade1,
+    firstColorGrade2,
+    secondColorGrade1,
+    secondColorGrade2,
+    legend,
+    selectedData,
+  } = props;
 
   const chartData = {
     labels,
     datasets: [
       {
         data,
+        rotation: 90,
         backgroundColor: function (context: ScriptableContext<'doughnut'>) {
           const chart = context.chart;
           const { ctx, chartArea } = chart;
@@ -59,10 +71,20 @@ export default function DoughnutChart(props: DoughnutChartProps) {
             return;
           }
           return [
-            getGradient(ctx, chartArea, '#383838', '#262626'),
-            getGradient(ctx, chartArea, '#7EBC59', '#4D7C32'),
+            firstColorGrade1 && firstColorGrade2
+              ? getGradient(ctx, chartArea, firstColorGrade1, firstColorGrade2)
+              : getGradient(ctx, chartArea, '#7EBC59', '#4D7C32'),
+            secondColorGrade1 && secondColorGrade2
+              ? getGradient(
+                  ctx,
+                  chartArea,
+                  secondColorGrade1,
+                  secondColorGrade2
+                )
+              : getGradient(ctx, chartArea, '#383838', '#262626'),
           ];
         },
+        fill: false,
       },
     ],
   };
@@ -72,7 +94,11 @@ export default function DoughnutChart(props: DoughnutChartProps) {
       <Doughnut
         data={chartData as ChartData<'doughnut'>}
         options={{
+          responsive: true,
           plugins: {
+            tooltip: {
+              enabled: showTooltip,
+            },
             legend: {
               display: false,
             },
@@ -80,10 +106,19 @@ export default function DoughnutChart(props: DoughnutChartProps) {
         }}
       />
       <DetailsBox>
-        <Typography variant="h1" fontWeight={900}>
-          {data.reduce((total, num) => total + num)}
-        </Typography>
-        <Typography variant="h2">{chartLabel}</Typography>
+        {chartLabel === '%' ? (
+          <Typography variant="h1" fontWeight={900}>
+            {selectedData}
+            {chartLabel}
+          </Typography>
+        ) : (
+          <>
+            <Typography variant="h1" fontWeight={900}>
+              {data.reduce((total, num) => total + num)}
+            </Typography>
+            <Typography variant="h2">{chartLabel}</Typography>
+          </>
+        )}
       </DetailsBox>
       {legend ? <CustomLegend labels={labels} /> : null}
     </DoughnutBox>

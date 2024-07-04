@@ -6,19 +6,19 @@ import ArrivalDepartures from './components/ArrivalAndDepartures';
 export const tabs = [
   {
     id: 0,
-    label: <Typography>{ReportRoute.transientPeople}</Typography>,
+    label: ReportRoute.transientPeople,
     disableTabRipple: false,
     tabPanel: <TransientPeople />,
   },
   {
     id: 1,
-    label: <Typography>{ReportRoute.trafficOfPeople}</Typography>,
+    label: ReportRoute.trafficOfPeople,
     disableTabRipple: false,
     tabPanel: <div>Tab 2</div>,
   },
   {
     id: 2,
-    label: <Typography>{ReportRoute.arrivalsAndDepartures}</Typography>,
+    label: ReportRoute.arrivalsAndDepartures,
     disableTabRipple: false,
     tabPanel: <ArrivalDepartures />,
   },

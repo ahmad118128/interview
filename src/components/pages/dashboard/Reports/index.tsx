@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { CustomTab } from '@/components/molecules/CustomTab/styled';
 import { DataBankRoute } from '@/strings';
-import CustomModal from '@/components/organisms/Modal/CustomModal';
 import { IModalState } from './type';
 
 import { tabs } from './constants';

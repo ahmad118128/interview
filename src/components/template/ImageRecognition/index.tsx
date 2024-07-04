@@ -99,8 +99,7 @@ export default function ImageRecognitionTemplate() {
           setCollapse((prev) => !prev);
         }
         break;
-      case EFilterTableNameIcon.REFRESH:
-        // serviceCall();
+      case EFilterTableNameIcon.SEARCH:
         break;
       default:
         break;
@@ -116,8 +115,7 @@ export default function ImageRecognitionTemplate() {
           setCollapse2((prev) => !prev);
         }
         break;
-      case EFilterTableNameIcon.REFRESH:
-        // serviceCall();
+      case EFilterTableNameIcon.SEARCH:
         break;
       default:
         break;

@@ -23,8 +23,7 @@ export type HeaderFilterTableProps = MultiModeFilter & {
 
 export enum EFilterTableNameIcon {
   FILTER = 'filter',
-  REFRESH = 'refresh',
-  COLUMNS = 'columns',
+  SEARCH = 'search',
 }
 
 export enum EFilterModeIcon {

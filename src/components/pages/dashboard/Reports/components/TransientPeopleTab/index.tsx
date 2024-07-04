@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { commonWords } from '@/strings';
+import { DataBankRoute, ReportRoute, commonWords } from '@/strings';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 import { FiltersChips } from '@/components/CustomTable/types';
 import {
@@ -8,8 +8,7 @@ import {
   UsersFilterProps,
 } from '../../../image-recognition/types';
 import { initFilter } from '../../../image-recognition/constants';
-import { EFilterTableNameIcon } from './type';
-import { FilterContainer } from './FilterContainer';
+import { FilterContainer } from '@/components/template/FilterContainer';
 import { MobileCollapseTable } from '@/components/CustomTable/widgets';
 import {
   COLLAPSE_ID,
@@ -21,6 +20,8 @@ import { CellType } from '@/components/CustomTable/shared/CustomCell/types';
 import theme from '@/theme';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 import ViewImageModal from './ViewImageModal';
+import FilterForm from './FilterForm';
+import { EFilterTableNameIcon } from '@/components/template/FilterContainer/type';
 
 export default function TransientPeople() {
   const [collapse, setCollapse] = useState(false);
@@ -32,6 +33,7 @@ export default function TransientPeople() {
   const [tableData, setTableData] = useState<null | ISuccess | IError>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [order, setOrder] = useState<string | unknown>('');
+  const [search, setSearch] = useState<boolean>(false);
 
   const methods = useForm<FieldValues>({
     mode: 'onSubmit',
@@ -49,8 +51,8 @@ export default function TransientPeople() {
         setCollapse((prev) => !prev);
         break;
 
-      case EFilterTableNameIcon.REFRESH:
-        // serviceCall();
+      case EFilterTableNameIcon.SEARCH:
+        setSearch(true);
         break;
 
       default:
@@ -86,14 +88,18 @@ export default function TransientPeople() {
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(submitHandler)}>
           <FilterContainer
-            control={control}
-            reset={reset}
+            chipNumber={30}
+            tableName={ReportRoute.transientPeople}
             collapse={collapse}
             onHandleIconClick={handleIconClick}
             chips={filtersChips}
             handleFiltersChips={handleFiltersChips}
             refreshLoading={isLoading}
-          />
+            search={search}
+            setSearch={setSearch}
+          >
+            <FilterForm control={control} reset={reset} />
+          </FilterContainer>
         </form>
       </FormProvider>
       <MobileCollapseTable

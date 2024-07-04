@@ -25,8 +25,8 @@ export default function DatabankTemplate() {
   const tabs = [
     {
       id: 0,
-      label: <Typography>{DataBankRoute.usersList}</Typography>,
-      disableTabRipple: false,
+      label: DataBankRoute.usersList,
+      disableTabRipple: true,
       tabPanel: (
         <UsersList
           modal={modalData}
@@ -37,7 +37,7 @@ export default function DatabankTemplate() {
     },
     {
       id: 1,
-      label: <Typography>{DataBankRoute.groupList}</Typography>,
+      label: DataBankRoute.groupList,
       disableTabRipple: false,
       tabPanel: <GroupList modal={modalData} setModal={setModalData} />,
     },

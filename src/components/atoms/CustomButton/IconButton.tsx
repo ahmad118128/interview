@@ -2,8 +2,10 @@ import { Tooltip } from '@mui/material';
 import { StyledIconButton } from './styled';
 import { IconButtonProps } from './type';
 import { Icon } from '@iconify/react';
+import { CustomTooltip } from '../CustomTooltip';
 
 export const IconButton = ({
+  tabButton,
   iconName,
   title,
   size,
@@ -13,29 +15,20 @@ export const IconButton = ({
   ...restProps
 }: IconButtonProps) => {
   return (
-    <StyledIconButton disabled={disabled} size={size} {...restProps}>
-      <Tooltip
-        title={title}
-        placement="bottom"
-        componentsProps={{
-          tooltip: {
-            sx: {
-              bgcolor: 'common.white',
-              color: 'grey[300]',
-              '& .MuiTooltip-arrow': {
-                color: 'common.black',
-              },
-            },
-          },
-        }}
-      >
+    <StyledIconButton
+      disabled={disabled}
+      size={size}
+      {...restProps}
+      className={tabButton ? 'tabButton' : ''}
+    >
+      <CustomTooltip title={title} placement="bottom">
         <Icon
           className="iconify"
           icon={iconName}
           height={height ? height : 16}
           width={width ? width : 16}
         />
-      </Tooltip>
+      </CustomTooltip>
     </StyledIconButton>
   );
 };

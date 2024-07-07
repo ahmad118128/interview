@@ -8,7 +8,7 @@ import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 import { EFilterTableNameIcon } from '../../widgets/FilterContainer/type';
 import { Props } from './type';
 import CustomSearchBar from '@/components/atoms/CustomSearchBar';
-import { filterTable } from '@/strings';
+import { commonWords, filterTable, generalStr } from '@/strings';
 
 export const SearchIcon = (props: Props) => {
   const {
@@ -47,6 +47,8 @@ export const SearchIcon = (props: Props) => {
             iconName="tabler:arrow-narrow-left"
             height={24}
             width={24}
+            title={generalStr.back}
+            tabButton
           />
         </>
       ) : (
@@ -56,6 +58,8 @@ export const SearchIcon = (props: Props) => {
             iconName="tabler:search"
             height={24}
             width={24}
+            title={commonWords.search}
+            tabButton
           />
         </Tooltip>
       )}

@@ -49,7 +49,7 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
         }}
       >
         <InnerAccardionSummary>
-          {props.hasModeHandler && (
+          {/* {props.hasModeHandler && (
             <>
               <IconsWrapper>
                 <Box height="36px" width="1px" />
@@ -75,7 +75,7 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
                 })}
               </IconsWrapper>
             </>
-          )}
+          )} */}
           <StyledIconsContainer gap="0.5rem">
             <SearchIcon
               onHandleIconClick={onHandleIconClick}

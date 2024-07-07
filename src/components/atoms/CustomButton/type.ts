@@ -18,6 +18,7 @@ export type ButtonProps = (
 export interface IconButtonProps extends Omit<MUIIconButtonProps, 'children'> {
   title?: string;
   iconName: IconifyIconProps['icon'];
+  tabButton?: boolean;
   height?: number;
   width?: number;
 }

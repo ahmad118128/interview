@@ -4,5 +4,5 @@ import { TProps } from '../type';
 export type TControlledProps<TField extends FieldValues> = {
   name: Path<TField>;
   control: Control<TField>;
-  rules: RegisterOptions;
-} & TProps;
+  rules?: RegisterOptions;
+} & Omit<TProps, 'onChange' | 'value'>;

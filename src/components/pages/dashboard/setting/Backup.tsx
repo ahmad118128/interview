@@ -131,8 +131,6 @@ export function Backup() {
                 name="backupDate"
                 control={control}
                 label={SettingRoute.backupDate}
-                value={0}
-                onChange={() => console.log('first')}
                 rules={{ required: 'Require' }}
               />
             </Grid>

@@ -14,13 +14,13 @@ export const StyledTableCell = styled(TableCell)`
     color: ${({ theme }) => theme.palette.common.white} !important;
     svg {
       opacity: 1;
-      fill: ${({ theme }) => theme.palette.secondary.dark};
+      fill: ${({ theme }) => theme.palette.primary.main};
     }
   }
   .Mui-active {
     svg {
       opacity: 1;
-      fill: ${({ theme }) => theme.palette.secondary.main} !important;
+      fill: ${({ theme }) => theme.palette.primary.main} !important;
     }
   }
 `;

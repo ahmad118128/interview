@@ -52,6 +52,22 @@ export const StyledTableWrapper = styled(Box)`
     .MuiTableRow-root {
       background-color: ${({ theme }) => theme.palette.grey[50]};
       height: 3rem !important;
+      &:hover {
+        background-color: ${({ theme }) => theme.palette.grey[100]};
+
+        &.MuiTableRow-root td:last-child {
+          border-left: 1px solid ${({ theme }) => theme.palette.grey[300]};
+        }
+
+        &.MuiTableRow-root td:first-child {
+          border-right: 1px solid ${({ theme }) => theme.palette.grey[300]};
+        }
+
+        .MuiTableCell-root {
+          border-bottom: 1px solid ${({ theme }) => theme.palette.grey[300]};
+          border-top: 1px solid ${({ theme }) => theme.palette.grey[300]};
+        }
+      }
     }
     .MuiTableCell-root {
       border-bottom: 1px solid ${({ theme }) => theme.palette.grey[200]};
@@ -110,12 +126,14 @@ export const StyledCollapse = styled(Collapse)`
   }
 `;
 export const StyledMobileList = styled(Box)`
-  display: flex;
-  flex-direction: row;
+  display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:(4,1.25rem)
   gap: 1.25rem;
   width: 100%;
   font-style: normal;
-  font-size: ${({ theme }) => theme.typography.body2.fontSize};
+  font-weight:${({ theme }) => theme.typography.body1.fontWeight};
+  font-size: ${({ theme }) => theme.typography.body1.fontSize};
   line-height: 1.25rem;
   td {
     border-bottom: none !important;
@@ -131,6 +149,10 @@ export const StyledMobileListCellLabel = styled(Box)`
 export const StyledMobileListCellValue = styled(Box)`
   font-weight: 400;
   text-align: center;
+  grid-column-start: 2;
+  text-align: right;
+  grid-column-end: 12;
+
   * {
     color: ${({ theme }) => theme.palette.grey[300]} !important;
   }

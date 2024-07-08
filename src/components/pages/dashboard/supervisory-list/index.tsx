@@ -137,6 +137,7 @@ export function SuperVisoryList({ setModal, modal }: any) {
         </FilterContainer>
       </form>
       <TableWithFab
+        collapseId1="listName"
         tableHeads={tableHeadsUser}
         data={supervisitoryListMock}
         path={'/add'}

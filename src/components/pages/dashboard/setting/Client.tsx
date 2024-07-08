@@ -140,7 +140,7 @@ export function Client({ modal, setModal }: any) {
         rows={ClientMock}
         headers={tableHeadsClient}
         error={!tableData?.data?.results}
-        mobileIdFilter={[COLLAPSE_ID, 'factoryName', 'clientStatus']}
+        mobileIdFilter={[COLLAPSE_ID, 'factoryName', 'actions']}
         pagination={pagination}
         handleSort={(id) => {
           setOrder(id);

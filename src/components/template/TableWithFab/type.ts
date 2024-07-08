@@ -4,4 +4,5 @@ export type TableWithFabProps<T> = {
   tableHeads: CellType[];
   data: T;
   path: string;
+  collapseId1: string;
 };

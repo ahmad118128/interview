@@ -135,6 +135,7 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
         </form>
       </FormProvider>
       <TableWithFab
+        collapseId1="nationalId"
         tableHeads={tableHeadsUser}
         data={dataBankMockUsers}
         path={'/addUser'}

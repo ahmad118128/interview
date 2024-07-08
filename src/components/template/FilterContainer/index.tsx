@@ -49,33 +49,6 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
         }}
       >
         <InnerAccardionSummary>
-          {/* {props.hasModeHandler && (
-            <>
-              <IconsWrapper>
-                <Box height="36px" width="1px" />
-                {leftIcons.map((item: IconFilterModeTable) => {
-                  return (
-                    <Tooltip
-                      key={item.title}
-                      title={item.title}
-                      placement="bottom"
-                      arrow
-                    >
-                      <StyledHoverIcon
-                        onClick={() =>
-                          props.onHandleModeChange(item.mode as HeaderMode)
-                        }
-                        active={activeMode === item.mode}
-                        key={item.title}
-                      >
-                        {item.img}
-                      </StyledHoverIcon>
-                    </Tooltip>
-                  );
-                })}
-              </IconsWrapper>
-            </>
-          )} */}
           <StyledIconsContainer gap="0.5rem">
             <SearchIcon
               onHandleIconClick={onHandleIconClick}

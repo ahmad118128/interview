@@ -7,9 +7,6 @@ import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 import { CustomRHFAutocomplete } from '@/components/atoms/Autocomplete';
-import ControlledTimeDatePickerInput from '@/components/organisms/TimeDatePicker/ControlledTimeDatePicker';
-import { CustomTextArea } from '@/components/atoms/CustomTextarea/CustomTextarea';
-import UploaderInput from '@/components/organisms/UploaderInput';
 import { CustomButton } from '@/components/atoms/CustomButton';
 import {
   StyledAddFormHeader,
@@ -52,7 +49,12 @@ export default function EditClient() {
             <Typography variant="h2">{clientId}</Typography>
           </Box>
 
-          <IconButton iconName="tabler:arrow-narrow-left" onClick={goBackUrl} />
+          <IconButton
+            iconName="tabler:arrow-narrow-left"
+            onClick={goBackUrl}
+            width={24}
+            height={24}
+          />
         </StyledAddFormHeader>
 
         <StyledAddFormMain>

@@ -152,6 +152,7 @@ export const StyledGroupWrapper = styled(Box)`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const InnerAccardionSummary = styled(Box)`

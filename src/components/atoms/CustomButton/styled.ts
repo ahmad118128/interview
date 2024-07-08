@@ -85,6 +85,7 @@ export const StyledIconButton = styled(IconButton)(({ theme }) => ({
   padding: '0.25rem',
   width: '32px',
   height: '32px',
+  cursor: 'pointer',
 
   '& .iconify': {
     color: theme.palette.primary.main,
@@ -140,6 +141,7 @@ export const StyledIconButton = styled(IconButton)(({ theme }) => ({
     border: `1px solid ${theme.palette.primary.main}`,
     width: '40px',
     height: '40px',
+    cursor: 'pointer',
 
     '& .iconify': {
       color: theme.palette.primary.main,

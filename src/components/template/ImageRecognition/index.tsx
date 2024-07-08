@@ -6,7 +6,6 @@ import {
   Box,
   FormControl,
   FormControlLabel,
-  IconButton,
   InputAdornment,
   Radio,
   RadioGroup,
@@ -20,17 +19,20 @@ import { CustomButton } from '@/components/atoms/CustomButton';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
 import { FilterIcon } from '@/components/CustomTable/shared';
 import { MobileCollapseTable } from '@/components/CustomTable/widgets';
-import { CellType } from '@/components/CustomTable/types';
-import { DataBankRoute, ReportModal, commonWords } from '@/strings';
+import { CellType, FiltersChips } from '@/components/CustomTable/types';
+import { DataBankRoute, ReportModal, commonWords, labels } from '@/strings';
 import theme from '@/theme';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 import {
   IError,
   ISuccess,
+  UsersFilterProps,
 } from '@/components/pages/dashboard/image-recognition/types';
 import {
+  chipsCreator,
   COLLAPSE_ID,
   headers,
+  initFilter,
   mockData,
 } from '@/components/pages/dashboard/image-recognition/constants';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
@@ -44,6 +46,7 @@ import CustomModal from '@/components/organisms/Modal/CustomModal';
 import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
 import ReportPictureModal from '@/components/organisms/Modal/ReportPictureModal';
 import { CustomFilterIcon } from '@/components/CustomTable/shared/FilterIcon/CustomFilterIcon';
+import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 
 const CustomAccordion = styled(Accordion)({
   backgroundColor: 'transparent',
@@ -72,10 +75,39 @@ export default function ImageRecognitionTemplate() {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [tableData, setTableData] = useState<null | ISuccess | IError>(null);
   const [order, setOrder] = useState<string | unknown>('');
+  const [imgModal, setImgModal] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [filter, setFilter] = useState(initFilter);
+
+  const [filtersChips, setFiltersChips] = useState<
+    FiltersChips<UsersFilterProps>
+  >([]);
+
   const [modalData, setModalData] = useState<IModalState>({
     state: false,
   });
-  const [imgModal, setImgModal] = useState(false);
+
+  const filterTransaction = (newFilter: UsersFilterProps) => {
+    setCollapse(false);
+    setCurrentPage(1);
+    setFilter(newFilter);
+    const chips = chipsCreator(newFilter);
+    setFiltersChips(chips);
+  };
+
+  const handleIconClick = (name: EFilterTableNameIcon) => {
+    switch (name) {
+      case EFilterTableNameIcon.FILTER:
+        setCollapse((prev) => !prev);
+        break;
+
+      case EFilterTableNameIcon.SEARCH:
+        break;
+
+      default:
+        break;
+    }
+  };
 
   const methods = useForm({
     defaultValues: {
@@ -89,22 +121,6 @@ export default function ImageRecognitionTemplate() {
   });
   const { reset, control, handleSubmit, watch } = methods;
   const onSubmit = (data: any) => console.log(data);
-
-  const handleIconClick = (name: EFilterTableNameIcon) => {
-    switch (name) {
-      case EFilterTableNameIcon.FILTER:
-        !collapse2 && setCollapse((prev) => !prev);
-        if (collapse2) {
-          setCollapse2(false);
-          setCollapse((prev) => !prev);
-        }
-        break;
-      case EFilterTableNameIcon.SEARCH:
-        break;
-      default:
-        break;
-    }
-  };
 
   const handleIconClick2 = (name: EFilterTableNameIcon) => {
     switch (name) {
@@ -130,6 +146,11 @@ export default function ImageRecognitionTemplate() {
       function: (row) => (
         <TableCell>
           <IconButton
+            iconName="fluent:clipboard-text-32-filled"
+            title={labels.results}
+            width={24}
+            height={24}
+            sx={{ marginLeft: '10px' }}
             onClick={(e) =>
               setModalData({
                 ...modalData,
@@ -137,24 +158,15 @@ export default function ImageRecognitionTemplate() {
                 id: row?.id,
               })
             }
-          >
-            <Icon
-              icon="fluent:clipboard-text-32-filled"
-              width="24"
-              height="24"
-              color={theme.palette.primary.main}
-              style={{ marginLeft: '0.5rem' }}
-            />
-          </IconButton>
+          />
 
-          <IconButton onClick={() => setImgModal(true)}>
-            <Icon
-              icon="ep:picture-filled"
-              width="24"
-              height="24"
-              color={theme.palette.primary.main}
-            />
-          </IconButton>
+          <IconButton
+            iconName="tabler:photo-filled"
+            title={labels.pics}
+            width={24}
+            height={24}
+            onClick={() => setImgModal(true)}
+          />
         </TableCell>
       ),
     },
@@ -208,8 +220,9 @@ export default function ImageRecognitionTemplate() {
                         marginBottom: selected === 'female' ? '2rem' : 0,
                       }}
                     />
-                    <CustomFilterIcon
+                    <FilterIcon
                       onHandleIconClick={handleIconClick}
+                      chips={filtersChips}
                       active={collapse}
                     />
                   </Box>
@@ -270,8 +283,9 @@ export default function ImageRecognitionTemplate() {
                         marginBottom: selected === 'male' ? '2rem' : 0,
                       }}
                     />
-                    <CustomFilterIcon
+                    <FilterIcon
                       onHandleIconClick={handleIconClick2}
+                      chips={filtersChips}
                       active={collapse2}
                     />
                   </Box>

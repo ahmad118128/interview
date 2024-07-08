@@ -1409,4 +1409,5 @@ export const labels = {
   pics: 'تصاویر',
   edit: 'ویرایش',
   delete: 'حذف',
+  results: 'نتایج',
 };

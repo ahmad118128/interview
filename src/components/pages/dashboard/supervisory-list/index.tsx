@@ -3,7 +3,7 @@ import { usePathname, useRouter } from 'next/navigation';
 
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
-import { DataBankRoute, commonWords } from '@/strings';
+import { DataBankRoute, commonWords, labels } from '@/strings';
 import { FieldValues, useForm } from 'react-hook-form';
 import { TableCell } from '@mui/material';
 import { Icon } from '@iconify/react/dist/iconify.js';
@@ -16,6 +16,7 @@ import { initFilter } from '../image-recognition/constants';
 import { UsersFilterProps } from '../image-recognition/types';
 import { FilterContainer } from '@/components/template/FilterContainer';
 import { FilterForm } from './FilterForm';
+import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 
 export function SuperVisoryList({ setModal, modal }: any) {
   const [collapse, setCollapse] = useState(false);
@@ -77,33 +78,35 @@ export function SuperVisoryList({ setModal, modal }: any) {
       type: 'function',
       function: (row) => (
         <TableCell>
-          <Icon
-            icon="fluent:people-20-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
-            style={{ marginLeft: '0.5rem' }}
-            onClick={() => {
-              const membersRoute = `${currentPath}/members`;
-              router.push(membersRoute);
+          <IconButton
+            sx={{ marginLeft: '10px' }}
+            iconName="fluent:people-20-filled"
+            title={labels.edit}
+            width={24}
+            height={24}
+            onClick={(e) => {
+              const editPath = `${currentPath}/members`;
+              router.push(editPath);
             }}
           />
-          <Icon
-            icon="fluent:document-edit-20-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
-            style={{ marginLeft: '0.5rem' }}
+
+          <IconButton
+            sx={{ marginLeft: '10px' }}
+            iconName="fluent:document-edit-20-filled"
+            title={labels.edit}
+            width={24}
+            height={24}
             onClick={(e) => {
               const editPath = `${currentPath}/edit/${row.id}`;
               router.push(editPath);
             }}
           />
-          <Icon
-            icon="tabler:trash-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
+
+          <IconButton
+            iconName="tabler:trash-filled"
+            title={labels.delete}
+            width={24}
+            height={24}
             onClick={(e) =>
               setModal({
                 ...modal,

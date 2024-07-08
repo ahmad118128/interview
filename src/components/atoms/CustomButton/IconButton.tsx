@@ -1,4 +1,3 @@
-import { Tooltip } from '@mui/material';
 import { StyledIconButton } from './styled';
 import { IconButtonProps } from './type';
 import { Icon } from '@iconify/react';
@@ -13,6 +12,7 @@ export const IconButton = ({
   width,
   disabled = false,
   className,
+  onClick,
   ...restProps
 }: IconButtonProps) => {
   return (
@@ -20,6 +20,7 @@ export const IconButton = ({
       disabled={disabled}
       size={size}
       {...restProps}
+      onClick={onClick}
       className={tabButton ? 'tabButton' : className}
     >
       <CustomTooltip title={title} placement="bottom">

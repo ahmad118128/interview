@@ -56,7 +56,12 @@ export default function EditForm() {
           <Typography variant="h2">
             {DataBankRoute.addSingleUserTitle}
           </Typography>
-          <IconButton iconName="tabler:arrow-narrow-left" onClick={goBackUrl} />
+          <IconButton
+            iconName="tabler:arrow-narrow-left"
+            onClick={goBackUrl}
+            width={24}
+            height={24}
+          />
         </StyledAddFormHeader>
         <StyledAddFormMain>
           <form onSubmit={handleSubmit(submitHadler)}>

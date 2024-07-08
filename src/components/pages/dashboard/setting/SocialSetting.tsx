@@ -1,11 +1,10 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { Box, Grid, Typography } from '@mui/material';
-import { DataBankRoute, SettingRoute } from '@/strings';
+import { SettingRoute } from '@/strings';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 import { CustomButton } from '@/components/atoms/CustomButton';
@@ -31,7 +30,12 @@ export function SocialSetting() {
       <StyledAddFormHeader>
         <Typography variant="h2">{SettingRoute.publicSetting}</Typography>
 
-        <IconButton iconName="tabler:arrow-narrow-left" onClick={goBackUrl} />
+        <IconButton
+          iconName="tabler:arrow-narrow-left"
+          onClick={goBackUrl}
+          width={24}
+          height={24}
+        />
       </StyledAddFormHeader>
 
       <StyledAddFormMain>

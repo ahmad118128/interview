@@ -5,32 +5,35 @@ import { ActionBar, UsernameBox } from './styled';
 import HeaderButton from '../HeaderButton';
 import { DesktopActions } from './constants';
 import { registrationStr } from '@/strings';
+import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 
 export default function HeaderDashboardDesktop() {
   return (
     <>
       <ActionBar>
         {DesktopActions.map((item) => (
-          <HeaderButton
+          <IconButton
             key={item.id}
-            tooltipTitle={item.tooltipTitle}
-            clickHandler={item.clickHandler}
-          >
-            {item.icon}
-          </HeaderButton>
+            title={item.tooltipTitle}
+            onClick={item.onClick}
+            iconName={item.icon}
+            width={24}
+            height={24}
+          />
         ))}
       </ActionBar>
 
       <UsernameBox>
-        <Icon width={24} icon={'lets-icons:user-fill'} />
+        <IconButton width={24} height={24} iconName={'lets-icons:user-fill'} />
         <Typography variant="body1">{registrationStr.username}</Typography>
 
-        <HeaderButton
-          tooltipTitle="خروج"
-          clickHandler={() => console.log('exit')}
-        >
-          <Icon width={24} icon={'ion:exit'} />
-        </HeaderButton>
+        <IconButton
+          title={registrationStr.logOut}
+          iconName="ion:exit"
+          onClick={() => console.log('exit')}
+          width={24}
+          height={24}
+        />
       </UsernameBox>
     </>
   );

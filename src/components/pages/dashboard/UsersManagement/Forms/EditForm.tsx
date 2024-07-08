@@ -71,7 +71,12 @@ export function EditFormUsers() {
       <StyledAddFormHeader>
         <Typography variant="h2">{commonWords.addUser}</Typography>
 
-        <IconButton iconName="tabler:arrow-narrow-left" onClick={goBackUrl} />
+        <IconButton
+          iconName="tabler:arrow-narrow-left"
+          onClick={goBackUrl}
+          width={24}
+          height={24}
+        />
       </StyledAddFormHeader>
 
       <StyledAddFormMain>

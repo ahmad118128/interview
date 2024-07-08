@@ -1410,4 +1410,5 @@ export const labels = {
   edit: 'ویرایش',
   delete: 'حذف',
   results: 'نتایج',
+  members: 'کاربران',
 };

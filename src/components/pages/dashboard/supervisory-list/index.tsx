@@ -81,7 +81,7 @@ export function SuperVisoryList({ setModal, modal }: any) {
           <IconButton
             sx={{ marginLeft: '10px' }}
             iconName="fluent:people-20-filled"
-            title={labels.edit}
+            title={labels.members}
             width={24}
             height={24}
             onClick={(e) => {

@@ -69,18 +69,16 @@ export const StyledAccardion = styled(Accordion)`
 export const StyledAccordionSummary = styled(AccordionSummary)`
   padding: 0;
   min-height: 0;
-  max-height: 40px;
   .MuiAccordionSummary-contentGutters {
     justify-content: flex-end !important;
+    margin: 0;
   }
   &[aria-expanded='true'] {
-    min-height: 0;
-    max-height: 40px;
+    margin: 0;
   }
 `;
 
 export const StyledAccordionDetails = styled(AccordionDetails)`
-  margin-top: 1.25rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;

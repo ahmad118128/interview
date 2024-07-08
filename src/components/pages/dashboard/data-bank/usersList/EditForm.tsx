@@ -206,6 +206,7 @@ export default function EditForm() {
                   <IconButton
                     iconName="fluent:people-add-24-filled"
                     height={24}
+                    width={24}
                   />
                 </StyledGroupWrapper>
               </Grid>

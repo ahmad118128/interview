@@ -189,4 +189,47 @@ export const StyledIconButton = styled(IconButton)(({ theme }) => ({
       minHeight: '1.25rem',
     },
   },
+
+  '&.closeButton': {
+    width: '1.25rem',
+    height: '1.25rem',
+
+    '& .iconify': {
+      color: theme.palette.primary.main,
+    },
+
+    '&.Mui-disabled': {
+      '& .iconify': {
+        color: theme.palette.grey[300],
+      },
+    },
+
+    '&:hover': {
+      border: 'none',
+      background: 'transparent',
+      '& .iconify': {
+        color: theme.palette.primary.light,
+      },
+    },
+
+    '&:focus': {
+      '& .iconify': {
+        color: theme.palette.primary.light,
+      },
+    },
+
+    '&.MuiIconButton-sizeLarge': {
+      padding: '0',
+    },
+
+    '&.MuiIconButton-sizeMedium': {
+      padding: '0',
+    },
+
+    '&.MuiIconButton-sizeSmall': {
+      padding: '0',
+      width: '0.375rem',
+      height: '0.375rem',
+    },
+  },
 }));

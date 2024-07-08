@@ -15,6 +15,7 @@ export const StyledCustomModal = styled(Box)`
 export const StyledDeleteButtonBox = styled(Box)`
   width: 100%;
   display: flex;
+  justify-content: flex-end;
 `;
 
 export const StyledDeleteButton = styled(Button)`

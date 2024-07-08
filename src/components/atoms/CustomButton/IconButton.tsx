@@ -12,6 +12,7 @@ export const IconButton = ({
   height,
   width,
   disabled = false,
+  className,
   ...restProps
 }: IconButtonProps) => {
   return (
@@ -19,7 +20,7 @@ export const IconButton = ({
       disabled={disabled}
       size={size}
       {...restProps}
-      className={tabButton ? 'tabButton' : ''}
+      className={tabButton ? 'tabButton' : className}
     >
       <CustomTooltip title={title} placement="bottom">
         <Icon

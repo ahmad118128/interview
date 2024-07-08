@@ -39,10 +39,10 @@ export default function CustomModal({
           {title && <StyledTitleText variant="body1">{title}</StyledTitleText>}
           <IconButton
             iconName="streamline:delete-1"
-            size="small"
             onClick={onClose}
-            height={16}
-            width={16}
+            height={12}
+            width={12}
+            className="closeButton"
           />
         </StyledDeleteButtonBox>
 

@@ -22,7 +22,7 @@ const meta: Meta<typeof CustomSnackbar> = {
 };
 export default meta;
 type Story = StoryObj<typeof meta>;
-export const erro: Story = {
+export const Erro: Story = {
   render: (args) => <CustomSnackbar {...args} />,
   args: {
     status: 'error',
@@ -36,7 +36,7 @@ export const erro: Story = {
     },
   },
 };
-export const success: Story = {
+export const Success: Story = {
   render: (args) => <CustomSnackbar {...args} />,
   args: { status: 'success', message: 'پیام موفقیت' },
   parameters: {
@@ -48,7 +48,7 @@ export const success: Story = {
     },
   },
 };
-export const info: Story = {
+export const Info: Story = {
   render: (args) => <CustomSnackbar {...args} />,
   args: { status: 'info', message: 'پیام اطلاعات' },
   parameters: {
@@ -59,7 +59,7 @@ export const info: Story = {
     },
   },
 };
-export const warning: Story = {
+export const Warning: Story = {
   render: (args) => <CustomSnackbar {...args} />,
   args: { status: 'warning', message: 'پیام احتیاط' },
   parameters: {

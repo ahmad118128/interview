@@ -127,6 +127,7 @@ export default function GroupList({ modal, setModal }: any) {
       </FormProvider>
       <TableWithFab
         collapseId1="groupName"
+        collapseId2="description"
         tableHeads={tableHeadsgroup}
         data={dataBankMockgrous}
         path={'/addGroup'}

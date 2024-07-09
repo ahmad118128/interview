@@ -333,7 +333,7 @@ export default function ImageRecognitionTemplate() {
         rows={mockData}
         headers={tableHeads}
         error={!tableData?.data?.results}
-        mobileIdFilter={[COLLAPSE_ID, 'matchCount', 'actions']}
+        mobileIdFilter={[COLLAPSE_ID, 'matchCount', 'description']}
         pagination={pagination}
         handleSort={(id) => {
           setOrder(id);

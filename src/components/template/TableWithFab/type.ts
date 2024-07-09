@@ -5,4 +5,5 @@ export type TableWithFabProps<T> = {
   data: T;
   path: string;
   collapseId1: string;
+  collapseId2: string;
 };

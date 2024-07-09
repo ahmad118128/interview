@@ -14,7 +14,6 @@ import {
   initFilter,
   mockData,
 } from './constants';
-// import { FilterChild } from './FilterChild';
 import { IError, ISuccess, SnackBarType, type UsersFilterProps } from './types';
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
@@ -22,9 +21,7 @@ import { FilterContainer } from '@/components/CustomTable/widgets/FilterContaine
 import { MobileCollapseTable } from '@/components/CustomTable/widgets/MobileCollapseTable';
 import { commonWords, generalStr, registrationStr } from '@/strings';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
-import IconWithUrl from './IconWithUrl';
 import { CustomButton } from '@/components/atoms/CustomButton';
-
 import { Icon } from '@iconify/react/dist/iconify.js';
 import theme from '@/theme';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';

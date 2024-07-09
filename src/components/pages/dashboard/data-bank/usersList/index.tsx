@@ -139,6 +139,7 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
         tableHeads={tableHeadsUser}
         data={dataBankMockUsers}
         path={'/addUser'}
+        collapseId2="name"
       />
     </>
   );

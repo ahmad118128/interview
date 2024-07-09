@@ -2,6 +2,7 @@
 import { styled } from '@mui/material/styles';
 import { BaseRadioButton } from '@/components/BaseComponents/BaseRadioButton';
 import { IStyledRadio } from './type';
+import { Box, Grid, RadioGroup } from '@mui/material';
 
 export const StyledRadioButton = styled(BaseRadioButton)<IStyledRadio>`
   & .MuiRadio-root {
@@ -21,4 +22,20 @@ export const StyledRadioButton = styled(BaseRadioButton)<IStyledRadio>`
   & .Mui-disabled {
     opacity: 0.3;
   }
+`;
+
+export const RadioButtonLabelHolder = styled(Box)`
+  max-width: 400px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 12px;
+`;
+
+export const RadioButtonContainer = styled(RadioGroup)`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
 `;

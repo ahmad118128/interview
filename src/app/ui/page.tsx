@@ -16,6 +16,7 @@ import { ReportModal } from '@/strings';
 import { Button } from '@mui/material';
 import { useState } from 'react';
 import ReportPictureModal from '@/components/organisms/Modal/ReportPictureModal';
+import { group1, group2 } from './constants';
 
 const mockData = {
   src: '/assets/images/dashboard/avatar1.png',
@@ -64,11 +65,12 @@ export default function Home() {
           justifyContent: 'center',
         }}
       >
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form style={{ width: '100%' }} onSubmit={handleSubmit(onSubmit)}>
           <CustomRadioButton
             control={control}
             rules={{ required: true }}
             name={'data'}
+            groupData={group1}
           />
           <input type="submit" />
         </form>

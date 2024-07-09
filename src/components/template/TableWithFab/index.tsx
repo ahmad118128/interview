@@ -15,6 +15,10 @@ import { useRouter, usePathname } from 'next/navigation';
 import { TableWithFabProps } from './type';
 import { CollapseTable } from '@/components/CustomTable/widgets/CollapseTable';
 import { Child } from '@/components/CustomTable/widgets/CollapseTable/TableChild';
+import {
+  dataBankHeaderUserCollapse,
+  dataBankMockUsersCollapse,
+} from '@/components/pages/dashboard/data-bank/constants';
 
 export default function TableWithFab<T>({
   tableHeads,

@@ -1227,6 +1227,7 @@ export const ReportModal = {
 };
 
 export const DataBankRoute = {
+  submitDate: 'تاریخ ثبت',
   submit: 'ثبت',
   cancel: 'انصراف',
   addGroupFormTitle: 'افزودن گروه',

@@ -70,4 +70,5 @@ export type RowType = any;
 
 export type StyledTableWrapperType = {
   sort?: boolean;
+  expand?: boolean;
 };

@@ -1,7 +1,7 @@
 'use client';
 import { BaseTable } from '../../shared';
-import { CollapseRow } from './collapseRow';
 import { StyledTableWrapper } from './styled';
+import { CollapseRow } from './collapseRow';
 import { CollapseTableProps } from './type';
 
 export const CollapseTable = (props: CollapseTableProps) => {

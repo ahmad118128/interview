@@ -5,81 +5,87 @@ import { StyledTableRowType, StyledTableWrapperType } from './type';
 
 export const StyledTableWrapper = styled(Box)<StyledTableWrapperType>`
   width: 100%;
-  table {
-    border-spacing: 0;
+  .MuiTable-root {
+    border-collapse: separate !important;
+    border-spacing: 0 0.25rem;
+    margin-top: 1.2rem;
   }
-  thead tr {
-    background-color: ${({ theme }) => theme.palette.primary.light};
-    ${({ theme }) => theme.breakpoints.up('md')} {
-      height: 3.25rem;
+
+  .MuiTableCell-root {
+    border-bottom: none;
+    :hover span {
+      color: black !important;
     }
-    ${({ theme }) => theme.breakpoints.down('md')} {
-      height: 3.5rem;
     }
-    th {
-      ${({ theme }) => theme.breakpoints.up('md')} {
-        height: 3.25rem;
-      }
-      ${({ theme }) => theme.breakpoints.down('md')} {
-        height: 3.5rem;
-      }
-      font-style: normal;
-      font-weight: ${({ theme }) => theme.typography.body1.fontWeight};
-      font-size: ${({ theme }) => theme.typography.body1.fontSize} !important;
-      line-height: 1.5rem;
-      color: ${({ theme }) => theme.palette.grey[300]} !important;
-      padding: 0;
+    .MuiTableRow-root td:first-child,
+    .MuiTableRow-root th:first-child {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
-  }
-  tbody tr {
-    td {
-      font-style: normal;
-      font-weight: ${({ theme }) => theme.typography.h5.fontWeight};
-      font-size: ${({ theme }) => theme.typography.h5.fontSize};
-      line-height: 1.313rem;
-      text-align: center;
-      color: ${({ theme }) => theme.palette.grey[500]};
-      padding: 0 0.25rem;
+
+    .MuiTableRow-root td:last-child,
+    .MuiTableRow-root th:last-child {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
     }
-  }
-  .MuiTableSortLabel-root {
-    :hover {
-      color: ${({ theme, sort }) =>
-        sort ? theme.palette.text.secondary : 'inherit'};
-      cursor: ${({ sort }) => (sort ? 'pointer' : 'text')};
-    }
-    svg {
-      fill: ${({ theme }) => theme.palette.grey[200]};
-    }
-  }
-  tbody {
-    tr:nth-child(odd) {
-      ${({ theme }) => theme.breakpoints.up('md')} {
-        height: 3.25rem;
-      }
-      ${({ theme }) => theme.breakpoints.down('md')} {
-        height: 3.5rem;
-      }
-      :hover {
-        background-color: ${({ theme }) => theme.palette.grey[800]};
+
+    .MuiTableHead-root {
+      background-color: ${({ theme }) => theme.palette.grey[50]};
+
+      .MuiTableCell-root {
+        border-bottom: 1px solid ${({ theme }) => theme.palette.grey[300]};
+        border-top: 1px solid ${({ theme }) => theme.palette.grey[300]};
       }
 
-      td {
-        border-bottom: none;
-        ${({ theme }) => theme.breakpoints.up('md')} {
-          height: 3.25rem;
+      .MuiTableCell-root span {
+        font-weight: ${({ theme }) => theme.typography.h3.fontWeight};
+      }
+
+      .MuiTableRow-root th:last-child {
+        border-left: 1px solid ${({ theme }) => theme.palette.grey[300]};
+      }
+
+      .MuiTableRow-root th:first-child {
+        border-right: 1px solid ${({ theme }) => theme.palette.grey[300]};
+      }
+    }
+
+    .MuiTableBody-root {
+      .MuiTableRow-root {
+        background-color: ${({ theme }) => theme.palette.grey[50]};
+        :nth-child(odd) {
+          height: 3rem !important;
         }
-        ${({ theme }) => theme.breakpoints.down('md')} {
-          height: 3.5rem;
-        }
-        button {
-          width: 32px;
-          height: 32px;
-          :hover {
-            background-color: #e9f4f5;
-            border-radius: 12px;
-          }
-        }
+      }
+      .MuiTableCell-root {
+        border-bottom: ${({ expand, theme }) =>
+          expand ? `1px solid ${theme.palette.grey[300]}` : '0'};
+      }
+      border-top: 1px solid ${({ theme }) => theme.palette.grey[200]};
+    }
+
+    .MuiTableRow-root td:last-child {
+      border-left: 1px solid ${({ theme }) => theme.palette.grey[200]};
+    }
+
+    .MuiTableRow-root td:first-child {
+      border-right: 1px solid ${({ theme }) => theme.palette.grey[200]};
+    }
+
+    td {
+      padding: 0;
+      vertical-align: middle;
+      text-align: center;
+      color: ${({ theme }) => theme.palette.common.black} !important;
+    }
+
+    ${({ theme }) => theme.breakpoints.down('md')} {
+      tr:nth-child(odd) {
+        // height: 3rem !important;
+      }
+
+      tr:nth-child(even) {
+        // height: auto !important;
       }
     }
   }

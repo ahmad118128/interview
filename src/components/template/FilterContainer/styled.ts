@@ -75,10 +75,12 @@ export const StyledAccordionSummary = styled(AccordionSummary)`
   }
   &[aria-expanded='true'] {
     margin: 0;
+    min-height: 0;
   }
 `;
 
 export const StyledAccordionDetails = styled(AccordionDetails)`
+  margin-top: 1.25rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;

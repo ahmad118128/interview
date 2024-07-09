@@ -60,12 +60,6 @@ export const UsersTab = ({ radioButton }: any) => {
     state: false,
   });
 
-  const pagination: CustomPaginationProps = {
-    all_page: tableData?.data?.all_page as number,
-    current: currentPage,
-    setPage: (newPage: number) => setCurrentPage(newPage),
-  };
-
   const filterTransaction = (newFilter: UsersFilterProps) => {
     setCollapse(false);
     setCurrentPage(1);
@@ -143,7 +137,6 @@ export const UsersTab = ({ radioButton }: any) => {
               />
             }
           >
-            {/* <FilterChild /> */}
             <CustomButton
               style={{ margin: '1rem 0 0.25rem 0' }}
               variant="outlined"
@@ -159,7 +152,6 @@ export const UsersTab = ({ radioButton }: any) => {
         headers={tableHeads}
         error={!tableData?.data?.results}
         mobileIdFilter={[COLLAPSE_ID, 'description', 'matchCount']}
-        pagination={pagination}
         handleSort={(id) => {
           setOrder(id);
         }}

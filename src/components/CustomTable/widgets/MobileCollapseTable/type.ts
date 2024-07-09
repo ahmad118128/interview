@@ -15,7 +15,7 @@ export interface MobileCollapseTableProps {
   mobileIdFilter?: any;
   rows: any;
   error: boolean;
-  pagination: CustomPaginationProps;
+  pagination?: CustomPaginationProps;
   handleSort?: (id: unknown) => void;
   emptyDataMessage?: string;
 }

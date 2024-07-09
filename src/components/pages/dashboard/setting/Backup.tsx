@@ -43,11 +43,11 @@ export function Backup() {
     router.back();
   };
 
-  const pagination: CustomPaginationProps = {
-    all_page: tableData?.data?.all_page as number,
-    current: currentPage,
-    setPage: (newPage: number) => setCurrentPage(newPage),
-  };
+  // const pagination: CustomPaginationProps = {
+  //   all_page: tableData?.data?.all_page as number,
+  //   current: currentPage,
+  //   setPage: (newPage: number) => setCurrentPage(newPage),
+  // };
 
   return (
     <StyledAddFormWrapper>
@@ -192,7 +192,7 @@ export function Backup() {
                 headers={lastBackupStatusHeader}
                 error={!tableData?.data?.results}
                 mobileIdFilter={[COLLAPSE_ID, 'actionType', 'executionStatus']}
-                pagination={pagination}
+                // pagination={pagination}
                 handleSort={(id) => {
                   setOrder(id);
                 }}

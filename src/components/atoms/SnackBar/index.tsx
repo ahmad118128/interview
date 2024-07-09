@@ -28,7 +28,7 @@ const CustomSnackbar: VFC<CustomSnackbarProps> = ({
         info: <Icon icon="tabler:info-circle" height={24} />,
         warning: <Icon icon="tabler:alert-triangle" height={24} />,
       }}
-      severity={status === 'error' ? 'error' : status}
+      severity={status}
       variant="filled"
       action={
         <Icon icon="fe:close" onClick={onClose} cursor="pointer" height={24} />

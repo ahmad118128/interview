@@ -127,16 +127,17 @@ export const StyledCollapse = styled(Collapse)`
 `;
 export const StyledMobileList = styled(Box)`
   display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows:(4,1.25rem)
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: (4, 1.25rem);
+  align-items: center;
   gap: 1.25rem;
   width: 100%;
   font-style: normal;
-  font-weight:${({ theme }) => theme.typography.body1.fontWeight};
+  font-weight: ${({ theme }) => theme.typography.body1.fontWeight};
   font-size: ${({ theme }) => theme.typography.body1.fontSize};
   line-height: 1.25rem;
   td {
-    border-bottom: none !important;
+    border: none !important;
   }
 `;
 
@@ -152,8 +153,12 @@ export const StyledMobileListCellValue = styled(Box)`
   grid-column-start: 2;
   text-align: right;
   grid-column-end: 12;
+  border: none;
+  :hover {
+    border: none;
+  }
 
   * {
-    color: ${({ theme }) => theme.palette.grey[300]} !important;
+    // color: ${({ theme }) => theme.palette.grey[300]} !important;
   }
 `;

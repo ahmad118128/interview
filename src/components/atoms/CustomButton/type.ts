@@ -16,9 +16,6 @@ export type ButtonProps = (
 ) &
   MUIButtonProps;
 export interface IconButtonProps extends Omit<MUIIconButtonProps, 'children'> {
-  title?: string;
+  tooltip?: string;
   iconName: IconifyIconProps['icon'];
-  tabButton?: boolean;
-  height?: number;
-  width?: number;
 }

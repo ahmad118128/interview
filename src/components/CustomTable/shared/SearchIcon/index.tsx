@@ -45,10 +45,8 @@ export const SearchIcon = (props: Props) => {
           <IconButton
             onClick={() => setSearch(false)}
             iconName="tabler:arrow-narrow-left"
-            height={24}
-            width={24}
-            title={generalStr.back}
-            tabButton
+            tooltip={generalStr.back}
+            className="tabButton"
           />
         </>
       ) : (
@@ -56,10 +54,8 @@ export const SearchIcon = (props: Props) => {
           <IconButton
             onClick={() => onHandleIconClick(EFilterTableNameIcon.SEARCH)}
             iconName="tabler:search"
-            height={24}
-            width={24}
-            title={commonWords.search}
-            tabButton
+            tooltip={commonWords.search}
+            className="tabButton"
           />
         </Tooltip>
       )}

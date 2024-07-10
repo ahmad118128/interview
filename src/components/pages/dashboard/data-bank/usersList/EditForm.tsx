@@ -56,12 +56,7 @@ export default function EditForm() {
           <Typography variant="h2">
             {DataBankRoute.addSingleUserTitle}
           </Typography>
-          <IconButton
-            iconName="tabler:arrow-narrow-left"
-            onClick={goBackUrl}
-            width={24}
-            height={24}
-          />
+          <IconButton iconName="tabler:arrow-narrow-left" onClick={goBackUrl} />
         </StyledAddFormHeader>
         <StyledAddFormMain>
           <form onSubmit={handleSubmit(submitHadler)}>
@@ -203,11 +198,7 @@ export default function EditForm() {
                       options={[]}
                     />
                   </Box>
-                  <IconButton
-                    iconName="fluent:people-add-24-filled"
-                    height={24}
-                    width={24}
-                  />
+                  <IconButton iconName="fluent:people-add-24-filled" />
                 </StyledGroupWrapper>
               </Grid>
               <Grid item xs={12} md={4}>

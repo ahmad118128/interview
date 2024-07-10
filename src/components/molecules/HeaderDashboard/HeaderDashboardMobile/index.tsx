@@ -26,11 +26,7 @@ export default function HeaderDashboardMobile() {
   return (
     <>
       <ActionButton disableRipple onClick={() => setOpenDrawer(true)}>
-        <IconButton
-          iconName={'iconamoon:menu-burger-horizontal-bold'}
-          width={24}
-          height={24}
-        />
+        <IconButton iconName={'iconamoon:menu-burger-horizontal-bold'} />
       </ActionButton>
       <MyDrawer openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
 
@@ -62,11 +58,9 @@ export default function HeaderDashboardMobile() {
           {MobileActions.map((item) => (
             <IconButton
               key={item.id}
-              title={item.tooltipTitle}
+              tooltip={item.tooltipTitle}
               onClick={item.onClick}
               iconName={item.icon}
-              width={24}
-              height={24}
             />
           ))}
         </MenuBox>

@@ -40,12 +40,7 @@ export default function AddForm() {
             {DataBankRoute.addSingleUserTitle}
           </Typography>
 
-          <IconButton
-            iconName="tabler:arrow-narrow-left"
-            onClick={goBackUrl}
-            width={24}
-            height={24}
-          />
+          <IconButton iconName="tabler:arrow-narrow-left" onClick={goBackUrl} />
         </StyledAddFormHeader>
 
         <StyledAddFormMain>
@@ -207,8 +202,6 @@ export default function AddForm() {
                   <IconButton
                     iconName="fluent:people-add-24-filled"
                     onClick={() => setIsOpen(true)}
-                    width={24}
-                    height={24}
                   />
                 </StyledGroupWrapper>
               </Grid>

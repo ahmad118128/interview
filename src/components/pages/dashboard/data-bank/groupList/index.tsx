@@ -78,9 +78,7 @@ export default function GroupList({ modal, setModal }: any) {
           <IconButton
             sx={{ marginLeft: '10px' }}
             iconName="fluent:document-edit-20-filled"
-            title={labels.edit}
-            width={24}
-            height={24}
+            tooltip={labels.edit}
             onClick={(e) => {
               const editPath = `${currentPath}/editGroup/${row.id}`;
               router.push(editPath);
@@ -89,9 +87,7 @@ export default function GroupList({ modal, setModal }: any) {
 
           <IconButton
             iconName="tabler:trash-filled"
-            title={labels.delete}
-            width={24}
-            height={24}
+            tooltip={labels.delete}
             onClick={(e) =>
               setModal({
                 ...modal,

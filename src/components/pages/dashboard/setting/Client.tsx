@@ -87,26 +87,20 @@ export function Client({ modal, setModal }: any) {
         <TableCell>
           <IconButton
             iconName="fluent:circle-multiple-subtract-checkmark-20-filled"
-            title={SettingRoute.doNotRecordFaces}
-            width={24}
-            height={24}
+            tooltip={SettingRoute.doNotRecordFaces}
             onClick={() => setModal(true)}
           />
 
           <IconButton
             iconName="fluent:dismiss-circle-12-filled"
-            title={SettingRoute.doNotRecordFaces}
-            width={24}
-            height={24}
+            tooltip={SettingRoute.doNotRecordFaces}
             onClick={() => setModal(true)}
           />
 
           <IconButton
             sx={{ marginLeft: '10px' }}
             iconName="fluent:document-edit-20-filled"
-            title={labels.edit}
-            width={24}
-            height={24}
+            tooltip={labels.edit}
             onClick={(e) => {
               const editPath = `${currentPath}/edit/${row.id}`;
               router.push(editPath);

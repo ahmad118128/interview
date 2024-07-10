@@ -1,4 +1,4 @@
-import { Box, Tooltip } from '@mui/material';
+import { Box } from '@mui/material';
 import { Icon } from '@iconify/react';
 import theme from '@/theme';
 import { type Props } from './types';
@@ -33,13 +33,11 @@ export const FilterIcon = (props: Props) => {
           ))}
 
       <IconButton
+        tooltip={generalStr.filter}
         onClick={() => onHandleIconClick(EFilterTableNameIcon.FILTER)}
         key={tablePhrases.filtering}
         iconName={'iconoir:filter'}
-        height={24}
-        width={24}
-        tabButton
-        title={generalStr.filter}
+        className="tabButton"
       />
     </Box>
   );

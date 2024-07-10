@@ -147,9 +147,7 @@ export default function ImageRecognitionTemplate() {
         <TableCell>
           <IconButton
             iconName="fluent:clipboard-text-32-filled"
-            title={labels.results}
-            width={24}
-            height={24}
+            tooltip={labels.results}
             sx={{ marginLeft: '10px' }}
             onClick={(e) =>
               setModalData({
@@ -162,9 +160,7 @@ export default function ImageRecognitionTemplate() {
 
           <IconButton
             iconName="tabler:photo-filled"
-            title={labels.pics}
-            width={24}
-            height={24}
+            tooltip={labels.pics}
             onClick={() => setImgModal(true)}
           />
         </TableCell>

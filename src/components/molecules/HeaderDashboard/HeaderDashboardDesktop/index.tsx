@@ -14,26 +14,18 @@ export default function HeaderDashboardDesktop() {
         {DesktopActions.map((item) => (
           <IconButton
             key={item.id}
-            title={item.tooltipTitle}
+            tooltip={item.tooltipTitle}
             onClick={item.onClick}
             iconName={item.icon}
-            width={24}
-            height={24}
           />
         ))}
       </ActionBar>
 
       <UsernameBox>
-        <IconButton width={24} height={24} iconName={'lets-icons:user-fill'} />
+        <IconButton iconName={'lets-icons:user-fill'} />
         <Typography variant="body1">{registrationStr.username}</Typography>
 
-        <IconButton
-          title={registrationStr.logOut}
-          iconName="ion:exit"
-          onClick={() => console.log('exit')}
-          width={24}
-          height={24}
-        />
+        <IconButton tooltip={registrationStr.logOut} iconName="ion:exit" />
       </UsernameBox>
     </>
   );

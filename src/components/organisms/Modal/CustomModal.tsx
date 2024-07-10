@@ -40,8 +40,6 @@ export default function CustomModal({
           <IconButton
             iconName="streamline:delete-1"
             onClick={onClose}
-            height={12}
-            width={12}
             className="closeButton"
           />
         </StyledDeleteButtonBox>

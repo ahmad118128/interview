@@ -170,7 +170,6 @@ export const StyledIconButton = styled(IconButton)(({ theme }) => ({
     },
 
     '&.active': {
-      backgroundColor: 'red',
       outline: `1px solid ${theme.palette.primary.light}`,
       '& .iconify': {
         color: theme.palette.primary.light,

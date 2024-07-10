@@ -79,18 +79,14 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
           <IconButton
             sx={{ marginLeft: '10px' }}
             iconName="tabler:photo-filled"
-            title={labels.pics}
-            width={24}
-            height={24}
+            tooltip={labels.pics}
             onClick={() => setImgModal(true)}
           />
 
           <IconButton
             sx={{ marginLeft: '10px' }}
             iconName="fluent:document-edit-20-filled"
-            title={labels.edit}
-            width={24}
-            height={24}
+            tooltip={labels.edit}
             onClick={(e) => {
               const editPath = `${currentPath}/editUser/${row.id}`;
               router.push(editPath);
@@ -99,9 +95,7 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
 
           <IconButton
             iconName="tabler:trash-filled"
-            title={labels.delete}
-            width={24}
-            height={24}
+            tooltip={labels.delete}
             onClick={(e) =>
               setModal({
                 ...modal,

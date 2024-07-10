@@ -74,7 +74,7 @@ export const StyledAccordionSummary = styled(AccordionSummary)`
     margin: 0;
   }
   &[aria-expanded='true'] {
-    margin: 0;
+    margin: 0 !important;
     min-height: 0;
   }
 `;

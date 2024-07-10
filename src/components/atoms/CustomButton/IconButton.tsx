@@ -4,32 +4,16 @@ import { Icon } from '@iconify/react';
 import { CustomTooltip } from '../CustomTooltip';
 
 export const IconButton = ({
-  tabButton,
   iconName,
-  title,
+  tooltip,
   size,
-  height,
-  width,
   disabled = false,
-  className,
-  onClick,
   ...restProps
 }: IconButtonProps) => {
   return (
-    <StyledIconButton
-      disabled={disabled}
-      size={size}
-      {...restProps}
-      onClick={onClick}
-      className={tabButton ? 'tabButton' : className}
-    >
-      <CustomTooltip title={title} placement="bottom">
-        <Icon
-          className="iconify"
-          icon={iconName}
-          height={height ? height : 16}
-          width={width ? width : 16}
-        />
+    <StyledIconButton disabled={disabled} size={size} {...restProps}>
+      <CustomTooltip title={tooltip} placement="bottom">
+        <Icon className="iconify" icon={iconName} height={24} width={24} />
       </CustomTooltip>
     </StyledIconButton>
   );

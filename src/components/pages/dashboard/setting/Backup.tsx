@@ -54,12 +54,7 @@ export function Backup() {
       <StyledAddFormHeader>
         <Typography variant="h2">{SettingRoute.backup}</Typography>
 
-        <IconButton
-          iconName="tabler:arrow-narrow-left"
-          onClick={goBackUrl}
-          width={24}
-          height={24}
-        />
+        <IconButton iconName="tabler:arrow-narrow-left" onClick={goBackUrl} />
       </StyledAddFormHeader>
 
       <StyledAddFormMain>

@@ -11,8 +11,9 @@ import {
 import { COLLAPSE_ID } from '@/components/pages/dashboard/image-recognition/constants';
 import { CustomFabButton } from '@/components/atoms/CustomFabButton';
 import { EFabMode } from '@/components/atoms/CustomFabButton/type';
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { TableWithFabProps } from './type';
+import { PageParamsType } from '@/services/api/users';
 
 export default function TableWithFab<T>({
   tableHeads,
@@ -28,10 +29,19 @@ export default function TableWithFab<T>({
 
   const newRoute = `${currentPath}/${path}`;
 
+  const searchParams = useSearchParams();
+  const queryParams = Object.fromEntries(searchParams.entries());
+
+  const [pageParams, setPageParams] = useState<PageParamsType>({
+    page: 0,
+    ...queryParams,
+  });
+
   const pagination: CustomPaginationProps = {
-    all_page: tableData?.data?.all_page as number,
-    current: currentPage,
-    setPage: (newPage: number) => setCurrentPage(newPage),
+    totalPages: 5,
+    page: 0,
+    setPageParams: setPageParams,
+    pageParams: pageParams,
   };
   return (
     <Box sx={{ position: 'relative' }}>

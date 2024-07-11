@@ -3,18 +3,24 @@ import { StyledTablePagination } from './styled';
 import { type CustomPaginationProps } from './types';
 
 export const TablePagination = (props: CustomPaginationProps) => {
-  const { setPage, current = 1, all_page = 1 } = props;
+  const { page, pageParams, setPageParams, totalPages } = props;
 
-  const handleChangePage = (event: ChangeEvent<unknown>, newPage: number) => {
-    setPage(newPage);
+  const handleChangePage = (
+    event: React.ChangeEvent<unknown>,
+    newPage: number
+  ) => {
+    setPageParams((prevParams) => ({
+      ...prevParams,
+      ...pageParams,
+      page: newPage,
+    }));
   };
 
-  return all_page > 1 ? (
+  return totalPages > 1 ? (
     <StyledTablePagination
-      count={all_page}
-      page={current}
+      count={totalPages}
+      page={page}
       shape="rounded"
-      boundaryCount={current}
       onChange={handleChangePage}
     />
   ) : null;

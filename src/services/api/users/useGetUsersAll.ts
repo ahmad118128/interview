@@ -10,7 +10,7 @@ export const useGetUsersAll = (pageParams: PageParamsType) => {
   const { data, isPending } = useQuery({
     queryKey: ['users', pageParams],
     queryFn: async function ({ queryKey }): Promise<IUsers> {
-      const url = `/users/all`;
+      const url = `/users/`;
       const { page, ...params } = queryKey[1] as PageParamsType;
       const queryParams: PageParamsType = { page: page + 1, ...params };
 

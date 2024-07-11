@@ -28,6 +28,8 @@ import { CustomButton } from '@/components/atoms/CustomButton';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import theme from '@/theme';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
+import { PageParamsType } from '@/services/api/users';
+import { useSearchParams } from 'next/navigation';
 
 const payloadSnackbar: SnackBarType = {
   display: true,
@@ -41,6 +43,13 @@ interface IModalState {
 }
 
 export const UsersTab = ({ radioButton }: any) => {
+  const searchParams = useSearchParams();
+  const queryParams = Object.fromEntries(searchParams.entries());
+
+  const [pageParams, setPageParams] = useState<PageParamsType>({
+    page: 0,
+    ...queryParams,
+  });
   const [tableData, setTableData] = useState<null | ISuccess | IError>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [filter, setFilter] = useState(initFilter);
@@ -61,9 +70,10 @@ export const UsersTab = ({ radioButton }: any) => {
   });
 
   const pagination: CustomPaginationProps = {
-    all_page: tableData?.data?.all_page as number,
-    current: currentPage,
-    setPage: (newPage: number) => setCurrentPage(newPage),
+    totalPages: 5,
+    page: 0,
+    setPageParams: setPageParams,
+    pageParams: pageParams,
   };
 
   const filterTransaction = (newFilter: UsersFilterProps) => {

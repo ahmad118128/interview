@@ -44,6 +44,8 @@ import CustomModal from '@/components/organisms/Modal/CustomModal';
 import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
 import ReportPictureModal from '@/components/organisms/Modal/ReportPictureModal';
 import { CustomFilterIcon } from '@/components/CustomTable/shared/FilterIcon/CustomFilterIcon';
+import { useSearchParams } from 'next/navigation';
+import { PageParamsType } from '@/services/api/users';
 
 const CustomAccordion = styled(Accordion)({
   backgroundColor: 'transparent',
@@ -159,10 +161,20 @@ export default function ImageRecognitionTemplate() {
       ),
     },
   ];
+
+  const searchParams = useSearchParams();
+  const queryParams = Object.fromEntries(searchParams.entries());
+
+  const [pageParams, setPageParams] = useState<PageParamsType>({
+    page: 0,
+    ...queryParams,
+  });
+
   const pagination: CustomPaginationProps = {
-    all_page: tableData?.data?.all_page as number,
-    current: currentPage,
-    setPage: (newPage: number) => setCurrentPage(newPage),
+    totalPages: 5,
+    page: 0,
+    setPageParams: setPageParams,
+    pageParams: pageParams,
   };
   return (
     <>

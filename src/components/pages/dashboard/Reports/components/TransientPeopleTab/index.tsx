@@ -30,7 +30,7 @@ export default function TransientPeople() {
   const queryParams = Object.fromEntries(searchParams.entries());
 
   const [pageParams, setPageParams] = useState<PageParamsType>({
-    page: 0,
+    pageNo: 0,
     ...queryParams,
   });
   const [collapse, setCollapse] = useState(false);

@@ -32,7 +32,7 @@ export function FilterPart({ setModal, modal }: any) {
   const queryParams = Object.fromEntries(searchParams.entries());
 
   const [pageParams, setPageParams] = useState<PageParamsType>({
-    page: 0,
+    pageNo: 0,
     ...queryParams,
   });
 
@@ -44,7 +44,7 @@ export function FilterPart({ setModal, modal }: any) {
 
   const pagination: CustomPaginationProps = {
     totalPages: totalPages,
-    page: pageParams.page,
+    page: pageParams.pageNo,
     setPageParams: setPageParams,
     pageParams: pageParams,
   };

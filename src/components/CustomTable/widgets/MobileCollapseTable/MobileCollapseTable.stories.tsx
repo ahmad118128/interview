@@ -120,7 +120,7 @@ export const DefaultMobileCollapseTable: Story = {
       totalPages: 4,
       page: 1,
       setPageParams: () => {},
-      pageParams: { page: 1 },
+      pageParams: { pageNo: 1 },
     },
     mobileIdFilter: [COLLAPSE_ID, 'description', 'matchCount'],
     emptyDataMessage: 'there is no data',

@@ -47,7 +47,7 @@ export const UsersTab = ({ radioButton }: any) => {
   const queryParams = Object.fromEntries(searchParams.entries());
 
   const [pageParams, setPageParams] = useState<PageParamsType>({
-    page: 0,
+    pageNo: 0,
     ...queryParams,
   });
   const [tableData, setTableData] = useState<null | ISuccess | IError>(null);

@@ -24,18 +24,22 @@ export const StyledRadioButton = styled(BaseRadioButton)<IStyledRadio>`
   }
 `;
 
-export const RadioButtonLabelHolder = styled(Box)`
-  max-width: 400px;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 12px;
-`;
-
 export const RadioButtonContainer = styled(RadioGroup)`
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
+
+  ${({ theme }) => theme.breakpoints.down('md')} {
+    flex-direction: column;
+    gap: 24px !important;
+  }
+`;
+
+export const RadioButtonLabelHolder = styled(Box)`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 12px;
 `;

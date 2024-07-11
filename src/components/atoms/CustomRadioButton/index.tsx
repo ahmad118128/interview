@@ -4,9 +4,8 @@ import {
   RadioButtonLabelHolder,
   StyledRadioButton,
 } from './styled';
-import { Box, RadioGroup, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { ICustomRadio } from './type';
-import { generalStr } from '@/strings';
 
 export const CustomRadioButton = (props: ICustomRadio) => {
   const { groupData, control, rules, name, ...rest } = props;

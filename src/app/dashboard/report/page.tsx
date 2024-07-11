@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 
 export default function Report() {
   <Suspense fallback={'loading'}>
-    <ReportPage />;
+    <ReportPage />
   </Suspense>;
   return;
 }

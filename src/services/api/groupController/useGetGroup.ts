@@ -10,9 +10,9 @@ export const useGetGroup = (pageParams: PageParamsType) => {
   const { data, isPending } = useQuery({
     queryKey: ['persons', pageParams],
     queryFn: async function ({ queryKey }): Promise<GroupApiResponse> {
-      const url = `/group`;
-      const { page, ...params } = queryKey[1] as PageParamsType;
-      const queryParams: PageParamsType = { page: page + 1, ...params };
+      const url = `/groups/`;
+      const { pageNo, ...params } = queryKey[1] as PageParamsType;
+      const queryParams: PageParamsType = { pageNo: pageNo, ...params };
 
       return getData(url, { params: queryParams });
     },

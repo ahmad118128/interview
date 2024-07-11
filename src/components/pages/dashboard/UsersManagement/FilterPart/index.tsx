@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
@@ -16,6 +16,8 @@ import { initFilter } from '../../image-recognition/constants';
 import { usersHeader, usersMock } from '../constants';
 import { FilterContainer } from '@/components/template/FilterContainer';
 import { FilterForm } from './FilterForm';
+import { PageParamsType, useGetUsersAll } from '@/services/api/users';
+import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 
 export function FilterPart({ setModal, modal }: any) {
   const [collapse, setCollapse] = useState<boolean>(false);
@@ -26,8 +28,26 @@ export function FilterPart({ setModal, modal }: any) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [search, setSearch] = useState<boolean>(false);
 
+  const searchParams = useSearchParams();
+  const queryParams = Object.fromEntries(searchParams.entries());
+
+  const [pageParams, setPageParams] = useState<PageParamsType>({
+    pageNo: 0,
+    ...queryParams,
+  });
+
+  const { data: users, totalItem, totalPages } = useGetUsersAll(pageParams);
+  console.log(users);
+
   const router = useRouter();
   const currentPath = usePathname();
+
+  const pagination: CustomPaginationProps = {
+    totalPages: totalPages,
+    page: pageParams.pageNo,
+    setPageParams: setPageParams,
+    pageParams: pageParams,
+  };
 
   const { control, reset, handleSubmit, setValue } = useForm<FieldValues>({
     mode: 'onSubmit',
@@ -121,11 +141,7 @@ export function FilterPart({ setModal, modal }: any) {
           <FilterForm control={control} reset={reset} />
         </FilterContainer>
       </form>
-      <TableWithFab
-        tableHeads={tableHeadsUser}
-        data={usersMock}
-        path={'/add'}
-      />
+      <TableWithFab tableHeads={tableHeadsUser} data={users} path={'/add'} />
     </>
   );
 }

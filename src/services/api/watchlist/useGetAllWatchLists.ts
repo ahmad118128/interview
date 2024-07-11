@@ -11,8 +11,8 @@ export const useGetAllWatchLists = (pageParams: PageParamsType) => {
     queryKey: ['persons', pageParams],
     queryFn: async function ({ queryKey }): Promise<AllWatchListResponse> {
       const url = `/whatchlists/all`;
-      const { page, ...params } = queryKey[1] as PageParamsType;
-      const queryParams: PageParamsType = { page: page + 1, ...params };
+      const { pageNo, ...params } = queryKey[1] as PageParamsType;
+      const queryParams: PageParamsType = { pageNo, ...params };
 
       return getData(url, { params: queryParams });
     },

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 import { Typography } from '@mui/material';
 import { SupervisitoryListRoute } from '@/strings';
@@ -20,6 +20,7 @@ import {
   supervisitoryListMembersMock,
 } from '../constants';
 import { IError, ISuccess } from '../../image-recognition/types';
+import { PageParamsType } from '@/services/api/users';
 
 export default function Members() {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -32,10 +33,19 @@ export default function Members() {
     router.back();
   };
 
+  const searchParams = useSearchParams();
+  const queryParams = Object.fromEntries(searchParams.entries());
+
+  const [pageParams, setPageParams] = useState<PageParamsType>({
+    pageNo: 0,
+    ...queryParams,
+  });
+
   const pagination: CustomPaginationProps = {
-    all_page: tableData?.data?.all_page as number,
-    current: currentPage,
-    setPage: (newPage: number) => setCurrentPage(newPage),
+    totalPages: 5,
+    page: 0,
+    setPageParams: setPageParams,
+    pageParams: pageParams,
   };
 
   return (

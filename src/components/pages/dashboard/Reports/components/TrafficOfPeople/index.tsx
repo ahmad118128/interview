@@ -3,9 +3,6 @@
 import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
-import { TableCell } from '@mui/material';
-import { Icon } from '@iconify/react/dist/iconify.js';
-import ReportFilterContainer from '@/components/pages/dashboard/report/reportFilterContainer';
 import ViewImageModal from './ViewImageModal';
 import { MobileCollapseTable } from '@/components/CustomTable/widgets';
 import {
@@ -16,7 +13,7 @@ import {
   defaultReportValues,
   reportHeaderTrafficOfPeople,
   reportMocTrafficOfPeople,
-} from '@/components/pages/dashboard/report/constants';
+} from '@/components/pages/dashboard/Reports/components/TrafficOfPeople/constants';
 import {
   IError,
   ISuccess,
@@ -25,9 +22,11 @@ import {
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
-import { commonWords } from '@/strings';
+import { DataBankRoute, TrafficAnalysisRoute, commonWords } from '@/strings';
 import theme from '@/theme';
 import { ReportFormValues } from './type';
+import { FilterContainer } from '@/components/template/FilterContainer';
+import ReportFilterForm from './reportFilterForm';
 
 const TrafficOfPeople = () => {
   const [collapse, setCollapse] = useState(false);
@@ -39,6 +38,7 @@ const TrafficOfPeople = () => {
   const [tableData, setTableData] = useState<null | ISuccess | IError>(null);
   const [order, setOrder] = useState<string | unknown>('');
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [search, setSearch] = useState<boolean>(false);
 
   const router = useRouter();
   const currentPath = usePathname();
@@ -58,8 +58,8 @@ const TrafficOfPeople = () => {
         setCollapse((prev) => !prev);
         break;
 
-      case EFilterTableNameIcon.REFRESH:
-        // serviceCall();
+      case EFilterTableNameIcon.SEARCH:
+        setSearch(true);
         break;
 
       default:
@@ -97,15 +97,20 @@ const TrafficOfPeople = () => {
     <>
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(submitHandler)}>
-          <ReportFilterContainer
-            control={control}
-            reset={reset}
+          <FilterContainer
             collapse={collapse}
             onHandleIconClick={handleIconClick}
             chips={filtersChips}
             handleFiltersChips={handleFiltersChips}
             refreshLoading={isLoading}
-          />
+            tableName={TrafficAnalysisRoute.trafficPeople}
+            setCollapse={setCollapse}
+            search={search}
+            setSearch={setSearch}
+            chipNumber={24}
+          >
+            <ReportFilterForm control={control} reset={reset} />
+          </FilterContainer>
         </form>
       </FormProvider>
       <MobileCollapseTable

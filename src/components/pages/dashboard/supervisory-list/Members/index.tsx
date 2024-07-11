@@ -13,7 +13,7 @@ import {
   StyledAddFormHeader,
   StyledAddFormMain,
   StyledAddFormWrapper,
-} from '../../data-bank/usersList/styled';
+} from '@/components/template/FilterContainer/styled';
 import { COLLAPSE_ID } from '../../image-recognition/constants';
 import {
   supervisitoryListMembersHeader,

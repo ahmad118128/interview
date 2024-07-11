@@ -29,8 +29,7 @@ export type HeaderFilterTableProps<TField extends FieldValues> =
 
 export enum EFilterTableNameIcon {
   FILTER = 'filter',
-  REFRESH = 'refresh',
-  COLUMNS = 'columns',
+  SEARCH = 'search',
 }
 
 export enum EFilterModeIcon {

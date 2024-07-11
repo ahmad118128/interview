@@ -1,6 +1,6 @@
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
-import { commonWords } from '@/strings';
+import { DataBankRoute, commonWords } from '@/strings';
 import { useState } from 'react';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 import { dataBankHeadergroup, dataBankMockgrous } from '../constants';
@@ -8,11 +8,11 @@ import { TableCell } from '@mui/material';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import theme from '@/theme';
 import { usePathname, useRouter } from 'next/navigation';
-import { IModalState } from '@/components/template/DataBank/type';
 import TableWithFab from '@/components/template/TableWithFab';
-import { FilterContainer } from './FilterContainer';
 import { UsersFilterProps } from '../../image-recognition/types';
 import { initFilter } from '../../image-recognition/constants';
+import { FilterContainer } from '@/components/template/FilterContainer';
+import FilterForm from './FilterForm';
 
 export default function GroupList({ modal, setModal }: any) {
   const [collapse, setCollapse] = useState(false);
@@ -21,6 +21,7 @@ export default function GroupList({ modal, setModal }: any) {
   >([]);
   const [filter, setFilter] = useState(initFilter);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [search, setSearch] = useState<boolean>(false);
 
   const router = useRouter();
   const currentPath = usePathname();
@@ -48,8 +49,8 @@ export default function GroupList({ modal, setModal }: any) {
         setCollapse((prev) => !prev);
         break;
 
-      case EFilterTableNameIcon.REFRESH:
-        // serviceCall();
+      case EFilterTableNameIcon.SEARCH:
+        setSearch(true);
         break;
 
       default:
@@ -109,15 +110,19 @@ export default function GroupList({ modal, setModal }: any) {
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(submitHandler)}>
           <FilterContainer
-            control={control}
-            reset={reset}
             collapse={collapse}
             onHandleIconClick={handleIconClick}
             chips={filtersChips}
             handleFiltersChips={handleFiltersChips}
             refreshLoading={isLoading}
+            tableName={DataBankRoute.groupList}
             setCollapse={setCollapse}
-          />
+            search={search}
+            setSearch={setSearch}
+            chipNumber={24}
+          >
+            <FilterForm control={control} reset={reset} />
+          </FilterContainer>
         </form>
       </FormProvider>
       <TableWithFab

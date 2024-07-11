@@ -3,7 +3,6 @@ import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 import { CustomButton } from '@/components/atoms/CustomButton';
 import ControlledTimeDatePickerInput from '@/components/organisms/TimeDatePicker/ControlledTimeDatePicker';
 import { Box, Grid } from '@mui/material';
-import { StyledFilterChild } from '../image-recognition/FilterChild/styled';
 import {
   DataBankRoute,
   SettingRoute,
@@ -12,6 +11,7 @@ import {
   generalStr,
   siderBarList,
 } from '@/strings';
+import { StyledFilterChild } from '../../../image-recognition/FilterChild/styled';
 
 export default function ReportFilterForm({ control, reset }: any) {
   return (
@@ -47,8 +47,6 @@ export default function ReportFilterForm({ control, reset }: any) {
           name="startPassingDateAndTime"
           label={TrafficAnalysisRoute.startPassingDateAndTime}
           rules={{}}
-          value={0}
-          onChange={() => console.log('first')}
         />
       </Grid>
       <Grid item xs={12} md={4}>
@@ -57,8 +55,6 @@ export default function ReportFilterForm({ control, reset }: any) {
           name="endPassingDateAndTime"
           label={TrafficAnalysisRoute.endPassingDateAndTime}
           rules={{}}
-          value={0}
-          onChange={() => console.log('first')}
         />
       </Grid>
       <Grid item xs={12} md={4}>

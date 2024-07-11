@@ -65,8 +65,6 @@ export const FilterChildFirst = ({ control }: any) => {
             name="name"
             control={control}
             label={DataBankRoute.accurancyStart}
-            value={0}
-            onChange={() => console.log('first')}
             rules={{ required: 'Require' }}
           />
         </StyledInputContainer>
@@ -75,8 +73,6 @@ export const FilterChildFirst = ({ control }: any) => {
             name="name"
             control={control}
             label={DataBankRoute.accurancyStart}
-            value={0}
-            onChange={() => console.log('first')}
             rules={{ required: 'Require' }}
           />
         </StyledInputContainer>

@@ -34,6 +34,7 @@ export default function DashboardPage() {
             chartLabel="Clinet"
             labels={['نامشخص', 'شناسایی شده']}
             data={[120, 80]}
+            showTooltip
           />
         </DashboardChartCard>
       </Grid>
@@ -44,6 +45,7 @@ export default function DashboardPage() {
             chartLabel="Data"
             labels={['زن', 'مرد']}
             data={[120, 80]}
+            showTooltip
           />
         </DashboardChartCard>
       </Grid>

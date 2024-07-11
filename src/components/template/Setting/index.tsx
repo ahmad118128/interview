@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { CustomTab } from '@/components/molecules/CustomTab/styled';
 import { DataBankRoute, SettingRoute } from '@/strings';
@@ -15,12 +15,10 @@ import { Backup } from '@/components/pages/dashboard/setting/Backup';
 import { Client } from '@/components/pages/dashboard/setting/Client';
 import { Face } from '@/components/pages/dashboard/setting/Face';
 import { SocialSetting } from '@/components/pages/dashboard/setting/SocialSetting';
+import CustomModal from '@/components/organisms/Modal/CustomModal';
 
 export function SettingTemplate() {
-  const [modalData, setModalData] = useState<IModalState>({
-    state: false,
-  });
-  const [imgModal, setImgModal] = useState(false);
+  const [frameModal, setFrameModal] = useState(false);
 
   const router = useRouter();
   const currentPath = usePathname();
@@ -36,7 +34,7 @@ export function SettingTemplate() {
       id: 1,
       label: SettingRoute.client,
       disableTabRipple: false,
-      tabPanel: <Client modal={modalData} setModal={setModalData} />,
+      tabPanel: <Client modal={frameModal} setModal={setFrameModal} />,
     },
     {
       id: 2,
@@ -46,33 +44,23 @@ export function SettingTemplate() {
     },
     {
       id: 3,
-      label: <Typography>{SettingRoute.backup}</Typography>,
+      label: SettingRoute.backup,
       disableTabRipple: false,
       tabPanel: <Backup />,
     },
   ];
-
+  // const activeId = Number(searchParams.get('index')) ?? 0;
   return (
     <>
-      <CustomTab data={tabs} type={'normalTab'}></CustomTab>
+      <CustomTab data={tabs} type={'normalTab'} tabKey={'index'} />
 
-      {modalData.state ? (
-        <DeleteModal
-          id={modalData.id}
-          open={modalData.state}
-          onSubmit={() => console.log(modalData.id)}
+      {frameModal ? (
+        <CustomModal
+          onClose={() => setFrameModal(false)}
+          open={frameModal}
+          setOpen={setFrameModal}
+          title={SettingRoute.canFramesBeRecorded}
           buttons
-          title={DataBankRoute.deleteModalBlackText}
-          onClose={() => setModalData({ state: false })}
-        ></DeleteModal>
-      ) : null}
-
-      {imgModal ? (
-        <ThumbnailPicModal
-          onClose={() => setImgModal(false)}
-          open={imgModal}
-          setOpen={setImgModal}
-          src={'/assets/images/dashboard/technology 1.svg'}
         />
       ) : null}
     </>

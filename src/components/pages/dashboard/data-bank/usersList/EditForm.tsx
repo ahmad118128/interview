@@ -6,7 +6,7 @@ import {
   StyledAddFormMain,
   StyledAddFormWrapper,
   StyledGroupWrapper,
-} from './styled';
+} from '@/components/template/FilterContainer/styled';
 import { Box, Grid, Typography } from '@mui/material';
 import { DataBankRoute } from '@/strings';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
@@ -129,8 +129,6 @@ export default function EditForm() {
                   name="birthDate"
                   control={control}
                   label={DataBankRoute.birthDate}
-                  value={0}
-                  onChange={() => console.log('first')}
                   rules={{ required: 'Require' }}
                 />
               </Grid>

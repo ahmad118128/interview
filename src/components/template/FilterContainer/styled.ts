@@ -1,4 +1,5 @@
 import {
+  Accordion,
   AccordionDetails,
   AccordionSummary,
   Box,
@@ -22,12 +23,12 @@ export const StyledNumberOfTheTitle = styled(Typography)`
 `;
 
 export const StyledHoverIcon = styled(Box)<StyledHoverIconProps>`
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.8rem;
+  height: 2.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.25rem;
+  padding: 0.5rem;
   border-radius: 0.875rem;
   cursor: pointer;
   * {
@@ -58,27 +59,35 @@ export const StyledChip = styled(Chip)`
   }
 `;
 
+export const StyledAccardion = styled(Accordion)`
+  box-shadow: none;
+  padding: 0;
+  border-radius: 10px;
+  background: transparent;
+`;
+
 export const StyledAccordionSummary = styled(AccordionSummary)`
   padding: 0;
+  min-height: 0;
   .MuiAccordionSummary-contentGutters {
     justify-content: flex-end !important;
     margin: 0;
   }
   &[aria-expanded='true'] {
-    height: 3.75rem;
-    margin-bottom: 0;
+    margin: 0;
   }
 `;
 
 export const StyledAccordionDetails = styled(AccordionDetails)`
-  margin-top: 0.5rem;
-  margin-bottom: 0.25rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: base-line;
+  align-items: baseline;
   gap: 2rem;
+  background: ${theme.palette.grey[50]};
+  border: 1px solid ${theme.palette.grey[200]};
+  border-radius: 0.625rem;
 `;
 
 export const StyledIconsContainer = styled(Box)`
@@ -96,6 +105,7 @@ export const StyledAddFormWrapper = styled(Box)`
   border: 1px solid ${theme.palette.grey[300]};
   background: ${theme.palette.grey[50]};
   padding: 0;
+  min-height: 99.5%;
 `;
 
 export const StyledAddFormHeader = styled(Box)`
@@ -142,4 +152,26 @@ export const StyledGroupWrapper = styled(Box)`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+`;
+
+export const InnerAccardionSummary = styled(Box)`
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+`;
+
+export const IconsWrapper = styled(Box)`
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+`;
+
+export const TableNameWrapper = styled(Box)`
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
 `;

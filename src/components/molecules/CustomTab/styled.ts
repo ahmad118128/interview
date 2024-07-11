@@ -4,7 +4,7 @@ import { BaseTab } from '@/components/BaseComponents/BaseTab';
 
 export const CustomTab = styled(BaseTab)`
   &.normalTab {
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     .MuiTab-root {
       font-style: normal;
       font-weight: ${({ theme }) => theme.typography.h3.fontWeight};
@@ -15,7 +15,7 @@ export const CustomTab = styled(BaseTab)`
         color: ${({ theme }) => theme.palette.common.black};
       }
       &:hover {
-        color: ${({ theme }) => theme.palette.primary.dark};
+        border-bottom: 1px solid ${({ theme }) => theme.palette.primary.main};
       }
     }
     .MuiTabs-scroller {

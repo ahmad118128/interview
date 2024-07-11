@@ -4,7 +4,7 @@ export interface IRole {
 }
 
 export interface IUser {
-  id: number;
+  id?: number;
   username: string;
   email: string;
   password: string;
@@ -18,3 +18,7 @@ export interface IUsers {
   count: number;
   allPages: number;
 }
+
+export type PageParamsType = {
+  page: number;
+};

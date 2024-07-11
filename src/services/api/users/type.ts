@@ -1,10 +1,20 @@
-export interface IUsers {
+export interface IRole {
   id: number;
-  description: string;
-  matchCount: number;
+  name: string;
 }
 
 export interface IUser {
-  description: string;
-  matchCount: number;
+  id: number;
+  username: string;
+  email: string;
+  password: string;
+  createdAt: string;
+  updatedAt: string;
+  roles: IRole[];
+}
+
+export interface IUsers {
+  data: IUser[];
+  count: number;
+  allPages: number;
 }

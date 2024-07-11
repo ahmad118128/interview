@@ -11,7 +11,6 @@ export const StyledLinearProgressBar = styled(
   boxShadow: '0px 2px 6px 0px rgba(0, 0, 0, 0.2) inset',
   transform: 'scaleX(-1)',
   '& .MuiLinearProgress-bar': {
-    width: 12,
     height: 12,
     top: 2,
     left: 6,

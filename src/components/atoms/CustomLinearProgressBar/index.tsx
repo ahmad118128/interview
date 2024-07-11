@@ -1,6 +1,5 @@
 import { Box } from '@mui/material';
 import { StyledLinearProgressBar } from './styled';
-import { useState } from 'react';
 
 export default function CustomLinearProgressBar() {
   return (

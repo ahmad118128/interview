@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeProvider } from '@emotion/react';
 import theme from '@/theme';
 import CustomSnackbar from '.';
+import { Box } from '@mui/material';
 
 const meta: Meta<typeof CustomSnackbar> = {
   title: 'atoms/CustomSnackbar',
@@ -23,7 +24,11 @@ const meta: Meta<typeof CustomSnackbar> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 export const Erro: Story = {
-  render: (args) => <CustomSnackbar {...args} />,
+  render: (args) => (
+    <Box paddingBlock="1rem">
+      <CustomSnackbar {...args} />
+    </Box>
+  ),
   args: {
     status: 'error',
     message: 'حداقل یک ایتم را انتخاب کنید',
@@ -37,7 +42,11 @@ export const Erro: Story = {
   },
 };
 export const Success: Story = {
-  render: (args) => <CustomSnackbar {...args} />,
+  render: (args) => (
+    <Box paddingBlock="1rem">
+      <CustomSnackbar {...args} />
+    </Box>
+  ),
   args: { status: 'success', message: 'پیام موفقیت' },
   parameters: {
     docs: {
@@ -49,7 +58,11 @@ export const Success: Story = {
   },
 };
 export const Info: Story = {
-  render: (args) => <CustomSnackbar {...args} />,
+  render: (args) => (
+    <Box paddingBlock="1rem">
+      <CustomSnackbar {...args} />
+    </Box>
+  ),
   args: { status: 'info', message: 'پیام اطلاعات' },
   parameters: {
     docs: {
@@ -60,7 +73,11 @@ export const Info: Story = {
   },
 };
 export const Warning: Story = {
-  render: (args) => <CustomSnackbar {...args} />,
+  render: (args) => (
+    <Box paddingBlock="1rem">
+      <CustomSnackbar {...args} />
+    </Box>
+  ),
   args: { status: 'warning', message: 'پیام احتیاط' },
   parameters: {
     docs: {

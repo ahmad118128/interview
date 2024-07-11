@@ -1,3 +1,3 @@
 export interface IPerson {
-  id: number;
+  id?: number;
 }

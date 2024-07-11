@@ -129,6 +129,8 @@ export default function GroupList({ modal, setModal }: any) {
         tableHeads={tableHeadsgroup}
         data={dataBankMockgrous}
         path={'/addGroup'}
+        collapseId1="groupName"
+        collapseId2="description"
       />
     </>
   );

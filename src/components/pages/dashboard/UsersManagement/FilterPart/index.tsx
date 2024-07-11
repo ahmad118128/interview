@@ -125,6 +125,8 @@ export function FilterPart({ setModal, modal }: any) {
         tableHeads={tableHeadsUser}
         data={usersMock}
         path={'/add'}
+        collapseId1="lastName"
+        collapseId2="nationalId"
       />
     </>
   );

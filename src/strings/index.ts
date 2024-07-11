@@ -350,6 +350,8 @@ export const generalStr = {
   transientPeople: 'افراد عبوری',
   waitinglists: 'تعداد لیست انتظار',
   numberClients: 'تعداد کلاینت‌ها',
+  credentialsSignInError: 'نام‌کاربری یا رمزعبور نادرست است.',
+  defaultErrorMessage: 'مشکلی رخ داده است.',
 };
 
 export const registrationStr = {

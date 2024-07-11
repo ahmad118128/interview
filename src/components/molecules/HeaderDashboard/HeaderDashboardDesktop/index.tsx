@@ -5,6 +5,7 @@ import { ActionBar, UsernameBox } from './styled';
 import HeaderButton from '../HeaderButton';
 import { DesktopActions } from './constants';
 import { registrationStr } from '@/strings';
+import { logout } from '@/services/api/auth/logOut';
 
 export default function HeaderDashboardDesktop() {
   return (
@@ -25,10 +26,7 @@ export default function HeaderDashboardDesktop() {
         <Icon width={24} icon={'lets-icons:user-fill'} />
         <Typography variant="body1">{registrationStr.username}</Typography>
 
-        <HeaderButton
-          tooltipTitle="خروج"
-          clickHandler={() => console.log('exit')}
-        >
+        <HeaderButton tooltipTitle="خروج" clickHandler={logout}>
           <Icon width={24} icon={'ion:exit'} />
         </HeaderButton>
       </UsernameBox>

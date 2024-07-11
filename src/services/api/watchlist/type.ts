@@ -7,7 +7,7 @@ interface AllWatchlistApiResponseData {
 }
 
 export interface AllWatchListResponse {
-  data: AllWatchlistApiResponseData;
-  count: number;
-  allPages: number;
+  content: AllWatchlistApiResponseData;
+  totalElements: number;
+  totalPages: number;
 }

@@ -1,25 +1,24 @@
 'use client';
 
 import { useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { CustomTab } from '@/components/molecules/CustomTab/styled';
 import { DataBankRoute, SettingRoute } from '@/strings';
 import { Typography } from '@mui/material';
-import CustomModal from '@/components/organisms/Modal/CustomModal';
 import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
-import { SocialSettingCp } from '@/components/pages/dashboard/setting/SocialSettingCp';
-import { FaceCP } from '@/components/pages/dashboard/setting/FaceCP';
+
+import { DeleteModal } from '@/components/organisms/Modal/DeleteModal.tsx';
 
 import { IModalState } from '../DataBank/type';
-import { BackupCP } from '@/components/pages/dashboard/setting/BackupCp';
-import { ClientCp } from '@/components/pages/dashboard/setting/ClientCp';
+import { Backup } from '@/components/pages/dashboard/setting/Backup';
+import { Client } from '@/components/pages/dashboard/setting/Client';
+import { Face } from '@/components/pages/dashboard/setting/Face';
+import { SocialSetting } from '@/components/pages/dashboard/setting/SocialSetting';
+import CustomModal from '@/components/organisms/Modal/CustomModal';
 
 export function SettingTemplate() {
-  const [modalData, setModalData] = useState<IModalState>({
-    state: false,
-  });
-  const [imgModal, setImgModal] = useState(false);
+  const [frameModal, setFrameModal] = useState(false);
 
   const router = useRouter();
   const currentPath = usePathname();
@@ -27,52 +26,41 @@ export function SettingTemplate() {
   const tabs = [
     {
       id: 0,
-      label: <Typography>{SettingRoute.face}</Typography>,
+      label: SettingRoute.face,
       disableTabRipple: false,
-      tabPanel: <FaceCP />,
+      tabPanel: <Face />,
     },
     {
       id: 1,
-      label: <Typography>{SettingRoute.client}</Typography>,
+      label: SettingRoute.client,
       disableTabRipple: false,
-      tabPanel: <ClientCp modal={modalData} setModal={setModalData} />,
+      tabPanel: <Client modal={frameModal} setModal={setFrameModal} />,
     },
     {
       id: 2,
-      label: <Typography>{SettingRoute.publicSetting}</Typography>,
+      label: SettingRoute.publicSetting,
       disableTabRipple: false,
-      tabPanel: <SocialSettingCp />,
+      tabPanel: <SocialSetting />,
     },
     {
       id: 3,
-      label: <Typography>{SettingRoute.backup}</Typography>,
+      label: SettingRoute.backup,
       disableTabRipple: false,
-      tabPanel: <BackupCP />,
+      tabPanel: <Backup />,
     },
   ];
-
+  // const activeId = Number(searchParams.get('index')) ?? 0;
   return (
     <>
-      <CustomTab data={tabs} type={'normalTab'}></CustomTab>
+      <CustomTab data={tabs} type={'normalTab'} tabKey={'index'} />
 
-      {modalData.state ? (
+      {frameModal ? (
         <CustomModal
-          id={modalData.id}
-          open={modalData.state}
-          activeButtonHandler={() => console.log(modalData.id)}
+          onClose={() => setFrameModal(false)}
+          open={frameModal}
+          setOpen={setFrameModal}
+          title={SettingRoute.canFramesBeRecorded}
           buttons
-          errorTitle={DataBankRoute.deleteModalRedText}
-          title={DataBankRoute.deleteModalBlackText}
-          handleClose={() => setModalData({ state: false })}
-        ></CustomModal>
-      ) : null}
-
-      {imgModal ? (
-        <ThumbnailPicModal
-          handleClose={() => setImgModal(false)}
-          open={imgModal}
-          setOpen={setImgModal}
-          src={'/assets/images/dashboard/technology 1.svg'}
         />
       ) : null}
     </>

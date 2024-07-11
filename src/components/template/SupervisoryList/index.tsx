@@ -5,8 +5,8 @@ import { useState } from 'react';
 import { CustomTab } from '@/components/molecules/CustomTab/styled';
 import { DataBankRoute } from '@/strings';
 import { Typography } from '@mui/material';
-import CustomModal from '@/components/organisms/Modal/CustomModal';
 import { SuperVisoryList } from '@/components/pages/dashboard/supervisory-list';
+import { DeleteModal } from '@/components/organisms/Modal/DeleteModal.tsx';
 
 import { IModalState } from '../DataBank/type';
 
@@ -18,7 +18,7 @@ export function SupervisoryListTemplate() {
   const tabs = [
     {
       id: 0,
-      label: <Typography>{DataBankRoute.supervisoryList}</Typography>,
+      label: DataBankRoute.supervisoryList,
       disableTabRipple: false,
       tabPanel: <SuperVisoryList modal={modalData} setModal={setModalData} />,
     },
@@ -26,18 +26,17 @@ export function SupervisoryListTemplate() {
 
   return (
     <>
-      <CustomTab data={tabs} type={'normalTab'}></CustomTab>
+      <CustomTab data={tabs} type={'normalTab'} tabKey="index"></CustomTab>
 
       {modalData.state ? (
-        <CustomModal
+        <DeleteModal
           id={modalData.id}
           open={modalData.state}
-          activeButtonHandler={() => console.log(modalData.id)}
+          onSubmit={() => console.log(modalData.id)}
           buttons
-          errorTitle={DataBankRoute.deleteModalRedText}
           title={DataBankRoute.deleteModalBlackText}
-          handleClose={() => setModalData({ state: false })}
-        ></CustomModal>
+          onClose={() => setModalData({ state: false })}
+        ></DeleteModal>
       ) : null}
     </>
   );

@@ -3,7 +3,7 @@ import { usePathname, useRouter } from 'next/navigation';
 
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
-import { commonWords } from '@/strings';
+import { DataBankRoute, commonWords } from '@/strings';
 import { FieldValues, useForm } from 'react-hook-form';
 import { TableCell } from '@mui/material';
 import { Icon } from '@iconify/react/dist/iconify.js';
@@ -14,7 +14,8 @@ import TableWithFab from '@/components/template/TableWithFab';
 import { supervisitoryListHeader, supervisitoryListMock } from './constants';
 import { initFilter } from '../image-recognition/constants';
 import { UsersFilterProps } from '../image-recognition/types';
-import { FilterContainer } from './FilterContainer';
+import { FilterContainer } from '@/components/template/FilterContainer';
+import { FilterForm } from './FilterForm';
 
 export function SuperVisoryList({ setModal, modal }: any) {
   const [collapse, setCollapse] = useState(false);
@@ -23,6 +24,7 @@ export function SuperVisoryList({ setModal, modal }: any) {
   >([]);
   const [filter, setFilter] = useState(initFilter);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [search, setSearch] = useState<boolean>(false);
 
   const router = useRouter();
   const currentPath = usePathname();
@@ -50,8 +52,8 @@ export function SuperVisoryList({ setModal, modal }: any) {
         setCollapse((prev) => !prev);
         break;
 
-      case EFilterTableNameIcon.REFRESH:
-        // serviceCall();
+      case EFilterTableNameIcon.SEARCH:
+        setSearch(true);
         break;
 
       default:
@@ -121,14 +123,18 @@ export function SuperVisoryList({ setModal, modal }: any) {
     <>
       <form onSubmit={handleSubmit(submitHandler)}>
         <FilterContainer
-          control={control}
-          reset={reset}
+          chipNumber={22}
+          tableName={DataBankRoute.supervisoryList}
           collapse={collapse}
           onHandleIconClick={handleIconClick}
           chips={filtersChips}
           handleFiltersChips={handleFiltersChips}
           refreshLoading={isLoading}
-        />
+          search={search}
+          setSearch={setSearch}
+        >
+          <FilterForm control={control} reset={reset} />
+        </FilterContainer>
       </form>
       <TableWithFab
         tableHeads={tableHeadsUser}

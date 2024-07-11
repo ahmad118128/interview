@@ -23,7 +23,7 @@ export const rightIcons: IconFilterNameTable[] = [
     ),
     title: tablePhrases.manageColumns,
     disabled: true,
-    name: EFilterTableNameIcon.COLUMNS,
+    name: EFilterTableNameIcon.FILTER,
   },
   {
     img: (

@@ -7,6 +7,7 @@ export interface IStyledCheckbox {
 }
 
 export interface IControledCheckboxProps {
+  label?: string;
   name: string;
   disabled?: boolean;
   checked?: boolean;

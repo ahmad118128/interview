@@ -30,18 +30,22 @@ export default function DashboardPage() {
       <Grid item xs={12} md={6} lg={3}>
         <DashboardChartCard title={generalStr.clientState}>
           <DoughnutChart
+            legend={true}
             chartLabel="Clinet"
             labels={['نامشخص', 'شناسایی شده']}
             data={[120, 80]}
+            showTooltip
           />
         </DashboardChartCard>
       </Grid>
       <Grid item xs={12} md={6} lg={3}>
         <DashboardChartCard title={generalStr.gender}>
           <DoughnutChart
+            legend={true}
             chartLabel="Data"
             labels={['زن', 'مرد']}
             data={[120, 80]}
+            showTooltip
           />
         </DashboardChartCard>
       </Grid>

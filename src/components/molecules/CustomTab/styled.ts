@@ -4,18 +4,18 @@ import { BaseTab } from '@/components/BaseComponents/BaseTab';
 
 export const CustomTab = styled(BaseTab)`
   &.normalTab {
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     .MuiTab-root {
       font-style: normal;
-      font-weight: ${({ theme }) => theme.typography.subtitle1.fontWeight};
-      font-size: ${({ theme }) => theme.typography.subtitle1.fontSize};
-      line-height: ${({ theme }) => theme.typography.subtitle1.lineHeight};
+      font-weight: ${({ theme }) => theme.typography.h3.fontWeight};
+      font-size: ${({ theme }) => theme.typography.h3.fontSize};
+      line-height: ${({ theme }) => theme.typography.h3.lineHeight};
       transition: color ease-in 0.2s;
       &[aria-selected='false'] {
         color: ${({ theme }) => theme.palette.common.black};
       }
       &:hover {
-        color: ${({ theme }) => theme.palette.primary.dark};
+        border-bottom: 1px solid ${({ theme }) => theme.palette.primary.main};
       }
     }
     .MuiTabs-scroller {
@@ -86,3 +86,4 @@ export const CustomTab = styled(BaseTab)`
     }
   }
 `;
+export default CustomTab;

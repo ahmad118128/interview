@@ -1,51 +1,60 @@
-import { Box, Grid, Typography } from '@mui/material';
-import { StyledImage, StyledWrapperModal } from './styled';
-import { reportPicModalProps } from './type';
+import { Box, Typography } from '@mui/material';
 import { ReportModal } from '@/strings';
 
-export default function ReportPictureBox({
-  src,
-  name,
-  sex,
-  age,
-  date,
-  arrow,
-  birthCity,
-  agreementPercent,
-}: reportPicModalProps) {
+import {
+  StyledImage,
+  StyledInfoData,
+  StyledInfoTitles,
+  StyledInfoWrapper,
+  StyledWrapperImage,
+  StyledWrapperModal,
+} from './styled';
+import { reportPicModalProps } from './type';
+
+export default function ReportPictureBox({ personInfo }: reportPicModalProps) {
+  const { src, name, sex, age, date, arrow, birthCity, agreementPercent } =
+    personInfo;
   return (
     <StyledWrapperModal>
-      <StyledImage alt={src} src={src} width={180} height={180} />
-      <Grid container rowSpacing={2} columnSpacing={4}>
-        <Grid item gap={4} xs={6} display="flex" width="100%">
-          <Typography>{ReportModal.name}</Typography>
-          <Typography>{name}</Typography>
-        </Grid>
-        <Grid item gap={4} xs={6} display="flex" width="100%">
-          <Typography>{ReportModal.arow}</Typography>
-          <Typography>{arrow}</Typography>
-        </Grid>
-        <Grid item gap={4} xs={6} display="flex" width="100%">
-          <Typography>{ReportModal.sex}</Typography>
-          <Typography>{sex}</Typography>
-        </Grid>
-        <Grid item gap={4} xs={6} display="flex" width="100%">
-          <Typography>{ReportModal.bithCity}</Typography>
-          <Typography>{birthCity}</Typography>
-        </Grid>
-        <Grid item gap={4} xs={6} display="flex" width="100%">
-          <Typography>{ReportModal.age}</Typography>
-          <Typography>{age}</Typography>
-        </Grid>
-        <Grid item gap={4} xs={6} display="flex" width="100%">
-          <Typography>{ReportModal.agreementPercent}</Typography>
-          <Typography>{agreementPercent}</Typography>
-        </Grid>
-        <Grid item gap={4} xs={6} display="flex" width="100%">
-          <Typography>{ReportModal.date}</Typography>
-          <Typography>{date}</Typography>
-        </Grid>
-      </Grid>
+      <StyledWrapperImage>
+        <StyledImage alt={src} src={src} objectFit="cover" fill />
+      </StyledWrapperImage>
+
+      <StyledInfoWrapper>
+        <StyledInfoTitles>
+          <Typography variant="h4">{ReportModal.arow}</Typography>
+          <Typography variant="h4">{ReportModal.name}</Typography>
+          <Typography variant="h4">{ReportModal.bithCity}</Typography>
+          <Typography variant="h4">{ReportModal.sex}</Typography>
+          <Typography variant="h4">{ReportModal.agreementPercent}</Typography>
+          <Typography variant="h4">{ReportModal.age}</Typography>
+          <Typography variant="h4">{ReportModal.date}</Typography>
+        </StyledInfoTitles>
+
+        <StyledInfoData>
+          <Typography variant="body1" sx={{ with: '100%' }}>
+            {arrow}
+          </Typography>
+          <Typography variant="body1" sx={{ with: '100%' }}>
+            {name}
+          </Typography>
+          <Typography variant="body1" sx={{ with: '100%' }}>
+            {birthCity}
+          </Typography>
+          <Typography variant="body1" sx={{ with: '100%' }}>
+            {sex}
+          </Typography>
+          <Typography variant="body1" sx={{ with: '100%' }}>
+            {agreementPercent}
+          </Typography>
+          <Typography variant="body1" sx={{ with: '100%' }}>
+            {age}
+          </Typography>
+          <Typography variant="body1" sx={{ with: '100%' }}>
+            {date}
+          </Typography>
+        </StyledInfoData>
+      </StyledInfoWrapper>
     </StyledWrapperModal>
   );
 }

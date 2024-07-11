@@ -2,6 +2,9 @@
 
 export const generalStr = {
   emptyState: 'تاکنون اطلاعاتی ثبت نشده است.',
+  backToDashboard: 'بازگشت به داشبورد',
+  RemovedRenamedOrUnavailablePage:
+    'صفحه ای که به دنبال آن می گردید ممکن است حذف شده باشد ، نام آن تغییر کرده باشد و یا موقتا در دسترس نباشد.',
   matchCount: 'تعداد تطبیق',
   creditFrom: 'مقدار اعتبار از',
   creditTo: 'مقدار اعتبار تا',
@@ -358,6 +361,7 @@ export const registrationStr = {
   username: 'نام کاربری',
   email: 'ایمیل',
   password: 'گذرواژه',
+  repeatRoobinPassword: 'تکرار رمز عبور',
   roobinPassword: 'رمز عبور',
   newPass: 'گذرواژه جدید',
   ReNewPass: 'تکرار گذرواژه جدید',
@@ -1220,10 +1224,12 @@ export const ReportModal = {
   agreementPercent: 'درصد تطابق',
   date: 'زمان ثبت',
   results: 'نتایج شناسایی',
+  uploadedImg: 'تصویر آپلود شده',
 };
 
 export const DataBankRoute = {
   submit: 'ثبت',
+  cancel: 'انصراف',
   addGroupFormTitle: 'افزودن گروه',
   groupInformation: 'اطلاعات گروه',
   add: 'افزودن',
@@ -1238,7 +1244,7 @@ export const DataBankRoute = {
   fatherName: 'نام پدر',
   lastName: 'نام‌خانوادگی',
   firstName: 'نام',
-  uploadImage: 'بازگذاری تصاویر',
+  uploadImage: 'بارگذاری تصاویر',
   addGropModalTitle: 'افزودن گروه',
   generalKnowledge: 'اطلاعات عمومی',
   information: 'توضیحات',
@@ -1262,6 +1268,12 @@ export const DataBankRoute = {
   earase: 'پاک‌سازی',
   accurancyStart: 'آستانه تطابق',
   accurancyNumber: 'تعداد تطابق',
+  groupRegister: 'ثبت نام گروهی',
+  uploadFile: 'بارگذاری فایل',
+  excelFile: 'فایل اکسل',
+  registerType: 'نوع ثبت ',
+  fileUsage: 'نحوه استفاده از فایل',
+  imageDirectory: 'مسیر دایرکتوری تصاویر',
 };
 
 export const SupervisitoryListRoute = {
@@ -1316,6 +1328,8 @@ export const SettingRoute = {
   recordFrameStatus: 'وضعیت ثبت فریم',
   recordLogsPath: 'مسیر ثبت Logs',
   recordDatabasePath: 'مسیر ثبت پایگاه داده',
+  canFramesBeRecorded: 'فریم ‌ها ثبت شوند؟',
+  editClient: 'ویرایش کلاینت',
 };
 
 export const TrafficAnalysisRoute = {
@@ -1327,4 +1341,67 @@ export const TrafficAnalysisRoute = {
   gateName: 'نام گیت',
   startPassingDateAndTime: 'تاریخ و زمان عبور از',
   endPassingDateAndTime: 'تاریخ و زمان عبور تا',
+};
+
+export const Error500PageStr = {
+  problemOccurred: 'مشکلی رخ داده است.',
+  solveTheProblem: 'جهت رفع مشکل موارد زیر را بررسی نمایید:',
+  problemSolution1: 'از اتصال خود به اینترنت اطمینان حاصل نمایید.',
+  problemSolution2: 'صفحه را مجدداً بارگذاری نمایید.',
+  problemSolution3: 'چند دقیقه بعد مجدداً تلاش نمایید.',
+  bottomTitle: 'بازگشت به دشبورد',
+};
+1;
+
+export const ReportRoute = {
+  gateName: 'نام گیت',
+  orientation: 'جهت گیری',
+  minimumSimilarityPercentage: 'حداقل درصد تشابه ',
+  matchingType: 'نوع تطبیق',
+  fromAge: 'از سن',
+  untilAge: 'تا سن ',
+  gender: 'جنسیت',
+  registrationTimeOf: 'زمان ثبت از',
+  registrationTimeUpTo: 'زمان ثبت تا',
+  directionOfGate: 'جهت گیت',
+  registrationTime: 'زمان ثبت',
+  age: 'سن',
+  matchCount: 'تعداد تطبیق',
+  action: 'عملیات',
+  transientPeople: 'افراد عبوری',
+  trafficOfPeople: 'تردد افراد',
+
+  arrivalsAndDepartures: ' ورود و خروج',
+  ArrivalGateName: 'نام گیت ورودی',
+  ArrivalGateOrientation: 'جهت گیت ورودی',
+  ArrivalTime: 'زمان ورود',
+  ExitGateName: 'نام گیت خروجی',
+  ExitGateOrientation: 'جهت گیت خروجی',
+  ExitTime: 'زمان خروج',
+  MatchPercentage: 'درصد تطابق',
+  TimeOf: ' تاریخ و زمان عبور از',
+  TimeTo: ' تاریخ و زمان عبور تا',
+};
+
+export const UsersManagementRoute = {
+  usersManagement: 'مدیریت کاربران',
+  users: 'کاربران',
+  accessingPanelState: 'سطح دسترسی پنل',
+  addPerson: 'افزودن فرد',
+  editPerson: 'ویرایش فرد',
+  deletePerson: 'حذف فرد',
+  deleteGroup: 'حذف گروه',
+  addList: 'افزودن لیست',
+  editList: 'ویرایش لیست',
+  deleteList: 'حذف لیست',
+  passingPeopleImageRecognition: 'شناسایی تصویر افرادعبوری',
+  registeredPeopleImageRecognition: 'شناسایی تصویر افرادثبت نامی',
+  reports: 'گزارش‌ها',
+  passingPeopleReport: 'گزارش افراد عبوری',
+  peoplesTrafficReport: 'گزارش تردد افراد',
+  entryAndExitReport: 'گزارش ورود و خروج',
+  addStaff: 'افزودن پرسنل',
+  editStaff: 'ویرایش پرسنل',
+  deleteStaff: 'حذف پرسنل',
+  databaseSetting: 'تنظیمات پایگاه داده',
 };

@@ -5,7 +5,7 @@ import {
   StyledAddFormHeader,
   StyledAddFormMain,
   StyledAddFormWrapper,
-} from '../usersList/styled';
+} from '@/components/template/FilterContainer/styled';
 import { Box, Grid, Typography } from '@mui/material';
 import { DataBankRoute } from '@/strings';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';

@@ -9,13 +9,12 @@ export const StyledCustomModal = styled(Box)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 1.5rem;
+  padding: 1.25rem;
 `;
 
 export const StyledDeleteButtonBox = styled(Box)`
   width: 100%;
   display: flex;
-  justify-content: flex-end;
 `;
 
 export const StyledDeleteButton = styled(Button)`
@@ -24,6 +23,7 @@ export const StyledDeleteButton = styled(Button)`
   padding: 0;
   display: block;
   min-width: auto;
+  margin-right: 0;
   :hover {
     background: transparent;
   }
@@ -34,6 +34,7 @@ export const StyledActionButtonsBox = styled(Box)`
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  margin-top: 1.25rem;
 `;
 export const StyledErrorText = styled(Typography)`
   text-align: center;
@@ -43,6 +44,6 @@ export const StyledErrorText = styled(Typography)`
 
 export const StyledTitleText = styled(Typography)`
   text-align: center;
-  margin: 1.5rem 0;
-  margin-top: 0.125rem;
+  justify-self: center;
+  margin: auto;
 `;

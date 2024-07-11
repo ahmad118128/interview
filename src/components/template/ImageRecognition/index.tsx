@@ -6,6 +6,7 @@ import {
   Box,
   FormControl,
   FormControlLabel,
+  IconButton,
   InputAdornment,
   Radio,
   RadioGroup,
@@ -20,7 +21,7 @@ import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterCon
 import { FilterIcon } from '@/components/CustomTable/shared';
 import { MobileCollapseTable } from '@/components/CustomTable/widgets';
 import { CellType } from '@/components/CustomTable/types';
-import { DataBankRoute, commonWords } from '@/strings';
+import { DataBankRoute, ReportModal, commonWords } from '@/strings';
 import theme from '@/theme';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 import {
@@ -42,6 +43,8 @@ import { IModalState } from '../DataBank/type';
 import CustomModal from '@/components/organisms/Modal/CustomModal';
 import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
 import ReportPictureModal from '@/components/organisms/Modal/ReportPictureModal';
+import { CustomFilterIcon } from '@/components/CustomTable/shared/FilterIcon/CustomFilterIcon';
+import CustomLinearProgressBar from '@/components/atoms/CustomLinearProgressBar';
 
 const CustomAccordion = styled(Accordion)({
   backgroundColor: 'transparent',
@@ -97,8 +100,7 @@ export default function ImageRecognitionTemplate() {
           setCollapse((prev) => !prev);
         }
         break;
-      case EFilterTableNameIcon.REFRESH:
-        // serviceCall();
+      case EFilterTableNameIcon.SEARCH:
         break;
       default:
         break;
@@ -114,8 +116,7 @@ export default function ImageRecognitionTemplate() {
           setCollapse2((prev) => !prev);
         }
         break;
-      case EFilterTableNameIcon.REFRESH:
-        // serviceCall();
+      case EFilterTableNameIcon.SEARCH:
         break;
       default:
         break;
@@ -129,12 +130,7 @@ export default function ImageRecognitionTemplate() {
       type: 'function',
       function: (row) => (
         <TableCell>
-          <Icon
-            icon="fluent:clipboard-text-32-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
-            style={{ marginLeft: '0.5rem' }}
+          <IconButton
             onClick={(e) =>
               setModalData({
                 ...modalData,
@@ -142,14 +138,24 @@ export default function ImageRecognitionTemplate() {
                 id: row?.id,
               })
             }
-          />
-          <Icon
-            icon="ep:picture-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
-            onClick={() => setImgModal(true)}
-          />
+          >
+            <Icon
+              icon="fluent:clipboard-text-32-filled"
+              width="24"
+              height="24"
+              color={theme.palette.primary.main}
+              style={{ marginLeft: '0.5rem' }}
+            />
+          </IconButton>
+
+          <IconButton onClick={() => setImgModal(true)}>
+            <Icon
+              icon="ep:picture-filled"
+              width="24"
+              height="24"
+              color={theme.palette.primary.main}
+            />
+          </IconButton>
         </TableCell>
       ),
     },
@@ -203,7 +209,7 @@ export default function ImageRecognitionTemplate() {
                         marginBottom: selected === 'female' ? '2rem' : 0,
                       }}
                     />
-                    <FilterIcon
+                    <CustomFilterIcon
                       onHandleIconClick={handleIconClick}
                       active={collapse}
                     />
@@ -265,7 +271,7 @@ export default function ImageRecognitionTemplate() {
                         marginBottom: selected === 'male' ? '2rem' : 0,
                       }}
                     />
-                    <FilterIcon
+                    <CustomFilterIcon
                       onHandleIconClick={handleIconClick2}
                       active={collapse2}
                     />
@@ -339,10 +345,10 @@ export default function ImageRecognitionTemplate() {
         <ReportPictureModal
           id={modalData.id ? modalData.id : 0}
           open={modalData.state}
-          activeButtonHandler={() => console.log(modalData.id)}
-          title={DataBankRoute.deleteModalBlackText}
-          handleClose={() => setModalData({ state: false })}
-          data={{
+          onSubmit={() => console.log(modalData.id)}
+          title={ReportModal.results}
+          onClose={() => setModalData({ state: false })}
+          personInfo={{
             src: '/assets/images/dashboard/technology 1.svg',
             name: 'test',
             sex: 'مرد',
@@ -357,7 +363,8 @@ export default function ImageRecognitionTemplate() {
 
       {imgModal ? (
         <ThumbnailPicModal
-          handleClose={() => setImgModal(false)}
+          onClose={() => setImgModal(false)}
+          title={ReportModal.uploadedImg}
           open={imgModal}
           setOpen={setImgModal}
           src={'/assets/images/dashboard/technology 1.svg'}

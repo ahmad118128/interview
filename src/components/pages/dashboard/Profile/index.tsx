@@ -1,11 +1,6 @@
 'use client';
 
-import {
-  DataBankRoute,
-  generalStr,
-  gpuServersString,
-  registrationStr,
-} from '@/strings';
+import { DataBankRoute, generalStr, registrationStr } from '@/strings';
 import { Box, Grid, Typography } from '@mui/material';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 import { CustomButton } from '@/components/atoms/CustomButton';
@@ -17,10 +12,12 @@ import {
   StyledAddFormWrapperProfile,
   StyledFilterChildProfile,
 } from './styled';
+import { useRouter } from 'next/navigation';
 
 export default function Profile() {
   const { control, handleSubmit } = useForm();
   const submitHadler = (data: any) => console.log(data);
+  const router = useRouter();
 
   return (
     <StyledAddFormWrapperProfile>
@@ -102,7 +99,11 @@ export default function Profile() {
               <CustomButton type="submit" variant="contained">
                 {generalStr.submit}
               </CustomButton>
-              <CustomButton type="reset" variant="outlined">
+              <CustomButton
+                type="reset"
+                variant="outlined"
+                onClick={() => router.push('/dashboard')}
+              >
                 {generalStr.refuse}
               </CustomButton>
             </Box>

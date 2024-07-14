@@ -41,7 +41,7 @@ export default function Profile() {
                 control={control}
                 name="userName"
                 fullWidth
-                label={gpuServersString.userName}
+                label={registrationStr.username}
               />
             </Grid>
 

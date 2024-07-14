@@ -158,7 +158,6 @@ export function AddFormUsers() {
                     >
                       {item.title}
                     </Typography>
-
                     <ControledCheckbox
                       control={control}
                       name={item.check1Name}
@@ -170,19 +169,19 @@ export function AddFormUsers() {
                       name={item.check2Name}
                       label={item.check2Label}
                     />
-
-                    {item.check3Label ? (
-                      <ControledCheckbox
-                        control={control}
-                        name={item.check3Name}
-                        label={item.check3Label}
-                      />
-                    ) : null}
+                    <Grid item xs={12} sx={{ display: 'flex' }}>
+                      {item.check3Label ? (
+                        <ControledCheckbox
+                          control={control}
+                          name={item.check3Name}
+                          label={item.check3Label}
+                        />
+                      ) : null}
+                    </Grid>
                   </StyledBox>
                 );
               })}
             </Grid>
-
             <Box
               sx={{
                 width: '100%',

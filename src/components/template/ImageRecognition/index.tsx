@@ -44,6 +44,7 @@ import CustomModal from '@/components/organisms/Modal/CustomModal';
 import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
 import ReportPictureModal from '@/components/organisms/Modal/ReportPictureModal';
 import { CustomFilterIcon } from '@/components/CustomTable/shared/FilterIcon/CustomFilterIcon';
+import CustomLinearProgressBar from '@/components/atoms/CustomLinearProgressBar';
 
 const CustomAccordion = styled(Accordion)({
   backgroundColor: 'transparent',

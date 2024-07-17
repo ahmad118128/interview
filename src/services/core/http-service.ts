@@ -44,11 +44,12 @@ async function apiBase<T>(
 
 async function getData<T>(
   url: string,
-  headers?: AxiosRequestHeaders
+  config?: Pick<AxiosRequestConfig, 'headers' | 'params'>
 ): Promise<T> {
   const options: AxiosRequestConfig = {
-    headers: headers,
+    headers: config?.headers,
     method: 'GET',
+    params: config?.params,
   };
   return await apiBase<T>(url, options);
 }

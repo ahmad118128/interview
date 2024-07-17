@@ -14,6 +14,7 @@ import { initFilter } from '../../image-recognition/constants';
 import FilterForm from './FilterForm';
 import { FilterContainer } from '@/components/template/FilterContainer';
 import { Child } from '@/components/CustomTable/widgets/CollapseTable/TableChild';
+import CollapseCheckboxWithFab from '@/components/template/CollapseCheckboxWithFab';
 
 export default function UsersList({ modal, setModal, setImgModal }: any) {
   const [collapse, setCollapse] = useState(false);
@@ -23,6 +24,7 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
   const [filter, setFilter] = useState(initFilter);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [search, setSearch] = useState<boolean>(false);
+  const [selectedId, setSelectedId] = useState<Array<string | number>>([]);
 
   const router = useRouter();
   const currentPath = usePathname();
@@ -135,11 +137,13 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
           </FilterContainer>
         </form>
       </FormProvider>
-      <CollapseTableWithFab
+      <CollapseCheckboxWithFab
         tableHeads={tableHeadsUser}
         data={dataBankMockUsers}
         path={'/addUser'}
         child={Child}
+        selectedId={selectedId}
+        setSelectedId={setSelectedId}
       />
     </>
   );

@@ -11,9 +11,21 @@ import { visuallyHidden } from '@mui/utils';
 import { StyledTableCell } from './styled';
 import { type EnhancedTableProps } from './types';
 import { CellType } from '../../types';
+import { StyledIconCheckboxTableCell } from '../../widgets/MobileCollapseTable/styled';
+import { CustomCheckbox } from '@/components/atoms/Checkbox';
 
 export const EnhancedTableHead = (props: EnhancedTableProps) => {
-  const { order, orderBy, onRequestSort, headCells } = props;
+  const {
+    order,
+    orderBy,
+    onRequestSort,
+    headCells,
+    HandleCheckBoxHeader,
+    allSelected,
+    selectedMode,
+    indeterminate,
+  } = props;
+
   const createSortHandler =
     (property: unknown) => (event: MouseEvent<unknown>) => {
       onRequestSort(event, property);
@@ -26,6 +38,17 @@ export const EnhancedTableHead = (props: EnhancedTableProps) => {
   return (
     <TableHead>
       <TableRow>
+        {selectedMode && (
+          <StyledIconCheckboxTableCell>
+            <CustomCheckbox
+              checked={allSelected}
+              onChange={(e) => HandleCheckBoxHeader && HandleCheckBoxHeader(e)}
+              id={`custom-header-checkbox`}
+              indeterminate={indeterminate}
+            />
+          </StyledIconCheckboxTableCell>
+        )}
+
         {filteredHeader?.map((headCell: CellType) => {
           return (
             <StyledTableCell

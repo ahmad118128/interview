@@ -11,4 +11,6 @@ export interface ICustomCheckboxProps {
   checked?: boolean;
   error?: boolean;
   onChange?: (event?: ChangeEvent<HTMLInputElement>) => void;
+  id?: string;
+  indeterminate?: any;
 }

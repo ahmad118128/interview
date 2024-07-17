@@ -10,6 +10,10 @@ export interface BaseTableProps {
   children?: any;
   handleSort?: (id: string | unknown) => void;
   emptyDataMessage?: string;
+  HandleCheckBoxHeader?: (e: any) => void;
+  allSelected?: boolean;
+  selectedMode?: boolean;
+  indeterminate?: boolean;
 }
 
 export interface EnhancedTableProps {
@@ -17,6 +21,10 @@ export interface EnhancedTableProps {
   order?: Order;
   orderBy?: unknown;
   headCells?: CellType[] | null;
+  HandleCheckBoxHeader?: (e: any) => void;
+  allSelected?: boolean;
+  selectedMode?: boolean;
+  indeterminate?: boolean;
 }
 
 export type Order = 'asc' | 'desc';

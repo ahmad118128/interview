@@ -7,10 +7,8 @@ import {
   TableRow,
 } from '@mui/material';
 
-// import { TablePagination } from '../TablePagination';
 import { TableNoResults } from '../NoResults';
 import { TableLoading } from '../Loading';
-
 import { CustomCell } from '../CustomCell';
 import { EnhancedTableHead } from './EnhancedTableHead';
 import { type BaseTableProps, type Order } from './types';
@@ -25,6 +23,10 @@ export const BaseTable = (props: BaseTableProps) => {
     pagination,
     children,
     emptyDataMessage,
+    HandleCheckBoxHeader,
+    allSelected,
+    selectedMode,
+    indeterminate,
   } = props;
   const [order, setOrder] = useState<Order>('asc');
   const [orderBy, setOrderBy] = useState<unknown>('id');
@@ -36,6 +38,7 @@ export const BaseTable = (props: BaseTableProps) => {
     setOrderBy(property);
     handleSort && handleSort(isAsc ? `-${property}` : property);
   };
+  const isSelectMode = rows?.length >= 1 ? selectedMode : false;
 
   return (
     <>
@@ -46,6 +49,10 @@ export const BaseTable = (props: BaseTableProps) => {
             orderBy={orderBy}
             onRequestSort={handleRequestSort}
             headCells={headers}
+            HandleCheckBoxHeader={HandleCheckBoxHeader}
+            allSelected={allSelected}
+            selectedMode={isSelectMode}
+            indeterminate={isSelectMode && indeterminate}
           />
           {loading ? (
             <TableLoading hedCount={headers?.length} />

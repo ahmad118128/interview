@@ -140,6 +140,8 @@ export function SuperVisoryList({ setModal, modal }: any) {
         tableHeads={tableHeadsUser}
         data={supervisitoryListMock}
         path={'/add'}
+        collapseId1="listName"
+        collapseId2="similarityPercentage"
       />
     </>
   );

@@ -160,11 +160,13 @@ export default function ImageRecognitionTemplate() {
       ),
     },
   ];
-  const pagination: CustomPaginationProps = {
-    all_page: tableData?.data?.all_page as number,
-    current: currentPage,
-    setPage: (newPage: number) => setCurrentPage(newPage),
-  };
+
+  // const pagination: CustomPaginationProps = {
+  //   all_page: tableData?.data?.all_page as number,
+  //   current: currentPage,
+  //   setPage: (newPage: number) => setCurrentPage(newPage),
+  // };
+
   return (
     <>
       <StyledContainerImageRecognition onSubmit={handleSubmit(onSubmit)}>
@@ -335,7 +337,7 @@ export default function ImageRecognitionTemplate() {
         headers={tableHeads}
         error={!tableData?.data?.results}
         mobileIdFilter={[COLLAPSE_ID, 'matchCount', 'actions']}
-        pagination={pagination}
+        // pagination={pagination}
         handleSort={(id) => {
           setOrder(id);
         }}

@@ -1,9 +1,8 @@
 import { CellType } from '@/components/CustomTable/types';
 
-export type TableWithFabProps<T> = {
+export type CollapseTableWithFabProps<T> = {
   tableHeads: CellType[];
   data: T;
   path: string;
-  collapseId1: string;
-  collapseId2: string;
+  child: any;
 };

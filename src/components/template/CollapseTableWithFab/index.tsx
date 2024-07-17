@@ -2,25 +2,22 @@
 
 import { Box } from '@mui/material';
 import { useState } from 'react';
-import { MobileCollapseTable } from '@/components/CustomTable/widgets';
-import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 import {
   IError,
   ISuccess,
 } from '@/components/pages/dashboard/image-recognition/types';
-import { COLLAPSE_ID } from '@/components/pages/dashboard/image-recognition/constants';
 import { CustomFabButton } from '@/components/atoms/CustomFabButton';
 import { EFabMode } from '@/components/atoms/CustomFabButton/type';
 import { useRouter, usePathname } from 'next/navigation';
-import { TableWithFabProps } from './type';
+import { CollapseTableWithFabProps } from './type';
+import { CollapseTable } from '@/components/CustomTable/widgets/CollapseTable';
 
-export default function TableWithFab<T>({
+export default function CollapseTableWithFab<T>({
   tableHeads,
   data,
   path,
-  collapseId1,
-  collapseId2,
-}: TableWithFabProps<T>) {
+  child,
+}: CollapseTableWithFabProps<T>) {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [tableData, setTableData] = useState<null | ISuccess | IError>(null);
   const [order, setOrder] = useState<string | unknown>('');
@@ -32,14 +29,14 @@ export default function TableWithFab<T>({
 
   return (
     <Box sx={{ position: 'relative' }}>
-      <MobileCollapseTable
+      <CollapseTable
         rows={data}
         headers={tableHeads}
         error={!tableData?.data?.results}
-        mobileIdFilter={[COLLAPSE_ID, collapseId1, collapseId2]}
         handleSort={(id) => {
           setOrder(id);
         }}
+        collapseChildren={child}
       />
       <CustomFabButton
         onClick={() => router.push(newRoute)}

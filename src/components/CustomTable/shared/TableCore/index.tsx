@@ -7,7 +7,7 @@ import {
   TableRow,
 } from '@mui/material';
 
-import { TablePagination } from '../TablePagination';
+// import { TablePagination } from '../TablePagination';
 import { TableNoResults } from '../NoResults';
 import { TableLoading } from '../Loading';
 
@@ -92,7 +92,7 @@ export const BaseTable = (props: BaseTableProps) => {
           )}
         </Table>
       </TableContainer>
-      <TablePagination {...pagination} />
+      {/* {pagination ? <TablePagination {...pagination} /> : null} */}
     </>
   );
 };

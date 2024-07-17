@@ -65,11 +65,6 @@ export default function ArrivalDepartures() {
       return prevFiltersChips.filter((chip) => chip.key !== filterKey);
     });
   };
-  const pagination: CustomPaginationProps = {
-    all_page: tableData?.data?.all_page as number,
-    current: currentPage,
-    setPage: (newPage: number) => setCurrentPage(newPage),
-  };
 
   const tableHeads: CellType[] = [
     ...ArrivalsAndDeparturesHeader,
@@ -105,7 +100,6 @@ export default function ArrivalDepartures() {
         headers={tableHeads}
         error={!tableData?.data?.results}
         mobileIdFilter={[COLLAPSE_ID, 'ArrivalGateName', 'MatchPercentage']}
-        pagination={pagination}
         handleSort={(id) => {
           setOrder(id);
         }}

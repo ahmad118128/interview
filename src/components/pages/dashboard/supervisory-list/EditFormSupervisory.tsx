@@ -47,12 +47,6 @@ export function EditFormSupervisory() {
     router.back();
   };
 
-  const pagination: CustomPaginationProps = {
-    all_page: tableData?.data?.all_page as number,
-    current: currentPage,
-    setPage: (newPage: number) => setCurrentPage(newPage),
-  };
-
   return (
     <StyledAddFormWrapper>
       <StyledAddFormHeader>
@@ -114,7 +108,6 @@ export function EditFormSupervisory() {
                 headers={supervisitoryListMembersHeader}
                 error={!tableData?.data?.results}
                 mobileIdFilter={[COLLAPSE_ID, 'fullName', 'nationalId']}
-                pagination={pagination}
                 handleSort={(id) => {
                   setOrder(id);
                 }}

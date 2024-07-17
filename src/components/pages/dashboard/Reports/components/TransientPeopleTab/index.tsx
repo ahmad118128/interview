@@ -66,11 +66,11 @@ export default function TransientPeople() {
       return prevFiltersChips.filter((chip) => chip.key !== filterKey);
     });
   };
-  const pagination: CustomPaginationProps = {
-    all_page: tableData?.data?.all_page as number,
-    current: currentPage,
-    setPage: (newPage: number) => setCurrentPage(newPage),
-  };
+  // const pagination: CustomPaginationProps = {
+  //   all_page: tableData?.data?.all_page as number,
+  //   current: currentPage,
+  //   setPage: (newPage: number) => setCurrentPage(newPage),
+  // };
 
   const tableHeads: CellType[] = [
     ...TransientPeopleHeader,
@@ -107,7 +107,7 @@ export default function TransientPeople() {
         headers={tableHeads}
         error={!tableData?.data?.results}
         mobileIdFilter={[COLLAPSE_ID, 'gateName', 'matchCount']}
-        pagination={pagination}
+        // pagination={pagination}
         handleSort={(id) => {
           setOrder(id);
         }}

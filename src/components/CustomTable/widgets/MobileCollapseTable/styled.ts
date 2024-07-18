@@ -54,7 +54,9 @@ export const StyledTableWrapper = styled(Box)<StyledTableRowType>`
       :nth-child(odd) {
         height: 3rem !important;
       }
-      height: 3rem !important;
+      :nth-child(even) {
+        height: auto !important;
+      }
       &:hover {
         background-color: ${({ theme }) => theme.palette.grey[100]};
 

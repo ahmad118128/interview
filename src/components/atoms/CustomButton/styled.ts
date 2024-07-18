@@ -82,10 +82,10 @@ export const StyledButton = styled(MUIButton)<ButtonProps>(({ theme }) => ({
 
 export const StyledIconButton = styled(IconButton)(({ theme }) => ({
   borderRadius: '6px',
-  padding: '0.5rem',
-  border: `1px solid ${theme.palette.primary.main}`,
-  width: '40px',
-  height: '40px',
+  padding: '0.25rem',
+  width: '32px',
+  height: '32px',
+  cursor: 'pointer',
 
   '& .iconify': {
     color: theme.palette.primary.main,
@@ -94,7 +94,6 @@ export const StyledIconButton = styled(IconButton)(({ theme }) => ({
   '&.Mui-disabled': {
     '& .iconify': {
       color: theme.palette.grey[300],
-      opacity: 0.5,
     },
   },
 
@@ -106,12 +105,16 @@ export const StyledIconButton = styled(IconButton)(({ theme }) => ({
     },
   },
 
-  '&:selected': {
-    backgroundColor: 'red',
+  '&:focus': {
+    backgroundColor: theme.palette.grey[100],
+    border: `1px solid ${theme.palette.primary.light}`,
+    '& .iconify': {
+      color: theme.palette.primary.light,
+    },
   },
 
   '&.active': {
-    backgroundColor: theme.palette.grey[100],
+    backgroundColor: 'red',
     outline: `1px solid ${theme.palette.primary.light}`,
     '& .iconify': {
       color: theme.palette.primary.light,
@@ -130,5 +133,104 @@ export const StyledIconButton = styled(IconButton)(({ theme }) => ({
     padding: '0.5rem',
     minWidth: '1.25rem',
     minHeight: '1.25rem',
+  },
+
+  '&.tabButton': {
+    borderRadius: '6px',
+    padding: '0.5rem',
+    border: `1px solid ${theme.palette.primary.main}`,
+    width: '40px',
+    height: '40px',
+    cursor: 'pointer',
+
+    '& .iconify': {
+      color: theme.palette.primary.main,
+    },
+
+    '&.Mui-disabled': {
+      '& .iconify': {
+        color: theme.palette.grey[300],
+      },
+    },
+
+    '&:hover': {
+      backgroundColor: theme.palette.grey[100],
+      border: `1px solid ${theme.palette.primary.light}`,
+      '& .iconify': {
+        color: theme.palette.primary.light,
+      },
+    },
+
+    '&:focus': {
+      backgroundColor: theme.palette.grey[100],
+      border: `1px solid ${theme.palette.primary.light}`,
+      '& .iconify': {
+        color: theme.palette.primary.light,
+      },
+    },
+
+    '&.active': {
+      outline: `1px solid ${theme.palette.primary.light}`,
+      '& .iconify': {
+        color: theme.palette.primary.light,
+      },
+    },
+
+    '&.MuiIconButton-sizeLarge': {
+      padding: '0.5rem',
+    },
+
+    '&.MuiIconButton-sizeMedium': {
+      padding: '0.25rem',
+    },
+
+    '&.MuiIconButton-sizeSmall': {
+      padding: '0.5rem',
+      minWidth: '1.25rem',
+      minHeight: '1.25rem',
+    },
+  },
+
+  '&.closeButton': {
+    width: '1.25rem',
+    height: '1.25rem',
+
+    '& .iconify': {
+      color: theme.palette.primary.main,
+    },
+
+    '&.Mui-disabled': {
+      '& .iconify': {
+        color: theme.palette.grey[300],
+      },
+    },
+
+    '&:hover': {
+      border: 'none',
+      background: 'transparent',
+      '& .iconify': {
+        color: theme.palette.primary.light,
+      },
+    },
+
+    '&:focus': {
+      '& .iconify': {
+        color: theme.palette.primary.light,
+      },
+    },
+
+    '&.MuiIconButton-sizeLarge': {
+      padding: '0',
+    },
+
+    '&.MuiIconButton-sizeMedium': {
+      padding: '0',
+    },
+
+    '&.MuiIconButton-sizeSmall': {
+      padding: '0',
+      width: '0.375rem',
+      height: '0.375rem',
+    },
   },
 }));

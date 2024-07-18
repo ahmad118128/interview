@@ -198,10 +198,7 @@ export default function EditForm() {
                       options={[]}
                     />
                   </Box>
-                  <IconButton
-                    iconName="fluent:people-add-24-filled"
-                    height={24}
-                  />
+                  <IconButton iconName="fluent:people-add-24-filled" />
                 </StyledGroupWrapper>
               </Grid>
               <Grid item xs={12} md={4}>

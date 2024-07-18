@@ -1,4 +1,5 @@
 import { ReactElement, ReactNode } from 'react';
+import { FiltersChips } from '../../types';
 
 export type HeaderMode = EFilterModeIcon.TABLE | EFilterModeIcon.CHART;
 export type onHandleModeChange = (name: HeaderMode) => void;
@@ -19,6 +20,8 @@ export type HeaderFilterTableProps = MultiModeFilter & {
   collapse: boolean;
   radioButton?: ReactNode;
   fullWidthInput?: ReactNode;
+  handleFiltersChips: (filterKey: any) => void;
+  chips: FiltersChips<any>;
 };
 
 export enum EFilterTableNameIcon {

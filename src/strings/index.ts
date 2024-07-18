@@ -120,6 +120,7 @@ export const generalStr = {
   thousandRials: 'هزار ریال',
   free: 'رایگان',
   packageInputPrice: 'قیمت ورودی بسته',
+  loginLogout: 'ورود و خروج',
   cpuOnly: 'فقط CPU',
   packageTime: 'زمان بسته',
   entranceFee: 'هزینه ورودی',
@@ -350,6 +351,8 @@ export const generalStr = {
   transientPeople: 'افراد عبوری',
   waitinglists: 'تعداد لیست انتظار',
   numberClients: 'تعداد کلاینت‌ها',
+  credentialsSignInError: 'نام‌کاربری یا رمزعبور نادرست است.',
+  defaultErrorMessage: 'مشکلی رخ داده است.',
 };
 
 export const registrationStr = {
@@ -1333,6 +1336,7 @@ export const SettingRoute = {
 };
 
 export const TrafficAnalysisRoute = {
+  trafficPeople: 'تردد افراد',
   mensTraffic: 'تردد افراد با جنسیت آقا',
   womensTraffic: 'تردد افراد با جنسیت خانم',
   sampleChart: 'چارت نمونه',
@@ -1404,4 +1408,12 @@ export const UsersManagementRoute = {
   editStaff: 'ویرایش پرسنل',
   deleteStaff: 'حذف پرسنل',
   databaseSetting: 'تنظیمات پایگاه داده',
+};
+
+export const labels = {
+  pics: 'تصاویر',
+  edit: 'ویرایش',
+  delete: 'حذف',
+  results: 'نتایج',
+  members: 'کاربران',
 };

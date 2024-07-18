@@ -31,8 +31,7 @@ export const StyledTableWrapper = styled(Box)`
     background-color: ${({ theme }) => theme.palette.grey[50]};
 
     .MuiTableCell-root {
-      border-bottom: 1px solid ${({ theme }) => theme.palette.grey[300]};
-      border-top: 1px solid ${({ theme }) => theme.palette.grey[300]};
+      border-block: 1px solid ${({ theme }) => theme.palette.grey[300]};
     }
 
     .MuiTableCell-root span {
@@ -53,6 +52,22 @@ export const StyledTableWrapper = styled(Box)`
       background-color: ${({ theme }) => theme.palette.grey[50]};
       :nth-child(odd) {
         height: 3rem !important;
+      }
+      height: 3rem !important;
+      &:hover {
+        background-color: ${({ theme }) => theme.palette.grey[100]};
+
+        .MuiTableCell-root {
+          border-block: 1px solid ${({ theme }) => theme.palette.grey[300]};
+        }
+
+        &.MuiTableRow-root td:last-child {
+          border-left: 1px solid ${({ theme }) => theme.palette.grey[300]};
+        }
+
+        &.MuiTableRow-root td:first-child {
+          border-right: 1px solid ${({ theme }) => theme.palette.grey[300]};
+        }
       }
     }
     .MuiTableCell-root {
@@ -112,15 +127,18 @@ export const StyledCollapse = styled(Collapse)`
   }
 `;
 export const StyledMobileList = styled(Box)`
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: (4, 1.25rem);
+  align-items: center;
   gap: 1.25rem;
   width: 100%;
   font-style: normal;
-  font-size: ${({ theme }) => theme.typography.body2.fontSize};
+  font-weight: ${({ theme }) => theme.typography.body1.fontWeight};
+  font-size: ${({ theme }) => theme.typography.body1.fontSize};
   line-height: 1.25rem;
   td {
-    border-bottom: none !important;
+    border: none !important;
   }
 `;
 
@@ -133,7 +151,11 @@ export const StyledMobileListCellLabel = styled(Box)`
 export const StyledMobileListCellValue = styled(Box)`
   font-weight: 400;
   text-align: center;
-  * {
-    color: ${({ theme }) => theme.palette.grey[300]} !important;
+  grid-column-start: 2;
+  text-align: right;
+  grid-column-end: 12;
+  border: none;
+  &:hover {
+    border: none;
   }
 `;

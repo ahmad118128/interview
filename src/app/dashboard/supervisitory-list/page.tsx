@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 export default function SupervisitoryList() {
   return (
     <Suspense fallback={'loading'}>
-      <SupervisoryListTemplate />;
+      <SupervisoryListTemplate />
     </Suspense>
   );
 }

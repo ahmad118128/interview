@@ -23,10 +23,8 @@ const meta: Meta<typeof IconButton> = {
     ),
   ],
   args: {
-    title: '',
+    tooltip: '',
     iconName: '',
-    width: 20,
-    height: 20,
     disabled: false,
   },
 } as Meta;
@@ -36,10 +34,8 @@ type Story = StoryObj<typeof meta>;
 
 export const CloseIconButton: Story = {
   args: {
-    title: 'close',
+    tooltip: 'close',
     iconName: 'iconamoon:close',
-    width: 20,
-    height: 20,
     disabled: false,
   },
 };

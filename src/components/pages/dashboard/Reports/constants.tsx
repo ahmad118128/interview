@@ -2,6 +2,7 @@ import { ReportRoute } from '@/strings';
 import { Typography } from '@mui/material';
 import TransientPeople from './components/TransientPeopleTab';
 import ArrivalDepartures from './components/ArrivalAndDepartures';
+import TrafficOfPeople from './components/TrafficOfPeople';
 
 export const tabs = [
   {
@@ -14,7 +15,7 @@ export const tabs = [
     id: 1,
     label: ReportRoute.trafficOfPeople,
     disableTabRipple: false,
-    tabPanel: <div>Tab 2</div>,
+    tabPanel: <TrafficOfPeople />,
   },
   {
     id: 2,

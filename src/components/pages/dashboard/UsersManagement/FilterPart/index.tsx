@@ -2,21 +2,20 @@
 
 import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import { FieldValues, useForm } from 'react-hook-form';
 
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
 import { UsersManagementRoute, commonWords, labels } from '@/strings';
-import { FieldValues, useForm } from 'react-hook-form';
 import { TableCell } from '@mui/material';
-import { Icon } from '@iconify/react/dist/iconify.js';
-import theme from '@/theme';
 import TableWithFab from '@/components/template/TableWithFab';
+import { FilterContainer } from '@/components/template/FilterContainer';
+import { IconButton } from '@/components/atoms/CustomButton/IconButton';
+
 import { UsersFilterProps } from '../../image-recognition/types';
 import { initFilter } from '../../image-recognition/constants';
 import { usersHeader, usersMock } from '../constants';
-import { FilterContainer } from '@/components/template/FilterContainer';
 import { FilterForm } from './FilterForm';
-import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 
 export function FilterPart({ setModal, modal }: any) {
   const [collapse, setCollapse] = useState<boolean>(false);
@@ -120,16 +119,7 @@ export function FilterPart({ setModal, modal }: any) {
         </FilterContainer>
       </form>
       <TableWithFab
-        collapseIds={[
-          {
-            id: 0,
-            name: 'lastName',
-          },
-          {
-            id: 1,
-            name: 'nationalId',
-          },
-        ]}
+        showOnMobileColumns={['lastName', 'nationalId']}
         tableHeads={tableHeadsUser}
         data={usersMock}
         path={'/add'}

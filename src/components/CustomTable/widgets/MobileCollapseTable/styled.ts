@@ -152,11 +152,7 @@ export const StyledMobileListCellValue = styled(Box)`
   text-align: right;
   grid-column-end: 12;
   border: none;
-  :hover {
+  &:hover {
     border: none;
-  }
-
-  * {
-    // color: ${({ theme }) => theme.palette.grey[300]} !important;
   }
 `;

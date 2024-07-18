@@ -9,5 +9,5 @@ export type TableWithFabProps<T> = {
   tableHeads: CellType[];
   data: T;
   path: string;
-  collapseIds: collapseId[];
+  showOnMobileColumns: string[];
 };

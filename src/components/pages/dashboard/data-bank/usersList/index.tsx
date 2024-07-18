@@ -1,19 +1,19 @@
+import { useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { FieldValues, FormProvider, useForm } from 'react-hook-form';
+
+import { TableCell } from '@mui/material';
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
 import { DataBankRoute, commonWords, labels } from '@/strings';
-import { useState } from 'react';
-import { FieldValues, FormProvider, useForm } from 'react-hook-form';
-import { dataBankHeaderUser, dataBankMockUsers } from '../constants';
-import { TableCell } from '@mui/material';
-import { Icon } from '@iconify/react/dist/iconify.js';
-import theme from '@/theme';
-import { usePathname, useRouter } from 'next/navigation';
 import TableWithFab from '@/components/template/TableWithFab';
+import { FilterContainer } from '@/components/template/FilterContainer';
+import { IconButton } from '@/components/atoms/CustomButton/IconButton';
+
+import { dataBankHeaderUser, dataBankMockUsers } from '../constants';
 import { UsersFilterProps } from '../../image-recognition/types';
 import { initFilter } from '../../image-recognition/constants';
 import FilterForm from './FilterForm';
-import { FilterContainer } from '@/components/template/FilterContainer';
-import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 
 export default function UsersList({ modal, setModal, setImgModal }: any) {
   const [collapse, setCollapse] = useState(false);
@@ -132,16 +132,7 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
         </form>
       </FormProvider>
       <TableWithFab
-        collapseIds={[
-          {
-            id: 0,
-            name: 'nationalId',
-          },
-          {
-            id: 1,
-            name: 'name',
-          },
-        ]}
+        showOnMobileColumns={['nationalId', 'name']}
         tableHeads={tableHeadsUser}
         data={dataBankMockUsers}
         path={'/addUser'}

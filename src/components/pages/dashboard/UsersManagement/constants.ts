@@ -7,6 +7,7 @@ import {
   UsersManagementRoute,
   commonWords,
   generalStr,
+  gpuServersString,
   registrationStr,
 } from '@/strings';
 
@@ -145,4 +146,21 @@ export const addDataArray = [
     check2Name: 'databaseSetting',
     check2Label: UsersManagementRoute.databaseSetting,
   },
+];
+
+export const inputFilterArray = [
+  { name: 'userName', label: gpuServersString.userName },
+  {
+    name: 'roobinPassword',
+    label: registrationStr.roobinPassword,
+    isPassword: true,
+  },
+  {
+    name: 'repeatRoobinPassword',
+    label: registrationStr.repeatRoobinPassword,
+    isPassword: true,
+  },
+  { name: 'name', label: generalStr.name },
+  { name: 'lastName', label: generalStr.lastName },
+  { name: 'nationalId', label: DataBankRoute.nationalId, type: 'number' },
 ];

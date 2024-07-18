@@ -5,7 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
-import { UsersManagementRoute, commonWords } from '@/strings';
+import { UsersManagementRoute, commonWords, labels } from '@/strings';
 import { FieldValues, useForm } from 'react-hook-form';
 import { TableCell } from '@mui/material';
 import { Icon } from '@iconify/react/dist/iconify.js';
@@ -16,6 +16,7 @@ import { initFilter } from '../../image-recognition/constants';
 import { usersHeader, usersMock } from '../constants';
 import { FilterContainer } from '@/components/template/FilterContainer';
 import { FilterForm } from './FilterForm';
+import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 
 export function FilterPart({ setModal, modal }: any) {
   const [collapse, setCollapse] = useState<boolean>(false);
@@ -74,22 +75,19 @@ export function FilterPart({ setModal, modal }: any) {
       type: 'function',
       function: (row) => (
         <TableCell>
-          <Icon
-            icon="fluent:document-edit-20-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
-            style={{ marginLeft: '0.5rem' }}
+          <IconButton
+            sx={{ marginLeft: '10px' }}
+            iconName="fluent:document-edit-20-filled"
+            tooltip={labels.edit}
             onClick={(e) => {
               const editPath = `${currentPath}/edit/${row.id}`;
               router.push(editPath);
             }}
           />
-          <Icon
-            icon="tabler:trash-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
+
+          <IconButton
+            iconName="tabler:trash-filled"
+            tooltip={labels.delete}
             onClick={(e) =>
               setModal({
                 ...modal,

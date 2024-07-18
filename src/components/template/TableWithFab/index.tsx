@@ -18,8 +18,7 @@ export default function TableWithFab<T>({
   tableHeads,
   data,
   path,
-  collapseId1,
-  collapseId2,
+  showOnMobileColumns,
 }: TableWithFabProps<T>) {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [tableData, setTableData] = useState<null | ISuccess | IError>(null);
@@ -36,7 +35,7 @@ export default function TableWithFab<T>({
         rows={data}
         headers={tableHeads}
         error={!tableData?.data?.results}
-        mobileIdFilter={[COLLAPSE_ID, collapseId1, collapseId2]}
+        mobileIdFilter={[COLLAPSE_ID, ...showOnMobileColumns]}
         handleSort={(id) => {
           setOrder(id);
         }}

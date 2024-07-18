@@ -346,8 +346,7 @@ export default function ImageRecognitionTemplate() {
         rows={mockData}
         headers={tableHeads}
         error={!tableData?.data?.results}
-        mobileIdFilter={[COLLAPSE_ID, 'matchCount', 'actions']}
-        // pagination={pagination}
+        mobileIdFilter={[COLLAPSE_ID, 'matchCount', 'description']}
         handleSort={(id) => {
           setOrder(id);
         }}

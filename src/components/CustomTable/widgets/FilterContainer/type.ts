@@ -16,7 +16,7 @@ type MultiModeFilter =
 export type HeaderFilterTableProps = MultiModeFilter & {
   activeMode?: ActiveMode;
   onHandleIconClick: OnHandleIconClick;
-  children: ReactNode;
+  children?: ReactNode;
   collapse: boolean;
   radioButton?: ReactNode;
   fullWidthInput?: ReactNode;

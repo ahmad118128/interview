@@ -137,8 +137,7 @@ export function Client({ modal, setModal }: any) {
         rows={ClientMock}
         headers={tableHeadsClient}
         error={!tableData?.data?.results}
-        mobileIdFilter={[COLLAPSE_ID, 'factoryName', 'clientStatus']}
-        // pagination={pagination}
+        mobileIdFilter={[COLLAPSE_ID, 'factoryName', 'recordFrameStatus']}
         handleSort={(id) => {
           setOrder(id);
         }}

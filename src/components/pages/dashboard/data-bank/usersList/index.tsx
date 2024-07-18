@@ -1,21 +1,21 @@
+import { useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { FieldValues, FormProvider, useForm } from 'react-hook-form';
+
+import { TableCell } from '@mui/material';
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
 import { DataBankRoute, commonWords, labels } from '@/strings';
-import { useState } from 'react';
-import { FieldValues, FormProvider, useForm } from 'react-hook-form';
+import TableWithFab from '@/components/template/TableWithFab';
+import { FilterContainer } from '@/components/template/FilterContainer';
+import { IconButton } from '@/components/atoms/CustomButton/IconButton';
+
 import { dataBankHeaderUser, dataBankMockUsers } from '../constants';
-import { TableCell } from '@mui/material';
-import { Icon } from '@iconify/react/dist/iconify.js';
-import theme from '@/theme';
-import { usePathname, useRouter } from 'next/navigation';
-import CollapseTableWithFab from '@/components/template/CollapseTableWithFab';
 import { UsersFilterProps } from '../../image-recognition/types';
 import { initFilter } from '../../image-recognition/constants';
 import FilterForm from './FilterForm';
-import { FilterContainer } from '@/components/template/FilterContainer';
-import { Child } from '@/components/CustomTable/widgets/CollapseTable/TableChild';
 import CollapseCheckboxWithFab from '@/components/template/CollapseCheckboxWithFab';
-import { IconButton } from '@/components/atoms/CustomButton/IconButton';
+import { Child } from '@/components/CustomTable/widgets/CollapseTable/TableChild';
 
 export default function UsersList({ modal, setModal, setImgModal }: any) {
   const [collapse, setCollapse] = useState(false);

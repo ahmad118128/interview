@@ -5,7 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { TableCell, Typography } from '@mui/material';
 
 import { CustomTab } from '@/components/molecules/CustomTab/styled';
-import { DataBankRoute } from '@/strings';
+import { DataBankRoute, ReportModal } from '@/strings';
 import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
 import UsersList from '@/components/pages/dashboard/data-bank/usersList';
 import GroupList from '@/components/pages/dashboard/data-bank/groupList';
@@ -60,6 +60,7 @@ export default function DatabankTemplate() {
 
       {imgModal ? (
         <ThumbnailPicModal
+          title={ReportModal.uploadedImg}
           onClose={() => setImgModal(false)}
           open={imgModal}
           setOpen={setImgModal}

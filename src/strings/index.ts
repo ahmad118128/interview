@@ -1408,3 +1408,11 @@ export const UsersManagementRoute = {
   deleteStaff: 'حذف پرسنل',
   databaseSetting: 'تنظیمات پایگاه داده',
 };
+
+export const labels = {
+  pics: 'تصاویر',
+  edit: 'ویرایش',
+  delete: 'حذف',
+  results: 'نتایج',
+  members: 'کاربران',
+};

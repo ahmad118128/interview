@@ -88,7 +88,7 @@ export const StyledTableWrapper = styled(Box)`
 `;
 
 export const StyledIconCheckboxTableCell = styled(TableCell)`
-  padding: 1rem 0;
+  padding: 1rem 1.2rem 1rem 0;
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     width: 5rem;

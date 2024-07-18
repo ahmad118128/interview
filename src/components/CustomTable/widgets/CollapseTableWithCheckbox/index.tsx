@@ -21,16 +21,21 @@ export const CollapseTableWithCheckbox = (props: SelectTableProps) => {
     selectedMode,
     collapseChildren,
   } = props;
+
+  const Child = collapseChildren;
+
   const [selected, setSelected] = useState<Array<string | number>>(
     selectedId ?? []
   );
   const [allSelected, setAllSelected] = useState<boolean>(false);
   const [indeterminate, setIndeterminate] = useState<boolean>(false);
+
   const allId =
     selectedMode &&
     rows?.map((item: any) => {
       return item.id;
     });
+
   useEffect(() => {
     if (allId?.length === selected?.length) {
       setAllSelected(true);
@@ -94,7 +99,9 @@ export const CollapseTableWithCheckbox = (props: SelectTableProps) => {
               activeIndex={selected}
               HandleCheckBoxChange={() => HandleCheckBoxChange(row?.id)}
               selectedMode={selectedMode}
-              collapseChildren={collapseChildren}
+              collapseChildren={
+                <Child row={row} paginationPage={pagination?.page} />
+              }
             />
           );
         })}

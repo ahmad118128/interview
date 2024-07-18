@@ -52,7 +52,13 @@ export const CollapseCheckboxRow = (props: SelectTableRowProps) => {
   return (
     <>
       <StyledTableRow expand={open} sx={{ '& > *': { borderBottom: 'none' } }}>
-        <TableCell>
+        <TableCell
+          sx={{
+            display: 'flex',
+            height: '3rem',
+            alignItems: 'center',
+          }}
+        >
           {!checkCollapseId ? (
             <IconButton
               aria-label="expand row"
@@ -78,17 +84,15 @@ export const CollapseCheckboxRow = (props: SelectTableRowProps) => {
               </IconButton>
             )
           )}
-        </TableCell>
-        {selectedMode && (
-          <StyledIconCheckboxTableCell>
+          {selectedMode && (
             <Checkbox
               checked={activeIndex.includes(row?.id)}
               onChange={HandleCheckBoxChange}
               id={`custom-checkbox-${row?.id}`}
               size="small"
             />
-          </StyledIconCheckboxTableCell>
-        )}
+          )}
+        </TableCell>
 
         {filteredHeader?.map((cell: CellType) => {
           const cellId = cell?.id as keyof RowType;
@@ -103,9 +107,10 @@ export const CollapseCheckboxRow = (props: SelectTableRowProps) => {
           );
         })}
       </StyledTableRow>
+
       {collapseChildren && (
         <StyledCollapseChildrenTableRow>
-          <TableCell colSpan={header.length}>
+          <TableCell colSpan={header.length + 1}>
             <Collapse in={open} timeout="auto" unmountOnExit>
               {collapseChildren}
             </Collapse>

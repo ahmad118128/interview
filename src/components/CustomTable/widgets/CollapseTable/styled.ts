@@ -75,6 +75,7 @@ export const StyledTableWrapper = styled(Box)<StyledTableWrapperType>`
     td {
       padding: 0;
       vertical-align: middle;
+      min-width:100px;
       text-align: center;
       color: ${({ theme }) => theme.palette.common.black} !important;
     }
@@ -93,7 +94,7 @@ export const StyledTableWrapper = styled(Box)<StyledTableWrapperType>`
 
 export const StyledCollapseChildrenTableRow = styled(TableRow)`
   .MuiCollapse-wrapperInner {
-    width: 100%;
+    width: 95%;
     padding: 1.25rem 0.75rem;
   }
 `;
@@ -101,6 +102,6 @@ export const StyledCollapseChildrenTableRow = styled(TableRow)`
 export const StyledTableRow = styled(TableRow)<StyledTableRowType>`
   background: ${({ expand, theme }) =>
     expand
-      ? `${theme.palette.primary.light} !important`
+      ? `${theme.palette.common.white} !important`
       : theme.palette.common.white};
 `;

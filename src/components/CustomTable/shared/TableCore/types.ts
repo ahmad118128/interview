@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react';
+import { ChangeEvent, MouseEvent } from 'react';
 import { type CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 import { CellType } from '@/components/CustomTable/types';
 
@@ -21,7 +21,7 @@ export interface EnhancedTableProps {
   order?: Order;
   orderBy?: unknown;
   headCells?: CellType[] | null;
-  HandleCheckBoxHeader?: (e: any) => void;
+  HandleCheckBoxHeader?: (e: ChangeEvent<HTMLInputElement> | undefined) => void;
   allSelected?: boolean;
   selectedMode?: boolean;
   indeterminate?: boolean;

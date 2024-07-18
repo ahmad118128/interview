@@ -38,7 +38,7 @@ export const BaseTable = (props: BaseTableProps) => {
     setOrderBy(property);
     handleSort && handleSort(isAsc ? `-${property}` : property);
   };
-  const isSelectMode = rows?.length >= 1 ? selectedMode : false;
+  const isSelectMode = rows?.length ? selectedMode : false;
 
   return (
     <>

@@ -51,12 +51,8 @@ export const StyledTableWrapper = styled(Box)<StyledTableRowType>`
   .MuiTableBody-root {
     .MuiTableRow-root {
       background-color: ${({ theme }) => theme.palette.grey[50]};
-      :nth-child(odd) {
-        height: 3rem !important;
-      }
-      :nth-child(even) {
-        height: auto !important;
-      }
+      height: 3rem;
+
       &:hover {
         background-color: ${({ theme }) => theme.palette.grey[100]};
 
@@ -91,16 +87,6 @@ export const StyledTableWrapper = styled(Box)<StyledTableRowType>`
       vertical-align: middle;
       text-align: center;
       color: ${({ theme }) => theme.palette.common.black} !important;
-    }
-
-    ${({ theme }) => theme.breakpoints.down('md')} {
-      // tr:nth-child(odd) {
-      //   height: 3rem !important;
-      // }
-
-      // tr:nth-child(even) {
-      //   height: auto !important;
-      // }
     }
   }
 `;

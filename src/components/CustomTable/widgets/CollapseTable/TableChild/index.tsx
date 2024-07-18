@@ -4,7 +4,6 @@ import { DataBankRoute, SupervisitoryListRoute } from '@/strings';
 
 export const Child = (props: any) => {
   const { row } = props;
-  console.log(row);
 
   return (
     <Grid container spacing={8}>

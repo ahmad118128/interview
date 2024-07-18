@@ -1,23 +1,16 @@
-import {
-  TableCell,
-  TableRow,
-  Checkbox,
-  IconButton,
-  useTheme,
-  Collapse,
-} from '@mui/material';
+import { TableCell, IconButton, useTheme, Collapse } from '@mui/material';
+import { Icon } from '@iconify/react/dist/iconify.js';
+import { CustomCheckbox } from '@/components/atoms/Checkbox';
 
 import { type CellType, type RowType } from '../CollapseTable/type';
 import { SelectTableRowProps } from './type';
-import { StyledIconCheckboxTableCell } from './styled';
 import { CustomCell } from '../CustomCell';
-import { Icon } from '@iconify/react/dist/iconify.js';
 import {
   StyledCollapseChildrenTableRow,
   StyledTableRow,
 } from '../CollapseTable/styled';
 import { useState } from 'react';
-import { CustomCheckbox } from '@/components/atoms/Checkbox';
+import { StyledTableCell } from './styled';
 
 const COLLAPSE_ID = 'collapse';
 
@@ -43,34 +36,17 @@ export const CollapseCheckboxRow = (props: SelectTableRowProps) => {
     return item.id !== '';
   });
 
-  const arrowDownIcon = (
+  const ArrowDownIcon = (
     <Icon icon="ic:baseline-keyboard-arrow-down" width={24} />
   );
-  const arrowLeftIcon = (
+  const ArrowLeftIcon = (
     <Icon icon="ic:outline-keyboard-arrow-left" width={24} />
   );
 
   return (
     <>
-      <StyledTableRow
-        expand={open}
-        sx={{
-          background: theme.palette.grey[200],
-          'MuiTableRow-root': {
-            background: 'red',
-            borderBottom: 0,
-          },
-        }}
-      >
-        <TableCell
-          sx={{
-            display: 'flex',
-            height: theme.breakpoints.down('md') ? '4rem' : '3rem',
-            alignItems: 'center',
-            justifyContent: 'center',
-            borderRadius: '0 10px 10px 0',
-          }}
-        >
+      <StyledTableRow expand={open}>
+        <StyledTableCell>
           {!checkCollapseId ? (
             <IconButton
               aria-label="expand row"
@@ -80,7 +56,7 @@ export const CollapseCheckboxRow = (props: SelectTableRowProps) => {
                 HandleSelectedRow && HandleSelectedRow(row?.id);
               }}
             >
-              {open ? arrowDownIcon : arrowLeftIcon}
+              {open ? ArrowDownIcon : ArrowLeftIcon}
             </IconButton>
           ) : (
             row[checkCollapseId].length > 0 && (
@@ -92,7 +68,7 @@ export const CollapseCheckboxRow = (props: SelectTableRowProps) => {
                   HandleSelectedRow && HandleSelectedRow(row?.id);
                 }}
               >
-                {open ? arrowDownIcon : arrowLeftIcon}
+                {open ? ArrowDownIcon : ArrowLeftIcon}
               </IconButton>
             )
           )}
@@ -104,7 +80,7 @@ export const CollapseCheckboxRow = (props: SelectTableRowProps) => {
               id={`custom-checkbox-${row?.id}`}
             />
           )}
-        </TableCell>
+        </StyledTableCell>
 
         {filteredHeader?.map((cell: CellType) => {
           const cellId = cell?.id as keyof RowType;

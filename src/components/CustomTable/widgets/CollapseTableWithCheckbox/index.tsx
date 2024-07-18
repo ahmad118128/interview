@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 
 import { SelectTableProps } from './type';
 import { CellType } from '../../types';
 import { BaseTable } from '../../shared';
-import { CollapseCheckboxRow } from './collapseCheckboxRow';
 import { StyledTableWrapper } from '../MobileCollapseTable/styled';
+import { CollapseCheckboxRow } from './CollapseCheckboxRow';
 
 const COLLAPSE_ID = 'collapse';
 
@@ -65,7 +65,9 @@ export const CollapseTableWithCheckbox = (props: SelectTableProps) => {
       setSelected(selected.filter((item) => item !== id));
     }
   };
-  const HandleCheckBoxHeader = (e: any) => {
+  const HandleCheckBoxHeader = (
+    e: ChangeEvent<HTMLInputElement> | undefined
+  ) => {
     if (e?.target?.checked) {
       setSelected(allId);
       setAllSelected(true);
@@ -80,7 +82,9 @@ export const CollapseTableWithCheckbox = (props: SelectTableProps) => {
       <BaseTable
         headers={header}
         rows={rows}
-        HandleCheckBoxHeader={(e: any) => HandleCheckBoxHeader(e)}
+        HandleCheckBoxHeader={(e: ChangeEvent<HTMLInputElement> | undefined) =>
+          HandleCheckBoxHeader(e)
+        }
         allSelected={allSelected}
         handleSort={handleSort}
         error={error}

@@ -92,3 +92,10 @@ export const StyledIconCheckboxTableCell = styled(TableCell)`
     background-color: transparent !important;
   }
 `;
+
+export const StyledTableCell = styled(TableCell)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 10px 10px 0;
+`;

@@ -18,6 +18,7 @@ export default function TableWithFab<T>({
   tableHeads,
   data,
   path,
+  showOnMobileColumns,
 }: TableWithFabProps<T>) {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [tableData, setTableData] = useState<null | ISuccess | IError>(null);
@@ -39,7 +40,7 @@ export default function TableWithFab<T>({
         rows={data}
         headers={tableHeads}
         error={!tableData?.data?.results}
-        mobileIdFilter={[COLLAPSE_ID, 'matchCount', 'actions']}
+        mobileIdFilter={[COLLAPSE_ID, ...showOnMobileColumns]}
         pagination={pagination}
         handleSort={(id) => {
           setOrder(id);

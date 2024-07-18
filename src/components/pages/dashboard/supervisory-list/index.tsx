@@ -1,22 +1,19 @@
 import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import { FieldValues, useForm } from 'react-hook-form';
 
+import { TableCell } from '@mui/material';
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
 import { DataBankRoute, commonWords, labels } from '@/strings';
-import { FieldValues, useForm } from 'react-hook-form';
-import { TableCell } from '@mui/material';
-import { Icon } from '@iconify/react/dist/iconify.js';
-import theme from '@/theme';
-import { IModalState } from '@/components/template/DataBank/type';
 import TableWithFab from '@/components/template/TableWithFab';
+import { FilterContainer } from '@/components/template/FilterContainer';
+import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 
 import { supervisitoryListHeader, supervisitoryListMock } from './constants';
 import { initFilter } from '../image-recognition/constants';
 import { UsersFilterProps } from '../image-recognition/types';
-import { FilterContainer } from '@/components/template/FilterContainer';
 import { FilterForm } from './FilterForm';
-import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 
 export function SuperVisoryList({ setModal, modal }: any) {
   const [collapse, setCollapse] = useState(false);
@@ -134,6 +131,7 @@ export function SuperVisoryList({ setModal, modal }: any) {
         </FilterContainer>
       </form>
       <TableWithFab
+        showOnMobileColumns={['listName', 'similarityPercentage']}
         tableHeads={tableHeadsUser}
         data={supervisitoryListMock}
         path={'/add'}

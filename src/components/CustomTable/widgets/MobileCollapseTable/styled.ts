@@ -1,7 +1,8 @@
 import { Box, Collapse, TableCell } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { StyledTableRowType } from './type';
 
-export const StyledTableWrapper = styled(Box)`
+export const StyledTableWrapper = styled(Box)<StyledTableRowType>`
   width: 100%;
   .MuiTable-root {
     border-collapse: separate !important;
@@ -50,7 +51,15 @@ export const StyledTableWrapper = styled(Box)`
   .MuiTableBody-root {
     .MuiTableRow-root {
       background-color: ${({ theme }) => theme.palette.grey[50]};
-      height: 3rem !important;
+
+      :nth-child(odd) {
+        height: 3rem !important;
+      }
+
+      :nth-child(even) {
+        height: auto !important;
+      }
+
       &:hover {
         background-color: ${({ theme }) => theme.palette.grey[100]};
 
@@ -88,19 +97,19 @@ export const StyledTableWrapper = styled(Box)`
     }
 
     ${({ theme }) => theme.breakpoints.down('md')} {
-      tr:nth-child(odd) {
-        // height: 3rem !important;
-      }
+      // tr:nth-child(odd) {
+      //   height: 3rem !important;
+      // }
 
-      tr:nth-child(even) {
-        // height: auto !important;
-      }
+      // tr:nth-child(even) {
+      //   height: auto !important;
+      // }
     }
   }
 `;
 
 export const StyledIconCheckboxTableCell = styled(TableCell)`
-  padding: 1rem 1.2rem 1rem 0;
+  padding: 1rem 2.3rem 1rem 0;
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     width: 5rem;

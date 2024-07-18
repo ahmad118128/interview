@@ -17,6 +17,7 @@ import {
   StyledTableRow,
 } from '../CollapseTable/styled';
 import { useState } from 'react';
+import { CustomCheckbox } from '@/components/atoms/Checkbox';
 
 const COLLAPSE_ID = 'collapse';
 
@@ -51,12 +52,23 @@ export const CollapseCheckboxRow = (props: SelectTableRowProps) => {
 
   return (
     <>
-      <StyledTableRow expand={open} sx={{ '& > *': { borderBottom: 'none' } }}>
+      <StyledTableRow
+        expand={open}
+        sx={{
+          background: theme.palette.grey[200],
+          'MuiTableRow-root': {
+            background: 'red',
+            borderBottom: 0,
+          },
+        }}
+      >
         <TableCell
           sx={{
             display: 'flex',
-            height: '3rem',
+            height: theme.breakpoints.down('md') ? '4rem' : '3rem',
             alignItems: 'center',
+            justifyContent: 'center',
+            borderRadius: '0 10px 10px 0',
           }}
         >
           {!checkCollapseId ? (
@@ -84,12 +96,12 @@ export const CollapseCheckboxRow = (props: SelectTableRowProps) => {
               </IconButton>
             )
           )}
+
           {selectedMode && (
-            <Checkbox
+            <CustomCheckbox
               checked={activeIndex.includes(row?.id)}
               onChange={HandleCheckBoxChange}
               id={`custom-checkbox-${row?.id}`}
-              size="small"
             />
           )}
         </TableCell>

@@ -36,13 +36,13 @@ export const StyledTableWrapper = styled(Box)`
       :hover {
         td {
           background-color: ${({ theme }) =>
-            theme.palette.common.black}05 !important;
+            theme.palette.common.black} !important;
         }
       }
     }
     tr:nth-child(even) {
       td {
-        background-color: ${({ theme }) => theme.palette.common.black}03;
+        background-color: ${({ theme }) => theme.palette.common.black};
       }
     }
     td {

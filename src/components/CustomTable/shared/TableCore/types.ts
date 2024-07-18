@@ -6,7 +6,7 @@ export interface BaseTableProps {
   headers: CellType[];
   rows: any;
   error?: boolean;
-  pagination: CustomPaginationProps;
+  pagination?: CustomPaginationProps;
   children?: any;
   handleSort?: (id: string | unknown) => void;
   emptyDataMessage?: string;

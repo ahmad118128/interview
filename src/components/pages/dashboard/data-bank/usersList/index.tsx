@@ -14,6 +14,8 @@ import { dataBankHeaderUser, dataBankMockUsers } from '../constants';
 import { UsersFilterProps } from '../../image-recognition/types';
 import { initFilter } from '../../image-recognition/constants';
 import FilterForm from './FilterForm';
+import CollapseTableWithFab from '@/components/template/CollapseTableWithFab';
+import { Child } from '@/components/CustomTable/widgets/CollapseTable/TableChild';
 
 export default function UsersList({ modal, setModal, setImgModal }: any) {
   const [collapse, setCollapse] = useState(false);
@@ -131,11 +133,11 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
           </FilterContainer>
         </form>
       </FormProvider>
-      <TableWithFab
-        showOnMobileColumns={['nationalId', 'name']}
+      <CollapseTableWithFab
         tableHeads={tableHeadsUser}
         data={dataBankMockUsers}
         path={'/addUser'}
+        child={Child}
       />
     </>
   );

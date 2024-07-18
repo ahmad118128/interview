@@ -75,11 +75,11 @@ const TrafficOfPeople = () => {
     });
   };
 
-  const pagination: CustomPaginationProps = {
-    all_page: tableData?.data?.all_page as number,
-    current: currentPage,
-    setPage: (newPage: number) => setCurrentPage(newPage),
-  };
+  // const pagination: CustomPaginationProps = {
+  //   all_page: tableData?.data?.all_page as number,
+  //   current: currentPage,
+  //   setPage: (newPage: number) => setCurrentPage(newPage),
+  // };
 
   const tableHeadsClient: CellType[] = [
     ...reportHeaderTrafficOfPeople,
@@ -118,7 +118,6 @@ const TrafficOfPeople = () => {
         headers={tableHeadsClient}
         error={!tableData?.data?.results}
         mobileIdFilter={[COLLAPSE_ID, 'name', 'supervisortList']}
-        pagination={pagination}
         handleSort={(id) => {
           setOrder(id);
         }}

@@ -137,8 +137,16 @@ export function SuperVisoryList({ setModal, modal }: any) {
         </FilterContainer>
       </form>
       <TableWithFab
-        collapseId1="listName"
-        collapseId2="similarityPercentage"
+        collapseIds={[
+          {
+            id: 0,
+            name: 'listName',
+          },
+          {
+            id: 1,
+            name: 'similarityPercentage',
+          },
+        ]}
         tableHeads={tableHeadsUser}
         data={supervisitoryListMock}
         path={'/add'}

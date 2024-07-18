@@ -126,8 +126,16 @@ export default function GroupList({ modal, setModal }: any) {
         </form>
       </FormProvider>
       <TableWithFab
-        collapseId1="groupName"
-        collapseId2="description"
+        collapseIds={[
+          {
+            id: 0,
+            name: 'groupName',
+          },
+          {
+            id: 1,
+            name: 'description',
+          },
+        ]}
         tableHeads={tableHeadsgroup}
         data={dataBankMockgrous}
         path={'/addGroup'}

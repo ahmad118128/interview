@@ -122,8 +122,16 @@ export function FilterPart({ setModal, modal }: any) {
         </FilterContainer>
       </form>
       <TableWithFab
-        collapseId1="lastName"
-        collapseId2="nationalId"
+        collapseIds={[
+          {
+            id: 0,
+            name: 'lastName',
+          },
+          {
+            id: 1,
+            name: 'nationalId',
+          },
+        ]}
         tableHeads={tableHeadsUser}
         data={usersMock}
         path={'/add'}

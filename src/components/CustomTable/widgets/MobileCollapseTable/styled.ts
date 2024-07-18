@@ -31,8 +31,7 @@ export const StyledTableWrapper = styled(Box)`
     background-color: ${({ theme }) => theme.palette.grey[50]};
 
     .MuiTableCell-root {
-      border-bottom: 1px solid ${({ theme }) => theme.palette.grey[300]};
-      border-top: 1px solid ${({ theme }) => theme.palette.grey[300]};
+      border-block: 1px solid ${({ theme }) => theme.palette.grey[300]};
     }
 
     .MuiTableCell-root span {
@@ -55,17 +54,16 @@ export const StyledTableWrapper = styled(Box)`
       &:hover {
         background-color: ${({ theme }) => theme.palette.grey[100]};
 
+        .MuiTableCell-root {
+          border-block: 1px solid ${({ theme }) => theme.palette.grey[300]};
+        }
+
         &.MuiTableRow-root td:last-child {
           border-left: 1px solid ${({ theme }) => theme.palette.grey[300]};
         }
 
         &.MuiTableRow-root td:first-child {
           border-right: 1px solid ${({ theme }) => theme.palette.grey[300]};
-        }
-
-        .MuiTableCell-root {
-          border-bottom: 1px solid ${({ theme }) => theme.palette.grey[300]};
-          border-top: 1px solid ${({ theme }) => theme.palette.grey[300]};
         }
       }
     }

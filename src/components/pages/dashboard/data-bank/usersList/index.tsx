@@ -14,8 +14,8 @@ import { dataBankHeaderUser, dataBankMockUsers } from '../constants';
 import { UsersFilterProps } from '../../image-recognition/types';
 import { initFilter } from '../../image-recognition/constants';
 import FilterForm from './FilterForm';
-import CollapseCheckboxWithFab from '@/components/template/CollapseCheckboxWithFab';
 import { Child } from '@/components/CustomTable/widgets/CollapseTable/TableChild';
+import CollapseCheckboxWithFab from '@/components/template/CollapseCheckboxWithFab';
 
 export default function UsersList({ modal, setModal, setImgModal }: any) {
   const [collapse, setCollapse] = useState(false);

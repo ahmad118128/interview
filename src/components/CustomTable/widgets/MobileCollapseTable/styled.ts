@@ -51,15 +51,10 @@ export const StyledTableWrapper = styled(Box)<StyledTableRowType>`
   .MuiTableBody-root {
     .MuiTableRow-root {
       background-color: ${({ theme }) => theme.palette.grey[50]};
-
       :nth-child(odd) {
         height: 3rem !important;
       }
-
-      :nth-child(even) {
-        height: auto !important;
-      }
-
+      height: 3rem !important;
       &:hover {
         background-color: ${({ theme }) => theme.palette.grey[100]};
 

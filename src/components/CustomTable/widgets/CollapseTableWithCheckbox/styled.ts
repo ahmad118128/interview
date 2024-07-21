@@ -98,4 +98,11 @@ export const StyledTableCell = styled(TableCell)`
   align-items: center;
   justify-content: center;
   border-radius: 0 10px 10px 0;
+  ${({ theme }) => theme.breakpoints.down('md')} {
+    height: 4rem;
+  }
+
+  ${({ theme }) => theme.breakpoints.up('md')} {
+    height: 3rem;
+  }
 `;

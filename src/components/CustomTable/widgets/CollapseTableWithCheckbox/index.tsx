@@ -3,8 +3,8 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { SelectTableProps } from './type';
 import { CellType } from '../../types';
 import { BaseTable } from '../../shared';
-import { StyledTableWrapper } from '../MobileCollapseTable/styled';
 import { CollapseCheckboxRow } from './CollapseCheckboxRow';
+import { StyledTableWrapper } from '../CollapseTable/styled';
 
 const COLLAPSE_ID = 'collapse';
 

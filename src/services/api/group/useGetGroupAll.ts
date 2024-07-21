@@ -4,7 +4,7 @@ import { getData } from '@/services/core/http-service';
 import { IGroups } from './type';
 
 const getGroupAll = (): Promise<IGroups> => {
-  const url = `/group/all`;
+  const url = `/group/`;
   return getData(url);
 };
 

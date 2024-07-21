@@ -21,8 +21,17 @@ import ViewImageModal from './ViewImageModal';
 import { FilterContainer } from '@/components/template/FilterContainer';
 import FilterForm from './FilterForm';
 import { EFilterTableNameIcon } from '@/components/template/FilterContainer/type';
+import { useSearchParams } from 'next/navigation';
+import { PageParamsType } from '@/services/api/users';
 
 export default function ArrivalDepartures() {
+  const searchParams = useSearchParams();
+  const queryParams = Object.fromEntries(searchParams.entries());
+
+  const [pageParams, setPageParams] = useState<PageParamsType>({
+    pageNo: 0,
+    ...queryParams,
+  });
   const [collapse, setCollapse] = useState(false);
   const [filtersChips, setFiltersChips] = useState<
     FiltersChips<UsersFilterProps>
@@ -64,6 +73,12 @@ export default function ArrivalDepartures() {
     setFiltersChips((prevFiltersChips) => {
       return prevFiltersChips.filter((chip) => chip.key !== filterKey);
     });
+  };
+  const pagination: CustomPaginationProps = {
+    totalPages: 5,
+    page: 0,
+    setPageParams: setPageParams,
+    pageParams: pageParams,
   };
 
   const tableHeads: CellType[] = [

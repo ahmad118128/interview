@@ -6,7 +6,7 @@ import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 import { TableCell } from '@mui/material';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import theme from '@/theme';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { IError, ISuccess, UsersFilterProps } from '../image-recognition/types';
 import { COLLAPSE_ID, initFilter } from '../image-recognition/constants';
 import { ClientHeader, ClientMock } from './constants';
@@ -15,6 +15,7 @@ import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagi
 import { FilterContainer } from '@/components/template/FilterContainer';
 import FilterForm from './FilterForm';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
+import { PageParamsType } from '@/services/api/users';
 
 export function Client({ modal, setModal }: any) {
   const [collapse, setCollapse] = useState(false);
@@ -71,11 +72,20 @@ export function Client({ modal, setModal }: any) {
     });
   };
 
-  // const pagination: CustomPaginationProps = {
-  //   all_page: tableData?.data?.all_page as number,
-  //   current: currentPage,
-  //   setPage: (newPage: number) => setCurrentPage(newPage),
-  // };
+  const searchParams = useSearchParams();
+  const queryParams = Object.fromEntries(searchParams.entries());
+
+  const [pageParams, setPageParams] = useState<PageParamsType>({
+    pageNo: 0,
+    ...queryParams,
+  });
+
+  const pagination: CustomPaginationProps = {
+    totalPages: 5,
+    page: 0,
+    setPageParams: setPageParams,
+    pageParams: pageParams,
+  };
 
   const tableHeadsClient: CellType[] = [
     ...ClientHeader,

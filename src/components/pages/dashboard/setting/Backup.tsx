@@ -2,7 +2,7 @@
 
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 import {
   Box,
@@ -28,6 +28,7 @@ import {
   StyledAddFormMain,
   StyledAddFormWrapper,
 } from '@/components/template/FilterContainer/styled';
+import { PageParamsType } from '@/services/api/users';
 
 export function Backup() {
   const [selected, setSelected] = useState('emergencyBackup');
@@ -42,12 +43,20 @@ export function Backup() {
   const goBackUrl = () => {
     router.back();
   };
+  const searchParams = useSearchParams();
+  const queryParams = Object.fromEntries(searchParams.entries());
 
-  // const pagination: CustomPaginationProps = {
-  //   all_page: tableData?.data?.all_page as number,
-  //   current: currentPage,
-  //   setPage: (newPage: number) => setCurrentPage(newPage),
-  // };
+  const [pageParams, setPageParams] = useState<PageParamsType>({
+    pageNo: 0,
+    ...queryParams,
+  });
+
+  const pagination: CustomPaginationProps = {
+    totalPages: 5,
+    page: 0,
+    setPageParams: setPageParams,
+    pageParams: pageParams,
+  };
 
   return (
     <StyledAddFormWrapper>

@@ -20,5 +20,5 @@ export interface IUsers {
 }
 
 export type PageParamsType = {
-  page: number;
+  pageNo: number;
 };

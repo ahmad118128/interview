@@ -24,7 +24,6 @@ export const CollapseTable = (props: CollapseTableProps) => {
         rows={rows}
         handleSort={handleSort}
         error={error}
-        pagination={pagination}
       >
         {rows?.map((row: any, index: number) => {
           const key = row?.id || index;

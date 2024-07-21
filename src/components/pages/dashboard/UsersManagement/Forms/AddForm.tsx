@@ -47,15 +47,6 @@ import {
 } from './styled';
 import { addDataArray, inputFilterArray } from '../constants';
 import { ControledCheckbox } from '@/components/atoms/Checkbox';
-interface AddDataItem {
-  title: string;
-  check1Name: string;
-  check1Label: string;
-  check2Name: string;
-  check2Label: string;
-  check3Name?: string;
-  check3Label?: string;
-}
 
 export function AddFormUsers() {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -121,7 +112,7 @@ export function AddFormUsers() {
               xs={12}
               sx={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}
             >
-              {addDataArray.map((item: AddDataItem, index: number) => (
+              {addDataArray.map((item, index) => (
                 <StyledBox key={index}>
                   <StyledTitleGrid item xs={7} sm={5} md={3.6} lg={4}>
                     <Typography

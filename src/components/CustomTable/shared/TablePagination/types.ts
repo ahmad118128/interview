@@ -1,12 +1,9 @@
-import { ChangeEvent } from 'react';
+import React from 'react';
+import { PageParamsType } from '@/services/api/type';
 
-export interface CustomPaginationProps {
-  warperStyle?: object;
-  innerStyle?: any;
-  pageCount?: number;
+export type CustomPaginationProps = {
+  totalPages: number;
   page: number;
-  onChange: (event: ChangeEvent<unknown>, pageButton: number) => void;
-  showFirstButton?: boolean;
-  showLastButton?: boolean;
-  size?: 'small' | 'medium' | 'large';
-}
+  setPageParams: React.Dispatch<React.SetStateAction<PageParamsType>>;
+  pageParams: PageParamsType;
+};

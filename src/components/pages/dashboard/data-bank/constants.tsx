@@ -217,7 +217,7 @@ export const dataBankHeadergroup: CellType[] = [
     label: '',
   },
   {
-    id: 'groupName',
+    id: 'name',
     label: DataBankRoute.groupName,
     sortable: true,
   },

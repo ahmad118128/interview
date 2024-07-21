@@ -9,13 +9,13 @@ export const StyledBox = styled(Box)(({ theme }) => ({
   background: `${theme.palette.grey[50]}`,
   borderRadius: '0.625rem',
   flexDirection: 'column',
-  height: '116px',
-  [theme.breakpoints.up('sm')]: {
-    flexDirection: 'row',
-    height: '3rem',
-  },
+  height: '7.5rem',
   [theme.breakpoints.up('xs')]: {
     alignItems: 'center',
+  },
+  [theme.breakpoints.up('md')]: {
+    flexDirection: 'row',
+    height: '3rem',
   },
 }));
 export const StyledTitleGrid = styled(Grid)(({ theme }) => ({
@@ -32,22 +32,29 @@ export const StyledGridCheckBox = styled(Grid)(({ theme }) => ({
   display: 'flex',
   gap: '1.25rem',
   justifyContent: 'space-between',
-  [theme.breakpoints.up('sm')]: {
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
   [theme.breakpoints.up('xs')]: {
     alignItems: 'center',
+  },
+  [theme.breakpoints.up('sm')]: {
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  [theme.breakpoints.up('md')]: {
+    alignItems: 'center',
+    justifyContent: 'flex-start',
   },
 }));
 
 export const StyledCheckboxWrapper = styled(Grid)(() => ({
-  flexDirection: 'row',
+  flexDirection: 'column',
   '& .MuiBox-root': {
     [theme.breakpoints.up('xs')]: {
       flexDirection: 'column',
     },
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
+      flexDirection: 'row',
+    },
+    [theme.breakpoints.up('lg')]: {
       flexDirection: 'row',
     },
   },

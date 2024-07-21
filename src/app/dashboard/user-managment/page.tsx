@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 export default function UserManagment() {
   return (
     <Suspense fallback={'loading'}>
-      <UserManagement />;
+      <UserManagement />
     </Suspense>
   );
 }

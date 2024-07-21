@@ -1230,6 +1230,7 @@ export const ReportModal = {
 };
 
 export const DataBankRoute = {
+  submitDate: 'تاریخ ثبت',
   submit: 'ثبت',
   cancel: 'انصراف',
   addGroupFormTitle: 'افزودن گروه',
@@ -1407,4 +1408,12 @@ export const UsersManagementRoute = {
   editStaff: 'ویرایش پرسنل',
   deleteStaff: 'حذف پرسنل',
   databaseSetting: ' پایگاه داده',
+};
+
+export const labels = {
+  pics: 'تصاویر',
+  edit: 'ویرایش',
+  delete: 'حذف',
+  results: 'نتایج',
+  members: 'کاربران',
 };

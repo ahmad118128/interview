@@ -8,7 +8,7 @@ import { StyledTableWrapper } from '../CollapseTable/styled';
 
 const COLLAPSE_ID = 'collapse';
 
-export const CollapseTableWithCheckbox = (props: SelectTableProps) => {
+export const CollapseTableWithCheckbox = <T,>(props: SelectTableProps<T>) => {
   const {
     rows,
     headers,
@@ -32,12 +32,12 @@ export const CollapseTableWithCheckbox = (props: SelectTableProps) => {
 
   const allId =
     selectedMode &&
-    rows?.map((item: any) => {
+    rows?.map((item) => {
       return item.id;
     });
 
   useEffect(() => {
-    if (allId?.length === selected?.length) {
+    if (allId && allId?.length === selected?.length) {
       setAllSelected(true);
       setIndeterminate(false);
     } else if (selected?.length >= 1) {
@@ -47,7 +47,7 @@ export const CollapseTableWithCheckbox = (props: SelectTableProps) => {
       setIndeterminate(false);
     }
     setSelectedId && setSelectedId(selected);
-  }, [allId?.length, allSelected, selected, setSelectedId]);
+  }, [allSelected, selected]);
 
   let header: CellType[] = headers;
 
@@ -55,7 +55,7 @@ export const CollapseTableWithCheckbox = (props: SelectTableProps) => {
     return item?.id !== COLLAPSE_ID;
   });
 
-  const HandleCheckBoxChange = (id: string) => {
+  const HandleCheckBoxChange = (id: string | number) => {
     // Check if the id already exists in the selected array
     if (!selected.includes(id)) {
       // If it doesn't exist, add it to the array
@@ -69,7 +69,7 @@ export const CollapseTableWithCheckbox = (props: SelectTableProps) => {
     e: ChangeEvent<HTMLInputElement> | undefined
   ) => {
     if (e?.target?.checked) {
-      setSelected(allId);
+      allId && setSelected(allId);
       setAllSelected(true);
     } else {
       setSelected([]);
@@ -82,9 +82,7 @@ export const CollapseTableWithCheckbox = (props: SelectTableProps) => {
       <BaseTable
         headers={header}
         rows={rows}
-        HandleCheckBoxHeader={(e: ChangeEvent<HTMLInputElement> | undefined) =>
-          HandleCheckBoxHeader(e)
-        }
+        HandleCheckBoxHeader={(e: any) => HandleCheckBoxHeader(e)}
         allSelected={allSelected}
         handleSort={handleSort}
         error={error}
@@ -93,7 +91,7 @@ export const CollapseTableWithCheckbox = (props: SelectTableProps) => {
         selectedMode={selectedMode}
         indeterminate={indeterminate}
       >
-        {rows?.map((row: any, index: number) => {
+        {rows?.map((row, index: number) => {
           const key = row?.id || index;
           return (
             <CollapseCheckboxRow
@@ -104,7 +102,11 @@ export const CollapseTableWithCheckbox = (props: SelectTableProps) => {
               HandleCheckBoxChange={() => HandleCheckBoxChange(row?.id)}
               selectedMode={selectedMode}
               collapseChildren={
-                <Child row={row} paginationPage={pagination?.page} />
+                Child ? (
+                  <Child row={row} paginationPage={pagination?.page} />
+                ) : (
+                  ''
+                )
               }
             />
           );

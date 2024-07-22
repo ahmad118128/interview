@@ -51,7 +51,9 @@ export const StyledTableWrapper = styled(Box)<StyledTableRowType>`
   .MuiTableBody-root {
     .MuiTableRow-root {
       background-color: ${({ theme }) => theme.palette.grey[50]};
-      height: 3rem;
+      :nth-child(odd) {
+        height: 3rem;
+      }
 
       &:hover {
         background-color: ${({ theme }) => theme.palette.grey[100]};

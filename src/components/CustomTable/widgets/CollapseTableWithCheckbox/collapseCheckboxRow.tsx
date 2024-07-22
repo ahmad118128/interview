@@ -9,12 +9,12 @@ import {
   StyledCollapseChildrenTableRow,
   StyledTableRow,
 } from '../CollapseTable/styled';
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { StyledTableCell } from './styled';
 
 const COLLAPSE_ID = 'collapse';
 
-export const CollapseCheckboxRow = (props: SelectTableRowProps) => {
+export const CollapseCheckboxRow = <T,>(props: SelectTableRowProps<T>) => {
   const {
     row,
     header,
@@ -30,7 +30,6 @@ export const CollapseCheckboxRow = (props: SelectTableRowProps) => {
     return item?.id !== COLLAPSE_ID && item?.id !== undefined;
   });
 
-  const theme = useTheme();
   const [open, setOpen] = useState(false);
   const headersId = header.filter((item: any) => {
     return item.id !== '';
@@ -59,7 +58,7 @@ export const CollapseCheckboxRow = (props: SelectTableRowProps) => {
               {open ? ArrowDownIcon : ArrowLeftIcon}
             </IconButton>
           ) : (
-            row[checkCollapseId].length > 0 && (
+            checkCollapseId && (
               <IconButton
                 aria-label="expand row"
                 size="small"
@@ -83,14 +82,14 @@ export const CollapseCheckboxRow = (props: SelectTableRowProps) => {
         </StyledTableCell>
 
         {filteredHeader?.map((cell: CellType) => {
-          const cellId = cell?.id as keyof RowType;
+          const cellId = cell?.id as keyof T;
           const cellValue = row[cellId];
 
           return cell?.type ? (
             CustomCell({ row, cell })
           ) : (
             <TableCell key={cell?.id} align="center">
-              {cellValue}
+              {cellValue as ReactNode}
             </TableCell>
           );
         })}

@@ -3,9 +3,9 @@ import { Dispatch, SetStateAction } from 'react';
 
 export type CollapseTableWithFabProps<T> = {
   tableHeads: CellType[];
-  data: T;
+  data: T & { id: string | number }[];
   path: string;
-  child: (props: any) => JSX.Element;
+  child: (props: unknown) => JSX.Element;
   setSelectedId?: Dispatch<SetStateAction<Array<string | number>>>;
   selectedId?: Array<string | number>;
 };

@@ -1,21 +1,21 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, ReactNode, SetStateAction } from 'react';
 
 import { CustomPaginationProps, type CellType } from '../CollapseTable/type';
 
-export interface SelectTableRowProps {
+export interface SelectTableRowProps<T> {
   header: CellType[];
-  row: any;
-  collapseChildren?: any;
+  row: T & { id: string | number };
+  collapseChildren?: ReactNode;
   activeIndex: Array<string | number>;
   HandleCheckBoxChange: () => void;
   selectedMode: boolean;
-  HandleSelectedRow?: (Id: string) => void;
-  checkCollapseId?: any;
+  HandleSelectedRow?: (Id: string | number) => void;
+  checkCollapseId?: string | number;
 }
 
-export interface SelectTableProps {
+export interface SelectTableProps<T> {
   headers: CellType[];
-  rows: any;
+  rows: (T & { id: string | number })[];
   error: boolean;
   pagination?: CustomPaginationProps;
   handleSort?: (id: string | unknown) => void;
@@ -23,7 +23,10 @@ export interface SelectTableProps {
   setSelectedId?: Dispatch<SetStateAction<Array<string | number>>>;
   selectedId?: Array<string | number>;
   selectedMode: boolean;
-  collapseChildren?: any;
+  collapseChildren?: (props: {
+    row: T;
+    paginationPage: number | undefined;
+  }) => JSX.Element;
 }
 
 export type StyledTableRowType = {

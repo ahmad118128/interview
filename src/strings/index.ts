@@ -348,9 +348,9 @@ export const generalStr = {
   ageRange: 'بازه‌ی سنی افراد عبوری',
   stateList: 'وضعیت لیست‌های نظارتی',
   registeredPeople: 'افراد ثبت نامی',
-  transientPeople: 'افراد عبوری',
-  waitinglists: 'تعداد لیست انتظار',
-  numberClients: 'تعداد کلاینت‌ها',
+  transientPeople: 'افراد عبوری امروز',
+  waitinglists: 'تعداد لیست نظارتی',
+  numberClients: 'تعداد دوربین ها',
   credentialsSignInError: 'نام‌کاربری یا رمزعبور نادرست است.',
   defaultErrorMessage: 'مشکلی رخ داده است.',
 };

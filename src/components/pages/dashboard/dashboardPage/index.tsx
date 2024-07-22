@@ -32,7 +32,7 @@ export default function DashboardPage() {
           <DoughnutChart
             legend={true}
             chartLabel="Clinet"
-            labels={['نامشخص', 'شناسایی شده']}
+            labels={['غیر فعال', ' فعال']}
             data={[120, 80]}
             showTooltip
           />

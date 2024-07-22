@@ -147,7 +147,7 @@ export const dataBankMockUsers = [
 
 export const dataBankHeaderUser: CellType[] = [
   {
-    id: '',
+    id: COLLAPSE_ID,
     label: '',
   },
   {

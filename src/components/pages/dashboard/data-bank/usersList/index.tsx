@@ -1,18 +1,21 @@
+import { useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { FieldValues, FormProvider, useForm } from 'react-hook-form';
+
+import { TableCell } from '@mui/material';
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
-import { commonWords } from '@/strings';
-import { useState } from 'react';
-import { FieldValues, FormProvider, useForm } from 'react-hook-form';
-import { dataBankHeaderUser, dataBankMockUsers } from '../constants';
-import { TableCell } from '@mui/material';
-import { Icon } from '@iconify/react/dist/iconify.js';
-import theme from '@/theme';
-import { usePathname, useRouter } from 'next/navigation';
-import { IModalState } from '@/components/template/DataBank/type';
+import { DataBankRoute, commonWords, labels } from '@/strings';
 import TableWithFab from '@/components/template/TableWithFab';
-import { FilterContainer } from './FilterContainer';
+import { FilterContainer } from '@/components/template/FilterContainer';
+import { IconButton } from '@/components/atoms/CustomButton/IconButton';
+
+import { dataBankHeaderUser, dataBankMockUsers } from '../constants';
 import { UsersFilterProps } from '../../image-recognition/types';
 import { initFilter } from '../../image-recognition/constants';
+import FilterForm from './FilterForm';
+import CollapseTableWithFab from '@/components/template/CollapseTableWithFab';
+import { Child } from '@/components/CustomTable/widgets/CollapseTable/TableChild';
 
 export default function UsersList({ modal, setModal, setImgModal }: any) {
   const [collapse, setCollapse] = useState(false);
@@ -21,6 +24,7 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
   >([]);
   const [filter, setFilter] = useState(initFilter);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [search, setSearch] = useState<boolean>(false);
 
   const router = useRouter();
   const currentPath = usePathname();
@@ -48,8 +52,9 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
         setCollapse((prev) => !prev);
         break;
 
-      case EFilterTableNameIcon.REFRESH:
-        // serviceCall();
+      case EFilterTableNameIcon.SEARCH:
+        setSearch(true);
+        console.log('search');
         break;
 
       default:
@@ -73,30 +78,26 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
       type: 'function',
       function: (row) => (
         <TableCell>
-          <Icon
-            icon="tabler:photo-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
-            style={{ marginLeft: '0.5rem' }}
+          <IconButton
+            sx={{ marginLeft: '10px' }}
+            iconName="tabler:photo-filled"
+            tooltip={labels.pics}
             onClick={() => setImgModal(true)}
           />
-          <Icon
-            icon="fluent:document-edit-20-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
-            style={{ marginLeft: '0.5rem' }}
+
+          <IconButton
+            sx={{ marginLeft: '10px' }}
+            iconName="fluent:document-edit-20-filled"
+            tooltip={labels.edit}
             onClick={(e) => {
               const editPath = `${currentPath}/editUser/${row.id}`;
               router.push(editPath);
             }}
           />
-          <Icon
-            icon="tabler:trash-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
+
+          <IconButton
+            iconName="tabler:trash-filled"
+            tooltip={labels.delete}
             onClick={(e) =>
               setModal({
                 ...modal,
@@ -117,21 +118,26 @@ export default function UsersList({ modal, setModal, setImgModal }: any) {
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(submitHandler)}>
           <FilterContainer
-            control={control}
-            reset={reset}
             collapse={collapse}
             onHandleIconClick={handleIconClick}
             chips={filtersChips}
             handleFiltersChips={handleFiltersChips}
             refreshLoading={isLoading}
+            tableName={DataBankRoute.usersList}
             setCollapse={setCollapse}
-          />
+            search={search}
+            setSearch={setSearch}
+            chipNumber={24}
+          >
+            <FilterForm control={control} reset={reset} />
+          </FilterContainer>
         </form>
       </FormProvider>
-      <TableWithFab
+      <CollapseTableWithFab
         tableHeads={tableHeadsUser}
         data={dataBankMockUsers}
         path={'/addUser'}
+        child={Child}
       />
     </>
   );

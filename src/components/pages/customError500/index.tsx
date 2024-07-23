@@ -2,7 +2,7 @@
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
-import Error500 from '../../../../public/Error500.png';
+// import Error500 from '../../../../public/Error500.png';
 import { Error500PageStr } from '@/strings';
 import { CustomButton } from '@/components/atoms/CustomButton';
 import { useRouter } from 'next/navigation';
@@ -15,7 +15,7 @@ const ErrorPage500 = () => {
       <StyledBox>
         <StyledImageContainer>
           <Image
-            src={Error500}
+            src="/assets/images/dashboard/Error500.png"
             alt="Error500"
             layout="fill"
             objectFit="contained"

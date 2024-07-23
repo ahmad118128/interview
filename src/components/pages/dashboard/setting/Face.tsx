@@ -16,14 +16,13 @@ import { DataBankRoute, SettingRoute } from '@/strings';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 import { CustomButton } from '@/components/atoms/CustomButton';
-
+import { StyledFilterChild } from '../image-recognition/FilterChild/styled';
+import { CustomRadioButton } from '@/components/atoms/CustomRadioButton';
 import {
   StyledAddFormHeader,
   StyledAddFormMain,
   StyledAddFormWrapper,
-} from '../data-bank/usersList/styled';
-import { StyledFilterChild } from '../image-recognition/FilterChild/styled';
-import { CustomRadioButton } from '@/components/atoms/CustomRadioButton';
+} from '@/components/template/FilterContainer/styled';
 
 export function Face() {
   const [selected, setSelected] = useState('doNotRecordFaces');

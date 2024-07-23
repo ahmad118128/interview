@@ -37,8 +37,6 @@ const FilterForm: React.FC<
           name="TimeOf"
           control={control}
           label={ReportRoute.TimeOf}
-          value={0}
-          onChange={() => console.log('first')}
           rules={{ required: 'Require' }}
         />
       </Grid>
@@ -47,8 +45,6 @@ const FilterForm: React.FC<
           name="TimeTo"
           control={control}
           label={ReportRoute.TimeTo}
-          value={0}
-          onChange={() => console.log('first')}
           rules={{ required: 'Require' }}
         />
       </Grid>

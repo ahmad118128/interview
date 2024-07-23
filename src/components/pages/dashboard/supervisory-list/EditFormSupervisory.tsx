@@ -5,7 +5,7 @@ import { useForm, FieldValues } from 'react-hook-form';
 import { Box, Grid, Typography } from '@mui/material';
 import { DataBankRoute, SupervisitoryListRoute } from '@/strings';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 import { CustomRHFAutocomplete } from '@/components/atoms/Autocomplete';
 import { CustomTextArea } from '@/components/atoms/CustomTextarea/CustomTextarea';
@@ -17,7 +17,7 @@ import {
   StyledAddFormHeader,
   StyledAddFormMain,
   StyledAddFormWrapper,
-} from '../data-bank/usersList/styled';
+} from '@/components/template/FilterContainer/styled';
 import { StyledFilterChild } from '../image-recognition/FilterChild/styled';
 import {
   supervisitoryListMembersHeader,
@@ -26,6 +26,7 @@ import {
 import { COLLAPSE_ID } from '../image-recognition/constants';
 import { useState } from 'react';
 import { IError, ISuccess } from '../image-recognition/types';
+import { PageParamsType } from '@/services/api/users';
 
 export function EditFormSupervisory() {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -47,10 +48,19 @@ export function EditFormSupervisory() {
     router.back();
   };
 
+  const searchParams = useSearchParams();
+  const queryParams = Object.fromEntries(searchParams.entries());
+
+  const [pageParams, setPageParams] = useState<PageParamsType>({
+    pageNo: 0,
+    ...queryParams,
+  });
+
   const pagination: CustomPaginationProps = {
-    all_page: tableData?.data?.all_page as number,
-    current: currentPage,
-    setPage: (newPage: number) => setCurrentPage(newPage),
+    totalPages: 5,
+    page: 0,
+    setPageParams: setPageParams,
+    pageParams: pageParams,
   };
 
   return (
@@ -114,7 +124,6 @@ export function EditFormSupervisory() {
                 headers={supervisitoryListMembersHeader}
                 error={!tableData?.data?.results}
                 mobileIdFilter={[COLLAPSE_ID, 'fullName', 'nationalId']}
-                pagination={pagination}
                 handleSort={(id) => {
                   setOrder(id);
                 }}

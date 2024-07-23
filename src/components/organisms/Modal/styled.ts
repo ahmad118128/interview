@@ -15,6 +15,7 @@ export const StyledCustomModal = styled(Box)`
 export const StyledDeleteButtonBox = styled(Box)`
   width: 100%;
   display: flex;
+  justify-content: flex-end;
 `;
 
 export const StyledDeleteButton = styled(Button)`
@@ -34,6 +35,7 @@ export const StyledActionButtonsBox = styled(Box)`
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  margin-top: 1.25rem;
 `;
 export const StyledErrorText = styled(Typography)`
   text-align: center;

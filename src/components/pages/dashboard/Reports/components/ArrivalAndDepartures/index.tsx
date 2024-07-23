@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { commonWords } from '@/strings';
+import { ReportRoute, commonWords } from '@/strings';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 import { FiltersChips } from '@/components/CustomTable/types';
 import {
@@ -8,8 +8,6 @@ import {
   UsersFilterProps,
 } from '../../../image-recognition/types';
 import { initFilter } from '../../../image-recognition/constants';
-import { EFilterTableNameIcon } from '../TransientPeopleTab/type';
-import { FilterContainer } from './FilterContainer';
 import { MobileCollapseTable } from '@/components/CustomTable/widgets';
 import {
   COLLAPSE_ID,
@@ -20,8 +18,20 @@ import {
 import { CellType } from '@/components/CustomTable/shared/CustomCell/types';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 import ViewImageModal from './ViewImageModal';
+import { FilterContainer } from '@/components/template/FilterContainer';
+import FilterForm from './FilterForm';
+import { EFilterTableNameIcon } from '@/components/template/FilterContainer/type';
+import { useSearchParams } from 'next/navigation';
+import { PageParamsType } from '@/services/api/users';
 
 export default function ArrivalDepartures() {
+  const searchParams = useSearchParams();
+  const queryParams = Object.fromEntries(searchParams.entries());
+
+  const [pageParams, setPageParams] = useState<PageParamsType>({
+    pageNo: 0,
+    ...queryParams,
+  });
   const [collapse, setCollapse] = useState(false);
   const [filtersChips, setFiltersChips] = useState<
     FiltersChips<UsersFilterProps>
@@ -31,6 +41,7 @@ export default function ArrivalDepartures() {
   const [tableData, setTableData] = useState<null | ISuccess | IError>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [order, setOrder] = useState<string | unknown>('');
+  const [search, setSearch] = useState<boolean>(false);
 
   const methods = useForm<FieldValues>({
     mode: 'onSubmit',
@@ -48,8 +59,8 @@ export default function ArrivalDepartures() {
         setCollapse((prev) => !prev);
         break;
 
-      case EFilterTableNameIcon.REFRESH:
-        // serviceCall();
+      case EFilterTableNameIcon.SEARCH:
+        setSearch(true);
         break;
 
       default:
@@ -64,9 +75,10 @@ export default function ArrivalDepartures() {
     });
   };
   const pagination: CustomPaginationProps = {
-    all_page: tableData?.data?.all_page as number,
-    current: currentPage,
-    setPage: (newPage: number) => setCurrentPage(newPage),
+    totalPages: 5,
+    page: 0,
+    setPageParams: setPageParams,
+    pageParams: pageParams,
   };
 
   const tableHeads: CellType[] = [
@@ -84,14 +96,18 @@ export default function ArrivalDepartures() {
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(submitHandler)}>
           <FilterContainer
-            control={control}
-            reset={reset}
+            chipNumber={14}
+            tableName={ReportRoute.arrivalsAndDepartures}
             collapse={collapse}
             onHandleIconClick={handleIconClick}
             chips={filtersChips}
             handleFiltersChips={handleFiltersChips}
             refreshLoading={isLoading}
-          />
+            search={search}
+            setSearch={setSearch}
+          >
+            <FilterForm control={control} reset={reset} />
+          </FilterContainer>
         </form>
       </FormProvider>
       <MobileCollapseTable
@@ -99,7 +115,6 @@ export default function ArrivalDepartures() {
         headers={tableHeads}
         error={!tableData?.data?.results}
         mobileIdFilter={[COLLAPSE_ID, 'ArrivalGateName', 'MatchPercentage']}
-        pagination={pagination}
         handleSort={(id) => {
           setOrder(id);
         }}

@@ -6,8 +6,8 @@ import { CustomButton } from '@/components/atoms/CustomButton';
 import ControlledTimeDatePickerInput from '@/components/organisms/TimeDatePicker/ControlledTimeDatePicker';
 import { StyledFilterChild } from '../../../image-recognition/FilterChild/styled';
 import React from 'react';
-import { HeaderFilterTableProps } from './type';
 import { FieldValues } from 'react-hook-form';
+import { HeaderFilterTableProps } from './type';
 
 const FilterForm: React.FC<
   Pick<HeaderFilterTableProps<FieldValues>, 'control' | 'reset'>
@@ -82,8 +82,6 @@ const FilterForm: React.FC<
           name="registrationTimeOf"
           control={control}
           label={ReportRoute.registrationTimeOf}
-          value={0}
-          onChange={() => console.log('first')}
           rules={{ required: 'Require' }}
         />
       </Grid>
@@ -92,8 +90,6 @@ const FilterForm: React.FC<
           name="registrationTimeUpTo"
           control={control}
           label={ReportRoute.registrationTimeUpTo}
-          value={0}
-          onChange={() => console.log('first')}
           rules={{ required: 'Require' }}
         />
       </Grid>

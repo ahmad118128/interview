@@ -1,20 +1,19 @@
 import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import { FieldValues, useForm } from 'react-hook-form';
 
+import { TableCell } from '@mui/material';
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
-import { commonWords } from '@/strings';
-import { FieldValues, useForm } from 'react-hook-form';
-import { TableCell } from '@mui/material';
-import { Icon } from '@iconify/react/dist/iconify.js';
-import theme from '@/theme';
-import { IModalState } from '@/components/template/DataBank/type';
+import { DataBankRoute, commonWords, labels } from '@/strings';
 import TableWithFab from '@/components/template/TableWithFab';
+import { FilterContainer } from '@/components/template/FilterContainer';
+import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 
 import { supervisitoryListHeader, supervisitoryListMock } from './constants';
 import { initFilter } from '../image-recognition/constants';
 import { UsersFilterProps } from '../image-recognition/types';
-import { FilterContainer } from './FilterContainer';
+import { FilterForm } from './FilterForm';
 
 export function SuperVisoryList({ setModal, modal }: any) {
   const [collapse, setCollapse] = useState(false);
@@ -23,6 +22,7 @@ export function SuperVisoryList({ setModal, modal }: any) {
   >([]);
   const [filter, setFilter] = useState(initFilter);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [search, setSearch] = useState<boolean>(false);
 
   const router = useRouter();
   const currentPath = usePathname();
@@ -50,8 +50,8 @@ export function SuperVisoryList({ setModal, modal }: any) {
         setCollapse((prev) => !prev);
         break;
 
-      case EFilterTableNameIcon.REFRESH:
-        // serviceCall();
+      case EFilterTableNameIcon.SEARCH:
+        setSearch(true);
         break;
 
       default:
@@ -75,33 +75,29 @@ export function SuperVisoryList({ setModal, modal }: any) {
       type: 'function',
       function: (row) => (
         <TableCell>
-          <Icon
-            icon="fluent:people-20-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
-            style={{ marginLeft: '0.5rem' }}
-            onClick={() => {
-              const membersRoute = `${currentPath}/members`;
-              router.push(membersRoute);
+          <IconButton
+            sx={{ marginLeft: '10px' }}
+            iconName="fluent:people-20-filled"
+            tooltip={labels.members}
+            onClick={(e) => {
+              const editPath = `${currentPath}/members`;
+              router.push(editPath);
             }}
           />
-          <Icon
-            icon="fluent:document-edit-20-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
-            style={{ marginLeft: '0.5rem' }}
+
+          <IconButton
+            sx={{ marginLeft: '10px' }}
+            iconName="fluent:document-edit-20-filled"
+            tooltip={labels.edit}
             onClick={(e) => {
               const editPath = `${currentPath}/edit/${row.id}`;
               router.push(editPath);
             }}
           />
-          <Icon
-            icon="tabler:trash-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
+
+          <IconButton
+            iconName="tabler:trash-filled"
+            tooltip={labels.delete}
             onClick={(e) =>
               setModal({
                 ...modal,
@@ -121,17 +117,21 @@ export function SuperVisoryList({ setModal, modal }: any) {
     <>
       <form onSubmit={handleSubmit(submitHandler)}>
         <FilterContainer
-          setCollapse={setCollapse}
-          control={control}
-          reset={reset}
+          chipNumber={22}
+          tableName={DataBankRoute.supervisoryList}
           collapse={collapse}
           onHandleIconClick={handleIconClick}
           chips={filtersChips}
           handleFiltersChips={handleFiltersChips}
           refreshLoading={isLoading}
-        />
+          search={search}
+          setSearch={setSearch}
+        >
+          <FilterForm control={control} reset={reset} />
+        </FilterContainer>
       </form>
       <TableWithFab
+        showOnMobileColumns={['listName', 'similarityPercentage']}
         tableHeads={tableHeadsUser}
         data={supervisitoryListMock}
         path={'/add'}

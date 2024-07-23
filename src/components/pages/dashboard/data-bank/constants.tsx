@@ -1,6 +1,6 @@
 import { CellType } from '@/components/CustomTable/types';
 import { COLLAPSE_ID } from '../image-recognition/constants';
-import { DataBankRoute } from '@/strings';
+import { DataBankRoute, SupervisitoryListRoute } from '@/strings';
 
 export const dataBankMockUsers = [
   {
@@ -11,6 +11,17 @@ export const dataBankMockUsers = [
     group: 'گروه یک',
     nationality: 'ایرانی',
     supervisortList: 'لیست نظارتی',
+    submitter: 'ادمین',
+    education: 'فوق لیسانس',
+    fatherName: 'امید',
+    phone: 88246596,
+    birthDate: '1373/09/04',
+    submitDate: '12:00 - 1401/11/05',
+    birthCertificateNumber: '00536985',
+    sex: 'مرد',
+    birthCity: 'تهران',
+    information:
+      'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد',
   },
   {
     id: 2,
@@ -20,6 +31,17 @@ export const dataBankMockUsers = [
     group: 'گروه یک',
     nationality: 'ایرانی',
     supervisortList: 'لیست نظارتی',
+    submitter: 'ادمین',
+    education: 'فوق لیسانس',
+    fatherName: 'امید',
+    phone: 88246596,
+    birthDate: '1373/09/04',
+    submitDate: '12:00 - 1401/11/05',
+    birthCertificateNumber: '00536985',
+    sex: 'مرد',
+    birthCity: 'تهران',
+    information:
+      'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد',
   },
   {
     id: 3,
@@ -29,6 +51,17 @@ export const dataBankMockUsers = [
     group: 'گروه یک',
     nationality: 'ایرانی',
     supervisortList: 'لیست نظارتی',
+    submitter: 'ادمین',
+    education: 'فوق لیسانس',
+    fatherName: 'امید',
+    phone: 88246596,
+    birthDate: '1373/09/04',
+    submitDate: '12:00 - 1401/11/05',
+    birthCertificateNumber: '00536985',
+    sex: 'مرد',
+    birthCity: 'تهران',
+    information:
+      'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد',
   },
   {
     id: 4,
@@ -38,6 +71,17 @@ export const dataBankMockUsers = [
     group: 'گروه یک',
     nationality: 'ایرانی',
     supervisortList: 'لیست نظارتی',
+    submitter: 'ادمین',
+    education: 'فوق لیسانس',
+    fatherName: 'امید',
+    phone: 88246596,
+    birthDate: '1373/09/04',
+    submitDate: '12:00 - 1401/11/05',
+    birthCertificateNumber: '00536985',
+    sex: 'مرد',
+    birthCity: 'تهران',
+    information:
+      'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد',
   },
   {
     id: 5,
@@ -47,6 +91,17 @@ export const dataBankMockUsers = [
     group: 'گروه یک',
     nationality: 'ایرانی',
     supervisortList: 'لیست نظارتی',
+    submitter: 'ادمین',
+    education: 'فوق لیسانس',
+    fatherName: 'امید',
+    phone: 88246596,
+    birthDate: '1373/09/04',
+    submitDate: '12:00 - 1401/11/05',
+    birthCertificateNumber: '00536985',
+    sex: 'مرد',
+    birthCity: 'تهران',
+    information:
+      'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد',
   },
   {
     id: 6,
@@ -56,6 +111,17 @@ export const dataBankMockUsers = [
     group: 'گروه یک',
     nationality: 'ایرانی',
     supervisortList: 'لیست نظارتی',
+    submitter: 'ادمین',
+    education: 'فوق لیسانس',
+    fatherName: 'امید',
+    phone: 88246596,
+    birthDate: '1373/09/04',
+    submitDate: '12:00 - 1401/11/05',
+    birthCertificateNumber: '00536985',
+    sex: 'مرد',
+    birthCity: 'تهران',
+    information:
+      'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد',
   },
   {
     id: 7,
@@ -65,12 +131,23 @@ export const dataBankMockUsers = [
     group: 'گروه یک',
     nationality: 'ایرانی',
     supervisortList: 'لیست نظارتی',
+    submitter: 'ادمین',
+    education: 'فوق لیسانس',
+    fatherName: 'امید',
+    phone: 88246596,
+    birthDate: '1373/09/04',
+    submitDate: '12:00 - 1401/11/05',
+    birthCertificateNumber: '00536985',
+    sex: 'مرد',
+    birthCity: 'تهران',
+    information:
+      'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد',
   },
 ];
 
 export const dataBankHeaderUser: CellType[] = [
   {
-    id: COLLAPSE_ID,
+    id: '',
     label: '',
   },
   {
@@ -140,7 +217,7 @@ export const dataBankHeadergroup: CellType[] = [
     label: '',
   },
   {
-    id: 'groupName',
+    id: 'name',
     label: DataBankRoute.groupName,
     sortable: true,
   },
@@ -148,5 +225,121 @@ export const dataBankHeadergroup: CellType[] = [
     id: 'description',
     label: DataBankRoute.description,
     sortable: true,
+  },
+];
+
+export const dataBankHeaderUserCollapse = [
+  {
+    id: 'submitter',
+    label: SupervisitoryListRoute.submitter,
+  },
+  {
+    id: 'education',
+    label: DataBankRoute.education,
+  },
+  {
+    id: 'fatherName',
+    label: DataBankRoute.fatherName,
+  },
+  {
+    id: 'phone',
+    label: DataBankRoute.phone,
+  },
+  {
+    id: 'birthDate',
+    label: DataBankRoute.birthDate,
+  },
+  {
+    id: 'submitDate',
+    label: DataBankRoute.submitDate,
+  },
+  {
+    id: 'birthCertificateNumber',
+    label: DataBankRoute.birthCertificateNumber,
+  },
+  {
+    id: 'sex',
+    label: DataBankRoute.sex,
+  },
+  {
+    id: 'birthCity',
+    label: DataBankRoute.birthCity,
+  },
+  {
+    id: 'information',
+    label: DataBankRoute.information,
+  },
+];
+
+export const dataBankMockUsersCollapse = [
+  {
+    id: 1,
+    submitter: 'ادمین',
+    education: 'فوق لیسانس',
+    fatherName: 'امید',
+    phone: 88246596,
+    birthDate: '1373/09/04',
+    submitDate: '12:00 - 1401/11/05',
+    birthCertificateNumber: '00536985',
+    sex: 'مرد',
+    birthCity: 'تهران',
+    information:
+      'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد',
+  },
+  {
+    id: 2,
+    submitter: 'ادمین',
+    education: 'فوق لیسانس',
+    fatherName: 'امید',
+    phone: 88246596,
+    birthDate: '1373/09/04',
+    submitDate: '12:00 - 1401/11/05',
+    birthCertificateNumber: '00536985',
+    sex: 'مرد',
+    birthCity: 'تهران',
+    information:
+      'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد',
+  },
+  {
+    id: 3,
+    submitter: 'ادمین',
+    education: 'فوق لیسانس',
+    fatherName: 'امید',
+    phone: 88246596,
+    birthDate: '1373/09/04',
+    submitDate: '12:00 - 1401/11/05',
+    birthCertificateNumber: '00536985',
+    sex: 'مرد',
+    birthCity: 'تهران',
+    information:
+      'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد',
+  },
+  {
+    id: 4,
+    submitter: 'ادمین',
+    education: 'فوق لیسانس',
+    fatherName: 'امید',
+    phone: 88246596,
+    birthDate: '1373/09/04',
+    submitDate: '12:00 - 1401/11/05',
+    birthCertificateNumber: '00536985',
+    sex: 'مرد',
+    birthCity: 'تهران',
+    information:
+      'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد',
+  },
+  {
+    id: 5,
+    submitter: 'ادمین',
+    education: 'فوق لیسانس',
+    fatherName: 'امید',
+    phone: 88246596,
+    birthDate: '1373/09/04',
+    submitDate: '12:00 - 1401/11/05',
+    birthCertificateNumber: '00536985',
+    sex: 'مرد',
+    birthCity: 'تهران',
+    information:
+      'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد',
   },
 ];

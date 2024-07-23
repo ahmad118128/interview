@@ -18,7 +18,7 @@ export function UserManagement() {
   const tabs = [
     {
       id: 0,
-      label: <Typography>{UsersManagementRoute.usersManagement}</Typography>,
+      label: UsersManagementRoute.usersManagement,
       disableTabRipple: false,
       tabPanel: <FilterPart modal={modalData} setModal={setModalData} />,
     },
@@ -26,7 +26,7 @@ export function UserManagement() {
 
   return (
     <>
-      <CustomTab data={tabs} type={'normalTab'}></CustomTab>
+      <CustomTab data={tabs} type={'normalTab'} tabKey="index"></CustomTab>
 
       {modalData.state ? (
         <DeleteModal

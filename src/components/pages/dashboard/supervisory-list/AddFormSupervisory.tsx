@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 import { Box, Grid, Typography } from '@mui/material';
 import { DataBankRoute, SupervisitoryListRoute } from '@/strings';
@@ -18,7 +18,7 @@ import {
   StyledAddFormHeader,
   StyledAddFormMain,
   StyledAddFormWrapper,
-} from '../data-bank/usersList/styled';
+} from '@/components/template/FilterContainer/styled';
 import { StyledFilterChild } from '../image-recognition/FilterChild/styled';
 import {
   supervisitoryListMembersHeader,
@@ -26,6 +26,7 @@ import {
 } from './constants';
 import { COLLAPSE_ID } from '../image-recognition/constants';
 import { IError, ISuccess } from '../image-recognition/types';
+import { PageParamsType } from '@/services/api/users';
 
 export function AddFormSupervisory() {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -40,10 +41,19 @@ export function AddFormSupervisory() {
     router.back();
   };
 
+  const searchParams = useSearchParams();
+  const queryParams = Object.fromEntries(searchParams.entries());
+
+  const [pageParams, setPageParams] = useState<PageParamsType>({
+    pageNo: 0,
+    ...queryParams,
+  });
+
   const pagination: CustomPaginationProps = {
-    all_page: tableData?.data?.all_page as number,
-    current: currentPage,
-    setPage: (newPage: number) => setCurrentPage(newPage),
+    totalPages: 5,
+    page: 0,
+    setPageParams: setPageParams,
+    pageParams: pageParams,
   };
 
   return (
@@ -107,7 +117,7 @@ export function AddFormSupervisory() {
                 headers={supervisitoryListMembersHeader}
                 error={!tableData?.data?.results}
                 mobileIdFilter={[COLLAPSE_ID, 'fullName', 'nationalId']}
-                pagination={pagination}
+                // pagination={pagination}
                 handleSort={(id) => {
                   setOrder(id);
                 }}

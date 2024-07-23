@@ -2,12 +2,7 @@
 
 import { CustomRadioButton } from '@/components/atoms/CustomRadioButton';
 import SlidePicture from '@/components/molecules/Slider';
-import {
-  FormProvider,
-  useForm,
-  SubmitHandler,
-  FieldValues,
-} from 'react-hook-form';
+import { FormProvider, useForm, FieldValues } from 'react-hook-form';
 import DragAndDropUpload from '@/components/organisms/UploaderInput';
 import { Box } from '@mui/material';
 import { CustomButton } from '@/components/atoms/CustomButton';
@@ -16,7 +11,7 @@ import { ReportModal } from '@/strings';
 import { Button } from '@mui/material';
 import { useState } from 'react';
 import ReportPictureModal from '@/components/organisms/Modal/ReportPictureModal';
-import { group1, group2 } from './constants';
+import { group1 } from './constants';
 
 const mockData = {
   src: '/assets/images/dashboard/avatar1.png',

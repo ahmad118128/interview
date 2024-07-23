@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 import {
   Box,
@@ -34,19 +34,20 @@ import {
   StyledAddFormHeader,
   StyledAddFormMain,
   StyledAddFormWrapper,
-} from '../../data-bank/usersList/styled';
+} from '@/components/template/FilterContainer/styled';
 import { StyledFilterChild } from '../../image-recognition/FilterChild/styled';
-import {
-  supervisitoryListMembersHeader,
-  supervisitoryListMembersMock,
-} from '../../supervisory-list/constants';
-import { COLLAPSE_ID } from '../../image-recognition/constants';
 import { IError, ISuccess } from '../../image-recognition/types';
 import { CustomPasswordInput } from '@/components/atoms/CustomInput/RHFPasswordInput';
-import { ControledCheckbox } from '@/components/atoms/Checkbox';
 import theme from '@/theme';
-import { StyledBox } from './styled';
-import { addDataArray } from '../constants';
+import {
+  StyledBox,
+  StyledCheckboxWrapper,
+  StyledGridCheckBox,
+  StyledTitleGrid,
+} from './styled';
+import { addDataArray, inputFilterArray } from '../constants';
+import { ControledCheckbox } from '@/components/atoms/Checkbox';
+import { PageParamsType } from '@/services/api/users';
 
 export function AddFormUsers() {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -61,10 +62,19 @@ export function AddFormUsers() {
     router.back();
   };
 
+  const searchParams = useSearchParams();
+  const queryParams = Object.fromEntries(searchParams.entries());
+
+  const [pageParams, setPageParams] = useState<PageParamsType>({
+    pageNo: 0,
+    ...queryParams,
+  });
+
   const pagination: CustomPaginationProps = {
-    all_page: tableData?.data?.all_page as number,
-    current: currentPage,
-    setPage: (newPage: number) => setCurrentPage(newPage),
+    totalPages: 5,
+    page: 0,
+    setPageParams: setPageParams,
+    pageParams: pageParams,
   };
 
   return (
@@ -84,75 +94,43 @@ export function AddFormUsers() {
           </label>
 
           <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
-            <Grid item xs={12} md={4}>
-              <CustomInput
-                control={control}
-                name="userName"
-                fullWidth
-                label={gpuServersString.userName}
-              />
-            </Grid>
-
-            <Grid item xs={12} md={4}>
-              <CustomPasswordInput
-                control={control}
-                name="roobinPassword"
-                fullWidth
-                label={registrationStr.roobinPassword}
-              />
-            </Grid>
-
-            <Grid item xs={12} md={4}>
-              <CustomPasswordInput
-                control={control}
-                name="repeatRoobinPassword"
-                fullWidth
-                label={registrationStr.repeatRoobinPassword}
-              />
-            </Grid>
-
-            <Grid item xs={12} md={4}>
-              <CustomInput
-                control={control}
-                name="name"
-                fullWidth
-                label={generalStr.name}
-              />
-            </Grid>
-
-            <Grid item xs={12} md={4}>
-              <CustomInput
-                control={control}
-                name="lastName"
-                fullWidth
-                label={generalStr.lastName}
-              />
-            </Grid>
-
-            <Grid item xs={12} md={4}>
-              <CustomInput
-                control={control}
-                name="nationalId"
-                fullWidth
-                label={DataBankRoute.nationalId}
-                type="number"
-              />
-            </Grid>
+            {inputFilterArray.map(
+              ({ name, label, isPassword, type }, index) => (
+                <Grid item xs={12} md={4} key={index}>
+                  {isPassword ? (
+                    <CustomPasswordInput
+                      control={control}
+                      name={name}
+                      fullWidth
+                      label={label}
+                    />
+                  ) : (
+                    <CustomInput
+                      control={control}
+                      name={name}
+                      fullWidth
+                      label={label}
+                      type={type}
+                    />
+                  )}
+                </Grid>
+              )
+            )}
 
             <Grid item xs={12}>
               <Typography variant="h3">
                 {UsersManagementRoute.accessingPanelState}
               </Typography>
             </Grid>
-
+            {/* /////////table////////// */}
             <Grid
               item
               xs={12}
               sx={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}
             >
-              {addDataArray.map((item: any, index: number) => {
-                return (
-                  <StyledBox key={index}>
+              {addDataArray.map((item, index) => (
+                <StyledBox key={index}>
+                  <StyledTitleGrid item xs={7} sm={5} md={3.6} lg={4}>
                     <Typography
                       variant="h4"
                       noWrap
@@ -163,31 +141,41 @@ export function AddFormUsers() {
                     >
                       {item.title}
                     </Typography>
-
-                    <ControledCheckbox
-                      control={control}
-                      name={item.check1Name}
-                      label={item.check1Label}
-                    />
-
-                    <ControledCheckbox
-                      control={control}
-                      name={item.check2Name}
-                      label={item.check2Label}
-                    />
-
-                    {item.check3Label ? (
+                  </StyledTitleGrid>
+                  <StyledGridCheckBox item xs={12}>
+                    <StyledCheckboxWrapper
+                      item
+                      xs={3.4}
+                      sm={3.3}
+                      md={3.4}
+                      lg={3.4}
+                    >
                       <ControledCheckbox
                         control={control}
-                        name={item.check3Name}
-                        label={item.check3Label}
+                        name={item.check1Name}
+                        label={item.check1Label}
                       />
-                    ) : null}
-                  </StyledBox>
-                );
-              })}
+                    </StyledCheckboxWrapper>
+                    <StyledCheckboxWrapper item xs={4} md={4} lg={4}>
+                      <ControledCheckbox
+                        control={control}
+                        name={item.check2Name}
+                        label={item.check2Label}
+                      />
+                    </StyledCheckboxWrapper>
+                    {item.check3Label && item.check3Name && (
+                      <StyledCheckboxWrapper item xs={4} md={4} lg={4}>
+                        <ControledCheckbox
+                          control={control}
+                          name={item.check3Name}
+                          label={item.check3Label}
+                        />
+                      </StyledCheckboxWrapper>
+                    )}
+                  </StyledGridCheckBox>
+                </StyledBox>
+              ))}
             </Grid>
-
             <Box
               sx={{
                 width: '100%',

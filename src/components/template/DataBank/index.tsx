@@ -5,7 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { TableCell, Typography } from '@mui/material';
 
 import { CustomTab } from '@/components/molecules/CustomTab/styled';
-import { DataBankRoute } from '@/strings';
+import { DataBankRoute, ReportModal } from '@/strings';
 import ThumbnailPicModal from '@/components/organisms/Modal/ThumbnailPicModal';
 import UsersList from '@/components/pages/dashboard/data-bank/usersList';
 import GroupList from '@/components/pages/dashboard/data-bank/groupList';
@@ -25,8 +25,8 @@ export default function DatabankTemplate() {
   const tabs = [
     {
       id: 0,
-      label: <Typography>{DataBankRoute.usersList}</Typography>,
-      disableTabRipple: false,
+      label: DataBankRoute.usersList,
+      disableTabRipple: true,
       tabPanel: (
         <UsersList
           modal={modalData}
@@ -37,7 +37,7 @@ export default function DatabankTemplate() {
     },
     {
       id: 1,
-      label: <Typography>{DataBankRoute.groupList}</Typography>,
+      label: DataBankRoute.groupList,
       disableTabRipple: false,
       tabPanel: <GroupList modal={modalData} setModal={setModalData} />,
     },
@@ -45,7 +45,7 @@ export default function DatabankTemplate() {
 
   return (
     <>
-      <CustomTab data={tabs} type={'normalTab'}></CustomTab>
+      <CustomTab data={tabs} type={'normalTab'} tabKey="index"></CustomTab>
 
       {modalData.state ? (
         <DeleteModal
@@ -60,6 +60,7 @@ export default function DatabankTemplate() {
 
       {imgModal ? (
         <ThumbnailPicModal
+          title={ReportModal.uploadedImg}
           onClose={() => setImgModal(false)}
           open={imgModal}
           setOpen={setImgModal}

@@ -2,7 +2,7 @@
 
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 import {
   Box,
@@ -16,12 +16,6 @@ import { DataBankRoute, SettingRoute } from '@/strings';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
 import { CustomButton } from '@/components/atoms/CustomButton';
-
-import {
-  StyledAddFormHeader,
-  StyledAddFormMain,
-  StyledAddFormWrapper,
-} from '../data-bank/usersList/styled';
 import { StyledFilterChild } from '../image-recognition/FilterChild/styled';
 import ControlledTimeDatePickerInput from '@/components/organisms/TimeDatePicker/ControlledTimeDatePicker';
 import { MobileCollapseTable } from '@/components/CustomTable/widgets';
@@ -29,6 +23,12 @@ import { IError, ISuccess } from '../image-recognition/types';
 import { lastBackupStatusHeader, lastBackupStatusMock } from './constants';
 import { COLLAPSE_ID } from '../image-recognition/constants';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
+import {
+  StyledAddFormHeader,
+  StyledAddFormMain,
+  StyledAddFormWrapper,
+} from '@/components/template/FilterContainer/styled';
+import { PageParamsType } from '@/services/api/users';
 
 export function Backup() {
   const [selected, setSelected] = useState('emergencyBackup');
@@ -43,11 +43,19 @@ export function Backup() {
   const goBackUrl = () => {
     router.back();
   };
+  const searchParams = useSearchParams();
+  const queryParams = Object.fromEntries(searchParams.entries());
+
+  const [pageParams, setPageParams] = useState<PageParamsType>({
+    pageNo: 0,
+    ...queryParams,
+  });
 
   const pagination: CustomPaginationProps = {
-    all_page: tableData?.data?.all_page as number,
-    current: currentPage,
-    setPage: (newPage: number) => setCurrentPage(newPage),
+    totalPages: 5,
+    page: 0,
+    setPageParams: setPageParams,
+    pageParams: pageParams,
   };
 
   return (
@@ -132,8 +140,6 @@ export function Backup() {
                 name="backupDate"
                 control={control}
                 label={SettingRoute.backupDate}
-                value={0}
-                onChange={() => console.log('first')}
                 rules={{ required: 'Require' }}
               />
             </Grid>
@@ -195,7 +201,7 @@ export function Backup() {
                 headers={lastBackupStatusHeader}
                 error={!tableData?.data?.results}
                 mobileIdFilter={[COLLAPSE_ID, 'actionType', 'executionStatus']}
-                pagination={pagination}
+                // pagination={pagination}
                 handleSort={(id) => {
                   setOrder(id);
                 }}

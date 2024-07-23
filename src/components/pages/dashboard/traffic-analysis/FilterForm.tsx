@@ -23,8 +23,6 @@ export default function FilterForm({ control, reset }: any) {
           name="startPassingDateAndTime"
           control={control}
           label={TrafficAnalysisRoute.startPassingDateAndTime}
-          value={0}
-          onChange={() => console.log('first')}
           rules={{ required: 'Require' }}
         />
       </Grid>
@@ -34,8 +32,6 @@ export default function FilterForm({ control, reset }: any) {
           name="endPassingDateAndTime"
           control={control}
           label={TrafficAnalysisRoute.endPassingDateAndTime}
-          value={0}
-          onChange={() => console.log('first')}
           rules={{ required: 'Require' }}
         />
       </Grid>

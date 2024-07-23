@@ -3,6 +3,7 @@ import { TableCell, Typography } from '@mui/material';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { useState } from 'react';
 import theme from '@/theme';
+import { ReportModal } from '@/strings';
 export default function ViewImageModal() {
   const [imgModal, setImgModal] = useState(false);
 
@@ -21,6 +22,7 @@ export default function ViewImageModal() {
 
       {imgModal ? (
         <ThumbnailPicModal
+          title={ReportModal.uploadedImg}
           open={imgModal}
           setOpen={setImgModal}
           src={'/assets/images/dashboard/technology 1.svg'}

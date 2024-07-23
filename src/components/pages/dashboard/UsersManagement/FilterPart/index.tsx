@@ -1,21 +1,23 @@
 'use client';
 
 import { useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { FieldValues, useForm } from 'react-hook-form';
 
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
-import { UsersManagementRoute, commonWords } from '@/strings';
-import { FieldValues, useForm } from 'react-hook-form';
+import { UsersManagementRoute, commonWords, labels } from '@/strings';
 import { TableCell } from '@mui/material';
-import { Icon } from '@iconify/react/dist/iconify.js';
-import theme from '@/theme';
 import TableWithFab from '@/components/template/TableWithFab';
+import { FilterContainer } from '@/components/template/FilterContainer';
+import { IconButton } from '@/components/atoms/CustomButton/IconButton';
+
 import { UsersFilterProps } from '../../image-recognition/types';
 import { initFilter } from '../../image-recognition/constants';
 import { usersHeader, usersMock } from '../constants';
-import { FilterContainer } from '@/components/template/FilterContainer';
 import { FilterForm } from './FilterForm';
+import { PageParamsType, useGetUsersAll } from '@/services/api/users';
+import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 
 export function FilterPart({ setModal, modal }: any) {
   const [collapse, setCollapse] = useState<boolean>(false);
@@ -26,8 +28,26 @@ export function FilterPart({ setModal, modal }: any) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [search, setSearch] = useState<boolean>(false);
 
+  const searchParams = useSearchParams();
+  const queryParams = Object.fromEntries(searchParams.entries());
+
+  const [pageParams, setPageParams] = useState<PageParamsType>({
+    pageNo: 0,
+    ...queryParams,
+  });
+
+  const { data: users, totalItem, totalPages } = useGetUsersAll(pageParams);
+  console.log(users);
+
   const router = useRouter();
   const currentPath = usePathname();
+
+  const pagination: CustomPaginationProps = {
+    totalPages: totalPages,
+    page: pageParams.pageNo,
+    setPageParams: setPageParams,
+    pageParams: pageParams,
+  };
 
   const { control, reset, handleSubmit, setValue } = useForm<FieldValues>({
     mode: 'onSubmit',
@@ -74,22 +94,19 @@ export function FilterPart({ setModal, modal }: any) {
       type: 'function',
       function: (row) => (
         <TableCell>
-          <Icon
-            icon="fluent:document-edit-20-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
-            style={{ marginLeft: '0.5rem' }}
+          <IconButton
+            sx={{ marginLeft: '10px' }}
+            iconName="fluent:document-edit-20-filled"
+            tooltip={labels.edit}
             onClick={(e) => {
               const editPath = `${currentPath}/edit/${row.id}`;
               router.push(editPath);
             }}
           />
-          <Icon
-            icon="tabler:trash-filled"
-            width="24"
-            height="24"
-            color={theme.palette.primary.main}
+
+          <IconButton
+            iconName="tabler:trash-filled"
+            tooltip={labels.delete}
             onClick={(e) =>
               setModal({
                 ...modal,
@@ -122,6 +139,7 @@ export function FilterPart({ setModal, modal }: any) {
         </FilterContainer>
       </form>
       <TableWithFab
+        showOnMobileColumns={['lastName', 'nationalId']}
         tableHeads={tableHeadsUser}
         data={usersMock}
         path={'/add'}

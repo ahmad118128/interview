@@ -4,8 +4,15 @@ import { StyledAccordionDetails, StyledAccordionSummary } from './styled';
 import { HeaderFilterTableProps } from './type';
 
 export const FilterContainer = (props: HeaderFilterTableProps) => {
-  const { children, collapse, onHandleIconClick, radioButton, fullWidthInput } =
-    props;
+  const {
+    children,
+    handleFiltersChips,
+    chips,
+    collapse,
+    onHandleIconClick,
+    radioButton,
+    fullWidthInput,
+  } = props;
 
   if (props.hasModeHandler && !props.onHandleModeChange) {
     throw new Error(
@@ -34,7 +41,9 @@ export const FilterContainer = (props: HeaderFilterTableProps) => {
             {radioButton && radioButton}
             <FilterIcon
               onHandleIconClick={onHandleIconClick}
-              active={collapse}
+              handleFiltersChips={handleFiltersChips}
+              chips={chips}
+              active={false}
             />
           </Box>
           {fullWidthInput}

@@ -1,4 +1,4 @@
-import { Box, Tooltip } from '@mui/material';
+import { Box } from '@mui/material';
 import { Icon } from '@iconify/react';
 import theme from '@/theme';
 import { type Props } from './types';
@@ -6,6 +6,7 @@ import { tablePhrases } from '../../strings';
 import { StyledChip } from '../../widgets/FilterContainer/styled';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 import { EFilterTableNameIcon } from '../../widgets/FilterContainer/type';
+import { generalStr } from '@/strings';
 
 export const FilterIcon = (props: Props) => {
   const { onHandleIconClick, chips, handleFiltersChips, active } = props;
@@ -31,15 +32,13 @@ export const FilterIcon = (props: Props) => {
             />
           ))}
 
-      <Tooltip title={tablePhrases.filtering} placement="bottom" arrow>
-        <IconButton
-          onClick={() => onHandleIconClick(EFilterTableNameIcon.FILTER)}
-          key={tablePhrases.filtering}
-          iconName={'iconoir:filter'}
-          height={24}
-          width={24}
-        />
-      </Tooltip>
+      <IconButton
+        tooltip={generalStr.filter}
+        onClick={() => onHandleIconClick(EFilterTableNameIcon.FILTER)}
+        key={tablePhrases.filtering}
+        iconName={'iconoir:filter'}
+        className="tabButton"
+      />
     </Box>
   );
 };

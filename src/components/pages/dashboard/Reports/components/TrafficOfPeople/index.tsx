@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 import ViewImageModal from './ViewImageModal';
 import { MobileCollapseTable } from '@/components/CustomTable/widgets';
@@ -27,6 +27,7 @@ import theme from '@/theme';
 import { ReportFormValues } from './type';
 import { FilterContainer } from '@/components/template/FilterContainer';
 import ReportFilterForm from './reportFilterForm';
+import { PageParamsType } from '@/services/api/users';
 
 const TrafficOfPeople = () => {
   const [collapse, setCollapse] = useState(false);
@@ -75,10 +76,19 @@ const TrafficOfPeople = () => {
     });
   };
 
+  const searchParams = useSearchParams();
+  const queryParams = Object.fromEntries(searchParams.entries());
+
+  const [pageParams, setPageParams] = useState<PageParamsType>({
+    pageNo: 0,
+    ...queryParams,
+  });
+
   const pagination: CustomPaginationProps = {
-    all_page: tableData?.data?.all_page as number,
-    current: currentPage,
-    setPage: (newPage: number) => setCurrentPage(newPage),
+    totalPages: 2,
+    page: 1,
+    setPageParams: setPageParams,
+    pageParams: pageParams,
   };
 
   const tableHeadsClient: CellType[] = [
@@ -118,7 +128,6 @@ const TrafficOfPeople = () => {
         headers={tableHeadsClient}
         error={!tableData?.data?.results}
         mobileIdFilter={[COLLAPSE_ID, 'name', 'supervisortList']}
-        pagination={pagination}
         handleSort={(id) => {
           setOrder(id);
         }}

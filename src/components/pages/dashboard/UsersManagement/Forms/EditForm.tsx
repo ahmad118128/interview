@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 import { Box, Grid, Typography } from '@mui/material';
 import {
@@ -37,6 +37,7 @@ import { ControledCheckbox } from '@/components/atoms/Checkbox';
 import theme from '@/theme';
 import { StyledBox } from './styled';
 import { addDataArray } from '../constants';
+import { PageParamsType } from '@/services/api/users';
 
 export function EditFormUsers() {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -60,10 +61,19 @@ export function EditFormUsers() {
     router.back();
   };
 
+  const searchParams = useSearchParams();
+  const queryParams = Object.fromEntries(searchParams.entries());
+
+  const [pageParams, setPageParams] = useState<PageParamsType>({
+    pageNo: 0,
+    ...queryParams,
+  });
+
   const pagination: CustomPaginationProps = {
-    all_page: tableData?.data?.all_page as number,
-    current: currentPage,
-    setPage: (newPage: number) => setCurrentPage(newPage),
+    totalPages: 5,
+    page: 0,
+    setPageParams: setPageParams,
+    pageParams: pageParams,
   };
 
   return (

@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 export default function Setting() {
   return (
     <Suspense fallback={'loading'}>
-      <SettingTemplate />;
+      <SettingTemplate />
     </Suspense>
   );
 }

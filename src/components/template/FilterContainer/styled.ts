@@ -74,11 +74,13 @@ export const StyledAccordionSummary = styled(AccordionSummary)`
     margin: 0;
   }
   &[aria-expanded='true'] {
-    margin: 0;
+    margin: 0 !important;
+    min-height: 0;
   }
 `;
 
 export const StyledAccordionDetails = styled(AccordionDetails)`
+  margin-top: 1.25rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -152,6 +154,7 @@ export const StyledGroupWrapper = styled(Box)`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const InnerAccardionSummary = styled(Box)`

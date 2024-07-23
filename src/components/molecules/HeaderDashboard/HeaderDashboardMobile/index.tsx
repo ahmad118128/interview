@@ -9,6 +9,7 @@ import HeaderButton from '../HeaderButton';
 import { MobileActions } from './constants';
 import { registrationStr } from '@/strings';
 import MyDrawer from '@/components/organisms/Drawer';
+import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 
 export default function HeaderDashboardMobile() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -25,7 +26,7 @@ export default function HeaderDashboardMobile() {
   return (
     <>
       <ActionButton disableRipple onClick={() => setOpenDrawer(true)}>
-        <Icon icon={'iconamoon:menu-burger-horizontal-bold'} />
+        <IconButton iconName={'iconamoon:menu-burger-horizontal-bold'} />
       </ActionButton>
       <MyDrawer openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
 
@@ -55,13 +56,12 @@ export default function HeaderDashboardMobile() {
         <Typography variant="body1">{registrationStr.username}</Typography>
         <MenuBox>
           {MobileActions.map((item) => (
-            <HeaderButton
+            <IconButton
               key={item.id}
-              tooltipTitle={item.tooltipTitle}
-              clickHandler={item.clickHandler}
-            >
-              {item.icon}
-            </HeaderButton>
+              tooltip={item.tooltipTitle}
+              onClick={item.onClick}
+              iconName={item.icon}
+            />
           ))}
         </MenuBox>
       </ProfileViewer>

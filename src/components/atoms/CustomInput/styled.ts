@@ -21,6 +21,14 @@ export const StyledTextField = styled(BaseInput)<StyledTextFieldRtlType>(({
       fontSize: theme.typography.body1.fontSize,
       fontFamily: theme.typography.fontFamily,
       fontStyle: 'normal',
+      '&[type="number"]::-webkit-inner-spin-button, &[type="number"]::-webkit-outer-spin-button':
+        {
+          '-webkit-appearance': 'none',
+          margin: 0,
+        },
+      '&[type="number"]': {
+        '-moz-appearance': 'textfield',
+      },
     },
 
     '&:hover>label': {

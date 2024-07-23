@@ -47,6 +47,7 @@ export const CollapseTableWithCheckbox = <T,>(props: SelectTableProps<T>) => {
       setIndeterminate(false);
     }
     setSelectedId && setSelectedId(selected);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [allSelected, selected]);
 
   let header: CellType[] = headers;

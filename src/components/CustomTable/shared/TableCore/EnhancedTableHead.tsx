@@ -36,7 +36,7 @@ export const EnhancedTableHead = (props: EnhancedTableProps) => {
   });
 
   return (
-    <TableHead>
+    <TableHead sx={{ height: '52px !important' }}>
       <TableRow>
         {selectedMode && (
           <StyledIconCheckboxTableCell>

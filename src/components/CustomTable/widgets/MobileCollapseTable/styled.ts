@@ -51,10 +51,15 @@ export const StyledTableWrapper = styled(Box)<StyledTableRowType>`
   .MuiTableBody-root {
     .MuiTableRow-root {
       background-color: ${({ theme }) => theme.palette.grey[50]};
-      :nth-child(odd) {
+      height:3rem;
+      ${({ theme }) => theme.breakpoints.down('md')} {
+       :nth-child(odd) {
         height: 3rem;
       }
-
+        :nth-child(even) {
+        height: auto;
+      }
+      
       &:hover {
         background-color: ${({ theme }) => theme.palette.grey[100]};
 
@@ -94,7 +99,7 @@ export const StyledTableWrapper = styled(Box)<StyledTableRowType>`
 `;
 
 export const StyledIconCheckboxTableCell = styled(TableCell)`
-  padding: 1rem 2.3rem 1rem 0;
+  padding: 0 2.3rem 0 0;
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     width: 5rem;

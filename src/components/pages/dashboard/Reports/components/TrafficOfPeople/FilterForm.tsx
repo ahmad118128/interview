@@ -12,8 +12,9 @@ import {
   siderBarList,
 } from '@/strings';
 import { StyledFilterChild } from '../../../image-recognition/FilterChild/styled';
+import { IFilterFormProps } from '../../type';
 
-export default function ReportFilterForm({ control, reset }: any) {
+export default function FilterForm({ control, reset }: IFilterFormProps) {
   return (
     <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
       <Grid item xs={12} md={4}>

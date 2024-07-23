@@ -19,11 +19,11 @@ import {
 import { CellType } from '@/components/CustomTable/shared/CustomCell/types';
 import theme from '@/theme';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
-import ViewImageModal from './ViewImageModal';
 import FilterForm from './FilterForm';
 import { EFilterTableNameIcon } from '@/components/template/FilterContainer/type';
 import { useSearchParams } from 'next/navigation';
 import { PageParamsType } from '@/services/api/users';
+import ViewImageModal from '../../ViewImageModal';
 
 export default function TransientPeople() {
   const searchParams = useSearchParams();
@@ -91,8 +91,6 @@ export default function TransientPeople() {
       function: (row) => <ViewImageModal />,
     },
   ];
-  console.log('updated');
-
   return (
     <>
       <FormProvider {...methods}>

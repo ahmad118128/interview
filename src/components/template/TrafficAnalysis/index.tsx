@@ -10,7 +10,7 @@ import { initFilter } from '@/components/pages/dashboard/image-recognition/const
 import { useForm } from 'react-hook-form';
 import TrafficAnalysisCp from '@/components/pages/dashboard/traffic-analysis';
 import CustomTab from '@/components/molecules/CustomTab/styled';
-import { EFilterTableNameIcon } from '@/components/pages/dashboard/Reports/components/TransientPeopleTab/type';
+import { EFilterTableNameIcon } from '../FilterContainer/type';
 
 export default function TrafficAnalysisTemplate() {
   const [collapse, setCollapse] = useState(false);

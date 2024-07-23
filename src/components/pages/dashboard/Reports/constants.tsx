@@ -1,5 +1,4 @@
 import { ReportRoute } from '@/strings';
-import { Typography } from '@mui/material';
 import TransientPeople from './components/TransientPeopleTab';
 import ArrivalDepartures from './components/ArrivalAndDepartures';
 import TrafficOfPeople from './components/TrafficOfPeople';

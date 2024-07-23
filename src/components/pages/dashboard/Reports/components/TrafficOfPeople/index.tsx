@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
-import ViewImageModal from './ViewImageModal';
 import { MobileCollapseTable } from '@/components/CustomTable/widgets';
 import {
   COLLAPSE_ID,
@@ -22,17 +21,16 @@ import {
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 import { CellType, FiltersChips } from '@/components/CustomTable/types';
 import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterContainer/type';
-import { DataBankRoute, TrafficAnalysisRoute, commonWords } from '@/strings';
-import theme from '@/theme';
-import { ReportFormValues } from './type';
+import { TrafficAnalysisRoute, commonWords } from '@/strings';
 import { FilterContainer } from '@/components/template/FilterContainer';
-import ReportFilterForm from './reportFilterForm';
 import { PageParamsType } from '@/services/api/users';
+import FilterForm from './FilterForm';
+import ViewImageModal from '../../ViewImageModal';
 
 const TrafficOfPeople = () => {
   const [collapse, setCollapse] = useState(false);
   const [filtersChips, setFiltersChips] = useState<
-    FiltersChips<ReportFormValues>
+    FiltersChips<UsersFilterProps>
   >([]);
   const [filter, setFilter] = useState(initFilter);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -44,12 +42,12 @@ const TrafficOfPeople = () => {
   const router = useRouter();
   const currentPath = usePathname();
 
-  const methods = useForm<ReportFormValues>({
+  const methods = useForm<FieldValues>({
     mode: 'onSubmit',
     defaultValues: defaultReportValues,
   });
 
-  const submitHandler = (data: ReportFormValues) => {
+  const submitHandler = (data: FieldValues) => {
     setCollapse(true);
   };
 
@@ -68,14 +66,13 @@ const TrafficOfPeople = () => {
     }
   };
 
-  const handleFiltersChips = (filterKey: keyof typeof defaultReportValues) => {
-    methods.setValue(filterKey, defaultReportValues[filterKey]);
-    setFilter({ ...filter, [filterKey]: defaultReportValues[filterKey] });
+  const handleFiltersChips = (filterKey: keyof typeof initFilter) => {
+    methods.setValue(filterKey, initFilter[filterKey]);
+    setFilter({ ...filter, [filterKey]: initFilter[filterKey] });
     setFiltersChips((prevFiltersChips) => {
       return prevFiltersChips.filter((chip) => chip.key !== filterKey);
     });
   };
-
   const searchParams = useSearchParams();
   const queryParams = Object.fromEntries(searchParams.entries());
 
@@ -119,7 +116,7 @@ const TrafficOfPeople = () => {
             setSearch={setSearch}
             chipNumber={24}
           >
-            <ReportFilterForm control={control} reset={reset} />
+            <FilterForm control={control} reset={reset} />
           </FilterContainer>
         </form>
       </FormProvider>

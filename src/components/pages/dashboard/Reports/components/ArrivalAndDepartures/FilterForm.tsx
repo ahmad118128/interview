@@ -6,12 +6,9 @@ import { CustomButton } from '@/components/atoms/CustomButton';
 import ControlledTimeDatePickerInput from '@/components/organisms/TimeDatePicker/ControlledTimeDatePicker';
 import { StyledFilterChild } from '../../../image-recognition/FilterChild/styled';
 import React from 'react';
-import { FieldValues } from 'react-hook-form';
-import { HeaderFilterTableProps } from '../TransientPeopleTab/type';
+import { IFilterFormProps } from '../../type';
 
-const FilterForm: React.FC<
-  Pick<HeaderFilterTableProps<FieldValues>, 'control' | 'reset'>
-> = ({ control, reset }) => {
+export default function FilterForm({ control, reset }: IFilterFormProps) {
   return (
     <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
       <Grid item xs={12} md={3}>
@@ -66,6 +63,4 @@ const FilterForm: React.FC<
       </Box>
     </StyledFilterChild>
   );
-};
-
-export default FilterForm;
+}

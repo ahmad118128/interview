@@ -4,4 +4,4 @@ export * from './FullTextSearch';
 export * from './NoResults';
 export * from './Status';
 export * from './TableCore';
-export * from './TablePagination';
+// export * from './TablePagination';

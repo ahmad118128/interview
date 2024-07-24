@@ -121,6 +121,7 @@ export const generalStr = {
   thousandRials: 'هزار ریال',
   free: 'رایگان',
   packageInputPrice: 'قیمت ورودی بسته',
+  loginLogout: 'ورود و خروج',
   cpuOnly: 'فقط CPU',
   packageTime: 'زمان بسته',
   entranceFee: 'هزینه ورودی',
@@ -351,6 +352,8 @@ export const generalStr = {
   transientPeople: 'افراد عبوری',
   waitinglists: 'تعداد لیست انتظار',
   numberClients: 'تعداد کلاینت‌ها',
+  credentialsSignInError: 'نام‌کاربری یا رمزعبور نادرست است.',
+  defaultErrorMessage: 'مشکلی رخ داده است.',
 };
 
 export const registrationStr = {
@@ -1060,7 +1063,7 @@ export const commonWords = {
   group: 'گروه',
   workflowGroup: 'جریان کاری گروه',
   general: 'عمومی',
-  generalSetting: 'تنظیمات عمومی',
+  generalSetting: ' عمومی',
   Advanced: 'پیشرفته',
   advancedSetting: 'تنظیمات پیشرفته',
   similarityPercentage: {
@@ -1228,6 +1231,7 @@ export const ReportModal = {
 };
 
 export const DataBankRoute = {
+  submitDate: 'تاریخ ثبت',
   submit: 'ثبت',
   cancel: 'انصراف',
   addGroupFormTitle: 'افزودن گروه',
@@ -1333,6 +1337,7 @@ export const SettingRoute = {
 };
 
 export const TrafficAnalysisRoute = {
+  trafficPeople: 'تردد افراد',
   mensTraffic: 'تردد افراد با جنسیت آقا',
   womensTraffic: 'تردد افراد با جنسیت خانم',
   sampleChart: 'چارت نمونه',
@@ -1394,14 +1399,22 @@ export const UsersManagementRoute = {
   addList: 'افزودن لیست',
   editList: 'ویرایش لیست',
   deleteList: 'حذف لیست',
-  passingPeopleImageRecognition: 'شناسایی تصویر افرادعبوری',
-  registeredPeopleImageRecognition: 'شناسایی تصویر افرادثبت نامی',
+  passingPeopleImageRecognition: 'افراد عبوری',
+  registeredPeopleImageRecognition: 'افراد شناسایی شده',
   reports: 'گزارش‌ها',
-  passingPeopleReport: 'گزارش افراد عبوری',
-  peoplesTrafficReport: 'گزارش تردد افراد',
-  entryAndExitReport: 'گزارش ورود و خروج',
+  passingPeopleReport: ' افراد عبوری',
+  peoplesTrafficReport: ' تردد افراد',
+  entryAndExitReport: ' ورود و خروج',
   addStaff: 'افزودن پرسنل',
   editStaff: 'ویرایش پرسنل',
   deleteStaff: 'حذف پرسنل',
-  databaseSetting: 'تنظیمات پایگاه داده',
+  databaseSetting: ' پایگاه داده',
+};
+
+export const labels = {
+  pics: 'تصاویر',
+  edit: 'ویرایش',
+  delete: 'حذف',
+  results: 'نتایج',
+  members: 'کاربران',
 };

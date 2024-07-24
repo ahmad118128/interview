@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 export default function TrafficAnalysis() {
   return (
     <Suspense fallback={'loading'}>
-      <TrafficAnalysisTemplate />;
+      <TrafficAnalysisTemplate />
     </Suspense>
   );
 }

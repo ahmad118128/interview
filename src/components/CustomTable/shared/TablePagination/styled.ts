@@ -10,6 +10,8 @@ export const StyledTablePagination = styled(Pagination)`
   height: 32px;
   width: 100%;
   padding-block: 0.75rem;
+  border-radius: 10px;
+  border: 1px solid ${theme.palette.grey['300']};
   & .MuiPagination-ul {
     flex-direction: row-reverse;
     justify-content: center;

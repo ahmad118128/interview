@@ -31,9 +31,6 @@ export const CollapseCheckboxRow = <T,>(props: SelectTableRowProps<T>) => {
   });
 
   const [open, setOpen] = useState(false);
-  const headersId = header.filter((item: any) => {
-    return item.id !== '';
-  });
 
   const ArrowDownIcon = (
     <Icon icon="ic:baseline-keyboard-arrow-down" width={24} />

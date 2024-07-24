@@ -37,15 +37,13 @@ export const CollapseTableWithCheckbox = <T,>(props: SelectTableProps<T>) => {
     });
 
   useEffect(() => {
-    if (allId && allId?.length === selected?.length) {
-      setAllSelected(true);
-      setIndeterminate(false);
-    } else if (selected?.length >= 1) {
-      setIndeterminate(true);
-    } else {
-      setAllSelected(false);
-      setIndeterminate(false);
-    }
+    allId && allId?.length === selected?.length
+      ? (setAllSelected(true), setIndeterminate(false))
+      : selected?.length >= 1
+        ? setIndeterminate(true)
+        : setAllSelected(false);
+    setIndeterminate(false);
+
     setSelectedId && setSelectedId(selected);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [allSelected, selected]);
@@ -83,7 +81,7 @@ export const CollapseTableWithCheckbox = <T,>(props: SelectTableProps<T>) => {
       <BaseTable
         headers={header}
         rows={rows}
-        HandleCheckBoxHeader={(e: any) => HandleCheckBoxHeader(e)}
+        HandleCheckBoxHeader={(e) => HandleCheckBoxHeader(e)}
         allSelected={allSelected}
         handleSort={handleSort}
         error={error}

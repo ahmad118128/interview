@@ -10,7 +10,7 @@ export interface BaseTableProps {
   children?: any;
   handleSort?: (id: string | unknown) => void;
   emptyDataMessage?: string;
-  HandleCheckBoxHeader?: (e: any) => void;
+  HandleCheckBoxHeader?: (e: ChangeEvent<HTMLInputElement> | undefined) => void;
   allSelected?: boolean;
   selectedMode?: boolean;
   indeterminate?: boolean;

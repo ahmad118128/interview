@@ -59,18 +59,6 @@ export const StyledTableWrapper = styled(Box)<StyledTableWrapperType>`
         &:nth-child(even) {
           height: auto !important;
         }
-        &:hover {
-          .MuiTableCell-root{
-          border-bottom:1px solid ${({ theme }) => theme.palette.grey[300]};
-          border-top: 1px solid ${({ theme }) => theme.palette.grey[300]};
-          }
-          &.MuiTableRow-root td:last-child {
-            border-left: 1px solid ${({ theme }) => theme.palette.grey[300]};
-          }
-         &.MuiTableRow-root td:first-child {
-            border-right: 1px solid ${({ theme }) => theme.palette.grey[300]};
-          }
-        }
       }
       .MuiTableCell-root {
         border-bottom: ${({ expand, theme }) =>
@@ -119,10 +107,4 @@ export const StyledTableRow = styled(TableRow)<StyledTableRowType>`
     expand
       ? `${theme.palette.common.white} !important`
       : theme.palette.common.white};
-  &:hover {
-    background: ${({ expand, theme }) =>
-      expand
-        ? `${theme.palette.common.white} !important`
-        : theme.palette.grey[100]} !important;
-  }
 `;

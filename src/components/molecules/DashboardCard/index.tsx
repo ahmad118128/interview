@@ -7,7 +7,7 @@ export default function DashboardCard(props: DashboardCardProps) {
   return (
     <CardBox>
       <ImageBox>
-        <Image src={src} width={60} height={50} alt="" />
+        <Image src={src} width={50} height={50} alt="" />
       </ImageBox>
       <ContentBox>
         <TitleText>{title}</TitleText>

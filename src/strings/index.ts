@@ -350,9 +350,11 @@ export const generalStr = {
   registeredPeople: 'افراد ثبت نامی',
   transientPeople: 'افراد عبوری امروز',
   waitinglists: 'تعداد لیست نظارتی',
-  numberClients: 'تعداد دوربین ها',
+  numberClients: 'تعداد کلاینت‌ها',
+  numberCameras: 'تعداد دوربین ها',
   credentialsSignInError: 'نام‌کاربری یا رمزعبور نادرست است.',
   defaultErrorMessage: 'مشکلی رخ داده است.',
+  cameraSituation: 'وضعیت دوربین ها',
 };
 
 export const registrationStr = {

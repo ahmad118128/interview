@@ -1207,7 +1207,7 @@ export const deleteMessages = {
 };
 
 export const siderBarList = {
-  dashboard: 'دشبورد',
+  dashboard: 'داشبورد',
   cameraSurveillance: 'نظارت دوربین',
   cameraManagement: 'مدیریت دوربین',
   informationBank: 'بانک اطلاعاتی',

@@ -6,6 +6,16 @@ export const drawerSidebarList = [
     icon: 'material-symbols:home-rounded',
   },
   {
+    title: siderBarList.cameraSurveillance,
+    icon: 'fluent:video-sync-20-filled',
+    url: 'camera-surveillance',
+  },
+  {
+    title: siderBarList.cameraManagement,
+    icon: 'fluent:video-security-24-filled',
+    url: 'camera-management',
+  },
+  {
     title: siderBarList.informationBank,
     icon: 'material-symbols:database',
     url: 'data-bank',
@@ -16,8 +26,13 @@ export const drawerSidebarList = [
     url: 'supervisitory-list',
   },
   {
-    title: siderBarList.imageRecognition,
-    icon: 'mdi:user-search',
+    title: siderBarList.module,
+    icon: 'mage:dashboard-plus-fill',
+    url: 'module',
+  },
+  {
+    title: siderBarList.offlineIdentification,
+    icon: 'fluent:slide-multiple-search-24-filled',
     url: 'image-recognition',
   },
   {
@@ -26,13 +41,8 @@ export const drawerSidebarList = [
     url: 'report',
   },
   {
-    title: siderBarList.trafficAnalysis,
-    icon: 'mdi:report-box',
-    url: 'traffic-analysis',
-  },
-  {
     title: siderBarList.userManagement,
-    icon: 'mdi:users-group',
+    icon: 'fluent:people-20-filled',
     url: 'user-managment',
   },
 ];

@@ -23,6 +23,7 @@ import FilterForm from './FilterForm';
 import { EFilterTableNameIcon } from '@/components/template/FilterContainer/type';
 import { useSearchParams } from 'next/navigation';
 import { PageParamsType } from '@/services/api/users';
+import { TablePagination } from '@/components/CustomTable/shared/TablePagination';
 
 export default function ArrivalDepartures() {
   const searchParams = useSearchParams();
@@ -76,7 +77,7 @@ export default function ArrivalDepartures() {
   };
   const pagination: CustomPaginationProps = {
     totalPages: 5,
-    page: 0,
+    page: 1,
     setPageParams: setPageParams,
     pageParams: pageParams,
   };
@@ -119,6 +120,7 @@ export default function ArrivalDepartures() {
           setOrder(id);
         }}
       />
+      {pagination ? <TablePagination {...pagination} /> : null}
     </>
   );
 }

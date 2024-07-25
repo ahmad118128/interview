@@ -1,29 +1,32 @@
 import { useState } from 'react';
-import { DataBankRoute, ReportRoute, commonWords } from '@/strings';
+import { useSearchParams } from 'next/navigation';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
+
 import { FiltersChips } from '@/components/CustomTable/types';
-import {
-  IError,
-  ISuccess,
-  UsersFilterProps,
-} from '../../../image-recognition/types';
-import { initFilter } from '../../../image-recognition/constants';
+
 import { FilterContainer } from '@/components/template/FilterContainer';
 import { MobileCollapseTable } from '@/components/CustomTable/widgets';
+
+import { CellType } from '@/components/CustomTable/shared/CustomCell/types';
+import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
+import { EFilterTableNameIcon } from '@/components/template/FilterContainer/type';
+import { PageParamsType } from '@/services/api/users';
+import { ReportRoute, commonWords } from '@/strings';
+
 import {
   COLLAPSE_ID,
   TransientMockData,
   TransientPeopleHeader,
   defaultTransientPeopleFormValues,
 } from './constants';
-import { CellType } from '@/components/CustomTable/shared/CustomCell/types';
-import theme from '@/theme';
-import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
-import FilterForm from './FilterForm';
-import { EFilterTableNameIcon } from '@/components/template/FilterContainer/type';
-import { useSearchParams } from 'next/navigation';
-import { PageParamsType } from '@/services/api/users';
+import {
+  IError,
+  ISuccess,
+  UsersFilterProps,
+} from '../../../image-recognition/types';
+import { initFilter } from '../../../image-recognition/constants';
 import ViewImageModal from '../../ViewImageModal';
+import { FilterForm } from './FilterForm';
 
 export default function TransientPeople() {
   const searchParams = useSearchParams();

@@ -24,8 +24,8 @@ import { EFilterTableNameIcon } from '@/components/CustomTable/widgets/FilterCon
 import { TrafficAnalysisRoute, commonWords } from '@/strings';
 import { FilterContainer } from '@/components/template/FilterContainer';
 import { PageParamsType } from '@/services/api/users';
-import FilterForm from './FilterForm';
 import ViewImageModal from '../../ViewImageModal';
+import { FilterForm } from './FilterForm';
 
 const TrafficOfPeople = () => {
   const [collapse, setCollapse] = useState(false);

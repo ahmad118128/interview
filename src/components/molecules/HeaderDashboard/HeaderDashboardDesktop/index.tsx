@@ -1,14 +1,26 @@
 import { Typography } from '@mui/material';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
 import { registrationStr } from '@/strings';
-import { logout } from '@/services/api/auth/logOut';
-import Link from 'next/link';
 import { ActionBar, UsernameBox } from './styled';
 import { DesktopActions } from './constants';
-import HeaderButton from '../HeaderButton';
-import { Icon } from '@iconify/react';
+import { usePostLogOut } from '@/services/api/auth/usePostLogout';
+import { useRouter } from 'next/navigation';
 
 export default function HeaderDashboardDesktop() {
+  const logOut = usePostLogOut();
+  const router = useRouter();
+
+  const onLogOut = () => {
+    logOut(undefined, {
+      onSuccess: () => {
+        router.push('/login');
+      },
+      onError: (error) => {
+        console.error('Error adding post:', error);
+      },
+    });
+  };
+
   return (
     <>
       <ActionBar>
@@ -23,21 +35,14 @@ export default function HeaderDashboardDesktop() {
       </ActionBar>
 
       <UsernameBox>
-        <Link
-          href={'/dashboard/profile'}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.75rem',
-            color: 'black',
-          }}
-        >
-          <Icon width={24} icon={'lets-icons:user-fill'} />
-          <Typography variant="body1">{registrationStr.username}</Typography>
-        </Link>
-        <HeaderButton tooltipTitle="خروج" clickHandler={logout}>
-          <Icon width={24} icon={'ion:exit'} />
-        </HeaderButton>
+        <IconButton iconName={'lets-icons:user-fill'} />
+        <Typography variant="body1">{registrationStr.username}</Typography>
+
+        <IconButton
+          tooltip={registrationStr.logOut}
+          iconName="ion:exit"
+          onClick={onLogOut}
+        />
       </UsernameBox>
     </>
   );

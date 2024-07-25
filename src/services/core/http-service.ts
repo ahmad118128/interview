@@ -10,10 +10,11 @@ import { errorHandler, networkErrorStrategy } from './http-error-strategies';
 import { Problem } from './type';
 
 const httpService = axios.create({
-  baseURL: API_URL,
+  baseURL: '/api',
   headers: {
     'Content-Type': 'application/json',
   },
+  withCredentials: true,
 });
 
 httpService.interceptors.response.use(

@@ -1,17 +1,16 @@
+import React from 'react';
 import { Box, Grid } from '@mui/material';
+
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
-import { DataBankRoute, ReportRoute } from '@/strings';
 import { CustomRHFAutocomplete } from '@/components/atoms/Autocomplete';
 import { CustomButton } from '@/components/atoms/CustomButton';
 import ControlledTimeDatePickerInput from '@/components/organisms/TimeDatePicker/ControlledTimeDatePicker';
-import { StyledFilterChild } from '../../../image-recognition/FilterChild/styled';
-import React from 'react';
-import { FieldValues } from 'react-hook-form';
-import { HeaderFilterTableProps } from './type';
 
-const FilterForm: React.FC<
-  Pick<HeaderFilterTableProps<FieldValues>, 'control' | 'reset'>
-> = ({ control, reset }) => {
+import { DataBankRoute, ReportRoute } from '@/strings';
+import { StyledFilterChild } from '../../../image-recognition/FilterChild/styled';
+import { IFilterFormProps } from '../../type';
+
+export function FilterForm({ control, reset }: IFilterFormProps) {
   return (
     <StyledFilterChild container spacing={{ xs: 0, md: 8 }}>
       <Grid item xs={12} md={4}>
@@ -111,6 +110,4 @@ const FilterForm: React.FC<
       </Box>
     </StyledFilterChild>
   );
-};
-
-export default FilterForm;
+}

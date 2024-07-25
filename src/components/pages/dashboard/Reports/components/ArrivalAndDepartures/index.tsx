@@ -1,29 +1,31 @@
 import { useState } from 'react';
-import { ReportRoute, commonWords } from '@/strings';
+import { useSearchParams } from 'next/navigation';
 import { FieldValues, FormProvider, useForm } from 'react-hook-form';
+
 import { FiltersChips } from '@/components/CustomTable/types';
-import {
-  IError,
-  ISuccess,
-  UsersFilterProps,
-} from '../../../image-recognition/types';
-import { initFilter } from '../../../image-recognition/constants';
+
 import { MobileCollapseTable } from '@/components/CustomTable/widgets';
+import { TablePagination } from '@/components/CustomTable/shared/TablePagination';
+import { CellType } from '@/components/CustomTable/shared/CustomCell/types';
+import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
+import { FilterContainer } from '@/components/template/FilterContainer';
+import { EFilterTableNameIcon } from '@/components/template/FilterContainer/type';
+import { PageParamsType } from '@/services/api/users';
+import { ReportRoute, commonWords } from '@/strings';
 import {
   COLLAPSE_ID,
   defaultArrivalsAndDeparturesModalPicFormValues,
   ArrivalsAndDeparturesMockData,
   ArrivalsAndDeparturesHeader,
 } from './constants';
-import { CellType } from '@/components/CustomTable/shared/CustomCell/types';
-import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
-import ViewImageModal from './ViewImageModal';
-import { FilterContainer } from '@/components/template/FilterContainer';
-import FilterForm from './FilterForm';
-import { EFilterTableNameIcon } from '@/components/template/FilterContainer/type';
-import { useSearchParams } from 'next/navigation';
-import { PageParamsType } from '@/services/api/users';
-import { TablePagination } from '@/components/CustomTable/shared/TablePagination';
+import ViewImageModal from '../../ViewImageModal';
+import { initFilter } from '../../../image-recognition/constants';
+import { FilterForm } from './FilterForm';
+import {
+  IError,
+  ISuccess,
+  UsersFilterProps,
+} from '../../../image-recognition/types';
 
 export default function ArrivalDepartures() {
   const searchParams = useSearchParams();

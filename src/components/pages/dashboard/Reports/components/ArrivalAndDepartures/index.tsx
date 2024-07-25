@@ -5,6 +5,7 @@ import { FieldValues, FormProvider, useForm } from 'react-hook-form';
 import { FiltersChips } from '@/components/CustomTable/types';
 
 import { MobileCollapseTable } from '@/components/CustomTable/widgets';
+import { TablePagination } from '@/components/CustomTable/shared/TablePagination';
 import { CellType } from '@/components/CustomTable/shared/CustomCell/types';
 import { CustomPaginationProps } from '@/components/CustomTable/shared/TablePagination/types';
 import { FilterContainer } from '@/components/template/FilterContainer';
@@ -78,7 +79,7 @@ export default function ArrivalDepartures() {
   };
   const pagination: CustomPaginationProps = {
     totalPages: 5,
-    page: 0,
+    page: 1,
     setPageParams: setPageParams,
     pageParams: pageParams,
   };
@@ -121,6 +122,7 @@ export default function ArrivalDepartures() {
           setOrder(id);
         }}
       />
+      {pagination ? <TablePagination {...pagination} /> : null}
     </>
   );
 }

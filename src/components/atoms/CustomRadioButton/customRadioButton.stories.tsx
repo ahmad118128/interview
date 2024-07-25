@@ -1,5 +1,8 @@
 import { CustomRadioButton } from '@/components/atoms/CustomRadioButton';
-import { ICustomRadio } from '@/components/atoms/CustomRadioButton/type';
+import {
+  ICustomRadio,
+  groupDataFace,
+} from '@/components/atoms/CustomRadioButton/type';
 import theme from '@/theme';
 import { ThemeProvider } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react';
@@ -17,7 +20,6 @@ const meta: Meta<typeof CustomRadioButton> = {
       </ThemeProvider>
     ),
   ],
-
   args: {
     value: '',
     name: '',

@@ -1,3 +1,5 @@
+import { CSSProperties } from 'react';
+
 export interface BarChartProps {
   labels: unknown[];
   data: {
@@ -5,4 +7,5 @@ export interface BarChartProps {
     data: number[];
   }[];
   legend?: boolean;
+  style?: CSSProperties;
 }

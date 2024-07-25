@@ -1,6 +1,7 @@
 /** ********** GENERAL ********** */
 
 export const generalStr = {
+  emptyState: 'تاکنون اطلاعاتی ثبت نشده است.',
   backToDashboard: 'بازگشت به داشبورد',
   RemovedRenamedOrUnavailablePage:
     'صفحه ای که به دنبال آن می گردید ممکن است حذف شده باشد ، نام آن تغییر کرده باشد و یا موقتا در دسترس نباشد.',

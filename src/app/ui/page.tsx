@@ -11,6 +11,7 @@ import { ReportModal } from '@/strings';
 import { Button } from '@mui/material';
 import { useState } from 'react';
 import ReportPictureModal from '@/components/organisms/Modal/ReportPictureModal';
+import EmptyState from '@/components/atoms/EmptyState';
 import { group1 } from './constants';
 
 const mockData = {
@@ -95,6 +96,7 @@ export default function Home() {
         setOpen={setOpenPicModal}
       />
       <SlidePicture />
+      <EmptyState />
     </>
   );
 }

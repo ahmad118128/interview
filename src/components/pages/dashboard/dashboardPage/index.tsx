@@ -66,6 +66,9 @@ export default function DashboardPage() {
           <BarChart
             labels={['January', 'February', 'March', 'April']}
             data={[{ label: 'نام لیست', data: [120, 130, 140, 15] }]}
+            style={{
+              height: '224px',
+            }}
           />
         </DashboardChartCard>
       </Grid>

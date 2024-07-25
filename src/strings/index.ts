@@ -1207,9 +1207,13 @@ export const deleteMessages = {
 };
 
 export const siderBarList = {
-  dashboard: 'دشبورد',
+  dashboard: 'داشبورد',
+  cameraSurveillance: 'نظارت دوربین',
+  cameraManagement: 'مدیریت دوربین',
   informationBank: 'بانک اطلاعاتی',
   supervisitoryList: 'لیست نظارتی',
+  module: 'ماژول',
+  offlineIdentification: 'شناسایی آفلاین',
   imageRecognition: 'شناسایی تصویر',
   report: 'گزارشات',
   trafficAnalysis: 'آنالیز تردد',

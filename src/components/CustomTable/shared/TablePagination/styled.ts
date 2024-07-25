@@ -11,6 +11,7 @@ export const StyledTablePagination = styled(Pagination)`
   width: 100%;
   padding-block: 0.75rem;
   border-radius: 10px;
+  background-color: ${theme.palette.grey['50']};
   border: 1px solid ${theme.palette.grey['300']};
   & .MuiPagination-ul {
     flex-direction: row-reverse;
@@ -27,6 +28,9 @@ export const StyledTablePagination = styled(Pagination)`
       background-color: ${theme.palette.primary.light} !important;
       color: ${theme.palette.common.white} !important;
       box-shadow: 0px 0px 10px 0px rgba(126, 188, 89, 0.5);
+      &:hover {
+        color: ${theme.palette.common.white} !important;
+      }
     }
     & .MuiPaginationItem-previousNext {
       border: none;

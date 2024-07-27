@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
+import { Snackbar } from '@/components/atoms/SnackBar/notification';
 import theme from '@/theme';
 import { ReactQueryProvider } from '@/providers';
 
@@ -43,7 +44,10 @@ export default function RootLayout({
       <body>
         <ReactQueryProvider>
           <AppRouterCacheProvider>
-            <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
+            <MuiThemeProvider theme={theme}>
+              {children}
+              <Snackbar />
+            </MuiThemeProvider>
           </AppRouterCacheProvider>
         </ReactQueryProvider>
       </body>

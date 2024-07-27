@@ -1,10 +1,9 @@
-import { VFC } from 'react';
 import { Snackbar } from '@mui/material';
 import { Icon } from '@iconify/react';
 import { StyledAlert } from './styled';
 import { CustomSnackbarProps } from './type';
 
-const SnackbarAutoHideDuration = 5000;
+const SnackbarAutoHideDuration = 15000;
 
 const CustomSnackbar = ({
   message,
@@ -19,7 +18,7 @@ const CustomSnackbar = ({
         horizontal: 'right',
       }}
       open={open}
-      autoHideDuration={SnackbarAutoHideDuration}
+      // autoHideDuration={SnackbarAutoHideDuration}
     >
       <StyledAlert
         onClose={onClose}

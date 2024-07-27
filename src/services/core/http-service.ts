@@ -25,8 +25,7 @@ httpService.interceptors.response.use(
     if (error?.response) {
       const statusCode = error?.response?.status;
       if (statusCode >= 400) {
-        const errorData: Problem = error.response?.data;
-
+        const errorData: Problem = error.response.data;
         errorHandler[statusCode](errorData);
       }
     } else {

@@ -37,9 +37,9 @@ const showNotifications = (problem: Problem) => {
         })
       )
     );
-  } else if (problem.detail) {
+  } else if (problem.description) {
     notifications.push({
-      message: problem.detail,
+      message: problem.description,
       type: 'error',
     });
   }

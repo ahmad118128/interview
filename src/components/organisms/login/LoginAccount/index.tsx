@@ -21,12 +21,7 @@ export const LoginAccount = () => {
   const onLogin = (data: LoginFormValues) => {
     login(data, {
       onSuccess: () => {
-        // Handle success, e.g., show a success message or redirect
         router.push('/dashboard');
-      },
-      onError: (error) => {
-        // Handle error, e.g., show an error message
-        console.error('Error adding post:', error);
       },
     });
   };

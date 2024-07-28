@@ -71,7 +71,7 @@ export const StyledAccordionSummary = styled(AccordionSummary)`
   min-height: 0;
   .MuiAccordionSummary-contentGutters {
     justify-content: flex-end !important;
-    margin: 0;
+    margin: 0 !important;
   }
   &[aria-expanded='true'] {
     margin: 0 !important;

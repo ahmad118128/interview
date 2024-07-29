@@ -7,7 +7,13 @@ import { Login } from '@/components/pages/login';
 
 const LoginPage = () => {
   const router = useRouter();
-  const [userSession] = useState(() => localStorage.getItem('userSession'));
+  const [userSession] = useState(() => {
+    if (global?.window !== undefined) {
+      const userSession = window?.localStorage?.getItem('userSession');
+      return userSession ? JSON.parse(userSession) : {};
+    }
+    return {};
+  });
 
   useEffect(() => {
     if (userSession) {

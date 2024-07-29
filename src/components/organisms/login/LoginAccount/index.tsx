@@ -22,7 +22,10 @@ export const LoginAccount = () => {
     login(data, {
       onSuccess: (userResponse) => {
         const { role, username } = userResponse;
-        localStorage.setItem('userSession', JSON.stringify({ role, username }));
+        window?.localStorage?.setItem(
+          'userSession',
+          JSON.stringify({ role, username })
+        );
         router.push('/dashboard');
       },
     });

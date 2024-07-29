@@ -28,11 +28,11 @@ export default function DashboardPage() {
         </DashboardChartCard>
       </Grid>
       <Grid item xs={12} md={6} lg={3}>
-        <DashboardChartCard title={generalStr.clientState}>
+        <DashboardChartCard title={generalStr.cameraSituation}>
           <DoughnutChart
             legend={true}
             chartLabel="Clinet"
-            labels={['نامشخص', 'شناسایی شده']}
+            labels={['غیر فعال', ' فعال']}
             data={[120, 80]}
             showTooltip
           />
@@ -50,14 +50,6 @@ export default function DashboardPage() {
         </DashboardChartCard>
       </Grid>
       <Grid item xs={12} md={6} lg={6}>
-        <DashboardChartCard title={generalStr.stateList}>
-          <BarChart
-            labels={['January', 'February', 'March', 'April']}
-            data={[{ label: 'مرد', data: [120, 130, 140, 15] }]}
-          />
-        </DashboardChartCard>
-      </Grid>
-      <Grid item xs={12} md={6} lg={6}>
         <DashboardChartCard title={generalStr.ageRange}>
           <BarChart
             labels={['January', 'February', 'March', 'April']}
@@ -66,6 +58,14 @@ export default function DashboardPage() {
               { label: 'زن', data: [30, 40, 50, 120] },
             ]}
             legend={true}
+          />
+        </DashboardChartCard>
+      </Grid>
+      <Grid item xs={12} md={6} lg={6}>
+        <DashboardChartCard title={generalStr.stateList}>
+          <BarChart
+            labels={['January', 'February', 'March', 'April']}
+            data={[{ label: 'نام لیست', data: [120, 130, 140, 15] }]}
           />
         </DashboardChartCard>
       </Grid>

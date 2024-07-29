@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 export default function Report() {
   return (
     <Suspense fallback={'loading'}>
-      <ReportPage />;
+      <ReportPage />
     </Suspense>
   );
 }

@@ -40,7 +40,7 @@ export const StyledListItemButton = styled(ListItemButton)<StyledSideBarType>(
     justifyContent: isOpen ? 'flex-start' : 'center',
     gap: isOpen ? '0.5rem' : '0',
     marginBottom: '0.45rem',
-    padding: '1rem',
+    padding: '1rem 0.9rem',
     '&.MuiButtonBase-root': {
       color: 'transparent !important',
     },

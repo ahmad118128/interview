@@ -21,7 +21,7 @@ export const cardData = [
   },
   {
     id: 4,
-    title: generalStr.numberClients,
+    title: generalStr.numberCameras,
     count: 6,
     src: '/assets/images/dashboard/technology 1.svg',
   },

@@ -18,6 +18,11 @@ export const ImageBox = styled(Box)`
   border-radius: 50%;
   padding: 0.375rem;
   overflow: hidden;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ContentBox = styled(Box)`

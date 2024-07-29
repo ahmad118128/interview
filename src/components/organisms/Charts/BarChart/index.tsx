@@ -26,7 +26,7 @@ ChartJS.register(
 );
 
 export const BarChart: FC<BarChartProps> = (props) => {
-  const { data, labels, legend = false } = props;
+  const { data, labels, legend = false, style } = props;
 
   const barData: ChartData<'bar'> = {
     labels: labels,
@@ -68,6 +68,7 @@ export const BarChart: FC<BarChartProps> = (props) => {
   };
 
   const options: ChartOptions<'bar'> = {
+    responsive: true,
     scales: {
       x: {
         grid: {
@@ -95,7 +96,10 @@ export const BarChart: FC<BarChartProps> = (props) => {
       <Bar
         data={barData}
         options={options}
-        style={{ maxHeight: '14rem', maxWidth: '22rem', minHeight: '14rem' }}
+        style={{
+          width: '100%',
+          height: '100%',
+        }}
       />
       {legend && <CustomLegend labels={[data[0].label, data[1].label]} />}
     </BarBox>

@@ -6,6 +6,9 @@ const fetchLogOut = (): Promise<void> => createData('/auth/logout', null);
 export const usePostLogOut = () => {
   const { mutate: logout } = useMutation({
     mutationFn: fetchLogOut,
+    onSuccess: () => {
+      localStorage.removeItem('userSession');
+    },
   });
 
   return logout;

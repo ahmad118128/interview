@@ -20,7 +20,9 @@ export const LoginAccount = () => {
 
   const onLogin = (data: LoginFormValues) => {
     login(data, {
-      onSuccess: () => {
+      onSuccess: (userResponse) => {
+        const { role, username } = userResponse;
+        localStorage.setItem('userSession', JSON.stringify({ role, username }));
         router.push('/dashboard');
       },
     });

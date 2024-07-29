@@ -10,6 +10,7 @@ import { MobileActions } from './constants';
 import { registrationStr } from '@/strings';
 import MyDrawer from '@/components/organisms/Drawer';
 import { IconButton } from '@/components/atoms/CustomButton/IconButton';
+import { LogOutBtn } from '../LogOutBtn';
 
 export default function HeaderDashboardMobile() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -55,14 +56,18 @@ export default function HeaderDashboardMobile() {
       >
         <Typography variant="body1">{registrationStr.username}</Typography>
         <MenuBox>
-          {MobileActions.map((item) => (
-            <IconButton
-              key={item.id}
-              tooltip={item.tooltipTitle}
-              onClick={item.onClick}
-              iconName={item.icon}
-            />
-          ))}
+          {MobileActions.map((item) =>
+            item.id === 'logout' ? (
+              <LogOutBtn key={item.id} />
+            ) : (
+              <IconButton
+                key={item.id}
+                tooltip={item.tooltipTitle}
+                onClick={item.onClick}
+                iconName={item.icon}
+              />
+            )
+          )}
         </MenuBox>
       </ProfileViewer>
     </>

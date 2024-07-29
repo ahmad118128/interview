@@ -1,6 +1,4 @@
-import { Icon } from '@iconify/react';
 import { registrationStr } from '@/strings';
-import { onClick } from '@/components/atoms/CustomSearchBar/customSearchBar.stories';
 
 export const MobileActions = [
   {
@@ -16,9 +14,8 @@ export const MobileActions = [
     onClick: () => console.log('notification'),
   },
   {
-    id: 3,
+    id: 'logout',
     tooltipTitle: registrationStr.logOut,
     icon: 'ion:exit',
-    onClick: () => console.log('exit'),
   },
 ];

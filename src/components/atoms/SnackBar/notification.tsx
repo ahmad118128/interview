@@ -6,7 +6,6 @@ import { Box } from '@mui/material';
 
 export const Snackbar: React.FC = () => {
   const notifications = useNotificationsStore((state) => state.notifications);
-  console.log(notifications);
   const dismissNotification = useNotificationsStore(
     (state) => state.dismissNotification
   );

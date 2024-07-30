@@ -1,4 +1,6 @@
-export type UserRole =
+import { Problem } from '@/services/core/type';
+
+type UserRole =
   | 'PERMISSION_SUPER_USER'
   | 'PERMISSION_BASIC_USER'
   | 'PERMISSION_PAGE_DATA_BANK_PERSON'
@@ -35,16 +37,21 @@ export type UserRole =
   | 'PERMISSION_PAGE_SETTING_GENERAL'
   | 'PERMISSION_PAGE_SETTING_BACKUP';
 
-export interface UserSession {
-  userId: number;
+export type OperationResult<T> = {
+  isSuccess: boolean;
+  error?: Problem | string;
+  response?: T | void;
+};
+
+export interface UserResponse {
+  id: number;
   username: string;
-  role: UserRole[];
-  expiresAt: string;
+  roles: UserRole[];
   description?: string;
   detail?: string;
 }
 
-export type VerifyUserModel = {
+export type TUserModel = {
   username: string;
   password: string;
 };

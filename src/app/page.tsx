@@ -1,35 +1,17 @@
 'use client';
 
-import { CustomButton } from '@/components/atoms/CustomButton';
-import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
-import { allValidateType } from '@/components/BaseComponents/baseInput/index';
-import { DeleteModal } from '@/components/organisms/Modal/DeleteModal.tsx';
-import { useState } from 'react';
-import { FieldValues, useForm } from 'react-hook-form';
+import { useRouter } from 'next/navigation';
 
-export default function Home() {
-  const { control, setError } = useForm<FieldValues>({
-    mode: 'onChange',
-  });
+export default function Page() {
+  const router = useRouter();
 
-  const test = [
-    { label: 'The Shawshank Redemption', year: 1994 },
-    { label: 'The Godfather', year: 1972 },
-    { label: 'The Godfather: Part II', year: 1974 },
-    { label: 'The Dark Knight', year: 2008 },
-  ];
+  if (typeof window !== 'undefined') {
+    const userSession = localStorage.getItem('userSession');
 
-  return (
-    <>
-      <form action="">
-        <CustomInput
-          control={control}
-          name="testing"
-          rules={{
-            pattern: allValidateType.num,
-          }}
-        />
-      </form>
-    </>
-  );
+    if (!userSession) {
+      router.push('/login');
+    } else {
+      router.push('/dashboard');
+    }
+  }
 }

@@ -9,22 +9,25 @@ import { registrationStr } from '@/strings';
 import { CustomButton } from '@/components/atoms/CustomButton';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { CustomInput } from '@/components/atoms/CustomInput/RHFCustomInput';
-import { useFormState } from 'react-dom';
-import { useTransition } from 'react';
-import { login } from '@/actions/auth';
 import { LoginFormValues } from './type';
+import { usePostLogin } from '@/services/api/auth/usePostAuth';
+import { useRouter } from 'next/navigation';
 
 export const LoginAccount = () => {
   const { control, handleSubmit } = useForm<any>();
-  const [loginState, loginAction] = useFormState(login, undefined);
-  const [isPending, startTransition] = useTransition();
+  const { login, isPending } = usePostLogin();
+  const router = useRouter();
 
   const onLogin = (data: LoginFormValues) => {
-    startTransition(async () => {
-      loginAction({
-        username: data.username,
-        password: data.password,
-      });
+    login(data, {
+      onSuccess: (userResponse) => {
+        const { role, username } = userResponse;
+        window?.localStorage?.setItem(
+          'userSession',
+          JSON.stringify({ role, username })
+        );
+        router.push('/dashboard');
+      },
     });
   };
 
@@ -81,11 +84,11 @@ export const LoginAccount = () => {
         <CustomButton className="loginButton" type="submit" loading={isPending}>
           {registrationStr.login}
         </CustomButton>
-        {loginState?.error && (
+        {/* {loginState?.error && (
           <Typography mt="1rem" variant="subtitle2" color="error.main">
             {loginState?.error}
           </Typography>
-        )}
+        )} */}
       </form>
     </Box>
   );

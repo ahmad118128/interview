@@ -3,8 +3,8 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { SelectTableProps } from './type';
 import { CellType } from '../../types';
 import { BaseTable } from '../../shared';
-import { CollapseCheckboxRow } from './CollapseCheckboxRow';
 import { StyledTableWrapper } from '../CollapseTable/styled';
+import { CollapseCheckboxRow } from './collapseCheckboxRow';
 
 const COLLAPSE_ID = 'collapse';
 
@@ -85,7 +85,6 @@ export const CollapseTableWithCheckbox = <T,>(props: SelectTableProps<T>) => {
         allSelected={allSelected}
         handleSort={handleSort}
         error={error}
-        pagination={pagination}
         emptyDataMessage={emptyDataMessage}
         selectedMode={selectedMode}
         indeterminate={indeterminate}

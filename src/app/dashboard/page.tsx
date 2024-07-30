@@ -8,16 +8,16 @@ export default function Dashboard() {
   const [userSession] = useState(() => {
     if (global?.window !== undefined) {
       const userSession = window?.localStorage?.getItem('userSession');
-      return userSession ? JSON.parse(userSession) : {};
+      return userSession ? JSON.parse(userSession) : null;
     }
-    return {};
+    return null;
   });
 
   useEffect(() => {
     if (!userSession) {
       router.push('/login');
     }
-  }, [userSession, router]);
+  }, [userSession]);
 
   if (userSession) {
     return <DashboardPage />;

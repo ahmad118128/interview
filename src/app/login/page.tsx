@@ -10,23 +10,25 @@ const LoginPage = () => {
   const [userSession] = useState(() => {
     if (global?.window !== undefined) {
       const userSession = window?.localStorage?.getItem('userSession');
-      return userSession ? JSON.parse(userSession) : {};
+      return userSession ? JSON.parse(userSession) : null;
     }
-    return {};
+    return null;
   });
 
   useEffect(() => {
     if (userSession) {
       router.push('/dashboard');
     }
-  }, [userSession, router]);
+  }, [userSession]);
 
   // Render login component if userSession is not found
-  return !userSession ? (
-    <StyledContainerPage>
-      <Login />
-    </StyledContainerPage>
-  ) : null;
+  return (
+    !userSession && (
+      <StyledContainerPage>
+        <Login />
+      </StyledContainerPage>
+    )
+  );
 };
 
 export default LoginPage;

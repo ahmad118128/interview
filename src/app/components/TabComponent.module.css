@@ -1,0 +1,32 @@
+.tabContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabHeaders {
+  display: flex;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.tabHeader {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  background-color: #f5f5f5;
+  margin-right: 5px;
+}
+
+.tabHeader.active {
+  background-color: #fff;
+  border-color: #ddd;
+  border-bottom: 1px solid #fff;
+}
+
+.tabContent {
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}

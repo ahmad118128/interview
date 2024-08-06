@@ -4,9 +4,13 @@ import './globals.css';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import {
   ThemeProvider as MuiThemeProvider,
+  styled,
   ThemeProvider,
 } from '@mui/material/styles';
 import theme from '@/theme';
+import SideMenu from '@/components/SideMenu';
+import { Grid } from '@mui/material';
+import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,7 +28,21 @@ export default function RootLayout({
     <html lang="fa-IR" dir="rtl">
       <body className={inter.className}>
         <AppRouterCacheProvider>
-          <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
+          <MuiThemeProvider theme={theme}>
+            <main className="container">
+              <Grid container spacing={3}>
+                <Grid item xs={2}>
+                  <SideMenu />
+                </Grid>
+                <Grid item xs>
+                  <div className="gridContainer">{children}</div>
+                </Grid>
+                <Grid item xs={12}>
+                  <Footer />
+                </Grid>
+              </Grid>
+            </main>
+          </MuiThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>

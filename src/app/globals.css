@@ -1,0 +1,40 @@
+body{
+    direction: ltr;
+}
+.container{
+    background-color: aliceblue;
+    height: 100%;
+    width: 100%;
+    max-width: 1440px;
+    overflow: hidden;
+    padding: 2px;
+    margin: 0 auto;
+}
+.box{
+    background-color: rgb(253, 240, 255);
+    height: 99%;
+    width: 99%;
+    flex-grow: 1;
+}
+.main{
+    height: 95%;
+    /* width: 100%; */
+    padding: 10px;
+    flex-grow: 1;
+    background-color: aqua;
+}
+
+.side{
+    overflow-y: scroll;
+    height: 100%;
+    background-color: aquamarine;
+}
+
+.footerc{
+    background-color: rgb(255, 221, 127);
+}
+
+.gridContainer{
+    display: grid;
+    
+}

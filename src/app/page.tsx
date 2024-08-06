@@ -1,16 +1,45 @@
-import { Typography } from '@mui/material';
+import Box from '@/components/Box';
+import { Grid } from '@mui/material';
 
 export default function Home() {
   return (
-    <>
-      <Typography variant="h5">h5</Typography>
-      <Typography variant="h6">h6</Typography>
-      <Typography variant="body1">body1</Typography>
-      <Typography variant="body2">body2</Typography>
-      <Typography variant="caption">caption</Typography>
-      <Typography variant="subtitle1">subtitle1</Typography>
-      <Typography variant="subtitle2">subtitle2</Typography>
-      <Typography variant="button">button</Typography>
-    </>
+    <div className="main">
+      <Grid
+        direction="row"
+        alignContent="center"
+        wrap="wrap"
+        container
+        spacing={3}
+        columns={16 % 4}
+      >
+        <Grid item xs={4} md={4} xl={4}>
+          <Box />
+        </Grid>
+        <Grid item xs={4} md={4} xl={4}>
+          <Box />
+        </Grid>
+        <Grid item xs={4} md={4} xl={4}>
+          <Box />
+        </Grid>
+        <Grid item xs={4} md={4} xl={4}>
+          <Box />
+        </Grid>
+        <Grid item xs={4} md={4} xl={4}>
+          <Box />
+        </Grid>
+        <Grid item xs={4} md={4} xl={4}>
+          <Box />
+        </Grid>
+        {/* <Grid item>
+          <Box />
+        </Grid>
+        <Grid item>
+          <Box />
+        </Grid>
+        <Grid item>
+          <Box />
+        </Grid> */}
+      </Grid>
+    </div>
   );
 }

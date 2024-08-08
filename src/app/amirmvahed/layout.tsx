@@ -7,9 +7,9 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <Grid container spacing={2} sx={{ height: '100vh', direction: 'ltr' }}>
+    <Grid container sx={{ height: '100vh' }}>
       <Grid item xs={2} sx={{ backgroundColor: '#f0f0f0' }}>
-        <Box sx={{ padding: 2, height: '100%' }}>Sidebar</Box>
+        <Box sx={{ padding: 2, height: '100%' }}>Sidebar Left</Box>
       </Grid>
       <Grid
         item

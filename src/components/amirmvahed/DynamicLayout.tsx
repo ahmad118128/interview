@@ -1,8 +1,5 @@
-'use client';
-
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Box, Grid } from '@mui/material';
-import Button from '@mui/material/Button';
 
 const handleColumns = (num: number) => {
   if (num <= 1) return 1;
@@ -11,52 +8,48 @@ const handleColumns = (num: number) => {
   return 4;
 };
 
-const DynamicLayout: React.FC = () => {
-  const [boxes, setBoxes] = React.useState<number>(1);
-  const [columns, setColumns] = React.useState<number>(1);
+interface DynamicLayoutProps {
+  checkedItems: string[];
+}
+const getColumns = (num: number) => {
+  if (num <= 1) return 1;
+  if (num <= 4) return 2;
+  if (num <= 9) return 3;
+  return 4;
+};
 
-  useEffect(() => {
-    setColumns(handleColumns(boxes));
-  }, [boxes]);
+const DynamicLayout: React.FC<DynamicLayoutProps> = ({ checkedItems }) => {
+  const numBoxes = checkedItems.length;
+
+  const columns = getColumns(numBoxes);
+  const rows = Math.ceil(numBoxes / columns);
 
   return (
-    <>
-      <Button
-        sx={{ bgcolor: 'green' }}
-        onClick={() => setBoxes((prevState) => prevState + 1)}
-      >
-        Increase
-      </Button>
-      <Button
-        sx={{ bgcolor: 'red' }}
-        onClick={() => setBoxes((prevState) => prevState - 1)}
-      >
-        Decrease
-      </Button>
-      <Grid container spacing={2} sx={{ height: '100%' }}>
-        {Array.from({ length: boxes }).map((_, index) => (
-          <Grid
-            item
-            xs={12 / columns}
-            key={'box-' + index}
-            sx={{ height: `calc(100% / ${Math.ceil(boxes / columns)})` }}
+    <Grid container spacing={2} sx={{ height: 'calc(100vh - 40px)' }}>
+      {' '}
+      {/* Adjust 40px to account for the footer height */}
+      {checkedItems.map((id, index) => (
+        <Grid
+          item
+          xs={12 / columns}
+          key={index}
+          sx={{ height: `calc(100% / ${rows})` }}
+        >
+          <Box
+            sx={{
+              backgroundColor: 'lightblue',
+              height: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              border: '1px solid #000',
+            }}
           >
-            <Box
-              sx={{
-                bgcolor: 'lightblue',
-                height: '100%',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                border: 1,
-              }}
-            >
-              Box {index + 1}
-            </Box>
-          </Grid>
-        ))}
-      </Grid>
-    </>
+            {id.replace('checkbox-', 'Box ')}
+          </Box>
+        </Grid>
+      ))}
+    </Grid>
   );
 };
 

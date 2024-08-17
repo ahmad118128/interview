@@ -1,0 +1,15 @@
+.myCard {
+  width: 10rem;
+  height: 3rem;
+  border: 0.5rem salmon dotted;
+}
+
+.myCard--header {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.myCard--list__item {
+  color: red;
+  font-size: 2rem;
+}

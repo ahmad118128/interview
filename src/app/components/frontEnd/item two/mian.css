@@ -1,0 +1,11 @@
+.my-item {
+  width: 10rem;
+  height: 20rem;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-wrap: wrap;
+}

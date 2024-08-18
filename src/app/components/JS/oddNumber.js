@@ -1,4 +1,4 @@
-function oddnumber(myNumber) {
+export function oddnumber(myNumber) {
   if (typeof myNumber === 'string') {
     myNumber = Number(myNumber);
   }

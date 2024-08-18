@@ -6,7 +6,7 @@ interface IMyFormProp {
   password: number;
 }
 
-function BaseForm() {
+export function BaseForm() {
   const { register, handleSubmit } = useForm<IMyFormProp>();
 
   const handelSubmitMyForm: SubmitHandler<IMyFormProp> = (value) => {

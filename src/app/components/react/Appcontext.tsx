@@ -6,7 +6,7 @@ interface IUserContext {
   setUser: (value: string) => void;
 }
 
-const ContextProvider = createContext<IUserContext | null>(null);
+export const ContextProvider = createContext<IUserContext | null>(null);
 
 interface contextPropType {
   children: ReactNode;

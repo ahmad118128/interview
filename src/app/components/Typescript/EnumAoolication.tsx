@@ -6,13 +6,13 @@ enum EServiceStatus {
   ServerError = 500,
 }
 
-interface IGetUserData {
+export interface IGetUserData {
   status: EServiceStatus;
   isPending: boolean;
   isError: boolean;
 }
 
-async function giveUserStateBaseOnRequest(response: IGetUserData) {
+export async function giveUserStateBaseOnRequest(response: IGetUserData) {
   if (response.status === EServiceStatus.okRequest) {
     return 'you get the write request';
   }

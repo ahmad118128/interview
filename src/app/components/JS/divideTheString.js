@@ -1,3 +1,3 @@
-function divideTHeString(stringArr) {
+export function divideTHeString(stringArr) {
   return stringArr.join('-');
 }

@@ -40,9 +40,11 @@ export default function RootLayout({
   return (
     <html lang="fa-IR" dir="rtl" className={myFont.variable}>
       <body>
+        {/* <Provider store={store}> */}
         <AppRouterCacheProvider>
           <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
         </AppRouterCacheProvider>
+        {/* </Provider> */}
       </body>
     </html>
   );
